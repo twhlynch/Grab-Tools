@@ -1,0 +1,45 @@
+{
+    "complexity": 2,
+    "creators": "Slin",
+    "description": "A very simple level for testing json to level conversation",
+    "formatVersion": 1,
+    "levelNodes": [
+        {
+            "levelNodeStart": {
+                "position": {
+                    "z": 10.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "z": -10.0
+                },
+                "radius": 1.0
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "position": {
+                    "y": -0.25
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 3.0,
+                    "y": 0.5,
+                    "z": 20.0
+                },
+                "shape": "CUBE"
+            }
+        }
+    ],
+    "maxCheckpointCount": 5,
+    "title": "Sample Level"
+}

@@ -1,0 +1,31 @@
+{
+    "title": "rotation",
+    "description": "description",
+    "creators": "GrabPixalGen",
+    "checkpoints": 10,
+
+    "start": {
+        "position": [-10.0, 0.0, 0.0],
+        "rotation": [0.0, 0.0, 0.0, 1.0],
+        "radius": 0.5
+    },
+    "finish": {
+        "position": [20.0, 0.0, 0.0],
+        "radius": 0.5
+    },
+
+    "nodes": [
+        {
+            "type": "default",
+            "shape": "prism",
+            "position": [0.0, 0.0, 0.0],
+            "rotation": [0.0, 0.0, 0.0, 1.0],
+            "scale": [2.0, 0.1, 2.0]
+        },{
+            "type": "default",
+            "shape": "prism",
+            "position": [10.0, 0.0, 0.0],
+            "rotation": [0.0, 0.0, 0.0, 0.0],
+            "scale": [2.0, 0.001, 2.0]
+        }]
+}
