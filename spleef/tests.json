@@ -1,0 +1,138 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 138,
+    "creators": "nskc7",
+    "description": "tests",
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeCrumbling": {
+                "material": "DEFAULT_COLORED",
+                
+                "position": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "respawnTime": 300.0,
+                "stableTime": 0.05
+            }
+        },{
+            "levelNodeCrumbling": {
+                "material": "DEFAULT_COLORED",
+                
+                "position": {
+                    "x": 0.0,
+                    "y": 1.0,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "respawnTime": 300.0,
+                "stableTime": 0.1
+            }
+        },{
+            "levelNodeCrumbling": {
+                "material": "DEFAULT_COLORED",
+                
+                "position": {
+                    "x": 0.0,
+                    "y": 2.0,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "respawnTime": 300.0,
+                "stableTime": 0.3
+            }
+        },{
+            "levelNodeCrumbling": {
+                "material": "DEFAULT_COLORED",
+                
+                "position": {
+                    "x": 0.0,
+                    "y": 1.0,
+                    "z": 0.0
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "respawnTime": 300.0,
+                "stableTime": 0.5
+            }
+        }
+    ],
+    "maxCheckpointCount": 10,
+    "title": "Tests"
+}

@@ -1,0 +1,467 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 60,
+    "creators": "nskc7",
+    "description": "pls credit me if you use these (nskc7 or .index)",
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -5.0,
+                    "y": 5.0,
+                    "z": -4.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "stableTime": 0.1
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -4.0,
+                    "y": 5.0,
+                    "z": -4.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "stableTime": 0.2
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -2.9999993,
+                    "y": 5.0,
+                    "z": -4.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "stableTime": 0.3
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -5.0,
+                    "y": 5.0,
+                    "z": -3.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.5,
+                    "x": -0.5,
+                    "y": -0.5,
+                    "z": 0.5
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "SPHERE",
+                "stableTime": 0.1
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -4.0,
+                    "y": 5.0,
+                    "z": -3.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.5,
+                    "x": -0.5,
+                    "y": -0.5,
+                    "z": 0.5
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "SPHERE",
+                "stableTime": 0.2
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -2.9999993,
+                    "y": 5.0,
+                    "z": -3.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.5,
+                    "x": -0.5,
+                    "y": -0.5,
+                    "z": 0.5
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "SPHERE",
+                "stableTime": 0.3
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -5.0,
+                    "y": 5.0,
+                    "z": -2.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CYLINDER",
+                "stableTime": 0.1
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -4.0,
+                    "y": 5.0,
+                    "z": -2.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CYLINDER",
+                "stableTime": 0.2
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -2.9999993,
+                    "y": 5.0,
+                    "z": -2.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CYLINDER",
+                "stableTime": 0.3
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -5.0,
+                    "y": 5.0,
+                    "z": -1.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PYRAMID",
+                "stableTime": 0.1
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -4.0,
+                    "y": 5.0,
+                    "z": -1.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PYRAMID",
+                "stableTime": 0.2
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -2.9999993,
+                    "y": 5.0,
+                    "z": -1.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PYRAMID",
+                "stableTime": 0.3
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -5.0,
+                    "y": 5.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PRISM",
+                "stableTime": 0.1
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -4.0,
+                    "y": 5.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PRISM",
+                "stableTime": 0.2
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -2.9999993,
+                    "y": 5.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PRISM",
+                "stableTime": 0.3
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -1.999999,
+                    "y": 5.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PRISM",
+                "stableTime": 0.4
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -1.999999,
+                    "y": 5.0,
+                    "z": -1.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "PYRAMID",
+                "stableTime": 0.4
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -1.999999,
+                    "y": 5.0,
+                    "z": -2.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CYLINDER",
+                "stableTime": 0.4
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -1.999999,
+                    "y": 5.0,
+                    "z": -3.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 0.5,
+                    "x": -0.5,
+                    "y": -0.5,
+                    "z": 0.5
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "SPHERE",
+                "stableTime": 0.4
+            }
+        },
+        {
+            "levelNodeCrumbling": {
+                "material": "GRABBABLE_CRUMBLING",
+                "position": {
+                    "x": -1.999999,
+                    "y": 5.0,
+                    "z": -4.0
+                },
+                "respawnTime": 8.0,
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE",
+                "stableTime": 0.4
+            }
+        }
+    ],
+    "maxCheckpointCount": 10,
+    "title": "fast break template"
+}
