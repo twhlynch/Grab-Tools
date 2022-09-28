@@ -1,0 +1,96 @@
+Default static node:
+```
+"levelNodeStatic": {
+    "color": {
+        "a": 1.0,
+        "b": 1.0,
+        "g": 1.0,
+        "r": 1.0
+    },
+    "material": "DEFAULT_COLORED",
+    "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "rotation": {
+        "w": 1.0
+    },
+    "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "shape": "CUBE"
+}
+```
+Deault crumbling node:
+```
+"levelNodeCrumbling": {
+    "material": "GRABBABLE_CRUMBLING",
+    "stableTime": 2,
+    respawnTime": 8,
+    "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "rotation": {
+        "w": 1.0
+    },
+    "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "shape": "CUBE"
+}
+```
+Default start and finish nodes:
+```
+"levelNodeFinish": {
+        "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "radius": 1.0
+}
+```
+and
+```
+"levelNodeStart": {
+    "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "radius": 1.0,
+    "rotation": {
+        "w": 1.0
+}
+```
+
+Illegal color (static node):
+Change r, g, and b to anything. I tried changing a, but it didnt change opacity.
+
+Any crumbling block (crumbling node):
+change material to any other material. DEFAULT_COLORED only works without a color attribute.
+
+Super fast crumble time (crumbling node):
+change stableTime to a decimal below 0.5. I have found that below 0.001 wont work.
+
+No crumbling time and super slow crumble time (crumbling and static nodes):
+change stableTime to a decimal above 60 for extra long times, or use GRABBABLE_CRUMBLING as the material in a static node for infinite stable time.
+
+Fast or slow respawn time (crumbling node):
+change respawnTime to an illegal value.
+
+Multiple starts and multiple finishes (start and finish nodes):
+Have multiple nodes of each type.
+
+Illegal start and finish radius (start and finish nodes):
+Change radius to any number. radius will reset if you select an illegal node.
+
+Perma-locking objects (not node related):
+if you select things in someones lobby and you get locked, kicked, or leave the selection becomes unselectable for others.

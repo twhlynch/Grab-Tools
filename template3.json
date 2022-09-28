@@ -18,9 +18,1286 @@
     },
     "complexity": 143,
     "creators": "nskc7",
-    "description": "speed",
+    "description": "heh",
     "formatVersion": 6,
     "levelNodes": [
+        {
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1000.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },{
+            "levelNodeStart": {
+                "position": {
+                    "x": 3.0,
+                    "y": 3.0,
+                    "z": -7.0
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 1.0
+                }
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 3.0,
+                    "y": 2.0,
+                    "z": -7.0
+                },
+                "radius": 1.0
+            }
+        },
         {
             "levelNodeStart": {
                 "position": {
@@ -46,92 +1323,68 @@
         },
         {
             "levelNodeCrumbling": {
-                "material": "GRABBABLE_CRUMBLING",
+                "stableTime": 30000,
+                "respawnTime": 0,
+                "material": "GRAPPLABLE",
                 "position": {
                     "x": 0.0,
                     "y": 0.0,
                     "z": 0.0
                 },
-                "respawnTime": 3.0,
                 "rotation": {
-                    "w": 0.7071068,
-                    "y": -0.7071068
+                    "w": 1.0
                 },
                 "scale": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 1
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
                 },
-                "shape": "SPHERE",
-                "stableTime": 0.01
+                "shape": "CUBE"
             }
         },
         {
             "levelNodeCrumbling": {
-                "material": "GRABBABLE_CRUMBLING",
+                "stableTime": 30000,
+                "respawnTime": 0,
+                "material": "LAVA",
                 "position": {
                     "x": 0.0,
                     "y": 0.0,
                     "z": 0.0
                 },
-                "respawnTime": 3.0,
                 "rotation": {
-                    "w": 0.7071068,
-                    "y": -0.7071068
+                    "w": 1.0
                 },
                 "scale": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 1
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
                 },
-                "shape": "SPHERE",
-                "stableTime": 0.1
-            }
-        },{
-            "levelNodeCrumbling": {
-                "material": "GRABBABLE_CRUMBLING",
-                "position": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                },
-                "respawnTime": 3.0,
-                "rotation": {
-                    "w": 0.7071068,
-                    "y": -0.7071068
-                },
-                "scale": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 1
-                },
-                "shape": "CUBE",
-                "stableTime": 0.01
+                "shape": "CUBE"
             }
         },
         {
             "levelNodeCrumbling": {
-                "material": "GRABBABLE_CRUMBLING",
+                "stableTime": 30000,
+                "respawnTime": 0,
+                "material": "ICE",
                 "position": {
                     "x": 0.0,
                     "y": 0.0,
                     "z": 0.0
                 },
-                "respawnTime": 3.0,
                 "rotation": {
-                    "w": 0.7071068,
-                    "y": -0.7071068
+                    "w": 1.0
                 },
                 "scale": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 1
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
                 },
-                "shape": "CUBE",
-                "stableTime": 0.1
+                "shape": "CUBE"
             }
         }
     ],
     "maxCheckpointCount": 10,
-    "title": "fast paced"
+    "title": "cheat3"
 }
