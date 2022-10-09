@@ -1,0 +1,174 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 12,
+    "creators": "gfv",
+    "description": "cvgh",
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeStatic": {
+                "position": {
+                    "x": 0.75,
+                    "y": 156.0,
+                    "z": 31.0
+                },
+                "rotation": {
+                    "w": 1.0,
+                    "y": -8.1490714e-10
+                },
+                "scale": {
+                    "x": 5.0,
+                    "y": 1.0,
+                    "z": 12.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": 9,
+                "position": {
+                    "x": 9.5,
+                    "y": 5.375,
+                    "z": -117.75
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 295.00903,
+                    "y": 295.00903,
+                    "z": 295.00903
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 9.5,
+                    "y": 5.375,
+                    "z": -117.75
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 295.00903,
+                    "y": 295.00903,
+                    "z": 295.00903
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 0.62500286,
+                    "y": 154.875,
+                    "z": 5.994473
+                },
+                "rotation": {
+                    "w": -4.371139e-08,
+                    "y": -1.0
+                },
+                "scale": {
+                    "x": 5.8410664,
+                    "y": 3.4321434,
+                    "z": 39.738953
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 0.5,
+                    "y": 151.08623,
+                    "z": -15.665215
+                },
+                "rotation": {
+                    "w": -4.2675254e-08,
+                    "x": -9.4608765e-09,
+                    "y": -0.976296,
+                    "z": 0.21643962
+                },
+                "scale": {
+                    "x": 8.207616,
+                    "y": 8.397903,
+                    "z": 8.207616
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "WOOD",
+                "position": {
+                    "x": 16.0,
+                    "y": 127.75,
+                    "z": -290.375
+                },
+                "rotation": {
+                    "w": -4.371139e-08,
+                    "y": 1.0
+                },
+                "scale": {
+                    "x": 50.625,
+                    "y": 50.625,
+                    "z": 50.625
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": 17.375,
+                    "y": 153.25,
+                    "z": -292.25
+                },
+                "radius": 20.25
+            }
+        },
+        {
+            "levelNodeStart": {
+                "position": {
+                    "x": 1.0,
+                    "y": 156.75,
+                    "z": 34.375
+                },
+                "radius": 1.625,
+                "rotation": {
+                    "w": 0.043619573,
+                    "x": -1.071021e-08,
+                    "y": 0.9990481,
+                    "z": 4.656613e-09
+                }
+            }
+        }
+    ],
+    "maxCheckpointCount": 10,
+    "title": "baunts"
+}

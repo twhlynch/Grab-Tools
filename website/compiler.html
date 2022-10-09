@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Level Compiler | Grab Tools | twhlynch </title>
+</head>
+<body>
+    <form id="form" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="description" placeholder="Description">
+        <input type="text" name="creators" placeholder="Creators">
+        <input type="file" name="file" id="file" accept=".level" multiple>
+        <input type="submit" value="Compile">
+    </form>
+    <!--script src="https://cdn.jsdelivr.net/gh/dcodeIO/protobuf.js@6.11.3/dist/protobuf.min.js"></script-->
+    <script src="//cdn.jsdelivr.net/npm/protobufjs@7.X.X/dist/protobuf.js"></script>
+    <script type="text/javascript">
+        const input = document.getElementById('file');
+        const form  = document.getElementById('form');
+        form.addEventListener('submit', (e) => {
+            let reader = new FileReader();
+            reader.onload = () => {
+                let text = reader.result;
+                console.log(text);
+                protobuf.load("level.proto", function(err, root) {
+                    if(err) throw err;
+                    const LevelMessage = root.lookupType("COD.Level.Level");
+                    let formatted = new Uint8Array(text);
+                    let decoded = LevelMessage.decode(formatted);
+                    var object = LevelMessage.toObject(decoded);
+                    // var object = LevelMessage.decode(text);
+                    // console.log(formatted);
+                    // console.log(decoded);
+                    console.log(object);
+                    console.log(JSON.stringify(object));
+                });
+            }
+            for (let i = 0; i < input.files.length; i++) {
+                reader.readAsText(input.files[i]);
+            }
+            e.preventDefault();
+        });
+
+        input.addEventListener('change', function(e) {
+            for (let i = 0; i < input.files.length; i++) {
+                console.log(input.files[i].name);
+            }
+        });
+    </script>
+</body>
+</html>

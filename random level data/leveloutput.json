@@ -1,0 +1,44 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeStatic": {
+                "position": {
+                    "x": -1.9976994,
+                    "y": -0.2,
+                    "z": 0.90230143
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "x": -9.7806415e-18,
+                    "y": -0.7071068,
+                    "z": 3.5598623e-18
+                },
+                "scale": {
+                    "x": 11.795402,
+                    "y": 0.39080104,
+                    "z": 11.595401
+                },
+                "shape": "CUBE"
+            }
+        }
+    ],
+    "maxCheckpointCount": 10
+}

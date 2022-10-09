@@ -1,0 +1,38 @@
+Api.slin.dev/download/userid/levelid
+
+api.slin.dev/download/nskc7/29sgp24f1uorbc6vq8d2k:1661329640
+
+
+
+
+https://api.slin.dev/grab/v1/list?max_format_version=4&page_timestamp=1661344372224
+
+
+'https://api.slin.dev/grab/v1/list?max_format_version=4&type=search&search_term='+SEARCH_TERM
+
+https://api.slin.dev/grab/v1/download/29h8nir9ecgbibr6rsvtl/1640110313/VERSION (highest) (1)
+
+
+import random
+for i in range(1400):
+	one = str(random.randint(-400, 400))
+	two = str(random.randint(-400, 400))
+	three = str(random.randint(-400, 400))
+	onew = str(random.randint(-400, 400))
+	twow = str(random.randint(-400, 400))
+	threew = str(random.randint(-400, 400))
+	print(''',
+		{
+			"type": "grappleable",
+			"shape": "cube",
+			"position": ['''+one+'''.0, '''+two+'''.0, '''+three+'''.0],
+			"rotation": [0.0, 0.0, 0.0, 1.0],
+			"scale": [10.0, 10.0, 10.0]
+		}'''+''',
+		{
+			"type": "grappleable",
+			"shape": "sphere",
+			"position": ['''+onew+'''.0, '''+twow+'''.0, '''+threew+'''.0],
+			"rotation": [0.0, 0.0, 0.0, 1.0],
+			"scale": [15.0, 15.0, 15.0]
+		}''', end='')

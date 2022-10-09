@@ -1,0 +1,50 @@
+{
+	"title": "title",
+	"description": "description - using GrabPixalGen by nskc7",
+	"creators": "name, nskc7",
+	"checkpoints": 10,
+
+	"start": {
+		"position": [28.0, -54.0, 10.0],
+		"rotation": [0.0, 0.0, 0.0, 1.0],
+		"radius": 0.5
+	},
+	"finish": {
+		"position": [26.0, -54.0, -10.0],
+		"radius": 0.5
+	},
+
+	"nodes": [
+		{
+			"type": "default",
+			"shape": "cube",
+			"position": [27.0, -54.0, 10.0],
+			"rotation": [0.0, 0.0, 0.0, 1.0],
+			"scale": [2.0, 2.0, 2.0]
+		},
+		{
+			"type": "default_colored",
+			"shape": "cube",
+			"position": [0.0, 0.0, 0.0],
+			"rotation": [0.0, 0.0, 0.0, 1.0],
+			"scale": [3.0, 0.5, 20.0],
+			"color": [1.0, 0.0, 0.0]
+		},
+		{
+			"type": "default_colored",
+			"shape": "cube",
+			"position": [0.0, 0.0, 0.0],
+			"rotation": [0.0, 0.0, 0.0, 1.0],
+			"scale": [3.0, 0.5, 20.0],
+			"color": [0.0, 1.0, 0.0]
+		},
+		{
+			"type": "default_colored",
+			"shape": "cube",
+			"position": [0.0, 0.0, 0.0],
+			"rotation": [0.0, 0.0, 0.0, 1.0],
+			"scale": [3.0, 0.5, 20.0],
+			"color": [0.0, 0.0, 1.0]
+		}
+	]
+}
