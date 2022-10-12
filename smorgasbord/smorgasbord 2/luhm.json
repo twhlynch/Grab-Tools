@@ -1,0 +1,1078 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 98,
+    "creators": "luhmao",
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeStart": {
+                "position": {
+                    "x": 8.25,
+                    "y": 0.12500003,
+                    "z": 0.25
+                },
+                "radius": 1.0,
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                }
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 8.5624895,
+                    "y": -0.28311354
+                },
+                "rotation": {
+                    "w": 0.70709467,
+                    "x": -0.0041450025,
+                    "y": 0.70709467,
+                    "z": -0.0041450025
+                },
+                "scale": {
+                    "x": 10.180382,
+                    "y": 0.68037987,
+                    "z": 10.875017
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 110.437515,
+                    "y": -37.142403,
+                    "z": -5.258994
+                },
+                "rotation": {
+                    "w": 0.5,
+                    "x": 0.5,
+                    "y": 0.5,
+                    "z": 0.5
+                },
+                "scale": {
+                    "x": 94.715195,
+                    "y": 0.68037987,
+                    "z": 214.625
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 116.875015,
+                    "y": -38.517403,
+                    "z": 5.3749995
+                },
+                "rotation": {
+                    "w": 0.5,
+                    "x": 0.5,
+                    "y": 0.5,
+                    "z": 0.5
+                },
+                "scale": {
+                    "x": 97.465195,
+                    "y": 0.68037987,
+                    "z": 227.5
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 142.68748,
+                    "y": 10.499997
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": 0.7071068
+                },
+                "scale": {
+                    "x": 10.180382,
+                    "y": 0.68037987,
+                    "z": 279.125
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 3.249997,
+                    "y": 5.170096,
+                    "z": -1.362276e-06
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "x": 2.9802322e-08,
+                    "y": -8.940697e-08,
+                    "z": -0.7071068
+                },
+                "scale": {
+                    "x": 10.340193,
+                    "y": 0.68037987,
+                    "z": 10.875017
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 35.595,
+                    "y": -13.835937,
+                    "z": 0.25
+                },
+                "rotation": {
+                    "w": 0.61237246,
+                    "x": -0.3535534,
+                    "y": 0.61237246,
+                    "z": 0.3535534
+                },
+                "scale": {
+                    "x": 10.128096,
+                    "y": 51.0117,
+                    "z": 2.25619
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "BOUNCING",
+                "position": {
+                    "x": 61.625,
+                    "y": -29.5
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 7.3818374,
+                    "y": 7.3818374,
+                    "z": 10.31592
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 198.625,
+                    "y": -37.02714,
+                    "z": -3.75
+                },
+                "rotation": {
+                    "w": 0.9914449,
+                    "y": -0.1305262
+                },
+                "scale": {
+                    "x": 19.24144,
+                    "y": 96.054306,
+                    "z": 1.608591
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 197.70706,
+                    "y": -37.21464,
+                    "z": 3.9647408
+                },
+                "rotation": {
+                    "w": 0.9914449,
+                    "y": 0.1305262
+                },
+                "scale": {
+                    "x": 19.24144,
+                    "y": 95.179306,
+                    "z": 1.608591
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 106.814545,
+                    "y": -62.1229,
+                    "z": -0.50001913
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 11.749958,
+                    "y": 71.50421,
+                    "z": 201.87923
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 239.8497,
+                    "y": -41.374992,
+                    "z": -1.3026316
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 64.3006,
+                    "y": 103.00001,
+                    "z": 1.6012143
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 238.6622,
+                    "y": -40.749992,
+                    "z": 1.6249979
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 63.9256,
+                    "y": 101.75001,
+                    "z": 1.6012143
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "BOUNCING",
+                "position": {
+                    "x": 276.8,
+                    "y": -41.614758,
+                    "z": -1.7999878
+                },
+                "rotation": {
+                    "w": 0.3826835,
+                    "y": 0.9238796
+                },
+                "scale": {
+                    "x": 8.9591255,
+                    "y": 100.97958,
+                    "z": 8.9591255
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 301.98862,
+                    "y": -26.846642,
+                    "z": 152.02835
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 51.272766,
+                    "y": 139.6933,
+                    "z": 296.19327
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 265.05515,
+                    "y": -27.534142,
+                    "z": 150.81248
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 12.360291,
+                    "y": 138.3183,
+                    "z": 297.375
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 273.57343,
+                    "y": -89.99999,
+                    "z": 124.12498
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 115.999985,
+                    "y": 1.0437138,
+                    "z": 5.8969116
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "GRAPPLABLE",
+                "position": {
+                    "x": 273.56253,
+                    "y": -82.0,
+                    "z": 164.24998
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 7.1250305,
+                    "y": 1.5,
+                    "z": 1.5
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 273.6634,
+                    "y": -53.413387,
+                    "z": 182.28838
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 7.8267517,
+                    "y": 76.32679,
+                    "z": 2.3267822
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 274.06116,
+                    "y": 4.8137884,
+                    "z": 73.562454
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 159.87497,
+                    "y": 16.877586,
+                    "z": 7.877533
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 238.87494,
+                    "y": -90.375,
+                    "z": 31.64748
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": 0.7071068
+                },
+                "scale": {
+                    "x": 69.29509,
+                    "y": 0.8400645,
+                    "z": 75.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "BOUNCING",
+                "position": {
+                    "x": 273.5,
+                    "y": 12.375,
+                    "z": 170.0
+                },
+                "rotation": {
+                    "w": 0.9238795,
+                    "x": 0.38268346
+                },
+                "scale": {
+                    "x": 5.9247437,
+                    "y": 50.865097,
+                    "z": 1.5996112
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 274.56253,
+                    "y": -16.2409,
+                    "z": 364.50906
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 30.62497,
+                    "y": 0.7318058,
+                    "z": 366.73184
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.19999999,
+                    "g": 0.19999999,
+                    "r": 1.0
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 128.81252,
+                    "y": 30.25,
+                    "z": 398.94226
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 318.12503,
+                    "y": 0.9810835,
+                    "z": 421.3655
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 258.62503,
+                    "y": 10.710423,
+                    "z": 408.52295
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.8291626,
+                    "y": 62.329163,
+                    "z": 219.70413
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 289.37503,
+                    "y": 10.710423,
+                    "z": 434.9604
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.8291626,
+                    "y": 62.329163,
+                    "z": 272.57907
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "GRAPPLABLE",
+                "position": {
+                    "x": 258.75,
+                    "y": 5.125006,
+                    "z": 518.0
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 6.0,
+                    "y": 50.500008,
+                    "z": 6.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 149.00775,
+                    "y": 7.9297,
+                    "z": 548.3046
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.8905029,
+                    "y": 59.390617,
+                    "z": 286.5157
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 114.687416,
+                    "y": -25.75,
+                    "z": 546.24994
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 59.25,
+                    "y": 19.361912,
+                    "z": 291.12512
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 112.55475,
+                    "y": 4.3827987,
+                    "z": 519.30475
+                },
+                "rotation": {
+                    "w": -4.371139e-08,
+                    "y": 1.0
+                },
+                "scale": {
+                    "x": 287.1093,
+                    "y": 54.234413,
+                    "z": 2.859558
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "GRAPPLABLE",
+                "position": {
+                    "x": 7.5625,
+                    "y": 3.3125083,
+                    "z": 548.31244
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 2.625,
+                    "y": 54.125008,
+                    "z": 4.125002
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 71.318085,
+                    "y": -10.994432,
+                    "z": 562.31805
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 87.613914,
+                    "y": 24.98887,
+                    "z": 26.86383
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 117.4888,
+                    "y": -71.93751,
+                    "z": 575.62946
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 355.87506,
+                    "y": 203.125,
+                    "z": 1.2409058
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": -29.992031,
+                    "y": 0.7420331,
+                    "z": 546.57043
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 59.89099,
+                    "y": 61.265934,
+                    "z": 0.015924454
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 291.125,
+                    "y": -28.249998,
+                    "z": 562.2505
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 26.24878,
+                    "y": 116.75002,
+                    "z": 6.7477226
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 249.54791,
+                    "y": -125.95209,
+                    "z": 562.06244
+                },
+                "rotation": {
+                    "w": 0.6532815,
+                    "x": -0.27059808,
+                    "y": -0.6532815,
+                    "z": -0.27059808
+                },
+                "scale": {
+                    "x": 26.125,
+                    "y": 109.791,
+                    "z": 1.7391957
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": 117.834946,
+                    "y": -95.37499,
+                    "z": 548.5
+                },
+                "rotation": {
+                    "w": -4.371139e-08,
+                    "y": -1.0
+                },
+                "scale": {
+                    "x": 347.4199,
+                    "y": 147.5,
+                    "z": 1.0448608
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "BOUNCING",
+                "position": {
+                    "x": 204.60359,
+                    "y": -165.875,
+                    "z": 561.791
+                },
+                "rotation": {
+                    "w": -3.0908623e-08,
+                    "x": 0.7071068,
+                    "y": 0.7071068,
+                    "z": -3.0908623e-08
+                },
+                "scale": {
+                    "x": 3.6643548,
+                    "y": 11.207184,
+                    "z": 26.582275
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "GRAPPLABLE",
+                "position": {
+                    "x": -30.125,
+                    "y": -35.625,
+                    "z": 562.13293
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 26.765991,
+                    "y": 1.7818701,
+                    "z": 1.7818701
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": -30.124996,
+                    "y": 30.35759,
+                    "z": 549.93744
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 59.875,
+                    "y": 130.28487,
+                    "z": 1.569714
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": -82.17187,
+                    "y": -39.125004,
+                    "z": 575.0241
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 106.156265,
+                    "y": 268.75003,
+                    "z": 1.2409058
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": -44.375,
+                    "y": -39.125004,
+                    "z": 548.49994
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 30.56253,
+                    "y": 268.75003,
+                    "z": 1.2409058
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": -96.16276,
+                    "y": -51.687508,
+                    "z": 563.2747
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 31.04956,
+                    "y": 239.12502,
+                    "z": 74.17448
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "GRAPPLABLE",
+                "position": {
+                    "x": -81.70637,
+                    "y": 93.75,
+                    "z": 562.1685
+                },
+                "rotation": {
+                    "w": -4.371139e-08,
+                    "y": 1.0
+                },
+                "scale": {
+                    "x": 102.33707,
+                    "y": 2.9243228,
+                    "z": 26.33722
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "position": {
+                    "x": -137.5,
+                    "y": 63.0,
+                    "z": 562.72406
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 34.94818,
+                    "y": 10.146232,
+                    "z": 10.146232
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeFinish": {
+                "position": {
+                    "x": -138.0,
+                    "y": 68.0,
+                    "z": 562.5
+                },
+                "radius": 2.2728398
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "ICE",
+                "position": {
+                    "x": -82.17187,
+                    "y": -39.125004,
+                    "z": 547.74994
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 106.156265,
+                    "y": 268.75003,
+                    "z": 1.2409058
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 239.12047,
+                    "y": -17.370462,
+                    "z": 534.0045
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 40.740936,
+                    "y": 1.2409267,
+                    "z": 26.990845
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": -32.799355,
+                    "y": -75.5,
+                    "z": 561.7994
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": 0.7071068
+                },
+                "scale": {
+                    "x": 26.098816,
+                    "y": 5.9474764,
+                    "z": 54.348755
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 40.027943,
+                    "y": -122.402954,
+                    "z": 562.0
+                },
+                "rotation": {
+                    "w": 0.6532815,
+                    "x": 0.27059808,
+                    "y": 0.6532815,
+                    "z": -0.27059808
+                },
+                "scale": {
+                    "x": 26.098816,
+                    "y": 5.9474764,
+                    "z": 135.038
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "material": "LAVA",
+                "position": {
+                    "x": 144.31786,
+                    "y": -170.125,
+                    "z": 561.93207
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": 0.7071068
+                },
+                "scale": {
+                    "x": 26.864319,
+                    "y": 4.478521,
+                    "z": 110.61424
+                },
+                "shape": "CUBE"
+            }
+        }
+    ],
+    "title": "smorgasbord v2"
+}

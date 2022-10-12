@@ -24,12 +24,12 @@ json_data = {
         "sunSize": 0.5868782
     },
     "complexity": 0,
-    "creators": "BLUDUK, NSKC7, .index, d2whiplash, Luhmao, FROSTY_CROSS, BWLBuck, levi8020, Peechyy, Ima_Rainbow, Mr.Madlord",
-    "description": "desc",
+    "creators": "BLUDUK, NSKC7 (.INDEX), BWLBUCK, LUHMAO, LUNIFOCC, LEVI8020, PEECHYY, THEWHITECRESCENT, TURTLEDUDE1274, ZAZIPOGCHAMP",
+    "description": "SMORGASBORD IS A GROUP OF VERIFIED CREATORS THAT MAKE BI-WEEKLY MAPS FOR THE GRAB COMMUNITY. HOSTED BY BLUDUK & NSKC7(.INDEX). VERSION 1 CREATORS IN LEVEL ORDER: TURTLEDUDE, BLUDUK, PEECHYY, NSKC7(.INDEX), ZAZIPOGCHAMP, BWLBUCK, LUNIFOCC, LUHMAO, LEVI8020, THEWHITECRESCENT",
     "formatVersion": 6,
     "levelNodes": MAP_NODES,
-    "maxCheckpointCount": 9,
-    "title": "SMORGASBORD"
+    "maxCheckpointCount": 12,
+    "title": "SMORGASBORD 2"
 }
 with open("output.json", "w") as f:
     json.dump(json_data, f, indent=4)
