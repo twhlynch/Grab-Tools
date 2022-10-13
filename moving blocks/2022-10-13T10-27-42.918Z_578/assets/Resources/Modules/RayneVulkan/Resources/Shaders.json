@@ -1,0 +1,236 @@
+[
+    {
+        "file~vulkan": ":RayneVulkan:/Shaders.vs.spirv",
+        "shaders": [
+            {
+                "name": "gouraud_vertex",
+                "signature": {
+                    "options": [
+                        "RN_NORMALS",
+                        "RN_COLOR",
+                        "RN_UV0",
+                        "RN_ANIMATIONS",
+                        "RN_SHADOWS_DIRECTIONAL",
+                        "RN_LIGHTS_DIRECTIONAL",
+                        "RN_LIGHTS_POINT",
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Shaders.ps.spirv",
+        "shaders": [
+            {
+                "name": "gouraud_fragment",
+                "signature": {
+                    "options": [
+                        "RN_NORMALS",
+                        "RN_COLOR",
+                        "RN_ALPHA",
+                        "RN_UV0",
+                        "RN_SHADOWS_DIRECTIONAL",
+                        "RN_LIGHTS_DIRECTIONAL",
+                        "RN_LIGHTS_POINT"
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Particles.vs.spirv",
+        "shaders": [
+            {
+                "name": "particles_vertex",
+                "signature": {
+                    "options": [
+                        "RN_UV0",
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Particles.ps.spirv",
+        "shaders": [
+            {
+                "name": "particles_fragment",
+                "signature": {
+                    "options": [
+                        "RN_UV0"
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Depth.vs.spirv",
+        "shaders": [
+            {
+                "name": "depth_vertex",
+                "signature": {
+                    "options": [
+                        "RN_ALPHA",
+                        "RN_UV0",
+                        "RN_SKY",
+                        "RN_ANIMATIONS",
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Depth.ps.spirv",
+        "shaders": [
+            {
+                "name": "depth_fragment",
+                "signature": {
+                    "options": [
+                        "RN_ALPHA",
+                        "RN_UV0"
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Sky.vs.spirv",
+        "shaders": [
+            {
+                "name": "sky_vertex",
+                "signature": {
+                    "options": [
+                        "RN_COLOR",
+                        "RN_UV0",
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/Sky.ps.spirv",
+        "shaders": [
+            {
+                "name": "sky_fragment",
+                "signature": {
+                    "options": [
+                        "RN_COLOR",
+                        "RN_UV0"
+                    ],
+                    "samplers": [
+                        {
+                            "name": "linearClampSampler",
+                            "wrap": "clamp"
+                        }
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/UI.vs.spirv",
+        "shaders": [
+            {
+                "name": "ui_vertex",
+                "signature": {
+                    "options": [
+                        "RN_UV0",
+                        "RN_UV1",
+                        "RN_COLOR",
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/UI.ps.spirv",
+        "shaders": [
+            {
+                "name": "ui_fragment",
+                "signature": {
+                    "options": [
+                        "RN_UV0",
+                        "RN_UV1"
+                    ],
+                    "samplers": [
+                        {
+                            "name": "linearClampSampler",
+                            "wrap": "clamp"
+                        }
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/PostProcessing.vs.spirv",
+        "shaders": [
+            {
+                "name": "pp_vertex",
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/PostProcessing.ps.spirv",
+        "shaders": [
+            {
+                "name": "pp_blit_fragment",
+                "signature": {
+                    "options": [
+                        "RN_PP_VR"
+                    ],
+                    "samplers": [
+                        {
+                            "name": "linearClampSampler",
+                            "wrap": "clamp"
+                        }
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/OpenVRMask.vs.spirv",
+        "shaders": [
+            {
+                "name": "pp_mask_vertex",
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/OpenVRMask.ps.spirv",
+        "shaders": [
+            {
+                "name": "pp_mask_fragment",
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": ":RayneVulkan:/GenerateMipMaps.cs.spirv",
+        "shaders": [
+            {
+                "name": "GenerateMipMaps",
+                "type": "compute"
+            }
+        ]
+    }
+]

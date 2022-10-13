@@ -1,0 +1,4979 @@
+Signature-Version: 1.0
+Created-By: 11.0.13 (Azul Systems, Inc.)
+SHA-256-Digest-Manifest: TvQn0W7CezKJWG4hwafRxzENrAScBzxBUwvwzNcc7W4=
+SHA-256-Digest-Manifest-Main-Attributes: JTCtRwee3w20MEDYcFgFa5ueV01awxh
+ dth5imvBbLb4=
+
+Name: assets/Resources/cosmetics/head/hat/baseballcap_basic.sgm
+SHA-256-Digest: T7/mgSXK+Y2QXH0+jcUB1ebLxfWuh2l3j1+5an7o+d4=
+
+Name: assets/Resources/shaders/Level.ps.769.spirv
+SHA-256-Digest: 9GZQDBhLrPbvcWI54W+WtJ+twMMztflHIfaLAf0jMm0=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Attach_R.tact
+SHA-256-Digest: FePhzmojItq1XCINUnFN9D82hweBfMXFl0xv8pRebGA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.1.spirv
+SHA-256-Digest: Sqm3oFFNvY2hSkjW0SvYJAHbNhO+Gw6C72SdoyFhyyQ=
+
+Name: res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_
+ 0.xml
+SHA-256-Digest: QbZiYpbgN9H0sfyHMEpy8ui6LS0xht3jf5oUWWpRw1E=
+
+Name: assets/Resources/shaders/Level.vs.288.spirv
+SHA-256-Digest: tzppP8p/S4RfCfrGpR7VWcVpbFPpZbjCGOaLfXiQLjc=
+
+Name: assets/Resources/shaders/Level.vs.0.spirv
+SHA-256-Digest: IeoowjRJYgdPOBO+D0/Wi3xXdugZRsXkvjMyY9pLqk0=
+
+Name: assets/Resources/levels/official/15-easy-6.level
+SHA-256-Digest: vtqD90MpwO3WKMc+y7//3lADtY2I/nsjiEdZscZthLk=
+
+Name: assets/Resources/bHaptics/Vest/Slide.tact
+SHA-256-Digest: g5u2gNaZQ8fkC94lIIinlVr7f9edx5nSN3I0Yf0K9F0=
+
+Name: assets/Resources/shaders/Player.vs.90.spirv
+SHA-256-Digest: EOV71sm1o3UCwhFqSOQn27kpK1RBIYf32gwTTibUM5o=
+
+Name: assets/Resources/shaders/Level.ps.333.spirv
+SHA-256-Digest: NQpEHJmU3ypPi5CI+rOJiYPIilkKbcM0+CqDxgkaPK0=
+
+Name: assets/Resources/shaders/Player.vs.23.spirv
+SHA-256-Digest: hzf/2a8ptf5Czwlmeer5i953fKIu6mne0fWhpl/kImM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.0.spirv
+SHA-256-Digest: LsKOQttRC3OlflLz+9rdvm0uJ0xxxz/GaxDqMhS2Irw=
+
+Name: res/drawable/notification_bg_low.xml
+SHA-256-Digest: TKBqp+Uor6sMSS0hh3/LBPA8npa5FpoCNZ5C+oGd9d4=
+
+Name: assets/Resources/shaders/Shaders.json
+SHA-256-Digest: lUyDEwu5M1deBZhg4uRW2bHcWFA+lzjDXohiGQZc2Z0=
+
+Name: res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png
+SHA-256-Digest: NlPSYtOZXvLAcgxYFIvIvBve0JtKmpGyMXjEERHITNw=
+
+Name: res/drawable/abc_list_selector_background_transition_holo_light.xm
+ l
+SHA-256-Digest: lS6rWjce8sDMUWnT4z45hxyrY5fvbQBw+FUS4Z0EeuI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.20.spirv
+SHA-256-Digest: izgjDm2LpJkQAskBEMD6o99DLh4wSn5g6jmZU9LiS9A=
+
+Name: assets/Resources/shaders/Player.vs.28.spirv
+SHA-256-Digest: 7TdCErBzMlPaw4/BwZVpGPFsGCuHk0wqsNwm2E9qFEo=
+
+Name: assets/Resources/shaders/Level.vs.19.spirv
+SHA-256-Digest: jPtt3Q4slHIsoCX29+l34n3/BiiHFMDvlq/wBtcr8jw=
+
+Name: assets/Resources/shaders/Level.vs.131.spirv
+SHA-256-Digest: RtYlUos86l5vMVXDZsf8PSIYkPuJ8lVfv3/7HBSR4xg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.8.spirv
+SHA-256-Digest: eSe2i+BsXUYrJdMtYgGusEEnsTXXPK6wBP1ppolkB/o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.250.spir
+ v
+SHA-256-Digest: FviOfzaMkssnDou2y0uUEhYn2dkyD2drxbPYEkjO11U=
+
+Name: assets/Resources/models/shapes/sign_collider.sgm
+SHA-256-Digest: SVd1Wq0kPEye2b3aPDIpkmFQLQWCQkUDPkRKQdO/aWU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.23.spirv
+SHA-256-Digest: 7fLVYmIVPSDHBbAJ9Wsv9nhFIbIunQ5X5MPE2TV2GIs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.92.spirv
+SHA-256-Digest: WB5VLyS8/C5f7m4WwscRuafTZQY5d7s8diuwO6BH63A=
+
+Name: META-INF/androidx.customview_customview.version
+SHA-256-Digest: sBXfV6fOpm4gx92kOvMmYlDyT3/2yEwDvZwNUXog7ZY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.124.spir
+ v
+SHA-256-Digest: N7++wUvL2WvLZKLP5xBpldHJCSwVXIhSvtz0eBLrIXo=
+
+Name: assets/Resources/textures/grapplable.astc
+SHA-256-Digest: KZIPQIowFJNr1BXaihgiLZxD4vVwhQzmVvNbrC7GoYQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.46.spirv
+SHA-256-Digest: 7umwOnMCATah6YqgMxG8Q5Iqpa/F9aJ3Sgh2n5Qcgm8=
+
+Name: assets/Resources/shaders/Player.vs.95.spirv
+SHA-256-Digest: 8WCSGQMXEVWNJvbdDYoe50cUr/0eeGjkX4GcqO94KzI=
+
+Name: assets/Resources/ui_compressed/mute.astc
+SHA-256-Digest: mALkU9jiTWBVVsvqzqH6vdXiOq/fYiaVIGI97qvIccQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.6.spirv
+SHA-256-Digest: P9uhNxlUH7aOuWuIzO3rOJ55eap/C/Vmv2WPBMKmMhc=
+
+Name: res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png
+SHA-256-Digest: 8/3cTphHsVd13ZiF9kG+tKC0SGhobf6oSe64myqLylE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.191.spir
+ v
+SHA-256-Digest: kMWRAP2YsSShChcu0ot5tz+hGrnWwUtV5ytXA4iX418=
+
+Name: res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
+SHA-256-Digest: nx6MDBVQWCSxgKuSzta2CD9D6aDk+1Kolt8oeUQXFX8=
+
+Name: assets/Resources/shaders/Depth.vs.0.spirv
+SHA-256-Digest: SjohTtkHP5V9RCsiSiG6N+9vOKQPZbXDdCvUzWqMJzQ=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: wtX9LAiRmgV7Hu83AWzcfmHFVfYvBiJsdaCsQ8Z/4Tk=
+
+Name: res/color/abc_primary_text_material_light.xml
+SHA-256-Digest: /NW/1FsXjxs/uIC1nFAet0W2shqwu/BSsY/vzHqHNQk=
+
+Name: assets/Resources/shaders/Level.ps.2.spirv
+SHA-256-Digest: w0qwZ/N0jKQ54/H94g7xxnkvJS8y9T8V5/yugaDcGzc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.5.spirv
+SHA-256-Digest: rwyOAmutFmlDkIgAXyZImSDDljcwZ6PHTc7svHGaOYA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.44.spirv
+SHA-256-Digest: lwjtgQyjHGv8FKbdUIf6gcLPsw94LcjcF2T9di5diug=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.129.spir
+ v
+SHA-256-Digest: RC/3xzps35/8UyJV5zg+22pCKubf199PvwS0ZrwkJ8I=
+
+Name: assets/Resources/levels/official/4-tutorial-4.level
+SHA-256-Digest: Mxv+jd0Lbon5WgqjHItPRRxCZCm7oM9D4Y0/RQa2irM=
+
+Name: res/color/abc_primary_text_disable_only_material_light.xml
+SHA-256-Digest: dp/GFw2VMitnOmW5QNneuxZikpoXKRhxZiC9j/reZWI=
+
+Name: assets/Resources/shaders/Level.vs.136.spirv
+SHA-256-Digest: 3snScWM53HlF49QRAtqYiOmfzogdhz3istDFUQGuNtE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.255.spir
+ v
+SHA-256-Digest: S9vhKp325FBLBtGg+rRbUHS8V8O0vuFtIHrJKT7PgNw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.145.spir
+ v
+SHA-256-Digest: pIhaFa0JOAxrWHPfcD6FLu6Ox3iBLDQkJx79yXVU4OE=
+
+Name: res/anim/abc_popup_exit.xml
+SHA-256-Digest: qQ1EWEmT7uuTr+AFX4EoVz1t+oLB7IXQhjRvq4lPNgw=
+
+Name: res/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: sI0stUFfbHJSYlz3e1rUQl441WkEeSeJPtyVYEK4HfY=
+
+Name: assets/Resources/audio/ui_close.ogg
+SHA-256-Digest: CL3OYfLgQYo7CJLmcOb492YZO3qdI0hvCjIldBGYlGA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.97.spirv
+SHA-256-Digest: BWFgzghvUiruLyS+XqRGbWZUvUhBCyP/UC5vVQ3sTes=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.90.spirv
+SHA-256-Digest: yKVtDT8/1DDDQSUmhiEVLm1W4RKXVhChmz2eaI5QfeQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.3.spirv
+SHA-256-Digest: 2MXu1ZCc18dw+StQV18NOuG576m8uQDq0ufJg4QyJwc=
+
+Name: assets/Resources/models/player/editor_controller_button_menu.sgm
+SHA-256-Digest: Ev4whOMgQ0/yPVwfKrVG8Qp4wkOa4la9Y7f7uUV1mP8=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Bounce_L.tact
+SHA-256-Digest: 1918NDmPH+fGYIobhkK3rh/Xv7K6A1tibtXy2KZjVgo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.28.spirv
+SHA-256-Digest: latJWVgiMPR4EfNuPvqTKykolOtnQcXHE0FqFq4tpls=
+
+Name: res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
+SHA-256-Digest: EkrUqwbPDFz8IPw/qodovnscqV/Y5X4CHqBnumiEXP8=
+
+Name: assets/Resources/shaders/Level.ps.579.spirv
+SHA-256-Digest: /eEKuw6G+ugU4w+qI4UI5PYTaHcsyvq0F4dKCu3C+c0=
+
+Name: res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.pn
+ g
+SHA-256-Digest: T7Xfw+Unw1Z0i3MRBOtJn3HcAxcIaUdb715LsKGSic8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.166.spir
+ v
+SHA-256-Digest: FTIEHH+EzBJ6ApO3i0lo9L2FBvlrEMamHLC6W66ONGs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.196.spir
+ v
+SHA-256-Digest: b2tT7u142LmuI/2Dd7AKMBPBszCIFcOtoPrPheHQxo8=
+
+Name: res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png
+SHA-256-Digest: yAJWXuNfXXi+91to/nY6ciNplHzbi4rTMzkJdPODuIY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.22.spirv
+SHA-256-Digest: httA0fa0m7yUTcS0wW8oefuY0WeIjadlX5sZsh/aRaA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.41.spirv
+SHA-256-Digest: 7EcO3YTlG9brZacZl5zt2UdcJOb8Rb/6CyQAhYxnXcI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.71.spirv
+SHA-256-Digest: InOX40CrWqZBJu2OhNF+N4DZYozmX77gr0KlURw2PJA=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_star_half_black_36dp.png
+SHA-256-Digest: w7SK/aq2xce1sCkQH5Ztf3BXb7Iy1Q5wNnfflBFcpsM=
+
+Name: res/drawable/abc_ic_voice_search_api_material.xml
+SHA-256-Digest: 5ZNuyUl/NMlw1LLmohZSglpgC/RVD0nWC4izRf/ZR24=
+
+Name: assets/Resources/cosmetics/head/hat/cowboyhat_basic.sgm
+SHA-256-Digest: mpEaikebIOuITGcJ0U/x/Zl53RIDJc2i93wmS2AFSpE=
+
+Name: assets/Resources/ui_compressed/mute_self.astc
+SHA-256-Digest: EDgH3pz5ELsxwRT9SWMV4mAX5yHPBvYRoDFdv22+uiQ=
+
+Name: assets/Resources/audio/player_step_concrete_1.ogg
+SHA-256-Digest: aDHn5rJHoYMQFS4F+tnP50cjkuT6V/z3sftJ+gPW1ro=
+
+Name: res/drawable-hdpi-v4/abc_ic_star_black_36dp.png
+SHA-256-Digest: nWjeTJyBf7IZCRntsN1OZNqzMhXPlZ/Ezz8GbYK502Y=
+
+Name: res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png
+SHA-256-Digest: 4xc1BT2zUjphJlWAySzUv4e0hzT1eCHUdDrYCX4dISY=
+
+Name: res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png
+SHA-256-Digest: ARhAlJwDuQ/IfaWW36M18otL0R4Eh27YWbTLNGzaLJY=
+
+Name: res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png
+SHA-256-Digest: uWKBX0qG0GFF8TOEmLEHsyhzF3eoE9KTGntXxhvWLGM=
+
+Name: assets/Resources/bHaptics/Head/Impact_Front.tact
+SHA-256-Digest: erpvCCdaU3ViXVypYGk36b3+yBKsyw50AMvrXrcjmyE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.140.spir
+ v
+SHA-256-Digest: eFovKZ4GKImCwVfX8tlZjFpbU6SF6SARaI6D1FoCukY=
+
+Name: assets/Resources/shaders/Player.vs.74.spirv
+SHA-256-Digest: d/xObXF+X7cHsbQG0JbXWijbt7ALggWIJZBIiilC5WA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.95.spirv
+SHA-256-Digest: W0MNcURfBL3fFStllJU7XDBn7FtaMc1PSyROCJzh/hI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.67.spirv
+SHA-256-Digest: x7w0gvPiofIgLPZOvBeAz0e7nJJQIspENnLY6Ih6nww=
+
+Name: res/drawable-xxhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png
+SHA-256-Digest: yIX6rFnkB61k4Du2qTUSqfS6+H5BupbPqQG/Rz5jhlo=
+
+Name: res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_light.png
+SHA-256-Digest: xM8KfMBRVh48F2jOT5Cg5DjKnYkmnl3uDGNzkY7E/xE=
+
+Name: res/anim/abc_popup_enter.xml
+SHA-256-Digest: YErsUx6Ch8fAiIjeixe0iDw3wAcD2NlVHDfVWS96PxU=
+
+Name: assets/Resources/ui/spinner_0.png
+SHA-256-Digest: 2AkLmi+cWaCMTmp495Y8IEIN22gi68bGwkcQF6LLyik=
+
+Name: assets/manifest.json
+SHA-256-Digest: iaZE7hgdMes2LJ6mmaaucHjFDf4+lNxoVWlJmbVq80w=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.65.spirv
+SHA-256-Digest: R703vDm1/8XgGgP9N+cVmFQiONBwC6QVGR+viZuHLZg=
+
+Name: assets/Resources/audio/player_impact_12.ogg
+SHA-256-Digest: YCvG5LD18nV8ic9NuSNVGXtV/caSzHakm6fqvtUsExk=
+
+Name: assets/Resources/models/shapes/cube.sgm
+SHA-256-Digest: Ggz2MkyfyipD4IURIcSM18dyKPNfc39ieUwrs9Dn1cI=
+
+Name: assets/Resources/shaders/UI.vs.25.spirv
+SHA-256-Digest: kaSNAgVlTMD4seFJDyPYcpEnyvSjrZM6VKzIpQItu2g=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.ps.3.spirv
+SHA-256-Digest: NzIZbQmviyo8uxvoEoYgu5qd1044ggDWHBQycgUKRE8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Particles.vs.3.spir
+ v
+SHA-256-Digest: aaPF7oHTIatvIHI/Uhwpt4+KmQuXfoBbOxsqVNUPkxk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.108.spir
+ v
+SHA-256-Digest: S5K00P9N84AAYH28TdgtNgdBU6zRzB3vzQ89o+6ppJQ=
+
+Name: assets/Resources/shaders/Player.ps.47.spirv
+SHA-256-Digest: jIuE6yHRjdCTkfvTMYMcCOVifTRigRZL5Gw0hJQAXTI=
+
+Name: assets/Resources/fonts/Roboto-Light.ttf
+SHA-256-Digest: D0m4PtS6Iiokm/V9KyurWdweYnXzOJN6fAJHWwUXxbM=
+
+Name: assets/Resources/shaders/Level.vs.49.spirv
+SHA-256-Digest: IlvuNH3ilAdDBNrhw07W7PwhJx+UWrh4a8HLwgR5wyk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.170.spir
+ v
+SHA-256-Digest: U+plrkijAHGitCNYxa0S/XH2jFJGuhPPcVkFskHpDzY=
+
+Name: assets/Resources/audio/ui_hover.ogg
+SHA-256-Digest: okihBKHoNeyM/d2dd5/Hi5ePvBvdIxrSW/qbGQZ51v4=
+
+Name: lib/arm64-v8a/libbhaptics-native-lib.so
+SHA-256-Digest: TVn4nL2/VNYUgAWrWEHjyoXU63+mhxYMQqGSwy1MQJ0=
+
+Name: assets/Resources/shaders/Level.ps.290.spirv
+SHA-256-Digest: oxx0jLYpgOgY3/PZW1gfBWrfXqEXeHXgg7vH2u5MPm0=
+
+Name: res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png
+SHA-256-Digest: o7cIb7duDbf59jdVQlf6NOnv0T135el/kNSBQt3TpSk=
+
+Name: assets/Resources/shaders/Player.ps.51.spirv
+SHA-256-Digest: ZHRVdvSBsnGllzHV5mCc1v7FRrj93udDQUlRI+XoQKM=
+
+Name: res/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png
+SHA-256-Digest: dIPvAkZXWeat87yaDB7awyokywpzJtCN4G3JX2rJ/CA=
+
+Name: res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
+SHA-256-Digest: DLGQEDnBdq46Oc0jO97xDQMiYc5hm5XeX+tBempXCfo=
+
+Name: assets/Resources/textures/grabbable.astc
+SHA-256-Digest: 3HND2DFL25HsT9x7KZu9qxdrMTcW9NgTQzQrXuYdhyg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.218.spir
+ v
+SHA-256-Digest: 9HWEjRd7/tnPNNYlXiSatUwWU5n6PJ56LUHjp85IVWI=
+
+Name: assets/Resources/shaders/Player.ps.1.spirv
+SHA-256-Digest: 2ipTgw217EekB1Shk2lu+T/IqtIr2Zw/5OdQ53QlD0I=
+
+Name: assets/Resources/levels/internal/lobby-treehouse.level
+SHA-256-Digest: UEnv5TqO223EPzNqtyFh20e9NrJX2FX5uR9i5yvi2/0=
+
+Name: assets/Resources/textures/default_colored.astc
+SHA-256-Digest: r0G8kjmGXFDmkeYRvKuwbQgF2y8O/eidirn7sz1m+/g=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.122.spir
+ v
+SHA-256-Digest: 4FyWr9opUXhS1Jeb3XMFei6/b/1kXI5oQ/FfG+HVGoA=
+
+Name: assets/Resources/shaders/Level.ps.258.spirv
+SHA-256-Digest: cvN4IeXJbmxrw20Fj6DVx7wC233vooDFr8zorZi8OkQ=
+
+Name: res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_light.png
+SHA-256-Digest: 4NY3M1gEF7+pETLk4IReptYjc9UAi0dDgjekJNPN7Ek=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.13.spirv
+SHA-256-Digest: 7ctA+fonIkGE/rRssvo13xfmaUY4vRKc6DyvQ3aOQA4=
+
+Name: res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png
+SHA-256-Digest: FMuoCWuNoQW6eQhnGTEFGxGWmUcS8hIU+OgwSKOEW+M=
+
+Name: res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png
+SHA-256-Digest: VBHU64GmG4iX9z9KWhtBXhFcZMd9JaBIl5NAUQfY/rA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.55.spirv
+SHA-256-Digest: 3AR2b45/9j9TCleahgYmG6CPKactFsh6Htb/g0Rck9o=
+
+Name: res/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: kvlu/uTkTiENp/t52uxa1lVfZ/i/lwPE0xXCzdWR/tA=
+
+Name: assets/Resources/shaders/Level.ps.329.spirv
+SHA-256-Digest: ds7dtGW2GpddLOfa0a/6OYydm7m0gk1+c3rH2KN36iw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.86.spirv
+SHA-256-Digest: 85Dxxn9JjyP/SRdDWCZErxNPkCy1QDZ0HNV98Cy1lWY=
+
+Name: res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
+SHA-256-Digest: FQ55nOLd/tDVrrgXret3T9zZZ5ZZDLr+F+AK7OARTLc=
+
+Name: assets/Resources/cosmetics/head/hat/cheese_basic.sgm
+SHA-256-Digest: 1Vj1ROcmIHa7/0piR7k+KHQFNGq4qczxxR3wP/6OxRE=
+
+Name: assets/Resources/ui/favorite_on.png
+SHA-256-Digest: Rt0FGiFxfu7XyEMCT5aEnUgMrFRud1oBjfGRngKfGxY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.161.spir
+ v
+SHA-256-Digest: Nrc8M94vC79Wo8bVcHcT0SCpuFWrwvOq+kUIFjBoYl4=
+
+Name: res/layout/abc_alert_dialog_material.xml
+SHA-256-Digest: WQ0LMKUpqOYjD2pswShJ4xl/ZxhgJ8AS3bBY7x/72Wk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/OpenVRMask.vs.0.spi
+ rv
+SHA-256-Digest: F9CymWjfFqaIxaDTVtKVrpb36bK0zkzyH1WGuHknCPM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.10.spirv
+SHA-256-Digest: dq1s09imJQqRdq9bZ74zmLttGBf391W2ilwyTsrGUsY=
+
+Name: assets/Resources/shaders/Level.ps.832.spirv
+SHA-256-Digest: Dp2/jrUjam6Wwpzl9yVc5sNoEQrdIWqnUvztzNvoak0=
+
+Name: assets/Resources/models/player/button_copy.astc
+SHA-256-Digest: OK1jT4zGB18nNYkylpqQHxC+BGwdVJS09vDByLmwqSI=
+
+Name: res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png
+SHA-256-Digest: L+t/BaWoA49wiB4gjkJV5jIz+OSMJd5urJVJPuoHkqE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.32.spirv
+SHA-256-Digest: e1mPV+UAX5Jf+3XAjqa607XgKpPFIacXUA5wl4DLs5Q=
+
+Name: res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png
+SHA-256-Digest: q0P9khriKWWfwoE0e35cWDqpg4NZ1HWmd3jppuGnbJs=
+
+Name: assets/Resources/shaders/Level.vs.194.spirv
+SHA-256-Digest: PkjTaD88os07sGaJXGVnsF4NqsEStSRD/+Ch4FhB1cM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.74.spirv
+SHA-256-Digest: JeYPNwx/ZagJgJCqulpwKd9d8JKPES274FfE9fIRrkc=
+
+Name: res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png
+SHA-256-Digest: i05+FDaOWefNv++TbIlhDblJf3riBsgmnf7lPYbN/pE=
+
+Name: assets/Resources/shaders/Player.vs.4.spirv
+SHA-256-Digest: Yw/aKoBPRwDdfSaBpFvFG2XF5opqd9gw7P6aMEkXMgk=
+
+Name: assets/Resources/shaders/Level.ps.1160.spirv
+SHA-256-Digest: z193f+2X9k0LslBM86jjt1DaG5HVFuag7uZEqV2nYJY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.79.spirv
+SHA-256-Digest: PjaEgYkfQFcLuTucnE6TeIrh2lXI+uJ2M1sufc4QSxs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.50.spirv
+SHA-256-Digest: QG+Is2ynd/QWGTbto89qN+0QFGV6VVWFaLuCP4w/haw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.204.spir
+ v
+SHA-256-Digest: +QblT6++0VKyWLc6o2kk/mZf/hfvGzlymgIIV69z5qw=
+
+Name: assets/Resources/shaders/Level.ps.265.spirv
+SHA-256-Digest: BHCDnXii2X64axfyDqsi/VcGOe1wbgLzeRJncdGEljU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.220.spir
+ v
+SHA-256-Digest: 51bFeETFaPJgMYOClrClWwYDq/r+bAdCeE2KAVhj0M0=
+
+Name: assets/Resources/shaders/Player.ps.6.spirv
+SHA-256-Digest: jaCa51C0ezp+RVpo4RwwN0D8VSjZAuFXOvkwt5PzlCk=
+
+Name: assets/Resources/bHaptics/Head/Impact_L.tact
+SHA-256-Digest: ZnkNNbSJzOKgYXLzWn+RYQWDyp4kCXvSKEzomwnWJaI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.62.spirv
+SHA-256-Digest: A8S/1Zbq78iRKMO4QKxf1Jrs/nH5KgyK6jLADvciY10=
+
+Name: assets/Resources/shaders/Level.ps.1034.spirv
+SHA-256-Digest: SUOWP2wWHgdD/OIlLVxa4tPm0Q3K+12PA6TwAKpvcNQ=
+
+Name: assets/Resources/shaders/Level.ps.33.spirv
+SHA-256-Digest: 0lw0Gc+8nWN1SQxdxSwsUXKzrR7Uk2Jpn9S1wcw5OoA=
+
+Name: res/drawable-v21/notification_action_background.xml
+SHA-256-Digest: s7q97jPoHpKzAS1U3+fCwVSD+V1B8XCZlQj+oowt5kc=
+
+Name: assets/Resources/audio/player_impact_8.ogg
+SHA-256-Digest: oxMd2+HwhTw0JaCqmSJM1VGgAJQXgUDk9F7qDrgYil8=
+
+Name: res/anim/abc_slide_out_bottom.xml
+SHA-256-Digest: Ib4NnOJaf+vnz1pCabVUbYN2NtHY+hoeM7lmjnNfYtY=
+
+Name: assets/Resources/audio/player_death_fall.ogg
+SHA-256-Digest: CT7HBHvQFXEW3IdOyJiHqg8XPe/dGnIHfUvJpcbOY4o=
+
+Name: assets/Resources/models/shapes/start_end.sgm
+SHA-256-Digest: sbk1Jc2gVc6ZMW//JeUw3g3LtJy7mZtuF2wTPZ6mJOE=
+
+Name: assets/Resources/shaders/Player.vs.14.spirv
+SHA-256-Digest: DlmFnUjhGUomqqfgvmgvm8R8UK+TARcwNWIr+SYcA1Y=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.ps.2.spirv
+SHA-256-Digest: S+/iBAjcuDYX7tE9YjDsCP42Vrvf76qWFkpqhfyiGwM=
+
+Name: assets/Resources/shaders/Player.ps.42.spirv
+SHA-256-Digest: TZiPhuabgcgiGkK0uhD+BFG3Lyu7g1o5TPHLWzkVdoU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.110.spir
+ v
+SHA-256-Digest: ARdCxM9BZUfOqHCQ0S3u3o6ypSYg6WV4F36nTIGLvIw=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png
+SHA-256-Digest: V6tHcg77U6UxC9RaXJTVatQLJk+cmD845fiOU6hkRPU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.103.spir
+ v
+SHA-256-Digest: 5OtMEE7YqSWEN225BSs136seCgTs6f6NHiUONdcB7p8=
+
+Name: assets/Resources/audio/player_death_lava.ogg
+SHA-256-Digest: v0hOU9YPgStI5qDc1D0FIolVLp0wN4IOeNEVgb7Ul7M=
+
+Name: assets/Resources/shaders/Level.vs.72.spirv
+SHA-256-Digest: moDwCO/EyC3IVcS3rlYKZcg/Z+YVCw+gDdDtiInew48=
+
+Name: res/drawable/abc_item_background_holo_light.xml
+SHA-256-Digest: EO/d62vmfKkwAf5GHJ4b6bLpn3Az4F/vUKxDE2AUqfk=
+
+Name: assets/Resources/shaders/Player.vs.11.spirv
+SHA-256-Digest: 8R7dT9q/tW0vkcXVLHn8MID7xhMna3IfWaULyBteWjw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.209.spir
+ v
+SHA-256-Digest: cLdW3fEZaK/KwbqqNRFlbhcjZ3EsCiBpiQPD7gEisg8=
+
+Name: assets/Resources/cosmetics/head/hat/ninjahat_basic.sgm
+SHA-256-Digest: OX3bzLUz/4/rIT5QfDOaspbIb7M+VgQd1Oy5qfXSSWc=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Fly_R.tact
+SHA-256-Digest: SoHwLvSoDAy5KrGKPFLNlY9RmkphNTSAl7ctBJ7hDH4=
+
+Name: assets/Resources/shaders/Level.vs.178.spirv
+SHA-256-Digest: oVxH8uPeAXNOJyjKEJDI9mf0z8rFdnHFBAonZ5GFDGg=
+
+Name: assets/Resources/ui/bHaptics/tactal_on.png
+SHA-256-Digest: 33+tZizObvg8uuRlv0O3l+DD/1aP6xAtCj3e5vY416s=
+
+Name: assets/Resources/shaders/Level.ps.384.spirv
+SHA-256-Digest: 77r6ZDgetNUBx1i45FHL5hs0Sova05V+iMAKcuMipa0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.213.spir
+ v
+SHA-256-Digest: kr27Vo/fwd6ncQWR2FjbdV+0ohW8qJbh76znNYJd+Cc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.81.spirv
+SHA-256-Digest: dz3C6TXefNgzLUqAdiZ8LSd8qLjHyCIraS34LIf2mFA=
+
+Name: assets/Resources/shaders/Player.vs.65.spirv
+SHA-256-Digest: MKRqHI+EiRqzG3BWj7+neRGFsyHIjTOuMA74OG/MSY0=
+
+Name: assets/Resources/cosmetics/grapple/hook/trident_basic_gold.sgm
+SHA-256-Digest: UpwBDsTLTL3S7d4ZGzoBPH7sbG0gu78dM4Lau1QSCNs=
+
+Name: res/drawable/abc_text_cursor_material.xml
+SHA-256-Digest: 9T2fxzD4G256uuWAiU9HcL2YigWqgarfx7hPeQRyYKU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.19.spirv
+SHA-256-Digest: 8VO0Sk/Uhc+bl22dNRUGOdH8GMIuoSyIzFc7z58CfsI=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png
+SHA-256-Digest: H5OF1wtGwcEhnWxVcHruPgMxkv3L+FWintlJDmA1jpk=
+
+Name: assets/Resources/shaders/Level.ps.1419.spirv
+SHA-256-Digest: o9fFusVAD+Dlr4of4fj2OKgKOLOe8eGKjMcMsOfvC0s=
+
+Name: res/layout/abc_list_menu_item_layout.xml
+SHA-256-Digest: E1tJPpV+VlUwIaMyLliRDO/4gvAnFI0kVRXxXFl005Y=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.127.spir
+ v
+SHA-256-Digest: PTKE/q3eZruliRRD5KRGWSGH/GD7kirlCX2sJZ6thmg=
+
+Name: res/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png
+SHA-256-Digest: kI/eoS7AGr+0IWooAk4nwt3vz6HgEZXreBTOkmHFjo4=
+
+Name: res/layout/abc_list_menu_item_radio.xml
+SHA-256-Digest: iepgR+/xSGbPSbrndsLzqbKv69Oqm+CoU8aNeIvx34s=
+
+Name: assets/Resources/audio/player_impact_10.ogg
+SHA-256-Digest: VCkOvSdXj1ODbwHcvYrpCJkASRuXLS4pau/xuqDXLVE=
+
+Name: assets/Resources/shaders/Player.ps.35.spirv
+SHA-256-Digest: n42IlsBEc2szVEwOUKJgFPqhH7Jxn2F9wFkK00qlsEk=
+
+Name: assets/Resources/shaders/Level.vs.65.spirv
+SHA-256-Digest: Q+4DInaVaf95K9d6l60xb7qDBs04EUfz57czEYYAUXM=
+
+Name: assets/Resources/models/player/head.sgm
+SHA-256-Digest: pVo6MWZxd3BtOBoS2Q3clS3cI85lQquPMlj5xOMcGIU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.154.spir
+ v
+SHA-256-Digest: vEJKP9mDQo0ipezDWMh/i6mfNi7Dv/9vQ38265kMpOU=
+
+Name: assets/Resources/shaders/Level.ps.274.spirv
+SHA-256-Digest: pJ/FhJ3lRT/wmm2wWxuu4Bn8peTWktecRxaoQ/seIvQ=
+
+Name: res/anim/btn_checkbox_to_unchecked_box_inner_merged_animation.xml
+SHA-256-Digest: j3c3zOYnTtTV1vfa2IcgH0kyXkslPvH1kPkOJ5VGt00=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.30.spirv
+SHA-256-Digest: /vkoY79UHYxBhKLBc41Jm1uuwGrIsTsHFpy1/VEt3tQ=
+
+Name: res/layout/abc_action_menu_layout.xml
+SHA-256-Digest: k/VT+dgE0NIM6HVPtcrODYULSAzts4KBHEgS5u+1ys0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.248.spir
+ v
+SHA-256-Digest: MytXvDPklszBKu9EUWc9RCck6E4vlMgrr7wtoUjYDPg=
+
+Name: assets/Resources/shaders/Player.vs.30.spirv
+SHA-256-Digest: 5Ha8iXYl7+U1ANfEQBkj/B2ScL4S6dypFflL3W1bpL0=
+
+Name: res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_light.png
+SHA-256-Digest: oZ75VN6lJDdCG3cG+LvJA++EY8UULJuswWl0Gsmez+4=
+
+Name: assets/Resources/shaders/Player.ps.19.spirv
+SHA-256-Digest: I4dhrxk4g7q6P/T+yEW9Ni9+sZQE3y2276UneTlyTcg=
+
+Name: assets/Resources/audio/player_step_concrete_16.ogg
+SHA-256-Digest: aX9IxurbDHcwEFV6NRwhdJTneN++/dERbynknH5ST6c=
+
+Name: assets/Resources/shaders/Player.vs.83.spirv
+SHA-256-Digest: siFyLUje1SP6qm3oi65jfhwYJbnpaYHNAGV/qJKRMwA=
+
+Name: res/drawable-ldrtl-xxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: BH392HxEPg5NekWz94W06TVbmOezgV9UuZYcN2yXVHw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.18.spirv
+SHA-256-Digest: Rg38eooWK7mjdXKUj8KQ9+yJ2ZKRN3MDbRtHJ1pBNg4=
+
+Name: res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: Dlb3ReTO6CqPHDkeS0jO9d5fEzDa7WmJVj2V1nUhtaI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.222.spir
+ v
+SHA-256-Digest: j/QN1pDSUqvl4iMrUImqQ7AdurEqUYLnnSkPa4JjG+M=
+
+Name: res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
+SHA-256-Digest: veqsO7tZaE3reKBiWkYqdLb5uQ4HPlA0nOuVb1TF6Is=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.152.spir
+ v
+SHA-256-Digest: fMMVYuSXA2yK0n9xtg4Jtu8Ki9pTW83G/s68KNOidWg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.0.spirv
+SHA-256-Digest: zJIvh3jW4fWIQL6FJKvGavRf39kBkCWT5lYQLFC5qSU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.112.spir
+ v
+SHA-256-Digest: VAI2jiiQQ2N1eAPLFlP/Suk93/cDuEzaEWjetXs9uck=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.80.spirv
+SHA-256-Digest: xcU4Dph4gRQkk/h0fZBsygssuQim78cXAejV8L/LdJM=
+
+Name: assets/Resources/levels/official/14-easy-5.level
+SHA-256-Digest: aR1mHnQoPBTWMzpStcpAOQrTm4qUfcgLe4AKZzm6NNU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.32.spirv
+SHA-256-Digest: 0r3rRu5IvPA5WU84rZFxNkUFPuC7/cQWG2Xs1Z6LWZI=
+
+Name: res/drawable-hdpi-v4/abc_ic_star_black_48dp.png
+SHA-256-Digest: 4Hvech13xG3erGBmJFFZrVJl74wHUimV29++WpRCXzM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.184.spir
+ v
+SHA-256-Digest: Y84VPq6nQJ2nzuuYSm1F7OPJY8KRT7FvTij63jWapsw=
+
+Name: assets/Resources/shaders/Player.ps.33.spirv
+SHA-256-Digest: +VbxmNfXaSYC6k/52Cl1+Jp2IxU0/HbPE/T3KZEkbaY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.118.spir
+ v
+SHA-256-Digest: Sf46ZDudoCYgb0mBttK+kvW9TzYfHgz3wA/STg/QrY4=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: GZyIW1ySpVTa2ZjoUz1IjcX/h9HMMvPyp8jCqp0Ow/E=
+
+Name: assets/Resources/shaders/Level.ps.131.spirv
+SHA-256-Digest: JNtp/N/A19SPT+gct/JNJxOFWW0dsqPcRBT0QS4GnFg=
+
+Name: assets/Resources/shaders/Level.ps.1416.spirv
+SHA-256-Digest: Tufw22Qpix4rfbSDY9gf46hbnv7ETPiIXHW97Dlm9yM=
+
+Name: lib/arm64-v8a/libc++_shared.so
+SHA-256-Digest: q16OGFTXizPlghCKTHT5Z5pVv56innunzzDeUtOwE3Q=
+
+Name: META-INF/androidx.lifecycle_lifecycle-runtime.version
+SHA-256-Digest: FY4zvJg4oQMshX0xwjyxWgBo+8AbENYwMx3jmM6lrwk=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png
+SHA-256-Digest: wnGMeqpfmqovXuCES81WriaWgEtNRJOiEOqnEBJvMFI=
+
+Name: assets/Resources/cosmetics/checkpoint/flag.astc
+SHA-256-Digest: 0vAfzq7t8CssJIHGMaAy3aPWSBS7KCRnbVjW6UGCQp8=
+
+Name: assets/Resources/cosmetics/head/hat/crown_royal.sgm
+SHA-256-Digest: k5xxzIrL8mhl52qURjb5x5EIe8AWpaasTyewywQSii8=
+
+Name: assets/Resources/shaders/Player.ps.14.spirv
+SHA-256-Digest: sIYPs4/9TQCu/xabq7eTsptydISlf9QsH/Uyx1e0p14=
+
+Name: assets/Resources/shaders/Player.vs.16.spirv
+SHA-256-Digest: ICVWoB7/U+SPgz/ITahi/juX1eO6PezbbtD+qPbpE9c=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.243.spir
+ v
+SHA-256-Digest: /SoTxyMhJr33HovwsuLVK+7aQ6NswP62Shqe3q3E0mk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.7.spirv
+SHA-256-Digest: EDnrlohnbVJ5FRlZkbD432KtC82ASlv1FRhqSszimsY=
+
+Name: assets/Resources/cosmetics/checkpoint/flag_basic.sgm
+SHA-256-Digest: IqVgZiSm/7/qO3J1CGzlAA+O4twT/Uf3l7LFtJUqY88=
+
+Name: assets/Resources/shaders/UI.vs.18.spirv
+SHA-256-Digest: /uoHTO60k8hhskjM28MjJ856GQoOb6J3cK7GIBxSrCw=
+
+Name: res/drawable-xhdpi-v4/notification_bg_low_normal.9.png
+SHA-256-Digest: uXY6G0jRm/22W3PCh/Bn1QB8m4GwiK1QCuoTeveblDQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.85.spirv
+SHA-256-Digest: yqKQTMiG3IRBaSyz3zv5uyQCS6Yn80EDnFrH/H0GxyQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.62.spirv
+SHA-256-Digest: jVLxgAyn6egxx15KF9GlVX3mTFbjr1jEAqH9kC06M7g=
+
+Name: assets/Resources/shaders/UI.vs.11.spirv
+SHA-256-Digest: scM1hgs9r1zIWf7P6UrNOo46AGmUKMJX8AfQWFF8beg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.16.spirv
+SHA-256-Digest: Z7Y5iQ29QAaJFfOCZMSU6UGQy05Bbv4/9G5J2S9dJPQ=
+
+Name: res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png
+SHA-256-Digest: eJVJ7xV02JGFkL4L2iGk3SssoE8BzDzZsMw2RJ/i0EM=
+
+Name: res/layout/custom_dialog.xml
+SHA-256-Digest: UvVQy3Y6XJBTBdMXDIgAZGFkfaUMUfA37cubz1pN1G8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.113.spir
+ v
+SHA-256-Digest: 2pI3SA1q6qLhER6vsOVFbRuugM6z2aw3S+8M776Xo5k=
+
+Name: assets/Resources/shaders/Level.vs.74.spirv
+SHA-256-Digest: WJeeWYTiUHSY6FJHZeCZYhRShXPrVwAzFYhV29cDyuA=
+
+Name: res/xml/eossdk_backup_rules.xml
+SHA-256-Digest: zb0CSLtSJPV0Fzpq3ONcBZ4w9dcWSguWBTne1ctBXGY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.117.spir
+ v
+SHA-256-Digest: qr5w7pCrzaZ5XT/35WG+S6ZH6uvHsOwPIgD7nmHJMcA=
+
+Name: assets/Resources/shaders/Level.ps.1352.spirv
+SHA-256-Digest: AkK6hLWOqDTwu9Vk08WqCTJM3cBe7+3w66y6XfMwcGU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.227.spir
+ v
+SHA-256-Digest: Q51pqvI6L3yVdRq1Nk3p6jsBWA9BspUe14KRBJyCL3c=
+
+Name: assets/Resources/shaders/Level.ps.387.spirv
+SHA-256-Digest: 5oR5xCrg+nsBHYmeWbktfBj8ZNdBUyreZ+kDm4F+ca8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/PostProcessing.ps.1
+ .spirv
+SHA-256-Digest: X6rjD9+oNL0AoLIBnySMGHEeU4Esu+XdK+sNx9VDThU=
+
+Name: assets/Resources/models/gizmo/gizmo_edit.sgm
+SHA-256-Digest: xTJBO+YIds9Cb4BmAD3srSxKIlAxn6SE7l7wYk8pXo4=
+
+Name: res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png
+SHA-256-Digest: m75Lp/nx0NEM2ZS1ushMa3TsttK9wZUsola1pSugTIA=
+
+Name: res/drawable-mdpi-v4/abc_text_select_handle_left_mtrl_light.png
+SHA-256-Digest: OroIxw0by31vArjHs6vsQMrrc7y1CuhZoMNVXowoB/8=
+
+Name: res/drawable/notification_bg.xml
+SHA-256-Digest: QrazTRcFbuYwwIpULZBLn8tiYgYfi2zM+mBwhr5lIQE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.11.spirv
+SHA-256-Digest: B6/MJJicvVtKXi+SQKIfctG+R+uCmF7IglkFKsDSNhE=
+
+Name: assets/Resources/shaders/Level.vs.418.spirv
+SHA-256-Digest: RksdBMjumsUwCSfxJ5tohYRusyKxAAHyhHnk2QTXD1k=
+
+Name: assets/Resources/shaders/Level.ps.75.spirv
+SHA-256-Digest: 8IDJKZyA2qy9Dv7YXTg0fTDpUdgLwxUWj4jv8D8v8ZU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.2.spirv
+SHA-256-Digest: /k8NLIdvRx/hPXCac9+NOLmE1YqYqDasFNXsfJVqVnQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.136.spir
+ v
+SHA-256-Digest: 0ctDZaxtysjNhIFlRoOv+DdAf1kFWsrECAh4NZPOdPY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.67.spirv
+SHA-256-Digest: V5umuY5tg5zRizEYFxfEvLVKT0iY8B1gkr/QUf8ZqYY=
+
+Name: assets/Resources/audio/player_step_concrete_5.ogg
+SHA-256-Digest: ZTesrOvlFwE7qKRY2O8JTIqiU5U4adP/hrxEgn2yMIY=
+
+Name: res/drawable-xhdpi-v4/abc_ic_star_black_36dp.png
+SHA-256-Digest: YuN+5zqXSIXpXvXWczv9tc6QfVs4p9hohNPNe0Hfkdg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.14.spirv
+SHA-256-Digest: A1RNRUuPQiUk8mOHmI8zOYi2hk5q5BLJ52gtxvL3Dik=
+
+Name: res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png
+SHA-256-Digest: gFmXZAvwoDPYTQACDbldkH3IkoHy1dyPERNb/3F65bA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.163.spir
+ v
+SHA-256-Digest: lbTuxEDEqoUZ3XfOrO61tUCSGS17qDQJHM6ltb2SFXU=
+
+Name: res/drawable-xhdpi-v4/abc_list_focused_holo.9.png
+SHA-256-Digest: W8i/NCILB2giQ/eetq+PZR++MbZm1IE06BvBtZGrYyk=
+
+Name: assets/Resources/shaders/Level.ps.1162.spirv
+SHA-256-Digest: CxSOVIEoUoFffU4CEyfyQiSO2TQbAH06uLdx4RIghHQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.11.spirv
+SHA-256-Digest: Zb3vGQ45S0831jZCO8sbhfJ7SkPPx4/ACKb+ITfpcQc=
+
+Name: assets/Resources/shaders/Level.ps.835.spirv
+SHA-256-Digest: QSiNDOcheFQs2rxKPY0mWozIWrF4iHslyj8ygSMvglc=
+
+Name: assets/Resources/audio/player_impact_16.ogg
+SHA-256-Digest: KnJhPShkT8iDLT3wXq4HCTAs2WINb/AsAAtzA0y0SxQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.39.spirv
+SHA-256-Digest: pqDAtOZygCc3EyLKHD7qU6wYgQI85C7WwePw1Jy8CLo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.64.spirv
+SHA-256-Digest: 8s05tLTbivNfslfKw1F8xTjzJryTUhHzo86D9Xq2uhI=
+
+Name: assets/Resources/shaders/Level.ps.321.spirv
+SHA-256-Digest: 3ih2SAJNojEMJvGLjO1Hi0F0J5XpNK1/q0UqPW0ehek=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.138.spir
+ v
+SHA-256-Digest: /vLKuXd7ki9QkpM8tjmKnTEjdZhX0KI4K19EUZz/LlQ=
+
+Name: res/layout/abc_action_mode_bar.xml
+SHA-256-Digest: jHAUU366TmrBWlm/9xBMMyPMizTlbEd/T9ZXXm+8fC4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/OpenVRMask.ps.0.spi
+ rv
+SHA-256-Digest: +DV50K4XvOr5yfFx1LpWI58Ca+mEtmtxDpxjpf382wE=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Bounce_R.tact
+SHA-256-Digest: FKmPe7csuqDfNfwYg+KZeaQK/O7K/x512ceLLl939MM=
+
+Name: assets/Resources/shaders/Player.vs.19.spirv
+SHA-256-Digest: QEZ89Y6JMGqbIwmp2x9R7GRm7hEInigFPUFlGcfmcQo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.115.spir
+ v
+SHA-256-Digest: U8Cakr9IsOfgNI2TnzaeG4JGXCykXqzr0Aot7qFByns=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.20.spirv
+SHA-256-Digest: Dn5/q0kAPFaaDlkYBjm/NOo/m6Mhk7Nz1ev43+nt0+o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.41.spirv
+SHA-256-Digest: oOzaHVJsdZIfFw82RFl8HtgNaq2xGMHkfwNqrGw6JM0=
+
+Name: res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png
+SHA-256-Digest: 8BUrTuBHoH6vf478Cn1IdABjnwaybOX9H5OLtyjb8/8=
+
+Name: assets/Resources/shaders/Level.vs.139.spirv
+SHA-256-Digest: cvHJIppqeuBYYNGPWTjq/N9s3MDuCT8z1DDo3iKZqtg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.13.spirv
+SHA-256-Digest: l0kIrVTxE6JVjX+8uwr+GfYMCZbI7RBNFG4JNMUuvJ0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.246.spir
+ v
+SHA-256-Digest: msMKJz3smHP42fYk1IMq0OtITrRxnJ7VdfEaXCazt0Q=
+
+Name: res/layout/abc_list_menu_item_checkbox.xml
+SHA-256-Digest: 7enqQr9DGj28AsF0SM40mKGexmtgQsXTy0fn4YCizDo=
+
+Name: assets/Resources/shaders/Level.ps.77.spirv
+SHA-256-Digest: uq/G9MoWly9hMNG4m3HPwiwGHrLEx0ZslGg9ld8BFn0=
+
+Name: assets/Resources/shaders/Player.ps.17.spirv
+SHA-256-Digest: +wWQvzo16RtO6m2qHV349Kk99HW5VYYPnLukr9Ey4nQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.37.spirv
+SHA-256-Digest: Vy4aIFJcEMf1TSzCDQ5sMthDI4WBsWnG2bVnQoFRB3g=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.5.spirv
+SHA-256-Digest: QUOzYapKSIbQxZUuyXFnk7VkcWtd3NlX8pwI2qYikSA=
+
+Name: res/color/abc_secondary_text_material_dark.xml
+SHA-256-Digest: LUvi24cKucPAeMT4uHOLbKOzqyQa0J4muvgzC9UEtTA=
+
+Name: assets/Resources/models/player/button_menu.astc
+SHA-256-Digest: STn/N6Rg/EdehmQ8mC2ICbFPYqGOFFYdWl8+KYJjiME=
+
+Name: assets/Resources/shaders/Level.ps.1355.spirv
+SHA-256-Digest: B9WPsjEDovYgbbgT3maQ+WZjUR2iNcvKz+xNhs88bls=
+
+Name: res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_015.png
+SHA-256-Digest: DwxazVMJ+mkbcb6nE+IzlUqinw05mIB20gqTvK+jSss=
+
+Name: assets/Resources/shaders/Player.vs.81.spirv
+SHA-256-Digest: 7RD+egRp3LaiTWDss/MmhFJNlli8NiH5yTv8/lF7Dno=
+
+Name: res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png
+SHA-256-Digest: skIlC6rc1fZUOvIXjwujZ+4aZeS4WeLJjDCSXurSML0=
+
+Name: res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png
+SHA-256-Digest: 9XRu/G9DaRqwaGACmhIxYQ9KQvW9ycpNngU8DIk9MKU=
+
+Name: assets/Resources/shaders/Level.vs.8.spirv
+SHA-256-Digest: Q7gDzL5ff8o5OirQ4ZTAYp5jzNkyeRn+65s5GpGHwOI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.189.spir
+ v
+SHA-256-Digest: YMK2sqBdF7RdvNI6vkOWYmbG2H09dPdMGMVb76wysyo=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: WFIxCh8mqhWQjGCKjiNo/1lFP2uQnTu7bvn+cCmLTQg=
+
+Name: res/anim/abc_slide_in_top.xml
+SHA-256-Digest: qrrlPKKqU14k1qoJ/88h8ffA6nT9Wylc1cgYEOCGgT4=
+
+Name: res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png
+SHA-256-Digest: lecz8oqqNHDE4imaQGfvqS35YbXweyyhmi6I+37MO1Q=
+
+Name: assets/Resources/shaders/Level.ps.0.spirv
+SHA-256-Digest: PyZGFBws4Ih8Xb/p48UJJHtoGGzyxeoGZhjv0fqE9Y4=
+
+Name: assets/Resources/shaders/Player.ps.49.spirv
+SHA-256-Digest: b36nEy4hVVNCZ8XtOlCgx0HUQeSo4mm+JE3GDtcz8VQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.4.spirv
+SHA-256-Digest: pS2w+yZy72z1GaaHlMNRqWUwvOrMblOaNG/saO1DOFU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.88.spirv
+SHA-256-Digest: VC8j5+dBzSJBugyTEuJ6yQuvSL1S0B7xHcDFP0yT9v0=
+
+Name: assets/Resources/shaders/Level.ps.1291.spirv
+SHA-256-Digest: 0tmBLssPCVpYQjNnZTOANZdc8oOqL/YT7alV5g7Kg3o=
+
+Name: assets/Resources/models/shapes/cylinder.sgm
+SHA-256-Digest: UPDiFd1ft3MVtPjSSvHFPqqknAq38EzoY10tKFD8Q1s=
+
+Name: assets/Resources/ui/demo_logo.png
+SHA-256-Digest: NFeUYbJ9V9ioFOA0wRPxaIAj4kwL6Oufmca5pk1mBLU=
+
+Name: assets/Resources/shaders/Player.vs.86.spirv
+SHA-256-Digest: WnZMEpbPNmoKuHZN2G/wE/72+KtF2FyaPaZIJp5iunE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.115.spir
+ v
+SHA-256-Digest: fretSqw0d9iBtfxUi/98UybAKQv8KBT+s7+yeFj+uig=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.46.spirv
+SHA-256-Digest: 8RQd4RnEp3O1zyNkKbWf9An71SBb99jlHZtBwf5c9Rg=
+
+Name: res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_dark.png
+SHA-256-Digest: hvZx2RypaKL2YCFEQOy4m+UR8RSqhlrgQkejwj/VG1w=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Attach_L.tact
+SHA-256-Digest: Zbbl7xizYOR568leCpehk6n+pfUW4f4d+iNslNcH8vc=
+
+Name: assets/Resources/ui/bHaptics/tactosy_arm_off.png
+SHA-256-Digest: /v5duZhvZShJOCJL4+u51u+ZIIDhCzSev+QbQQ4uLyc=
+
+Name: assets/Resources/shaders/Level.ps.577.spirv
+SHA-256-Digest: snmkupcfeaX8fhfOPT0Y8Bi/ojav7SEsaB6BBbMXeaM=
+
+Name: res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_dark.png
+SHA-256-Digest: H0nsFWf0TunDaOcGLJG4UvgKafss76jaQpdKvg/iwSs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.225.spir
+ v
+SHA-256-Digest: /0E3ctDspsk4WhTgiOh6opkq8B0RQ7U5v8aOxyLCVuU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.60.spirv
+SHA-256-Digest: 1Qls3vq7tthawXtxptna1/wRMopt+HXlzENK3Bo/9NY=
+
+Name: res/drawable/abc_textfield_search_material.xml
+SHA-256-Digest: kv0UBszj5nSMgWRRAi+U3wC9JhHdUGMWOMqdddfOEXQ=
+
+Name: assets/Resources/audio/player_step_concrete_18.ogg
+SHA-256-Digest: tCHaCz93N2KS/LsLlNRwJNAi5wMXjH9SUAwDNljjo6w=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.187.spir
+ v
+SHA-256-Digest: aq8wMSzgWLJr/bRkR01qyzT+LaWwEVQ3q/bsZujIv34=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.98.spirv
+SHA-256-Digest: Et+6zuDXe7gyTivLlaLoNEmYZJV9Rken4UOTMMH2+sU=
+
+Name: assets/Resources/shaders/Level.vs.3.spirv
+SHA-256-Digest: EyNfebvpGD8RHJy5ooAh4vwQtHU/w65wxA2yemJVi34=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Particles.vs.0.spir
+ v
+SHA-256-Digest: VEfboWricLeffQfV6GdtuC0IGPX5bDW3oJkjop8Auq4=
+
+Name: assets/Resources/bHaptics/Arms/Grab_Air_R.tact
+SHA-256-Digest: +WoxDDKRrLXn9djsoa2RRJF/MyvUSlcAJ6rzlpV/nxc=
+
+Name: res/drawable-v23/abc_control_background_material.xml
+SHA-256-Digest: +EK5zxr88crl5fHndVD18MDig7kmczZt2ObJwKxhGz0=
+
+Name: META-INF/androidx.lifecycle_lifecycle-livedata.version
+SHA-256-Digest: ZQ9kq6x0Gdn3myiISnhEOD30SZyTE9/+ek7LDZSyu/c=
+
+Name: res/drawable-v21/abc_btn_colored_material.xml
+SHA-256-Digest: vAE0g7cXfqDb6QoTT3WufGn8OxEJpJtcQrUHnueJxb4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.16.spirv
+SHA-256-Digest: TayEgidfiFv8Xvc0gg2iDUYn8caUi/yvZI4YBOHmq6M=
+
+Name: res/drawable-mdpi-v4/abc_list_longpressed_holo.9.png
+SHA-256-Digest: P/swH2Ze6CaSNYkpjSC8EI8c/b1PFKys0rSl4E5a6Pg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.168.spir
+ v
+SHA-256-Digest: 0+boZD9uvbxkDgD55WqIhi+Oofa+niL4rp8wD7ukeps=
+
+Name: res/drawable/btn_checkbox_checked_mtrl.xml
+SHA-256-Digest: 7+poW8LCaVK6HOsk0sJIrBzNfYVdFp1JUNp0t8YgmWM=
+
+Name: res/layout/abc_action_bar_up_container.xml
+SHA-256-Digest: MfwH2IGooAkshrKZl6MRPA/Qrkh+BsV3FEaBmeVKRdc=
+
+Name: res/layout/abc_cascading_menu_item_layout.xml
+SHA-256-Digest: b3Wc/rAJmkyeOyt2hleliTqEe0Lo+sxOPbCTbBS/yDA=
+
+Name: assets/Resources/ui_compressed/info.astc
+SHA-256-Digest: EcYiWEeZWYN2wDhTk4BT9Qf0sOL1Jxzl+LgeO4eWl5E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.34.spirv
+SHA-256-Digest: aeFX1Q6wv/ePF5/RoeFwXpBRRIy7KZFU49oFyHScGfk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.69.spirv
+SHA-256-Digest: 5+8vUeEK5z1/Ox5aP8QVXuwJCkLYZc0Y5w4zwNfrsbY=
+
+Name: res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: XoIr4+lV6iTgx9OhuVnQ63uD2ITPh6fGKzOKLU8rUEc=
+
+Name: res/drawable-ldrtl-mdpi-v17/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: U3/KxGsaJBvpyPr8cuqYdBbKp1+RXRt7p/pa++5ylUI=
+
+Name: assets/Resources/shaders/Level.vs.170.spirv
+SHA-256-Digest: eL+rpvTPT+EGSrNzRgc9yC0rIonsCYLEmZTKhYPH5zk=
+
+Name: assets/Resources/shaders/Level.ps.139.spirv
+SHA-256-Digest: 4vmaj1hSQEgax04ui7zP7WWoMlO493b7IoRTtxbBRC0=
+
+Name: res/drawable/abc_ic_menu_overflow_material.xml
+SHA-256-Digest: Z6aYgvB5fWPgXjyNuffYTMgkRQ/C/7z0F0bHnn57o6Y=
+
+Name: assets/Resources/shaders/Player.vs.32.spirv
+SHA-256-Digest: qpPmaEJhIQzgBgjQxESy5BVzu04kcRXWrszqyI8rVOk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.241.spir
+ v
+SHA-256-Digest: 9TeniAYZR6QczV6FESHzZncjCJw6yIAp9WemPJgP3Rg=
+
+Name: assets/Resources/audio/player_step_concrete_3.ogg
+SHA-256-Digest: elabzxILdzPpnEI52jebebqucpiWlFHz/MnmMMQdy7s=
+
+Name: res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png
+SHA-256-Digest: kQKThZ6EPfPpc+li4JU6KG/sbHy+JEemqRlEP4ti5UU=
+
+Name: assets/Resources/shaders/Level.ps.136.spirv
+SHA-256-Digest: 4liIoUhLYsFLzzByaOpgp2Q0qIjgx6c9+oali+U2h30=
+
+Name: res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_dark.png
+SHA-256-Digest: I5aoP6cPa/dJeU0KFUEAXKq+1TTx4omhAO2t15lCcKU=
+
+Name: assets/Resources/shaders/Level.ps.576.spirv
+SHA-256-Digest: rrdjddwQqdhH4nkbdxDfG0oENlTh+Ea5dhw9BhqwPXw=
+
+Name: assets/Resources/shaders/Level.ps.72.spirv
+SHA-256-Digest: 8F0SARMAd2cxylOJh4GQF0B+tWUQ18PgAYQXAbZR/oA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.47.spirv
+SHA-256-Digest: GnOA5I6FgOrqhjeYY+45+prxswcffWDSurHL639sDTc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.97.spirv
+SHA-256-Digest: ON/N5LZ13j2dm8mzg/+bmceFxF13AvBOoQ/o0rKj9WI=
+
+Name: assets/Resources/shaders/UI.vs.13.spirv
+SHA-256-Digest: zH+fRfIABbU33UwbtAzbIirqisF+sFzY4K7ibSiQP6E=
+
+Name: assets/Resources/shaders/Player.ps.12.spirv
+SHA-256-Digest: 3O3My2CBCYLvstU577Svk1PAtiAD6fRyPWEY5TaQr5c=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.133.spir
+ v
+SHA-256-Digest: g9tiuQk3Qjo7+0OAoDJ5lZs8hJP/JGan+fdnje5LA4c=
+
+Name: META-INF/androidx.savedstate_savedstate.version
+SHA-256-Digest: 0dz4kg85IN2cZ59wXCi8eApS+Wo2cctOZo431dGFR1s=
+
+Name: res/color/switch_thumb_material_dark.xml
+SHA-256-Digest: x+jndtLgpkaj6sj2uItnTQ2goqUFzd+AdcgT7ZxQib8=
+
+Name: assets/Resources/shaders/UI.vs.16.spirv
+SHA-256-Digest: BGUS7H1iL/+i5WmOohkLsgwAwwxjhjIQb1r0w4fZmWU=
+
+Name: assets/Resources/audio/player_impact_14.ogg
+SHA-256-Digest: C0ZL8T0e7VBenO2A50mSR4/oVhBr3Y3/lyl5eP47grA=
+
+Name: res/anim/abc_tooltip_enter.xml
+SHA-256-Digest: tmdR55Nj03Ea9jPrkOYrRroO76X2ONDOI1KoZzRXSEc=
+
+Name: lib/arm64-v8a/libopenxr_loader.so
+SHA-256-Digest: 54DWhwyb7PMQHtMm3lYMrX+PuJF12mPmTsR8MT2Ga3w=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.27.spirv
+SHA-256-Digest: L20iuNX45IANpQM1AUJPCRQOjtm5/S3FyPpdM+ZW1cE=
+
+Name: assets/Resources/models/player/editor_controller_button_a.sgm
+SHA-256-Digest: bLZ+T5hEJPLsusTLa77UD2dv64ILrLxi4Cd7r8TQiz8=
+
+Name: res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png
+SHA-256-Digest: /PItNSPhz1UN7VfEyZ8kRa5sj9QY+F0lydOxu0h8L3A=
+
+Name: assets/Resources/shaders/Player.vs.37.spirv
+SHA-256-Digest: Hf8lq6FOU3S13I1gxxVMLF9H5bISNhLxKH6J1sorBKQ=
+
+Name: res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png
+SHA-256-Digest: 51prIp9tNpMqV89s7CT806GGWKw88KtBksOlSbotEDA=
+
+Name: META-INF/androidx.vectordrawable_vectordrawable.version
+SHA-256-Digest: SxJ5Gle3gvkgInXn6Ufnwb2kXx0fr2pgozqmeXMTFOs=
+
+Name: lib/arm64-v8a/libRayneOgg.so
+SHA-256-Digest: av0Au+/O/MSaZOoYqU3bYnUOkQAONWa6fgSVDx/NkVg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Particles.ps.0.spir
+ v
+SHA-256-Digest: Jm8Pvb4z0tSL1Em9dX+MEpSGc3fEXuOdiXSYB8hcDdc=
+
+Name: assets/Resources/shaders/Level.ps.354.spirv
+SHA-256-Digest: ZqboCYXmEyc/rSTORBjeEeVYSNVDxptNPP8Y36bgoIg=
+
+Name: assets/Resources/shaders/Level.vs.41.spirv
+SHA-256-Digest: BitA6s7Fz6+8tP6rdw4mumGqj28eTaHK99kifoQqFS4=
+
+Name: assets/Resources/shaders/Player.vs.35.spirv
+SHA-256-Digest: 5ew8YThQmmpgL3W1C4HwgxOipMgP4KcwvaPlyr52sDY=
+
+Name: assets/Resources/ui/undo_off.png
+SHA-256-Digest: BMSdisSTtQHfY9pxmHPdpNCxXTg7tUHzBYrdSpL2QRA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.131.spir
+ v
+SHA-256-Digest: Pqy5NORJIbDuNi0wuSzOn51BB8UgXLcPtWc+5HX8Uoo=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Shoot_L.tact
+SHA-256-Digest: GGcvjnRTSPcDte+eHYgzEze3UbFjTs0izX4I4BuTkeE=
+
+Name: assets/Resources/shaders/Level.vs.2.spirv
+SHA-256-Digest: Np98CzrC82A5rtNu6JjMZIWFpk8taOR6RkWvDCmoxz4=
+
+Name: assets/Resources/shaders/Player.vs.88.spirv
+SHA-256-Digest: Bbcx3B0skeJMZmkamBRLWoC8OZUT1jf07B+DSeOzbto=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.49.spirv
+SHA-256-Digest: RKrBZOlwgsazJT+mmg8idzjuQHDADWpPPIG/YKyUCXs=
+
+Name: res/anim/btn_checkbox_to_unchecked_icon_null_animation.xml
+SHA-256-Digest: ti8deYtskRo1uFBEXETOgQZfXvHj6rXnWvc9PDUjiy8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.83.spirv
+SHA-256-Digest: GBp+c91EgkGFm50wmUJaOSOc0sIwdH+uksdi8GsafKs=
+
+Name: META-INF/androidx.core_core.version
+SHA-256-Digest: tn3OODZcad8MYC1OVUb8S2Q5CcdPF9B0LA/UBFQ/T2I=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.110.spir
+ v
+SHA-256-Digest: OhDhp0YkzHHV2xAGX2NGMsw8BkU5eL0OoqyLIPEDozs=
+
+Name: META-INF/androidx.vectordrawable_vectordrawable-animated.version
+SHA-256-Digest: wqCaKhd9lUrhrwsPIu2b0kz+XlDwwNZPH+9GyrRtU+E=
+
+Name: res/drawable-mdpi-v4/abc_ic_star_half_black_48dp.png
+SHA-256-Digest: FB+kxslOQ7g/0WnSRzf24m0FOJk6WmbKShW+Jiqa/M0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.25.spirv
+SHA-256-Digest: hwSBSAkMSEC9LuCHaAUQy3LCVNEaki6924T9VquJQ1Q=
+
+Name: assets/Resources/audio/player_land_concrete_2.ogg
+SHA-256-Digest: Nq3vkCwP29W8peRlC5YndL9Ger9JRU94ylFKA7sBtXM=
+
+Name: assets/Resources/ui/bHaptics/Logo_b.png
+SHA-256-Digest: tw2WO4G6wUBTcTEBQsUWg4fh0S119CwpOyvz2D7JY0U=
+
+Name: assets/Resources/models/gizmo/cursor.sgm
+SHA-256-Digest: ZQdJXqrX2vjfnxupjkh00CygyHE6pM7j30g7kG01OG8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.182.spir
+ v
+SHA-256-Digest: vo6CIFM/Rg7yyrr7BgmsEPtyPpPZ+MaTlKTBbOGzuv4=
+
+Name: res/drawable-hdpi-v4/notification_bg_low_pressed.9.png
+SHA-256-Digest: 4RlHlyDIzTYG5Klg5AKe0Fi4c3z+iVWMOHgAh9ZL7Aw=
+
+Name: assets/Resources/shaders/Level.vs.42.spirv
+SHA-256-Digest: 5PDN/EYH7ufpgHO9PrIM28HJUSvB1Iv4iuLCMICnCok=
+
+Name: classes.dex
+SHA-256-Digest: AP9xoy5Ixq9vWMSqQq6GO7AqD44nSfA1FhOhzXrhJXw=
+
+Name: assets/Resources/shaders/Player.vs.100.spirv
+SHA-256-Digest: XixGtVdp3Mn2d00cMDzKpPW9D0RebbgAyu9+nW/R1ew=
+
+Name: assets/Resources/shaders/Level.vs.33.spirv
+SHA-256-Digest: U4wMlT4mwB8x3EMQ9Lt7LnKak70fZlp7Q//9Sn4VKpM=
+
+Name: res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png
+SHA-256-Digest: +pnCqZwU7HDhnwJINRkf/kJPA2/3XuBh4UMu+x/lMR0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.29.spirv
+SHA-256-Digest: eGndVELtQRc/QkOVYnZ5n/oICLyUjIr9kaColyN6YFM=
+
+Name: lib/arm64-v8a/libovrplatformloader.so
+SHA-256-Digest: KCy85e/K6pj5W3srUkYlkc1RjVgaeF7OxNepAPCmL3g=
+
+Name: assets/Resources/cosmetics/checkpoint/orb_basic_pulsating.sgm
+SHA-256-Digest: eyhm1Na4JkAIiay20Ej7xHr+l4n01P6Hdp2t1j/O1bY=
+
+Name: res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png
+SHA-256-Digest: f/QdP0Grwhn/DYrOcK8L48iPdr49tI6JUbIsde2OQaY=
+
+Name: assets/Resources/shaders/Player.vs.1.spirv
+SHA-256-Digest: EgwzmsorYwdu9D3vl4gZ/2Ku8CDn2YYesqCrqaKzmEI=
+
+Name: assets/Resources/shaders/Level.ps.306.spirv
+SHA-256-Digest: WGJSOe4+ZLTotZ9jUkWDmdwK8cDpSnoqhDtRNEdtA4Y=
+
+Name: res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
+SHA-256-Digest: 5hMitZfkJHIfwu4E3Gsobsq2YEVskrkcG07vx6aAW3A=
+
+Name: assets/Resources/shaders/Level.ps.386.spirv
+SHA-256-Digest: 3HTVvc4Rco1lKjjvEoPel/VOM+P+bLN4govL/YvD16s=
+
+Name: assets/Resources/levels/official/3-tutorial-3.level
+SHA-256-Digest: CgmI30GWzPbxvSs/4m+ZBu+ezS8iECxHMSutWSEwRyk=
+
+Name: assets/Resources/models/player/button_delete.astc
+SHA-256-Digest: 9ncT/VhJobjWCQxCMKQryklJzKihnh/TS+bLL+1aRxg=
+
+Name: assets/Resources/shaders/Level.ps.1163.spirv
+SHA-256-Digest: T1eIu8zKbUt2NRZ6JENMHaJj9ll6Em70X9MvoTs8LsA=
+
+Name: assets/Resources/shaders/Level.ps.1032.spirv
+SHA-256-Digest: idAzLKhWBVvIZLNV4AJ8DvqYAATCjxuc/LKSN+fmqVY=
+
+Name: assets/Resources/shaders/Level.vs.192.spirv
+SHA-256-Digest: ybBUnw7MWQhMvEgK9d7MNfigH4avbZFWRXbkoatp3lQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.89.spirv
+SHA-256-Digest: pstCDJUGHlpXPja/x2In4Ao/qFmW7oJyibQu+aoflrQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.60.spirv
+SHA-256-Digest: xRyyL4assH0u0zdFgx2lsWi8WuSch9PLcpZWPPhd2Nk=
+
+Name: res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.p
+ ng
+SHA-256-Digest: qnEb7RKOwrrlIuTDDM7e+cFTfsBxKH48G+loV6uP01M=
+
+Name: res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png
+SHA-256-Digest: AxsKYh3/nr8SnWb8R0nHznl8qjCAjoXrOe2WwV3miVo=
+
+Name: res/layout/abc_alert_dialog_button_bar_material.xml
+SHA-256-Digest: zNcx89/MkPWBOlC5qeB224gtUQKFOc4G29Hw9/WZsBc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.52.spirv
+SHA-256-Digest: kn/tsLfyXaip7YRHXQ1vVxODuv+n1akLnW/p+IfuHFg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.172.spir
+ v
+SHA-256-Digest: yEXKQVoJDX50KvaD3QnGaGc6Z/dTHQclKH5hEJorShA=
+
+Name: res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
+SHA-256-Digest: OfYj2XQETch8EzGkl30FeA4BFVRDC4YWy2JgzIYITeQ=
+
+Name: res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png
+SHA-256-Digest: kG4YMfmezSbvYTM/6u8NhnsxfzZf8V1ukzHxoXPnKL0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.202.spir
+ v
+SHA-256-Digest: A+IHBUzhhEbf3MDUm/DccpzFs4Ea2laE7jvIzil/jCM=
+
+Name: assets/Resources/fonts/Roboto-Bold.ttf
+SHA-256-Digest: exiMtPN2ltFEwNc1BsRfIZwVOUpxSO7TKh6x7ejx6KI=
+
+Name: assets/Resources/audio/player_step_concrete_21.ogg
+SHA-256-Digest: jmJEP10ZoLGtRt/i85b/cDzeGvRgmywU/2F1RSEERo4=
+
+Name: res/drawable-mdpi-v4/abc_list_pressed_holo_dark.9.png
+SHA-256-Digest: Kj9/GL86D6a0L/5LoDK0PZ3ysESQ/TIXhAgj/kTEV8s=
+
+Name: res/drawable-xxhdpi-v4/abc_list_pressed_holo_dark.9.png
+SHA-256-Digest: EPBvRsiz8uUWJ2b4AbohfI8+y3bg0p9HRIZmjZKSgdY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.55.spirv
+SHA-256-Digest: jmSMzDJItB+4P58iMpjat99gvnyMFJVmNvvWL+nembo=
+
+Name: assets/Resources/models/player/editor_controller_pointer_tip.sgm
+SHA-256-Digest: mFyH1pQETdrcVQ3bro8qUlNdNCoU+/dkrONjmkJNEB4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.105.spir
+ v
+SHA-256-Digest: 0BXBn5+39xloihVuKYzhXUdbQO/Fy0EbYyx+9mCUobE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.86.spirv
+SHA-256-Digest: twmd2jz+lwDIbIycfUt+/zN572SfZE6pZMp08hkZwkw=
+
+Name: assets/Resources/levels/official/5-tutorial-5.level
+SHA-256-Digest: zhjuvmtF43pcJ3WJ8M7+FcK0L3QjoEToVVMDy/0wyNE=
+
+Name: assets/Resources/audio/grapple_impact_bad_1.ogg
+SHA-256-Digest: gD4KMnKJidr1sbDG6fhWv+mlSV8QPml93rezjR8lRWE=
+
+Name: res/layout/abc_screen_simple_overlay_action_mode.xml
+SHA-256-Digest: G/OcwCfMyB62/QR84d9yuA/pWMKORHQ8qJJ6egjs/yM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.84.spirv
+SHA-256-Digest: R+POCABFSd7iTr4zzIhoJUL7wyEStIqs33dnaqLpTgA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.118.spir
+ v
+SHA-256-Digest: LLlHvqvcxNOmgwtepO6yROt0nLbBR/16poRVME4GsD4=
+
+Name: assets/Resources/models/player/editor_controller_button_x.sgm
+SHA-256-Digest: taVas4VAY3hOhC6Du0cu2EGx6hk3yE1sQgtThuLTeg4=
+
+Name: assets/Resources/audio/player_impact_1.ogg
+SHA-256-Digest: wSRvsvjC4ewUXvASkFwGBh3eprH/FfkDMi4ARhMnjpg=
+
+Name: res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png
+SHA-256-Digest: efz5ARLaFstqCivtFrKjufrhb+26fHnkMpmizS8PIl0=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png
+SHA-256-Digest: gjLUCWMCP5BwlWnaIUPhSHBliGPcSn/KDd3X4OZkqBM=
+
+Name: assets/Resources/shaders/Player.vs.84.spirv
+SHA-256-Digest: gcRrfJAQ2ZLswR08s1jY7y3xT1qHWG9K4dq9o4iEWBI=
+
+Name: assets/Resources/shaders/Level.ps.289.spirv
+SHA-256-Digest: Igm6bUnS/bb8vhIILZ9tGS29uOCBHOb/u7swO6rpGYk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.50.spirv
+SHA-256-Digest: QkWVVmpc3n9e8i3unMSEeTJJiUGwRJNlUzNA5dPO15s=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.57.spirv
+SHA-256-Digest: 3NQvSwrAtLIWOBGkQcd1oImefONu3a4rGL/PH0XUq2Y=
+
+Name: res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png
+SHA-256-Digest: O6dfmMBfzRQM23wqMZhyiLYxXYQVLGQJoxY5GLGf5I4=
+
+Name: assets/Resources/shaders/Level.ps.352.spirv
+SHA-256-Digest: Ul1HjdauS+Q2dUoDbcjU3YUy5FWWTUS5Wtls63kOdtc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.94.spirv
+SHA-256-Digest: MrgkvEK/rk5VpUG9xWxme4JynZcAQtu8bt9Pu4mnRdY=
+
+Name: assets/Resources/shaders/Player.ps.8.spirv
+SHA-256-Digest: JOD5bO5l3lbE4ZinXxlGHmiEnuwXAE4hMsGkJ1SMe9s=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.231.spir
+ v
+SHA-256-Digest: rz1Xa4LVx0Ck/eYfxssD6XKqENeYYpdonXl72diY8VE=
+
+Name: assets/Resources/shaders/UI.ps.1.spirv
+SHA-256-Digest: LbS088NAHa1yMwuXZwoEZnzohuwbfJUvgq/tR3yLBwY=
+
+Name: META-INF/androidx.lifecycle_lifecycle-livedata-core.version
+SHA-256-Digest: hWrG8KyIOBXmt95njmjLWy/ottbqClBdVC+zcXYbJN8=
+
+Name: res/drawable/abc_ratingbar_material.xml
+SHA-256-Digest: 2t6C7jNWtmZtaW2FavpIiPVFvuzkC20V9Zv0f7F12gs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.109.spir
+ v
+SHA-256-Digest: iYTsdBCjNmkHjBx5UBA9HiMAizGjU1jgKBh3NdBVhBA=
+
+Name: res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png
+SHA-256-Digest: fh1QFmAUHKguTKSs8A0yHv9uVOof9wSoU1y/qH1ejjw=
+
+Name: assets/Resources/shaders/UI.vs.10.spirv
+SHA-256-Digest: GQ08VlUY6iW1MY04zL604WsE16t6OrobU/S7QheFTfU=
+
+Name: assets/Resources/ui/redo_on.png
+SHA-256-Digest: 4vD+KwU7VUj+QSHNLyfV3X5gh0D2Yvbm71hY8252UAY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.113.spir
+ v
+SHA-256-Digest: 8uiVfVIYSBpROGdcCK4HcjUO5G2kCFalBvIY7F/KFA4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.143.spir
+ v
+SHA-256-Digest: PfIoHFGvXdGfUuxY/8ft5UByJLYaRKwX2FmRryfHJRg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.92.spirv
+SHA-256-Digest: s9Ly3TQ/rSTMg3Cwr5ACb4IhXIcKh7vzCBeR2p3cbMQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.139.spir
+ v
+SHA-256-Digest: QrSaTAaMDAbKGpT4mzM0B7e2TejL7sUc+nEDBxvkl/I=
+
+Name: res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png
+SHA-256-Digest: lNrok+tF1CwpGkXPwy2st7x9iBsM5Y9zpFIWs8nc8Cs=
+
+Name: assets/Resources/audio/player_land_concrete_4.ogg
+SHA-256-Digest: uw+rh2t9YlxBYNx338MS3IofQiUDY0RF6DUUuihhlTI=
+
+Name: assets/Resources/shaders/Player.ps.45.spirv
+SHA-256-Digest: aoXat43W/xKgn0M2ZRH8bQVlIOG0P6FEvOas3F5srfk=
+
+Name: assets/Resources/shaders/Level.vs.138.spirv
+SHA-256-Digest: 0riRmeu5KpgGVbinvpMtZ6hGYo6ZStHrFGwHDXkmi8U=
+
+Name: assets/Resources/shaders/Level.vs.75.spirv
+SHA-256-Digest: IKXTdhRouXLOlHu2oE8rva/s3fmz8hY0OYxKpJCAdxc=
+
+Name: res/layout/abc_dialog_title_material.xml
+SHA-256-Digest: SANb0lXj/ypTr8l+IXYh96Gej25/OWoNb8t6HiLbMfI=
+
+Name: assets/Resources/cosmetics/grapple/hook/shovel_basic.sgm
+SHA-256-Digest: cXw9x4I1r3/JDpu571J3Ez7PRJmfaKQGnYjvWsQul+s=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_star_half_black_48dp.png
+SHA-256-Digest: Bn7GMgeGi2Gn7kY/q1Ugz23GhHiozddyzVxAwRzYexg=
+
+Name: assets/Resources/shaders/Level.vs.256.spirv
+SHA-256-Digest: DJ8DyBw8dGyYdrY5Y9GwpF/Ty3tjMk4anKbQBn2N8nI=
+
+Name: res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: /T5GSyc/SFdCmmkRyiNp6LTo/8E/386q+HGUgqgOW+8=
+
+Name: assets/Resources/levels/internal/lobby-dojo.level
+SHA-256-Digest: Xd8liPL3h/uODBc/qL86AyfESE4aMWVBaf6t3eSHN8Q=
+
+Name: assets/Resources/shaders/Player.vs.17.spirv
+SHA-256-Digest: 8/306Kjn7btTujoOjaYlIKDuqaaR+lRLjRAgv8RODs8=
+
+Name: res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.p
+ ng
+SHA-256-Digest: bPMhBPazlCk4mjBnxsySKJmWb6FAtp7ZsQB9jZUlNSo=
+
+Name: res/drawable-hdpi-v4/abc_list_focused_holo.9.png
+SHA-256-Digest: uTo8tUD35rnLQszJKVe9C2Z5H34htodDfLpUaIIu1kA=
+
+Name: assets/Resources/audio/player_step_concrete_12.ogg
+SHA-256-Digest: hc5QqEhewcDdxLOWb9dO6Mj0ah8Rw3Xnfs7m6ey+1yw=
+
+Name: assets/Resources/textures/lava.astc
+SHA-256-Digest: MLR8xpih56TYXDaOeH4HvqZdgtKm0iCIPGFfJ4UFDuQ=
+
+Name: assets/Resources/shaders/UI.vs.31.spirv
+SHA-256-Digest: ZM7/CpQ1mzvgbohbXiFx1x4L6ekarBYleFKniJ8y7L8=
+
+Name: assets/Resources/shaders/Level.vs.417.spirv
+SHA-256-Digest: vfRbXSYn3C1nO/+8ja8XFvD/0QTFEA7tha4qanehzMc=
+
+Name: assets/Resources/shaders/Player.vs.6.spirv
+SHA-256-Digest: Isoy/Tmoa3HiYrkJDI4lXKdrMAMVmGjFYj3arTPI1Us=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.12.spirv
+SHA-256-Digest: Wxiek++AjVZrq14dhy5sBa4ik/0Gr46cgrM4ffuFqoo=
+
+Name: res/color-v23/abc_tint_spinner.xml
+SHA-256-Digest: 3Ahmt1vNU5fy2o9+OfRe9atvstE/1MC+d2Vx04j3y/M=
+
+Name: lib/arm64-v8a/libopenal.so
+SHA-256-Digest: UCmJ9fXRyJ7j4io5TPu4TFOY4zJVtAUvDAkyeiy4mTg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.4.spirv
+SHA-256-Digest: ehk8+lM+WNEf61q87CbEUq5y9eIRCLE3Q159eaHvGf4=
+
+Name: res/color/abc_background_cache_hint_selector_material_dark.xml
+SHA-256-Digest: 7vf/Mn73Z5o7vVCwDRYlyVgMhh+LH6Z/sZrfwleiVs4=
+
+Name: assets/Resources/shaders/Player.vs.76.spirv
+SHA-256-Digest: vjv/3qmxk/WUlJvgE4fQIXT2iE0KPYa9CdyYuBnhhqk=
+
+Name: assets/Resources/shaders/UI.vs.9.spirv
+SHA-256-Digest: Hp6E+TiWSdKwMEf88G4PDodnh5xVOu1kO5IksdMdxEw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.65.spirv
+SHA-256-Digest: 8+/sdAyyKHbJc71bYeSMmkM1TLgT2a+ND8W4OmY5fJo=
+
+Name: assets/Resources/shaders/Level.vs.387.spirv
+SHA-256-Digest: Que2kbZlkIbtIbHwVc6sYI/NG+41wcKDBhA7uBtE1jY=
+
+Name: assets/Resources/levels/official/1-tutorial-1.level
+SHA-256-Digest: Yy05TVQeaycocY6E92LZsxFc3qUdfhMpnDlJSkIaS3Y=
+
+Name: res/drawable-mdpi-v4/abc_ic_star_black_36dp.png
+SHA-256-Digest: bD9vNf5Uk6IWngLosgW8trkqXTbsBsaYsDj4LXJpETg=
+
+Name: assets/Resources/shaders/Level.ps.99.spirv
+SHA-256-Digest: oGnvT0oGB0rebgzKvIn66SRJOeyewOMXrWx137y72lU=
+
+Name: res/layout/abc_search_view.xml
+SHA-256-Digest: 4m0ODVx+kcIzjjjw52z+E1y1Gkrm7MgpgdnKPdBX4NA=
+
+Name: assets/Resources/audio/player_grab_3.ogg
+SHA-256-Digest: wLCHZ/Y/9WYi2d1LsHNitCrsKA1v1zzwyeZgsBAr9xo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.13.spirv
+SHA-256-Digest: f6sHPeTK7Bnu/ltyaMTyttN/CLfzXWZrIF/2A6up844=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png
+SHA-256-Digest: ceYxmx48ddzJ7hbwaNiazqfWTHTDG32qHu9CM8pIgIs=
+
+Name: assets/Resources/shaders/Level.vs.168.spirv
+SHA-256-Digest: xglftLfxQHrEs1+5UpBtPCsRFu7Y0KzNGJxfGNZrqd0=
+
+Name: assets/Resources/textures/bouncing.astc
+SHA-256-Digest: quCJJd7awqUM2iIemmJH0DZF4gXs72WCtBScxz6P3Zg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.93.spirv
+SHA-256-Digest: MCz3DXcje8vxTxr+3775y3LgbuDz9ljM240re4ZxBvo=
+
+Name: res/drawable-xhdpi-v4/notification_bg_normal.9.png
+SHA-256-Digest: UcrXW2ElY1qt5dfTsuSlaRj5YzoOKQ6qQH5GeDt/B8E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.20.spirv
+SHA-256-Digest: uPDz+IFxzZvKY2M0CmF6JqO7Wk53SlktYdjhSHMYf+o=
+
+Name: assets/Resources/shaders/Player.ps.36.spirv
+SHA-256-Digest: HLbA5nq3US+VQxY9UKhEysc+hwqK8GyVwUnWn/0zo/c=
+
+Name: assets/Resources/ui_compressed/host_star.astc
+SHA-256-Digest: LeuU2oX3X2AQwJi5zOgmFZOV3QVIwKRYX8NVO3E3pHc=
+
+Name: assets/Resources/shaders/Player.vs.80.spirv
+SHA-256-Digest: fDB0DN5UAo86j/vMQdBnaJCG+e9d4NUGL6pMWzftznI=
+
+Name: assets/Resources/models/shapes/prism_collider.sgm
+SHA-256-Digest: Vdp8YUZ4YMMjTGfQJribktf2kJXaVKHSJpMuBCMazTs=
+
+Name: res/drawable-mdpi-v4/abc_scrubber_track_mtrl_alpha.9.png
+SHA-256-Digest: WiYB9xuFDvyoyVe70IzlKXqOnadjNCTuE1/48i1Cl2c=
+
+Name: assets/Resources/shaders/Player.vs.13.spirv
+SHA-256-Digest: wBjWVLdmTyX7F+OGMFFPL2H3kupS7KRtfZ+NVA9DXXw=
+
+Name: assets/Resources/audio/player_impact_17.ogg
+SHA-256-Digest: j0EJV7kGQAjHPL+ozqjyQgD2FtkhXFqkhW8L3veo/xY=
+
+Name: assets/Resources/audio/player_step_concrete_6.ogg
+SHA-256-Digest: F+g7aUKXjBWEomx71HSytGOSjj6zrZAiFqKF6ZpBazA=
+
+Name: assets/Resources/shaders/Level.vs.134.spirv
+SHA-256-Digest: /ZBMjTzoT50ZASzL99cj2t4SYqnvlJR808ngFJPKhEM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.ps.0.spirv
+SHA-256-Digest: W/kh+eSNMOP9aCYRAgM2Z6k/fbUWJdncMbyU+BCULfM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/PostProcessing.vs.0
+ .spirv
+SHA-256-Digest: IDP4E67ZwA4XWTa8aAQO1lFh7anNLMK18cK9iab9AaQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.26.spirv
+SHA-256-Digest: EpudtpAuf0DhQEh86cOQNfs4rkZVMxYJNJzjQf7Zguk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.95.spirv
+SHA-256-Digest: wiF80td1xFi/7B9FsD3+1ZGvZGxOU/6vWOMGD0ekmNw=
+
+Name: res/layout/abc_expanded_menu_layout.xml
+SHA-256-Digest: 33urxfnAE3URCPsh85x42qnyBZkUF9/eA4GVITc3h28=
+
+Name: assets/Resources/models/gizmo/gizmo_lock_opened.sgm
+SHA-256-Digest: nKubdxfyP9FkEsg+W0uRjqzDg4mF+NQ4os94VX4uVik=
+
+Name: assets/Resources/cosmetics/grapple/hook/sword_royal.sgm
+SHA-256-Digest: euIJlEVYbabbUAMwbYamRYJ9Iru++Ng8gbaqN1ddNn0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.3.spirv
+SHA-256-Digest: ngLvioz+FIL3nOfF3JLJwjJIZ8/H6p9UhEJZq6kjbow=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.80.spirv
+SHA-256-Digest: BNvJSexuaOcR1MN8dPc8UDwvnbgpE/U4zTggMU8xNXU=
+
+Name: assets/Resources/levels/internal/lobby.level
+SHA-256-Digest: FmJhtqngj5V3UsUIvl4Cmga+1rUu8z6mWESvb0P5VX8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.18.spirv
+SHA-256-Digest: r9AvzhPdZFEi9ADBpi36onIe4x5MpfRQjzjd6XFBMNQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.147.spir
+ v
+SHA-256-Digest: 6FmjaFvSJd8Eh/JcsMqyh3ExGsnCXA/R4JD3LVqkyQI=
+
+Name: assets/Resources/shaders/Level.ps.1096.spirv
+SHA-256-Digest: HGWxiqRyZo0iCXp9k2ne0WAEiS42Ggxf1HLD1os9JfA=
+
+Name: res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png
+SHA-256-Digest: PYFohSEIkA2CdSKHu62F8Mz7E85Y4yDenX2egX9MRlo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.56.spirv
+SHA-256-Digest: ggCX6gJt9MRMJntVu1eClBPtx7AEC1UVAzcmt48JdwM=
+
+Name: res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
+SHA-256-Digest: Af+RkJ0mjWXd/0I3ClX9TCOqGcTlw5jhenM43g4BfJE=
+
+Name: assets/Resources/levels/internal/new.level
+SHA-256-Digest: QnMMRNdb3oYSq726z2EEZLlFeZ2zJ5MIa2vE3lrz8sA=
+
+Name: assets/Resources/shaders/Player.ps.44.spirv
+SHA-256-Digest: L+WZIILejBjiB2xs+XuWT4+yAlmJ9cPUiqEukRtVBKk=
+
+Name: assets/Resources/audio/player_land_concrete_6.ogg
+SHA-256-Digest: vw63+ewH76XY5rY6nH4XHdR28rzpabF9vXP7KBm7d2g=
+
+Name: res/drawable-xxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
+SHA-256-Digest: IN3boHRsyPavFtVhdnvWn8o7rRffu0KK6ZndIrAAdRo=
+
+Name: assets/Resources/shaders/Player.ps.37.spirv
+SHA-256-Digest: d6vhh8blSwa4zyRLU4gTWovtpQg5CpI1m2LYRAXNS7M=
+
+Name: assets/Resources/shaders/Player.ps.7.spirv
+SHA-256-Digest: s1MFwjwzSXXPgoQuP0gHxDBEHJGsZ2WYnHO1pc58F04=
+
+Name: res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: vL5JaOIEj+2Br2dc7Jpb63Px1sQeYFpgt99mDh4C2fI=
+
+Name: res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png
+SHA-256-Digest: 1IOBSM3TkPvrlguytZTPhQODbjDiz5jGz2wRu4LgKss=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.21.spirv
+SHA-256-Digest: bCPmN9dTg5/VaP5PcQNZZu71WpDdh81ff/HmnQ3Fpho=
+
+Name: res/layout-v21/notification_template_icon_group.xml
+SHA-256-Digest: bdAlnJ82PtZXTZbJfdB0vIOCIIqUJaHMVAXuf5nxKmo=
+
+Name: res/layout/abc_activity_chooser_view_list_item.xml
+SHA-256-Digest: CS9Dx7ICbZ/vTY8K52fdYHT34V231/JThKjdbjLj+jg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.85.spirv
+SHA-256-Digest: nKA9wXnvWJhPh0OQuL+yV4Rp5vdjRBRc4P8fPjq3xho=
+
+Name: res/layout/abc_action_bar_title_item.xml
+SHA-256-Digest: 6SE0cu/DCWghMkrPrGb1E9sn6C4Z2T2g4X9qh6itr74=
+
+Name: assets/Resources/shaders/Player.vs.72.spirv
+SHA-256-Digest: q6uQyL/r5CdjAgOE9O3ulXTfy+npJBdVpejFm8r6244=
+
+Name: res/drawable/abc_btn_check_material.xml
+SHA-256-Digest: oK3iPHh0eQ6JvdpCAqRk9wL4m4RvDVeKUKeCa6U5hv4=
+
+Name: res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png
+SHA-256-Digest: PDnx9zjJ2NWYeLKI7agYj7iodxgXctPsYgr3y+Sssek=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.17.spirv
+SHA-256-Digest: VrFwIy95dF32xlYtHLJHR5di5uR5gcZRjObJHr8VgRg=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Fly_R.tact
+SHA-256-Digest: bB806xxvNsNLF7z4sdddJIXgR1BL3EsJLMHpTl32GjE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.51.spirv
+SHA-256-Digest: Pd5UzlmJsHg1YcZwbX3zhO1R34ss0fj8vqkf5xb46AA=
+
+Name: assets/Resources/shaders/Level.ps.35.spirv
+SHA-256-Digest: d1WP+D/8w5HgQLQatoQxPNmLTG7KU55Ch8jKd66lTqY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.61.spirv
+SHA-256-Digest: KA3s/A++rzpiTRt1QJcQByoCz+9idOhgUfnNyueSt2E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.100.spir
+ v
+SHA-256-Digest: ohrXfEOk/ii7BerbFjMraxkmoxA2wIsRmKHN7XHNHTg=
+
+Name: assets/Resources/shaders/Player.ps.32.spirv
+SHA-256-Digest: LQVN2qs1jkOWY3MzZaRKqzIzGvv/jeLU/1cLrPJeUZw=
+
+Name: res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: P+YilZ03vhjl2wdNoRmIO8ihq0R7hFiYTHB9XgweMOM=
+
+Name: res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png
+SHA-256-Digest: 67QPdl16efoqewpsWxC+LUCYPXl4kxIDPHj9Rad6o9E=
+
+Name: res/layout-v21/notification_action_tombstone.xml
+SHA-256-Digest: ipFBPsv9u9To3vZM9NYH9O2KCFcP4bRjgQtlmd+tgEE=
+
+Name: assets/Resources/shaders/Level.ps.385.spirv
+SHA-256-Digest: 6z9Cox9aolSzPaeruBqm+J3x3h9VKanEziOUy6hrdfM=
+
+Name: assets/Resources/shaders/Player.ps.2.spirv
+SHA-256-Digest: TqqskZ2xninoWZl57XI+48t+/56MlyCQf62CeKJIgRk=
+
+Name: assets/Resources/shaders/Player.vs.71.spirv
+SHA-256-Digest: FLVZNPwCCRVRhBs+9dLXCNFDkSHdd6NwoP0N5ESN/gY=
+
+Name: assets/Resources/shaders/Player.vs.2.spirv
+SHA-256-Digest: +4WmHdKTVJ65Hwe4+PiGQDgc5XvVb9+92gxMjd47Pzg=
+
+Name: res/drawable-mdpi-v4/abc_textfield_activated_mtrl_alpha.9.png
+SHA-256-Digest: HN7MBtO3Z7qIf/CVGSWir37ZcoFSHWYVfzUhyaj1F4Q=
+
+Name: res/drawable/abc_seekbar_track_material.xml
+SHA-256-Digest: Da0iGuPHmz5Wja+t6MhyT8oZA1wdODTssIsVwSIHnDo=
+
+Name: res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png
+SHA-256-Digest: i7a7i9upBbRANebzif+gIHRh/DRB4iaLVhLInnMYR5s=
+
+Name: res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png
+SHA-256-Digest: Of1GLRHfjXsgRz5pwtqKm3INUIVvs0XOur27BXPARHU=
+
+Name: res/layout/select_dialog_item_material.xml
+SHA-256-Digest: JW6uhf3WsOnfB3FQgrYiu4PpEyKoE9uLIiSAJA2c2hE=
+
+Name: assets/Resources/shaders/Level.vs.67.spirv
+SHA-256-Digest: uGUlOEXhBwgxGh9HW2G3xA4R7eRfjc4smEZnSUoz4TQ=
+
+Name: res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: Vdky4V1Sqk1up+GYIY0JEQi5oLuRVEkT+YZdqTDQvCQ=
+
+Name: assets/Resources/shaders/Player.ps.3.spirv
+SHA-256-Digest: tFoRzIY4+RrcBtmvbI6HNvSQRrcYbc38bDIz8aKwi10=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.25.spirv
+SHA-256-Digest: LEOyVc0hlnSj0I8fzWhMMN72+n/psEKtyLP5QeqjqLI=
+
+Name: assets/Resources/audio/player_step_concrete_8.ogg
+SHA-256-Digest: 8fIr/1GPkZ3yTs9ccJIyCTwm7tqnOSk+s7xXSjXjeDE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.148.spir
+ v
+SHA-256-Digest: 9O7GEEN1c2eoJJA0FsJlPHFRiXkNre2bPkyEJgWszCw=
+
+Name: assets/Resources/shaders/Player.vs.12.spirv
+SHA-256-Digest: gE4yGRx/W0jrg2FZwxr0BvL9VarxefrM5tP2IUiLFSs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.99.spirv
+SHA-256-Digest: EcShfX7pjBvUzyrPqXHaqsjwIRWVWiOSdWxLu1pdiNw=
+
+Name: assets/Resources/shaders/Player.ps.41.spirv
+SHA-256-Digest: QrIewj/GCoaJQfQH4Nt5sCQmmdW5lVEdUl+JTIc7Fb0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.101.spir
+ v
+SHA-256-Digest: hORWxcOeOnC9v3NmQ7rwv8DclfR0g9TvXwRLqSu5yjs=
+
+Name: res/drawable-watch-v20/abc_dialog_material_background.xml
+SHA-256-Digest: DQregNAKDfPh+oNd3tUqla+G+8K99l6kmy9cck0eoiY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.53.spirv
+SHA-256-Digest: yhRBSQD3IcRVbv7FuzwQZlqSAA5WC8ofmmrVqUgi778=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.206.spir
+ v
+SHA-256-Digest: sDVBOGO4OgxBwRheWMNhzJ8JS4aCxY8dhNvK+a6KrU0=
+
+Name: assets/Resources/shaders/Level.vs.129.spirv
+SHA-256-Digest: pgBvzrJ7QdAkR93BRSoBf+WSstC511A1d5kqlBTExHc=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Shoot_R.tact
+SHA-256-Digest: lqVvAcWtNEdveqdg9H4NbRVCjuNSbEQjyrOG933/4t8=
+
+Name: res/color/abc_secondary_text_material_light.xml
+SHA-256-Digest: PU7J5eph3C2cc85vM8WxCklH804EmPLLwKo8LlWtT2A=
+
+Name: res/color/switch_thumb_material_light.xml
+SHA-256-Digest: 9e1qdYQRyr9vBqr+oeuhac6TKvuVElU3lfQuhgJKnyI=
+
+Name: META-INF/androidx.arch.core_core-runtime.version
+SHA-256-Digest: PjygIQMN5T6nIKT/hi5PFaxVcEB+W20fr4f0g2n7jrg=
+
+Name: res/layout/abc_screen_simple.xml
+SHA-256-Digest: FaUpPJZ502g89eWliwDC+hEvtdqUw7oWI0bqHGN2ASQ=
+
+Name: res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
+SHA-256-Digest: SIdhFUIZQbwAiiLoJYLf5k5QwLSHmYHY8d2nrnlil00=
+
+Name: res/color-v23/abc_tint_seek_thumb.xml
+SHA-256-Digest: RzJU/c7O3BoBfwSla+Iv/fMPvd+kL1dTsRdxVchmfB8=
+
+Name: assets/Resources/shaders/Player.ps.40.spirv
+SHA-256-Digest: cK9//CsWwqPkAHkZUc/rVsKEcJqhR17ztNx5XAoJoTo=
+
+Name: assets/Resources/audio/player_grab_1.ogg
+SHA-256-Digest: xTqxr4VK4z5b2BFnflvgRkCSoW2dXgUTi3tsn47mYa0=
+
+Name: assets/Resources/ChangeLog.json
+SHA-256-Digest: xgjLpI5jQNyZY889rr7bMp/4RFOARtuUwI/0pIvkLmw=
+
+Name: res/interpolator/fast_out_slow_in.xml
+SHA-256-Digest: f0zi71BogX+zrhTL/9Gi6r13OMSQW/UAkGVHrPTcQfo=
+
+Name: assets/Resources/shaders/Player.vs.0.spirv
+SHA-256-Digest: z/cRUpWJ4UeuKuCPQYVa5d1jI+UO20zTkh8QdUFgW60=
+
+Name: res/color-v23/abc_tint_edittext.xml
+SHA-256-Digest: 0DiZQrqO6vKa7pzgD59XsTc3G0XPBpUZL4sriK5/XtE=
+
+Name: res/drawable/abc_switch_thumb_material.xml
+SHA-256-Digest: wAYvy1OFIRumq80QIimMc/WpJljM/51NLehzb8h6seQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.ps.1.spirv
+SHA-256-Digest: 9RpOG2kya45saj28KLFYwuhHDxNnGJkzi4dRzdVNZxc=
+
+Name: assets/Resources/audio/player_step_concrete_14.ogg
+SHA-256-Digest: ul4HSwoSydiJrrvStXcpvQt3VsI5rm7CkjAHCwJ3xh4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.207.spir
+ v
+SHA-256-Digest: ZekA/nJ8FD/mLhSK4QjtD1i3Jbx1dpyRihzYVIDFst4=
+
+Name: assets/Resources/audio/ui_open.ogg
+SHA-256-Digest: WRP5dhUi9r0CwpyWbA08jEtKTTci8rDTfS38Ux/+ZEc=
+
+Name: assets/Resources/audio/player_impact_19.ogg
+SHA-256-Digest: F04pH72Ff6LwITLpNs+7oPC5YWuv5WGNz9BHED71zfk=
+
+Name: assets/Resources/ui/bHaptics/tactosy_arm_on.png
+SHA-256-Digest: LdyO+DC98CgRZ1rOJhEfATtz7R8Satacw5qddNcPmIw=
+
+Name: res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png
+SHA-256-Digest: BOX940hx6pFzV6Fjq+lKR+yo+OS3e+db39CTvMDQnF8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.83.spirv
+SHA-256-Digest: w4InaNb7UtVvK8VhO7w5Xo4L2HHDJHTq5HwI5RTAy58=
+
+Name: assets/Resources/ui/game_logo.png
+SHA-256-Digest: phxd8xFu9a7BEm2BbZXUoqBz1munXbF7tF/t4v4c96o=
+
+Name: assets/Resources/shaders/Player.vs.70.spirv
+SHA-256-Digest: h8mVsgkJ4dgizST9kmKA1v0HJgud5UrYrkI5DmklDFA=
+
+Name: res/drawable/btn_radio_on_to_off_mtrl_animation.xml
+SHA-256-Digest: d0UyMlFtbI2tYn5ftv5obAYEft7cS6LtStTpiNkbZ5s=
+
+Name: assets/Resources/shaders/Level.ps.288.spirv
+SHA-256-Digest: bdLFXtzpm0qi1QtmE1pyWUK1KGQsVhiRvNDx0fsv7VU=
+
+Name: assets/Resources/shaders/Level.vs.66.spirv
+SHA-256-Digest: xhPJVortChq6Xo4CRZvjkLCcmS/GtleJpFpcXvOhSFA=
+
+Name: assets/Resources/fonts/Roboto-Italic.ttf
+SHA-256-Digest: PGzhLzqXPDl5Kj2n390XUccfghyrpP4FFt7nkdXUujs=
+
+Name: assets/Resources/ui/bHaptics/tactsuit_off.png
+SHA-256-Digest: PrTCkF6XSTksEY1ok03PO/2/oZBfouSuIB3DKHAVvlE=
+
+Name: res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png
+SHA-256-Digest: tp4XcUjwXrOefCerpWgX9xwSQchSPcEkTwyOB5ffNOo=
+
+Name: assets/Resources/shaders/UI.vs.5.spirv
+SHA-256-Digest: gOkMm3rR3Fkr8BDEmGwr0pkSalLHBwLcwHvzYaTWbWM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.98.spirv
+SHA-256-Digest: 53DLy0pdNmZVvaLbqavOMgQUNYAkc1luqS+b0rNQZ2o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.58.spirv
+SHA-256-Digest: BlAVGAyxEZTF0G8/iv7BXGMAJ2WH4QY1lGR8E0m5f1Q=
+
+Name: res/anim/btn_checkbox_to_checked_icon_null_animation.xml
+SHA-256-Digest: MT/qAYI/82jVi0y7O3Hk2xP/BzssC/p13p2uEbzuino=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.104.spir
+ v
+SHA-256-Digest: uKMQ3RLjqkDDIxPyRAyIrP0Lzc3w8w1r/k3vFdSNu7s=
+
+Name: assets/Resources/shaders/Player.ps.4.spirv
+SHA-256-Digest: ZfqsH+xCD+omJgs17YH2a/P8bdk+qZzeX7NIIXOUNhw=
+
+Name: res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: tDTw1dKhjjSBLqHxdgpjAwEpbaYpDHtNMxyeEsoJA+I=
+
+Name: res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png
+SHA-256-Digest: DG/YLNVzHMwODSGrAQ59x3aKwJ2T1XO5ZOUlgSoPQt0=
+
+Name: assets/Resources/cosmetics/head/glasses/mask_oni_basic.sgm
+SHA-256-Digest: gmlTuG/3/azer15LzYhqDKiysL9p64+j6Ny6dHwrDSs=
+
+Name: assets/Resources/shaders/Level.vs.290.spirv
+SHA-256-Digest: QpkCd4BFglNIpF13HhhwBwsaXsvMQtnRN5Z3f41XXZw=
+
+Name: assets/Resources/audio/player_impact_5.ogg
+SHA-256-Digest: ifFyu1LAV+ZTraEyMEcxoatafo7Vzjvct6Hj8YKyRLc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.230.spir
+ v
+SHA-256-Digest: czaCqb5SggphoQHponGDSl4xJWE+SEUtk/I9FaVFl5k=
+
+Name: assets/Resources/cosmetics/checkpoint/lifebuoyflag_basic.sgm
+SHA-256-Digest: 356LQQKfvv2O/HpGOCPbc40fcwyfbEVDlcAqV5ycwTU=
+
+Name: META-INF/androidx.activity_activity.version
+SHA-256-Digest: Yu1eiqd7wti3kPabgLC0lsO+1ns/UAhiPGUExHOxH/w=
+
+Name: res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png
+SHA-256-Digest: ary/YaStk2Q8uMqn0dOzGJ3JxGWFGFUW5k9SG6Ey1Mw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.144.spir
+ v
+SHA-256-Digest: 9L3DDwHSPxK04E6zakpDPZxrB1vcjaQbCprvQGrfjjQ=
+
+Name: assets/Resources/shaders/Level.vs.386.spirv
+SHA-256-Digest: eVnSuKPhqyZz2YAOspkabdMhl1TVAaCEQTSc6fAeM8c=
+
+Name: assets/Resources/levels/official/40-BFL-1.level
+SHA-256-Digest: uldoeNWTNEJXcVRoI4muwTWrZ5x+NZ6DLbQmNBvyVq0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.203.spir
+ v
+SHA-256-Digest: zoFG+aIHYzvlHIpTmVPxoPN66QUzYGKR1fyzIQH4L3w=
+
+Name: assets/Resources/shaders/Level.ps.1033.spirv
+SHA-256-Digest: 3uA/XZjeem/kq0Da/Ukn6ixPPFUen5+ZtKvsaav9QIA=
+
+Name: res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
+SHA-256-Digest: RffwD1VvsAuYuBfhuP+iq0dH8irzurg4xBpE71yIlds=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.51.spirv
+SHA-256-Digest: iNVXdQvmOxokFgAUU1/RUZLqQgfscY7M56u/+lKnlXw=
+
+Name: assets/Resources/shaders/UI.vs.0.spirv
+SHA-256-Digest: B2JlX6K7XWDvdu1tZnUtDWENiO0C+8vVoNKKkqWU7jc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.22.spirv
+SHA-256-Digest: 6JfMQOGwrJsgD/WYGs3SJSNccPFUkG9nHuKgs6/WwqM=
+
+Name: res/drawable/abc_btn_check_material_anim.xml
+SHA-256-Digest: BVZdzzf/ENyJD9G5wfjI+Z4DE0pdL1PvjE8K9DW3kXk=
+
+Name: res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
+SHA-256-Digest: fsj3LiI7bKsRKpOpdo6HyH2+AoAS6yg8mDi9g++CGT8=
+
+Name: assets/Resources/cosmetics/checkpoint/katana_basic.sgm
+SHA-256-Digest: PkR5qCrkzGAWa3AHMbT8kYy/8K8cNqBcxis038bmaiI=
+
+Name: assets/Resources/audio/player_land_concrete_8.ogg
+SHA-256-Digest: 3t8dEoHly8F/ZRBwxcc+OSxeA6qig8kRKEmDOQX1+U4=
+
+Name: assets/Resources/shaders/Level.ps.96.spirv
+SHA-256-Digest: 7qMRDPLcJCkmOgh0vOJAkgmne9ETsAdtGkObDmN1Ci8=
+
+Name: assets/Resources/shaders/UI.ps.2.spirv
+SHA-256-Digest: QSxX+6MOmPrflu/Y6EYSbYidvX2Kz35VVaTOL2+uUNo=
+
+Name: assets/Resources/shaders/Level.vs.34.spirv
+SHA-256-Digest: YHmC+cDzC+VtRTzq0Bq1DIqo1ShdkjTWtEMdFlygH4Y=
+
+Name: assets/Resources/shaders/Level.ps.1097.spirv
+SHA-256-Digest: ya3D0YpR5mrU4rzt7cEeVLyCGqbSSZLboCElKjlzMNs=
+
+Name: assets/Resources/models/shapes/pyramid_collider.sgm
+SHA-256-Digest: nWlTDV/LjYSCdJA3B0aaIljAOp71Ujr1u04970p2me4=
+
+Name: res/drawable/abc_seekbar_thumb_material.xml
+SHA-256-Digest: UG8DmXFAY9l1D7R0sskKnfeuFJ0s0e+1S+ovoafVCTQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.56.spirv
+SHA-256-Digest: i0rHpVevgGgVDyFVpbW8clVxhjD5fM7ZwjBNZa92bew=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png
+SHA-256-Digest: Hv7sgRVEZQoLeDvGFNSfq+Qs2QopRzOnmyTavptUGtI=
+
+Name: assets/Resources/shaders/Player.ps.38.spirv
+SHA-256-Digest: zAjEyUpjI5zhLDO70ZydCq9cZVT1A5hmtqshuYDCDTI=
+
+Name: res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
+SHA-256-Digest: NRz2EbCGEUMdMV2/AI0kU/PVDUH0UWuH+YT7pjcXJf8=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: xKVqzoc4B9/ltYm0fwOSeDfXc7ubSeMRc9PhJJ4P8Ic=
+
+Name: assets/Resources/shaders/Level.vs.193.spirv
+SHA-256-Digest: l1xWtqq1hLuB7D9J1UlVmy0E08vFuSsTB5PcdfmbhxI=
+
+Name: res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png
+SHA-256-Digest: Af1FaEuVJa2wIZKvjbeCROSjA3k31KCCwVQj/l3dFBY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.21.spirv
+SHA-256-Digest: HjaCBhOzUBnD8ejkzJigH4Dy4LNYw1D8tKRVNn4/lVw=
+
+Name: res/drawable-v21/abc_edit_text_material.xml
+SHA-256-Digest: hmB6nbPWSH4LJ1IoDFHAS+UHxwaXwt0O0utXvfuE9mM=
+
+Name: assets/Resources/models/shapes/sign.sgm
+SHA-256-Digest: WVDA7YdORqJSNeibw9s0FZtGIHgQ58nrSn7UimnVaaI=
+
+Name: assets/Resources/shaders/Level.ps.32.spirv
+SHA-256-Digest: P7w/INIKqFbaFVybH/XsMJiW3zMJcqP5d7A5jz/tO0o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.201.spir
+ v
+SHA-256-Digest: cgcPUQ1STHMLFUxcmaWt7acw1hmMkmILywJ01ergrdI=
+
+Name: res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png
+SHA-256-Digest: skD6rzVEuwCPlW/CSJNzPdykuL6Y/4KWtwegIFU3MZc=
+
+Name: assets/Resources/cosmetics/checkpoint/egg_basic_easter.sgm
+SHA-256-Digest: rpDIStdXT5qNqosO7UfYl5iuy69Mh5fdN6fdcayXrtQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.91.spirv
+SHA-256-Digest: EVGLoyN70JGOZoMgmepHEWHZJf4jdpPEtprVNr2l3ZA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.106.spir
+ v
+SHA-256-Digest: 4bZ6mGvjuLM7+HmjHQ/jz7b9A2DFmLWT//q59z/rO9A=
+
+Name: res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml
+SHA-256-Digest: rdqavk6VMMv/KEtfS4DIpovmD/T41JtT/t1c5LY619E=
+
+Name: assets/Resources/models/shapes/cube_collider.sgm
+SHA-256-Digest: NePbY8f0yobI8CIVsKuR9/IJ6D8MNT4wukshkrnnki0=
+
+Name: res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: 220BkpTZFDeKgcTFYY4oTwDo8gxvBFqOyhw1Y4voLM4=
+
+Name: assets/Resources/ui/clear_text_on.png
+SHA-256-Digest: HEsR2Szj3RfKhEQ2rkVY1sveRtegDsYhUanVE6aPuZA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.173.spir
+ v
+SHA-256-Digest: l+VvGldM3sqq4ExoCR+iklcUGXneM5QNJrbuqXESkuA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.100.spir
+ v
+SHA-256-Digest: Ju/mBImzamkVcOpc3Z0hKgncagRbUIJ0aaDyith/jVw=
+
+Name: res/drawable-hdpi-v4/abc_ic_star_black_16dp.png
+SHA-256-Digest: MLu8MIn0wdVa2cloom6UY86AiXXST2fY+ww7F31VsmQ=
+
+Name: res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png
+SHA-256-Digest: YUpB7XdEV3eTC8Ng4y8/cyM2dQKnwTsfOaKWkN8KurI=
+
+Name: assets/Resources/shaders/Level.vs.169.spirv
+SHA-256-Digest: RHoBPvH4osIuyehsLjQyJMmIBMTW0P9q7ezRPc2tSx8=
+
+Name: assets/Resources/shaders/Player.vs.101.spirv
+SHA-256-Digest: 7EwD0EaTsiHAy89UsdY4dvaAvQcnF2QD7onIUqaNWtc=
+
+Name: META-INF/androidx.interpolator_interpolator.version
+SHA-256-Digest: cXcB/K2AKR4NBsyLxMJm/YrOYXNSLW1iPNN+HpKtyZ4=
+
+Name: res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.p
+ ng
+SHA-256-Digest: Unb2GDaE4ygrSA2OqlG5QNGivpHMdlEY+d0Wnxla4rw=
+
+Name: res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png
+SHA-256-Digest: LcPLGTPXVjvvnVXY3bsCjyqPLzYF7ExrLOwOXkMZgPw=
+
+Name: res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png
+SHA-256-Digest: zOqYPKD/bAanDz3bk7vjG9OCXlx4+4LBvsDjnuQ0Crg=
+
+Name: assets/Resources/shaders/UI.vs.7.spirv
+SHA-256-Digest: 4z4Ns/S2drYxUAmobWLA8Jn+QhHvJ7WYc8XntVXQLlo=
+
+Name: assets/Resources/shaders/Level.ps.1099.spirv
+SHA-256-Digest: VnuRrbhc1YGflhS7sdtP5FzbBSn9sCZ0RSsioVrqgUg=
+
+Name: assets/Resources/shaders/Level.ps.98.spirv
+SHA-256-Digest: +h10rnwUsoSqjOkz+rQCCF+4bf7PpPAj+Ncn+TvMyBs=
+
+Name: assets/Resources/shaders/Level.ps.259.spirv
+SHA-256-Digest: JwsH8Y7BPKKRRPt7+caO9FA3flI0D3I8rVZEfBPx4EA=
+
+Name: assets/Resources/models/player/button_play.astc
+SHA-256-Digest: HduewRKM5Q83Kk7qpM1oHYgSM3hwC7WVjicmAXdp9CI=
+
+Name: assets/Resources/shaders/Level.vs.32.spirv
+SHA-256-Digest: +C4ytpLKKI4gPUQuhSLPiG72e1E8QKwLb3ooa2sLA0Y=
+
+Name: assets/Resources/shaders/Player.vs.77.spirv
+SHA-256-Digest: NSUpP0xa6DsAgtlH2Bt7/7X4rpzFxHiA58YLyTXoOBw=
+
+Name: assets/Resources/shaders/Player.vs.5.spirv
+SHA-256-Digest: CG4IWZV2/JjwR3dVmMjCGMXlQif+zh57sAC/dNWOc64=
+
+Name: res/anim/abc_shrink_fade_out_from_bottom.xml
+SHA-256-Digest: XvHC7nRpJ0j4Waf42A4cPdIJSB7DivchrmS5oAATXfw=
+
+Name: assets/Resources/bHaptics/Vest/Grab_Air_R.tact
+SHA-256-Digest: LqujqFrbnp9aFr9ZOk+npolzxWEuhKr7IvYbDuJKz5g=
+
+Name: assets/Resources/shaders/Level.ps.256.spirv
+SHA-256-Digest: qSHR0l2ybCa/kR/4Fbc3vR2XcqIQ/GS06gbRhz5HGbI=
+
+Name: res/drawable/btn_radio_on_mtrl.xml
+SHA-256-Digest: BHiqVUlJE2GqilsqIINoskmIDzIbe3Y+Zb0j76F8MjQ=
+
+Name: assets/Resources/cosmetics/checkpoint/egg_circles.astc
+SHA-256-Digest: xoD5reEG/x3v0IRGaauK0SD1wcXZnSeT6yFX6rVXuLo=
+
+Name: assets/Resources/shaders/Player.vs.75.spirv
+SHA-256-Digest: hcl9b6t44MBeoMk/6tOiZoGYht0GsZtTaOPYcIBQYw4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.141.spir
+ v
+SHA-256-Digest: ZJtFwsDB82GSPtzLLyG2gujZ/AGDoi5uiD39wdb16do=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.171.spir
+ v
+SHA-256-Digest: UQsUQ1GsgJUzFvuzJNxbZpx5l/MN8H0LXUvwGR11czU=
+
+Name: assets/Resources/shaders/UI.ps.0.spirv
+SHA-256-Digest: DnDlRHElJk1NfSSuoj4upLdDLLGgK9Q+lDPfNrIQxiA=
+
+Name: META-INF/androidx.lifecycle_lifecycle-viewmodel.version
+SHA-256-Digest: 0g/QDcOyk8VjhaKvJNnEBhq1WrU2WS2VBHFyN4VtpOs=
+
+Name: res/drawable-hdpi-v4/notification_bg_low_normal.9.png
+SHA-256-Digest: fdgyJ61bkVHESSHzWiTHQ5LVNwIge6pbEao7ySrGIjw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.93.spirv
+SHA-256-Digest: OQK4emguhqQbJYSJtKM9xX4GoUesVHqCaefDxCYsoW8=
+
+Name: assets/Resources/shaders/Player.ps.9.spirv
+SHA-256-Digest: 498ZHSS47L+tInaisdFYD1Fp0D4HSwlg5MYjcMhPIFk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.109.spir
+ v
+SHA-256-Digest: aHcMOWkH2Wna5ZMWZosahixzU8n3buS/yhh67243aco=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.59.spirv
+SHA-256-Digest: 0Uyy9epwb8HJNn3DHo25G5WFwlBaNkcRiz/4lzNaA/A=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.142.spir
+ v
+SHA-256-Digest: VaNcqMONOQmfe22rPrFhxWRZ0iS+us95a4pAI5HLwEY=
+
+Name: assets/Resources/shaders/Player.vs.7.spirv
+SHA-256-Digest: 8B6zCzKA4vBQ70CcqlX7LjtNhSAKLojf4pL2x2IN0u8=
+
+Name: lib/arm64-v8a/libRayneOpenAL.so
+SHA-256-Digest: fAOA72D0VRVpgqXE5ff/jfpF9DUbHGJhZSoG9S3JzQg=
+
+Name: res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png
+SHA-256-Digest: LChIw4QqvLajFq58k1wyNoad2J/FQ0nFyZ+9fG3oq/Y=
+
+Name: res/drawable-mdpi-v4/abc_list_selector_disabled_holo_dark.9.png
+SHA-256-Digest: wrTk2jbWguQ0BazweksARr3vUw3TWIaNfbGLu5IXNvg=
+
+Name: assets/Resources/audio/grapple_shoot_1.ogg
+SHA-256-Digest: 7cKPCNL9MjMzAijLSkGsvd3Cr+dbt7SeWT91vRwvBMg=
+
+Name: res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: pMBfjSNGJVCvmLEdC09ivBc8ntOWLkccLwy4ntbqsPY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.88.spirv
+SHA-256-Digest: kBbnB1wpIHEVmH81/uL4mD8kSuxwcDfNak1C00KHeTQ=
+
+Name: res/layout/abc_select_dialog_material.xml
+SHA-256-Digest: P/9j1BqK7IeAkjNW3wyXTXAn9lO4IiCrON0twc5XMMk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.238.spir
+ v
+SHA-256-Digest: /rdv6lKQ8HRrS84vkN6KtmMC5HDoN/ySqW4udz4PYSc=
+
+Name: lib/arm64-v8a/libVkLayer_khronos_validation.so
+SHA-256-Digest: DtEpbkpusAtglo13feDESmUbIbtUOO3HKf1SdPYrSNE=
+
+Name: res/anim/btn_checkbox_to_checked_box_outer_merged_animation.xml
+SHA-256-Digest: GchwC+P4L9BNyECycQtaPRTsrH+gwhtxwzs53Kg7Oz4=
+
+Name: assets/Resources/shaders/UI.vs.8.spirv
+SHA-256-Digest: CxWHikYVO2NLyzgHLOqobI5HN2woKkFz66OxqcWidoQ=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Fly_L.tact
+SHA-256-Digest: qogFmKg10E0lT+hbQQd7JLMBXmjSDWXISSc/PA8VtpM=
+
+Name: assets/Resources/shaders/Player.vs.103.spirv
+SHA-256-Digest: DGlcrsRsjd5k1FfjrgH7I8AyURkUBGpHylnYunJP6M8=
+
+Name: assets/Resources/shaders/UI.ps.5.spirv
+SHA-256-Digest: OH8T1oDkDXknUksEuvbAdsc8LeXBjJeQK6RgqBlAQOA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.90.spirv
+SHA-256-Digest: Er6s0Ajcv/L8L7zEVpULra8CgcinKPsms1Xxv4tKedQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.28.spirv
+SHA-256-Digest: PdxuHU88KaGuyLw/LMFiFo80xOff/oWQbEpOCHVCCK8=
+
+Name: assets/Resources/shaders/Player.vs.9.spirv
+SHA-256-Digest: RVTn39LRq7ALDRyRveWqOXu/zVvZTYIxtRaSxoz9UfE=
+
+Name: assets/Resources/shaders/Level.ps.66.spirv
+SHA-256-Digest: QOa+9LopP4Bmq8quIpp7Q4/8cQpKyTuZoQ792wKHnNo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.107.spir
+ v
+SHA-256-Digest: 9AO5Te+SYP3dUlcWtbMU9HDlm5iMGc/heq7WZDDNUTc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.175.spir
+ v
+SHA-256-Digest: 0tQVO5lqHjxXijZ4GgyVCBrMPXvvfBpAM+5sD1GlllU=
+
+Name: assets/Resources/audio/player_grab_7.ogg
+SHA-256-Digest: YY9eOY2SbDTHRp9Tjg0rFrvtlh2otHSiGYbqHSgvZTM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.58.spirv
+SHA-256-Digest: Qzzud3rTvEpGR2VD1y/VYwQ5pIDHqWjGOuM35FOgLOg=
+
+Name: assets/Resources/shaders/Level.ps.128.spirv
+SHA-256-Digest: wHLFLn5p5fgyeJJkvQBeaddnBAHCmCEhMXSWkXhNqzI=
+
+Name: META-INF/androidx.loader_loader.version
+SHA-256-Digest: U/8Mggt0wI0pqD9haINJnmP8D0bZQQ02nLntwOd7zfc=
+
+Name: assets/Resources/cosmetics/grapple/hook/spider_basic.sgm
+SHA-256-Digest: IDZLBt9qFeFBwGtPEn+47vIVI9pXcUprE7rgaNnbQsw=
+
+Name: assets/Resources/shaders/Level.vs.35.spirv
+SHA-256-Digest: 7hMydoionvJBZ6qYXbt1Ihc+JrUo4vMvnBejUkeRh1M=
+
+Name: res/drawable/abc_list_selector_holo_dark.xml
+SHA-256-Digest: 2TJcdSHS6Gx++nHnO5V2Hn0z31vnzgc28EhkhldC0P8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.101.spir
+ v
+SHA-256-Digest: o7hs2w4t6SiZkWyV8MsbFIvK2ZHlWOU39caMGCe3Aeg=
+
+Name: assets/Resources/shaders/Level.ps.1289.spirv
+SHA-256-Digest: UYTkg/uxiOXW/zD5Wu4AqNcZ6tsdgUFF7oqfsIkBnZ0=
+
+Name: assets/Resources/audio/player_impact_3.ogg
+SHA-256-Digest: BKKmGba8ipH76hP8r9poT05uK9Y7THnkmpQZg+MpIi8=
+
+Name: assets/Resources/shaders/Player.vs.78.spirv
+SHA-256-Digest: zqgJ6A1pK3o/0JY6moBu+SEMSKwZADU5jKUyEaJpTd8=
+
+Name: res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: Lt/ldnHllFGD+iPlK1ArECI4Y8DP0mv3Mq9Am7JYutc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.233.spir
+ v
+SHA-256-Digest: 8g53efgmYrVXA39c8+vEMyuq7TD/QnzhFmgC50OY8Vg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.23.spirv
+SHA-256-Digest: f8ryhA0G8R3yoi6c6XCgtClWEh/m0zJZQ0110BS75jc=
+
+Name: res/drawable-mdpi-v4/abc_text_select_handle_left_mtrl_dark.png
+SHA-256-Digest: d6Liv+nKJvyoOfqZzTSNAUyWZSDONwpMKUAcFoCEGpI=
+
+Name: res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolato
+ r_0.xml
+SHA-256-Digest: b/OA+DWiPgfZMBSg0kSwA8gt8+HecOP+/s5Kjd03SEA=
+
+Name: assets/Resources/shaders/Level.ps.67.spirv
+SHA-256-Digest: hB4Qo/rAN4pKkw66PYDHOZJzm6xdpqRuTkToKtV9WIA=
+
+Name: assets/Resources/shaders/Level.vs.257.spirv
+SHA-256-Digest: 8ihvUUuW3HFZXaSVGBGvViWUfNzGiSnP0KyEyhBOzKc=
+
+Name: res/drawable/abc_ratingbar_small_material.xml
+SHA-256-Digest: XBSj9nRhBapih5PhLDDuPq/srU9FvY9h4vHB7KGGvnw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.22.spirv
+SHA-256-Digest: qkk5j7tgkwjztTMhVuGs57KARIZiAXBlDZYKCiYiO3M=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.239.spir
+ v
+SHA-256-Digest: iEVJHyMtWDmrkhUR3uaES84cp2wCv+SdKQOQokqxxFQ=
+
+Name: assets/Resources/levels/internal/lobby-halloween.level
+SHA-256-Digest: Iu9WepKWVJpuQboO1ngVilAfQEIJvTzhk6JpKJLf4Ys=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Shoot_R.tact
+SHA-256-Digest: Vi+0yxFfRr6xRglSkiuNQuxrnTrhEYmMlBcNhl9F2ew=
+
+Name: res/drawable/abc_spinner_textfield_background_material.xml
+SHA-256-Digest: GgXprqMoNZKaMc0sNCOXtCYVBIV7UgPGHLlQrwJQehc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.102.spir
+ v
+SHA-256-Digest: mvMBmKbVldXohwtW9UCvs07aDm+RTpYM1kWXSZjpnZE=
+
+Name: assets/Resources/shaders/Level.vs.384.spirv
+SHA-256-Digest: YW0yaYH9OC3wLHg2dANu4FDyMNpr/3XT3yGITo02dmA=
+
+Name: assets/Resources/shaders/Player.vs.79.spirv
+SHA-256-Digest: LZBwpmkf3g4CVkbeVn/RQYEm/m7ltK3jNW5F6yjsc/8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.29.spirv
+SHA-256-Digest: 23nnOHmNrtMUEBuHDusViUdnZcRU/kop17OQHk3FSuc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.174.spir
+ v
+SHA-256-Digest: mewE1TLcIEjx0g6bRa4l2Q8p2zX13kThBh4AYlv8kmA=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Bounce_R.tact
+SHA-256-Digest: 7RZa9MxMxeU6tU7WLiaUJjP8YIRu4aS0o0ku3z5UC44=
+
+Name: assets/Resources/shaders/Level.vs.258.spirv
+SHA-256-Digest: FHfsBzxGZ1I6bmMx0HQ/Rt/EdoIqlBeTkAuRqkPy3l0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.232.spir
+ v
+SHA-256-Digest: Wbvk2qTbFbv13BKqM//xivk1OmyxEf6ZEesNMJLgleM=
+
+Name: assets/Resources/shaders/Player.vs.102.spirv
+SHA-256-Digest: Pz6rYK0yTl+p+iMoMS0YUaXQTkrV6Y79kB/vjDcoXaQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.108.spir
+ v
+SHA-256-Digest: /eu6kTF7erjl1ST2tsoJct0wJbALFUS+Oo18gYRlo2c=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.176.spir
+ v
+SHA-256-Digest: 2Pxv3mwQOH4Zl51K3xbGKjcFZvFKG8l62DFG1WXMjvw=
+
+Name: assets/Resources/shaders/Level.ps.65.spirv
+SHA-256-Digest: Fkj5Wh8AUQNhPYuOUK3ZjU1EgXGrYchXLX411M8UMs8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.106.spir
+ v
+SHA-256-Digest: 7pm56M0LLFB4/F7Iasj6U5EY8Ay5D31Eew0r/G8nhqo=
+
+Name: assets/Resources/shaders/Level.ps.1288.spirv
+SHA-256-Digest: I+Tj4LjFtYUlskF6/7CG5Qkt+xtTDf0rA/db6Dc7kck=
+
+Name: res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png
+SHA-256-Digest: sFd9+1GgxuGbuewkMeErA+XXuzs5aAOAU8maZ1lZCzQ=
+
+Name: assets/Resources/models/gizmo/gizmo_group_linked.sgm
+SHA-256-Digest: NtmF8f86ci1RYuOANG+9vQATXfaVTnbG93BlFS8w+os=
+
+Name: res/drawable/btn_checkbox_checked_to_unchecked_mtrl_animation.xml
+SHA-256-Digest: wjds5ZwxoUsp3iGW6ut9NgYO+nnq+eJ3vleYXytQADk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.54.spirv
+SHA-256-Digest: M++/QQ09X/fFaX8vM9Dp2fqZFelbk03XmTrwFB4XLWw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.27.spirv
+SHA-256-Digest: ytjVX7vO+EdMoD6CmYFseYg00mzcQWeUrSVoc/VpLuM=
+
+Name: assets/Resources/audio/player_step_concrete_10.ogg
+SHA-256-Digest: /+xJQx5swMYzka+aDbN072OVQjkWPDZ1NlUMT0FwbH8=
+
+Name: assets/Resources/cosmetics/grapple/hook/shoge_basic.sgm
+SHA-256-Digest: ZYgv3rvl8FiSKmuq4fhs/YL7MvWvrqbxjmI6Ht/X2RI=
+
+Name: assets/Resources/models/player/editor_controller_button_oculus.sgm
+SHA-256-Digest: QFPiDL3VTDteDwstEW66RCNJT+cqIU3Q7MCKRz2aO/I=
+
+Name: assets/Resources/shaders/Level.ps.129.spirv
+SHA-256-Digest: fW7ceH5G43d7+T8Wrb5G8+x2McBYWYewnOTKeX+pODw=
+
+Name: assets/Resources/shaders/UI.vs.4.spirv
+SHA-256-Digest: RJWa3KUVBw3KocngTaVvaEOxEyCG3YlXao0Ir04ZZb4=
+
+Name: assets/Resources/cosmetics/grapple/hook/kunai_basic.sgm
+SHA-256-Digest: vfLsk6h+Pm5XfKHLyVcVqsxFl46Zk1sckwmqSUSg558=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.52.spirv
+SHA-256-Digest: yR+wFwLqzagIKzLJjOnY9wl0MVEhAbaCkABjpDorBJ4=
+
+Name: assets/Resources/shaders/Level.vs.259.spirv
+SHA-256-Digest: uwZKNJxh6AyHl0wSDa4wKFGgVuUhAsketXlFSE1CJ78=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.24.spirv
+SHA-256-Digest: M6if6r2gZ8p3c4zX19CnHsq3ut4knqrgsA2vxF1hhos=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.234.spir
+ v
+SHA-256-Digest: TsM9UMDtqjogQIOGMnnE6Jh/0TsNoXWWMzCqCGHqa3U=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.103.spir
+ v
+SHA-256-Digest: dxJmZpO9vhDBBp17WZUvq+/18FP/VAONXvjEAuPJMc0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.179.spir
+ v
+SHA-256-Digest: GejGpl2b9soMZeZToTLtuLI2s9KIEpWlFp8R9+azU+Q=
+
+Name: res/layout/abc_alert_dialog_title_material.xml
+SHA-256-Digest: LtfPpcXeZ6z8C3SzNgZyx+ikgPZXLIXDImBSyIDJNK0=
+
+Name: res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
+SHA-256-Digest: cu/HpCBmGR2HldYOnrwO9yFWWw7MiPItXY/UMyrTssM=
+
+Name: assets/Resources/shaders/UI.ps.7.spirv
+SHA-256-Digest: Jlfhb3ozeeRx4saKylXhQZA4KPS+RhCXtkOJwLwULsg=
+
+Name: assets/Resources/shaders/Level.vs.160.spirv
+SHA-256-Digest: rebsVgUFw4/H/kekFLgcDSWmBFwzKNCUXzIdDU2fRx0=
+
+Name: assets/Resources/shaders/UI.ps.4.spirv
+SHA-256-Digest: 8gCty/4KwTDe8owtrpSYE3xJX+x0e78FZxFk1t0TSd8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.237.spir
+ v
+SHA-256-Digest: 22jQahw6YlPQYep6nLY3VNk/n3zscAG7gcNyDnN84u4=
+
+Name: assets/Resources/shaders/Level.vs.163.spirv
+SHA-256-Digest: 9tOuUVXBDFZxwGKf/x6wGaUpoasKD9Bx4BultFtiN9w=
+
+Name: assets/Resources/shaders/UI.vs.1.spirv
+SHA-256-Digest: 8TTALNJL/tLvnGRO1MIssndSfPyCx9GobQwwGO1GUIg=
+
+Name: assets/Resources/shaders/UI.vs.3.spirv
+SHA-256-Digest: ljLPzZRw4U/eztzwLoncNQ7KHKpNU8a2tdWcgHRZzMU=
+
+Name: assets/Resources/audio/player_grab_5.ogg
+SHA-256-Digest: zh0bF82f/qY2kFQSqDh86aqkylR5DRGxxoE61nJuRFo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.26.spirv
+SHA-256-Digest: Li+CKGrax63XAg84fmSHvDrlXZHcpHqq/hHbyTu/tKs=
+
+Name: assets/Resources/shaders/Level.vs.161.spirv
+SHA-256-Digest: VqeSTSm6C1Ui7mPCJOQUBBCwkr/qE94hwhTyiJm3FGE=
+
+Name: assets/Resources/shaders/UI.ps.6.spirv
+SHA-256-Digest: 3lsC6pUHu3aPbY7oU+cL67q4iWIlrlaf0kOLIDkxZn4=
+
+Name: assets/Resources/cosmetics/grapple/hook/cheese_string.sgm
+SHA-256-Digest: VKPZJbSVDat8aX4YiYdaGj7FiAQLtcGmErMzGQEeX0E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.30.spirv
+SHA-256-Digest: ZRfvAPGMMmMDCBCrncHqxltStrg2qLsKxg6z7DRg+f8=
+
+Name: assets/Resources/shaders/Level.ps.64.spirv
+SHA-256-Digest: FPmOltpY1EEAxSlJU1y9eJOCyLNj5XQzX6EKq0DaOzQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.178.spir
+ v
+SHA-256-Digest: IQ+KvyrpvkHrc3G7Z/dfTKvUMi7lpqGpcBiY+r9kXZg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.236.spir
+ v
+SHA-256-Digest: 0JbPzwADNW2Xh0dfmL1suRtD459yN1Ck91Gri9bbntQ=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png
+SHA-256-Digest: aP9THRcnevJffP3ryMouppp6lYJ02TYW4KtLkttNPJ0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.104.spir
+ v
+SHA-256-Digest: eqm6GtfODAFak8jemaSfaDZgftYagW+dj2PqFxqqLVQ=
+
+Name: res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png
+SHA-256-Digest: PUW1w1B4DCKDFU2oj94TTgieG4Rm7zWHJVp7lBZLYtc=
+
+Name: res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png
+SHA-256-Digest: 3LsOONKB69PLWMw82m6vpsV+6G8VoYDn2cpaPF4/oWQ=
+
+Name: assets/Resources/shaders/UI.vs.2.spirv
+SHA-256-Digest: I6O3KkHtBtZ1DzHHF2bdyepXpWt1qWPNCs0Vn/a6GnE=
+
+Name: res/drawable/abc_btn_default_mtrl_shape.xml
+SHA-256-Digest: wqhtTZYx7wDQGlip2d1Q1dNzhl4GN+dCRpVMmIn368M=
+
+Name: assets/Resources/shaders/Level.vs.162.spirv
+SHA-256-Digest: FmhCYMS81vGFCA//TdCXmR0QeKCAstUk7bb2cDTOLxE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.31.spirv
+SHA-256-Digest: h4lWNQEHaVuQQqLNzW/HzLB9zKh/sXhy7DXAZfBjwuQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.105.spir
+ v
+SHA-256-Digest: cZQYBMh1ns8jk5d9UH2ghOTBwKfawulqf/wEo603yC0=
+
+Name: res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
+SHA-256-Digest: wdMeiWANwx1p0qKOPoaUpRbqQzJ+Qb7Ys534xrbXCL8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.25.spirv
+SHA-256-Digest: LyD1p2OK/2PIxRc8ZdqZldw96tzm7imHwYzl6DEhY7k=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.235.spir
+ v
+SHA-256-Digest: hJkQJBGLahp5GTgSxE2OaWjKfY8/w/RVQjDtdVZBpOY=
+
+Name: res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png
+SHA-256-Digest: 4/2g5TLNkp6b790NqCFeYKllQqSZdFckInFDoOZhxHQ=
+
+Name: assets/Resources/ui/clear_text_off.png
+SHA-256-Digest: XiOz2N0mIjBeYECzhAcIaND1vinngMQjNIhKfVJK3mw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.53.spirv
+SHA-256-Digest: FgZsxIUVdcbshNB4DOhkO4cMpYAeE+YNS8b0TQpTgL8=
+
+Name: res/drawable/abc_seekbar_tick_mark_material.xml
+SHA-256-Digest: QHAaJ6Fn3MlGx1QMUcRrz7PgxXCyak5m9fkTWDJOVZk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.177.spir
+ v
+SHA-256-Digest: rvQpeMr1niBDZT+6tDGr6Rz7mJSd3aZdxaiV6jz25J4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.10.spirv
+SHA-256-Digest: wDivGGWtuvNKdpH2QNbWZUhho8Y8tflKgeJNp5ZpsAM=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png
+SHA-256-Digest: JGQwVHfTfdqJMKncDFBJRfVivtQS7RYOsCU7eXSPuPs=
+
+Name: assets/Resources/audio/player_impact_9.ogg
+SHA-256-Digest: 88ncSP3SndfvrcNZ2it03kBs5kVGsu+vHP1iYtuMAzQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.6.spirv
+SHA-256-Digest: 8SwvoZ6sUZkJCPtKuFxe4XH4Sp+tuav6Rl6Z5d+dlJM=
+
+Name: assets/Resources/shaders/Player.vs.10.spirv
+SHA-256-Digest: Pg4Twx/fVSS0ZnhWiCU4DZFh9jlWQWR06RIS7XwwMOc=
+
+Name: assets/Resources/shaders/Player.ps.39.spirv
+SHA-256-Digest: OztgknejNKNFYGLdUuuI8z9bpVP8yMMCGz7lamipk2w=
+
+Name: assets/Resources/models/gizmo/gizmo_lock_closed.sgm
+SHA-256-Digest: 9eDKFGSiDPeBwrF9s7UBTg0EV2Qh8/4AZrXrj6D947E=
+
+Name: assets/Resources/ui/redo_off.png
+SHA-256-Digest: LuZtf0EuInx8prpllkct6IpM7rOnxsRAbQ53zsh9buw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.38.spirv
+SHA-256-Digest: rb2AZ9TFwzjUgvMQ2a4fjZLTnnycQkxtFNQLeVOJeMY=
+
+Name: res/color-v23/abc_btn_colored_text_material.xml
+SHA-256-Digest: dkEzpExhupG0HnJWmQYxFQL5AfsenQMahRdD3parJ/E=
+
+Name: assets/Resources/shaders/Level.vs.73.spirv
+SHA-256-Digest: lofuVhG9N3gQsQnQOeZqPFxDZ/4iFeM95aeCAm7oKDc=
+
+Name: assets/Resources/shaders/Level.ps.1098.spirv
+SHA-256-Digest: flgsdfKmjC0OCwCIu0PL3UVpLyqbPdP572xfOO52kf4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.132.spir
+ v
+SHA-256-Digest: 4itABFdtcUdGLFt+yVzo2dxzFxSzoYvuma6TIoR7Wuw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.12.spirv
+SHA-256-Digest: tkvt8ZWW46J8q+J3u62/g+3DP+ex7iS2Lu47os1BHdI=
+
+Name: assets/Resources/ui_compressed/unmute_self.astc
+SHA-256-Digest: eF5pcNUTZTuET9hyffkg3Q5Ey8p1jdGtUVEm+nv4/mg=
+
+Name: res/color/abc_primary_text_disable_only_material_dark.xml
+SHA-256-Digest: yLRKquLNezgvYXPrhjKqHWK9vX5zzwSJTkG74WvVeAs=
+
+Name: assets/Resources/levels/official/2-tutorial-2.level
+SHA-256-Digest: W6Lg2XFz3mo4N17fdhJ3NddQEj8NsYt3fL45uVQExZY=
+
+Name: assets/Resources/shaders/UI.vs.12.spirv
+SHA-256-Digest: ZFJx41WbY5Y25TdlBxZaqmWIMFbVmSnIg1Kx7CVz904=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png
+SHA-256-Digest: 1pFf7RaXvwuuI5WaoLR5KjCa2+Sd423WVrQjDA5nPL4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.ps.3.spirv
+SHA-256-Digest: b0tQZcaglnvsICbSB3ACJE/+zOtrK1XMuZTvsU1vJmc=
+
+Name: assets/Resources/audio/player_impact_20.ogg
+SHA-256-Digest: 2jmicpZ6GNErYD52MZoLjTpIvqc7XuT7uKToF5dwj58=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.242.spir
+ v
+SHA-256-Digest: WApJUzvSZ41lx3RbfzfYCpKSPBMk7lu6Lj1qw7zY6sU=
+
+Name: assets/Resources/shaders/Player.ps.13.spirv
+SHA-256-Digest: YyKeni+coZMOwsABIvbeTVhJgxJKFlkD3r2wD5rNZz4=
+
+Name: assets/Resources/textures/grapplable_lava.astc
+SHA-256-Digest: 267xfkDZ03XyO443EFUHpEt4DsNz579kmqBGnB3foqQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.158.spir
+ v
+SHA-256-Digest: FeAyixPvGFNBBvVicJJwvL/CstGrjQF2URkXM5o2zYY=
+
+Name: assets/Resources/shaders/UI.ps.3.spirv
+SHA-256-Digest: 1F+ePPwY5EGvLO4iSA0goKTRibZP6Poh0njLK7JDUcQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.15.spirv
+SHA-256-Digest: WHOa9gLXhngfrBIUqu5rC3uD+kKjKNSERxVJiJqFT7E=
+
+Name: assets/Resources/shaders/Level.ps.50.spirv
+SHA-256-Digest: k7CLviLPcxXKNDUCu/QBEW1bo01whdtsQZXRK8JMEnE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.1.spirv
+SHA-256-Digest: 1/59RcPPZ0tY5wF5mqP3rakkDIoPEfuU6Q26wAHSIq0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.111.spir
+ v
+SHA-256-Digest: MFCu45CmCqy3no6NhbQNMMravvDKZ+a/n9WFD+4Dzbw=
+
+Name: assets/Resources/cosmetics/checkpoint/easter_egg.astc
+SHA-256-Digest: iY9rAnzdI01hv1R4ghq9PxG/rm97QlVeqyguXcMOILE=
+
+Name: res/drawable/abc_cab_background_top_material.xml
+SHA-256-Digest: Ob9S9lcklMYy/M6Q3XoCCeYmM6+Q2CEXg35gPWQ3N9o=
+
+Name: assets/Resources/shaders/Cosmetics.vs.3.spirv
+SHA-256-Digest: 8tZ4gB7Iwxh5VkPnw5mQcEmdzsHqFOvEnRnw55qyi2c=
+
+Name: assets/Resources/models/player/editor_controller_button_b.sgm
+SHA-256-Digest: rBkZvd317F6mzB4YeXwSvU2Wo8IW+SI9Y4/jxjOMJCs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/PostProcessing.ps.0
+ .spirv
+SHA-256-Digest: 6N3jXWC43Wd++VlZF6dZNWmDBl8g1Oh9EJcRe6T1dz0=
+
+Name: assets/Resources/shaders/Level.vs.385.spirv
+SHA-256-Digest: Cn0J44/O4r5rtjT8Taq7NO/nC1lL39+AVpVT5YMnYx0=
+
+Name: assets/Resources/shaders/Level.ps.97.spirv
+SHA-256-Digest: AjsdvDb3WjCECaLunsf/1OAwCVuue3pIlBdj4QFK6M8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.33.spirv
+SHA-256-Digest: fWuQxjB+Wm2DyDUj7QCAb3Et+lQrVTW+fRGGENIB6dE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.17.spirv
+SHA-256-Digest: SCbEgOzJUFwWAGZnRAxKJNAJuF5ptYOwPxkcD8/6UC8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.11.spirv
+SHA-256-Digest: zR/D5y6eC2KgUgnICyYmQJebIE3QA5NlmD9DOBDkXyc=
+
+Name: assets/Resources/shaders/Player.vs.15.spirv
+SHA-256-Digest: 3x9NmDfvgKQ3+AOkLE+eEZgFHHgyWt6h4H797Pd9A5s=
+
+Name: assets/Resources/shaders/UI.vs.6.spirv
+SHA-256-Digest: NuTusl/rqZH9TIRBfrthLmPVOfw3I6uvYcodZ/7udFo=
+
+Name: assets/Resources/shaders/UI.vs.17.spirv
+SHA-256-Digest: WwgrY3k9JL0+m/134/4R0tCQjKYYl38q2okhBLyqRfU=
+
+Name: res/drawable-mdpi-v4/abc_ic_star_half_black_16dp.png
+SHA-256-Digest: Cmbqb3zrgD4A6+Q1X0t24L6HFtCPkQaGO9TfJLzfKBQ=
+
+Name: assets/Resources/textures/wood.astc
+SHA-256-Digest: 8vtgRjDSfwvbjky0c2uPyjl1yR0aFB8/QFYcb7l5AgQ=
+
+Name: assets/Resources/shaders/Level.ps.515.spirv
+SHA-256-Digest: TeTgWQNvY56nl1+f6DdX7HFy6yqxmVoJuobGHhK3Rz8=
+
+Name: assets/Resources/audio/player_impact_11.ogg
+SHA-256-Digest: IxOeQ/1MZHDzF39/EPZfc0nOMIDZ3AJjwKr2Q7qTzII=
+
+Name: assets/Resources/shaders/Level.ps.392.spirv
+SHA-256-Digest: fiaxBksA3FyMdBbKFnHtOkmeygxhSxtwuo+4TCuAHII=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.221.spir
+ v
+SHA-256-Digest: m4a4wWxw/DL+/DmLd1/L12XoPm2DIpPBfgt46X9I7FY=
+
+Name: assets/Resources/shaders/Level.vs.291.spirv
+SHA-256-Digest: 00/Zyc0rGBdpK/APzfapmpRTzjwjjdtGtm+0bGlZ2es=
+
+Name: assets/Resources/shaders/Player.vs.8.spirv
+SHA-256-Digest: S+ipWOxqaVuwKOgxva97jMfgTxuHQeiT85OcZjQ0hFM=
+
+Name: assets/Resources/models/gizmo/gizmo_translate.sgm
+SHA-256-Digest: kicopdtopHZ5kR3dCAn+H9FIv+tTEw6B7q4Iy/P7uwI=
+
+Name: res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_light.png
+SHA-256-Digest: qXAYptZOPdTPvTIfUK5Sdspx1lmXcuuFtDdhOoJP8oA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.119.spir
+ v
+SHA-256-Digest: gDCyW85zbBI9F+jUO/qti0pDGi72W7ZfVxdfjvWLqBw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.57.spirv
+SHA-256-Digest: YJ+QgnoKh6fLxcXVJ0j2c/+GRA+hl9vORNZZ5G135iQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.116.spir
+ v
+SHA-256-Digest: aZD9USpTX4J6vsf1GQpw9fndamL6f1PHzKQ/R9TlmsA=
+
+Name: res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png
+SHA-256-Digest: RgrVBrT3nBbhbw40StmejZQZ1VtMz92xIKN2SRBcW1Y=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.87.spirv
+SHA-256-Digest: Zma13MEnv/BsLj91xOI70R9BfAGQZwjGrxBS+9l77hw=
+
+Name: res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_
+ 1.xml
+SHA-256-Digest: Hh8tLQmDVecMY9RlXg7ozrnCK8Bk+/ykJqu4Ay8l2PU=
+
+Name: res/drawable/abc_ic_ab_back_material.xml
+SHA-256-Digest: BEzj68zYZM9eJJG12XSuMB6cQBMveI0IFTSkHWtXoYg=
+
+Name: assets/Resources/shaders/Level.ps.130.spirv
+SHA-256-Digest: ld9pLJfnpDONn7ZOup7CmifpQCH5kxZ0BL2d39wB2Xs=
+
+Name: assets/Resources/levels/official/11-easy-2.level
+SHA-256-Digest: vKkIwWYv2rs3O34o5S/p1UwLx9W6k7DxiQVq8zR4hqc=
+
+Name: assets/Resources/shaders/Player.vs.31.spirv
+SHA-256-Digest: l5tl8+8a1i8vR4W3OHP7J4fne5+iMAkcaOY7/niurLg=
+
+Name: assets/Resources/cosmetics/head/hat/witchhat_basic.sgm
+SHA-256-Digest: N8hmaOds6S5Xr5NX3fRTnGkh7ddYwT7iZX/byLO9iXg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.59.spirv
+SHA-256-Digest: rkqTUbvFgCvgTIY2Noxt9cH/YkqjDE7+1Px7HA3sIec=
+
+Name: assets/Resources/shaders/Level.ps.397.spirv
+SHA-256-Digest: rPPtW4hBPQJl/Z4nH3EKcZitYg/Rt0zRi7354RMlPVI=
+
+Name: assets/Resources/shaders/Player.vs.82.spirv
+SHA-256-Digest: ul8Zw35nsbFa4ERLksgYwOlzEfL+3bsNA59LqxS88eQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.123.spir
+ v
+SHA-256-Digest: Bw2KjV+kFeTY5MZ8ChsIM3KvOzV/AHGnBT4CCImyF54=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.217.spir
+ v
+SHA-256-Digest: H/l2LS3nbxivL+7For6wAzEmHqfRoxtUHjOT5CyVh1I=
+
+Name: assets/Resources/ui/undo_on.png
+SHA-256-Digest: vz7iw9XqSB5lew5pXonJ1TW2qRG89DagdRxDpDlv2VI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.14.spirv
+SHA-256-Digest: QyrRXf+WzXODczPRuxaPQbX3BgmrFJaZjvUIrACUjOc=
+
+Name: assets/Resources/shaders/Level.vs.48.spirv
+SHA-256-Digest: OH6RF0ue3tRYpUVaV+FKunuhigcW8/7en0+olj2kOeQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.89.spirv
+SHA-256-Digest: nXw7FIdrDOkSuUhZW4swcFxh0WWFXK1s6TdSGhgGmc0=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Bounce_L.tact
+SHA-256-Digest: 0coCkME3S2xL7U4j4YsF3KFQAOL2+1zZO59VjmNNfGE=
+
+Name: assets/Resources/bHaptics/Vest/Grab_Air_L.tact
+SHA-256-Digest: IudPuRRO32FvoE5CPdtAmtwDHT/ZwSCG7t2N8uFYCpE=
+
+Name: res/color/abc_hint_foreground_material_light.xml
+SHA-256-Digest: E7XO7Uub2mktHDwpLLAa8P6cfbfYxbVhO0kmOQg6DHo=
+
+Name: assets/Resources/levels/official/6-tutorial-6.level
+SHA-256-Digest: ZMFsIWAGf04B2++dlncyKXeGbiUVDCj+9vUzAXn5uUQ=
+
+Name: assets/Resources/levels/internal/lobby-temple.level
+SHA-256-Digest: CXoFfdWeGQSXTi2UYLiWuOkPPMWSHSLWnjAi153hP8E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.188.spir
+ v
+SHA-256-Digest: f21KlsgSVrbBJObVupaNlFpp9HkHl2xBOxOGzHFdptA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.6.spirv
+SHA-256-Digest: e7WcsOKTq0Jn4CE+S8txojjgtmg3mPVON2Lu7hMmjjs=
+
+Name: assets/Resources/ui_compressed/report.astc
+SHA-256-Digest: Bc+6kzeeTQ7R25sCuqp+SeeXkVsoFU/bBxHl0VcxL50=
+
+Name: assets/Resources/shaders/Level.ps.76.spirv
+SHA-256-Digest: EOW3IjjVgvb8drbduEKed8ZHn4LEpIBr0d3KJb1CSyc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.247.spir
+ v
+SHA-256-Digest: tBf65aRl5N2U5/TZaC31SplVSbPY5GuOFEcCIG9WYrY=
+
+Name: assets/Resources/shaders/Level.vs.144.spirv
+SHA-256-Digest: sVpwkuRqN3m6GlxwPL+V/cNUbVrEwArqdA+6Zd3HgfU=
+
+Name: res/drawable/tooltip_frame_light.xml
+SHA-256-Digest: hSBDM62Pwb8NSDNb0aU9OK43aM5Wi7eWN/+5/wlqrpQ=
+
+Name: assets/Resources/shaders/Level.ps.257.spirv
+SHA-256-Digest: S2FAu/6N5iE3Jsvn3bVgeJLbdS060/eV6OE+es9qnKU=
+
+Name: assets/Resources/textures/default.astc
+SHA-256-Digest: lnQJHxuxXspBYiIRVhl4GxVszrfkiDQ8mghr+rmgGcU=
+
+Name: assets/Resources/shaders/Level.ps.320.spirv
+SHA-256-Digest: OkJW5LY8mmqVIGuhMuVcs86E5zf6cA+TolG/Kq7P4y0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.36.spirv
+SHA-256-Digest: bCMe/rvMY83a2cGeVjwUIgtaJa8W5CziPwyVcTHxU1s=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.200.spir
+ v
+SHA-256-Digest: XMAKopX0vhk5M/TlgkdT5IpFLr9W0aFrqG/nU6XRO+U=
+
+Name: assets/Resources/cosmetics/checkpoint/pumpkin_basic.sgm
+SHA-256-Digest: Dn8Xwb851Gxl3iX0IdOccPxF7tkxtMSp+my6yY5bcuQ=
+
+Name: assets/Resources/cosmetics/head/hat/sunhat_basic_moderator.sgm
+SHA-256-Digest: we2kYhnoIXtKQTyssSjikobsARTGnRKc7rhALmUiiRc=
+
+Name: assets/Resources/shaders/Player.ps.18.spirv
+SHA-256-Digest: rowWws3C5cwyYlzU28DqUZ1dsYifGScypSessT8fEIc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.137.spir
+ v
+SHA-256-Digest: jlqLTLeZMmF184hoDsmOICeTQKbAHZKMSTg256W2ERQ=
+
+Name: assets/Resources/shaders/Level.vs.203.spirv
+SHA-256-Digest: 0F8WJivDdo+y0fIHFz/dzrQ1+vzDVedE7apGeiY7to4=
+
+Name: res/drawable-xxhdpi-v4/abc_list_focused_holo.9.png
+SHA-256-Digest: SjTV0uBMIVEw1juq5tjQC7ead1R4i6DvdqAlHyvljSo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.73.spirv
+SHA-256-Digest: +R7fJESdeZloDeAC3HIq2LZl5W/WtwI+pVphE7qqZUc=
+
+Name: res/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png
+SHA-256-Digest: G17PReV6zb2Yxpy2KLgVdsqNEg5Jpz+fftTq6yL7qBo=
+
+Name: assets/Resources/models/shapes/start_finish_collider.sgm
+SHA-256-Digest: yCGf/vZiRll1YBwfDlgrqgfBywA1fbtW33mf45221Yg=
+
+Name: assets/Resources/shaders/Level.vs.10.spirv
+SHA-256-Digest: x+IAX7/6+L0ivY2otYS9XWXc+hNWNAQZ86QOL4IlgKc=
+
+Name: assets/Resources/ui_compressed/unmute.astc
+SHA-256-Digest: lgEXQinCFt6gL/t24dsfB3ojiWeEv9F4DsvPn3/wovY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.205.spir
+ v
+SHA-256-Digest: vfORSB+Et+1ldrrZl/1175E6GrGcOjXe3aSM4DoUqUQ=
+
+Name: assets/Resources/shaders/Player.vs.73.spirv
+SHA-256-Digest: L9BSyMLrH57zXZzktN1QaAL7IgHvq2TCbzN6sg8+AIw=
+
+Name: assets/Resources/shaders/Level.ps.1035.spirv
+SHA-256-Digest: 1wjQHhzKcG0ebJwdmU4Ee/1JOnkwgrcjI3QgiwI7NJU=
+
+Name: res/anim/btn_radio_to_on_mtrl_ring_outer_path_animation.xml
+SHA-256-Digest: pxPjcuzgx2tYbVDgerRpUJ423SpOoYPcU0houddxzCU=
+
+Name: assets/Resources/bHaptics/Vest/Impact.tact
+SHA-256-Digest: amp9fSbNn9xukkR6Bs+Le1tFTCIyvOPFfVR0FHOg71g=
+
+Name: res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: ggkJIxXPCdG4Jpl5TLmqiLe4iGn6YcIbM5W28Zp5DkI=
+
+Name: assets/Resources/shaders/Player.vs.66.spirv
+SHA-256-Digest: r94KreUkPQMenrkSTQTg/FFCd8GTY3IcCCFE5PLwvXA=
+
+Name: res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png
+SHA-256-Digest: No8F/BkrNYnCwWQjd2r3/g+e7q08sGX1hjiHWhInmPM=
+
+Name: res/layout/abc_popup_menu_item_layout.xml
+SHA-256-Digest: HK207+9CxIZOqpZxPkr1nd5A1KniuA1YzlDDlkYvZzI=
+
+Name: assets/Resources/shaders/Level.vs.9.spirv
+SHA-256-Digest: GVxMQprrHAgQFgXG3wXPWsVuQjtUVuazYbPKTKdaOa0=
+
+Name: assets/Resources/shaders/Player.ps.50.spirv
+SHA-256-Digest: q3VwAcoQkb6KAURiMc8TZsbu0FRVKOfBFsd1ws2Lnf8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.195.spir
+ v
+SHA-256-Digest: 0KXYih/4w9nr1hh9gcdUhfPA+AMqfS3oiV6zs3Xkdfg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.66.spirv
+SHA-256-Digest: sU5ytSM6tj/oROWCkt6OdlDqqz5vyrc1EDQsPQgtZE4=
+
+Name: assets/Resources/models/shapes/prism.sgm
+SHA-256-Digest: tt8OREzLb0AojZi3BXgbR8+WRrMDcDKQml0h78+CYho=
+
+Name: assets/Resources/shaders/Level.vs.195.spirv
+SHA-256-Digest: 5BbJL/6Ra9rLOPp1maaY/6fvnLRM0QdqVbu8GgHCDPA=
+
+Name: res/drawable/abc_ic_clear_material.xml
+SHA-256-Digest: hAdSim9Tf7SmQngyPjeexlPsHw3/TZeq5m5WiidlHmU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.107.spir
+ v
+SHA-256-Digest: Ag6NjilTXAF6lTYFFFpt+N06SwOntw4dCIz5DBLqIFk=
+
+Name: assets/Resources/audio/player_impact_7.ogg
+SHA-256-Digest: 04FJEJ13SXDYEo20g0v39JN3qL0selY0EP9Ytv8NoiY=
+
+Name: assets/Resources/models/shapes/cylinder_collider.sgm
+SHA-256-Digest: b6kKao2q82W/uZg8p7kGi28oeww2JPKDOvgHbbBxriE=
+
+Name: assets/Resources/ui/favorite_off.png
+SHA-256-Digest: foaeM2B+vvzJGYljJeJkAitk7ENsMxLO5h9nz5ulAyA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.40.spirv
+SHA-256-Digest: 2ogeimSvVkNLJA7hByIxJ8Bc8TzVmeM2+yeerPvQmwc=
+
+Name: assets/Resources/levels/official/20-easy-tower.level
+SHA-256-Digest: WH01aFDm0O0vTk1BaoGoe96yZAQXMNjK5oqDA+6q6k8=
+
+Name: res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: aBVyg1UKFMEyFJq6TBaPT2PO5BffAIAfFaDmB+4VxQI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.78.spirv
+SHA-256-Digest: 6MnElJzsfsUf+8ZoqTwvSibp6myRR11bPm/W7OJEfNg=
+
+Name: assets/Resources/shaders/Level.ps.266.spirv
+SHA-256-Digest: gQoIl2pz9+0ClX9yf/Tg/ZxKAXYdytrciwjQpCmXJRk=
+
+Name: assets/Resources/bHaptics/Arms/Grab_Air_L.tact
+SHA-256-Digest: iztqwVTIcnoFoTI+pPlNy3Ds4OtrKiQoghbdDi2dJR4=
+
+Name: assets/Resources/shaders/Player.vs.3.spirv
+SHA-256-Digest: MydiyTgezOVTNWiarqI81QKGd2Xm8ANRtqY5sbd2Bn4=
+
+Name: assets/Resources/levels/internal/lobby-beach.level
+SHA-256-Digest: GLZJ/BYJ7Bfp4EzwhAvtNHmV/Dxltp/rf0JRM2Z5deo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.96.spirv
+SHA-256-Digest: 83/umBg4jJsTld1mX26oZ6gKkGnuBpJYKrYKzj+qbBg=
+
+Name: assets/Resources/shaders/Level.ps.1161.spirv
+SHA-256-Digest: QhC5xOvLq3j9sS9MVHLmL6lQuXM2zMmtBuby3dmSMYk=
+
+Name: lib/arm64-v8a/libRaynePhysX.so
+SHA-256-Digest: 7AT+SRLLMoMfX+w7y2z2bDmWsqYjZuXWTVz8W75TVC0=
+
+Name: assets/Resources/shaders/Level.ps.34.spirv
+SHA-256-Digest: TFf21wO8JBe/WwHSzvf6+dbK1/q14WdlVLcCce89uvc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.63.spirv
+SHA-256-Digest: 1MCIbfQoNR0a01UtoZ9G6oIOmo7NY0oUHLchQ5/2tr8=
+
+Name: res/anim/btn_radio_to_on_mtrl_ring_outer_animation.xml
+SHA-256-Digest: UMxnHRuvLwZKbhmkIeui/VLqRF0Rs4tx9BUr+/nKT8A=
+
+Name: res/drawable-mdpi-v4/abc_ic_star_black_16dp.png
+SHA-256-Digest: GpM2h2SisZHLcn2DS3lFzSYy7Ak4KHubPWwZwGMcwI8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.162.spir
+ v
+SHA-256-Digest: 6Qr4KBHMrSjsoNyGYfJRenjsSXxjxSWpNu+BEWn/jco=
+
+Name: res/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.
+ png
+SHA-256-Digest: K1qbkkWpbuaQRWNXUVp/1uc4u5lS3n8PfpRwi1A0DiQ=
+
+Name: assets/Resources/cacert.pem
+SHA-256-Digest: GPi1F2BsfcTSVD22VIxhHZaraCA2jcGjF+a7+p116Xg=
+
+Name: assets/Resources/models/sky.sgm
+SHA-256-Digest: Ehp1UIAO+wKRN0wMICM4wMWf3zaIi3S7j/1JgsEsiqo=
+
+Name: assets/Resources/shaders/Player.ps.0.spirv
+SHA-256-Digest: Jpi4tneY3OIXbLz6n670UCuMlU8mnxxYyHI0veAppjA=
+
+Name: assets/Resources/shaders/Depth.vs.1.spirv
+SHA-256-Digest: EbU7/U4Mn6gnGO8WU90M1Hznh7KsP/ijHSdYIWGdnkU=
+
+Name: assets/Resources/shaders/Level.vs.22.spirv
+SHA-256-Digest: JHY1zsDm1MNZbFrPRZ9nwVqmLqYQ5y0XUNrkJ8S8y6k=
+
+Name: assets/Resources/shaders/Player.ps.43.spirv
+SHA-256-Digest: CYOrnFX+coM/uh0wnRijgznv+jEgFk868LG2j/kcE9A=
+
+Name: assets/Resources/shaders/Level.vs.130.spirv
+SHA-256-Digest: QiKe9oSQLWWRStsf1I4cVWKMBaRMwXcfx9KeJtv7Lvs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.146.spir
+ v
+SHA-256-Digest: RLU8vDzhTtr1UHaLxrjCV7Y0PKo0DvffFSNQfc6VmiM=
+
+Name: assets/Resources/shaders/Player.ps.5.spirv
+SHA-256-Digest: RAgGR85VqBhF5sPydrt5VCvdiBZVxY+9IXw9LPuFMfo=
+
+Name: assets/Resources/audio/ui_confirm.ogg
+SHA-256-Digest: fM2/C6Fn6DVh5iEzfsvceMi6VET/MWCbFZL1BKjjcbs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.27.spirv
+SHA-256-Digest: 7i0TOXRIvXXQHlllinapU/74+18mlhEpG4vYUaLKnkI=
+
+Name: lib/arm64-v8a/libEOSSDK.so
+SHA-256-Digest: Oxb7HFlp36pFFe4/xARRK6rZJZ7pVJ7pG2JedO6DzkA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.24.spirv
+SHA-256-Digest: +wV9TyN+okcaQ+6Wia+eZTibxqXJWoNxyN37KK+RlGw=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Attach_L.tact
+SHA-256-Digest: r1ubhPlV5h6nYBnGbIYBC0StMZclJJzvegnlxvd11Kk=
+
+Name: assets/Resources/cosmetics/checkpoint/egg_dots.astc
+SHA-256-Digest: AaCpHUd4i/Ag3lN2J+Yjdd1UPnmVj29PrwpfnjBw1bA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.153.spir
+ v
+SHA-256-Digest: K0yf1eoT1wITcEKYssrpKESoYqlUbmepkT5QEcWY/x0=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Attach_R.tact
+SHA-256-Digest: snSSDbpFeUGzhFIYZ8XzJNDuM6gK3+mU0v+nfrG64oY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.47.spirv
+SHA-256-Digest: 7a+FyMBGKUZPPAo8AsnjmiLyjJA2KAZ2sWIqadmNv3Q=
+
+Name: META-INF/androidx.versionedparcelable_versionedparcelable.version
+SHA-256-Digest: 7ChE4MMLtAgg8UeDBpPriosNbHqEH4CNelrli7ZUSEc=
+
+Name: assets/Resources/ui/background_sidequest.png
+SHA-256-Digest: FdEeDYXDzcOOckicsBl7wYEPswjQ6HRytXkf3eZTKAA=
+
+Name: assets/Resources/shaders/Level.vs.64.spirv
+SHA-256-Digest: dVrI4ts0qQ1uJLLSAUferIxMcX2Nw5Mx3Q7EvE30pgs=
+
+Name: res/drawable-v21/abc_dialog_material_background.xml
+SHA-256-Digest: tbyHMwpnRmyGYJZf45QgjG24vjPKTGv5Tog7V6xgOfA=
+
+Name: assets/Resources/bHaptics/Vest/Respawn_Fall.tact
+SHA-256-Digest: V1FiYrkG5bXMNMk7TuuyHurxgBaJs7mOUvZXESbF4ic=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.31.spirv
+SHA-256-Digest: KLDmtGc2g3n1rwiKfyoxuD4KUN3S9pmMNXfZmW+rSpU=
+
+Name: assets/Resources/shaders/Level.ps.334.spirv
+SHA-256-Digest: 4t46ZzEQlwGbqnNnsKrKCCYf17blNP0XEzvEFz9vAHA=
+
+Name: assets/Resources/levels/official/10-easy-1.level
+SHA-256-Digest: GjVjaG2tz9FGREWrk4739UntY1m7TrRKIpqfwg/n1TI=
+
+Name: assets/Resources/shaders/Level.ps.768.spirv
+SHA-256-Digest: bIkjqISsU6sJq8yaC8L54fGaaTEQNVNuEr151MMHK0Q=
+
+Name: res/drawable-ldrtl-xhdpi-v17/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: f5vwTVV06Vwnsb33soiaqorHJe49ipKggwRfbraagZo=
+
+Name: assets/Resources/models/player/editor_controller_base_left.sgm
+SHA-256-Digest: b7uBicKneXRRdlPWWmEy43FLiaU5v294YFVGOdhb06E=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png
+SHA-256-Digest: EzMNfsAcCAmiM8GOeNU7nwFLXj4kC9w8+Pa4tYvcquQ=
+
+Name: res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png
+SHA-256-Digest: wVv86GBKGbQEOzSuEjQ7FZrT5IdTHIlEwWeh0q9G9pE=
+
+Name: assets/Resources/shaders/Player.ps.34.spirv
+SHA-256-Digest: +3ZtBADhXVvYydQOAJXXTEWHXmvwwaUvbZBMQ34rEtU=
+
+Name: assets/Resources/shaders/Level.vs.132.spirv
+SHA-256-Digest: NrvRoNkPUa33ghMO/xf7By9oLD05Xs+viN4u94qM0oU=
+
+Name: assets/Resources/ui/logo_sidequest.png
+SHA-256-Digest: mFTgJKq6HTWZfC3C6srdN5ePD44wHyBo6uVyQjLzUH0=
+
+Name: res/drawable-mdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: OW7uxS6+Do3ZXk2gahbilVbNaygHfqgtutYXghHvQds=
+
+Name: res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: /EiNls8TTdx1xwWM2vHDzIhvgUGycvY2WR0NLzKzpIE=
+
+Name: res/drawable/notification_tile_bg.xml
+SHA-256-Digest: ruzFYaqmfCwcMR5BdORjdHI+5iq7p+J58YZ/ZvbWQcc=
+
+Name: res/drawable-mdpi-v4/abc_scrubber_control_off_mtrl_alpha.png
+SHA-256-Digest: dTGC8XFQfUSKXpq/HfnIwSNj8xCb9EGkfm3nJ1z8dB0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.212.spir
+ v
+SHA-256-Digest: vkU12MbHdVFV5qKCBgi9QthEhKKLWbKkNMqkVJ2Jrug=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.82.spirv
+SHA-256-Digest: Yy3wUbnv0hqh+7tgk6zZTGEuRt63Vyx4Cc/3dJTGOeY=
+
+Name: res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
+SHA-256-Digest: pHT9truIa4J9JMF6YaEqwHD3YhWxyvZfo41jfbAIb1A=
+
+Name: assets/Resources/shaders/Level.vs.179.spirv
+SHA-256-Digest: z963oVVfpGyHpHL1CV3UnhQqNnCUlMJLf+UecAj072U=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.102.spir
+ v
+SHA-256-Digest: BdKfadOf9yppRd1ViOcMaXrRghZLffkQ+Zb+EZiPtEM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.149.spir
+ v
+SHA-256-Digest: mat17pVlYR8Hg2rR04MXUPm8BE8b9ilEJN33G5ZmSiI=
+
+Name: assets/Resources/shaders/Level.vs.289.spirv
+SHA-256-Digest: SkAB3pi1vNmr7en/QtTTny6DdSEkHcIAeWRnpE2ogkg=
+
+Name: res/color/abc_hint_foreground_material_dark.xml
+SHA-256-Digest: OxCer7lvkdQfTaJhb2vhWRpGXXaZGGOwD8g3zUFpD04=
+
+Name: lib/arm64-v8a/libGRAB.so
+SHA-256-Digest: LH4+oIlHieRHshUCShx62LM34ff3eYQjJXx8VfsQ5qo=
+
+Name: res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png
+SHA-256-Digest: n/MVL9Z17kJrHwZSPqbjP97kd3/xv+OuYkfY6h3Lhrc=
+
+Name: assets/Resources/shaders/Level.ps.332.spirv
+SHA-256-Digest: C24eC7tTfYh6yUZl+V3++LDmrAM21OHJbOCtlQ+7LME=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.54.spirv
+SHA-256-Digest: rUoJrO0YtK1no+QUo5J0OoSC9A+A05THEXCBtrNfb1s=
+
+Name: assets/Resources/shaders/Level.vs.128.spirv
+SHA-256-Digest: H9XXG3Yfs5Xj6WLFR4jmcsFVN4cXpDju6eL0wsdOs8w=
+
+Name: res/layout/abc_list_menu_item_icon.xml
+SHA-256-Digest: p28PKyFz3pTnBaBU0BsTwveq6G6Tk1xQczTcpX/Csfc=
+
+Name: res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png
+SHA-256-Digest: 4yW1KGHEneBrpnBZEF94RM+Fs6pINWr6nLaEDRTWtL8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.208.spir
+ v
+SHA-256-Digest: DQTnl3Kn0jE+OhpWjFgtBNwNDtfWOT7/rW/weS5whzA=
+
+Name: res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png
+SHA-256-Digest: coUcNSyJ+9TSeVXK3dxyYLlC4kSuoNKxpe6xN3Wtdig=
+
+Name: res/anim/btn_checkbox_to_unchecked_check_path_merged_animation.xml
+SHA-256-Digest: wtke5JXXBNMbb2GelvjwItGJvkBkqDk6PSbNyehh7jU=
+
+Name: assets/Resources/shaders/Player.ps.46.spirv
+SHA-256-Digest: +TVxmUcmI3Ydq687mlb+hY01CoVcS5uC9wnzEpcTiZY=
+
+Name: assets/Resources/shaders/Level.ps.3.spirv
+SHA-256-Digest: oBhv5a7UAvpWBKVRRewOImI3DAQH8FwKEQBi57l7Vcc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.96.spirv
+SHA-256-Digest: huediJYYVO4pG2vpkaqgOd0VX5gQDronUQ3aHGd0hzg=
+
+Name: res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png
+SHA-256-Digest: cBgc6sekEWlM+KpRsKxEB/yN/kKnbd3Bm4+WyRMPl7M=
+
+Name: assets/Resources/shaders/Level.vs.40.spirv
+SHA-256-Digest: 8e4tddcAILoUBGchhhj0EyWusFqg1Epx2sFBOw6Ef1s=
+
+Name: assets/Resources/ui/bHaptics/tactsuit_on.png
+SHA-256-Digest: C943cLqogM1fu5MkgyYxq0JFcHQyQiq/dRcruwa2I50=
+
+Name: res/drawable-v21/abc_list_divider_material.xml
+SHA-256-Digest: O0CA24CxKLbjQ/EjgRVtRAsa6j5fCM9Iks3dcFeiqH8=
+
+Name: assets/Resources/shaders/Level.ps.353.spirv
+SHA-256-Digest: 26meOVuucnIT7jKQs9yNObwFrd+dNW5TgpLZB2mz860=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Particles.vs.2.spir
+ v
+SHA-256-Digest: cXan9XhBlYqqRmzX6i/XmGBakvOHTE2ytfNOWDqnyNc=
+
+Name: assets/Resources/shaders/Level.vs.177.spirv
+SHA-256-Digest: N0L/z2NecQ1Lcb7X88beiAgTVy/ZMXNSmXqrrySvgu8=
+
+Name: assets/Resources/shaders/Level.vs.137.spirv
+SHA-256-Digest: 4SKKjkln0Jqa5cTsfcPOVqSHFHfpXxLeWujiTjNHSQM=
+
+Name: res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png
+SHA-256-Digest: 8C4ln6xzH/7a1Zr/v13Gw9vF9lJ85KeVqKuMY61s+To=
+
+Name: res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png
+SHA-256-Digest: PZyvOphOWfi+ro/Ikl3Yu+2rRELlVF7iQx9oJrVS/aM=
+
+Name: assets/Resources/audio/player_impact_15.ogg
+SHA-256-Digest: Zx10hsIb78BZXUROMHw386hf8iml8XihMexcm6ZT2Vo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.69.spirv
+SHA-256-Digest: 1I9QeNrvKTGo3irLs9jAt/ebaniG/JRb1DpaSsBuzfU=
+
+Name: assets/Resources/shaders/Level.vs.6.spirv
+SHA-256-Digest: RIx43cSyxYM9eeQikYMszBtr+PWYauHXQA6nfluA5OA=
+
+Name: res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png
+SHA-256-Digest: sHO0JOJy1gbbEmmj/f0Rr+qF/it4WVAyDcMzSzMw5L4=
+
+Name: assets/Resources/models/player/editor_controller_base_right.sgm
+SHA-256-Digest: Igx0By57P5DPi3cN1hu1UqL+bnNyLPoc3Ne1bqtvBws=
+
+Name: assets/Resources/models/player/feet.sgm
+SHA-256-Digest: 4bEAy/d4KeIFelAPONQcosW0eDH2NGhacKSiukSMglY=
+
+Name: res/anim/abc_slide_in_bottom.xml
+SHA-256-Digest: Ky3DrubwQmP5O0ijYnR3lktL6XiEiq9P86CGeC8oZ/w=
+
+Name: res/drawable-mdpi-v4/abc_textfield_default_mtrl_alpha.9.png
+SHA-256-Digest: PqL3JTBOMVDTE8o++33busD6l7TwZiS7KAqzKSDoAjw=
+
+Name: res/layout/notification_template_part_chronometer.xml
+SHA-256-Digest: uwPaPWvmvppItZW/VGSBNW5kr2J6AdSh57Yr6802IVE=
+
+Name: assets/Resources/shaders/Level_16bit_kinda_slow_and_lower_quality.
+ hlsl
+SHA-256-Digest: q38LNiJUmZf/gIBoO6be08jqYByacZysBdfATnM3DWw=
+
+Name: res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png
+SHA-256-Digest: E+nflwefiwR9S8AxSqqdC4YdlP6FC3dp3U7y/507B1k=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.43.spirv
+SHA-256-Digest: dsOht1xhh1xpxOdfyDH9CUJ7icmnZI2ZOpMt5yjSmBY=
+
+Name: assets/Resources/shaders/Level.vs.416.spirv
+SHA-256-Digest: Eo5JHrOrc4XYXL1I8glXTVz4pGMJ4xe9fPgsGkUXjb0=
+
+Name: res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png
+SHA-256-Digest: u8fvk8Yg69XVv1RiPlItv1f47RD9HFAuSS1J7/VP7kQ=
+
+Name: assets/Resources/bHaptics/Vest/Grapple_Fly_L.tact
+SHA-256-Digest: a89I+Sx3Ocw8krzeIDN2qXMS0WJGs/4OQTYVxpNxdN4=
+
+Name: assets/Resources/shaders/Level.ps.138.spirv
+SHA-256-Digest: z0A+Sxfvloup6ki4T53aDou8XUcb/Zyzc+SvhwiUlYg=
+
+Name: res/drawable/btn_radio_off_mtrl.xml
+SHA-256-Digest: SJOLqoyngCqk33n7KK7uCptmf2BOgpYJZi20hNbKdUk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.91.spirv
+SHA-256-Digest: q4wMWARv63oIaMLBTQ+M8BC5xfnK0IBd6rvh6SFnBo4=
+
+Name: res/layout/abc_search_dropdown_item_icons_2line.xml
+SHA-256-Digest: bdToBJzRgga4345oChsC10XzFcN2SxDGDC7riOzV/HY=
+
+Name: assets/Resources/shaders/Level.ps.8.spirv
+SHA-256-Digest: HyC+lAB75fSfHddg8Z+BRW784JWX9pKQvlTj4ttqEh0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.29.spirv
+SHA-256-Digest: 1GLePchsB1do8MSnhzFMi9HASZjRaWY/y/gqGNWAoTk=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png
+SHA-256-Digest: LYgAUkh2xwMg1IfF2NtfzywNda73A0RqTFc3YgAMe4I=
+
+Name: res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png
+SHA-256-Digest: Gca+iBEor0WJHrdX4c5zNB0fkKJdst3Px+CBUBpeC1o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.28.spirv
+SHA-256-Digest: 43SaW5VCYWpucXXfo8HA6Ss5eWUk68hDcBTXnjwmq8U=
+
+Name: assets/Resources/fonts/Roboto-Regular.ttf
+SHA-256-Digest: wJAXXo7X5K+9JaC9ZpzNa3I1j0d29JhEvjNk8k72oAM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.23.spirv
+SHA-256-Digest: XqDftoTHi34VCwmuG8ghSpDzqFH8JFuxSQPb78drvhw=
+
+Name: assets/Resources/fonts/Roboto-Medium.ttf
+SHA-256-Digest: hBvGsP0rFKn0zhqsvGprMUkkk8WObVDr4/FMrE1fD64=
+
+Name: assets/Resources/bHaptics/Arms/Grapple_Shoot_L.tact
+SHA-256-Digest: y+2d0WYnh5O26bg0U5MgpFkTjBCciiftxlR6Dy32Vd8=
+
+Name: res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: CroyeoMUnzWR1P3NMv7MPpYizqmh0WnmN6rk8NTL/KE=
+
+Name: assets/Resources/audio/player_step_concrete_4.ogg
+SHA-256-Digest: Ln38q3Xd53pt4cFuHI/gprSOyH2/Hp0kbLnTzoPrmXc=
+
+Name: assets/Resources/audio/player_land_concrete_1.ogg
+SHA-256-Digest: M12LG5DhGhVe8WBNcqak7rWxGclhUAbcGXMaMAiFEII=
+
+Name: assets/Resources/shaders/PostProcessing.ps.0.spirv
+SHA-256-Digest: MxbACEpAzoI4pw8/JI2G53DKMwI6tXmDbMgCcym36vE=
+
+Name: assets/Resources/levels/internal/sample_animated.level
+SHA-256-Digest: mkZx0feYX0VhFKpCCQODNRM/8qPFkQ4nfvXa3A/4CxA=
+
+Name: assets/Resources/shaders/Level.ps.833.spirv
+SHA-256-Digest: MP7LfWr8d1ewmoOU2cm42cE0ggFIkWuAo1KH4D3TYfc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.116.spir
+ v
+SHA-256-Digest: ey7Hi00JDamp27csJcOE8SzNSLzozx/rW78x58bYwas=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.186.spir
+ v
+SHA-256-Digest: oh6/dqMYBz0vZbEOM54da3h3ZNM30q/Myk+PNi2Ncmc=
+
+Name: res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png
+SHA-256-Digest: G5ruyzr1vHkFMuWJjPJlBlsv87G5Jr0DF8AVdfQTpwY=
+
+Name: assets/Resources/audio/player_step_concrete_17.ogg
+SHA-256-Digest: y8lNlsb74JmiQNRPQGXyTwEfjbLRkAKHZLZ27V3DRBA=
+
+Name: assets/Resources/shaders/Level.ps.291.spirv
+SHA-256-Digest: QKEG6tPabihyRhNijdEvd1wrLG9Owl2GKhigfiosGqg=
+
+Name: res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png
+SHA-256-Digest: wPmCKHeaADxT0LEsd5fciclHJE2ceViBvz7XpYhNSxY=
+
+Name: res/drawable/abc_ic_arrow_drop_right_black_24dp.xml
+SHA-256-Digest: /ZdKuhOWg3HIiiZV5shKAlBPC797pjh31nXWHoA5qUQ=
+
+Name: res/drawable/abc_list_selector_holo_light.xml
+SHA-256-Digest: agEFj89bJ+dpvDpCis5PAXkQhdwbY8fSELqOSq8Xgjo=
+
+Name: assets/Resources/shaders/UI.vs.30.spirv
+SHA-256-Digest: lRPRlAefoZijN/F4hG1xWQ1j9/L4sFJZVoyRF1H6cYY=
+
+Name: assets/Resources/ui/bHaptics/tactal_off.png
+SHA-256-Digest: GdBDGIOkmyoN7nvhP/T3UyG2fwtfMELREBVcDhvUNnA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.ps.2.spirv
+SHA-256-Digest: fK/Al+U5kcxjK13WYhhL4uHu88dNvDirEdpfQFjYtp4=
+
+Name: res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png
+SHA-256-Digest: yNYf6CZbOV/G59ANetHfXSGcwk0L+naNXZkZbQ/kJ+0=
+
+Name: res/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xm
+ l
+SHA-256-Digest: t7uJ7jk2IjauGZPOlz58vdQsGDSeEmwvczR1G39WQ5w=
+
+Name: assets/Resources/cosmetics/grapple/hook/carrot_basic.sgm
+SHA-256-Digest: AqAKPPXAvrW9cDnvUU8/uml+omY+eMYYQIPLxX41S0w=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.0.spirv
+SHA-256-Digest: 7uhnLke22vP6giObylW33kUcTzGfJih1QXVrENlK2VI=
+
+Name: assets/Resources/shaders/Player.ps.48.spirv
+SHA-256-Digest: n8asqI8kQQnf/zBdP9crIcoNlniBR2e7AdDeNCijKpc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/GenerateMipMaps.cs.
+ 0.spirv
+SHA-256-Digest: oz5lLhpeacKfonAnTNZCdWnAndfRoPPFw5VMfFR5X6s=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.87.spirv
+SHA-256-Digest: DTdnPXpQSQ6sf3XdhqK7tiyobhGGCLozImj/9jVt2N4=
+
+Name: assets/Resources/shaders/Level.ps.264.spirv
+SHA-256-Digest: heWyX2efDJtO27eQhcC9NatfIsdW8+2xKvVo6yMuS7M=
+
+Name: res/layout/select_dialog_multichoice_material.xml
+SHA-256-Digest: rjwvc9v6qBOKPwNzxZtDkApnxUDFV2pnCF53N2EEWXw=
+
+Name: res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png
+SHA-256-Digest: NLwllkvCtmD0+Ljg3DTGlW+vjlwSEViz/WIZncaYfwQ=
+
+Name: lib/arm64-v8a/libRayneVR.so
+SHA-256-Digest: 9LbnTNh8jsB+dG60YS7XvmunxnLVGB9eZiDaAe6+648=
+
+Name: res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png
+SHA-256-Digest: AF0P5Gb8kpuNmRCSByi505UM36Kljv214Tr88jMbOXI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.66.spirv
+SHA-256-Digest: fUtCQykXuwh8obA0v+WNt6PV3a4chLXRvtDmpXwIqSo=
+
+Name: assets/Resources/bHaptics/Vest/Land.tact
+SHA-256-Digest: crU6sjKVuzbLrIDK+sB+Ik3AxYKsb7K6jcUPXaHq13I=
+
+Name: assets/Resources/shaders/Level.ps.1354.spirv
+SHA-256-Digest: Wo+gTvr1cGF9hkx6jpeL5pk/PGliRoLKtkIz/gX1Mus=
+
+Name: META-INF/androidx.appcompat_appcompat-resources.version
+SHA-256-Digest: 8A3X4RwkL+YOmOoGeNvmPH1K0blsErAXAIx3b8dkHcY=
+
+Name: assets/Resources/shaders/Player.vs.69.spirv
+SHA-256-Digest: 8zA98d8xssXnEV0UDY0Wb9aMrKA2capY9OIsuJf0MJY=
+
+Name: res/drawable-xxhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9
+ .png
+SHA-256-Digest: M2KvoQM+U2INprhwFn/Fhr3syT5JNftd5p1LoqZBz1s=
+
+Name: res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png
+SHA-256-Digest: JLOmHAdUjBOiLSsc4AJ/G02DkW20ivq90t6inIIWSrI=
+
+Name: assets/Resources/cosmetics/checkpoint/avatar_old.sgm
+SHA-256-Digest: 6QcSjftO4MVfJNQ1cXX87lZdo4SFqzD9w3b41xt9dLc=
+
+Name: assets/Resources/audio/player_sliding_ice.ogg
+SHA-256-Digest: JRaKiozSehohBZ5dfb1cLjtLBIHlyLv1s+XKijiELZk=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png
+SHA-256-Digest: WbiT3s+kcZc3jgUWsmLytDXN73XSJZjJDNMrFQigjMs=
+
+Name: assets/Resources/levels/official/30-death-tower.level
+SHA-256-Digest: liPWWRKVvGg8Ul3Wh5dpfSLuXsqcsBszBkl6g2hQ+wo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.94.spirv
+SHA-256-Digest: 9/pzYQgnSFDq/JX5Ucv4PbqRvFDCwO/tKup9GDuy5z4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.2.spirv
+SHA-256-Digest: A3Zbb/A96KGxnb/goyRhbjBQ9UQIbyfim9WDiebilhw=
+
+Name: assets/Resources/cosmetics/grapple/hook/stake_basic_wood.sgm
+SHA-256-Digest: HGRd7EU4AeZfDsjQFZ1MqVhxu5jnZ0V9/ejWGvZS0Lk=
+
+Name: assets/Resources/levels/official/12-easy-3.level
+SHA-256-Digest: 8GGVgIoccTn2dm98XGDxQL70Y/0HPzju3Q10JIyS7yw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.64.spirv
+SHA-256-Digest: ktYnSViy0AYGJll2Aiql9u9jo19TH4+7hle8o6CzSLg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.114.spir
+ v
+SHA-256-Digest: yzQyuxD7eVEAh8xLIM+rP4MC/pb74PPHjWqOho7JftM=
+
+Name: assets/Resources/shaders/Player.vs.18.spirv
+SHA-256-Digest: ODu5DHGvBcQJKFsYPu/AKqeCieB2ieetd06/PD2QnRQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.224.spir
+ v
+SHA-256-Digest: eZp8EzsPVgONTOPNKIQBaiIlw/Na/nzOUNgTMXB8CdU=
+
+Name: res/layout/abc_tooltip.xml
+SHA-256-Digest: jjWG9sDJY7t5XYDxCjnXjDSRc9+sWwfw4GZpA4nGblY=
+
+Name: res/drawable-mdpi-v4/abc_ic_menu_share_mtrl_alpha.png
+SHA-256-Digest: dnA2RgY4J2jum6tqqA9lE14jzLTodqV+4tL+650ljWo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.165.spir
+ v
+SHA-256-Digest: 6g/z7aCU0IE+mFIU8ucm6qDLgcGL4jrw7A0jmSvTQvg=
+
+Name: res/drawable-mdpi-v4/abc_list_divider_mtrl_alpha.9.png
+SHA-256-Digest: d4xsh9tEbGScT/ghmMThU+XH+mr28yNqsRhNFiljgEA=
+
+Name: res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png
+SHA-256-Digest: WoCmTNTw72crd3mDUoH58PAJvQtcWbsmfzTvqdxN1Do=
+
+Name: assets/Resources/audio/player_land_concrete_10.ogg
+SHA-256-Digest: LLCZReAz22284pc+Egga5bRPhbvEoKCJXHxNH9wNiOQ=
+
+Name: assets/Resources/shaders/Level.vs.43.spirv
+SHA-256-Digest: U+yF7O4EHLLNoFWgfKOJoD25AVhr7aHZYckmPaXjpZw=
+
+Name: res/layout-watch-v20/abc_alert_dialog_title_material.xml
+SHA-256-Digest: lGfWKcsoDEjD5D5qCCt5a4ouxJpkbqgTuU7XTz50BzQ=
+
+Name: assets/Resources/shaders/Player.ps.16.spirv
+SHA-256-Digest: yULqkVcVkEUsqSvXdLxw08ZGQ3Ptr0kAxXDQBfOt9Ew=
+
+Name: assets/Resources/models/player/body_collider.sgm
+SHA-256-Digest: gom258KqTPl4sCWPOH0Grimq8alPmj9idMsxoEgOt5E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.26.spirv
+SHA-256-Digest: 2JySDdHi+5HNJC7Ut96A22eca/uhjPINoWwtB6KGbKE=
+
+Name: assets/Resources/audio/player_step_concrete_2.ogg
+SHA-256-Digest: U+mm5OW/YpQY2CIW04QqcZQdx35bbfxobkgdFLj3XvI=
+
+Name: res/drawable/abc_btn_radio_material_anim.xml
+SHA-256-Digest: A1yWO++aEd5pu/jyecDJTi1Xp72P0MCDMsPqApowDWc=
+
+Name: META-INF/androidx.appcompat_appcompat.version
+SHA-256-Digest: m76P9f9/lSCvuxtoUO8tnvv3NThqT1yFswnj2wrc7to=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.15.spirv
+SHA-256-Digest: WvsfDZq9XeWRFblUw+klsN2cc+H+EbB99qw2nXuVlmM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.9.spirv
+SHA-256-Digest: 7l8JP5pyJBD8LAldEWI0dls2wmHGBAvyb2WyDGWYNAU=
+
+Name: res/color/abc_primary_text_material_dark.xml
+SHA-256-Digest: GWMrujS/h+U58503PAVitN5+VPrgmjQiCXPkxOWoqIs=
+
+Name: assets/Resources/shaders/Player.vs.33.spirv
+SHA-256-Digest: jSWgGumDPiAxBnHbkl2Ish6InZPH/ZRrkqmWc326bdc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.68.spirv
+SHA-256-Digest: JaPok84diLngpT/ApriwMzFIyx/W5+uamQuE5DUxipg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.167.spir
+ v
+SHA-256-Digest: +dbTHIgt/pXLx0EXhlRjj2cKp5dfHkqwEMj4OPrj3XY=
+
+Name: assets/Resources/shaders/Player.ps.10.spirv
+SHA-256-Digest: cNT0qQ3bawh2DiQSi8XQaNT5rNjm1tvebqj2chaFnzk=
+
+Name: assets/Resources/shaders/Level.vs.419.spirv
+SHA-256-Digest: sklKPlZM3yY3T+QzKsyEMbP3PxxZ8/10Hi80PDVRy84=
+
+Name: assets/Resources/ui_compressed/icon_profile.astc
+SHA-256-Digest: Nc55q/MP/zXq9WNg/afblAGJ7N3GNOXq40Uvc63UdF4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.245.spir
+ v
+SHA-256-Digest: OSy+EvYzjj91ME4NKcPdenU7VWzOJblxwK5lMoJ5auE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.35.spirv
+SHA-256-Digest: t0dz68sNVCn7rW+IlhQzbZhsbRFvOw0IXtsKSW+SESc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.21.spirv
+SHA-256-Digest: FgCd13Auz8bmz7dFy1vd6c82uPiovFi3Nsaz3YaHQLM=
+
+Name: res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
+SHA-256-Digest: c/14HFaGWpEdcAQwrspOxIFCm9dL3QPvR2GxA8cfFdY=
+
+Name: assets/Resources/shaders/Player.vs.85.spirv
+SHA-256-Digest: KOgHlKxwtreVLMIPl1q4DgM3FpA3+wFYfdUJcXXHN/8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.45.spirv
+SHA-256-Digest: oqmIWKphL6prCAG8eKE9a/vpC7CyzPkIfrOG8n+Zndo=
+
+Name: assets/Resources/shaders/Player.vs.39.spirv
+SHA-256-Digest: z7w6XqSUniOjeLOWvOAwfBm5q/qkU+ZIG9YtXVjnJ2E=
+
+Name: res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png
+SHA-256-Digest: mCpCNEnWJXhMUlUumm0u2RF5+gc42CZMPZAPaetVzkg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.135.spir
+ v
+SHA-256-Digest: XDlmAk+OW31a0xqKwle6hqIgHcBHpMO5yIsaykCWHCE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.61.spirv
+SHA-256-Digest: JC8tPSnq7i6aiizURtW5bF6UAnP1aFeA3ScJ2/Uh0Rc=
+
+Name: res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png
+SHA-256-Digest: l5WGBqoentx0GUIngYohGmxcZ9IrZn8GGJ3aPalwcWc=
+
+Name: assets/Resources/models/shapes/sphere_collider.sgm
+SHA-256-Digest: rOyK4yqTNHCTFTQYlcwIqfEyeKLio6+v467Fu6o3HuY=
+
+Name: assets/Resources/shaders/Level.ps.74.spirv
+SHA-256-Digest: xQrJeDVYEmZAdty0aoTGvq8gqRvqQegA4mLo7tWaLug=
+
+Name: res/color-v23/abc_tint_default.xml
+SHA-256-Digest: WsCyaWQSr/tEPOU7sIwEWvIYMR4gF3vRyiYfq2EHVPg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.114.spir
+ v
+SHA-256-Digest: lulQJ0Rhk2fXxoDVGVyt6jwoisjyDPSoc/14wvxbuhA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.226.spir
+ v
+SHA-256-Digest: QGSh4Iqt8UV2ZwNWvaWZZMd2U8sqQXo/rSwjJAz3CeI=
+
+Name: assets/Resources/audio/player_impact_13.ogg
+SHA-256-Digest: BJ/taI2vRF31PqT20A7+2rtRgLnb/pndscBPGvAPUfk=
+
+Name: assets/Resources/audio/player_land_concrete_3.ogg
+SHA-256-Digest: 0fDuRa49Pbk5HmVeFoT0I4mUo0BTTOdXZljGgz0X4z0=
+
+Name: res/anim/btn_radio_to_off_mtrl_dot_group_animation.xml
+SHA-256-Digest: v/5D8hb+FeSsp3zkBbPK0XniZU29xjyCN/ez9BlAqEg=
+
+Name: assets/Resources/shaders/Level.vs.4.spirv
+SHA-256-Digest: exxZqyFcrt04J32sgvgZtp3QDZlRfcAlcEVY169GCPg=
+
+Name: assets/Resources/shaders/Player.vs.38.spirv
+SHA-256-Digest: 827ujvMiv5FW8VXJ5YD4RN4KS/4L/m4vn0BQ++AwR8s=
+
+Name: assets/Resources/shaders/Level.ps.578.spirv
+SHA-256-Digest: CoC9BXzZcB0HCnEnCFizXrFci5mfOZVhEpSoGo2RGNw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.5.spirv
+SHA-256-Digest: 0OzYji6Sqar7JFihx/x0SmLus37beqx9+kDw4gA2OWM=
+
+Name: assets/Resources/shaders/Player.ps.15.spirv
+SHA-256-Digest: +oPxCudrba29Pl0Cg5KYXGCMyUahizXC19Eyjs0uBGA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.244.spir
+ v
+SHA-256-Digest: bLmYoVSubkakbEDgi3487PpZ7jN/Fn23zmrgEKz4JrM=
+
+Name: assets/Resources/shaders/Level.ps.73.spirv
+SHA-256-Digest: jtAkMqMIbr+YqZplqmTjIl/VfiqGND+V1QM2nNmxPAM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.134.spir
+ v
+SHA-256-Digest: 77kvu6zlSpfCxcnZCV88wFgI0B7R4t7XiUT1mgaO1Xo=
+
+Name: assets/Resources/bHaptics/Head/Impact_R.tact
+SHA-256-Digest: WLoVMDw+qvcTEb+MduPODLFd3n7P/s4qhEKIUwt+Lo8=
+
+Name: assets/Resources/models/player/rope.astc
+SHA-256-Digest: XeG6dZMZQj/5vBhUxXkeLBFS5I1YGM7m3v30IoR59KY=
+
+Name: res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png
+SHA-256-Digest: QneKuaBjRVpiHZf0BcglY++BlM+zG/CY+qRsBUBdo5g=
+
+Name: res/drawable/abc_ic_search_api_material.xml
+SHA-256-Digest: IWOPWUqWKfF4Ac5szBqLKfgiBCJrr9HLOj4BAoE4QAk=
+
+Name: assets/Resources/shaders/Level.ps.1.spirv
+SHA-256-Digest: hlgBJV4w2nzmVCeLkeAqATtxUIBNfFW/aX5hSibtvYg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.8.spirv
+SHA-256-Digest: u1PcDF3NAEBjRWa8GybO6MQtA48KxV+QtOvKU02YrGU=
+
+Name: res/drawable/tooltip_frame_dark.xml
+SHA-256-Digest: BVyfHEx/sg9KfYkRK1CJC20cQTPfP3r6sKcnMwT3UBo=
+
+Name: res/drawable-xxhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png
+SHA-256-Digest: QOOb1eIMbzrS/gisw22DjQJ5P+3J1q/Pem0R6C6c2ts=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.84.spirv
+SHA-256-Digest: GJlhjvg/TCdJ8cgV4xoV3v7s1CTOcK8KbfRFkzHPaWQ=
+
+Name: res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
+SHA-256-Digest: Z8uEbfnROwMYL8KSaQLLHA2A4LgXLSci9H44P+NNTDc=
+
+Name: res/drawable-xxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png
+SHA-256-Digest: RIXPKaNeaGDsbuxjiLiJq9rjEbkCpxWJuR8HIbeZ1V4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.31.spirv
+SHA-256-Digest: 3uMmn9clDmNjKK1hn/MjfbHY3a2JPROdl08SCvhIasA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.81.spirv
+SHA-256-Digest: did/wE/9eTnArweROU+F91XAcP5oU4vttofWJvd48BY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.183.spir
+ v
+SHA-256-Digest: 74uFwK2iKNgwyiyqwYixWL7WQsj9K7A+Wj5P1IbihTY=
+
+Name: res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png
+SHA-256-Digest: eXdiXtgfszbkgCa/xt5+StyP++wvXpXjluoD+0ecRLc=
+
+Name: res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
+SHA-256-Digest: 6Ay54/PPtd3vTcDkT61W3u/FQ+IVBiq0DX1+tYt89lg=
+
+Name: META-INF/androidx.cursoradapter_cursoradapter.version
+SHA-256-Digest: 9NVKlG7NeVnMyrB1WgWyxDka/xV6GCB5Deq12PVcRHg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.130.spir
+ v
+SHA-256-Digest: sBgfDG5EYX11xaIeGtKkGFv9GikCZNdMyqS1EvBRxrc=
+
+Name: res/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml
+SHA-256-Digest: 07S+JOxM117OXKpD2Cj8WccQaBTEq09I9bhmY5w0cPI=
+
+Name: res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png
+SHA-256-Digest: 1ucOkojU2MdGq+BD0FJkNUOCmmwd47Fn/341dHrRYio=
+
+Name: res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png
+SHA-256-Digest: /NWVni5Ocj+aSbvedVNzWFhRi8vvmJnj4R1uAN/TCSk=
+
+Name: res/anim/abc_grow_fade_in_from_bottom.xml
+SHA-256-Digest: LrNv3N5+mSZraF9Z+jxzLuhmSKetTYVyOxmpCh8hAA0=
+
+Name: lib/arm64-v8a/libRayneUI.so
+SHA-256-Digest: 9LzNndHpmFVfMWchK9C9Fljghgd2xs0iAI14jOwCaCM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.119.spir
+ v
+SHA-256-Digest: D7EEet5tOaQ6vefHgVMP6c5Lldd83yeJumrlqlOWDI0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.180.spir
+ v
+SHA-256-Digest: oJ+SaYp3XsSQhdfL41zJvfaUmdJgufBOm8VbSbgQqCw=
+
+Name: res/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png
+SHA-256-Digest: zmyuPLQUSVSVb7u4qpugYrSIje/Y8tL7rBm5nrdESvk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Particles.ps.1.spir
+ v
+SHA-256-Digest: hSfn06PENQJdKarW9u2nXHLqXCgCMxHhBp4ci0gh3dA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.19.spirv
+SHA-256-Digest: cx7Z0YO4QvGayd5rZYqAe6sSTEzvSUya4qjkiueTIT0=
+
+Name: META-INF/androidx.fragment_fragment.version
+SHA-256-Digest: XOxJH0HTExpYdpZxeT4M31LfNDBw0xZZsrJwbI+o1PM=
+
+Name: assets/Resources/audio/player_step_concrete_19.ogg
+SHA-256-Digest: XhowM3cFvevEDgcEOF4Ol+x6l7UkY8YUYIDb67q9F5g=
+
+Name: res/layout-v21/notification_action.xml
+SHA-256-Digest: HzlZ5+nr86iKyX45POSofboPKNN6EMCQ7U1hUsqUOcQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.229.spir
+ v
+SHA-256-Digest: PRa7vb6b/EbZf3ChSYS3pt4d2oXzgC+pdQ4fs/RaY8M=
+
+Name: res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png
+SHA-256-Digest: 36Ke5xhBaJp+7yPlyRkWFdlfMzubmn3Xm5iFLTb46yY=
+
+Name: assets/Resources/shaders/Player.vs.34.spirv
+SHA-256-Digest: GeJlTjI5PhkXv3fU0kMm1diEtxWZJ6Mtig8Aw/z8XGA=
+
+Name: res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png
+SHA-256-Digest: gSRaKa613UASmf+b16OSb624yrIFISdAuZ0u+KJ63p8=
+
+Name: assets/Resources/shaders/UI.vs.15.spirv
+SHA-256-Digest: k4G0Vq5nXj0AR/2dD0lQgj/RmH7VFisI9TqI2e1RoJ8=
+
+Name: res/layout/abc_action_mode_close_item_material.xml
+SHA-256-Digest: NnrdLo/QECvtXQBjhP/d9So9KqkC8Yhr/NeKRh2Wqfo=
+
+Name: res/drawable-mdpi-v4/abc_list_focused_holo.9.png
+SHA-256-Digest: ZKWE2GYxFwbORylkQZ1qQDgxkx4Cnkd6CbTvawN2Zmc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.111.spir
+ v
+SHA-256-Digest: C87slXJsZJGLUXX/n4OMbbolCxs/frHdXgZs2MQsxZM=
+
+Name: assets/Resources/shaders/Player.ps.11.spirv
+SHA-256-Digest: 7nMthEEQW6DpKKRy0gw5ciLHXqz/GOOz3aYWmw4sXSU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.181.spir
+ v
+SHA-256-Digest: VWFE1UeXfe6CjymeDG9R5lM5kQNVq7QJmF6I81Z/Lxc=
+
+Name: res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png
+SHA-256-Digest: k6EWJlue01BLY0s56v5JNynP8/b/U1Qd7tnmAqXbpH0=
+
+Name: res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png
+SHA-256-Digest: ukgIe6XxA8BIeBpiCpKscdVufr7N3/HFli1R1e0BBDs=
+
+Name: lib/arm64-v8a/libRayne.so
+SHA-256-Digest: 24RH12r+rHQc1yOFAAywOGHLJNrVUSdqGSHq58YjQLY=
+
+Name: assets/Resources/shaders/Player.vs.36.spirv
+SHA-256-Digest: 7/Gsp+Wp0WLuAYooIi52YOrZ7FNdet952CZ18EeCih8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.7.spirv
+SHA-256-Digest: uEUd0EMOo9jWh8X4LHJ9VzZuqEI9WzrZOkbBUwGaMSQ=
+
+Name: res/layout/abc_activity_chooser_view.xml
+SHA-256-Digest: ZnF7SbBQZ/9lg+e7OY2hdfnoMWXBez9kbqYjx9kFDp8=
+
+Name: assets/Resources/shaders/UI.vs.14.spirv
+SHA-256-Digest: GlQVSQI/fKCQE3RVQUc5MxiuRaSyhYJS2rNAwSyR+ho=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.99.spirv
+SHA-256-Digest: PqW4hkCaHJf9dLQBj72MIgBRFz36ikIZyvhfSfDjX84=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.30.spirv
+SHA-256-Digest: MbUpxVd6zWWavq/InG2rI6j9AO7MNWQ0lABkmVsmeko=
+
+Name: assets/Resources/shaders/Level.ps.355.spirv
+SHA-256-Digest: 3HCR2j9stUrWMKJNQ8mayuYcK/V69RQGz+keAV1iyDQ=
+
+Name: assets/Resources/shaders/Level.vs.1.spirv
+SHA-256-Digest: V88UzsSkgsP618l0m5fB1PC32frfeOwemLmmTKN4NlI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.240.spir
+ v
+SHA-256-Digest: 1d0UE4AS2XuOF/Atut8nafSvPFMizoLfgExFk+WdVyg=
+
+Name: assets/Resources/shaders/Level.ps.1290.spirv
+SHA-256-Digest: ZtTdxuwmwqExw2eq34UVDi5bmhcVRY889103c93Yjv4=
+
+Name: res/drawable-mdpi-v4/abc_ic_star_black_48dp.png
+SHA-256-Digest: gFq+h2dv+K6GkPh6mm9yxLicIuGT3yA6h9FVyG44aL4=
+
+Name: assets/Resources/shaders/Level.ps.304.spirv
+SHA-256-Digest: amKWBFhKk1ZLSswUUMSCvPAOnLVHE0l61ltErClZtOw=
+
+Name: assets/Resources/models/shapes/start_finish.sgm
+SHA-256-Digest: fr56ZiQCuSV2oocqar7eRjojvEGpBSQMKFHKdw24vEw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.82.spirv
+SHA-256-Digest: N+V+o2jwyHjX8yOltS0m4oRflvH14mIoXvXaOityRiU=
+
+Name: assets/Resources/shaders/Player.vs.87.spirv
+SHA-256-Digest: bGEoF5Ji6So7b0i4hSIwDgWYxyAgxoc67tyY7hfz4U4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.48.spirv
+SHA-256-Digest: G1ciY0Ar6seFTUKj4EcdM6k27gJEVmBzAI962H8AEWk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.228.spir
+ v
+SHA-256-Digest: H3MaiB2XfYFdzMTCtre6f5KZoz9bPM0JCs2ca1Rjm7g=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.63.spirv
+SHA-256-Digest: IdTEPEWoetgXwfAdpB8JxTYOJKwpjI9z8vdB4ijGltU=
+
+Name: assets/Resources/shaders/Level.ps.834.spirv
+SHA-256-Digest: 0amt1TXAKPNKVubmLgvcilqnfoKrMW8v68ZqPYgYjnI=
+
+Name: assets/Resources/models/player/head_collider.sgm
+SHA-256-Digest: AsIwPqbUSyv+z1imi9swmFjvxsBg7++EEmYc5b4HiDI=
+
+Name: assets/Resources/shaders/Level.vs.20.spirv
+SHA-256-Digest: nutkY+kWJSw+g8yLh28VzYR62ipYTdmUlSmFGjHVO/k=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.16.spirv
+SHA-256-Digest: xZjIRZsmfiRek8gh1MopdnXd9NkRezW9nPiQv6tKbjY=
+
+Name: assets/Resources/shaders/Level.ps.399.spirv
+SHA-256-Digest: uX9rl5UctlgDjemHIes/uxIFSk+9ciDUglQPqhP05p4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.8.spirv
+SHA-256-Digest: s6g9KPoRBEmNeMLMsIoyW5EP4C9n89bS658RJpvY2lw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.78.spirv
+SHA-256-Digest: dUiv393n6eEeW8oK+ZqklUW6DMH1z4TQ8dwrY48m7UE=
+
+Name: assets/Resources/audio/music/viru.ogg
+SHA-256-Digest: Ea/LM1L8+SDiWK1PnKRQd5WITaJPbqYinJCW1KjxNnY=
+
+Name: assets/Resources/shaders/Level.ps.268.spirv
+SHA-256-Digest: RUTaIMN8YC+Eq5pMiGs3z9GdoRXFKAOZSVc371ThhvY=
+
+Name: assets/Resources/shaders/Level.ps.137.spirv
+SHA-256-Digest: i0r9AQVkKJAsgxebYtohLroFrH4NDDT7pXFZnZW8DFo=
+
+Name: assets/Resources/models/player/editor_controller_stick.sgm
+SHA-256-Digest: wgg2WJRJjUWPtgwY8i25gCBi49C1NcbT56RgE7LLUWY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.112.spir
+ v
+SHA-256-Digest: 3/FW7oh2roupKcmYBDUBZIT577NDiqL6tgIaB7XQiFA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.210.spir
+ v
+SHA-256-Digest: aqI8/E8f+FPVjlO1lkTy/7drPVlHQsec0qm6s8HkArg=
+
+Name: res/anim/btn_radio_to_off_mtrl_ring_outer_animation.xml
+SHA-256-Digest: HURcV9fMqFJFNNO7ebpJXRDO1lT0k8Rw4aXgKKrUWGQ=
+
+Name: assets/Resources/shaders/Player.vs.89.spirv
+SHA-256-Digest: OHlTnBfLomBoILf2SSkHTmlMzsks54fhmyDtcuR1FRY=
+
+Name: assets/Resources/models/player/body.sgm
+SHA-256-Digest: EllhM5Apweevc/VefMYHZz5EyYzWR2bn1ZBE2z980D8=
+
+Name: META-INF/androidx.security_security-crypto.version
+SHA-256-Digest: 2Ko1x+2208PA4sJrQ1FvrlI9tBrKkUMg/J34E0zhUD0=
+
+Name: assets/Resources/shaders/Level.ps.770.spirv
+SHA-256-Digest: wqurE2HrRSeQ643lsDbWhQ17ezwO57es5/qJg1KvlS8=
+
+Name: assets/Resources/shaders/Level.ps.9.spirv
+SHA-256-Digest: AeXvrjZG1342A4Xyf5j6+6Uuicrs45fjB26fL3/s4cM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.164.spir
+ v
+SHA-256-Digest: 2UoIA0AUJW+t2kE6XxPacdRQbHnzwmUnFCb8tF9CnY8=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: fZNICBntsiJ9aAXTtOqzdkUQaldwDMDhLdNDkKQ+JBU=
+
+Name: resources.arsc
+SHA-256-Digest: Jtxy1V1smEdUCRDir0rw2ZJ5lzNVujdOg2HLe+yL94o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.24.spirv
+SHA-256-Digest: crTuyNJLGze+JU62SgSOCbW+9xeBdeHUaCwiTsDNA6s=
+
+Name: assets/Resources/audio/player_land_concrete_5.ogg
+SHA-256-Digest: UJCdugPhXwhVwgUWgw8zbn9/tSR+dwKjsSKGskzJx84=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.json
+SHA-256-Digest: HJYwZTufnIPwktIp51OmvzSToba4Ne0ZL0TP6zSfpzg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.151.spir
+ v
+SHA-256-Digest: aqbsxvSoU21qF/f2krYYk8ZTQV9KlYdpvoPWeII26gk=
+
+Name: res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png
+SHA-256-Digest: 3FqCv+ZIPUxcVJhE6B0ajcVvJyfIVDv1N7z1NbiSOF4=
+
+Name: assets/Resources/levels/official/13-easy-4.level
+SHA-256-Digest: gmYzhmpa8UnLxrqZ5VX4eT1IWiFVqGR1XQBC9bOltXY=
+
+Name: res/drawable/abc_list_selector_background_transition_holo_dark.xml
+SHA-256-Digest: WdQbiGGM2SfjuTJLXf09Kyj9FE2EIFf2dvXYH4C9LqY=
+
+Name: assets/Resources/audio/player_step_concrete_13.ogg
+SHA-256-Digest: zAIn9S9XaTf8rHbgzGTiuGMWcLkNOliCNpTEJBiGOEE=
+
+Name: res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: AKjsZnkoiHrlGWvJHpSagJ342dmBeWCmzy/bVWHEF/E=
+
+Name: res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png
+SHA-256-Digest: fouvgo0cRqLRLU4TD+LlMs691HmeKll6a9scXCnK4OA=
+
+Name: assets/Resources/shaders/Level.vs.171.spirv
+SHA-256-Digest: jJj6AmwwsAbO1rJfPiQZvw2yVpkrVMejbgmIetZsaEo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.198.spir
+ v
+SHA-256-Digest: EOtIoknN1ZcwSR7V152Bls8PrwlSgTOIzxVVH21PSC4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.3.spirv
+SHA-256-Digest: 2YXo/s4wuq96EHBmYsvz9xVfQ/99OP8Vy+oeihMH8po=
+
+Name: assets/Resources/shaders/Player.vs.68.spirv
+SHA-256-Digest: pZMbtF57SZOjrgFA9XXFlF2lxBdkYdHQSpbCmVw/IPM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.73.spirv
+SHA-256-Digest: JfmMs/duybcrQ6MmMtwLJ1as0Qkb0mcGi6M73LDsyIg=
+
+Name: res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png
+SHA-256-Digest: D1Xpcp0eT5Aq/BN3oXeFvyGZiAwa+YOLYva+w2YhSQs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.125.spir
+ v
+SHA-256-Digest: o0tbp6J+rBgfaKAGvzaN8hqwedL8jvAsiWQuZDpuR1U=
+
+Name: assets/Resources/ui_compressed/kick.astc
+SHA-256-Digest: PGK4C0e86O2md+8AlaeHYytPN3ZSSe9uSDrZVvuOwMk=
+
+Name: res/anim/abc_fade_in.xml
+SHA-256-Digest: bHDC7/Wyy/ImRgYsm3Ne9JvZxe8DECbLe5IHXzIzdNQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.169.spir
+ v
+SHA-256-Digest: dN6QfazfbLT4V6ySIb6RENZ1elsO8rY6/wVPtu9eSAQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.11.spirv
+SHA-256-Digest: 3fc5WtdjyS/I+DhMStO92QSR5c0Oh8Q6AMrZQjIeUhk=
+
+Name: assets/Resources/cosmetics/grapple/hook/shark_basic.sgm
+SHA-256-Digest: c/5R+xn+f0JCtHR7sR44lqPgBTc2SvvEJK+SmOxwQ7A=
+
+Name: res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png
+SHA-256-Digest: vXSaYBUXU9qZBOlkyh5KtE75L67V1QHQNUoachrm7zo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.185.spir
+ v
+SHA-256-Digest: /jA52j2EBfVICm/v27Vvt8325P5i8vtKkK9F7Vw1hpM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.215.spir
+ v
+SHA-256-Digest: 4yTrCKs3vrDJIK6CkTFDgiLf5MtCPY//VLk1GsSHIuw=
+
+Name: assets/Resources/shaders/Level.vs.176.spirv
+SHA-256-Digest: /fUOiMIVKT9zmDPIVHicHTqu2ZZJQ8koDMegh0iKNQ8=
+
+Name: res/color/abc_search_url_text.xml
+SHA-256-Digest: sS7EzpVf0dl8c+6MchF+j1e1RkCLFzAWXs4ApAL4bdw=
+
+Name: assets/Resources/shaders/Level.ps.10.spirv
+SHA-256-Digest: tz7S1rP3uO/fphU3IxG2EEQUsQhIWQSvRs1l/4E7cUg=
+
+Name: res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png
+SHA-256-Digest: eQiGTmVTB64Co/R28bfqJSGkg/M2/6YoOQ+5NesVRmw=
+
+Name: res/drawable/notification_icon_background.xml
+SHA-256-Digest: Qy3hg5u6Ao2U/c5sNBIf3fxjxqKB68IBdspCW3jBvHM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.ps.0.spirv
+SHA-256-Digest: ZZPpDqeyDVtAly77VKckKlvae0wDLdQrS696H8gmQVI=
+
+Name: assets/Resources/audio/player_grab_2.ogg
+SHA-256-Digest: pRKgW3xa+XS3XG4H+bpu1RESvztlDSSot06rLrcfx3g=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.68.spirv
+SHA-256-Digest: Gp9WSyQqa74hP2XLCyCvsh9c1iFgKi/mQJbfYkPTfgU=
+
+Name: assets/Resources/bHaptics/Head/Impact_Back.tact
+SHA-256-Digest: HPnM1BRv5KMsdiUNLF8Q+fd6UqDIPaPf8KY4NTgzSGQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.7.spirv
+SHA-256-Digest: wKWlSG1I2VD0eet30BfkXhutu+4+WJn4YyceHyNJdjg=
+
+Name: res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png
+SHA-256-Digest: CA9ocwCQTikl8RltCGoUlkc7A5NLi9Wn5SKiR8vAOSI=
+
+Name: assets/Resources/shaders/Level.ps.513.spirv
+SHA-256-Digest: OkZnOyk6PW461VBOe/IJqqRiTt0a4wp2BePjG3Ifxoc=
+
+Name: assets/Resources/shaders/Level.ps.1353.spirv
+SHA-256-Digest: m2XxdxBcgNNKgFB2JXAjxEKfVy5G+tOUKmA5b4kVAAI=
+
+Name: assets/Resources/cosmetics/checkpoint/scepter_royal.sgm
+SHA-256-Digest: xhoKbrkrFKA/jytfbX38lttOQuwSrrTE9hud98m5GBg=
+
+Name: assets/vr_splash.png
+SHA-256-Digest: dF0bIvmOCOxBEZc/q0AxJ1QAF7FoU9+cW2UxBJBy8NU=
+
+Name: assets/Resources/shaders/UI.vs.23.spirv
+SHA-256-Digest: xuipqfF71S8KDjaHwPPWxRLLDVVlNtGd8h+UtJ0z5CA=
+
+Name: lib/arm64-v8a/libRayneBHaptics.so
+SHA-256-Digest: l+62dHUukIygLSzsnLW6EDazPQWKOv+VSzGzhOtTdtk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.34.spirv
+SHA-256-Digest: NtthYjIjODfXR6yIhyE5ZCeoKqYfxSEeZw/TfZmqLmg=
+
+Name: lib/arm64-v8a/libRayneOpenXR.so
+SHA-256-Digest: FtNdbX0IqqC5KFD1/vwP2b19I6knxFN84Y8liBRuB/o=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.193.spir
+ v
+SHA-256-Digest: bXpvZ5bet2Gf5bS28LwFzAz4woa6IpnJJSj2uB329ms=
+
+Name: res/drawable-mdpi-v4/notification_bg_low_normal.9.png
+SHA-256-Digest: vPDmKMKiqjYmhi26bO46qs1KOttdTfXBQv3S6xgfvbk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.120.spir
+ v
+SHA-256-Digest: 2qhijLwZi7eFiJvUEOweKXH2e6N6zkHUpBhOBpqF4RE=
+
+Name: assets/Resources/shaders/Level.vs.146.spirv
+SHA-256-Digest: e5ivrdnPnSsyQuHSiawHPO98ClBVLTZbkTylFTZc0Ao=
+
+Name: res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolato
+ r_1.xml
+SHA-256-Digest: wheGpT1EWiknQza8A8cisOuda2PZiuWR05TJYQQ+wA4=
+
+Name: assets/Resources/shaders/Level.vs.201.spirv
+SHA-256-Digest: NH1cPPKzWXPTktItBlmm2AQM3xVmjceEbI7E+CkxZro=
+
+Name: res/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_dark.png
+SHA-256-Digest: C+eg4MTtK/g+q9kEV4MYm8PM3P7cKkIMl9gKQrXSwAE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.249.spir
+ v
+SHA-256-Digest: lDfesZrdgU6nUkPjmscL3llM66PJ63x/nzgsJCk9Rrc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.13.spirv
+SHA-256-Digest: IVu+jIovBGxbvCeJD2xXVtmG66GQbmyUA9mqlQI2fOs=
+
+Name: res/layout/notification_template_part_time.xml
+SHA-256-Digest: eqqdNOdcqhKFaBC0ZWpS6GN1IEx41svigN7GgAi+K+Y=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.44.spirv
+SHA-256-Digest: 5GhWy54cvko/iPgeoADln4tqnyP6OiRMEFn6eIegae8=
+
+Name: res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png
+SHA-256-Digest: Esl0sHGr9/So2zXqtw2i3SjGLr3w88mbr3cayrX8O4s=
+
+Name: res/color-v23/abc_btn_colored_borderless_text_material.xml
+SHA-256-Digest: aa5qYsSxAe2mE8MpDbF/gjJIYQwBrU238TdESKp7aQI=
+
+Name: assets/Resources/shaders/UI.vs.19.spirv
+SHA-256-Digest: HPmExcYQen4APZya1Fcy79D856JYiYxly6JNNEz6FsU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.vs.3.spirv
+SHA-256-Digest: l233IwQQ/NXpuf5heZFbaVHOqPCGlzKRx9mdukg7lWo=
+
+Name: assets/Resources/shaders/Level.ps.322.spirv
+SHA-256-Digest: 6m/ph8kCd9cSfsh49HzlcWA9OzGXNSk18l+px/fKpj0=
+
+Name: assets/Resources/shaders/Level.ps.78.spirv
+SHA-256-Digest: GDvszsfnTPyjOVvrSr9TtCGyAtaLVH2WIBYKx+lVEN8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Particles.vs.1.spir
+ v
+SHA-256-Digest: sCf81nBh/6uuFIStoHCUS2E2djBU1O0/O0rmnC0Ni+4=
+
+Name: assets/Resources/shaders/Player.vs.97.spirv
+SHA-256-Digest: L10dixqWJekdlIYO9eSEouakDXs803ofRTCj4UU7GGs=
+
+Name: assets/Resources/shaders/Level.ps.394.spirv
+SHA-256-Digest: KjnSmKhr3raUHsKarILOD5TUa/wpAQV8BgmzrAeeBxU=
+
+Name: assets/Resources/textures/grabbable_crumbling.astc
+SHA-256-Digest: LUWwpXVpVeetPrHt6rz63Puxic71lvGNqd7k5B40ctQ=
+
+Name: res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
+SHA-256-Digest: 6wnTPP1VP1fa9qrhDwd1HcaUuAmMyIsq2cC9w6NEx/Y=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.36.spirv
+SHA-256-Digest: IjpoVKehCGbA2wdtIGMGqxVSCtzmBZI2iQcqTMLYaEA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.71.spirv
+SHA-256-Digest: nnRoAJi4MnkQnrSXy3YcY9+QJPxfb90RFZ0wfPyK74I=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.42.spirv
+SHA-256-Digest: 7NYy+d78sN9OpsWqwxfHOrwSAJTBY8ParBUOa6WgVDc=
+
+Name: assets/Resources/audio/level_finished_1.ogg
+SHA-256-Digest: noQ/i0MItvOe1LHfcyMKm5M/5wKhhWkyH8uwoQYYscw=
+
+Name: res/anim/btn_radio_to_on_mtrl_dot_group_animation.xml
+SHA-256-Digest: JJhUPmgrSCKIk72OE10fz3A0sFidWGHv2xYWUAyhTdM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.253.spir
+ v
+SHA-256-Digest: 315IhsYQD/9pMhV+hl4HNUIf9YPxzFODg1M9KQ3NQ1c=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.5.spirv
+SHA-256-Digest: YYtq7DnQitl/n6FflSH+CbCoBkLbORza0l9N3gpXxm4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.223.spir
+ v
+SHA-256-Digest: qmGA3DmcCyJFAQzLrfIF6nnyI1285jtpNcdNioJYoTE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.117.spir
+ v
+SHA-256-Digest: TsR9xckvOuMcwyVhikHoi+gjYAId3xA//TYvKYXKU2U=
+
+Name: assets/Resources/models/player/checkpoint.sgm
+SHA-256-Digest: CnmVYtVkwE//Eh50yVq3gwvIQPSpEw12+Wu6lhRgvAM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.14.spirv
+SHA-256-Digest: yJ6x2yroLr0PwjqOlLI1oyjyoS72nEWEVFFYTkJwIaM=
+
+Name: assets/Resources/cosmetics/head/hat/tophat_basic.sgm
+SHA-256-Digest: 52Y6CvYfUl+T9LsNFfjm/bp2pJfOkT9AXyudN9Qc9YA=
+
+Name: assets/Resources/shaders/Level.vs.150.spirv
+SHA-256-Digest: oto+1gXZRz5oDxTIkFbs1YP6FYFMkTo7kNhcgK7Ih5U=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.252.spir
+ v
+SHA-256-Digest: BtfS0rLttCZLbqH3lcbp62dRuixF33+IKIrp6So/Sms=
+
+Name: res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png
+SHA-256-Digest: 7kyoLfn/WBHJEYVkcDVKId1HZhnRjAfk3ji8FLHUAQ8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.6.spirv
+SHA-256-Digest: IFByoVAYGGYgb7kMjBQ0q0eLhvLkBn3hf8ZSFN5xg3A=
+
+Name: assets/Resources/audio/player_impact_2.ogg
+SHA-256-Digest: AQMDcEq+XIpizU6q6d7EP1kFTeCNRajQpuHgQz60JFY=
+
+Name: assets/Resources/cosmetics/checkpoint/ninjabanner_basic.sgm
+SHA-256-Digest: BH+i8o9gzG88J6aj5uNf4PXOv/l0DLnZ+pE3XKGhAbA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.ps.1.spirv
+SHA-256-Digest: AKFJfBTznHde3/uPC5P3zMvSESf6+jF3K1H6BF1TPhc=
+
+Name: res/drawable/abc_ic_go_search_api_material.xml
+SHA-256-Digest: NeAJ9DuKoh63WvW0eQrw7LgE8kmsRfrNAz+KMF/n+5k=
+
+Name: assets/Resources/shaders/Player.vs.20.spirv
+SHA-256-Digest: /VPACF2Eo2u4vEcvv/n4Ux4VO69vhS8oyUAGtyuPtCM=
+
+Name: assets/Resources/shaders/Level.ps.1418.spirv
+SHA-256-Digest: 4ALRR7BugKfuVqMqU/DCESZoKwL0elfwOIy2Mg868ls=
+
+Name: assets/Resources/ui_compressed/lock.astc
+SHA-256-Digest: PQK7k7R3S9wx2XpDVb3EaPYNfNdjtszjmeyeDrKYTpI=
+
+Name: res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png
+SHA-256-Digest: i3bX7KWmY+CW+I9JGf2P5NtR7RogfNDJj4444W0CFec=
+
+Name: assets/Resources/cosmetics/head/glasses/hmd_meta_basic.sgm
+SHA-256-Digest: mRua3T0u3TUNFHeRMdCCwL8krRcHfeZtanY6gNpVDN8=
+
+Name: assets/Resources/shaders/Level.ps.79.spirv
+SHA-256-Digest: gUnwJgTmLLLyT84OJzJtZiApYLqK1QNLvXryjv4K21Q=
+
+Name: assets/Resources/shaders/Level.vs.16.spirv
+SHA-256-Digest: S6kiqPIVIqMcaLWy/uir22PP/lxqdX2DlnsXduUuHdQ=
+
+Name: res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.pn
+ g
+SHA-256-Digest: tlBv9uyWWoVBY4NkXpPNVeXjwTAavQfBnDv7Px3b620=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.48.spirv
+SHA-256-Digest: 3+Gn1mBSEXEnTF5f8D926zDMrHuYs4che+ptN9fhIuU=
+
+Name: assets/Resources/shaders/Level.ps.323.spirv
+SHA-256-Digest: /5o1jVAMEL7YPO9iZlRBC0eYOjvE09Tehs+GJbe8eKA=
+
+Name: res/drawable-xxxhdpi-v4/abc_switch_track_mtrl_alpha.9.png
+SHA-256-Digest: BFTzo35y8S2nvZjyWmjfBoAktDhupfuJgLuE42M4X/0=
+
+Name: assets/Resources/models/gizmo/gizmo_rotate.sgm
+SHA-256-Digest: LnE0sIJnrr0h3i3Tf/p75kDMRtfecr4Q02sMY9VlvFE=
+
+Name: res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png
+SHA-256-Digest: uJEj9YCALHOnm1Zu5V+JBwRzL8BfytksYYc6NasmAFQ=
+
+Name: lib/arm64-v8a/libRayneVulkan.so
+SHA-256-Digest: lGHDoPmNjyHi+v2WCoI1F7PxyxdgnMvUE2LIx44evEI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.155.spir
+ v
+SHA-256-Digest: dBpiu6N8RXSqZLBFqt1sU1L2SJPaIukMsjESpxE82ic=
+
+Name: assets/Resources/models/player/editor_controller_button_y.sgm
+SHA-256-Digest: Umv1f8ZbsVhthwj8tHVjxRdM7rEyn5oOvXvmVuHwHRw=
+
+Name: assets/Resources/shaders/Level.ps.330.spirv
+SHA-256-Digest: 4tG0m9VDskyORNHUCxAaTSMg2VrrG3b6kKK9qm8I6R4=
+
+Name: assets/Resources/shaders/UI.vs.27.spirv
+SHA-256-Digest: xv/yLBn3joQxHqORslfSAWH6K0XoAGDwWFbKPKTz3rM=
+
+Name: assets/Resources/shaders/Level.ps.272.spirv
+SHA-256-Digest: 81HIKHAgaqRU94m4kXck4t5YlSXtosXehyAhWlojl1w=
+
+Name: assets/Resources/cosmetics/head/hat/cowboyhat_basic_dev.sgm
+SHA-256-Digest: fEtAiG0gX8UFTbJq0ZJTnPTV++2jkKpBP3+Vb0UfNAA=
+
+Name: res/layout/abc_screen_toolbar.xml
+SHA-256-Digest: fMIPfTS6p4sgBszCPr3O14/o+Nz8wRyd4JmFZgeX+/c=
+
+Name: res/drawable/abc_btn_borderless_material.xml
+SHA-256-Digest: xIKCEX4jkmM7pU56pN9iFxlx2QBOIYTXv3SXQ96aayc=
+
+Name: res/color-v23/abc_color_highlight_material.xml
+SHA-256-Digest: 2cg/g3fJ+zz1aasfZStzk82kxuyRNeePSev5dDT91s4=
+
+Name: assets/Resources/audio/player_step_concrete_9.ogg
+SHA-256-Digest: 9a3vmUiLxN3cmyyXhtrRnS2D8bQhoR26AGHWY1kVRC4=
+
+Name: assets/Resources/shaders/Level.vs.200.spirv
+SHA-256-Digest: CQ6acBLQLLDYaRWCAq8zT0HUfAhQyG9UezB/sJUXgzU=
+
+Name: res/drawable/abc_tab_indicator_material.xml
+SHA-256-Digest: oTIhI/cWjpZs1CC1l2ej1jTyFweQBD3bNJFM0AFSIys=
+
+Name: assets/Resources/shaders/Level.vs.11.spirv
+SHA-256-Digest: hV1dE/77NPYm5WYETpTVKKtCIZy+Hkn/al2J4MDSoqI=
+
+Name: assets/Resources/shaders/PostProcessing.ps.1.spirv
+SHA-256-Digest: 7oulZ3P81ULbOrIamv/WPBUCpHMLRIp2/50V1lufsLs=
+
+Name: assets/Resources/shaders/UI.vs.28.spirv
+SHA-256-Digest: a5DR4O2m4XOGV54XRc1aFTc0hqhWPkkMxAQuafgCvmM=
+
+Name: assets/Resources/audio/player_step_concrete_15.ogg
+SHA-256-Digest: V/9TOP6FH0VUh9Q3s7qsuhNI3j4Reny8ffczUcEPGLo=
+
+Name: assets/Resources/shaders/Level.ps.1417.spirv
+SHA-256-Digest: 8c0MoGu6bVksbUz6FwG5MWl+zGdRNjDDVScCa7CF4qk=
+
+Name: assets/Resources/shaders/Player.vs.21.spirv
+SHA-256-Digest: QXgr8VFxvXJIfkPN6VlA1AajTOcTRlInUmmDWecRxPM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.10.spirv
+SHA-256-Digest: 3fTj4V7OX8Pqoi6fm7bRFz/HVx6qM+LYhXzK0NgF/Jc=
+
+Name: assets/Resources/shaders/Level.ps.335.spirv
+SHA-256-Digest: H3W/jwatQyfCSCt/MqqdHbDyg+fM/pIhdzQaWRaH3M8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.150.spir
+ v
+SHA-256-Digest: QPImd7q7m9fg7d/AIJMAckKkyuSWL7x9hR4pO/zvAMU=
+
+Name: res/drawable/abc_vector_test.xml
+SHA-256-Digest: 31FhFmJ+Meao7TfxcsgGH09lTma98GW5Di1tfxKMiYw=
+
+Name: res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png
+SHA-256-Digest: 9r8SPPrM4fwN71sJBakV7FQrouP8IGjkbd8NXnC6gDs=
+
+Name: res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png
+SHA-256-Digest: rGHzkAEK/V2MKZSC1vhj/YX93Cb6IYWXGXGJmoIAgx4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.33.spirv
+SHA-256-Digest: F2bTIYUNRYb+VcNp1ZnkwmhLJbEmYnu12EE7SDFnQUc=
+
+Name: assets/Resources/shaders/Player.vs.67.spirv
+SHA-256-Digest: bwaP5B9h8gnOlapR+OrCc8erwy5+7etHwz2OTvcC9d4=
+
+Name: assets/Resources/shaders/Level.vs.17.spirv
+SHA-256-Digest: qXrqYJS0m+onDUItV1tRx5s2BuvMSzab9RhegUeqmho=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.211.spir
+ v
+SHA-256-Digest: FcMftBkmcDk+baH5ET/O6aefQD05dfR1xAzJBmwBIAA=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_star_black_48dp.png
+SHA-256-Digest: wAEjAhJdVZHXx9VfI2ECNdUvpyNfq0/GiZrAlhofePs=
+
+Name: assets/Resources/levels/internal/lobby-cave.level
+SHA-256-Digest: 4qluGFJvxhjNcpjfvy9blU1se1u6aqxkRf/3ilCC8Qw=
+
+Name: assets/Resources/audio/player_impact_18.ogg
+SHA-256-Digest: BCrG6QUqrvBBMFHx7JIO9ce1oDPpKyP9/uI7DK1Qg8s=
+
+Name: assets/Resources/shaders/Level.ps.271.spirv
+SHA-256-Digest: sjGs1Kfo81UFPoP4ONhwIiJeL9jOy4IaDiVYpGKF/Lg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.156.spir
+ v
+SHA-256-Digest: +qV2n5mGrSa5IJ9TDAeWTcm/und4UewtqYx2RuX0x/E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.126.spir
+ v
+SHA-256-Digest: hOLKw3Ye3JBr7CIwNW9T+i6P6he0ygNPHNrNLfEyNGE=
+
+Name: res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_light.pn
+ g
+SHA-256-Digest: HVj93UH6DyXpP9dcjHraetQTZBKWzZX16uDMo4PdALw=
+
+Name: res/drawable/abc_btn_radio_material.xml
+SHA-256-Digest: BNVRQYcUNjnny1zGk6XTcrmXXykG+AXANMlY7v9cX9A=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.77.spirv
+SHA-256-Digest: RmlhiMfVu92bI+EbF7EYw36ruZu3l5gNUPCstWIWcwA=
+
+Name: res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png
+SHA-256-Digest: 5U5zZtUNyr/hbpA+tk89gfiJ2rdMTmZmMdqUfF+5gBY=
+
+Name: res/drawable/abc_cab_background_internal_bg.xml
+SHA-256-Digest: I/MKNI+Qb4Dv/dQ+JW2WYMh63q6JHWeMOf7SPnrdAaM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.160.spir
+ v
+SHA-256-Digest: jC8QS5F4LU4Zo3W7SrwDg6qdngA/tZs+xYM01S6COOY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Sky.ps.0.spirv
+SHA-256-Digest: HFhfa7RZH5cfx4wIG7tFh5ZxnuGFJa6sAEYbeHJ3sEo=
+
+Name: assets/Resources/cosmetics/checkpoint/cheese_basic.sgm
+SHA-256-Digest: slL8U9iq3IiADVwQokGSDExFs6UcsP8E+kwEM6BI/9k=
+
+Name: res/drawable-mdpi-v4/notification_bg_low_pressed.9.png
+SHA-256-Digest: e16Z3lBylbmIotIXO0QYkgWhWX879GWDILhD+IqQPrc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.214.spir
+ v
+SHA-256-Digest: kOSQbnnrTnNfqee7X+k7tuXquXOdBqQXeOc30YkcVpI=
+
+Name: assets/Resources/audio/player_step_concrete_7.ogg
+SHA-256-Digest: SLKpajCsVlkICaycmDnyGgoflXsQbS62VaxeGx8TeHo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.199.spir
+ v
+SHA-256-Digest: 5owp0FVe90LACk77mdMj43hgszhm3pU684z90a/Uy4s=
+
+Name: res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: WGjuYWw5AAaerhGiFM6SIdt8gyXYYMt/FKR79fUOji0=
+
+Name: assets/Resources/shaders/Level.ps.267.spirv
+SHA-256-Digest: vw2N4GL47fFKOaXNb+OCzJJotOGMAzx/wi/uIh7Wki0=
+
+Name: res/drawable-mdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.p
+ ng
+SHA-256-Digest: VXLEApM4i2oMMjOba8oEly7asDqrHyDKADfcIVsvHk8=
+
+Name: assets/Resources/shaders/Level.ps.331.spirv
+SHA-256-Digest: BdrW6NJ/z+KYaP1EtcqwSU+4z7XQJ9rLShCRS1tlnT0=
+
+Name: res/drawable-xxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png
+SHA-256-Digest: srOgcma5gf4qwjTbJdMV2tD0j3jnwd53KQD55xwIyhU=
+
+Name: assets/Resources/shaders/Level.ps.328.spirv
+SHA-256-Digest: jgCZ+lf9U7G1yOssCOiLHXVXr/KV1xgmuUC8Ii3YuJU=
+
+Name: assets/Resources/ui/stamp_ok.png
+SHA-256-Digest: 5Kzwgv0aOUzyffgSqE9mLW6D7mlbYXyqpKPWHzBrKss=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.75.spirv
+SHA-256-Digest: N9uZ6xDSVACv34r6MjKtjsegws0hQTfiT/eM48W4cKw=
+
+Name: assets/Resources/bHaptics/Vest/Respawn_Lava.tact
+SHA-256-Digest: k6Cw1EpVkMSRgdE4dv/RreGkwUMOtpCLTORuomK2/es=
+
+Name: assets/Resources/levels/official/50-sample_animated.level
+SHA-256-Digest: JNB/F0JrYcuM9SCwiNcITn9VxFw8th1NXB7rbaFjcf8=
+
+Name: res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png
+SHA-256-Digest: 4x+3uaQJdSDaHiNDdT/DkzuHBjBDb8RmqHTGTJ8GqJ4=
+
+Name: assets/Resources/models/shapes/start_direction.sgm
+SHA-256-Digest: 9TdZeZkpAzZEz0iBVhKocfpbD943YGWOuUiG8Cew3EE=
+
+Name: assets/Resources/audio/player_land_concrete_7.ogg
+SHA-256-Digest: w9+njqluq9SlII3+zBkVEcBrM058Gs8gciUT+j4z9NQ=
+
+Name: assets/Resources/audio/player_step_concrete_20.ogg
+SHA-256-Digest: lD0WwS/BKLULS9sVMVh2OIulAddLataLSwZuyZN8WCk=
+
+Name: assets/Resources/shaders/Depth.ps.0.spirv
+SHA-256-Digest: kLNwbSsyNON0g1o5b6NRhayzeIxk7JYmXnrSgLUYtKc=
+
+Name: res/anim/abc_slide_out_top.xml
+SHA-256-Digest: AMRfnVzA3PZndIVP+iwO1O00LYnnHRjT4m3hPw5ZS9Q=
+
+Name: assets/Resources/shaders/Level.ps.771.spirv
+SHA-256-Digest: nNBDPkBCuppHRBn1RXKzhQ3qA/OWcqe/qaaFg2iZlR4=
+
+Name: assets/Resources/shaders/Player.vs.64.spirv
+SHA-256-Digest: KGNf4JFObbetiuxK/xgNCc0nr7ZsKFCGKQIPReHxJHw=
+
+Name: assets/Resources/shaders/PostProcessing.vs.0.spirv
+SHA-256-Digest: AOdKQ5HSStZAdXc4cDxpEd7xtZ+vezhcC4kuPi4LL4I=
+
+Name: assets/Resources/cosmetics/head/hat/headband_basic.sgm
+SHA-256-Digest: BzCPJWXwOco4VRgcrgRDGtKqOeuVi7OfgJaim+PIEqA=
+
+Name: assets/Resources/shaders/Level.ps.269.spirv
+SHA-256-Digest: lYSC7XlgFuzD4FgxB/0C/1lZ0ZYyo+DF7TGPfu42Yw0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.76.spirv
+SHA-256-Digest: YQnFhM6YHhS9rGGnVQIEuBKlJ/LOHs9UPFBGsOnXGGs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.49.spirv
+SHA-256-Digest: R219C9t1KS+CkAjNXV6QiAOv+gB3JGCtYHzOoawxnUY=
+
+Name: assets/Resources/levels/official/7-tutorial-7.level
+SHA-256-Digest: QVidk6cYPM+UmKMWKbvACbWWqvwhuXOf4lw7vjzWLSk=
+
+Name: res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png
+SHA-256-Digest: 2E9BqyWBKaLyBN6/3kz8PCbK1CQzSEFzrPDu7eJ+1Uo=
+
+Name: res/drawable/btn_checkbox_unchecked_mtrl.xml
+SHA-256-Digest: Xq3iaqDpNVjwbdyx6woQLxUcqbAmbvYov1LLF4s7Dlk=
+
+Name: assets/Resources/models/player/grapple_rope_preview.sgm
+SHA-256-Digest: 08tOQSZvfLP5Ns+RkI0QRDCsRf0ULkQPi2jExUfhucQ=
+
+Name: res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png
+SHA-256-Digest: k33T9ieGdfQ7geIfSJ8fHM6Cd0pKy/POde1nbiqsJnU=
+
+Name: assets/Resources/models/player/grapple_rope.sgm
+SHA-256-Digest: 7P/aeFxhPosE9QEJcwrE/cybQSHWqSIDBl2p3upxcUg=
+
+Name: assets/Resources/shaders/Level.vs.202.spirv
+SHA-256-Digest: HmBdsZizWSjLlb7A7krjTOkBDLNWuDA+a4iDDJbv5eQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.12.spirv
+SHA-256-Digest: I+3V105DQ2CR7A/iF/P0m9wfK6JjXUiN16LlLg51ux4=
+
+Name: res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: dDz77kNUpjqZ4UGQy+QMWnpnqVM9/+MUCCjX+ZZyh1Y=
+
+Name: assets/Resources/shaders/Level.ps.393.spirv
+SHA-256-Digest: l57ygN7OpZPlDz80y3GZ/ZoKG3cJGTCqxpIEVxDmuwE=
+
+Name: assets/Resources/shaders/Player.vs.96.spirv
+SHA-256-Digest: fkuq5oKGI10i/Kby0TZ5GgSJgt8fAVP+mt5qTeZIMQY=
+
+Name: assets/Resources/shaders/Cosmetics.ps.1.spirv
+SHA-256-Digest: Ty0DDs48KkP/ddsw0tWLszdQXynenukiXeAjNrD+0/o=
+
+Name: res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png
+SHA-256-Digest: In1xDCNj2qgpHEKoRhasrf95b3aygskUcRA6l3IAT1U=
+
+Name: assets/Resources/shaders/UI.vs.24.spirv
+SHA-256-Digest: Kt/hQVC03HZEAcymgKgddq8sS0LRCmrVurnorkZtEHs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.40.spirv
+SHA-256-Digest: Lx/9IOkQ0czOz1rUExdnrizEQbrWPkKrClgG4y4vRRk=
+
+Name: assets/Resources/shaders/Level.ps.11.spirv
+SHA-256-Digest: b3dDvoQ8aNSpRjdiLt7RJVjdHSEc1itxHw89m5UiCdA=
+
+Name: res/drawable/btn_radio_off_to_on_mtrl_animation.xml
+SHA-256-Digest: qUubdr2vUZK52rKDd6AMN+FPqSMT6ldnMLVVhXdQgV0=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.72.spirv
+SHA-256-Digest: XZW8haelTHZrgKkRcZq57hvjItxIP6306yV2kJWz8DM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.2.spirv
+SHA-256-Digest: IBrKFAtG4eijQnvevzbbiO7dH3OnyswoGfggPNx0c8c=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.192.spir
+ v
+SHA-256-Digest: 1qGBHvjSBuXkZxV5FAluVQ5mJ/la9K2J+g0SokQ5NDQ=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png
+SHA-256-Digest: gmIxz/4Tqo1ZCy4cLyVTv6jdddAfBa+i96/HR8omiCY=
+
+Name: res/layout/abc_action_menu_item_layout.xml
+SHA-256-Digest: 8h9MVdNwqqYE7FBcjW/+0F7lkNk6OgY/I1oNENbHbDw=
+
+Name: assets/Resources/models/gizmo/gizmo_group_unlinked.sgm
+SHA-256-Digest: ZWHeREz+paYSHV9Rh1agchnljKJl9N5uUU3Iw1FXF0I=
+
+Name: assets/Resources/shaders/Player.vs.22.spirv
+SHA-256-Digest: TDBHSawn3UKzLyCbnzDyZmB/A1MmGPvmZlpU+clCwNw=
+
+Name: res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
+SHA-256-Digest: wHzisnfzHEERJh85kL4gAPVv3vibVSOVxjOVvLk9HJY=
+
+Name: assets/Resources/models/player/hand.sgm
+SHA-256-Digest: t8gFIvYorF8XuBbtoxxv7o5mWCcO+xDE+ng5fkiLOHA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.216.spir
+ v
+SHA-256-Digest: e571DVikNspLLJWrcTG6IlFjbmhnhdy8B6Kj3xglO1s=
+
+Name: assets/Resources/shaders/Level.ps.398.spirv
+SHA-256-Digest: YtMJfkcCGi+AbJWD4Wa4JqJVNfuRJ0p6mR2FuiTV5W8=
+
+Name: assets/Resources/shaders/Level.ps.514.spirv
+SHA-256-Digest: JPP+i5jc/VZD9/f4HecU7ypgoLcS6PvxsTLB6sEXqPk=
+
+Name: assets/Resources/shaders/Level.vs.18.spirv
+SHA-256-Digest: yRUry0utqt6iOSlR3nyIraICx0veBnFVqpwH0ln7ezk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.10.spirv
+SHA-256-Digest: IUZt7sawuCidPUerGg+hsmQUZsTEcm34ppXsNltludA=
+
+Name: res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png
+SHA-256-Digest: CR0oNNqiU7GsZOHCC8fxRSpt+kHFN/TjFzhTfpJKRsM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.124.spir
+ v
+SHA-256-Digest: ad3+ewJO9HNrYh4raMvQ7pMxjM4gfDOWWEDZT3zsW+Q=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.2.spirv
+SHA-256-Digest: royUNHWHkP08LL20hspo+x17X4IHahnzqsLB+OBjpPU=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png
+SHA-256-Digest: PynoJkLA+za57wms5w3A+rAlnBpKg2M5sKg9EEvyv4M=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.157.spir
+ v
+SHA-256-Digest: aeBkbggxIfSIjJ+h7flF1A4UpNXio4rjfMqnneHAcYM=
+
+Name: assets/Resources/shaders/Level.ps.270.spirv
+SHA-256-Digest: SbgbMpgJLXVwLO//7pfwTD3bMRpoBaANjfJJlUUseKs=
+
+Name: assets/Resources/shaders/UI.vs.29.spirv
+SHA-256-Digest: pCMl+CxxOQKfOqfGaSrMuUvPJ+QdeEczDSbiH5AwXrs=
+
+Name: assets/Resources/models/player/editor_controller_pointer.sgm
+SHA-256-Digest: myQ/ojomhkrbx5TK7MJCVNuhcw6K2cDDrqvuibfXaCU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.45.spirv
+SHA-256-Digest: nfTrUPRjJMWAHSwi/Qon2vQfQTsDjmP+CiMUQ4K+bNI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.6.spirv
+SHA-256-Digest: C6xM5yhDg9xesgL2x+EObsva8ixtpJ6KWG7Ab+s2ZWw=
+
+Name: assets/Resources/models/player/hand_right.sga
+SHA-256-Digest: kBEItVZ6ZxhX1bf3cJFq3kYVSAwPuoxyCWAS4BNAQAA=
+
+Name: res/anim/abc_fade_out.xml
+SHA-256-Digest: /SRovlbq2l2Qp7kIIlTMQzh1+yILo1AaaNTO6jT/1qQ=
+
+Name: assets/Resources/cosmetics/head/hat/umbrellahat_basic.sgm
+SHA-256-Digest: m4S4iLfGMbN10UCF8wMyyeihbvKXt/iVBYClwiTFGu0=
+
+Name: assets/Resources/settings.json
+SHA-256-Digest: 2npR8QCP4YBr0M7KTouO9BwdY9ZhPFsmkve+6q8Qodk=
+
+Name: res/color/abc_background_cache_hint_selector_material_light.xml
+SHA-256-Digest: bzwlU3G/OBvrpFo05PazG35EnQwLKqWE7/IaPmyFSFY=
+
+Name: assets/Resources/models/player/hand_right.sgm
+SHA-256-Digest: 7WbpGB2CAfXO5hIFzmx38I448Q8aky8ji60ngSy5LC8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.9.spirv
+SHA-256-Digest: KsnQQsTHQLqyTWDos4J/7EL8oJTApVLPlw/DWAkmrUs=
+
+Name: assets/Resources/shaders/Level.ps.16.spirv
+SHA-256-Digest: ta1w+tvGCmA3esOH62m/b+uKaoHKPjYI4WJnqk2Gn1Q=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.17.spirv
+SHA-256-Digest: /hLaOvFG0PAwI8KmQQAaSaqAFUOwyuu7duQoUQVev8E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.197.spir
+ v
+SHA-256-Digest: hs24KUuhfLXSmI3UGLbwIjJKtjQ2UfGwtYscVJctMaM=
+
+Name: assets/Resources/shaders/Player.vs.27.spirv
+SHA-256-Digest: yHV/7WN7cLsfNQBKZgXje82XaSnQhSxEq0JvTJKrUFM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.7.spirv
+SHA-256-Digest: 0gFHT3FXmf1/M743aKaVX3OSGAt9TIxTlRX3Fx7/ISs=
+
+Name: res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.p
+ ng
+SHA-256-Digest: SBH91FryQKPrV6N/983h1NPugEQ9B/1gRLL6XXrR1Zw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.251.spir
+ v
+SHA-256-Digest: 7MCaXkux286XLfKr4Io1JL3tdCQL8S7aCLzEacDW0AQ=
+
+Name: res/anim/btn_radio_to_off_mtrl_ring_outer_path_animation.xml
+SHA-256-Digest: O3Y5abrYvnqXktaU3hI/VxwwwxjDTZXBPIGK0hZascA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.12.spirv
+SHA-256-Digest: VRH86Yl16oqRlAcnisA62Q4ee20STNuU8Rul96wG7ZU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.9.spirv
+SHA-256-Digest: y1DcO5bqd6cjRwnE80BNM8XRGIaXmk0UEknrwSWu6Hs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.120.spir
+ v
+SHA-256-Digest: ugJ55PffQDOK3nQgRCkUMNi56tuGxhAkUSY8N+7xQ7I=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.37.spirv
+SHA-256-Digest: naPLftP9t1RVA8aLIFCQJmayN+PylK6yguvhCo0gVZg=
+
+Name: META-INF/androidx.drawerlayout_drawerlayout.version
+SHA-256-Digest: ev1cdi6MfVTvsmeg4DxA2GqCIaAFtLjdawfK+SddtJ0=
+
+Name: assets/Resources/models/player/button_oculus.astc
+SHA-256-Digest: gs6hSIkyPCSAdcq5u2VRUKg/XmblQiSlM2ctom2rP9I=
+
+Name: assets/Resources/cosmetics/head/hat/sunhat_basic.sgm
+SHA-256-Digest: KKLU467ZcMdnttDjlA4UV4w/Pvv1RZZHIPLLDAd99UY=
+
+Name: assets/Resources/audio/player_impact_6.ogg
+SHA-256-Digest: fcph1zxfDMoH9m4cArRB+AxFwuM7QMEE7s+GN0QI05Y=
+
+Name: assets/Resources/shaders/Level.ps.18.spirv
+SHA-256-Digest: MQSpaZIPIFyr4GB6ErvdbSzSbc2p7FLhTWAx2FTKEnE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.15.spirv
+SHA-256-Digest: DlPdivw3ImCWq3gQkbkfxvQDS/7QersdQvT3+9lQFzg=
+
+Name: assets/Resources/models/player/hand_left.sgm
+SHA-256-Digest: QaieJpAKdVX+/41CUsTfK/LIQnSlFyT8heMTAZQ1HcI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.72.spirv
+SHA-256-Digest: cwqdOeS2IYlgDyjGW9YzNdMsZP2Z0V2ZDjZTpKgLHzo=
+
+Name: assets/Resources/models/player/button_home.astc
+SHA-256-Digest: 42G49vJerB2E2+qpLJ4F40ANPQ9F/Pa6zJfkInj+MZQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.159.spir
+ v
+SHA-256-Digest: 7xr2RwKkn5ACn08Qpge3/wLRwV9/txIqT+Xu6bhZI/Q=
+
+Name: res/drawable-v21/abc_action_bar_item_background_material.xml
+SHA-256-Digest: 3sGM1hlNeBaUtisN6BNlBjWt285YQFHU9m7iXo743Hw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.4.spirv
+SHA-256-Digest: 0HBW47G9oVqX+qRh0VAKvflZ69aLVsEEg7N794uBc8s=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.254.spir
+ v
+SHA-256-Digest: vcKMhiGD5cORzjKfHKDCuo8ewfmErLardp0onl+UUXk=
+
+Name: assets/Resources/audio/grapple_impact_good_1.ogg
+SHA-256-Digest: LGUXYAT7JYSZatpLuCppq8Wqk2npCMcVBHeM3Qg9xg4=
+
+Name: res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png
+SHA-256-Digest: H9jTKxo2wPDOPg/IF9DH/TCI2k3Ocm4rvrZemd9Elzg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.35.spirv
+SHA-256-Digest: thinLV+yJ35ecwNtKpj9A4t6mhVyIvXVGRZmbGfRyCw=
+
+Name: assets/Resources/shaders/Level.vs.145.spirv
+SHA-256-Digest: UTGpbcGqWZ/2tZRlZp5VO38zhLN+oZyzGMg9YgGypPE=
+
+Name: assets/Resources/ui_compressed/icon_players.astc
+SHA-256-Digest: cVdqq4IHr+2yEPZF2j7IBMeQnpw6PF1ub4uu3dzERtA=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.121.spir
+ v
+SHA-256-Digest: Gker9y+l1iNi6aVcUccyzNvseTPdxaKSV8ULtNZr1Vw=
+
+Name: res/drawable-mdpi-v4/notification_bg_normal.9.png
+SHA-256-Digest: vg/gP72vh/b3yaE+84dQHojgy5jwUZQN3hC/VrbOPYU=
+
+Name: res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
+SHA-256-Digest: WJLqsWbFj2k/oJy7LPrZZon3oV0v2LLR7Y7sSwk3Cyw=
+
+Name: res/drawable-xxhdpi-v4/abc_list_pressed_holo_light.9.png
+SHA-256-Digest: IqXqHI37cqW97NQgwsXc5Vf76DO5P4OwH+yXKWmAZgA=
+
+Name: res/drawable/abc_item_background_holo_dark.xml
+SHA-256-Digest: qgmHlI4ChAwA25WSVliA4vd2Zjr3BLtXqs3x7rfnMfo=
+
+Name: assets/Resources/shaders/Player.vs.98.spirv
+SHA-256-Digest: 50eZ54O3DOTsUA+u1VQY2zpBwpbiEhJBHpinwMbzAUM=
+
+Name: res/drawable-xxhdpi-v4/abc_text_select_handle_left_mtrl_light.png
+SHA-256-Digest: Wy8oRICb/V1D+zaf9OWfhIL2TCqZ0oIa87+jUwuZ9iM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.43.spirv
+SHA-256-Digest: aWllwG3VXdgH0JfQe16Cf0Py6i8Ut/812hNYGGyCDpg=
+
+Name: res/layout-v21/notification_template_custom_big.xml
+SHA-256-Digest: cxdkoA4b0hvJdSm1tDLPmsz7HmwOfBZgT/PnVW8Pazk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.14.spirv
+SHA-256-Digest: jNXmYH9JahefUiJDqwOF3FJ1TddHzscx0XgiconYuUc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.8.spirv
+SHA-256-Digest: MjKB4lrdgbBAM/oOIAh/Ck0AQg6UjbmMaOCARIjYOaI=
+
+Name: res/layout/abc_popup_menu_header_item_layout.xml
+SHA-256-Digest: 2pIGYyvixa47h0b9z2+zXDGEy6pu5tgmu4sk/zLpR7k=
+
+Name: assets/Resources/models/player/hand_left.sga
+SHA-256-Digest: USAXexw5yNJKDH12olMO4hFMw52UFK9EqCcSIyvDVXQ=
+
+Name: assets/Resources/models/player/editor_controller_left.astc
+SHA-256-Digest: BwHVLMJ7uRZf61IqDeE0xjxTRrKI9dk+Cbf+JFMoO14=
+
+Name: assets/Resources/shaders/Level.ps.48.spirv
+SHA-256-Digest: hqjA85a+iqS6pnwMDopAbvBxo3pA0lLM/Xm7DA/DfTI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.70.spirv
+SHA-256-Digest: Om4cTHVibC5pwqzzlgar8sx/Ydj3W8NT9XOHu7+t48k=
+
+Name: assets/Resources/shaders/UI.vs.26.spirv
+SHA-256-Digest: 6O7j/yflld5C797QwG6SbZONY91KM3yVTIuETY6jJ7s=
+
+Name: assets/Resources/shaders/Level.ps.395.spirv
+SHA-256-Digest: seLrcgJF8Ac3iO4EDo3fvW5WtpiBYHvEnIbxcACuIlg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.219.spir
+ v
+SHA-256-Digest: kQcQ0tcH5sRFCK/y7s7snhGBF5ZokPgq3CziUjiX4Ps=
+
+Name: assets/Resources/shaders/Player.vs.99.spirv
+SHA-256-Digest: FF1tCNfaeqLrox2ALYB6VvIfLEapE/JwrPDiB1g0AAI=
+
+Name: assets/Resources/audio/player_land_concrete_9.ogg
+SHA-256-Digest: 5XPV3O8ebKyzjXDerQ4xitDsxinSK7ZXSKHvkHSHXRw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.70.spirv
+SHA-256-Digest: t3f58S/Fvd315Io0UYXudSasfq4rNzGj1Ej0IgNAkq0=
+
+Name: assets/Resources/shaders/Player.vs.24.spirv
+SHA-256-Digest: I9BVpYeyKZcJQa91N/FAmnr/7Q66SqqxcF8v9sPKKSI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.42.spirv
+SHA-256-Digest: 22Q2eenXWpE8aALvzUNlFZ5ins/Bwai0M5LKGyxt4lw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.194.spir
+ v
+SHA-256-Digest: gBHo4mpRbA13XbqPgNSrUpHqsmvKHwCZot35UetZppU=
+
+Name: assets/Resources/shaders/Level.ps.512.spirv
+SHA-256-Digest: K0UuBr/q4eoqw9BfdkIamcTJH+AnLxIDVPlEKJ/gGYU=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.7.spirv
+SHA-256-Digest: nJAXJMaJDUoaoVxX+4Q3pB+OkMsHBwW6Fm52zK/zCYI=
+
+Name: res/drawable/btn_checkbox_unchecked_to_checked_mtrl_animation.xml
+SHA-256-Digest: YUMDqQc4PUjEWInOdcPODoO7clO8A9oJ+txAiM1aYzQ=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.9.spirv
+SHA-256-Digest: 0BQA5+9tlJuNJpUeLlkS8ucLUxCkK2Ns95v2Ykelkq8=
+
+Name: res/layout/support_simple_spinner_dropdown_item.xml
+SHA-256-Digest: zO0ox36cN/4vELlbRGHMAiAaY3q0YlnIibiZuZAe6WA=
+
+Name: res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png
+SHA-256-Digest: J/5Si8G1ytic29GCEbi4y/+KzqKkDDevkonojRnzLmg=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.0.spirv
+SHA-256-Digest: JYYCJ9SMQoCJ+VKbDF9gsPdSKWS/IuGjBIS55NZ4HzE=
+
+Name: res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png
+SHA-256-Digest: qwevx57omHtY5VUrSbmuvjp870Vu1JvQAWTUxP7yQaY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.19.spirv
+SHA-256-Digest: ON60c50/HyVoIJ3ocNuPCuUtwrhRYEjSZlIHEH92bLo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.5.spirv
+SHA-256-Digest: EhH6Dq+tRXARbxvtmhnO2y3wM/xN+pLDzmrmEevxpQE=
+
+Name: assets/Resources/shaders/Cosmetics.vs.1.spirv
+SHA-256-Digest: wbJ+TmmcHBhItRBOtcmEZmKKRAP/hM4/SJM3kK4KlS8=
+
+Name: assets/Resources/shaders/Cosmetics.ps.4.spirv
+SHA-256-Digest: WvN5eTs3+72FygoHW/4oQ9vfqA1EQKsSzUFRT2jWzko=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/UI.vs.15.spirv
+SHA-256-Digest: OD1flOPMRWhFuJhX0/wxM8azaecybTzotf1E+uxG/KU=
+
+Name: assets/Resources/shaders/Level.vs.50.spirv
+SHA-256-Digest: ikZkKQ5g6qG34Ym8WoiJR1BHsWAgyWUrGiMCSP7vHLk=
+
+Name: assets/Resources/shaders/Level.vs.147.spirv
+SHA-256-Digest: /UqGP/1JNbb2TKUdIvR7IzVnaGq9aexW5gtUCJjEK9E=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.3.spirv
+SHA-256-Digest: NpSEpdkIYZen9rao11hp1Ef5cnyx1uEO7oyGWrmH1ac=
+
+Name: assets/Resources/shaders/Level.ps.396.spirv
+SHA-256-Digest: bb9aCQ4/ssIOrQogPjYUwVKx30V4ObxD1hqJLEsOUH8=
+
+Name: assets/Resources/shaders/Player.vs.93.spirv
+SHA-256-Digest: 4+ZJj/RyEPdCbuXGhr8VsFCgtdI2rGfDEbKZD6+OZgE=
+
+Name: res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png
+SHA-256-Digest: Wazhlp10+dA/JnfcX2vEmjffX9Tkh7ItY5fNqXKL0Xs=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.75.spirv
+SHA-256-Digest: rv7znt91Iys8carRbI1EM6TQDx/B09GVcEBL793wGkg=
+
+Name: assets/Resources/cosmetics/head/hat/bunnyears_basic.sgm
+SHA-256-Digest: VPy9nEyEnYKogo//cFwmeCZzMrtepnke8n6ueSp2FbQ=
+
+Name: assets/Resources/shaders/Level.ps.142.spirv
+SHA-256-Digest: CxSLgX6chtrDtAvbT15a/TDhRE3BW+Z6X1K+rTkRBAg=
+
+Name: res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png
+SHA-256-Digest: zmEiGPyzW+9U7E2RUmZJmZ6xn67Tio+4KMv66qJNZ4A=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.ps.2.spirv
+SHA-256-Digest: RAY2ANhqwqf8WO9MyHwDBgPTwaACMwZB75fNHDSwDkw=
+
+Name: assets/Resources/shaders/UI.vs.21.spirv
+SHA-256-Digest: FM26CL1t1BwuHWw4bYnqelj106gzIdMZTWcJBvl58Rw=
+
+Name: assets/Resources/shaders/Player.vs.25.spirv
+SHA-256-Digest: Eq503kvrQOKv4STustYeCx198R9a9oUL3pFA93rzYg4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.127.spir
+ v
+SHA-256-Digest: ETy57Qr6SK+vhD4UYwkAFb4xYpD2OHXC1z7CJDwoaGE=
+
+Name: res/drawable/abc_ratingbar_indicator_material.xml
+SHA-256-Digest: caYE/k7QJmSFRt98HGvnePOyQr0hsB3KRHsZ5GNGx2Y=
+
+Name: res/drawable-xxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png
+SHA-256-Digest: IPMQCsn39IXvyNfJ0w4xdgkGhCrahsAHIco4W2GB68g=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.38.spirv
+SHA-256-Digest: IUAd3h2GxEBbkLD6U7SVdmOeRShN/C0PtNe5K+xZbfM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.128.spir
+ v
+SHA-256-Digest: pfvV52R42E4SbrMXz6TNzN4oqcAVwUGDgKGJYf4Czko=
+
+Name: res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.pn
+ g
+SHA-256-Digest: eweTcwCgk7uYCvtTAriamiVGVWOi4iaOMJZtrlXpRyc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.121.spir
+ v
+SHA-256-Digest: n28K0xdk2G9IMIIHB4O9DD7NfQELvpKkgVtkn70JWlg=
+
+Name: assets/Resources/shaders/Level.vs.51.spirv
+SHA-256-Digest: /vQx3D1aPKCo8ZBIPlQUd0Jl7L4tGEPvjSnfYa+W0dM=
+
+Name: assets/Resources/audio/player_bounce_1.ogg
+SHA-256-Digest: ZatnmK/sIXBC8e9qBe6gi/GPj5UdcXpVuakegLcRrh0=
+
+Name: res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png
+SHA-256-Digest: VDtucwAimDHbNfqfp/RrP8k0xJ5DE920vwexbzfFmFQ=
+
+Name: META-INF/androidx.viewpager_viewpager.version
+SHA-256-Digest: vU90lQInBk3t53YggAT4tlv1ISvSbqeBYu+DYpKtTeQ=
+
+Name: res/layout-v26/abc_screen_toolbar.xml
+SHA-256-Digest: 2O1Jz6On2Mu3SoGZA3AcpYTPfluC2NOQE2ANnpCMkpo=
+
+Name: assets/Resources/audio/player_step_concrete_11.ogg
+SHA-256-Digest: 1xS3Evn2JSUZvTjTXGiiAkDOlQjfC5gR4WU7WLUGeQU=
+
+Name: res/anim/abc_tooltip_exit.xml
+SHA-256-Digest: EaNre0Ho6BPkG/1ft4SxJh8M2tRWmZOeQzhGwuX87Xw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.39.spirv
+SHA-256-Digest: D7eynMDtCwe4TvCNS/jJl8nbBn4e7GYwoB2YR0XTTMk=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.18.spirv
+SHA-256-Digest: 6kHkc2O/QCNlHeuU1hBwz5CTNGm/lo4hrFdbw6z70ro=
+
+Name: assets/Resources/shaders/Player.vs.26.spirv
+SHA-256-Digest: pPn7MiCQCzfjkhDGzYayawEq0gbbDvUpRlNGSgTdjhA=
+
+Name: assets/Resources/models/shapes/pyramid.sgm
+SHA-256-Digest: bMrTDGD+biH/0Phr8KEzDtQxhUwvkLeyo07cEPVPgN4=
+
+Name: assets/Resources/audio/player_grab_4.ogg
+SHA-256-Digest: 1KsWI04kgXp5/a3LP/CxQ0UoWZ7vNPPT39C0pY6jiIY=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.190.spir
+ v
+SHA-256-Digest: 2A7WYpNvA4RyklSgLfwylgPMpyt6U+V5aapvMJjOWOo=
+
+Name: res/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_light.png
+SHA-256-Digest: yrBCpq0nlBea9w22y3ruEc9Khz2fuqoa1KOP91JSmWQ=
+
+Name: assets/Resources/shaders/Sky.ps.0.spirv
+SHA-256-Digest: 2/rkVGi0mjDlz1yyK3PBMICglYhnLQ97fEy9mcS1Wf8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.122.spir
+ v
+SHA-256-Digest: 1wXi850SulcNQmVSmldNGWlhxVQUmJSqPTQIEw0sQnc=
+
+Name: assets/Resources/shaders/Cosmetics.ps.5.spirv
+SHA-256-Digest: jCWaILryhAYWJpN7p4Dm96XJOg6krwRvRCYUbO6u7uI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.4.spirv
+SHA-256-Digest: ammjxYLrB/Fq0CtLA4Yymsm22T3ZkjPiga1AqmDAi64=
+
+Name: assets/Resources/shaders/Cosmetics.vs.2.spirv
+SHA-256-Digest: 4g0xqkLnND8FmC123M9ew/Q9nTJu/kI3mo1jpChKb6I=
+
+Name: assets/Resources/shaders/UI.vs.22.spirv
+SHA-256-Digest: 3wg61ReLbXQNFLgPrB8XglT1C6VuNPrTAfdAJNQh2no=
+
+Name: assets/Resources/levels/internal/lobby-christmas.level
+SHA-256-Digest: KuyCm37P3swyH0BQTdxmmVTVcUPE7Z2vBd1/a+cmZa8=
+
+Name: assets/Resources/shaders/Level.vs.148.spirv
+SHA-256-Digest: 62Fxr796qdqKETZbLNtPQHyydO9tqh6MzGBtyNGlsD8=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.74.spirv
+SHA-256-Digest: Gzc319/xyHZR8WyQePcvrKSXZ0t90Ee24nczAJ+8gSg=
+
+Name: assets/Resources/shaders/Level.ps.12.spirv
+SHA-256-Digest: s9tik1T4z5vzyLc2ctoxUOeht7IgbdvmDoJnybWo4LY=
+
+Name: res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png
+SHA-256-Digest: wblGdn81sa5OoeX9CiOnDynzkSqpAsxUEj2PBmsvj2Q=
+
+Name: res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png
+SHA-256-Digest: 2/HYwdYP6+bFSlmfP5wcYHqY3XEPH5YCfzkbgJI4Ke4=
+
+Name: lib/arm64-v8a/libRayneEOS.so
+SHA-256-Digest: 06LHVxpLkXREomSHQCecAq1FlxAI2NEaaxzbejN4fKI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.126.spir
+ v
+SHA-256-Digest: e2wqS25ckWv8lbSbiejNLoIgNTafpKBDOvPt1WJiXxk=
+
+Name: res/anim/btn_checkbox_to_checked_box_inner_merged_animation.xml
+SHA-256-Digest: I8lovQKt8y7Sd6Mq9vpNY02nIcclaecMxnfs546SGTI=
+
+Name: res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png
+SHA-256-Digest: yxROUi/mA6lduSsnfyMT51ds3/TY+Hc1bPKYpp8YFTc=
+
+Name: assets/Resources/shaders/UI.vs.20.spirv
+SHA-256-Digest: cAAoYk2JmZcFyobmN0wq6LeUoL+ASgAQVOKqvYhYzzM=
+
+Name: res/drawable-xxhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png
+SHA-256-Digest: 5cZp2MscxCQXD4/CHBpa0IcjSRpkQQ8TShjhx6yWVhc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.ps.1.spirv
+SHA-256-Digest: louososDR1I6+97IaMS+gheZUUpoisMrQtWKd4ufMkU=
+
+Name: assets/Resources/shaders/Level.ps.143.spirv
+SHA-256-Digest: 672gD8LhOlmGnY2O/DD8X2R6l6/BokiIA+nGzEaQL/I=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.1.spirv
+SHA-256-Digest: zigODItPvPbClEdgxB1vNZp/yC9IfLiydqavEiRObAc=
+
+Name: assets/Resources/shaders/Level.ps.140.spirv
+SHA-256-Digest: CMGg+qj8PB5zaaZeo2opOBZXRqo9WnAsJ8rWbrrS/60=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.123.spir
+ v
+SHA-256-Digest: JzwQcFEAeoZoeoioFUuoVtnqjcbADcxhBnE+Idvl+LM=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.1.spirv
+SHA-256-Digest: VPC2LxjbXIqObO3JTBb/r5R1hHtPbOlLwtsX7dcmnu8=
+
+Name: assets/Resources/shaders/Cosmetics.ps.0.spirv
+SHA-256-Digest: /R2tUzgeFocXwuAaMCk6EuMmU4nAcJU/7dZkB+2MZJ4=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.1.spirv
+SHA-256-Digest: owHQ2NnOtEqUSbkxoRPGy/n5dL+FqbiU4+xwJa+hKuA=
+
+Name: res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_light.pn
+ g
+SHA-256-Digest: R6jOAYCI1KDZG6UCLi+A11MD3X1v0ZQR2OQT5f0JIhc=
+
+Name: assets/Resources/shaders/Cosmetics.vs.0.spirv
+SHA-256-Digest: Rm6ceHpeEs5ZZtnmpzHW4VWibpxm6etXfd4j8VdmapE=
+
+Name: res/layout/abc_screen_content_include.xml
+SHA-256-Digest: vm5gDLbuZYEIfDCge9HsMAtt35LRh8n85es/rJj2K1M=
+
+Name: assets/Resources/shaders/Player.vs.94.spirv
+SHA-256-Digest: 52mu375Nh9SWr8JOgjhCiXw1ZyTtJ1h44vHV46GT1Us=
+
+Name: assets/Resources/shaders/Level.ps.15.spirv
+SHA-256-Digest: PdxuncOAHYwlXhuHsxwZdCzNssi6ViciuYnddLn2Q3U=
+
+Name: res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png
+SHA-256-Digest: QpO86S6qjy93OQJSq/J9fVVQWcP9s8Pv2bUoICK94gI=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.79.spirv
+SHA-256-Digest: s5lOMoJ7VvIoASbsA/t3E7xmdz0lOsr83V0vaRxckA4=
+
+Name: assets/Resources/textures/ice.astc
+SHA-256-Digest: 5WJ2abCzw+RfArLptzaab0/5t3luczldko5kZmOUWqU=
+
+Name: res/color-v23/abc_tint_switch_track.xml
+SHA-256-Digest: RuADa5uNRks2+6vonFGtrtbURWAWk+AycttWCj3MZRo=
+
+Name: res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png
+SHA-256-Digest: 6GEo+eoy2qySWAk+pQnCOh4jx0sCUXLXTE82tJ6ChP0=
+
+Name: assets/Resources/audio/player_grab_6.ogg
+SHA-256-Digest: qA7tvnroi/Df/KEWqoCeZlBKldhn+RoDsbvNL6hdvaw=
+
+Name: res/layout/select_dialog_singlechoice_material.xml
+SHA-256-Digest: djU4y4+peF02k1zOErbOdU5XzNTSKiVQxQVb/8ajdxc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.4.spirv
+SHA-256-Digest: BromiXe3gE5wv4TsbO8oDuFa+1RcT+2fcWpnL1Us93c=
+
+Name: assets/Resources/models/shapes/sphere.sgm
+SHA-256-Digest: L2NtG4PXWNDlOrTeZN9iiAHebgJOrdEkDh6DWhg0w2c=
+
+Name: assets/Resources/shaders/Level.ps.141.spirv
+SHA-256-Digest: MeX13LWNnyvULqD8QGT3BdFSr4GqTmsy2bczIEpigHE=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.ps.2.spirv
+SHA-256-Digest: IyLFsOIYCGeeWp8Pra8GKEwV1gL85o40DW7DIcLbj2I=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.vs.0.spirv
+SHA-256-Digest: 6s4ganrq84gbNWCx7RsLlhnbRSqS+/LwI/CFNR2yiEw=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.76.spirv
+SHA-256-Digest: owN3akUShHhN8pWBdpyyn210d7bfrIuRY1iXoV4iAv0=
+
+Name: assets/Resources/shaders/Sky.vs.1.spirv
+SHA-256-Digest: QipHzwhcDhGMX/KkGFNC8icZFmcaaVA+eD3vREjhX3s=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.125.spir
+ v
+SHA-256-Digest: xQYYjS0XwwCqHJJQJQE7WlBIxsK+AbgiJBqf/yT1S48=
+
+Name: assets/Resources/shaders/Player.vs.29.spirv
+SHA-256-Digest: DxgzmbT+kVQxTEh1elt7LEtVA623Vvy6xidE1TTIUE0=
+
+Name: assets/Resources/models/gizmo/gizmo_scale.sgm
+SHA-256-Digest: YRqJJTOEkYxuZ2z8ki0c1CGGB5HtsRcMdasi2MYjKWE=
+
+Name: assets/Resources/models/player/grapple_anchor.sgm
+SHA-256-Digest: Y4IPEknP6DWMrSU3ac65d4rPcziuys2D4lx+l/aFXxY=
+
+Name: assets/Resources/shaders/Cosmetics.ps.3.spirv
+SHA-256-Digest: PM8vZBA9mpQZpd0tUyQzKHksLFLOaS2yiewTBbQUObY=
+
+Name: assets/Resources/shaders/Player.vs.91.spirv
+SHA-256-Digest: LrJdSELbZNuFitCWqZfuXal3PQ0/kHSLJ+niaC/l4eY=
+
+Name: assets/Resources/shaders/Level.ps.14.spirv
+SHA-256-Digest: snDdoJWhWU5sWcekS1+MuwnXoJxqOqMoJZKxDtsb9M8=
+
+Name: assets/Resources/audio/player_impact_4.ogg
+SHA-256-Digest: S+mSSmgnsJDse7qe2IDubspHjm7I6J1IZrjZ0B8AxKY=
+
+Name: build-data.properties
+SHA-256-Digest: 3yioYmZ9nQ2jS/Wl8v4dYoPEtb/KLuk348806XIRk3U=
+
+Name: assets/Resources/ui_compressed/level_finished.astc
+SHA-256-Digest: ZnxH9OUc1c1rMqrK9LobZOH7A93M5kH7ltnukGSiA4E=
+
+Name: assets/Resources/shaders/Sky.vs.0.spirv
+SHA-256-Digest: YZZ590QiaDzlM97Vq67iOfvNu9QLwNqnWhitfsnotMw=
+
+Name: res/color-v23/abc_tint_btn_checkable.xml
+SHA-256-Digest: xNrfY1mHYfGsZ0WVM75uWbuGhRX3d4mKKro02mq3qM0=
+
+Name: assets/Resources/shaders/Player.vs.92.spirv
+SHA-256-Digest: 2n0fgIOZv3SAWGT/8Ko+lI9HUgQIthrHFRMWRKK9s4I=
+
+Name: assets/Resources/shaders/Cosmetics.ps.2.spirv
+SHA-256-Digest: n2JZ4zkJHJSpZul86cBnlBKQY3Pyx5tnNxgGLcRgPKc=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Depth.ps.3.spirv
+SHA-256-Digest: cjLWkKs5Fpp/mGcZc552Ggxmw7VP+G2GMsCMQ2I8gCI=
+
+Name: res/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png
+SHA-256-Digest: +DCP0bhk1UVHJuNcoNuuK5Gz7vaJ2/4Wfr6rQtGREIo=
+
+Name: assets/Resources/Modules/RayneVulkan/Resources/Shaders.vs.77.spirv
+SHA-256-Digest: gkrTDpMw3jq0VM8aUU5eR3xgqN2bb2VbspIBmVKN2is=
+
+Name: res/drawable-hdpi-v4/notification_bg_normal.9.png
+SHA-256-Digest: R2ot7jptNS4NITpYzXOWw8lhLeXmUvp8G9vuPhk6Z5g=
+
+Name: assets/Resources/shaders/Level.ps.13.spirv
+SHA-256-Digest: 2+jNB8maC/W4tjsQiYyCIZdGdQjUQBJObBnId5yhjlA=
+

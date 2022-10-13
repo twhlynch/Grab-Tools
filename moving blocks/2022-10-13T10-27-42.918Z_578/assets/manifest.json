@@ -1,0 +1,18 @@
+{
+	"RNApplication": "GRAB",
+	"RNSearchPaths":
+	[
+		"./Resources"
+	],
+	"RNModules":
+	[
+		"Modules/RayneD3D12",
+		"Modules/RayneMetal",
+		"Modules/RayneVulkan",
+		"Modules/RayneOgg"
+	],
+	"RNPreferredTextureFileExtension~macos": "dds",
+	"RNPreferredTextureFileExtension~windows": "dds",
+	"RNPreferredTextureFileExtension~linux": "dds",
+	"RNPreferredTextureFileExtension~android": "astc"
+}

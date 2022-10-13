@@ -1,0 +1,372 @@
+[
+    {
+        "file~vulkan": "shaders/Level.vs.spirv",
+        "shaders": [
+            {
+                "has_instancing": true,
+                "name": "main_vertex",
+                "signature": {
+                    "options": {
+                        "defines": [
+                            "RN_COLOR",
+                            "RN_USE_MULTIVIEW",
+                            "COD_STARTFINISH",
+                            "COD_TRIPLANAR",
+                            "COD_UV0",
+                            "COD_SHADOWS",
+                            "COD_UNLIT",
+                            "COD_FOG",
+                            "COD_GRAPPLE_ROPE"
+                        ],
+                        "dependencies": {},
+                        "excludes": [
+                            [
+                                "RN_COLOR",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_SHADOWS",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_TRIPLANAR",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_TRIPLANAR",
+                                "COD_UV0"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_SHADOWS"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_UV0"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_TRIPLANAR"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_UV0"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_UNLIT"
+                            ]
+                        ]
+                    }
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Level.ps.spirv",
+        "shaders": [
+            {
+                "has_instancing": true,
+                "name": "main_fragment",
+                "signature": {
+                    "options": {
+                        "defines": [
+                            "RN_COLOR",
+                            "RN_USE_MULTIVIEW",
+                            "COD_LAVA",
+                            "COD_TRIPLANAR",
+                            "COD_STARTFINISH",
+                            "COD_UV0",
+                            "COD_SHADOWS",
+                            "COD_UNLIT",
+                            "COD_FOG",
+                            "COD_GRAPPLE_ROPE",
+                            "COD_ICE"
+                        ],
+                        "dependencies": {
+                            "COD_ICE": "COD_TRIPLANAR",
+                            "COD_LAVA": "COD_TRIPLANAR"
+                        },
+                        "excludes": [
+                            [
+                                "RN_COLOR",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_TRIPLANAR",
+                                "COD_UV0"
+                            ],
+                            [
+                                "COD_SHADOWS",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_TRIPLANAR",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_SHADOWS"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_UV0"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_STARTFINISH"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_TRIPLANAR"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_UV0"
+                            ],
+                            [
+                                "COD_GRAPPLE_ROPE",
+                                "COD_UNLIT"
+                            ],
+                            [
+                                "COD_ICE",
+                                "COD_LAVA"
+                            ]
+                        ]
+                    }
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Player.vs.spirv",
+        "shaders": [
+            {
+                "has_instancing": false,
+                "name": "player_vertex",
+                "signature": {
+                    "options": {
+                        "defines": [
+                            "RN_COLOR",
+                            "RN_USE_MULTIVIEW",
+                            "RN_ANIMATIONS",
+                            "COD_UV0",
+                            "COD_SHADOWS",
+                            "COD_UNLIT",
+                            "COD_FOG"
+                        ],
+                        "excludes": [
+                            [
+                                "COD_UNLIT",
+                                "COD_SHADOWS"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_UV0"
+                            ]
+                        ]
+                    }
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Player.ps.spirv",
+        "shaders": [
+            {
+                "has_instancing": false,
+                "name": "player_fragment",
+                "signature": {
+                    "options": {
+                        "defines": [
+                            "RN_COLOR",
+                            "RN_USE_MULTIVIEW",
+                            "COD_UV0",
+                            "COD_SHADOWS",
+                            "COD_UNLIT",
+                            "COD_FOG"
+                        ],
+                        "excludes": [
+                            [
+                                "COD_UNLIT",
+                                "COD_SHADOWS"
+                            ],
+                            [
+                                "COD_UNLIT",
+                                "COD_UV0"
+                            ]
+                        ]
+                    }
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Cosmetics.vs.spirv",
+        "shaders": [
+            {
+                "name": "cosmetics_vertex",
+                "signature": {
+                    "options": {
+                        "defines": [
+                            "RN_USE_MULTIVIEW",
+                            "COD_MASKED_COLORS"
+                        ]
+                    }
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Cosmetics.ps.spirv",
+        "shaders": [
+            {
+                "name": "cosmetics_fragment",
+                "signature": {
+                    "options": {
+                        "defines": [
+                            "COD_FOG",
+                            "COD_PULSATING_ORB",
+                            "COD_MASKED_COLORS"
+                        ],
+                        "excludes": [
+                            [
+                                "COD_PULSATING_ORB",
+                                "COD_MASKED_COLORS"
+                            ]
+                        ]
+                    }
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Sky.vs.spirv",
+        "shaders": [
+            {
+                "name": "sky_vertex",
+                "signature": {
+                    "options": [
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Sky.ps.spirv",
+        "shaders": [
+            {
+                "name": "sky_fragment",
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/UI.vs.spirv",
+        "shaders": [
+            {
+                "name": "ui_vertex",
+                "signature": {
+                    "options": [
+                        "RN_UV0",
+                        "RN_UV1",
+                        "RN_COLOR",
+                        "RN_USE_MULTIVIEW",
+                        "COD_FOG"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/UI.ps.spirv",
+        "shaders": [
+            {
+                "name": "ui_fragment",
+                "signature": {
+                    "options": [
+                        "RN_UV0",
+                        "RN_UV1",
+                        "COD_FOG"
+                    ],
+                    "samplers": [
+                        {
+                            "name": "linearClampSampler",
+                            "wrap": "clamp"
+                        }
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Depth.vs.spirv",
+        "shaders": [
+            {
+                "has_instancing": true,
+                "name": "depth_vertex",
+                "signature": {
+                    "options": [
+                        "RN_USE_MULTIVIEW"
+                    ]
+                },
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/Depth.ps.spirv",
+        "shaders": [
+            {
+                "has_instancing": true,
+                "name": "depth_fragment",
+                "type": "fragment"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/PostProcessing.vs.spirv",
+        "shaders": [
+            {
+                "name": "pp_vertex",
+                "type": "vertex"
+            }
+        ]
+    },
+    {
+        "file~vulkan": "shaders/PostProcessing.ps.spirv",
+        "shaders": [
+            {
+                "name": "pp_blit_fragment",
+                "signature": {
+                    "options": [
+                        "COD_USES_TEXTURE_ARRAY"
+                    ]
+                },
+                "type": "fragment"
+            }
+        ]
+    }
+]
