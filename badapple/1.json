@@ -1,0 +1,24 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 0,
+    "formatVersion": 7,
+    "levelNodes": [{"levelNodeStatic": {"color": {"a": 1.0, "b": 2.4e-06, "g": 2.4e-06, "r": 2.4e-06}, "material": "DEFAULT_COLORED", "position": {"x": 0, "y": 0, "z": 1.0}, "rotation": {"w": 1.0}, "scale": {"x": 1.0, "y": 1.0, "z": 1.0}, "shape": "CUBE"}, "animations": [{"frames": [{"position": {}, "rotation": {"w": 1.0}}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 0.05}, {"position": {}, "rotation": {"w": 1.0}, "time": 1.8}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 12.38}, {"position": {}, "rotation": {"w": 1.0}, "time": 12.84}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 12.93}, {"position": {}, "rotation": {"w": 1.0}, "time": 12.97}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 13.05}, {"position": {}, "rotation": {"w": 1.0}, "time": 13.13}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 13.43}, {"position": {}, "rotation": {"w": 1.0}, "time": 22.93}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 35.22}, {"position": {}, "rotation": {"w": 1.0}, "time": 46.97}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 48.34}, {"position": {}, "rotation": {"w": 1.0}, "time": 53.22}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 53.3}, {"position": {}, "rotation": {"w": 1.0}, "time": 58.34}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 58.38}, {"position": {}, "rotation": {"w": 1.0}, "time": 75.97}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 76.05}, {"position": {}, "rotation": {"w": 1.0}, "time": 76.09}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 76.22}, {"position": {}, "rotation": {"w": 1.0}, "time": 76.26}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 77.47}, {"position": {}, "rotation": {"w": 1.0}, "time": 82.38}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 87.3}, {"position": {}, "rotation": {"w": 1.0}, "time": 92.34}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 100.76}, {"position": {}, "rotation": {"w": 1.0}, "time": 101.47}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 102.18}, {"position": {}, "rotation": {"w": 1.0}, "time": 104.38}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 104.43}, {"position": {}, "rotation": {"w": 1.0}, "time": 106.09}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 109.51}, {"position": {}, "rotation": {"w": 1.0}, "time": 109.63}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 118.51}, {"position": {}, "rotation": {"w": 1.0}, "time": 128.72}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 129.76}, {"position": {}, "rotation": {"w": 1.0}, "time": 130.01}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 133.26}, {"position": {}, "rotation": {"w": 1.0}, "time": 133.3}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 133.43}, {"position": {}, "rotation": {"w": 1.0}, "time": 133.47}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 139.76}, {"position": {}, "rotation": {"w": 1.0}, "time": 139.93}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 150.93}, {"position": {}, "rotation": {"w": 1.0}, "time": 162.26}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 162.97}, {"position": {}, "rotation": {"w": 1.0}, "time": 170.63}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 173.63}, {"position": {}, "rotation": {"w": 1.0}, "time": 174.05}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 174.34}, {"position": {}, "rotation": {"w": 1.0}, "time": 174.68}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 175.43}, {"position": {}, "rotation": {"w": 1.0}, "time": 175.84}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 176.18}, {"position": {}, "rotation": {"w": 1.0}, "time": 176.55}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 176.88}, {"position": {}, "rotation": {"w": 1.0}, "time": 177.05}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 177.18}, {"position": {}, "rotation": {"w": 1.0}, "time": 177.76}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 179.97}, {"position": {}, "rotation": {"w": 1.0}, "time": 180.18}, {"position": {"z": -1.0}, "rotation": {"w": 1.0}, "time": 181.09}], "name": "idle"}]}],
+    "maxCheckpointCount": 420,
+    "title": "temp"
+}

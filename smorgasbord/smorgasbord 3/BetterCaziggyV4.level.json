@@ -1,0 +1,2265 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 193,
+    "creators": "Caziggy",
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeGroup": {
+                "childNodes": [
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 54.52529,
+                                "y": 5.7210717,
+                                "z": 12.000931
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 55.375023,
+                                "y": 76.250015,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 54.587776,
+                                "y": 5.1585703,
+                                "z": -6.999075
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 75.125,
+                                "z": 55.250008
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 54.525272,
+                                "y": -32.778934,
+                                "z": -2.4990692
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 9.999996,
+                                "y": 1.0,
+                                "z": 55.375008
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 54.525276,
+                                "y": -32.778934,
+                                "z": 7.501745
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 9.99837,
+                                "y": 1.0,
+                                "z": 55.375008
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 73.21277,
+                                "y": 4.971071,
+                                "z": -4.2998314
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 6.3984714,
+                                "y": 74.5,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 73.21277,
+                                "y": 10.971072,
+                                "z": 0.62874985
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 3.7443638,
+                                "y": 63.75,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 73.21277,
+                                "y": 11.033573,
+                                "z": 5.3731117
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 5.744364,
+                                "y": 63.875,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 73.21277,
+                                "y": 5.4710703,
+                                "z": 9.280033
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 6.441801,
+                                "y": 75.5,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeSign": {
+                            "position": {
+                                "x": 74.33777,
+                                "y": -31.778923,
+                                "z": 2.5009308
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "text": "Start"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 11.025284,
+                                "y": 27.971067,
+                                "z": -16.092817
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 37.187508,
+                                "y": 1.0,
+                                "z": 123.125015
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 65.424,
+                                "y": -30.77893,
+                                "z": 1.2452011
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 3.2500114,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 10.462791,
+                                "y": 27.971066,
+                                "z": 19.625948
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 34.249992,
+                                "y": 1.0,
+                                "z": 124.500015
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 62.310974,
+                                "y": -29.71643,
+                                "z": 4.5009327
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 5.3750153,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 58.42915,
+                                "y": -28.90393,
+                                "z": 7.3759346
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 7.0000153,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 53.110992,
+                                "y": -28.216429,
+                                "z": 7.3759327
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 8.375015,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 49.587772,
+                                "y": -27.96643,
+                                "z": 1.2027817
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 8.875015,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 46.433113,
+                                "y": -27.278929,
+                                "z": -2.1240711
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 10.250015,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 41.791687,
+                                "y": -26.591427,
+                                "z": -2.6240692
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 11.625019,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 33.837776,
+                                "y": -25.09143,
+                                "z": 5.7509317
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 14.625015,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 37.587776,
+                                "y": -25.716434,
+                                "z": -0.4990673
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 13.375019,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 26.087774,
+                                "y": -3.1539307,
+                                "z": -26.749067
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": -0.5,
+                                "y": 0.5,
+                                "z": 0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.517231,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 27.337776,
+                                "y": 5.8460665,
+                                "z": -18.749065
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 22.499996,
+                                "y": 44.000008,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 26.08777,
+                                "y": -6.40393,
+                                "z": -22.124071
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": -0.5,
+                                "y": 0.5,
+                                "z": 0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.517231,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 12.40026,
+                                "y": -7.528934,
+                                "z": -29.49907
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 28.875004,
+                                "y": 15.250004,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 12.40026,
+                                "y": 18.72107,
+                                "z": -29.49907
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 28.875004,
+                                "y": 18.500004,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -12.037215,
+                                "y": 4.783572,
+                                "z": -29.499065
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 77.750015,
+                                "y": 9.375004,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 27.87664,
+                                "y": -23.66011,
+                                "z": 2.4620638
+                            },
+                            "rotation": {
+                                "w": 0.7071067,
+                                "y": -0.7071068
+                            },
+                            "scale": {
+                                "x": 18.577738,
+                                "y": 17.577747,
+                                "z": 1.8277321
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 19.567482,
+                                "y": -15.403934,
+                                "z": 18.688438
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 14.749989,
+                                "y": 1.0,
+                                "z": 31.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 27.337772,
+                                "y": 6.34607,
+                                "z": 23.706406
+                            },
+                            "rotation": {
+                                "w": 0.7071067,
+                                "y": -0.7071068
+                            },
+                            "scale": {
+                                "x": 22.410957,
+                                "y": 42.5,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 15.337776,
+                                "y": -15.403934,
+                                "z": -7.624061
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 21.500006,
+                                "y": 1.0,
+                                "z": 23.25
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 21.962791,
+                                "y": 0.6585674,
+                                "z": -28.811565
+                            },
+                            "rotation": {
+                                "w": -0.5,
+                                "x": -0.5,
+                                "y": 0.5,
+                                "z": 0.5
+                            },
+                            "scale": {
+                                "x": 1.125,
+                                "y": 3.8750134,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 21.962769,
+                                "y": -0.34142682,
+                                "z": -28.12407
+                            },
+                            "rotation": {
+                                "w": 2.9802319e-08,
+                                "x": 5.9604638e-08,
+                                "y": 0.70710677,
+                                "z": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.517231,
+                                "z": 0.8750076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 15.275269,
+                                "y": -15.403934,
+                                "z": -24.186562
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 23.125,
+                                "y": 1.0,
+                                "z": 11.62499
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 22.337784,
+                                "y": -11.153927,
+                                "z": -15.999064
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 7.750004,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 21.622284,
+                                "y": -13.02893,
+                                "z": 5.64644
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 4.000004,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 20.712774,
+                                "y": -2.7789304,
+                                "z": 20.375937
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 24.5,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 16.587776,
+                                "y": -12.153926,
+                                "z": -1.9305
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 5.750004,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 16.522636,
+                                "y": -11.59143,
+                                "z": -10.278142
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 6.875004,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 16.370308,
+                                "y": 2.971069,
+                                "z": -27.999065
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": 0.5,
+                                "y": -0.5,
+                                "z": -0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.1250114,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 23.90959,
+                                "y": 3.8460732,
+                                "z": 27.000933
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 37.750004,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 9.962792,
+                                "y": -1.7164305,
+                                "z": 34.62593
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": -0.5,
+                                "y": -0.5,
+                                "z": 0.5
+                            },
+                            "scale": {
+                                "x": 28.375015,
+                                "y": 1.0,
+                                "z": 37.50002
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 9.150276,
+                                "y": 20.096066,
+                                "z": 34.625927
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 35.875015,
+                                "y": 15.250006,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 9.8377905,
+                                "y": 3.3460712,
+                                "z": -27.999065
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": 0.5,
+                                "y": -0.5,
+                                "z": -0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.1250114,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 7.959831,
+                                "y": -15.403934,
+                                "z": 18.750944
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 32.0,
+                                "y": 1.0,
+                                "z": 8.494099
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "GRAPPLABLE_LAVA",
+                            "position": {
+                                "x": 3.5252757,
+                                "y": 11.721069,
+                                "z": 12.986065
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 5.875,
+                                "y": 1.3350117,
+                                "z": 1.3350117
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.5565262,
+                                "y": 11.721069,
+                                "z": 12.984882
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 6.0625,
+                                "y": 1.375,
+                                "z": 1.375
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 1.7626419,
+                                "y": -4.9664307,
+                                "z": -22.743256
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 19.875011,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.150276,
+                                "y": -4.4664264,
+                                "z": -13.374071
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 21.125004,
+                                "z": 0.8750076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.1502829,
+                                "y": -4.4039345,
+                                "z": -13.374061
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.125,
+                                "y": 21.000015,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.5565262,
+                                "y": 11.721069,
+                                "z": -3.1252532
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 6.0625,
+                                "y": 1.375,
+                                "z": 1.375
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "GRAPPLABLE_LAVA",
+                            "position": {
+                                "x": 3.5252762,
+                                "y": 11.721069,
+                                "z": -3.1240764
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 5.875,
+                                "y": 1.3350117,
+                                "z": 1.3350117
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.4627838,
+                                "y": 19.783577,
+                                "z": -3.124074
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 15.125013,
+                                "z": 1.3750029
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.4627838,
+                                "y": 19.783577,
+                                "z": 12.986063
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 15.125013,
+                                "z": 1.3750029
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -2.5372162,
+                                "y": -15.403934,
+                                "z": 2.125979
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 12.499992,
+                                "y": 1.0,
+                                "z": 64.25009
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -9.537224,
+                                "y": 1.3773173,
+                                "z": -29.499065
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "z": 0.70710677
+                            },
+                            "scale": {
+                                "x": 33.187492,
+                                "y": 15.0,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -26.412237,
+                                "y": 22.90857,
+                                "z": -29.499071
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 9.875,
+                                "z": 48.75
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.15026,
+                                "y": 3.471071,
+                                "z": 33.000916
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "x": -0.70710677,
+                                "y": -2.9802319e-08,
+                                "z": -2.9802319e-08
+                            },
+                            "scale": {
+                                "x": 6.875,
+                                "y": 2.517231,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -29.537231,
+                                "y": -15.40393,
+                                "z": 13.782173
+                            },
+                            "rotation": {
+                                "w": 0.7071067,
+                                "y": -0.7071068
+                            },
+                            "scale": {
+                                "x": 42.062508,
+                                "y": 1.0,
+                                "z": 41.499977
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -16.099724,
+                                "y": -15.403934,
+                                "z": -18.686565
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 22.874992,
+                                "y": 1.0,
+                                "z": 14.625
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -33.787224,
+                                "y": -7.4039245,
+                                "z": -29.499071
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 33.499985,
+                                "y": 15.000008,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -19.787231,
+                                "y": 1.8460655,
+                                "z": -11.246871
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 33.500015,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -18.9122,
+                                "y": 1.3460674,
+                                "z": -3.3063726
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 33.250008,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -33.974724,
+                                "y": 13.596068,
+                                "z": -29.499065
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 8.75,
+                                "z": 33.874985
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -7.28724,
+                                "y": 5.346072,
+                                "z": 33.000935
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "x": -0.70710677,
+                                "y": -2.9802319e-08,
+                                "z": -2.9802319e-08
+                            },
+                            "scale": {
+                                "x": 2.6249924,
+                                "y": 2.517231,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -20.906075,
+                                "y": -0.8414344,
+                                "z": 14.250936
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 28.875008,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -19.787237,
+                                "y": 1.3460617,
+                                "z": -21.749071
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 32.500023,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -26.287237,
+                                "y": 0.4710674,
+                                "z": 3.8488884
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 31.500008,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -39.974724,
+                                "y": 6.40857,
+                                "z": 34.62593
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 42.625,
+                                "z": 62.374985
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -17.386312,
+                                "y": 7.8460646,
+                                "z": 32.96968
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": -0.5,
+                                "y": 0.5,
+                                "z": -0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.4375153,
+                                "z": 2.7499847
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -36.787224,
+                                "y": -15.403934,
+                                "z": -18.686562
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 26.749992,
+                                "y": 1.0,
+                                "z": 22.874998
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -30.320198,
+                                "y": 17.65076,
+                                "z": -27.62407
+                            },
+                            "rotation": {
+                                "w": -2.9802319e-08,
+                                "x": -0.70710677,
+                                "y": 0.70710677,
+                                "z": 2.9802319e-08
+                            },
+                            "scale": {
+                                "x": 0.6093824,
+                                "y": 2.4340591,
+                                "z": 2.7499847
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -30.318491,
+                                "y": 18.59607,
+                                "z": -27.844969
+                            },
+                            "rotation": {
+                                "y": 0.70710677,
+                                "z": 0.70710677
+                            },
+                            "scale": {
+                                "x": 2.4375076,
+                                "y": 3.1918125,
+                                "z": 1.2812512
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -35.662235,
+                                "y": 6.34607,
+                                "z": 22.688433
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 1.0,
+                                "y": 43.250008,
+                                "z": 23.375011
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -28.563087,
+                                "y": -1.2164344,
+                                "z": 23.87593
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 28.125008,
+                                "z": 2.0000076
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -53.57064,
+                                "y": -3.2164307,
+                                "z": 22.84468
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "z": -0.70710677
+                            },
+                            "scale": {
+                                "x": 24.625,
+                                "y": 35.183167,
+                                "z": 23.4375
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -33.537193,
+                                "y": -7.71643,
+                                "z": -23.749062
+                            },
+                            "rotation": {
+                                "w": -0.5,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "z": 0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.517231,
+                                "z": 13.625011
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -42.787224,
+                                "y": -15.27893,
+                                "z": 15.2509365
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 8.499989,
+                                "y": 0.84375,
+                                "z": 13.499985
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -28.912209,
+                                "y": 9.846064,
+                                "z": 32.969677
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": -0.5,
+                                "y": 0.5,
+                                "z": -0.5
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.4375153,
+                                "z": 2.7499847
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -53.646595,
+                                "y": 27.471067,
+                                "z": 20.344685
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "z": -0.70710677
+                            },
+                            "scale": {
+                                "x": 1.2500019,
+                                "y": 36.03125,
+                                "z": 28.4375
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -40.537224,
+                                "y": -10.0914345,
+                                "z": -12.419946
+                            },
+                            "rotation": {
+                                "w": -0.49999994,
+                                "x": 0.49999994,
+                                "y": 0.49999994,
+                                "z": 0.49999994
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 2.517231,
+                                "z": 8.875004
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -45.537254,
+                                "y": 18.478882,
+                                "z": -24.686556
+                            },
+                            "rotation": {
+                                "w": -2.9802319e-08,
+                                "x": 2.9802319e-08,
+                                "y": 0.70710677,
+                                "z": 0.70710677
+                            },
+                            "scale": {
+                                "x": 2.5,
+                                "y": 9.375,
+                                "z": 1.0156255
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -45.53721,
+                                "y": 17.478888,
+                                "z": -24.499054
+                            },
+                            "rotation": {
+                                "w": -2.9802319e-08,
+                                "x": -0.70710677,
+                                "y": 0.70710677,
+                                "z": 2.9802319e-08
+                            },
+                            "scale": {
+                                "x": 0.9843903,
+                                "y": 2.5000076,
+                                "z": 9.000004
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -45.412205,
+                                "y": 28.221066,
+                                "z": 2.8759346
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 15.125013,
+                                "z": 0.75000024
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -45.412205,
+                                "y": 28.221066,
+                                "z": 2.1571808
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 1.9999952,
+                                "y": 15.125013,
+                                "z": 0.68750095
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "GRAPPLABLE_LAVA",
+                            "position": {
+                                "x": -45.349716,
+                                "y": 20.158562,
+                                "z": 2.5009308
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 5.875,
+                                "y": 1.3350117,
+                                "z": 1.3350117
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -45.31846,
+                                "y": 20.158562,
+                                "z": 2.499754
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 6.0625,
+                                "y": 1.375,
+                                "z": 1.375
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -60.22472,
+                                "y": 6.221078,
+                                "z": 15.375927
+                            },
+                            "rotation": {
+                                "y": 1.0
+                            },
+                            "scale": {
+                                "x": 21.874985,
+                                "y": 42.250008,
+                                "z": 8.75
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -49.78724,
+                                "y": 6.471074,
+                                "z": -9.4365635
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 40.87499,
+                                "y": 43.000004,
+                                "z": 1.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -76.551575,
+                                "y": 18.172924,
+                                "z": 14.184795
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 1.846281,
+                                "y": 19.346294,
+                                "z": 10.471283
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -76.488365,
+                                "y": 7.7875094,
+                                "z": 25.000933
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 23.499985,
+                                "y": 2.8908694,
+                                "z": 10.597717
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -76.488365,
+                                "y": 26.346071,
+                                "z": 25.000933
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "scale": {
+                                "x": 20.0,
+                                "y": 2.8908694,
+                                "z": 10.597717
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeSign": {
+                            "position": {
+                                "x": -80.912224,
+                                "y": 9.846068,
+                                "z": 24.75093
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": 0.70710677
+                            },
+                            "text": "Finish"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.19999999,
+                                "g": 0.19999999,
+                                "r": 0.19999999
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -76.3497,
+                                "y": 18.172924,
+                                "z": 35.875957
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": 0.7071067
+                            },
+                            "scale": {
+                                "x": 1.846281,
+                                "y": 19.346294,
+                                "z": 10.875
+                            },
+                            "shape": "CUBE"
+                        }
+                    }
+                ],
+                "position": {
+                    "x": -0.24906965,
+                    "y": 200.87514,
+                    "z": -83.87499
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": -0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                }
+            }
+        }
+    ],
+    "maxCheckpointCount": 10,
+    "title": "Better Smorg"
+}

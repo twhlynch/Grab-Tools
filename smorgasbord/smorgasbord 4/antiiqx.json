@@ -1,0 +1,3269 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 259,
+    "creators": "antiiiqx",
+    "description": "yes",
+    "formatVersion": 6,
+    "levelNodes": [
+        {
+            "levelNodeGroup": {
+                "childNodes": [
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 11.048748,
+                                "y": 23.599388,
+                                "z": 33.567886
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 13.851905,
+                                "z": 10.649433
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -3.201253,
+                                "y": 23.636408,
+                                "z": 33.567886
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 14.675955,
+                                "z": 10.649433
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.923746,
+                                "y": 30.349388,
+                                "z": 33.823654
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": 0.5,
+                                "y": -0.5,
+                                "z": -0.5
+                            },
+                            "scale": {
+                                "x": 1.0488977,
+                                "y": 10.238453,
+                                "z": 13.475479
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.548748,
+                                "y": 16.599386,
+                                "z": 36.442886
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": -0.7071067
+                            },
+                            "scale": {
+                                "x": 5.0,
+                                "y": 1.0000002,
+                                "z": 12.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeSign": {
+                            "position": {
+                                "x": 3.423746,
+                                "y": 17.97439,
+                                "z": 37.192886
+                            },
+                            "rotation": {
+                                "w": 0.9528092,
+                                "x": -0.3004196,
+                                "y": 0.04160055,
+                                "z": 0.013116611
+                            },
+                            "text": "s"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.173746,
+                                "y": 31.31814,
+                                "z": 11.263197
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "z": -0.70710677
+                            },
+                            "scale": {
+                                "x": 0.8124981,
+                                "y": 13.226904,
+                                "z": 37.890625
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.548748,
+                                "y": 16.59939,
+                                "z": 31.442886
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": -0.7071067
+                            },
+                            "scale": {
+                                "x": 5.0,
+                                "y": 1.0000002,
+                                "z": 12.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 8.048749,
+                                "y": 23.84939,
+                                "z": 24.817886
+                            },
+                            "rotation": {
+                                "w": 0.9990482,
+                                "x": 0.043619383
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 13.851905,
+                                "z": 9.5
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -0.4512539,
+                                "y": 23.84939,
+                                "z": 24.692884
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 13.476906,
+                                "z": 9.437506
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.798749,
+                                "y": 17.224388,
+                                "z": 27.862122
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 5.562914,
+                                "y": 0.8399974,
+                                "z": 2.5884728
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.798749,
+                                "y": 17.97439,
+                                "z": 25.567886
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 5.562914,
+                                "y": 0.8399974,
+                                "z": 2.5884728
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.798748,
+                                "y": 18.72439,
+                                "z": 23.692886
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 5.562914,
+                                "y": 0.8399974,
+                                "z": 2.5884728
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -3.5762525,
+                                "y": 24.47439,
+                                "z": 6.442882
+                            },
+                            "rotation": {
+                                "w": 0.9990482,
+                                "z": -0.043619383
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 15.101906,
+                                "z": 29.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 11.673749,
+                                "y": 26.292664,
+                                "z": 5.9428816
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 17.863453,
+                                "z": 29.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.798748,
+                                "y": 19.47439,
+                                "z": 21.442884
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 5.562914,
+                                "y": 0.8399974,
+                                "z": 2.5884728
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 3.673747,
+                                "y": 19.22389,
+                                "z": 13.5678835
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 12.499999,
+                                "y": 0.0009999275,
+                                "z": 13.499998
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 1.6737466,
+                                "y": 17.97439,
+                                "z": 17.067883
+                            },
+                            "rotation": {
+                                "w": 0.59723884,
+                                "x": 0.37441674,
+                                "y": 0.13529907,
+                                "z": 0.69628465
+                            },
+                            "scale": {
+                                "x": 5.6253557,
+                                "y": 0.8399974,
+                                "z": 1.3808556
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 6.0487485,
+                                "y": 19.09939,
+                                "z": 14.317886
+                            },
+                            "rotation": {
+                                "w": 0.03460561,
+                                "x": -0.7925982,
+                                "y": -0.026553761,
+                                "z": -0.60818195
+                            },
+                            "scale": {
+                                "x": 5.6253557,
+                                "y": 0.8399974,
+                                "z": 1.3808556
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.6737475,
+                                "y": 19.09939,
+                                "z": 9.317886
+                            },
+                            "rotation": {
+                                "w": 0.1827108,
+                                "x": 0.14305903,
+                                "y": -0.06251793,
+                                "z": 0.9706917
+                            },
+                            "scale": {
+                                "x": 5.6253557,
+                                "y": 0.8399974,
+                                "z": 1.3808556
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 12.673747,
+                                "y": -6.6506157,
+                                "z": 4.0678816
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 15.187494,
+                                "y": 51.96877,
+                                "z": 6.124996
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.6737487,
+                                "y": -6.4631233,
+                                "z": 7.2866364
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 3.3072827,
+                                "y": 51.12503,
+                                "z": 0.9374943
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": -0.3243444,
+                                "y": -5.900612,
+                                "z": 4.4463387
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 5.125,
+                                "y": 49.939205,
+                                "z": 6.124996
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.6737447,
+                                "y": -4.2756157,
+                                "z": 1.9428825
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 3.3072827,
+                                "y": 44.996887,
+                                "z": 2.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -1.3262534,
+                                "y": 21.34939,
+                                "z": -2.8071136
+                            },
+                            "rotation": {
+                                "w": -0.030843513,
+                                "x": 0.7010575,
+                                "y": -0.092296004,
+                                "z": -0.70643383
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 7.9261527,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -1.3262542,
+                                "y": 18.97439,
+                                "z": -1.8071173
+                            },
+                            "rotation": {
+                                "w": 0.5838359,
+                                "x": -0.31397367,
+                                "y": -0.6669578,
+                                "z": 0.3401819
+                            },
+                            "scale": {
+                                "x": 1.875,
+                                "y": 1.875,
+                                "z": 4.466642
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 3.5487485,
+                                "y": 18.72439,
+                                "z": -0.10398102
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 13.124994,
+                                "y": 1.125,
+                                "z": 6.093754
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.048749,
+                                "y": 18.97439,
+                                "z": -1.4321172
+                            },
+                            "rotation": {
+                                "w": 0.6526276,
+                                "x": -0.36532462,
+                                "y": -0.5684416,
+                                "z": 0.34276706
+                            },
+                            "scale": {
+                                "x": 1.875,
+                                "y": 1.875,
+                                "z": 4.466642
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 1.5487494,
+                                "y": 18.849388,
+                                "z": -1.8071175
+                            },
+                            "rotation": {
+                                "w": 0.6123724,
+                                "x": -0.29883626,
+                                "y": -0.6408564,
+                                "z": 0.35355338
+                            },
+                            "scale": {
+                                "x": 1.875,
+                                "y": 1.875,
+                                "z": 4.466642
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 0.79874754,
+                                "y": 21.099388,
+                                "z": -2.0571213
+                            },
+                            "rotation": {
+                                "w": -0.5272029,
+                                "x": -0.30438074,
+                                "y": -0.68706423,
+                                "z": 0.39667666
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.2987487,
+                                "y": 18.939081,
+                                "z": -5.386078
+                            },
+                            "rotation": {
+                                "w": 0.9990482,
+                                "x": 0.043619383
+                            },
+                            "scale": {
+                                "x": 13.063647,
+                                "y": 2.375,
+                                "z": 7.301674
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 0.29874563,
+                                "y": 24.97439,
+                                "z": -2.8071172
+                            },
+                            "rotation": {
+                                "w": -0.21451017,
+                                "x": 0.20913385,
+                                "y": -0.7333833,
+                                "z": -0.61024386
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -0.70125055,
+                                "y": 27.224112,
+                                "z": -9.518101
+                            },
+                            "rotation": {
+                                "w": 0.70643383,
+                                "x": 0.030843563,
+                                "y": -0.70643383,
+                                "z": -0.030843563
+                            },
+                            "scale": {
+                                "x": 3.6249971,
+                                "y": 14.217578,
+                                "z": 29.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -0.8262532,
+                                "y": 27.974388,
+                                "z": -3.307121
+                            },
+                            "rotation": {
+                                "w": 0.19876501,
+                                "x": -0.60703546,
+                                "y": 0.11926024,
+                                "z": 0.7601166
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 7.9261527,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 5.048751,
+                                "y": 18.849388,
+                                "z": -1.8071215
+                            },
+                            "rotation": {
+                                "w": 0.59636784,
+                                "x": -0.37992817,
+                                "y": -0.59636784,
+                                "z": 0.37992817
+                            },
+                            "scale": {
+                                "x": 1.875,
+                                "y": 1.875,
+                                "z": 4.466642
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.9237485,
+                                "y": 19.34939,
+                                "z": -2.5571136
+                            },
+                            "rotation": {
+                                "w": 0.030843602,
+                                "x": 0.70643383,
+                                "y": -0.030843617,
+                                "z": -0.70643383
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 1.1867517,
+                                "y": 21.59939,
+                                "z": -5.15118
+                            },
+                            "rotation": {
+                                "w": -0.5265407,
+                                "x": -0.36868787,
+                                "y": -0.6275069,
+                                "z": 0.43938503
+                            },
+                            "scale": {
+                                "x": 5.105932,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.007548,
+                                "y": 20.695274,
+                                "z": -5.105804
+                            },
+                            "rotation": {
+                                "w": 0.092296,
+                                "x": -0.6903455,
+                                "y": -0.15304594,
+                                "z": 0.70105743
+                            },
+                            "scale": {
+                                "x": 5.140419,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "b": 1.0,
+                                "g": 0.64,
+                                "r": 0.39999998
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.798746,
+                                "y": 24.09939,
+                                "z": -6.3071213
+                            },
+                            "rotation": {
+                                "w": 0.9980973,
+                                "x": -0.04357787,
+                                "y": -0.043577876,
+                                "z": -0.0019026508
+                            },
+                            "scale": {
+                                "x": 6.273566,
+                                "y": 6.243105,
+                                "z": 0.94338894
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.195973,
+                                "y": 23.902376,
+                                "z": -5.67403
+                            },
+                            "rotation": {
+                                "w": 0.5020462,
+                                "x": -0.57734036,
+                                "y": -0.40765485,
+                                "z": 0.49844277
+                            },
+                            "scale": {
+                                "x": 0.53125,
+                                "y": 2.3125,
+                                "z": 0.625
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.175596,
+                                "y": 24.063066,
+                                "z": -4.5723877
+                            },
+                            "rotation": {
+                                "w": 0.5628109,
+                                "x": -0.51919156,
+                                "y": -0.47952533,
+                                "z": 0.42864835
+                            },
+                            "scale": {
+                                "x": 0.203125,
+                                "y": 0.84375,
+                                "z": 0.35376084
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.0543194,
+                                "y": 24.231352,
+                                "z": -4.001686
+                            },
+                            "rotation": {
+                                "w": 0.51721525,
+                                "x": -0.63161546,
+                                "y": -0.4742585,
+                                "z": 0.32958937
+                            },
+                            "scale": {
+                                "x": 0.0625,
+                                "y": 0.296875,
+                                "z": 0.0625
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.1737494,
+                                "y": 24.09939,
+                                "z": -4.182117
+                            },
+                            "rotation": {
+                                "w": 0.23106544,
+                                "x": -0.6928141,
+                                "y": -0.25216368,
+                                "z": 0.63484716
+                            },
+                            "scale": {
+                                "x": 0.19714016,
+                                "y": 0.40625,
+                                "z": 0.421875
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.9646957,
+                                "y": 24.114315,
+                                "z": -4.0843544
+                            },
+                            "rotation": {
+                                "w": 0.46322697,
+                                "x": -0.51410383,
+                                "y": -0.6039725,
+                                "z": 0.39539266
+                            },
+                            "scale": {
+                                "x": 0.0625,
+                                "y": 0.296875,
+                                "z": 0.0625
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.2986155,
+                                "y": 24.288528,
+                                "z": -4.0078583
+                            },
+                            "rotation": {
+                                "w": 0.44873095,
+                                "x": -0.719329,
+                                "y": -0.14249675,
+                                "z": 0.51078475
+                            },
+                            "scale": {
+                                "x": 0.0625,
+                                "y": 0.296875,
+                                "z": 0.0625
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.1895733,
+                                "y": 24.266447,
+                                "z": -3.979469
+                            },
+                            "rotation": {
+                                "w": 0.5986285,
+                                "x": -0.6249507,
+                                "y": -0.3281491,
+                                "z": 0.37868017
+                            },
+                            "scale": {
+                                "x": 0.0625,
+                                "y": 0.296875,
+                                "z": 0.0625
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.6,
+                                "g": 0.84000003,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 4.3924694,
+                                "y": 24.20231,
+                                "z": -4.058426
+                            },
+                            "rotation": {
+                                "w": 0.43301052,
+                                "x": -0.6994952,
+                                "y": -0.09461358,
+                                "z": 0.5605861
+                            },
+                            "scale": {
+                                "x": 0.0625,
+                                "y": 0.296875,
+                                "z": 0.0625
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 1.6144118,
+                                "y": 25.252254,
+                                "z": -5.652027
+                            },
+                            "rotation": {
+                                "w": -0.548031,
+                                "x": 0.3061862,
+                                "y": -0.718452,
+                                "z": -0.29956454
+                            },
+                            "scale": {
+                                "x": 5.471357,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 10.173747,
+                                "y": 21.099388,
+                                "z": -2.4321172
+                            },
+                            "rotation": {
+                                "w": -0.092296,
+                                "x": 0.7010574,
+                                "y": -0.09229594,
+                                "z": -0.7010574
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 7.9261527,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 6.7987504,
+                                "y": 21.84939,
+                                "z": -4.807121
+                            },
+                            "rotation": {
+                                "w": -0.3730428,
+                                "x": -0.567871,
+                                "y": -0.4386652,
+                                "z": 0.58816206
+                            },
+                            "scale": {
+                                "x": 4.791215,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 7.173749,
+                                "y": 20.974388,
+                                "z": -2.1821136
+                            },
+                            "rotation": {
+                                "w": 0.3862424,
+                                "x": 0.71570176,
+                                "y": 0.13632803,
+                                "z": -0.5656877
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 7.923746,
+                                "y": 19.22439,
+                                "z": -1.682121
+                            },
+                            "rotation": {
+                                "w": 0.62721145,
+                                "x": -0.32650563,
+                                "y": -0.62721145,
+                                "z": 0.32650563
+                            },
+                            "scale": {
+                                "x": 1.875,
+                                "y": 1.875,
+                                "z": 4.466642
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 6.673751,
+                                "y": 24.97439,
+                                "z": -5.0886536
+                            },
+                            "rotation": {
+                                "w": 0.64085644,
+                                "x": 0.2988363,
+                                "y": 0.64085644,
+                                "z": -0.2988363
+                            },
+                            "scale": {
+                                "x": 4.1889615,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 8.548748,
+                                "y": 24.09939,
+                                "z": -2.807117
+                            },
+                            "rotation": {
+                                "w": 0.64745206,
+                                "x": 0.6057769,
+                                "y": 0.34893498,
+                                "z": -0.3034545
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 10.923747,
+                                "y": 25.849388,
+                                "z": -3.6821167
+                            },
+                            "rotation": {
+                                "w": 0.32686028,
+                                "x": 0.57944757,
+                                "y": 0.18231623,
+                                "z": -0.7239916
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 7.9261527,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 2.1737475,
+                                "y": 26.72439,
+                                "z": -3.6821213
+                            },
+                            "rotation": {
+                                "w": -0.5329972,
+                                "x": -0.12505765,
+                                "y": -0.75036645,
+                                "z": -0.37043834
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 5.236928,
+                                "y": 29.124195,
+                                "z": -3.6477392
+                            },
+                            "rotation": {
+                                "w": -0.42371187,
+                                "x": -0.4844619,
+                                "y": -0.5358038,
+                                "z": 0.5465157
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 12.1666975,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.9053512,
+                                "y": 27.065964,
+                                "z": -5.2477565
+                            },
+                            "rotation": {
+                                "w": -0.57305986,
+                                "x": -0.49383205,
+                                "y": -0.54685086,
+                                "z": -0.35872903
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 4.5989456,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 6.1737485,
+                                "y": 26.97439,
+                                "z": -3.432117
+                            },
+                            "rotation": {
+                                "w": -0.7064337,
+                                "x": -0.37992814,
+                                "y": -0.5963678,
+                                "z": -0.030843612
+                            },
+                            "scale": {
+                                "x": 2.375,
+                                "y": 2.375,
+                                "z": 5.75
+                            },
+                            "shape": "SPHERE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 21.923748,
+                                "y": -22.580307,
+                                "z": -5.4321213
+                            },
+                            "rotation": {
+                                "w": 0.70710677,
+                                "y": -0.70710677
+                            },
+                            "scale": {
+                                "x": 15.187494,
+                                "y": 20.359394,
+                                "z": 6.124996
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.100000024,
+                                "g": 0.100000024,
+                                "r": 0.100000024
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -0.51374245,
+                                "y": -14.056864,
+                                "z": -14.754227
+                            },
+                            "rotation": {
+                                "w": 0.5,
+                                "x": -0.5,
+                                "y": -0.5,
+                                "z": -0.5
+                            },
+                            "scale": {
+                                "x": 32.64423,
+                                "y": 40.875015,
+                                "z": 2.4374924
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -10.25249,
+                                "y": -23.150612,
+                                "z": 5.876811
+                            },
+                            "rotation": {
+                                "w": 0.6903455,
+                                "x": -0.15304594,
+                                "y": 0.15304594,
+                                "z": -0.6903455
+                            },
+                            "scale": {
+                                "x": 17.07682,
+                                "y": 20.093044,
+                                "z": 2.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 0.100000024,
+                                "g": 0.100000024,
+                                "r": 0.100000024
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -14.279814,
+                                "y": -11.541235,
+                                "z": 0.30801725
+                            },
+                            "rotation": {
+                                "w": 0.15304594,
+                                "x": -0.15304594,
+                                "y": -0.6903455,
+                                "z": -0.6903455
+                            },
+                            "scale": {
+                                "x": 17.25,
+                                "y": 16.770645,
+                                "z": 6.468752
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 16.15812,
+                                "y": -23.330307,
+                                "z": -24.963371
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "scale": {
+                                "x": 17.46875,
+                                "y": 21.109413,
+                                "z": 23.937489
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -0.9512503,
+                                "y": -22.85732,
+                                "z": -8.557117
+                            },
+                            "rotation": {
+                                "w": -0.5,
+                                "x": 0.5,
+                                "y": -0.5,
+                                "z": 0.5
+                            },
+                            "scale": {
+                                "x": 16.163422,
+                                "y": 20.749996,
+                                "z": 2.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 6.173748,
+                                "y": -23.064028,
+                                "z": -3.8071172
+                            },
+                            "rotation": {
+                                "x": 0.70710677,
+                                "y": -0.70710677
+                            },
+                            "scale": {
+                                "x": 16.07682,
+                                "y": 13.500001,
+                                "z": 2.125
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "LAVA",
+                                        "position": {
+                                            "x": -0.029421685,
+                                            "y": 0.0040054116,
+                                            "z": -0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 4.029785,
+                                            "y": 4.029785,
+                                            "z": 4.029785
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "WOOD",
+                                        "position": {
+                                            "x": 0.029421685,
+                                            "y": -0.0040054116,
+                                            "z": 0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 3.7419434,
+                                            "y": 3.7419434,
+                                            "z": 3.7419434
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": 5.423748,
+                                "y": -27.775612,
+                                "z": -2.8071172
+                            },
+                            "rotation": {
+                                "w": 0.69647807,
+                                "x": 0.46798494,
+                                "y": -0.49142152,
+                                "z": -0.23326635
+                            },
+                            "scale": {
+                                "x": 0.125,
+                                "y": 0.125,
+                                "z": 0.125
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "LAVA",
+                                        "position": {
+                                            "x": -0.029421685,
+                                            "y": 0.0040054116,
+                                            "z": -0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 4.029785,
+                                            "y": 4.029785,
+                                            "z": 4.029785
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "WOOD",
+                                        "position": {
+                                            "x": 0.029421685,
+                                            "y": -0.0040054116,
+                                            "z": 0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 3.7419434,
+                                            "y": 3.7419434,
+                                            "z": 3.7419434
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": 9.298748,
+                                "y": -26.02561,
+                                "z": -2.8071177
+                            },
+                            "rotation": {
+                                "w": 0.6272114,
+                                "x": 0.52133375,
+                                "y": -0.47771436,
+                                "z": -0.3265055
+                            },
+                            "scale": {
+                                "x": 0.125,
+                                "y": 0.125,
+                                "z": 0.125
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "WOOD",
+                            "position": {
+                                "x": 6.423748,
+                                "y": -24.650608,
+                                "z": -4.8071136
+                            },
+                            "rotation": {
+                                "w": 0.19342,
+                                "x": 0.024408337,
+                                "y": -0.30230245,
+                                "z": 0.93306273
+                            },
+                            "scale": {
+                                "x": 2.605194,
+                                "y": 0.46774292,
+                                "z": 0.46774292
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "WOOD",
+                            "position": {
+                                "x": 10.673748,
+                                "y": -26.27561,
+                                "z": -5.6821175
+                            },
+                            "rotation": {
+                                "w": 0.5455569,
+                                "x": 0.42036882,
+                                "y": -0.3109872,
+                                "z": 0.6549385
+                            },
+                            "scale": {
+                                "x": 2.605194,
+                                "y": 0.46774292,
+                                "z": 0.46774292
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 6.377592,
+                                "y": -24.631996,
+                                "z": -4.802582
+                            },
+                            "rotation": {
+                                "w": 0.19342,
+                                "x": 0.024408337,
+                                "y": -0.30230245,
+                                "z": 0.93306273
+                            },
+                            "scale": {
+                                "x": 2.755539,
+                                "y": 0.50372314,
+                                "z": 0.50372314
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 10.669433,
+                                "y": -26.250057,
+                                "z": -5.6393843
+                            },
+                            "rotation": {
+                                "w": 0.5455569,
+                                "x": 0.42036882,
+                                "y": -0.3109872,
+                                "z": 0.6549385
+                            },
+                            "scale": {
+                                "x": 2.755539,
+                                "y": 0.50372314,
+                                "z": 0.50372314
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "GRAPPLABLE",
+                            "position": {
+                                "x": 13.423748,
+                                "y": -25.900618,
+                                "z": -3.8071175
+                            },
+                            "rotation": {
+                                "w": 1.0,
+                                "x": 7.850462e-17,
+                                "z": 2.3551386e-16
+                            },
+                            "scale": {
+                                "x": 1.1875,
+                                "y": 4.9210167,
+                                "z": 0.5145874
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 13.415346,
+                                "y": -25.906582,
+                                "z": -3.7968674
+                            },
+                            "rotation": {
+                                "w": 0.7071069,
+                                "x": 3.2596283e-09,
+                                "y": -0.70710665,
+                                "z": -1.8626447e-09
+                            },
+                            "scale": {
+                                "x": 0.57723236,
+                                "y": 4.973505,
+                                "z": 1.2285347
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -3.7012515,
+                                "y": -13.525614,
+                                "z": 2.3178864
+                            },
+                            "rotation": {
+                                "w": -0.52133375,
+                                "x": -0.47771436,
+                                "y": -0.52133375,
+                                "z": -0.47771442
+                            },
+                            "scale": {
+                                "x": 1.625,
+                                "y": 1.625,
+                                "z": 1.625
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": -26.698368,
+                                "y": -23.150612,
+                                "z": -23.399094
+                            },
+                            "rotation": {
+                                "w": 0.9990481,
+                                "y": 0.04361936
+                            },
+                            "scale": {
+                                "x": 17.46875,
+                                "y": 16.484398,
+                                "z": 33.78897
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "GRAPPLABLE",
+                            "position": {
+                                "x": -11.451256,
+                                "y": -25.900618,
+                                "z": -9.057117
+                            },
+                            "rotation": {
+                                "w": 0.97629595,
+                                "y": 0.21643966
+                            },
+                            "scale": {
+                                "x": 2.2265625,
+                                "y": 9.226906,
+                                "z": 0.9648514
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -11.457415,
+                                "y": -25.911806,
+                                "z": -9.033043
+                            },
+                            "rotation": {
+                                "w": 0.8433914,
+                                "x": 1.58969e-09,
+                                "y": -0.53729945,
+                                "z": -1.4352125e-09
+                            },
+                            "scale": {
+                                "x": 1.0823107,
+                                "y": 9.325322,
+                                "z": 2.3035026
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -18.398636,
+                                "y": -23.314026,
+                                "z": -5.6681695
+                            },
+                            "rotation": {
+                                "w": 0.6903455,
+                                "x": -0.15304594,
+                                "y": 0.15304594,
+                                "z": -0.6903455
+                            },
+                            "scale": {
+                                "x": 17.07682,
+                                "y": 15.335458,
+                                "z": 3.4311905
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": -5.20125,
+                                "y": -23.40061,
+                                "z": -39.68212
+                            },
+                            "rotation": {
+                                "w": 0.7071067,
+                                "y": 0.7071068
+                            },
+                            "scale": {
+                                "x": 17.46875,
+                                "y": 16.484398,
+                                "z": 33.72266
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "r": 0.5
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -1.0762539,
+                                "y": -26.02561,
+                                "z": -19.432121
+                            },
+                            "rotation": {
+                                "w": 1.0,
+                                "x": 5.5158117e-17,
+                                "z": 1.01850974e-16
+                            },
+                            "scale": {
+                                "x": 0.57723236,
+                                "y": 4.973505,
+                                "z": 1.2285347
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "GRAPPLABLE",
+                            "position": {
+                                "x": -1.0865011,
+                                "y": -26.019646,
+                                "z": -19.440525
+                            },
+                            "rotation": {
+                                "w": 0.7071069,
+                                "x": -1.8626448e-09,
+                                "y": 0.70710665,
+                                "z": 1.05712e-09
+                            },
+                            "scale": {
+                                "x": 1.1875,
+                                "y": 4.9210167,
+                                "z": 0.5145874
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": -3.0137439,
+                                "y": -39.15062,
+                                "z": -12.619614
+                            },
+                            "rotation": {
+                                "w": -0.7071068,
+                                "y": -0.7071067
+                            },
+                            "scale": {
+                                "x": 48.875,
+                                "y": 16.375,
+                                "z": 45.624992
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "WOOD",
+                            "position": {
+                                "x": 1.6255944,
+                                "y": -28.727518,
+                                "z": 4.3918724
+                            },
+                            "rotation": {
+                                "w": 0.7070248,
+                                "x": -0.20370957,
+                                "y": -0.6755632,
+                                "z": -0.047251932
+                            },
+                            "scale": {
+                                "x": 0.055521082,
+                                "y": 0.055521082,
+                                "z": 0.055521082
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "r": 0.8333333
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": 3.4237483,
+                                "y": -31.900621,
+                                "z": 4.2241325
+                            },
+                            "rotation": {
+                                "w": 0.7071067,
+                                "y": 0.7071068
+                            },
+                            "scale": {
+                                "x": 6.062502,
+                                "y": 2.028534,
+                                "z": 4.1133137
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "WOOD",
+                            "position": {
+                                "x": 1.6149716,
+                                "y": -28.729692,
+                                "z": 4.411091
+                            },
+                            "rotation": {
+                                "w": 0.6929744,
+                                "x": -0.19368218,
+                                "y": -0.69269985,
+                                "z": -0.04940536
+                            },
+                            "scale": {
+                                "x": 0.055521082,
+                                "y": 0.055521082,
+                                "z": 0.055521082
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "LAVA",
+                                        "position": {
+                                            "x": -0.029421685,
+                                            "y": 0.0040054116,
+                                            "z": -0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 4.029785,
+                                            "y": 4.029785,
+                                            "z": 4.029785
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "WOOD",
+                                        "position": {
+                                            "x": 0.029421685,
+                                            "y": -0.0040054116,
+                                            "z": 0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 3.7419434,
+                                            "y": 3.7419434,
+                                            "z": 3.7419434
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": -0.07625246,
+                                "y": -29.025616,
+                                "z": 0.19288254
+                            },
+                            "rotation": {
+                                "w": 0.8925389,
+                                "x": 0.15737869,
+                                "y": 0.07338693,
+                                "z": -0.4161977
+                            },
+                            "scale": {
+                                "x": 0.125,
+                                "y": 0.125,
+                                "z": 0.125
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "LAVA",
+                                        "position": {
+                                            "x": -0.029421685,
+                                            "y": 0.0040054116,
+                                            "z": -0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 4.029785,
+                                            "y": 4.029785,
+                                            "z": 4.029785
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "WOOD",
+                                        "position": {
+                                            "x": 0.029421685,
+                                            "y": -0.0040054116,
+                                            "z": 0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 3.7419434,
+                                            "y": 3.7419434,
+                                            "z": 3.7419434
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": 1.5487494,
+                                "y": -27.775612,
+                                "z": -2.8071136
+                            },
+                            "rotation": {
+                                "w": 0.8120162,
+                                "x": 0.37618053,
+                                "y": -0.3631958,
+                                "z": -0.2592421
+                            },
+                            "scale": {
+                                "x": 0.125,
+                                "y": 0.125,
+                                "z": 0.125
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "WOOD",
+                            "position": {
+                                "x": -0.20125079,
+                                "y": -25.025614,
+                                "z": -7.1821136
+                            },
+                            "rotation": {
+                                "w": 0.50620705,
+                                "x": -0.47082478,
+                                "y": -0.093974784,
+                                "z": 0.71641284
+                            },
+                            "scale": {
+                                "x": 2.605194,
+                                "y": 0.46774292,
+                                "z": 0.46774292
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": -0.20125079,
+                                "y": -25.025614,
+                                "z": -7.1821136
+                            },
+                            "rotation": {
+                                "w": 0.50620705,
+                                "x": -0.47082478,
+                                "y": -0.093974784,
+                                "z": 0.71641284
+                            },
+                            "scale": {
+                                "x": 2.755539,
+                                "y": 0.50372314,
+                                "z": 0.50372314
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "LAVA",
+                                        "position": {
+                                            "x": -0.029421685,
+                                            "y": 0.0040054116,
+                                            "z": -0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 4.029785,
+                                            "y": 4.029785,
+                                            "z": 4.029785
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "material": "WOOD",
+                                        "position": {
+                                            "x": 0.029421685,
+                                            "y": -0.0040054116,
+                                            "z": 0.014729769
+                                        },
+                                        "rotation": {
+                                            "w": 1.0,
+                                            "y": 1.1175867e-08
+                                        },
+                                        "scale": {
+                                            "x": 3.7419434,
+                                            "y": 3.7419434,
+                                            "z": 3.7419434
+                                        },
+                                        "shape": "CUBE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": -0.07625008,
+                                "y": -25.775612,
+                                "z": -11.68212
+                            },
+                            "rotation": {
+                                "w": 0.56061083,
+                                "x": 0.36424664,
+                                "y": 0.11234398,
+                                "z": -0.73513186
+                            },
+                            "scale": {
+                                "x": 0.125,
+                                "y": 0.125,
+                                "z": 0.125
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "LAVA",
+                            "position": {
+                                "x": 0.6255846,
+                                "y": -25.763382,
+                                "z": -16.937458
+                            },
+                            "rotation": {
+                                "w": 0.030843582,
+                                "x": -0.09229594,
+                                "y": -0.7010574,
+                                "z": 0.7064338
+                            },
+                            "scale": {
+                                "x": 2.755539,
+                                "y": 0.50372314,
+                                "z": 0.50372314
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "WOOD",
+                            "position": {
+                                "x": 0.6737509,
+                                "y": -25.775612,
+                                "z": -16.932121
+                            },
+                            "rotation": {
+                                "w": 0.030843582,
+                                "x": -0.09229594,
+                                "y": -0.7010574,
+                                "z": 0.7064338
+                            },
+                            "scale": {
+                                "x": 2.605194,
+                                "y": 0.46774292,
+                                "z": 0.46774292
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.0014459193,
+                                            "y": -0.9420779,
+                                            "z": -0.10933417
+                                        },
+                                        "rotation": {
+                                            "w": 1.0
+                                        },
+                                        "scale": {
+                                            "x": 0.34375,
+                                            "y": 0.34375,
+                                            "z": 0.34375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": -0.19650298,
+                                            "y": -0.8881731,
+                                            "z": -0.2629062
+                                        },
+                                        "rotation": {
+                                            "w": 0.9966136,
+                                            "x": 0.07656692,
+                                            "y": 0.028403945,
+                                            "z": -0.009594625
+                                        },
+                                        "scale": {
+                                            "x": 0.34375,
+                                            "y": 0.34375,
+                                            "z": 0.34375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": -0.02190436,
+                                            "y": -0.0013184212,
+                                            "z": 0.045896396
+                                        },
+                                        "rotation": {
+                                            "w": 0.98821497,
+                                            "x": 0.08659281,
+                                            "y": 0.11284995,
+                                            "z": -0.056548957
+                                        },
+                                        "scale": {
+                                            "x": 0.3964758,
+                                            "y": 1.9646988,
+                                            "z": 0.42859167
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.0031405985,
+                                            "y": 0.9268277,
+                                            "z": 0.089811206
+                                        },
+                                        "rotation": {
+                                            "w": 0.9828919,
+                                            "x": 0.090690136,
+                                            "y": -0.11319033,
+                                            "z": -0.11352043
+                                        },
+                                        "scale": {
+                                            "x": 0.328125,
+                                            "y": 0.328125,
+                                            "z": 0.328125
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.21382335,
+                                            "y": 0.904731,
+                                            "z": 0.23654443
+                                        },
+                                        "rotation": {
+                                            "w": 0.96500653,
+                                            "x": -0.040988803,
+                                            "y": 0.014918752,
+                                            "z": -0.25857276
+                                        },
+                                        "scale": {
+                                            "x": 0.359375,
+                                            "y": 0.359375,
+                                            "z": 0.359375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": -8.45125,
+                                "y": -30.900618,
+                                "z": -28.682112
+                            },
+                            "rotation": {
+                                "w": 0.74092454,
+                                "x": 0.46349156,
+                                "y": -0.08270653,
+                                "z": 0.47892177
+                            },
+                            "scale": {
+                                "x": 0.375,
+                                "y": 0.375,
+                                "z": 0.375
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.0014459193,
+                                            "y": -0.9420779,
+                                            "z": -0.10933417
+                                        },
+                                        "rotation": {
+                                            "w": 1.0
+                                        },
+                                        "scale": {
+                                            "x": 0.34375,
+                                            "y": 0.34375,
+                                            "z": 0.34375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": -0.19650298,
+                                            "y": -0.8881731,
+                                            "z": -0.2629062
+                                        },
+                                        "rotation": {
+                                            "w": 0.9966136,
+                                            "x": 0.07656692,
+                                            "y": 0.028403945,
+                                            "z": -0.009594625
+                                        },
+                                        "scale": {
+                                            "x": 0.34375,
+                                            "y": 0.34375,
+                                            "z": 0.34375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": -0.02190436,
+                                            "y": -0.0013184212,
+                                            "z": 0.045896396
+                                        },
+                                        "rotation": {
+                                            "w": 0.98821497,
+                                            "x": 0.08659281,
+                                            "y": 0.11284995,
+                                            "z": -0.056548957
+                                        },
+                                        "scale": {
+                                            "x": 0.3964758,
+                                            "y": 1.9646988,
+                                            "z": 0.42859167
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.0031405985,
+                                            "y": 0.9268277,
+                                            "z": 0.089811206
+                                        },
+                                        "rotation": {
+                                            "w": 0.9828919,
+                                            "x": 0.090690136,
+                                            "y": -0.11319033,
+                                            "z": -0.11352043
+                                        },
+                                        "scale": {
+                                            "x": 0.328125,
+                                            "y": 0.328125,
+                                            "z": 0.328125
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.21382335,
+                                            "y": 0.904731,
+                                            "z": 0.23654443
+                                        },
+                                        "rotation": {
+                                            "w": 0.96500653,
+                                            "x": -0.040988803,
+                                            "y": 0.014918752,
+                                            "z": -0.25857276
+                                        },
+                                        "scale": {
+                                            "x": 0.359375,
+                                            "y": 0.359375,
+                                            "z": 0.359375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": -12.201254,
+                                "y": -30.900618,
+                                "z": -13.182116
+                            },
+                            "rotation": {
+                                "w": -0.64024645,
+                                "x": -0.69339865,
+                                "y": -0.32939538,
+                                "z": 0.02795383
+                            },
+                            "scale": {
+                                "x": 0.375,
+                                "y": 0.375,
+                                "z": 0.375
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "material": "BOUNCING",
+                            "position": {
+                                "x": -14.6347885,
+                                "y": -32.467834,
+                                "z": -6.021522
+                            },
+                            "rotation": {
+                                "w": 0.86598516,
+                                "x": -0.45080334,
+                                "y": 0.19198427,
+                                "z": 0.09994076
+                            },
+                            "scale": {
+                                "x": 5.75,
+                                "y": 4.64388,
+                                "z": 5.75
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -24.451252,
+                                "y": -14.025613,
+                                "z": 6.0678816
+                            },
+                            "rotation": {
+                                "w": 0.6963643,
+                                "x": 0.6963643,
+                                "y": 0.12278788,
+                                "z": -0.12278788
+                            },
+                            "scale": {
+                                "x": 8.030731,
+                                "y": 13.406258,
+                                "z": 2.1647568
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeGroup": {
+                            "childNodes": [
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.0014459193,
+                                            "y": -0.9420779,
+                                            "z": -0.10933417
+                                        },
+                                        "rotation": {
+                                            "w": 1.0
+                                        },
+                                        "scale": {
+                                            "x": 0.34375,
+                                            "y": 0.34375,
+                                            "z": 0.34375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": -0.19650298,
+                                            "y": -0.8881731,
+                                            "z": -0.2629062
+                                        },
+                                        "rotation": {
+                                            "w": 0.9966136,
+                                            "x": 0.07656692,
+                                            "y": 0.028403945,
+                                            "z": -0.009594625
+                                        },
+                                        "scale": {
+                                            "x": 0.34375,
+                                            "y": 0.34375,
+                                            "z": 0.34375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": -0.02190436,
+                                            "y": -0.0013184212,
+                                            "z": 0.045896396
+                                        },
+                                        "rotation": {
+                                            "w": 0.98821497,
+                                            "x": 0.08659281,
+                                            "y": 0.11284995,
+                                            "z": -0.056548957
+                                        },
+                                        "scale": {
+                                            "x": 0.3964758,
+                                            "y": 1.9646988,
+                                            "z": 0.42859167
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.0031405985,
+                                            "y": 0.9268277,
+                                            "z": 0.089811206
+                                        },
+                                        "rotation": {
+                                            "w": 0.9828919,
+                                            "x": 0.090690136,
+                                            "y": -0.11319033,
+                                            "z": -0.11352043
+                                        },
+                                        "scale": {
+                                            "x": 0.328125,
+                                            "y": 0.328125,
+                                            "z": 0.328125
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                },
+                                {
+                                    "levelNodeStatic": {
+                                        "color": {
+                                            "a": 1.0,
+                                            "b": 0.6,
+                                            "g": 0.6,
+                                            "r": 0.6
+                                        },
+                                        "material": "DEFAULT_COLORED",
+                                        "position": {
+                                            "x": 0.21382335,
+                                            "y": 0.904731,
+                                            "z": 0.23654443
+                                        },
+                                        "rotation": {
+                                            "w": 0.96500653,
+                                            "x": -0.040988803,
+                                            "y": 0.014918752,
+                                            "z": -0.25857276
+                                        },
+                                        "scale": {
+                                            "x": 0.359375,
+                                            "y": 0.359375,
+                                            "z": 0.359375
+                                        },
+                                        "shape": "SPHERE"
+                                    }
+                                }
+                            ],
+                            "position": {
+                                "x": 4.548747,
+                                "y": -30.900618,
+                                "z": -20.807114
+                            },
+                            "rotation": {
+                                "w": -0.53424275,
+                                "x": -0.6621216,
+                                "y": -0.5141839,
+                                "z": 0.10860409
+                            },
+                            "scale": {
+                                "x": 0.375,
+                                "y": 0.375,
+                                "z": 0.375
+                            }
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -16.201248,
+                                "y": -33.275616,
+                                "z": -26.682114
+                            },
+                            "rotation": {
+                                "w": 0.9807867,
+                                "x": -0.17656668,
+                                "y": 0.078204386,
+                                "z": -0.027673203
+                            },
+                            "scale": {
+                                "x": 1.875,
+                                "y": 1.875,
+                                "z": 1.875
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -27.451258,
+                                "y": -23.025618,
+                                "z": -0.6821213
+                            },
+                            "rotation": {
+                                "w": 0.97629595,
+                                "y": 0.21643966
+                            },
+                            "scale": {
+                                "x": 5.4633102,
+                                "y": 16.675636,
+                                "z": 1.875
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -24.576256,
+                                "y": -30.525612,
+                                "z": 4.9428844
+                            },
+                            "rotation": {
+                                "w": 0.97629595,
+                                "x": 2.0157515e-10,
+                                "y": 0.21643966,
+                                "z": 9.0924634e-10
+                            },
+                            "scale": {
+                                "x": 5.0,
+                                "y": 1.0000002,
+                                "z": 12.0
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -28.923916,
+                                "y": -21.728733,
+                                "z": 2.87185
+                            },
+                            "rotation": {
+                                "w": 0.8433915,
+                                "y": -0.53729963
+                            },
+                            "scale": {
+                                "x": 4.0671577,
+                                "y": 16.906258,
+                                "z": 2.2111702
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -25.701258,
+                                "y": -25.525612,
+                                "z": 9.942884
+                            },
+                            "rotation": {
+                                "w": 0.8433915,
+                                "y": -0.53729963
+                            },
+                            "scale": {
+                                "x": 4.0671577,
+                                "y": 8.812504,
+                                "z": 1.875
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeSign": {
+                            "position": {
+                                "x": -24.701252,
+                                "y": -29.275616,
+                                "z": 5.1928864
+                            },
+                            "rotation": {
+                                "w": 0.9503267,
+                                "x": -0.30290213,
+                                "y": 0.069976084,
+                                "z": -0.015258951
+                            },
+                            "text": "f"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -21.826258,
+                                "y": -21.650618,
+                                "z": 11.067884
+                            },
+                            "rotation": {
+                                "w": 0.21643957,
+                                "y": -0.97629595
+                            },
+                            "scale": {
+                                "x": 5.4633102,
+                                "y": 16.675636,
+                                "z": 1.875
+                            },
+                            "shape": "CUBE"
+                        }
+                    },
+                    {
+                        "levelNodeStatic": {
+                            "color": {
+                                "a": 1.0,
+                                "b": 1.0,
+                                "g": 1.0,
+                                "r": 1.0
+                            },
+                            "material": "DEFAULT_COLORED",
+                            "position": {
+                                "x": -26.482416,
+                                "y": -19.978735,
+                                "z": 8.052767
+                            },
+                            "rotation": {
+                                "w": 0.8433915,
+                                "y": -0.53729963
+                            },
+                            "scale": {
+                                "x": 8.030731,
+                                "y": 13.406258,
+                                "z": 2.1647568
+                            },
+                            "shape": "CUBE"
+                        }
+                    }
+                ],
+                "position": {
+                    "x": -31.442886,
+                    "y": -17.09939,
+                    "z": 3.5487485
+                },
+                "rotation": {
+                    "w": 0.7071068,
+                    "y": 0.7071068
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                }
+            }
+        }
+    ],
+    "maxCheckpointCount": 10,
+    "title": "V4 smrg level"
+}

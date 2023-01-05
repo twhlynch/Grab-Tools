@@ -1,0 +1,235 @@
+{
+    "ambienceSettings": {
+        "skyHorizonColor": {
+            "a": 1.0,
+            "b": 0.9574,
+            "g": 0.9574,
+            "r": 0.916
+        },
+        "skyZenithColor": {
+            "a": 1.0,
+            "b": 0.73,
+            "g": 0.476,
+            "r": 0.28
+        },
+        "sunAltitude": 45.0,
+        "sunAzimuth": 315.0,
+        "sunSize": 1.0
+    },
+    "complexity": 12,
+    "formatVersion": 7,
+    "levelNodes": [
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.100000024,
+                    "g": 0.100000024,
+                    "r": 0.100000024
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "y": 4.9999995
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.100000024,
+                    "g": 0.100000024,
+                    "r": 0.100000024
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 1.0,
+                    "y": 4.9999995,
+                    "z": -8.742279e-08
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.100000024,
+                    "g": 0.100000024,
+                    "r": 0.100000024
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 2.0,
+                    "y": 4.9999995,
+                    "z": -1.7484555e-07
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.100000024,
+                    "g": 0.100000024,
+                    "r": 0.100000024
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 2.0,
+                    "y": 6.0,
+                    "z": -1.7484555e-07
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "animations": [
+                {
+                    "frames": [
+                        {
+                            "position": {},
+                            "rotation": {
+                                "w": 1.0
+                            }
+                        },
+                        {
+                            "position": {},
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "time": 0.1
+                        },
+                        {
+                            "position": {
+                                "z": -1.0000001
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "time": 0.30000004
+                        },
+                        {
+                            "position": {},
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "time": 0.50000006
+                        }
+                    ],
+                    "name": "idle"
+                }
+            ],
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.100000024,
+                    "g": 0.100000024,
+                    "r": 0.100000024
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "x": 1.0,
+                    "y": 6.0
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE"
+            }
+        },
+        {
+            "animations": [
+                {
+                    "frames": [
+                        {
+                            "position": {},
+                            "rotation": {
+                                "w": 1.0
+                            }
+                        },
+                        {
+                            "position": {
+                                "z": -1.0000001
+                            },
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "time": 0.01
+                        },
+                        {
+                            "position": {},
+                            "rotation": {
+                                "w": 1.0
+                            },
+                            "time": 0.01
+                        }
+                    ],
+                    "name": "idle"
+                }
+            ],
+            "levelNodeStatic": {
+                "color": {
+                    "a": 1.0,
+                    "b": 0.100000024,
+                    "g": 0.100000024,
+                    "r": 0.100000024
+                },
+                "material": "DEFAULT_COLORED",
+                "position": {
+                    "y": 6.0
+                },
+                "rotation": {
+                    "w": 1.0
+                },
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0,
+                    "z": 1.0
+                },
+                "shape": "CUBE"
+            }
+        }
+    ],
+    "maxCheckpointCount": 10,
+    "title": "not ba"
+}
