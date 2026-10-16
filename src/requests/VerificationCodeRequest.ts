@@ -1,4 +1,5 @@
 import { SERVER_URL } from '@/config';
+import { handle_auth_error } from '@/requests/RequestUtils';
 import { useUserStore } from '@/stores/user';
 
 export async function verification_code_request() {
@@ -10,6 +11,7 @@ export async function verification_code_request() {
 
 		if (!response.ok) {
 			const text = await response.text();
+			if (handle_auth_error(response)) return null;
 			window.toast(`Error: ${text}`, 'error');
 			return null;
 		}

@@ -1,4 +1,5 @@
 import { SERVER_URL } from '@/config';
+import { handle_auth_error } from '@/requests/RequestUtils';
 import { useUserStore } from '@/stores/user';
 
 export async function set_allow_downloads_request(
@@ -15,7 +16,10 @@ export async function set_allow_downloads_request(
 	try {
 		const response = await fetch(url);
 
-		if (!response.ok) return null;
+		if (!response.ok) {
+			handle_auth_error(response);
+			return null;
+		}
 
 		const success = await response.text();
 		return success === 'Success';

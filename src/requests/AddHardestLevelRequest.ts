@@ -1,4 +1,5 @@
 import { SERVER_URL } from '@/config';
+import { handle_auth_error } from '@/requests/RequestUtils';
 import { useUserStore } from '@/stores/user';
 
 export async function add_hardest_level_request(
@@ -13,6 +14,7 @@ export async function add_hardest_level_request(
 
 		const text = await response.text();
 		if (!response.ok) {
+			if (handle_auth_error(response)) return null;
 			window.toast('Error: ' + text);
 			return null;
 		}

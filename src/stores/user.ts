@@ -9,6 +9,7 @@ export const useUserStore = defineStore('user', {
 		user_name: string | undefined;
 		grab_id: string | undefined;
 		access_token: string | undefined;
+		expiry: number | undefined;
 		user: UserInfo | undefined | null;
 		is_site_admin: boolean;
 		is_list_moderator: boolean;
@@ -17,6 +18,7 @@ export const useUserStore = defineStore('user', {
 		user_name: undefined,
 		grab_id: undefined,
 		access_token: undefined,
+		expiry: undefined,
 		user: undefined,
 		is_site_admin: false,
 		is_list_moderator: false,
@@ -68,6 +70,7 @@ export const useUserStore = defineStore('user', {
 			this.user_name = data.user_name;
 			this.grab_id = data.grab_id;
 			this.access_token = data.access_token;
+			this.expiry = data.expiry;
 			this.is_site_admin = data.is_admin;
 			this.is_list_moderator = data.is_list_moderator;
 			this.logged_in = true;
@@ -84,6 +87,19 @@ export const useUserStore = defineStore('user', {
 		async logout() {
 			this.$reset();
 			setUser({ username: undefined });
+		},
+		session_expired() {
+			if (!this.logged_in) return;
+			this.logout();
+			window.toast('Session expired, please log in again', 'error');
+		},
+		check_expiry() {
+			if (
+				(this.expiry && this.expiry <= Math.floor(Date.now() / 1000)) ||
+				(!this.expiry && this.access_token)
+			) {
+				this.session_expired();
+			}
 		},
 	},
 	persist: true,

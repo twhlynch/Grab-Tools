@@ -1,3 +1,13 @@
+import { useUserStore } from '@/stores/user';
+
+export function handle_auth_error(res: Response): boolean {
+	if (res.status !== 401) return false;
+
+	useUserStore().session_expired();
+
+	return true;
+}
+
 export function build_url(base: string, params: Record<string, string> = {}) {
 	const url = new URL(base);
 
@@ -16,6 +26,7 @@ export async function safe_fetch(
 		const res = await fetch(input, init);
 		if (!res.ok) {
 			const error = await res.text();
+			if (handle_auth_error(res)) return null;
 			window.toast(`Error: ${error}`, 'error');
 			return null;
 		}
@@ -38,6 +49,7 @@ export async function safe_fetch_json<T>(
 		const res = await fetch(input, init);
 		if (!res.ok) {
 			const error = await res.text();
+			if (handle_auth_error(res)) return null;
 			window.toast(`Error: ${error}`, 'error');
 			return null;
 		}
