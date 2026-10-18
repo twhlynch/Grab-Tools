@@ -1,7 +1,7 @@
 // SFX2GL Tool by TheTrueFax (https://github.com/thetruefax/)
 
 import { groupNodes } from '@/common/group';
-import { load } from '@/common/root';
+import { LevelNodeWith } from '@/common/levelNodes';
 import { deepClone } from '@/common/utils';
 import { animation, animationFrame } from '@/generated/helpers';
 import {
@@ -12,14 +12,22 @@ import {
 	triggerSourceWithBasic,
 	triggerTargetWithSound,
 } from '@/generated/nodes';
+import {
+	LevelNodeGroup,
+	TriggerSourceBasicType,
+	TriggerTargetSoundMode,
+} from '@/generated/proto';
 import { ComplexArray } from 'jsfft';
 
 /**
- * @param {File} file - An image file
- * @param {Number} samples - samples
- * @returns {Promise<Object>} - A group level node
+ * @param file An image file
+ * @param samples samples
+ * @returns A group level node
  */
-async function audio(file, samples) {
+async function audio(
+	file: File,
+	samples: number,
+): Promise<LevelNodeWith<LevelNodeGroup> | null> {
 	console.log(file);
 
 	const volume_samples = 2;
@@ -27,54 +35,63 @@ async function audio(file, samples) {
 		const level_nodes = await generate(samples, volume_samples, file);
 		return groupNodes(level_nodes);
 	} catch (e) {
-		window.toast(e, 'error');
+		if (e instanceof Error) {
+			window.toast(e, 'error');
+		}
 		return null;
 	}
 }
 
 // FFT helpers
-function magnitudeSpectrum(complexArray) {
+function magnitudeSpectrum(complexArray: ComplexArray) {
 	const fullMags = complexArray.magnitude();
 	const halfLength = fullMags.length / 2;
 	return fullMags.slice(0, halfLength);
 }
-function hannWindow(length) {
+
+function hannWindow(length: number) {
 	const win = new Float32Array(length);
 	for (let i = 0; i < length; i++) {
 		win[i] = 0.5 * (1 - Math.cos((2 * Math.PI * i) / (length - 1)));
 	}
 	return win;
 }
-function findPeaks(magnitudes, threshold = 0.01) {
-	const peaks = [];
+
+function findPeaks(magnitudes: Float32Array<ArrayBuffer>, threshold = 0.01) {
+	const peaks: { bin: number; magnitude: number }[] = [];
 	for (let i = 1; i < magnitudes.length - 1; i++) {
+		const item = magnitudes[i]!;
 		if (
-			magnitudes[i] > magnitudes[i - 1] &&
-			magnitudes[i] > magnitudes[i + 1] &&
-			magnitudes[i] > threshold
+			item > magnitudes[i - 1]! &&
+			item > magnitudes[i + 1]! &&
+			item > threshold
 		) {
-			peaks.push({ bin: i, magnitude: magnitudes[i] });
+			peaks.push({ bin: i, magnitude: item });
 		}
 	}
 	return peaks;
 }
-function roundToClosest(val, list) {
-	let distances = [];
+
+function roundToClosest(val: number, list: number[]): number {
+	const distances = [];
 	let closest = Infinity;
 	let index = 0;
 	for (let i = 0; i < list.length; i++) {
-		distances.push(Math.abs(list[i] - val));
-		if (Math.abs(list[i] - val) < closest) {
+		const item = list[i]!;
+		distances.push(Math.abs(item - val));
+		if (Math.abs(item - val) < closest) {
 			index = i;
-			closest = Math.abs(list[i] - val);
+			closest = Math.abs(item - val);
 		}
 	}
-	return list[index];
+	return list[index]!;
 }
-function binToFreq(bin, sampleRate, fftSize) {
+
+function binToFreq(bin: number, sampleRate: number, fftSize: number) {
 	return (bin * sampleRate) / fftSize;
 }
-async function wavToPolyphonicNotes(file) {
+
+async function wavToPolyphonicNotes(file: File) {
 	const arrayBuffer = await file.arrayBuffer();
 	const audioContext = new AudioContext();
 	const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
@@ -95,12 +112,12 @@ async function wavToPolyphonicNotes(file) {
 	) {
 		const frameSamples = new Float32Array(fftSize);
 		for (let i = 0; i < fftSize; i++) {
-			frameSamples[i] = channelData[start + i] * win[i];
+			frameSamples[i] = channelData[start + i]! * win[i]!;
 		}
 
 		const complexInput = new ComplexArray(fftSize);
 		for (let i = 0; i < fftSize; i++) {
-			complexInput.real[i] = frameSamples[i];
+			complexInput.real[i] = frameSamples[i]!;
 			complexInput.imag[i] = 0;
 		}
 
@@ -122,19 +139,28 @@ async function wavToPolyphonicNotes(file) {
 
 	return notes;
 }
+
+interface Note {
+	startTime: number;
+	endTime: number;
+	pitch: number;
+	intensity: number;
+	checked: boolean;
+}
+
 function trackNotesAcrossFrames(
-	allPeaks,
-	sampleRate,
-	frameSize,
-	hopSize,
+	allPeaks: { bin: number; magnitude: number }[][],
+	sampleRate: number,
+	frameSize: number,
+	hopSize: number,
 	freqToleranceHz = 20,
-) {
-	const notes = [];
-	const activeNotes = [];
+): Note[] {
+	const notes: Note[] = [];
+	const activeNotes: Note[] = [];
 
 	for (let frameIndex = 0; frameIndex < allPeaks.length; frameIndex++) {
 		const time = (frameIndex * hopSize) / sampleRate;
-		const peaks = allPeaks[frameIndex];
+		const peaks = allPeaks[frameIndex]!;
 
 		activeNotes.forEach((n) => (n.checked = false));
 
@@ -171,8 +197,8 @@ function trackNotesAcrossFrames(
 		});
 
 		for (let i = activeNotes.length - 1; i >= 0; i--) {
-			if (!activeNotes[i].checked) {
-				notes.push(activeNotes[i]);
+			if (!activeNotes[i]!.checked) {
+				notes.push(activeNotes[i]!);
 				activeNotes.splice(i, 1);
 			}
 		}
@@ -182,7 +208,11 @@ function trackNotesAcrossFrames(
 
 	return notes;
 }
-async function getNotesWithLimits(file, highpass, volume_cap) {
+async function getNotesWithLimits(
+	file: File,
+	highpass: number,
+	volume_cap: number,
+) {
 	const all_notes = await wavToPolyphonicNotes(file);
 	const notes = all_notes.filter(
 		(note) => note.endTime - note.startTime > 0.02 && note.pitch < highpass,
@@ -194,8 +224,13 @@ async function getNotesWithLimits(file, highpass, volume_cap) {
 
 	return notes;
 }
-function getPitches(notes, samples, cull, round) {
-	const pitches = [];
+function getPitches(
+	notes: Note[],
+	samples: number,
+	cull: boolean,
+	round: number,
+) {
+	const pitches: [number, number][] = [];
 
 	notes.forEach((note) => {
 		const { pitch: raw_pitch, intensity } = note;
@@ -205,7 +240,7 @@ function getPitches(notes, samples, cull, round) {
 			index = pitches.length;
 			pitches.push([0, pitch]);
 		}
-		pitches[index][0] += intensity;
+		pitches[index]![0] += intensity;
 	});
 
 	if (pitches.length >= samples) {
@@ -226,8 +261,13 @@ function getPitches(notes, samples, cull, round) {
 
 	return pitches.map((pitch) => pitch[1]);
 }
-function getVolumes(notes, samples, cull, round) {
-	const volumes = [];
+function getVolumes(
+	notes: Note[],
+	samples: number,
+	cull: boolean,
+	round: number,
+) {
+	const volumes: [number, number][] = [];
 
 	notes.forEach((note) => {
 		const { intensity: raw_intensity } = note;
@@ -237,7 +277,7 @@ function getVolumes(notes, samples, cull, round) {
 			index = volumes.length;
 			volumes.push([0, intensity]);
 		}
-		volumes[index][0]++;
+		volumes[index]![0]++;
 	});
 
 	volumes.forEach((volume) => {
@@ -264,12 +304,13 @@ function getVolumes(notes, samples, cull, round) {
 }
 
 // node helpers
-function getSoundBlock(pitch, amplitude) {
-	const node = levelNodeWithSound();
-	node.levelNodeSound.position.z = -2;
-	node.levelNodeSound.name = uniqueSoundName();
-	node.levelNodeSound.volume = amplitude;
-	node.levelNodeSound.maxRangeFactor = 1000;
+function getSoundBlock(pitch: number, amplitude: number) {
+	const node = levelNodeWithSound({
+		position: { z: -2 },
+		name: uniqueSoundName(),
+		volume: amplitude,
+		maxRangeFactor: 1000,
+	});
 	node.levelNodeSound.parameters = {
 		...node.levelNodeSound.parameters,
 		...{
@@ -285,40 +326,34 @@ function getSoundBlock(pitch, amplitude) {
 	};
 	return node;
 }
-function getSoundTriggerBlock(x, y, isStop, targetID) {
-	const targetSoundModes = load().COD.Level.TriggerTargetSound.Mode;
-	const sourceBasicTypes = load().COD.Level.TriggerSourceBasic.Type;
+function getSoundTriggerBlock(
+	x: number,
+	y: number,
+	isStop: boolean,
+	targetID: number,
+) {
+	const source = triggerSourceWithBasic({
+		type: TriggerSourceBasicType.BLOCK,
+	});
+	const target = triggerTargetWithSound({
+		objectID: targetID,
+		mode: isStop
+			? TriggerTargetSoundMode.STOP
+			: TriggerTargetSoundMode.START,
+	});
 
-	const node = levelNodeWithTrigger();
-	node.levelNodeTrigger.position.x = x;
-	node.levelNodeTrigger.scale.x = 0.03;
+	const node = levelNodeWithTrigger({
+		position: { x: x, y: isStop ? -y - 1 : y },
+		scale: { x: 0.03 },
+		triggerSources: [source],
+		triggerTargets: [target],
+	});
+	node.animations = [animation({ frames: [animationFrame()] })];
 
-	const source = triggerSourceWithBasic();
-	source.triggerSourceBasic.type = sourceBasicTypes.BLOCK;
-	node.levelNodeTrigger.triggerSources.push(source);
-
-	const target = triggerTargetWithSound();
-	target.triggerTargetSound.objectID = targetID;
-	node.levelNodeTrigger.triggerTargets.push(target);
-
-	const anim = animation();
-	anim.frames.push(animationFrame());
-	node.animations = [anim];
-
-	if (isStop) {
-		node.levelNodeTrigger.position.y = -y - 1;
-		target.triggerTargetSound.mode = targetSoundModes.STOP;
-	} else {
-		target.triggerTargetSound.mode = targetSoundModes.START;
-		node.levelNodeTrigger.position.y = y;
-	}
 	return node;
 }
-function soundTarget(mode, object_id) {
-	const target = triggerTargetWithSound();
-	target.triggerTargetSound.objectID = object_id;
-	target.triggerTargetSound.mode = mode;
-	return target;
+function soundTarget(mode: TriggerTargetSoundMode, object_id: number) {
+	return triggerTargetWithSound({ objectID: object_id, mode: mode });
 }
 
 // other helpers
@@ -332,20 +367,24 @@ function uniqueSoundName() {
 	return `SFX2GRAB-${output}`;
 }
 
-async function generate(pitchSamps, volumeSamps, file) {
-	let notes = await getNotesWithLimits(file, 2000, 0.65);
+async function generate(pitchSamps: number, volumeSamps: number, file: File) {
+	const notes = await getNotesWithLimits(file, 2000, 0.65);
 
-	let pitches = getPitches(notes, pitchSamps, true, 2);
-	let volumes = getVolumes(notes, volumeSamps, false, 0.01);
-
-	let triggerGroup = levelNodeWithGroup();
+	const pitches = getPitches(notes, pitchSamps, true, 2);
+	const volumes = getVolumes(notes, volumeSamps, false, 0.01);
 
 	const soundBlocks = volumes.flatMap((v) =>
 		pitches.map((p) => getSoundBlock(p, v)),
 	);
 
-	let key = [];
-	const makeTrigger = (pitch, volume1, x, y, isStop) => {
+	const key: string[] = [];
+	const makeTrigger = (
+		pitch: number,
+		volume1: number,
+		x: number,
+		y: number,
+		isStop: boolean,
+	) => {
 		key.push(JSON.stringify([pitch, volume1, isStop]));
 		const trigger = getSoundTriggerBlock(
 			x,
@@ -353,91 +392,91 @@ async function generate(pitchSamps, volumeSamps, file) {
 			isStop,
 			soundBlocks.findIndex(
 				(node) =>
-					pitch == node.levelNodeSound.parameters.frequencyBase &&
+					pitch ==
+						(node.levelNodeSound.parameters ??= {}).frequencyBase &&
 					volume1 == node.levelNodeSound.volume,
 			) + 1,
 		);
 		return trigger;
 	};
 
-	const sourceBasicTypes = load().COD.Level.TriggerSourceBasic.Type;
-	const trig1 = levelNodeWithTrigger();
-	trig1.levelNodeTrigger.position.x = -5;
-	const source = triggerSourceWithBasic();
-	source.triggerSourceBasic.type = sourceBasicTypes.BLOCK;
-	trig1.levelNodeTrigger.triggerSources.push(source);
+	const source = triggerSourceWithBasic({
+		type: TriggerSourceBasicType.BLOCK,
+	});
+	const trig1 = levelNodeWithTrigger({
+		position: { x: -5 },
+		triggerSources: [source],
+	});
 
-	let trig2 = deepClone(trig1);
-	let trig3 = deepClone(trig1);
+	const trig2 = deepClone(trig1);
+	const trig3 = deepClone(trig1);
 
-	const targetSoundModes = load().COD.Level.TriggerTargetSound.Mode;
+	trig1.levelNodeTrigger.triggerTargets ??= [];
+	trig2.levelNodeTrigger.triggerTargets ??= [];
+	trig3.levelNodeTrigger.triggerTargets ??= [];
 
 	for (let i = soundBlocks.length + 2; i < soundBlocks.length * 2 + 2; i++) {
 		trig1.levelNodeTrigger.triggerTargets.push(
-			soundTarget(targetSoundModes.START, i),
+			soundTarget(TriggerTargetSoundMode.START, i),
 		);
 		trig2.levelNodeTrigger.triggerTargets.push(
-			soundTarget(targetSoundModes.STOP, i),
+			soundTarget(TriggerTargetSoundMode.STOP, i),
 		);
 		trig3.levelNodeTrigger.triggerTargets.push(
-			soundTarget(targetSoundModes.RESET, i),
+			soundTarget(TriggerTargetSoundMode.RESET, i),
 		);
 	}
 
-	volumes.forEach((v, x) =>
-		pitches.forEach((p, y) => {
-			triggerGroup.levelNodeGroup.childNodes.push(
-				makeTrigger(p, v, x, y, false),
-			);
-			triggerGroup.levelNodeGroup.childNodes.push(
-				makeTrigger(p, v, x, y, true),
-			);
-		}),
+	const triggers = volumes.flatMap((v, x) =>
+		pitches.flatMap((p, y) => [
+			makeTrigger(p, v, x, y, false),
+			makeTrigger(p, v, x, y, true),
+		]),
 	);
+	const triggerGroup = levelNodeWithGroup({
+		childNodes: triggers,
+	});
 
 	let last = 0;
-	const makeStaticNote = (pitch, volume, startPos, endPos) => {
+	const makeStaticNote = (
+		pitch: number,
+		volume: number,
+		startPos: number,
+		endPos: number,
+	) => {
 		if (endPos > last) {
 			last = endPos;
 		}
-		let index1 = key.indexOf(JSON.stringify([pitch, volume, false]));
-		let index2 = key.indexOf(JSON.stringify([pitch, volume, true]));
+		const index1 = key.indexOf(JSON.stringify([pitch, volume, false]));
+		const index2 = key.indexOf(JSON.stringify([pitch, volume, true]));
 
-		let trigs = triggerGroup.levelNodeGroup.childNodes;
-		if (trigs[index1].animations[0].frames.length > 0) {
-			if (
-				trigs[index1].animations[0].frames[
-					trigs[index1].animations[0].frames.length - 1
-				].time > startPos
-			) {
-				return;
-			}
-			if (
-				trigs[index2].animations[0].frames[
-					trigs[index2].animations[0].frames.length - 1
-				].time > endPos
-			) {
-				return;
-			}
+		const frames1 = ((triggers[index1]!.animations ??= [
+			animation(),
+		])[0]!.frames ??= []);
+		const frames2 = ((triggers[index2]!.animations ??= [
+			animation(),
+		])[0]!.frames ??= []);
+
+		if (frames1.length > 0) {
+			if ((frames1[frames1.length - 1]!.time ?? 0) > startPos) return;
+			if ((frames2[frames2.length - 1]!.time ?? 0) > endPos) return;
 		}
 
-		const preframe = animationFrame();
-		preframe.time = startPos - 0.01;
-		preframe.position.x = -1;
-		trigs[index1].animations[0].frames.push(preframe);
+		frames1.push(
+			animationFrame({
+				time: startPos - 0.01,
+				position: { x: -1 },
+			}),
+		);
+		frames1.push(animationFrame({ time: startPos }));
 
-		const frm = animationFrame();
-		frm.time = startPos;
-		trigs[index1].animations[0].frames.push(frm);
-
-		const postframe = animationFrame();
-		postframe.time = endPos - 0.01;
-		postframe.position.x = -1;
-		trigs[index2].animations[0].frames.push(postframe);
-
-		const endframe = animationFrame();
-		endframe.time = endPos;
-		trigs[index2].animations[0].frames.push(endframe);
+		frames2.push(
+			animationFrame({
+				time: endPos - 0.01,
+				position: { x: -1 },
+			}),
+		);
+		frames2.push(animationFrame({ time: endPos }));
 	};
 
 	for (const note of notes) {
@@ -450,27 +489,23 @@ async function generate(pitchSamps, volumeSamps, file) {
 	}
 
 	let best = 0;
-	let trigs = triggerGroup.levelNodeGroup.childNodes;
-	for (const trig of trigs) {
-		if (trig.animations[0].frames.length > best) {
-			best = trig.animations[0].frames.length;
+	for (const trig of triggers) {
+		const frames = trig.animations![0]!.frames!;
+		if (frames.length > best) {
+			best = frames.length;
 		}
-		const frm = animationFrame();
-		frm.time = last;
-		trig.animations[0].frames.push(frm);
+		const frm = animationFrame({ time: last });
+		frames.push(frm);
 	}
 
 	const max = Math.max(
-		...triggerGroup.levelNodeGroup.childNodes.map(
-			(node) => node.levelNodeTrigger.position.y,
-		),
+		...triggers.map((node) => node.levelNodeTrigger.position!.y!),
 	);
 
-	const wall = levelNodeWithStatic();
-	wall.levelNodeStatic.position.x = -1;
-	wall.levelNodeStatic.position.y = -0.5;
-	wall.levelNodeStatic.scale.y = max * 2 + 2;
-	wall.levelNodeStatic.scale.x = 0.03;
+	const wall = levelNodeWithStatic({
+		position: { x: -1, y: -0.5 },
+		scale: { y: max * 2 + 2, x: 0.03 },
+	});
 
 	const nodes = [...soundBlocks, triggerGroup, trig1, trig2, trig3, wall];
 
