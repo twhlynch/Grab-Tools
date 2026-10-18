@@ -1,12 +1,14 @@
 import {
 	InstructionDataType,
 	LevelNode,
+	LevelNodeMaterial,
+	LevelNodeShape,
 	OperandDataType,
 	TriggerSource,
 	TriggerTarget,
 } from '@/generated/proto';
-import { Root as PBRoot } from 'protobufjs';
-import { Object3D, Quaternion, Vector3 } from 'three';
+import { Root as PBRoot, Type } from 'protobufjs';
+import { Mesh, Object3D, Quaternion, ShaderMaterial, Vector3 } from 'three';
 
 // helpers
 type PropsStartingWith<T, Prefix extends string> = T[Extract<
@@ -65,6 +67,8 @@ export type TriggerSourceTypes = NonNullable<
 	PropsStartingWith<TriggerSource, 'triggerSource'>
 >;
 
+export type LevelNodeKey = keyof NodeMapping;
+
 // since its reused
 type NodeMapping = KeyMapping<LevelNode, 'levelNode'>;
 
@@ -112,8 +116,11 @@ type EnumMap<E> = {
 export type Root = PBRoot & {
 	COD: {
 		Level: {
-			LevelNodeMaterial: object;
-			LevelNodeShape: object;
+			LevelNode: Type & {
+				oneofs: { content: { fieldsArray: { name: LevelNodeKey }[] } };
+			};
+			LevelNodeMaterial: Record<string, LevelNodeMaterial>;
+			LevelNodeShape: Record<string, LevelNodeShape>;
 			InstructionData: {
 				Type: EnumMap<typeof InstructionDataType>;
 			};
@@ -125,14 +132,25 @@ export type Root = PBRoot & {
 };
 
 // object type
-export type LevelNodeObject = Object3D & {
-	initialPosition: Vector3;
-	initialRotation: Quaternion;
-	userData: {
-		id: number;
-		node: LevelNode;
+// - all of Object3D
+// - optionally Mesh exclusing material
+// - shader material
+// - other custom properties
+// - is<Node>
+export type LevelNodeObject = Partial<Omit<Mesh, 'material' | keyof Object3D>> &
+	Object3D & {
+		material?: ShaderMaterial;
+		initialPosition: Vector3;
+		initialRotation: Quaternion;
+		userData: {
+			id: number;
+			node: LevelNode;
+		} & {
+			[K in LevelNodeKey as K extends `levelNode${infer S}`
+				? `is${S}`
+				: K]?: boolean;
+		};
 	};
-};
 
 // type guards for LevelNodeObjects
 export function isLevelNodeObject(

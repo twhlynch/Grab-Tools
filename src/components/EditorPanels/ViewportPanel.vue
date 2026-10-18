@@ -278,7 +278,7 @@ export default defineComponent({
 			const raycaster = new THREE.Raycaster();
 			raycaster.setFromCamera(mouse, this.camera);
 			let individualObjects = this.level.nodes.all.filter(
-				(node) => !node.isGroup && node.visible,
+				(node) => !node.userData.isGroup && node.visible,
 			);
 			let intersects = raycaster.intersectObjects(
 				individualObjects,
@@ -446,7 +446,7 @@ export default defineComponent({
 				opacity: 0.1,
 			});
 			this.level.nodes.all
-				.filter((o) => !o.isGroup && !o.isMesh)
+				.filter((o) => !o.userData.isGroup && !o.isMesh)
 				.forEach((object) => {
 					const hitbox = new THREE.Mesh(geometry, material);
 					object.add(hitbox);
@@ -698,7 +698,9 @@ export default defineComponent({
 		},
 		toggle_sky() {
 			this.show_sky = !this.show_sky;
-			const sky = this.level.scene.children.find((obj) => obj.isSky);
+			const sky = this.level.scene.children.find(
+				(obj) => obj.userData.isSky,
+			);
 			if (sky) sky.visible = this.show_sky;
 		},
 		toggle_trigger_connections() {
@@ -1220,12 +1222,12 @@ export default defineComponent({
 		},
 		enter_specific_group(object) {
 			this.gizmo.clear(this.editing_parent);
-			if (this.editing_parent?.isGroup) {
+			if (this.editing_parent?.userData.isGroup) {
 				this.editing_parent.userData.group_bounds.material.color =
 					new THREE.Color(0x009900);
 			}
 			this.editing_parent = object;
-			if (this.editing_parent.isGroup) {
+			if (this.editing_parent.userData.isGroup) {
 				this.editing_parent.userData.group_bounds.material.color =
 					new THREE.Color(0x99ff00);
 			}

@@ -31,8 +31,9 @@ export default class BrushTool implements Tool {
 		// bottom center of object
 		const bbox = new THREE.Box3();
 		viewport.gizmo.selection.forEach((object) => {
-			object.traverse((obj: THREE.Object3D & { isGroup?: boolean }) => {
-				if (obj.userData.node && !obj.isGroup) bbox.expandByObject(obj);
+			object.traverse((obj) => {
+				if (obj.userData.node && !obj.userData.isGroup)
+					bbox.expandByObject(obj);
 			});
 		});
 
@@ -75,8 +76,7 @@ export default class BrushTool implements Tool {
 		const raycaster = new THREE.Raycaster();
 		raycaster.setFromCamera(mouse, viewport.camera);
 		const individualObjects = viewport.level.nodes.all.filter(
-			(node: THREE.Object3D & { isGroup?: boolean }) =>
-				!node.isGroup && node.visible,
+			(node) => !node.userData.isGroup && node.visible,
 		);
 		const intersects = raycaster.intersectObjects(individualObjects, true);
 		if (!intersects.length) return true;

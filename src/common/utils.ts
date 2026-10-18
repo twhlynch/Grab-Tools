@@ -1,6 +1,11 @@
 import { LevelNodeTypes } from '@/common/levelNodes';
 import { unmodded_root } from '@/common/root';
-import { Level, LevelNode } from '@/generated/proto';
+import {
+	Level,
+	LevelNode,
+	LevelNodeMaterial,
+	LevelNodeShape,
+} from '@/generated/proto';
 import { Object3D } from 'three';
 
 export function isObject3D(
@@ -9,15 +14,12 @@ export function isObject3D(
 	return !!(object && 'userData' in object);
 }
 
-export function materials(): Record<string, number> {
-	return unmodded_root().COD.Level.LevelNodeMaterial as Record<
-		string,
-		number
-	>;
+export function materials(): Record<string, LevelNodeMaterial> {
+	return unmodded_root().COD.Level.LevelNodeMaterial;
 }
 
-export function shapes(): Record<string, number> {
-	return unmodded_root().COD.Level.LevelNodeShape as Record<string, number>;
+export function shapes(): Record<string, LevelNodeShape> {
+	return unmodded_root().COD.Level.LevelNodeShape;
 }
 
 export function node_data(object: LevelNode | Object3D): LevelNodeTypes {

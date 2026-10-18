@@ -1,8 +1,8 @@
 import * as SHADERS from '@/assets/shaders/shaders';
 import * as THREE from 'three';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { Font, FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { GLTF, GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import modelConeURL from '@/assets/models/cone.gltf';
 import modelCubeURL from '@/assets/models/cube.gltf';
@@ -31,26 +31,139 @@ import textureSoundURL from '@/assets/textures/sound.png';
 import textureSublevelTriggerURL from '@/assets/textures/sublevel_trigger.png';
 import textureTriggerURL from '@/assets/textures/trigger.png';
 import textureWoodURL from '@/assets/textures/wood.png';
+import { LevelNodeKey, LevelNodeObject, Root } from '@/common/levelNodes';
 import { load } from '@/common/root';
 import {
 	materials as material_types,
 	shapes as shape_types,
 } from '@/common/utils';
+import {
+	Level,
+	LevelNode,
+	LevelNodeMaterial,
+	LevelNodeShape,
+} from '@/generated/proto';
 
-let textureLoader, gltfLoader, fontLoader;
+let textureLoader: THREE.TextureLoader;
+let gltfLoader: GLTFLoader;
+let fontLoader: FontLoader;
+
+interface LevelData {
+	level: Level;
+	root: Root;
+	nodes: {
+		all: LevelNodeObject[];
+		animated: LevelNodeObject[];
+		material: Partial<Record<LevelNodeMaterial, LevelNodeObject[]>>;
+		shape: Partial<Record<LevelNodeShape, LevelNodeObject[]>>;
+		defaultSpawn: LevelNodeObject | undefined;
+		namedSpawns: Record<string, LevelNodeObject>;
+	} & Record<LevelNodeKey, LevelNodeObject[]>;
+	sun: THREE.DirectionalLight | undefined;
+	complexity: number;
+	scene: THREE.Scene;
+	update: (delta: number) => void;
+	meta: {
+		time: number;
+	};
+}
+
+interface LevelLoaderOptions {
+	sky: boolean;
+	lights: boolean;
+	text: boolean;
+	triggers: boolean;
+	sound: boolean;
+	light: boolean;
+	sublevels: boolean;
+	static: boolean;
+	fog: boolean;
+	GASM: boolean;
+}
+
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type LevelNodeUniforms = {
+	colorTexture: THREE.IUniform<THREE.Texture>;
+	tileFactor: THREE.IUniform<number>;
+	diffuseColor: THREE.IUniform<[number, number, number]>;
+	worldNormalMatrix: THREE.IUniform<THREE.Matrix3>;
+	frozenNormalMatrix: THREE.IUniform<THREE.Matrix3>;
+	worldMatrix: THREE.IUniform<THREE.Matrix4>;
+	neonEnabled: THREE.IUniform<number>;
+	transparentEnabled: THREE.IUniform<number>;
+	fogEnabled: THREE.IUniform<number>;
+	isSelected: THREE.IUniform<boolean>;
+	specularColor: THREE.IUniform<[number, number, number, number]>;
+	isLava: THREE.IUniform<number>;
+	isColoredLava: THREE.IUniform<number>;
+	isGradient: THREE.IUniform<number>;
+	isAdditive: THREE.IUniform<number>;
+	diffuseColor2: THREE.IUniform<[number, number, number]>;
+	gradientDirection: THREE.IUniform<[number, number, number]>;
+};
+
+type LevelNodeShaderMaterial = THREE.ShaderMaterial & {
+	uniforms: LevelNodeUniforms;
+};
 
 class LevelLoader {
-	constructor(options = {}) {
+	root: Root;
+	font: Font | undefined;
+	options: LevelLoaderOptions = {
+		sky: true,
+		lights: true,
+		text: false,
+		triggers: false,
+		sound: false,
+		light: false,
+		sublevels: false,
+		static: false,
+		fog: true,
+		GASM: false,
+	};
+	shapes: THREE.BufferGeometry[] = [];
+	objects: THREE.BufferGeometry[] = [];
+	shapePromise: Promise<void>;
+	objectPromise: Promise<void>;
+	fontPromise: Promise<void>;
+	materials: [
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+		LevelNodeShaderMaterial,
+	];
+	objectMaterials: [
+		THREE.ShaderMaterial, // start
+		THREE.ShaderMaterial, // finish
+		LevelNodeShaderMaterial, // sign
+		LevelNodeShaderMaterial, // neon
+		LevelNodeShaderMaterial, // trigger
+		LevelNodeShaderMaterial, // sublevel trigger
+		THREE.ShaderMaterial, // alt start
+		THREE.ShaderMaterial, // particle
+		LevelNodeShaderMaterial, // sound
+		LevelNodeShaderMaterial, // code
+		THREE.ShaderMaterial, // start direction
+		THREE.ShaderMaterial, // alt start
+		LevelNodeShaderMaterial, // light
+	];
+	skyMaterial: THREE.ShaderMaterial;
+
+	constructor(options: Partial<LevelLoaderOptions> = {}) {
 		this.config(options);
 
 		textureLoader = new THREE.TextureLoader();
 		gltfLoader = new GLTFLoader();
 		fontLoader = new FontLoader();
 
-		this.shapes = [];
-		this.objects = [];
-
-		let shapePromises = [
+		const shapePromises = [
 			getGeometryForModel(modelCubeURL),
 			getGeometryForModel(modelSphereURL),
 			getGeometryForModel(modelCylinderURL),
@@ -61,24 +174,24 @@ class LevelLoader {
 		];
 
 		this.shapePromise = Promise.all(shapePromises).then((result) => {
-			for (let shape of result) {
+			for (const shape of result) {
 				this.shapes.push(shape);
 				shape.rotateY(Math.PI);
 			}
 		});
 
-		let objectPromises = [
+		const objectPromises = [
 			getGeometryForModel(modelStartEndURL),
 			getGeometryForModel(modelSignURL),
 			getGeometryForModel(modelStartDirectionURL),
 		];
 
 		this.objectPromise = Promise.all(objectPromises).then((result) => {
-			for (let object of result) {
+			for (const object of result) {
 				this.objects.push(object);
 				object.rotateY(Math.PI);
 			}
-			this.objects[2].rotateX(Math.PI / 2); // start arrow
+			this.objects[2]!.rotateX(Math.PI / 2); // start arrow
 		});
 
 		this.materials = [
@@ -194,74 +307,74 @@ class LevelLoader {
 			),
 		];
 
-		let startMaterial = new THREE.ShaderMaterial();
-		startMaterial.vertexShader = SHADERS.startFinishVS;
-		startMaterial.fragmentShader = SHADERS.startFinishFS;
-		startMaterial.flatShading = true;
-		startMaterial.transparent = true;
-		startMaterial.depthWrite = false;
-		startMaterial.uniforms = {
-			diffuseColor: { value: [0.0, 1.0, 0.0, 1.0] },
-			fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
-			isSelected: { value: false },
-		};
+		const startMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.startFinishVS,
+			fragmentShader: SHADERS.startFinishFS,
+			transparent: true,
+			depthWrite: false,
+			uniforms: {
+				diffuseColor: { value: [0.0, 1.0, 0.0, 1.0] },
+				fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
+				isSelected: { value: false },
+			},
+		});
 
-		let finishMaterial = new THREE.ShaderMaterial();
-		finishMaterial.vertexShader = SHADERS.startFinishVS;
-		finishMaterial.fragmentShader = SHADERS.startFinishFS;
-		finishMaterial.flatShading = true;
-		finishMaterial.transparent = true;
-		finishMaterial.depthWrite = false;
-		finishMaterial.uniforms = {
-			diffuseColor: { value: [1.0, 0.0, 0.0, 1.0] },
-			fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
-			isSelected: { value: false },
-		};
+		const finishMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.startFinishVS,
+			fragmentShader: SHADERS.startFinishFS,
+			transparent: true,
+			depthWrite: false,
+			uniforms: {
+				diffuseColor: { value: [1.0, 0.0, 0.0, 1.0] },
+				fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
+				isSelected: { value: false },
+			},
+		});
 
-		let altStartMaterial = new THREE.ShaderMaterial();
-		altStartMaterial.vertexShader = SHADERS.startFinishVS;
-		altStartMaterial.fragmentShader = SHADERS.startFinishFS;
-		altStartMaterial.flatShading = true;
-		altStartMaterial.transparent = true;
-		altStartMaterial.depthWrite = false;
-		altStartMaterial.uniforms = {
-			diffuseColor: { value: [1.0, 1.0, 0.0, 1.0] },
-			fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
-			isSelected: { value: false },
-		};
+		const altStartMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.startFinishVS,
+			fragmentShader: SHADERS.startFinishFS,
+			transparent: true,
+			depthWrite: false,
+			uniforms: {
+				diffuseColor: { value: [1.0, 1.0, 0.0, 1.0] },
+				fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
+				isSelected: { value: false },
+			},
+		});
 
-		let particleMaterial = new THREE.ShaderMaterial();
-		particleMaterial.vertexShader = SHADERS.particleVS;
-		particleMaterial.fragmentShader = SHADERS.particleFS;
-		particleMaterial.flatShading = true;
-		particleMaterial.uniforms = {
-			fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
-			isSelected: { value: false },
-		};
+		const particleMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.particleVS,
+			fragmentShader: SHADERS.particleFS,
+			uniforms: {
+				fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
+				isSelected: { value: false },
+			},
+		});
 
-		let startDirectionMaterial = new THREE.ShaderMaterial();
-		startDirectionMaterial.vertexShader = SHADERS.startFinishVS;
-		startDirectionMaterial.fragmentShader = SHADERS.startDirectionFS;
-		startDirectionMaterial.flatShading = true;
-		startDirectionMaterial.transparent = true;
-		startDirectionMaterial.depthWrite = false;
-		startDirectionMaterial.uniforms = {
-			diffuseColor: { value: [0.0, 1.0, 0.0, 1.0] },
-			fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
-			isSelected: { value: false },
-		};
+		const startDirectionMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.startFinishVS,
+			fragmentShader: SHADERS.startDirectionFS,
+			transparent: true,
+			depthWrite: false,
+			uniforms: {
+				diffuseColor: { value: [0.0, 1.0, 0.0, 1.0] },
+				fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
+				isSelected: { value: false },
+			},
+		});
 
-		let altStartDirectionMaterial = new THREE.ShaderMaterial();
-		altStartDirectionMaterial.vertexShader = SHADERS.startFinishVS;
-		altStartDirectionMaterial.fragmentShader = SHADERS.startDirectionFS;
-		altStartDirectionMaterial.flatShading = true;
-		altStartDirectionMaterial.transparent = true;
-		altStartDirectionMaterial.depthWrite = false;
-		altStartDirectionMaterial.uniforms = {
-			diffuseColor: { value: [1.0, 1.0, 0.0, 1.0] },
-			fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
-			isSelected: { value: false },
-		};
+		const altStartDirectionMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.startFinishVS,
+			fragmentShader: SHADERS.startDirectionFS,
+			transparent: true,
+			depthWrite: false,
+			uniforms: {
+				diffuseColor: { value: [1.0, 1.0, 0.0, 1.0] },
+				fogEnabled: { value: this.options.fog ? 1.0 : 0.0 },
+				isSelected: { value: false },
+			},
+		});
 
 		this.objectMaterials = [
 			startMaterial,
@@ -342,52 +455,53 @@ class LevelLoader {
 			),
 		];
 
-		let skyMaterial = new THREE.ShaderMaterial();
-		skyMaterial.vertexShader = SHADERS.skyVS;
-		skyMaterial.fragmentShader = SHADERS.skyFS;
-		skyMaterial.flatShading = false;
-		skyMaterial.depthWrite = false;
-		skyMaterial.side = THREE.BackSide;
-		this.skyMaterial = skyMaterial;
+		this.skyMaterial = new THREE.ShaderMaterial({
+			vertexShader: SHADERS.skyVS,
+			fragmentShader: SHADERS.skyFS,
+			depthWrite: false,
+			side: THREE.BackSide,
+		});
 
 		this.root = load();
 
-		fontLoader.load('/fonts/Roboto_Regular.json', (font) => {
+		this.fontPromise = new Promise<Font>((resolve, reject) => {
+			fontLoader.load(
+				'/fonts/Roboto_Regular.json',
+				resolve,
+				undefined,
+				reject,
+			);
+		}).then((font) => {
 			this.font = font;
 		});
 	}
 
-	config(options = {}) {
-		this.options = {
-			sky: true,
-			lights: true,
-			text: false,
-			triggers: false,
-			sound: false,
-			light: false,
-			sublevels: false,
-			static: false,
-			fog: true,
-			GASM: false,
-		};
-
-		for (const key in this.options) {
-			if (key in options) {
-				this.options[key] = options[key];
-			}
-		}
+	config(options: Partial<LevelLoaderOptions> = {}) {
+		Object.assign(this.options, options);
 	}
 
-	async load(data, json = false) {
-		const level = {
-			level: undefined,
+	async load(data: Uint8Array | Level): Promise<LevelData> {
+		const { root, shapes, objects, materials, objectMaterials } = this;
+
+		const level: LevelData = {
+			level: {},
+			root: this.root,
 			nodes: {
 				all: [],
 				animated: [],
-				material: {},
-				shape: {},
+				material: Object.fromEntries(
+					Object.values(material_types()).map((value) => [value, []]),
+				),
+				shape: Object.fromEntries(
+					Object.values(shape_types()).map((value) => [value, []]),
+				),
 				defaultSpawn: undefined,
 				namedSpawns: {},
+				...(Object.fromEntries(
+					root.COD.Level.LevelNode.oneofs.content.fieldsArray.map(
+						(field) => [field.name, [] as LevelNodeObject[]],
+					),
+				) as Record<LevelNodeKey, LevelNodeObject[]>),
 			},
 			sun: undefined,
 			complexity: 0,
@@ -409,7 +523,7 @@ class LevelLoader {
 			level.scene.add(sunLight);
 		}
 
-		level.update = (delta) => {
+		level.update = (delta: number) => {
 			level.meta.time += delta;
 			for (const object of level.nodes.animated) {
 				updateObjectAnimation(object, level.meta.time);
@@ -422,35 +536,23 @@ class LevelLoader {
 			}
 		};
 
-		let root = this.root;
-		level.root = this.root;
-
-		root.COD.Level.LevelNode.oneofs.content.fieldsArray.forEach((field) => {
-			level.nodes[field.name] = [];
-		});
-		Object.values(shape_types()).forEach((value) => {
-			level.nodes.shape[value] = [];
-		});
-		Object.values(material_types()).forEach((value) => {
-			level.nodes.material[value] = [];
-		});
 		const LevelMessage = root.lookupType('COD.Level.Level');
 
 		let decoded;
-		if (json) {
+		if (data instanceof Uint8Array) {
+			const formattedBuffer = data;
+			decoded = LevelMessage.decode(formattedBuffer);
+			level.level = decoded as Level;
+		} else {
 			level.level = data;
 			decoded = data;
-		} else {
-			let formattedBuffer = data;
-			decoded = LevelMessage.decode(formattedBuffer);
-			level.level = decoded;
 		}
 
 		await this.shapePromise;
 		await this.objectPromise;
+		await this.fontPromise;
 
-		let { shapes, objects, materials, objectMaterials } = this;
-		let scene = level.scene;
+		const scene = level.scene;
 		level.nodes.namedSpawns = {};
 
 		let sunAngle = new THREE.Euler(
@@ -459,7 +561,7 @@ class LevelLoader {
 			0.0,
 		);
 		let sunAltitude = 45.0;
-		let horizonColor = [0.916, 0.9574, 0.9574];
+		let horizonColor: [number, number, number] = [0.916, 0.9574, 0.9574];
 		if (decoded.ambienceSettings) {
 			sunAngle = new THREE.Euler(
 				THREE.MathUtils.degToRad(
@@ -508,10 +610,14 @@ class LevelLoader {
 		sunDirection.applyEuler(sunAngle);
 		sunDirection.normalize();
 
-		const distance = 1000;
-		level.sun.position.copy(sunDirection.clone().multiplyScalar(-distance));
-		level.sun.target.position.set(0, 0, 0);
-		level.sun.userData.direction = sunDirection.clone();
+		if (level.sun) {
+			const distance = 1000;
+			level.sun.position.copy(
+				sunDirection.clone().multiplyScalar(-distance),
+			);
+			level.sun.target.position.set(0, 0, 0);
+			level.sun.userData.direction = sunDirection.clone();
+		}
 
 		const skySunDirection = sunDirection.clone();
 
@@ -520,7 +626,7 @@ class LevelLoader {
 		sunColorFactor = 1.0 - sunColorFactor;
 		sunColorFactor *= 0.8;
 		sunColorFactor += 0.2;
-		let sunColor = [
+		const sunColor = [
 			horizonColor[0] * (1.0 - sunColorFactor) + sunColorFactor,
 			horizonColor[1] * (1.0 - sunColorFactor) + sunColorFactor,
 			horizonColor[2] * (1.0 - sunColorFactor) + sunColorFactor,
@@ -532,13 +638,13 @@ class LevelLoader {
 		const sky = new THREE.Mesh(this.shapes[1], this.skyMaterial);
 		sky.frustumCulled = false;
 		sky.renderOrder = 1000; // sky should be rendered after opaque, before transparent
-		sky.isSky = true;
+		sky.userData.isSky = true;
 		scene.add(sky);
 		sky.visible = this.options.sky;
 
 		const allMaterials = [...materials, ...objectMaterials];
 
-		for (let material of allMaterials) {
+		for (const material of allMaterials) {
 			let density = 0.0;
 			if (decoded.ambienceSettings) {
 				material.uniforms.cameraFogColor0 = {
@@ -572,10 +678,10 @@ class LevelLoader {
 			material.uniforms.sunDirection = { value: skySunDirection };
 			material.uniforms.sunColor = { value: sunColor };
 
-			let densityFactor = density * density * density * density;
-			let fogDensityX =
+			const densityFactor = density * density * density * density;
+			const fogDensityX =
 				0.5 * densityFactor + 0.000001 * (1.0 - densityFactor);
-			let fogDensityY = 1.0 / (1.0 - Math.exp(-1500.0 * fogDensityX));
+			const fogDensityY = 1.0 / (1.0 - Math.exp(-1500.0 * fogDensityX));
 
 			material.uniforms.cameraFogDistance = {
 				value: [fogDensityX, fogDensityY],
@@ -584,12 +690,15 @@ class LevelLoader {
 
 		level.complexity = 0;
 
-		const loadLevelNodes = (nodes, parentNode) => {
-			for (let node of nodes ?? []) {
+		const loadLevelNodes = (
+			nodes: (LevelNode | undefined)[],
+			parentNode: LevelNodeObject | THREE.Scene,
+		) => {
+			for (const node of nodes) {
 				if (!node) continue;
-				let object = undefined;
+				let object: LevelNodeObject | undefined = undefined;
 				if (node.levelNodeGroup) {
-					object = new THREE.Object3D();
+					object = new THREE.Object3D() as LevelNodeObject;
 					parentNode.add(object);
 					object.position.x = node.levelNodeGroup.position?.x ?? 0;
 					object.position.y = node.levelNodeGroup.position?.y ?? 0;
@@ -606,15 +715,17 @@ class LevelLoader {
 
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
-					object.isGroup = true;
 
 					level.nodes.all.push(object); // before children
 					object.userData.id = level.nodes.all.length;
-					loadLevelNodes(node.levelNodeGroup.childNodes, object);
+					loadLevelNodes(
+						node.levelNodeGroup.childNodes ?? [],
+						object,
+					);
 
 					level.nodes.levelNodeGroup.push(object);
 				} else if (node.levelNodeGravity) {
-					object = new THREE.Object3D();
+					object = new THREE.Object3D() as LevelNodeObject;
 					object.position.x = node.levelNodeGravity.position?.x ?? 0;
 					object.position.y = node.levelNodeGravity.position?.y ?? 0;
 					object.position.z = node.levelNodeGravity.position?.z ?? 0;
@@ -636,15 +747,15 @@ class LevelLoader {
 					object.initialRotation = object.quaternion.clone();
 
 					if (!node.levelNodeGravity.hideParticles) {
-						let particleGeometry = new THREE.BufferGeometry();
+						const particleGeometry = new THREE.BufferGeometry();
 
 						let particleColor = new THREE.Color(1.0, 1.0, 1.0);
-						if (node.levelNodeGravity?.mode != 0) {
+						if (node.levelNodeGravity.mode != 0) {
 							particleColor = new THREE.Color(1.0, 0.6, 0.6);
 						}
 
-						let lifeSpan = 1;
-						let particleCount = Math.min(
+						const lifeSpan = 1;
+						const particleCount = Math.min(
 							Math.floor(
 								object.scale.x *
 									object.scale.y *
@@ -654,7 +765,7 @@ class LevelLoader {
 							2000,
 						);
 
-						let size = 0.1;
+						const size = 0.1;
 
 						const initialPositions = new Float32Array(
 							particleCount * 3,
@@ -663,9 +774,9 @@ class LevelLoader {
 						const scales = new Float32Array(particleCount);
 						const lifeSpans = new Float32Array(particleCount);
 
-						let worldPosition = new THREE.Vector3();
-						let worldScale = new THREE.Vector3();
-						let worldQuaternion = new THREE.Quaternion();
+						const worldPosition = new THREE.Vector3();
+						const worldScale = new THREE.Vector3();
+						const worldQuaternion = new THREE.Quaternion();
 						object.getWorldPosition(worldPosition);
 						object.getWorldScale(worldScale);
 						object.getWorldQuaternion(worldQuaternion);
@@ -675,7 +786,7 @@ class LevelLoader {
 
 							scales[i] = size;
 
-							let particlePosition = new THREE.Vector3(
+							const particlePosition = new THREE.Vector3(
 								(Math.random() - 0.5) * worldScale.x,
 								(Math.random() - 0.5) * worldScale.y,
 								(Math.random() - 0.5) * worldScale.z,
@@ -710,27 +821,30 @@ class LevelLoader {
 							new THREE.Float32BufferAttribute(scales, 1),
 						);
 
-						let particleMaterial = objectMaterials[7].clone();
+						const particleMaterial = objectMaterials[7].clone();
 
-						let particlePoints = new THREE.Points(
+						const particlePoints = new THREE.Points(
 							particleGeometry,
 							particleMaterial,
 						);
 
 						scene.add(particlePoints);
 
-						object.userData.update = (delta) => {
-							const positions =
-								particleGeometry.attributes.position.array;
+						object.userData.update = (delta: number) => {
+							if (!object || !node.levelNodeGravity) return;
 
-							let newWorldPosition = new THREE.Vector3();
-							let newWorldScale = new THREE.Vector3();
-							let newWorldQuaternion = new THREE.Quaternion();
+							const positions =
+								particleGeometry.attributes.position?.array ??
+								[];
+
+							const newWorldPosition = new THREE.Vector3();
+							const newWorldScale = new THREE.Vector3();
+							const newWorldQuaternion = new THREE.Quaternion();
 							object.getWorldPosition(newWorldPosition);
 							object.getWorldScale(newWorldScale);
 							object.getWorldQuaternion(newWorldQuaternion);
 
-							let velocity = new THREE.Vector3(
+							const velocity = new THREE.Vector3(
 								node.levelNodeGravity.direction?.x ?? 0,
 								node.levelNodeGravity.direction?.y ?? 0,
 								node.levelNodeGravity.direction?.z ?? 0,
@@ -738,11 +852,11 @@ class LevelLoader {
 							velocity.applyQuaternion(newWorldQuaternion);
 
 							for (let i = 0; i < particleCount; i++) {
-								lifeSpans[i] -= delta;
-								if (lifeSpans[i] <= 0) {
+								lifeSpans[i]! -= delta;
+								if (lifeSpans[i]! <= 0) {
 									lifeSpans[i] = lifeSpan;
 
-									let particlePosition = new THREE.Vector3(
+									const particlePosition = new THREE.Vector3(
 										(Math.random() - 0.5) * newWorldScale.x,
 										(Math.random() - 0.5) * newWorldScale.y,
 										(Math.random() - 0.5) * newWorldScale.z,
@@ -758,12 +872,14 @@ class LevelLoader {
 									positions[i * 3 + 2] =
 										newWorldPosition.z + particlePosition.z;
 								}
-								positions[i * 3] += velocity.x * delta;
-								positions[i * 3 + 1] += velocity.y * delta;
-								positions[i * 3 + 2] += velocity.z * delta;
+								positions[i * 3]! += velocity.x * delta;
+								positions[i * 3 + 1]! += velocity.y * delta;
+								positions[i * 3 + 2]! += velocity.z * delta;
 							}
 
-							particleGeometry.attributes.position.needsUpdate = true;
+							particleGeometry.getAttribute(
+								'position',
+							).needsUpdate = true;
 						};
 					}
 
@@ -772,7 +888,7 @@ class LevelLoader {
 					level.nodes.levelNodeGravity.push(object);
 					level.complexity += 10;
 				} else if (node.levelNodeParticleEmitter) {
-					object = new THREE.Object3D();
+					object = new THREE.Object3D() as LevelNodeObject;
 					object.position.x =
 						node.levelNodeParticleEmitter.position?.x ?? 0;
 					object.position.y =
@@ -799,57 +915,57 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let particleGeometry = new THREE.BufferGeometry();
+					const particleGeometry = new THREE.BufferGeometry();
 
-					let particlesPerSecond =
+					const particlesPerSecond =
 						node.levelNodeParticleEmitter.particlesPerSecond ?? 0;
 
-					let lifeSpanMin =
+					const lifeSpanMin =
 						node.levelNodeParticleEmitter.lifeSpan?.x ?? 0;
-					let lifeSpanMax =
+					const lifeSpanMax =
 						node.levelNodeParticleEmitter.lifeSpan?.y ?? 0;
-					let particleCount = Math.min(
+					const particleCount = Math.min(
 						Math.floor(particlesPerSecond * lifeSpanMax),
 						1000,
 					);
 
-					let startSizeMin =
+					const startSizeMin =
 						(node.levelNodeParticleEmitter.startSize?.x ?? 0) * 2;
-					let startSizeMax =
+					const startSizeMax =
 						(node.levelNodeParticleEmitter.startSize?.y ?? 0) * 2;
-					let endSizeMin =
+					const endSizeMin =
 						(node.levelNodeParticleEmitter.endSize?.x ?? 0) * 2;
-					let endSizeMax =
+					const endSizeMax =
 						(node.levelNodeParticleEmitter.endSize?.y ?? 0) * 2;
 
-					let velocityMin = new THREE.Vector3(
+					const velocityMin = new THREE.Vector3(
 						node.levelNodeParticleEmitter.velocityMin?.x ?? 0,
 						node.levelNodeParticleEmitter.velocityMin?.y ?? 0,
 						node.levelNodeParticleEmitter.velocityMin?.z ?? 0,
 					);
-					let velocityMax = new THREE.Vector3(
+					const velocityMax = new THREE.Vector3(
 						node.levelNodeParticleEmitter.velocityMax?.x ?? 0,
 						node.levelNodeParticleEmitter.velocityMax?.y ?? 0,
 						node.levelNodeParticleEmitter.velocityMax?.z ?? 0,
 					);
 
-					let accelerationMin = new THREE.Vector3(
+					const accelerationMin = new THREE.Vector3(
 						node.levelNodeParticleEmitter.accelerationMin?.x ?? 0,
 						node.levelNodeParticleEmitter.accelerationMin?.y ?? 0,
 						node.levelNodeParticleEmitter.accelerationMin?.z ?? 0,
 					);
-					let accelerationMax = new THREE.Vector3(
+					const accelerationMax = new THREE.Vector3(
 						node.levelNodeParticleEmitter.accelerationMax?.x ?? 0,
 						node.levelNodeParticleEmitter.accelerationMax?.y ?? 0,
 						node.levelNodeParticleEmitter.accelerationMax?.z ?? 0,
 					);
 
-					let startColor = [
+					const startColor: [number, number, number] = [
 						node.levelNodeParticleEmitter.startColor?.r ?? 0,
 						node.levelNodeParticleEmitter.startColor?.g ?? 0,
 						node.levelNodeParticleEmitter.startColor?.b ?? 0,
 					];
-					let endColor = [
+					const endColor: [number, number, number] = [
 						node.levelNodeParticleEmitter.endColor?.r ?? 0,
 						node.levelNodeParticleEmitter.endColor?.g ?? 0,
 						node.levelNodeParticleEmitter.endColor?.b ?? 0,
@@ -868,13 +984,13 @@ class LevelLoader {
 					const velocities = new Float32Array(particleCount * 3);
 					const accelerations = new Float32Array(particleCount * 3);
 
-					const randRange = (min, max) => {
+					const randRange = (min: number, max: number) => {
 						return Math.random() * (max - min) + min;
 					};
 
 					for (let i = 0; i < particleCount; i++) {
 						totalLifeSpans[i] = randRange(lifeSpanMin, lifeSpanMax);
-						lifeSpans[i] = Math.random() * totalLifeSpans[i];
+						lifeSpans[i] = Math.random() * totalLifeSpans[i]!;
 					}
 
 					particleGeometry.setAttribute(
@@ -890,9 +1006,9 @@ class LevelLoader {
 						new THREE.Float32BufferAttribute(initialScales, 1),
 					);
 
-					let particleMaterial = objectMaterials[7].clone();
+					const particleMaterial = objectMaterials[7].clone();
 
-					let particlePoints = new THREE.Points(
+					const particlePoints = new THREE.Points(
 						particleGeometry,
 						particleMaterial,
 					);
@@ -900,29 +1016,33 @@ class LevelLoader {
 					particlePoints.frustumCulled = false;
 					scene.add(particlePoints);
 					parentNode.add(object);
-					object.userData.update = (delta) => {
-						const positions =
-							particleGeometry.attributes.position.array;
-						const colors = particleGeometry.attributes.color.array;
-						const scales = particleGeometry.attributes.scale.array;
+					object.userData.update = (delta: number) => {
+						if (!object) return;
 
-						let worldPosition = new THREE.Vector3();
-						let worldScale = new THREE.Vector3();
-						let worldQuaternion = new THREE.Quaternion();
+						const positions =
+							particleGeometry.getAttribute('position').array;
+						const colors =
+							particleGeometry.getAttribute('color').array;
+						const scales =
+							particleGeometry.getAttribute('scale').array;
+
+						const worldPosition = new THREE.Vector3();
+						const worldScale = new THREE.Vector3();
+						const worldQuaternion = new THREE.Quaternion();
 						object.getWorldPosition(worldPosition);
 						object.getWorldScale(worldScale);
 						object.getWorldQuaternion(worldQuaternion);
 
-						let velocityMaxRotated = new THREE.Vector3().copy(
+						const velocityMaxRotated = new THREE.Vector3().copy(
 							velocityMax,
 						);
-						let velocityMinRotated = new THREE.Vector3().copy(
+						const velocityMinRotated = new THREE.Vector3().copy(
 							velocityMin,
 						);
-						let accelerationMinRotated = new THREE.Vector3().copy(
+						const accelerationMinRotated = new THREE.Vector3().copy(
 							accelerationMin,
 						);
-						let accelerationMaxRotated = new THREE.Vector3().copy(
+						const accelerationMaxRotated = new THREE.Vector3().copy(
 							accelerationMax,
 						);
 						velocityMaxRotated.applyQuaternion(worldQuaternion);
@@ -931,14 +1051,14 @@ class LevelLoader {
 						accelerationMaxRotated.applyQuaternion(worldQuaternion);
 
 						for (let i = 0; i < particleCount; i++) {
-							lifeSpans[i] -= delta;
-							if (lifeSpans[i] <= 0) {
-								delta = -lifeSpans[i];
+							lifeSpans[i]! -= delta;
+							if (lifeSpans[i]! <= 0) {
+								delta = -lifeSpans[i]!;
 								totalLifeSpans[i] = randRange(
 									lifeSpanMin,
 									lifeSpanMax,
 								);
-								lifeSpans[i] = totalLifeSpans[i];
+								lifeSpans[i] = totalLifeSpans[i]!;
 
 								startSizes[i] = randRange(
 									startSizeMin,
@@ -972,7 +1092,7 @@ class LevelLoader {
 									accelerationMaxRotated.z,
 								);
 
-								let particlePosition = new THREE.Vector3(
+								const particlePosition = new THREE.Vector3(
 									(Math.random() - 0.5) * worldScale.x,
 									(Math.random() - 0.5) * worldScale.y,
 									(Math.random() - 0.5) * worldScale.z,
@@ -989,10 +1109,10 @@ class LevelLoader {
 									worldPosition.z + particlePosition.z;
 							}
 							const lifeFactor =
-								1 - lifeSpans[i] / totalLifeSpans[i];
+								1 - lifeSpans[i]! / totalLifeSpans[i]!;
 							scales[i] = THREE.MathUtils.lerp(
-								startSizes[i],
-								endSizes[i],
+								startSizes[i]!,
+								endSizes[i]!,
 								lifeFactor,
 							);
 
@@ -1012,22 +1132,25 @@ class LevelLoader {
 								lifeFactor,
 							);
 
-							positions[i * 3] += velocities[i * 3] * delta;
-							positions[i * 3 + 1] +=
-								velocities[i * 3 + 1] * delta;
-							positions[i * 3 + 2] +=
-								velocities[i * 3 + 2] * delta;
+							positions[i * 3]! += velocities[i * 3]! * delta;
+							positions[i * 3 + 1]! +=
+								velocities[i * 3 + 1]! * delta;
+							positions[i * 3 + 2]! +=
+								velocities[i * 3 + 2]! * delta;
 
-							velocities[i * 3] += accelerations[i * 3] * delta;
-							velocities[i * 3 + 1] +=
-								accelerations[i * 3 + 1] * delta;
-							velocities[i * 3 + 2] +=
-								accelerations[i * 3 + 2] * delta;
+							velocities[i * 3]! += accelerations[i * 3]! * delta;
+							velocities[i * 3 + 1]! +=
+								accelerations[i * 3 + 1]! * delta;
+							velocities[i * 3 + 2]! +=
+								accelerations[i * 3 + 2]! * delta;
 						}
 
-						particleGeometry.attributes.position.needsUpdate = true;
-						particleGeometry.attributes.color.needsUpdate = true;
-						particleGeometry.attributes.scale.needsUpdate = true;
+						particleGeometry.getAttribute('position').needsUpdate =
+							true;
+						particleGeometry.getAttribute('color').needsUpdate =
+							true;
+						particleGeometry.getAttribute('scale').needsUpdate =
+							true;
 					};
 
 					if (this.options.static) {
@@ -1045,7 +1168,7 @@ class LevelLoader {
 								Math.max(node.levelNodeStatic.material ?? 0, 0),
 								materials.length - 1,
 							)
-						];
+						]!;
 
 					// Neon
 					if (
@@ -1056,7 +1179,7 @@ class LevelLoader {
 						material = objectMaterials[3];
 					}
 
-					let newMaterial = material.clone();
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
@@ -1097,13 +1220,13 @@ class LevelLoader {
 								node.levelNodeStatic.color2.b ?? 0,
 							];
 							if (node.levelNodeStatic.gradientDirection) {
-								let x =
+								const x =
 									node.levelNodeStatic.gradientDirection.x ??
 									0;
-								let y =
+								const y =
 									node.levelNodeStatic.gradientDirection.y ??
 									0;
-								let z =
+								const z =
 									node.levelNodeStatic.gradientDirection.z ??
 									0;
 								if (x != 0 || y != 0 || z != 0) {
@@ -1113,7 +1236,7 @@ class LevelLoader {
 							}
 						}
 
-						let specularFactor =
+						const specularFactor =
 							Math.sqrt(
 								(node.levelNodeStatic.color1.r ?? 0) *
 									(node.levelNodeStatic.color1.r ?? 0) +
@@ -1122,7 +1245,7 @@ class LevelLoader {
 									(node.levelNodeStatic.color1.b ?? 0) *
 										(node.levelNodeStatic.color1.b ?? 0),
 							) * 0.15;
-						let specularColor = [
+						let specularColor: [number, number, number, number] = [
 							specularFactor,
 							specularFactor,
 							specularFactor,
@@ -1168,7 +1291,8 @@ class LevelLoader {
 							)
 						],
 						newMaterial,
-					);
+					) as unknown as LevelNodeObject;
+
 					parentNode.add(object);
 					object.position.x = node.levelNodeStatic.position?.x ?? 0;
 					object.position.y = node.levelNodeStatic.position?.y ?? 0;
@@ -1186,16 +1310,16 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let targetVector = new THREE.Vector3();
-					let targetQuaternion = new THREE.Quaternion();
-					let worldMatrix = new THREE.Matrix4();
+					const targetVector = new THREE.Vector3();
+					const targetQuaternion = new THREE.Quaternion();
+					const worldMatrix = new THREE.Matrix4();
 					worldMatrix.compose(
 						object.getWorldPosition(targetVector),
 						object.getWorldQuaternion(targetQuaternion),
 						object.getWorldScale(targetVector),
 					);
 
-					let normalMatrix = new THREE.Matrix3();
+					const normalMatrix = new THREE.Matrix3();
 					normalMatrix.getNormalMatrix(worldMatrix);
 					newMaterial.uniforms.worldNormalMatrix.value = normalMatrix;
 					newMaterial.uniforms.frozenNormalMatrix.value =
@@ -1210,8 +1334,8 @@ class LevelLoader {
 					level.nodes.levelNodeStatic.push(object);
 					level.complexity += 2;
 				} else if (node.levelNodeCrumbling) {
-					let material = materials[7];
-					let newMaterial = material.clone();
+					const material = materials[7];
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
@@ -1227,7 +1351,8 @@ class LevelLoader {
 							)
 						],
 						newMaterial,
-					);
+					) as unknown as LevelNodeObject;
+
 					parentNode.add(object);
 					object.position.x =
 						node.levelNodeCrumbling.position?.x ?? 0;
@@ -1252,16 +1377,16 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let targetVector = new THREE.Vector3();
-					let targetQuaternion = new THREE.Quaternion();
-					let worldMatrix = new THREE.Matrix4();
+					const targetVector = new THREE.Vector3();
+					const targetQuaternion = new THREE.Quaternion();
+					const worldMatrix = new THREE.Matrix4();
 					worldMatrix.compose(
 						object.getWorldPosition(targetVector),
 						object.getWorldQuaternion(targetQuaternion),
 						object.getWorldScale(targetVector),
 					);
 
-					let normalMatrix = new THREE.Matrix3();
+					const normalMatrix = new THREE.Matrix3();
 					normalMatrix.getNormalMatrix(worldMatrix);
 					newMaterial.uniforms.worldNormalMatrix.value = normalMatrix;
 					newMaterial.uniforms.frozenNormalMatrix.value =
@@ -1294,7 +1419,7 @@ class LevelLoader {
 						material = objectMaterials[4];
 					}
 
-					let newMaterial = material.clone();
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
@@ -1312,7 +1437,7 @@ class LevelLoader {
 							)
 						],
 						newMaterial,
-					);
+					) as unknown as LevelNodeObject;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeTrigger.position?.x ?? 0;
@@ -1335,22 +1460,21 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let targetVector = new THREE.Vector3();
-					let targetQuaternion = new THREE.Quaternion();
-					let worldMatrix = new THREE.Matrix4();
+					const targetVector = new THREE.Vector3();
+					const targetQuaternion = new THREE.Quaternion();
+					const worldMatrix = new THREE.Matrix4();
 					worldMatrix.compose(
 						object.getWorldPosition(targetVector),
 						object.getWorldQuaternion(targetQuaternion),
 						object.getWorldScale(targetVector),
 					);
 
-					let normalMatrix = new THREE.Matrix3();
+					const normalMatrix = new THREE.Matrix3();
 					normalMatrix.getNormalMatrix(worldMatrix);
 					newMaterial.uniforms.worldNormalMatrix.value = normalMatrix;
 					newMaterial.uniforms.frozenNormalMatrix.value =
 						normalMatrix;
 
-					object.isTrigger = true;
 					object.visible = this.options.triggers;
 
 					level.nodes.shape[
@@ -1359,15 +1483,18 @@ class LevelLoader {
 					level.nodes.levelNodeTrigger.push(object);
 					level.complexity += 3;
 				} else if (node.levelNodeGASM) {
-					let material = objectMaterials[9];
+					const material = objectMaterials[9];
 
-					let newMaterial = material.clone();
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(shapes[0], newMaterial);
+					object = new THREE.Mesh(
+						shapes[0],
+						newMaterial,
+					) as unknown as LevelNodeObject;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeGASM.position?.x ?? 0;
@@ -1386,36 +1513,38 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let targetVector = new THREE.Vector3();
-					let targetQuaternion = new THREE.Quaternion();
-					let worldMatrix = new THREE.Matrix4();
+					const targetVector = new THREE.Vector3();
+					const targetQuaternion = new THREE.Quaternion();
+					const worldMatrix = new THREE.Matrix4();
 					worldMatrix.compose(
 						object.getWorldPosition(targetVector),
 						object.getWorldQuaternion(targetQuaternion),
 						object.getWorldScale(targetVector),
 					);
 
-					let normalMatrix = new THREE.Matrix3();
+					const normalMatrix = new THREE.Matrix3();
 					normalMatrix.getNormalMatrix(worldMatrix);
 					newMaterial.uniforms.worldNormalMatrix.value = normalMatrix;
 					newMaterial.uniforms.frozenNormalMatrix.value =
 						normalMatrix;
 
-					object.isGASM = true;
 					object.visible = this.options.GASM;
 
 					level.nodes.levelNodeGASM.push(object);
 					level.complexity += 5;
 				} else if (node.levelNodeSound) {
-					let material = objectMaterials[8];
+					const material = objectMaterials[8];
 
-					let newMaterial = material.clone();
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(shapes[1], newMaterial);
+					object = new THREE.Mesh(
+						shapes[1],
+						newMaterial,
+					) as unknown as LevelNodeObject;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeSound.position?.x ?? 0;
@@ -1429,36 +1558,38 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let targetVector = new THREE.Vector3();
-					let targetQuaternion = new THREE.Quaternion();
-					let worldMatrix = new THREE.Matrix4();
+					const targetVector = new THREE.Vector3();
+					const targetQuaternion = new THREE.Quaternion();
+					const worldMatrix = new THREE.Matrix4();
 					worldMatrix.compose(
 						object.getWorldPosition(targetVector),
 						object.getWorldQuaternion(targetQuaternion),
 						object.getWorldScale(targetVector),
 					);
 
-					let normalMatrix = new THREE.Matrix3();
+					const normalMatrix = new THREE.Matrix3();
 					normalMatrix.getNormalMatrix(worldMatrix);
 					newMaterial.uniforms.worldNormalMatrix.value = normalMatrix;
 					newMaterial.uniforms.frozenNormalMatrix.value =
 						normalMatrix;
 
-					object.isSound = true;
 					object.visible = this.options.sound;
 
 					level.nodes.levelNodeSound.push(object);
 					level.complexity += 8;
 				} else if (node.levelNodeLight) {
-					let material = objectMaterials[12];
+					const material = objectMaterials[12];
 
-					let newMaterial = material.clone();
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(shapes[1], newMaterial);
+					object = new THREE.Mesh(
+						shapes[1],
+						newMaterial,
+					) as unknown as LevelNodeObject;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeLight.position?.x ?? 0;
@@ -1472,22 +1603,21 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let targetVector = new THREE.Vector3();
-					let targetQuaternion = new THREE.Quaternion();
-					let worldMatrix = new THREE.Matrix4();
+					const targetVector = new THREE.Vector3();
+					const targetQuaternion = new THREE.Quaternion();
+					const worldMatrix = new THREE.Matrix4();
 					worldMatrix.compose(
 						object.getWorldPosition(targetVector),
 						object.getWorldQuaternion(targetQuaternion),
 						object.getWorldScale(targetVector),
 					);
 
-					let normalMatrix = new THREE.Matrix3();
+					const normalMatrix = new THREE.Matrix3();
 					normalMatrix.getNormalMatrix(worldMatrix);
 					newMaterial.uniforms.worldNormalMatrix.value = normalMatrix;
 					newMaterial.uniforms.frozenNormalMatrix.value =
 						normalMatrix;
 
-					object.isLightNode = true;
 					object.visible = this.options.light;
 
 					level.nodes.levelNodeLight.push(object);
@@ -1499,12 +1629,18 @@ class LevelLoader {
 						(decoded.defaultSpawnPointID ?? 0) - 1 ==
 							level.nodes.all.length;
 					if (isDefaultSpawn) {
-						object = new THREE.Mesh(objects[0], objectMaterials[0]);
+						object = new THREE.Mesh(
+							objects[0],
+							objectMaterials[0],
+						) as unknown as LevelNodeObject;
 						object.add(
 							new THREE.Mesh(objects[2], objectMaterials[10]),
 						);
 					} else {
-						object = new THREE.Mesh(objects[0], objectMaterials[6]);
+						object = new THREE.Mesh(
+							objects[0],
+							objectMaterials[6],
+						) as unknown as LevelNodeObject;
 						object.add(
 							new THREE.Mesh(objects[2], objectMaterials[11]),
 						);
@@ -1534,10 +1670,7 @@ class LevelLoader {
 
 					const spawnName = node.levelNodeStart.name;
 					if (spawnName && spawnName.length > 0) {
-						level.nodes.namedSpawns[spawnName] = {
-							position: object.position.clone(),
-							quaternion: object.quaternion.clone(),
-						};
+						level.nodes.namedSpawns[spawnName] = object;
 					}
 
 					if (isDefaultSpawn) {
@@ -1546,7 +1679,10 @@ class LevelLoader {
 
 					level.nodes.levelNodeStart.push(object);
 				} else if (node.levelNodeFinish) {
-					object = new THREE.Mesh(objects[0], objectMaterials[1]);
+					object = new THREE.Mesh(
+						objects[0],
+						objectMaterials[1],
+					) as unknown as LevelNodeObject;
 					parentNode.add(object);
 					object.position.x = node.levelNodeFinish.position?.x ?? 0;
 					object.position.y = node.levelNodeFinish.position?.y ?? 0;
@@ -1560,14 +1696,17 @@ class LevelLoader {
 
 					level.nodes.levelNodeFinish.push(object);
 				} else if (node.levelNodeSign) {
-					let material = objectMaterials[2];
-					let newMaterial = material.clone();
+					const material = objectMaterials[2];
+					const newMaterial = material.clone();
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
 					object = node.levelNodeSign.hideModel
-						? new THREE.Mesh()
-						: new THREE.Mesh(objects[1], newMaterial);
+						? (new THREE.Mesh() as unknown as LevelNodeObject)
+						: (new THREE.Mesh(
+								objects[1],
+								newMaterial,
+							) as unknown as LevelNodeObject);
 					parentNode.add(object);
 					object.position.x = node.levelNodeSign.position?.x ?? 0;
 					object.position.y = node.levelNodeSign.position?.y ?? 0;
@@ -1591,18 +1730,18 @@ class LevelLoader {
 					object.initialPosition = object.position.clone();
 					object.initialRotation = object.quaternion.clone();
 
-					let signText = node.levelNodeSign.text;
+					const signText = node.levelNodeSign.text;
 
 					if (signText && this.options.text) {
-						let letterSize = 0.059; //Size of the text characters
-						const processString = (inputStr) => {
-							let words = inputStr.split(/\s+/);
+						const letterSize = 0.059; //Size of the text characters
+						const processString = (inputStr: string) => {
+							const words = inputStr.split(/\s+/);
 							let currentLineWidth = 0;
 							let finalStr = '';
 
 							words.forEach((word) => {
-								let wordLength = word.length + 1;
-								let wordWidth = wordLength * letterSize;
+								const wordLength = word.length + 1;
+								const wordWidth = wordLength * letterSize;
 
 								/* 1.2 is a magical number to represent the width of the sign */
 								if (currentLineWidth + wordWidth >= 1.2) {
@@ -1626,11 +1765,12 @@ class LevelLoader {
 							color.b = node.levelNodeSign.color.b ?? 0;
 						}
 						const lines = processedText.split('\n');
-						lines.forEach((line, index) => {
+						for (const [index, line] of lines.entries()) {
 							const textGeometry = new TextGeometry(line, {
-								font: this.font,
+								font: this.font!,
 								size: letterSize,
-								height: 0.0,
+								// @ts-expect-error height does exist
+								height: 0,
 								curveSegments: 1,
 								bevelEnabled: false,
 							});
@@ -1646,9 +1786,11 @@ class LevelLoader {
 							textGeometry.computeBoundingBox();
 							const boundingBox = textGeometry.boundingBox;
 							const textWidth =
-								boundingBox.max.x - boundingBox.min.x;
+								(boundingBox?.max.x ?? 0) -
+								(boundingBox?.min.x ?? 0);
 							const textHeight =
-								boundingBox.max.y - boundingBox.min.y;
+								(boundingBox?.max.y ?? 0) -
+								(boundingBox?.min.y ?? 0);
 
 							const verticalSpacing =
 								(textHeight + 0.2 * (index + 1)) / 2;
@@ -1662,7 +1804,7 @@ class LevelLoader {
 							);
 
 							object.add(textMesh);
-						});
+						}
 					}
 
 					level.nodes.levelNodeSign.push(object);
@@ -1670,7 +1812,17 @@ class LevelLoader {
 				}
 
 				if (object !== undefined) {
-					if (!object.isGroup) {
+					// set object.userData.is<NodeType>
+					const nodeTypeEntry = Object.entries(node).find((entry) =>
+						entry[0].startsWith('levelNode'),
+					);
+					if (nodeTypeEntry) {
+						object.userData[
+							nodeTypeEntry[0].replace('levelNode', 'is')
+						] = true;
+					}
+
+					if (!object.userData.isGroup) {
 						level.nodes.all.push(object);
 						object.userData.id = level.nodes.all.length;
 					}
@@ -1697,30 +1849,28 @@ class LevelLoader {
 			}
 		};
 
-		loadLevelNodes(decoded.levelNodes, scene);
+		loadLevelNodes(decoded.levelNodes ?? [], scene);
 
 		return level;
 	}
 }
 
 function getMaterialForTexture(
-	name,
-	tileFactor,
-	vertexShader,
-	fragmentShader,
-	specularColor = [0.3, 0.3, 0.3, 16.0],
+	name: string,
+	tileFactor: number,
+	vertexShader: string,
+	fragmentShader: string,
+	specularColor: [number, number, number, number] = [0.3, 0.3, 0.3, 16.0],
 	neonEnabled = 0.0,
 	isLava = 0.0,
 	fogEnabled = 1.0,
-) {
-	let material = new THREE.ShaderMaterial();
-	material.vertexShader = vertexShader;
-	material.fragmentShader = fragmentShader;
-	material.flatShading = true;
-	material.lights = true;
+): LevelNodeShaderMaterial {
+	const texture = textureLoader.load(name);
+	texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+	texture.colorSpace = THREE.SRGBColorSpace;
 
-	material.uniforms = {
-		colorTexture: { value: null },
+	const uniforms: LevelNodeUniforms = {
+		colorTexture: { value: texture },
 		tileFactor: { value: tileFactor },
 		diffuseColor: { value: [1.0, 1.0, 1.0] },
 		worldNormalMatrix: { value: new THREE.Matrix3() },
@@ -1739,29 +1889,35 @@ function getMaterialForTexture(
 		gradientDirection: { value: [0.0, 1.0, 0.0] },
 	};
 
-	material.uniforms.colorTexture.value = textureLoader.load(name);
-	material.uniforms.colorTexture.value.wrapS =
-		material.uniforms.colorTexture.value.wrapT = THREE.RepeatWrapping;
-	material.uniforms.colorTexture.value.colorSpace = THREE.SRGBColorSpace;
-
-	material.uniforms = THREE.UniformsUtils.merge([
-		THREE.ShaderLib.standard.uniforms,
-		material.uniforms,
-	]);
-
-	return material;
+	return new THREE.ShaderMaterial({
+		vertexShader,
+		fragmentShader,
+		lights: true,
+		uniforms: THREE.UniformsUtils.merge([
+			THREE.ShaderLib.standard.uniforms,
+			uniforms,
+		]),
+	}) as LevelNodeShaderMaterial;
 }
 
-async function getGeometryForModel(name) {
-	return new Promise((resolve) => {
-		gltfLoader.load(name, resolve);
-	}).then(function (gltf) {
-		return gltf.scene.children[0].geometry;
+async function getGeometryForModel(
+	name: string,
+): Promise<THREE.BufferGeometry> {
+	const gltf: GLTF = await new Promise((resolve, reject) => {
+		gltfLoader.load(name, resolve, undefined, reject);
 	});
+
+	const object = gltf.scene.children[0];
+
+	if (!(object instanceof THREE.Mesh)) {
+		throw new Error('Models first child is not a Mesh');
+	}
+
+	return object.geometry;
 }
 
-function updateObjectAnimation(object, time) {
-	let animation = object.userData.animation;
+function updateObjectAnimation(object: LevelNodeObject, time: number) {
+	const animation = object.userData.animation;
 	if (!animation) return;
 	const animationFrames = animation.frames;
 	if (!animationFrames) return;
@@ -1795,7 +1951,7 @@ function updateObjectAnimation(object, time) {
 	}
 
 	let factor = 0.0;
-	let timeDiff = (newFrame.time ?? 0) - (oldFrame.time ?? 0);
+	const timeDiff = (newFrame.time ?? 0) - (oldFrame.time ?? 0);
 	if (Math.abs(timeDiff) > 0.00000001) {
 		//Prevent dividing by 0 if time of both frames is equal
 		factor = (relativeTime - (oldFrame.time ?? 0)) / timeDiff;
@@ -1838,7 +1994,7 @@ function updateObjectAnimation(object, time) {
 	);
 }
 
-function updateObjectParticles(object, delta) {
+function updateObjectParticles(object: LevelNodeObject, delta: number) {
 	object.userData.update?.(delta); // TODO: actually move the logic here
 }
 
