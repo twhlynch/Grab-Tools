@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 # get old version from package.json
-old_version=$(node -p "require('./package.json').version")
+old_version=$(node -p "require('website/package.json').version")
 
 # update with pnpm
 pnpm version "$1" --no-git-tag-version
+cd website
+pnpm version "$1" --no-git-tag-version
+cd -
 
 # get new version from package.json
-new_version=$(node -p "require('./package.json').version")
+new_version=$(node -p "require('website/package.json').version")
 
 # format android version
 IFS='.' read -r major minor patch <<<"$new_version"
@@ -18,19 +21,19 @@ else
 fi
 
 # update version in tauri.properties
-cat <<EOF >src-tauri/gen/android/app/tauri.properties
+cat <<EOF >website/src-tauri/gen/android/app/tauri.properties
 tauri.android.versionName=${new_version}
 tauri.android.versionCode=${android_version}
 EOF
 
 # update version in Cargo.toml
-sed -i '' "s/^version = \"${old_version}\"/version = \"${new_version}\"/" src-tauri/Cargo.toml
+sed -i '' "s/^version = \"${old_version}\"/version = \"${new_version}\"/" website/src-tauri/Cargo.toml
 
 # run cargo check to update lock
-cd src-tauri
+cd website/src-tauri
 cargo check
-cd ..
+cd -
 
 # add modified files and commit
-git add package.json pnpm-lock.yaml pnpm-workspace.yaml src-tauri/Cargo.toml src-tauri/Cargo.lock src-tauri/gen/android/app/tauri.properties
+git add package.json pnpm-lock.yaml pnpm-workspace.yaml website/package.json website/src-tauri/Cargo.toml website/src-tauri/Cargo.lock website/src-tauri/gen/android/app/tauri.properties
 git commit -m "chore: bump version to ${new_version}"

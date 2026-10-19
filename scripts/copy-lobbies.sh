@@ -5,7 +5,7 @@ if [ "$(whoami)" != "twhlynch" ]; then
 	exit 1
 fi
 
-dest_dir="public/levels/lobbies"
+dest_dir="website/public/levels/lobbies"
 source_dir="../../root/Games/GRAB-Game/levels/lobbies"
 
 cp -r "$source_dir"/* "$dest_dir"/

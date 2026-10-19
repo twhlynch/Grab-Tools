@@ -13,7 +13,9 @@
 		"lint:fix": "eslint . --fix",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"check": "pnpm typecheck && pnpm lint && pnpm format"
+		"check": "pnpm typecheck && pnpm lint && pnpm format",
+		"tauri": "pnpm --filter @grab-tools/website tauri build",
+		"android": "pnpm --filter @grab-tools/website tauri android build"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
