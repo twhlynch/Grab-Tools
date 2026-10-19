@@ -86,4 +86,5 @@ export default defineConfig({
 		},
 	},
 	clearScreen: false,
+	envDir: '..',
 });
