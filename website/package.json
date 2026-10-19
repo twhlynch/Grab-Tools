@@ -1,5 +1,5 @@
 {
-	"name": "grab-tools",
+	"name": "@grab-tools/website",
 	"version": "0.25.0",
 	"private": true,
 	"type": "module",
@@ -16,12 +16,8 @@
 		"format:ci": "prettier --check src/",
 		"launch": "open https://localhost:5173/ && pnpm dev",
 		"check": "pnpm typecheck && pnpm lint && pnpm format",
-		"tauri": "tauri",
-		"proto": "pnpm exec pbts -i src/assets/proto/proto.proto -o src/generated/proto.ts && echo 'You will have to manually clean up the file as it may have errors'",
-		"helpers": "jiti scripts/generate-helpers.ts && pnpm exec prettier --write src/generated/helpers.ts",
-		"nodes": "jiti scripts/generate-node-helpers.ts && pnpm exec prettier --write src/generated/nodes.ts"
+		"tauri": "tauri"
 	},
-	"packageManager": "pnpm@11.25.0",
 	"dependencies": {
 		"@codemirror/autocomplete": "^6.20.3",
 		"@codemirror/commands": "^6.11.1",
@@ -49,28 +45,15 @@
 		"vue-router": "^5.1.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^10.0.1",
 		"@tauri-apps/cli": "^2.11.3",
 		"@types/node": "^26.0.0",
 		"@types/three": "^0.181.0",
-		"@typescript-eslint/parser": "^8.71.2",
 		"@vitejs/plugin-vue": "^6.0.7",
 		"esbuild": "^0.28.1",
-		"eslint": "^10.5.0",
-		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-vue": "^10.9.2",
-		"globals": "^17.7.0",
-		"jiti": "^2.7.0",
-		"pbts": "^4.0.7",
 		"postcss-nesting": "^14.0.0",
-		"prettier": "^3.8.4",
-		"prettier-plugin-organize-imports": "^4.3.0",
-		"typescript": "^6.0.3",
-		"typescript-eslint": "^8.62.0",
 		"vite": "^8.0.16",
 		"vite-plugin-mkcert": "^2.1.0",
 		"vitest": "^4.1.9",
-		"vue-eslint-parser": "^10.4.1",
 		"vue-tsc": "^3.3.5"
 	}
 }

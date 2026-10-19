@@ -7,6 +7,48 @@ settings:
 importers:
 
   .:
+    devDependencies:
+      '@eslint/js':
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))
+      '@typescript-eslint/parser':
+        specifier: ^8.71.2
+        version: 8.71.2(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
+      eslint:
+        specifier: ^10.5.0
+        version: 10.13.0(jiti@2.7.0)(supports-color@10.2.2)
+      eslint-config-prettier:
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))
+      eslint-plugin-vue:
+        specifier: ^10.9.2
+        version: 10.11.1(@typescript-eslint/parser@8.71.2(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))
+      globals:
+        specifier: ^17.7.0
+        version: 17.13.0
+      jiti:
+        specifier: ^2.7.0
+        version: 2.7.0
+      pbts:
+        specifier: ^4.0.7
+        version: 4.0.7
+      prettier:
+        specifier: ^3.8.4
+        version: 3.9.10
+      prettier-plugin-organize-imports:
+        specifier: ^4.3.0
+        version: 4.3.0(prettier@3.9.10)(typescript@6.0.3)(vue-tsc@3.3.13(typescript@6.0.3))
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+      typescript-eslint:
+        specifier: ^8.62.0
+        version: 8.71.2(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
+      vue-eslint-parser:
+        specifier: ^10.4.1
+        version: 10.4.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
+
+  website:
     dependencies:
       '@codemirror/autocomplete':
         specifier: ^6.20.3
@@ -81,9 +123,6 @@ importers:
         specifier: ^5.1.0
         version: 5.4.0(@vue/compiler-sfc@3.5.44)(esbuild@0.28.2)(pinia@3.0.4(typescript@6.0.3)(vue@3.5.44(typescript@6.0.3)))(rolldown@1.2.14)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0))(vue@3.5.44(typescript@6.0.3))
     devDependencies:
-      '@eslint/js':
-        specifier: ^10.0.1
-        version: 10.0.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))
       '@tauri-apps/cli':
         specifier: ^2.11.3
         version: 2.12.3
@@ -93,48 +132,15 @@ importers:
       '@types/three':
         specifier: ^0.181.0
         version: 0.181.0
-      '@typescript-eslint/parser':
-        specifier: ^8.71.2
-        version: 8.71.2(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       '@vitejs/plugin-vue':
         specifier: ^6.0.7
         version: 6.0.10(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0))(vue@3.5.44(typescript@6.0.3))
       esbuild:
         specifier: ^0.28.1
         version: 0.28.2
-      eslint:
-        specifier: ^10.5.0
-        version: 10.13.0(jiti@2.7.0)(supports-color@10.2.2)
-      eslint-config-prettier:
-        specifier: ^10.1.8
-        version: 10.1.8(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))
-      eslint-plugin-vue:
-        specifier: ^10.9.2
-        version: 10.11.1(@typescript-eslint/parser@8.71.2(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))
-      globals:
-        specifier: ^17.7.0
-        version: 17.13.0
-      jiti:
-        specifier: ^2.7.0
-        version: 2.7.0
-      pbts:
-        specifier: ^4.0.7
-        version: 4.0.7
       postcss-nesting:
         specifier: ^14.0.0
         version: 14.0.3(postcss@8.5.30)
-      prettier:
-        specifier: ^3.8.4
-        version: 3.9.10
-      prettier-plugin-organize-imports:
-        specifier: ^4.3.0
-        version: 4.3.0(prettier@3.9.10)(typescript@6.0.3)(vue-tsc@3.3.13(typescript@6.0.3))
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
-      typescript-eslint:
-        specifier: ^8.62.0
-        version: 8.71.2(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       vite:
         specifier: ^8.0.16
         version: 8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)
@@ -144,9 +150,6 @@ importers:
       vitest:
         specifier: ^4.1.9
         version: 4.1.12(@types/node@26.6.5)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0))
-      vue-eslint-parser:
-        specifier: ^10.4.1
-        version: 10.4.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       vue-tsc:
         specifier: ^3.3.5
         version: 3.3.13(typescript@6.0.3)

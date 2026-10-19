@@ -1,5 +1,5 @@
 {
-	"name": "grab-tools",
+	"name": "@grab-tools",
 	"version": "0.25.0",
 	"private": true,
 	"type": "module",
@@ -14,18 +14,24 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"check": "pnpm typecheck && pnpm lint && pnpm format",
-		"tauri": "pnpm --filter @grab-tools/website tauri build",
-		"android": "pnpm --filter @grab-tools/website tauri android build"
+		"tauri": "pnpm --filter @grab-tools/website tauri",
+		"proto": "pnpm exec pbts -i website/src/assets/proto/proto.proto -o website/src/generated/proto.ts && echo 'You will have to manually clean up the file as it may have errors'",
+		"helpers": "jiti scripts/generate-helpers.ts && pnpm exec prettier --write website/src/generated/helpers.ts",
+		"nodes": "jiti scripts/generate-node-helpers.ts && pnpm exec prettier --write website/src/generated/nodes.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@typescript-eslint/parser": "^8.71.2",
 		"eslint": "^10.5.0",
 		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-vue": "^10.9.2",
+		"globals": "^17.7.0",
 		"jiti": "^2.7.0",
+		"pbts": "^4.0.7",
 		"prettier": "^3.8.4",
 		"prettier-plugin-organize-imports": "^4.3.0",
 		"typescript": "^6.0.3",
-		"typescript-eslint": "^8.62.0"
+		"typescript-eslint": "^8.62.0",
+		"vue-eslint-parser": "^10.4.1"
 	}
 }
