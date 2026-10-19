@@ -2,3 +2,4 @@
 *.frag
 *.gltf
 **/triangle_partition.ts
+pnpm-lock.yaml

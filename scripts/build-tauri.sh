@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-npm run tauri build
+pnpm run tauri build

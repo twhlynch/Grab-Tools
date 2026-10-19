@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from 'node:url';
 import postcssNesting from 'postcss-nesting';
 import { defineConfig } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
-import { bookmarklets } from './vite/vite-plugin-bookmarklets';
+import { bookmarklets } from './vite/vite-plugin-bookmarklets.ts';
 
 const host = process.env.TAURI_DEV_HOST;
 

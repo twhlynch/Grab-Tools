@@ -3,8 +3,8 @@
 # get old version from package.json
 old_version=$(node -p "require('./package.json').version")
 
-# update with npm
-npm version "$1" --no-git-tag-version
+# update with pnpm
+pnpm version "$1" --no-git-tag-version
 
 # get new version from package.json
 new_version=$(node -p "require('./package.json').version")
@@ -32,5 +32,5 @@ cargo check
 cd ..
 
 # add modified files and commit
-git add package.json package-lock.json src-tauri/Cargo.toml src-tauri/Cargo.lock src-tauri/gen/android/app/tauri.properties
+git add package.json pnpm-lock.yaml pnpm-workspace.yaml src-tauri/Cargo.toml src-tauri/Cargo.lock src-tauri/gen/android/app/tauri.properties
 git commit -m "chore: bump version to ${new_version}"

@@ -6,10 +6,10 @@ Built with Vue 3, Vite, Tauri, Three.js, and CodeMirror.
 
 ## Setup
 
-Requires `Node.js` 24 and `npm`.
+Requires `Node.js` 24 and `pnpm`.
 
 ```sh
-npm install
+pnpm install
 ```
 
 ## Development
@@ -17,13 +17,13 @@ npm install
 Run the Vite website at `https://127.0.0.1:5173`:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 ## Testing
 
 ```sh
-npm test
+pnpm test
 ```
 
 Tests are in `test/` and use [Vitest](https://vitest.dev).
@@ -31,8 +31,8 @@ Tests are in `test/` and use [Vitest](https://vitest.dev).
 ## Linting & Formatting
 
 ```sh
-npm run lint
-npm run format
+pnpm lint
+pnpm format
 ```
 
 Editor integration:
@@ -47,16 +47,16 @@ Editor integration:
 Build the website to `dist/`:
 
 ```sh
-npm run build
-npm run preview
+pnpm build
+pnpm preview
 ```
 
 ## Code Generation
 
 ```sh
-npm run proto    # TypeScript types for protobuf
-npm run helpers  # json object builders
-npm run nodes    # node builders
+pnpm proto    # TypeScript types for protobuf
+pnpm helpers  # json object builders
+pnpm nodes    # node builders
 ```
 
 ## Shell Scripts
@@ -115,23 +115,24 @@ Development helper scripts in `scripts/`:
 │  ├─ config.ts        # general config / globals
 │  ├─ main.ts          # website entrypoint
 │  └─ router.ts        # vue router config
-├─ src-tauri/        # tauri rust application sources
-├─ test/             # unit tests
-├─ vite/             # vite plugins
-├─ .env.example      # example env config
-├─ .gitattributes    # git attributes
-├─ .gitignore        # gitignore
-├─ .nvim.lua         # optional nvim config
-├─ .nvmrc            # pinned node version
-├─ .prettierignore   # prettier ignore config
-├─ .prettierrc.json  # prettier formatting config
-├─ CONTRIBUTING.md   # contribution guide
-├─ README.md         # this file
-├─ eslint.config.ts  # eslint config
-├─ index.html        # mountable app html
-├─ package-lock.json # npm packages lock file
-├─ package.json      # npm config and packages
-├─ tsconfig.json     # typescript config
-├─ vite.config.ts    # vite config
-└─ vitest.config.ts  # vitest config
+├─ src-tauri/          # tauri rust application sources
+├─ test/               # unit tests
+├─ vite/               # vite plugins
+├─ .env.example        # example env config
+├─ .gitattributes      # git attributes
+├─ .gitignore          # gitignore
+├─ .nvim.lua           # optional nvim config
+├─ .nvmrc              # pinned node version
+├─ .prettierignore     # prettier ignore config
+├─ .prettierrc.json    # prettier formatting config
+├─ CONTRIBUTING.md     # contribution guide
+├─ README.md           # this file
+├─ eslint.config.ts    # eslint config
+├─ index.html          # mountable app html
+├─ package.json        # package config and dependencies
+├─ pnpm-lock.yaml      # pnpm packages lock file
+├─ pnpm-workspace.yaml # pnpm settings
+├─ tsconfig.json       # typescript config
+├─ vite.config.ts      # vite config
+└─ vitest.config.ts    # vitest config
 ```
