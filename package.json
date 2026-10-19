@@ -8,7 +8,7 @@
 		"dev": "pnpm --filter @grab-tools/website dev",
 		"build": "pnpm -r --if-present build",
 		"test": "pnpm -r --if-present test",
-		"typecheck": "pnpm -r --if-present typecheck",
+		"typecheck": "tsc --noEmit && pnpm -r --if-present typecheck",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"format": "prettier --write .",
@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@types/node": "^26.0.0",
 		"@typescript-eslint/parser": "^8.71.2",
 		"eslint": "^10.5.0",
 		"eslint-config-prettier": "^10.1.8",

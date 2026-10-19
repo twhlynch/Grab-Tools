@@ -1,4 +1,7 @@
 {
-	"include": ["eslint.config.ts", "**/*.ts"],
-	"exclude": ["node_modules", "dist", "src-tauri"]
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"types": ["node"]
+	},
+	"include": ["eslint.config.ts", "scripts/**/*.ts"]
 }
