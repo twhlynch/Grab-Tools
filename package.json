@@ -1,0 +1,29 @@
+{
+	"name": "grab-tools",
+	"version": "0.25.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@11.25.0",
+	"scripts": {
+		"dev": "pnpm --filter @grab-tools/website dev",
+		"build": "pnpm -r --if-present build",
+		"test": "pnpm -r --if-present test",
+		"typecheck": "pnpm -r --if-present typecheck",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"check": "pnpm typecheck && pnpm lint && pnpm format"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@typescript-eslint/parser": "^8.71.2",
+		"eslint": "^10.5.0",
+		"eslint-config-prettier": "^10.1.8",
+		"jiti": "^2.7.0",
+		"prettier": "^3.8.4",
+		"prettier-plugin-organize-imports": "^4.3.0",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.62.0"
+	}
+}
