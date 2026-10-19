@@ -70,7 +70,7 @@ class GizmoControls {
 			}
 		});
 
-		this.scene.add(this.controls as unknown as THREE.Object3D);
+		this.scene.add(this.controls);
 	}
 
 	set_one_sided(one_sided: boolean) {

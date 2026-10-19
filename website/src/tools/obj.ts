@@ -270,7 +270,7 @@ async function parse_obj_nodes(
 						y: r.dot(axisY),
 					};
 				};
-				const to_3D = (p: THREE.Vector2Like) => {
+				const to_3D = (p: { x: number; y: number }) => {
 					return new THREE.Vector3()
 						.addScaledVector(axisX, p.x)
 						.addScaledVector(axisY, p.y)

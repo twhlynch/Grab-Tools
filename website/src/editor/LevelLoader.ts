@@ -1769,7 +1769,6 @@ class LevelLoader {
 							const textGeometry = new TextGeometry(line, {
 								font: this.font!,
 								size: letterSize,
-								// @ts-expect-error height does exist
 								height: 0,
 								curveSegments: 1,
 								bevelEnabled: false,
