@@ -13,6 +13,13 @@
 			"options": {
 				"printWidth": 100
 			}
+		},
+		{
+			"files": ["*.yaml", "*.yml"],
+			"options": {
+				"tabWidth": 2,
+				"useTabs": false
+			}
 		}
 	]
 }
