@@ -3,3 +3,6 @@
 *.gltf
 **/triangle_partition.ts
 pnpm-lock.yaml
+website/src-tauri
+**/dist
+**/node_modules
