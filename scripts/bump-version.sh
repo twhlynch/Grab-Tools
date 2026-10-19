@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # get old version from package.json
-old_version=$(node -p "require('website/package.json').version")
+old_version=$(node -p "require('./website/package.json').version")
 
 # update with pnpm
 pnpm version "$1" --no-git-tag-version
@@ -10,7 +10,7 @@ pnpm version "$1" --no-git-tag-version
 cd -
 
 # get new version from package.json
-new_version=$(node -p "require('website/package.json').version")
+new_version=$(node -p "require('./website/package.json').version")
 
 # format android version
 IFS='.' read -r major minor patch <<<"$new_version"
