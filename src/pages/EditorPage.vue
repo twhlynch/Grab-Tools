@@ -1,9 +1,10 @@
 <script>
 import { createLevel, decodeLevel } from '@/common/levels';
 import { get_protobuf, set_protobuf } from '@/common/root';
-import { deepClone, json_parse } from '@/common/utils';
+import { add_nodes, deepClone, json_parse } from '@/common/utils';
 import JsonPanel from '@/components/EditorPanels/JsonPanel.vue';
 import MenuPanel from '@/components/EditorPanels/MenuPanel.vue';
+import MyLevelsMenu from '@/components/EditorPanels/MyLevelsMenu.vue';
 import PopupPanel from '@/components/EditorPanels/PopupPanel.vue';
 import ProtobufPanel from '@/components/EditorPanels/ProtobufPanel.vue';
 import ResizableColPanel from '@/components/EditorPanels/ResizableColPanel.vue';
@@ -22,6 +23,7 @@ import { mapState } from 'pinia';
 export default {
 	components: {
 		MenuPanel,
+		MyLevelsMenu,
 		ViewportPanel,
 		ResizableRowPanel,
 		ResizableColPanel,
@@ -39,6 +41,7 @@ export default {
 				func: undefined,
 			},
 			show_protobuf_panel: false,
+			show_my_levels_menu: false,
 		};
 	},
 	computed: {
@@ -124,6 +127,18 @@ export default {
 		},
 		close_protobuf() {
 			this.show_protobuf_panel = false;
+		},
+		open_my_levels() {
+			this.show_my_levels_menu = true;
+		},
+		close_my_levels() {
+			this.show_my_levels_menu = false;
+		},
+		insert_level(json) {
+			this.run_modifier((level) => {
+				add_nodes(level, json.levelNodes);
+				return level;
+			});
 		},
 		undo() {
 			this.$refs.json_panel.undo();
@@ -234,6 +249,11 @@ export default {
 			<StatisticsPanel ref="statistics" />
 		</footer>
 		<PopupPanel :inputs="popup_props.inputs" :func="popup_props.func" />
+		<MyLevelsMenu
+			v-model:visible="show_my_levels_menu"
+			@open="set_json"
+			@insert="insert_level"
+		/>
 		<ProtobufPanel
 			v-show="show_protobuf_panel"
 			ref="protobuf_panel"

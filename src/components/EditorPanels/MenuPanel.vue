@@ -77,6 +77,7 @@ export default {
 						},
 						Default: { func: this.load_default_level },
 						Template: { func: this.open_templates },
+						'My Levels': { func: this.open_my_levels },
 						'Cheat Sheet': { func: this.open_cheat_sheet },
 					},
 					Save: {
@@ -437,6 +438,11 @@ export default {
 							.width / 2,
 					),
 				);
+			});
+		},
+		open_my_levels() {
+			this.$emit('scope', (scope) => {
+				scope.open_my_levels();
 			});
 		},
 		open_cheat_sheet() {
