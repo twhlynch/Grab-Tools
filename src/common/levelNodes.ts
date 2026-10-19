@@ -75,27 +75,31 @@ type NodeMapping = KeyMapping<LevelNode, 'levelNode'>;
 // > wow this sucks
 // exclude specified LevelNodeX type
 export type LevelNodeTypesExcept<T extends LevelNodeTypes> = NodeMapping[keyof {
-	[L in {
-		[K in keyof NodeMapping]: Exact<
-			Required<T>,
-			Required<NodeMapping[K]>
-		> extends false
-			? K
-			: never;
-	}[keyof NodeMapping]]: NonNullable<PropsStartingWith<LevelNode, L>>;
+	[
+		L in {
+			[K in keyof NodeMapping]: Exact<
+				Required<T>,
+				Required<NodeMapping[K]>
+			> extends false
+				? K
+				: never;
+		}[keyof NodeMapping]
+	]: NonNullable<PropsStartingWith<LevelNode, L>>;
 }];
 
 // exclude multiple LevelNodeX types
 export type LevelNodeTypesExcepts<T extends LevelNodeTypes[]> =
 	NodeMapping[keyof {
-		[L in {
-			[K in keyof NodeMapping]: MatchesAnyType<
-				NodeMapping[K],
-				T
-			> extends true
-				? never
-				: K;
-		}[keyof NodeMapping]]: NonNullable<PropsStartingWith<LevelNode, L>>;
+		[
+			L in {
+				[K in keyof NodeMapping]: MatchesAnyType<
+					NodeMapping[K],
+					T
+				> extends true
+					? never
+					: K;
+			}[keyof NodeMapping]
+		]: NonNullable<PropsStartingWith<LevelNode, L>>;
 	}];
 
 // type guards for LevelNodes
@@ -146,9 +150,11 @@ export type LevelNodeObject = Partial<Omit<Mesh, 'material' | keyof Object3D>> &
 			id: number;
 			node: LevelNode;
 		} & {
-			[K in LevelNodeKey as K extends `levelNode${infer S}`
-				? `is${S}`
-				: K]?: boolean;
+			[
+				K in LevelNodeKey as K extends `levelNode${infer S}`
+					? `is${S}`
+					: K
+			]?: boolean;
 		};
 	};
 

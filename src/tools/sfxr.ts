@@ -83,7 +83,7 @@ export function play_sound(params: SoundGeneratorParameters) {
 		sound_vol: 0.5,
 		sample_rate: 44100,
 		sample_size: 8,
-	}
+	};
 
 	for (const [key, value] of Object.entries(params)) {
 		const sfxr_key = PARAM_MAP[key];

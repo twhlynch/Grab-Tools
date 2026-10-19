@@ -142,16 +142,14 @@ export function ambienceSettings(
 	sunSize: number | undefined,
 	fogDensity: number | undefined,
 ) {
-	if (
-		!(
-			horizon ||
-			zenith ||
-			sunAzimuth ||
-			sunAltitude ||
-			sunSize ||
-			fogDensity
-		)
-	) {
+	if (!(
+		horizon ||
+		zenith ||
+		sunAzimuth ||
+		sunAltitude ||
+		sunSize ||
+		fogDensity
+	)) {
 		horizon = {
 			a: 1.0,
 			b: 0.9574,
