@@ -57,12 +57,12 @@ jobs:
       - name: rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: './src-tauri -> target'
+          workspaces: './website/src-tauri -> target'
 
       # signing
       - name: android signing
         run: |
-          cd src-tauri/gen/android
+          cd website/src-tauri/gen/android
           echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" > keystore.properties
           echo "password=${{ secrets.ANDROID_KEY_PASSWORD }}" >> keystore.properties
           base64 -d <<< "${{ secrets.ANDROID_KEY_BASE64 }}" > $RUNNER_TEMP/keystore.jks
@@ -89,4 +89,4 @@ jobs:
           name: GRAB Tools v${{ steps.package-version.outputs.version }}
           tag_name: app-v${{ steps.package-version.outputs.version }}
           generate_release_notes: true
-          files: src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
+          files: website/src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
