@@ -29,11 +29,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(useUserStore, [
-			'is_logged_in',
-			'grab_id',
-			'is_list_moderator',
-		]),
+		...mapState(useUserStore, ['is_logged_in', 'grab_id', 'is_list_moderator']),
 	},
 	methods: {
 		async edit_level(level_id) {
@@ -42,10 +38,7 @@ export default {
 				return;
 			}
 
-			const success = await add_hardest_level_request(
-				level_id,
-				this.edit_level_position,
-			);
+			const success = await add_hardest_level_request(level_id, this.edit_level_position);
 			if (success) {
 				window.toast(`Updated level`);
 				this.$emit('update');
@@ -70,11 +63,7 @@ export default {
 			return this.$config.GRAB_VIEWER_URL + level_id;
 		},
 		user_class(level_id) {
-			return (
-				this.is_logged_in &&
-				this.grab_id === level_id.split(':')[0] &&
-				'personal'
-			);
+			return this.is_logged_in && this.grab_id === level_id.split(':')[0] && 'personal';
 		},
 		async download(level_id) {
 			const level = await downloads.download_level(level_id);
@@ -103,10 +92,7 @@ export default {
 			<p v-if="edit_level_id !== level_id">
 				{{ creators.split(/[,\s]/)[0] }}
 			</p>
-			<div
-				v-if="edit_level_id === level_id && is_list_moderator"
-				class="container"
-			>
+			<div v-if="edit_level_id === level_id && is_list_moderator" class="container">
 				<input
 					v-model="edit_level_position"
 					type="number"
@@ -117,19 +103,12 @@ export default {
 					<CheckmarkIcon />
 				</button>
 			</div>
-			<div
-				v-if="edit_level_id !== level_id && is_list_moderator"
-				class="container"
-			>
+			<div v-if="edit_level_id !== level_id && is_list_moderator" class="container">
 				<button class="btn edit" @click="edit_level(level_id)">
 					<EditIcon />
 				</button>
 				<button
-					:class="[
-						'btn',
-						'remove',
-						remove_level_id === level_id && 'active',
-					]"
+					:class="['btn', 'remove', remove_level_id === level_id && 'active']"
 					@click="remove_level(level_id)"
 				>
 					<CrossIcon />

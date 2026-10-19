@@ -22,11 +22,8 @@ export default {
 
 	mounted() {
 		const currentLocation =
-			window.location.pathname.replace('/', '').replace('.html', '') ||
-			'home';
-		const currentTab = document.getElementById(
-			'nav-button-' + currentLocation,
-		);
+			window.location.pathname.replace('/', '').replace('.html', '') || 'home';
+		const currentTab = document.getElementById('nav-button-' + currentLocation);
 		if (currentTab) {
 			currentTab.classList.add('nav-button-current');
 		}

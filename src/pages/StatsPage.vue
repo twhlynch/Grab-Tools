@@ -209,19 +209,11 @@ export default {
 			params.delete('filter');
 			params.set('tab', tab);
 			if (filter) params.set('filter', filter);
-			window.history.replaceState(
-				{},
-				'',
-				`${location.pathname}?${params}`,
-			);
+			window.history.replaceState({}, '', `${location.pathname}?${params}`);
 			this.current_tab = tab;
-			this.current_section = this.sections.find(
-				(section) => section.name === tab,
-			);
+			this.current_section = this.sections.find((section) => section.name === tab);
 			if (filter) {
-				this.current_list = this.current_section.lists.find(
-					(list) => list.name === filter,
-				);
+				this.current_list = this.current_section.lists.find((list) => list.name === filter);
 			} else {
 				this.current_list = this.current_section.lists[0];
 			}
@@ -241,9 +233,9 @@ export default {
 		<section id="info">
 			<h2>GRAB Stats</h2>
 			<p>
-				Stats and leaderboards scraped from the GRAB servers, updated
-				daily at 5:00 UTC. Level record related stats are updated
-				monthly. Most leaderboards are limited to top 200.
+				Stats and leaderboards scraped from the GRAB servers, updated daily at 5:00 UTC.
+				Level record related stats are updated monthly. Most leaderboards are limited to top
+				200.
 			</p>
 		</section>
 		<section id="sections">
@@ -253,9 +245,7 @@ export default {
 				:key="section.name"
 				:class="
 					'button stats-button' +
-					(current_section?.name === section.name
-						? ' tab-active'
-						: '')
+					(current_section?.name === section.name ? ' tab-active' : '')
 				"
 				@click="
 					() => {
@@ -276,9 +266,7 @@ export default {
 				class="stats-sorting"
 			>
 				<button
-					v-for="list of section.lists.filter(
-						(list) => list.name !== 'Default',
-					)"
+					v-for="list of section.lists.filter((list) => list.name !== 'Default')"
 					:id="section.name + '-sort-btn'"
 					:key="list.name"
 					:class="
@@ -292,11 +280,7 @@ export default {
 					"
 				>
 					{{ list.name }}
-					<component
-						:is="list.icon"
-						v-if="list.icon"
-						class="sort-icon"
-					/>
+					<component :is="list.icon" v-if="list.icon" class="sort-icon" />
 				</button>
 			</div>
 		</section>

@@ -19,9 +19,7 @@ export default {
 			stroke-linejoin="round"
 			stroke-width="2"
 		>
-			<path
-				d="M3 15.396V21h5.604m6.792-18H21v5.604M21 3l-7.2 7.2m-3.6 3.6L3 21"
-			/>
+			<path d="M3 15.396V21h5.604m6.792-18H21v5.604M21 3l-7.2 7.2m-3.6 3.6L3 21" />
 		</svg>
 	</IconTemplate>
 </template>

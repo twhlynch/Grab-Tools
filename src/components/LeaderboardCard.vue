@@ -48,18 +48,11 @@ export default {
 			alt="Template thumbnail"
 			title="Thumbnail failed to load"
 		/>
-		<img
-			v-else
-			:src="image_url"
-			:alt="data.title + '\'s thumbnail'"
-			@error="error"
-		/>
+		<img v-else :src="image_url" :alt="data.title + '\'s thumbnail'" @error="error" />
 		<div class="leaderboard-item-info">
 			<a :href="level_url" target="_blank">{{ data.title }}</a
 			><br /><span>by </span
-			><a :href="creator_url" target="_blank" :title="creators_string">{{
-				creator
-			}}</a>
+			><a :href="creator_url" target="_blank" :title="creators_string">{{ creator }}</a>
 		</div>
 		<span>{{ data.extra }}</span
 		><span>{{ data.value }}</span>

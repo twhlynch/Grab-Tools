@@ -34,9 +34,7 @@ export default {
 	computed: {
 		...mapState(useUserStore, ['is_logged_in', 'grab_id']),
 		user_class() {
-			return (
-				this.is_logged_in && this.grab_id === this.user_id && 'personal'
-			);
+			return this.is_logged_in && this.grab_id === this.user_id && 'personal';
 		},
 	},
 	methods: {
@@ -61,9 +59,7 @@ export default {
 				.padEnd(4, '0');
 		},
 		format_position(position) {
-			return position == -1
-				? 'N/a'
-				: `${position + 1}${this.getSuffix(position + 1)}`;
+			return position == -1 ? 'N/a' : `${position + 1}${this.getSuffix(position + 1)}`;
 		},
 		expand() {
 			this.$emit('expand');
@@ -104,9 +100,7 @@ export default {
 					<div class="metric-bar">
 						<div
 							:class="metric_bar_class(pos)"
-							:style="`width: ${
-								(100 * metrics[key]) / weights[key]
-							}%`"
+							:style="`width: ${(100 * metrics[key]) / weights[key]}%`"
 						></div>
 					</div>
 				</template>

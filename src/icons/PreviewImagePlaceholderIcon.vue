@@ -33,13 +33,7 @@ export default {
 					stroke-width="20.83px"
 				/>
 				<g transform="matrix(1.45374,0,0,1.47768,-1264.96,-86.2768)">
-					<ellipse
-						cx="1530.5"
-						cy="234"
-						rx="113.5"
-						ry="112"
-						stroke-width="14.21px"
-					/>
+					<ellipse cx="1530.5" cy="234" rx="113.5" ry="112" stroke-width="14.21px" />
 				</g>
 			</g>
 		</svg>

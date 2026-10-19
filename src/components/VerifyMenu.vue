@@ -61,10 +61,7 @@ export default {
 			this.tab = tab;
 		},
 		async submit_access_token() {
-			const success = await verify_account_request(
-				null,
-				this.access_token,
-			);
+			const success = await verify_account_request(null, this.access_token);
 			if (success) {
 				window.toast('Successfully verified GRAB account!');
 				this.$emit('update:visible', false);
@@ -84,28 +81,16 @@ export default {
 </script>
 
 <template>
-	<GeneralPopup
-		:visible="visible"
-		@update:visible="$emit('update:visible', $event)"
-	>
+	<GeneralPopup :visible="visible" @update:visible="$emit('update:visible', $event)">
 		<p>Choose a method to verify your account.</p>
 		<div class="tabs">
-			<button
-				:class="tab !== 'level' ? 'inactive' : ''"
-				@click="select_tab('level')"
-			>
+			<button :class="tab !== 'level' ? 'inactive' : ''" @click="select_tab('level')">
 				Level Code
 			</button>
-			<button
-				:class="tab !== 'token' ? 'inactive' : ''"
-				@click="select_tab('token')"
-			>
+			<button :class="tab !== 'token' ? 'inactive' : ''" @click="select_tab('token')">
 				Access Token
 			</button>
-			<button
-				:class="tab !== 'bookmark' ? 'inactive' : ''"
-				@click="select_tab('bookmark')"
-			>
+			<button :class="tab !== 'bookmark' ? 'inactive' : ''" @click="select_tab('bookmark')">
 				Bookmarklet
 			</button>
 		</div>
@@ -139,9 +124,7 @@ export default {
 					Login to the
 					<a :href="$config.GRAB_VIEWER_URL">level browser</a>
 				</li>
-				<li>
-					Open DevTools with CTRL+SHIFT+I, or right click, Inspect
-				</li>
+				<li>Open DevTools with CTRL+SHIFT+I, or right click, Inspect</li>
 				<li>Open the console tab</li>
 				<li>
 					Run
@@ -150,16 +133,9 @@ export default {
 				</li>
 				<li>Copy it and paste it here</li>
 			</ol>
-			<p>
-				Disclaimer: Never share your access token with an untrusted
-				third party.
-			</p>
+			<p>Disclaimer: Never share your access token with an untrusted third party.</p>
 
-			<input
-				v-model="access_token"
-				type="password"
-				placeholder="access token"
-			/>
+			<input v-model="access_token" type="password" placeholder="access token" />
 
 			<button @click="submit_access_token">Submit</button>
 		</div>
@@ -182,10 +158,7 @@ export default {
 				<span>Bookmarklet</span>
 			</a>
 
-			<p>
-				Disclaimer: This bookmarklet contains your access token. Do not
-				share.
-			</p>
+			<p>Disclaimer: This bookmarklet contains your access token. Do not share.</p>
 		</div>
 	</GeneralPopup>
 </template>

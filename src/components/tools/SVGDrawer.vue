@@ -39,9 +39,7 @@ export default {
 <template>
 	<ToolTemplate>
 		<template #title>SVG Drawer</template>
-		<template #info>
-			Convert simple SVG images into their built paths.
-		</template>
+		<template #info> Convert simple SVG images into their built paths. </template>
 		<input id="svg-tool-file" type="file" accept=".svg" />
 		<button id="svg-tool-btn" class="button" @click="draw">Process</button>
 	</ToolTemplate>

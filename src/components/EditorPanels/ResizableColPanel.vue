@@ -32,12 +32,10 @@ export default {
 		},
 		size(position) {
 			const { container, first, second, thumb } = this.$refs;
-			if (position === undefined)
-				position = thumb.getBoundingClientRect().top;
+			if (position === undefined) position = thumb.getBoundingClientRect().top;
 			const bounds = container.getBoundingClientRect();
 			first.style.height = position - bounds.top + 'px';
-			second.style.height =
-				bounds.height - (position - bounds.top) - 5 + 'px';
+			second.style.height = bounds.height - (position - bounds.top) - 5 + 'px';
 			this.$emit('resize');
 		},
 		prevent(e) {

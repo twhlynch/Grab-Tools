@@ -16,9 +16,7 @@ export default {
 			fill="currentColor"
 			stroke="none"
 		>
-			<path
-				d="M-1 0 2 0-2 4 2 8-1 8-5 4-1 0M4 0 8 4 4 8 7 8 11 4 7 0 4 0"
-			/>
+			<path d="M-1 0 2 0-2 4 2 8-1 8-5 4-1 0M4 0 8 4 4 8 7 8 11 4 7 0 4 0" />
 		</svg>
 	</IconTemplate>
 </template>

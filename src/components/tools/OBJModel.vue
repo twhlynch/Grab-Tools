@@ -29,12 +29,10 @@ export default {
 
 			let nodes = await obj(objFile, mode, mtlFile);
 
-			const level = createLevel(
-				nodes,
-				'3D Model',
-				'Generated with GRAB Tools',
-				['.index', 'GRAB Tools'],
-			);
+			const level = createLevel(nodes, '3D Model', 'Generated with GRAB Tools', [
+				'.index',
+				'GRAB Tools',
+			]);
 
 			const encoded = await encodeLevel(level);
 			if (encoded === null) return;
@@ -49,19 +47,12 @@ export default {
 	<ToolTemplate>
 		<template #title>3D Model</template>
 		<template #info>Import a .obj 3D models into grab.</template>
-		<input
-			id="obj-model-tool-file"
-			type="file"
-			accept=".obj,.mtl"
-			multiple
-		/>
+		<input id="obj-model-tool-file" type="file" accept=".obj,.mtl" multiple />
 		<select id="obj-model-tool-mode">
 			<option value="triangles" selected>triangles</option>
 			<option value="particles">particles</option>
 			<option value="spheres">spheres</option>
 		</select>
-		<button id="obj-model-tool-btn" class="button" @click="run">
-			Process
-		</button>
+		<button id="obj-model-tool-btn" class="button" @click="run">Process</button>
 	</ToolTemplate>
 </template>

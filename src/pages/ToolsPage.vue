@@ -59,11 +59,7 @@ export default {
 		setTab(tab) {
 			const urlParams = new URLSearchParams(window.location.search);
 			urlParams.set('tab', tab);
-			window.history.replaceState(
-				{},
-				'',
-				`${location.pathname}?${urlParams}`,
-			);
+			window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
 		},
 		selectTool(tool) {
 			this.setTab(tool);
@@ -90,8 +86,8 @@ export default {
 		<section id="tools-section">
 			<h2>Tools</h2>
 			<p>
-				Individual tools to from the JSON Level Editor and some extra
-				tools for level creation or account modding.
+				Individual tools to from the JSON Level Editor and some extra tools for level
+				creation or account modding.
 			</p>
 		</section>
 		<section id="tools-buttons">
@@ -111,11 +107,7 @@ export default {
 				Pixel Art
 				<BrushIcon />
 			</button>
-			<button
-				id="svg-tool-button"
-				class="button"
-				@click="selectTool('svg')"
-			>
+			<button id="svg-tool-button" class="button" @click="selectTool('svg')">
 				Draw SVG
 				<PencilIcon />
 			</button>
@@ -127,11 +119,7 @@ export default {
 				Video Gen
 				<PlayIcon />
 			</button>
-			<button
-				id="download-tool-button"
-				class="button"
-				@click="selectTool('download')"
-			>
+			<button id="download-tool-button" class="button" @click="selectTool('download')">
 				Download
 				<DownloadsIcon />
 			</button>
@@ -143,19 +131,11 @@ export default {
 				Custom Colors
 				<PalletteIcon />
 			</button>
-			<button
-				id="level-json-tool-button"
-				class="button"
-				@click="selectTool('level-json')"
-			>
+			<button id="level-json-tool-button" class="button" @click="selectTool('level-json')">
 				JSON
 				<XMLIcon />
 			</button>
-			<button
-				id="text-signs-tool-button"
-				class="button"
-				@click="selectTool('text-signs')"
-			>
+			<button id="text-signs-tool-button" class="button" @click="selectTool('text-signs')">
 				Text To Signs
 				<ChatIcon />
 			</button>
@@ -198,10 +178,10 @@ export default {
 			<div id="custom-colors-tool">
 				<h2>Custom Colors</h2>
 				<p>
-					Drag this to your bookmarks bar or click it to copy it and
-					paste it into a bookmark. Then go to
-					<a :href="$config.GRAB_VIEWER_URL">the level browser</a>,
-					log in, and click it to run.
+					Drag this to your bookmarks bar or click it to copy it and paste it into a
+					bookmark. Then go to
+					<a :href="$config.GRAB_VIEWER_URL">the level browser</a>, log in, and click it
+					to run.
 				</p>
 				<div id="bookmark-links">
 					<Bookmarklet

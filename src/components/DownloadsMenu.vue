@@ -41,13 +41,12 @@ export default {
 		async load() {
 			this.loaded = true;
 
-			const [levels, challenge, one_of_a_kind, allow_settings] =
-				await Promise.all([
-					user_levels_request(this.grab_id),
-					list_request('curated_challenge'),
-					list_request('curated_one_of_a_kind'),
-					get_allow_downloads_request(this.grab_id),
-				]);
+			const [levels, challenge, one_of_a_kind, allow_settings] = await Promise.all([
+				user_levels_request(this.grab_id),
+				list_request('curated_challenge'),
+				list_request('curated_one_of_a_kind'),
+				get_allow_downloads_request(this.grab_id),
+			]);
 
 			if (!levels || !challenge || !one_of_a_kind || !allow_settings) {
 				return;
@@ -69,18 +68,12 @@ export default {
 
 			const allowed = [...challenge, ...one_of_a_kind, ...enabled_levels]
 				.map((level) => level.identifier)
-				.filter(
-					(id) => !disabled_levels.find((dl) => dl.identifier === id),
-				);
+				.filter((id) => !disabled_levels.find((dl) => dl.identifier === id));
 
 			this.levels = levels.map((level) => {
 				if (allowed.find((id) => id === level.identifier)) {
 					level.allow_downloads = true;
-				} else if (
-					disabled_levels.find(
-						(dl) => dl.identifier === level.identifier,
-					)
-				) {
+				} else if (disabled_levels.find((dl) => dl.identifier === level.identifier)) {
 					level.allow_downloads = false;
 				} else {
 					level.allow_downloads = null;
@@ -104,11 +97,7 @@ export default {
 			this.allow_downloads = !this.allow_downloads;
 		},
 		async set_level_allow_downloads(level, allow) {
-			const success = await set_allow_downloads_request(
-				level.identifier,
-				null,
-				allow,
-			);
+			const success = await set_allow_downloads_request(level.identifier, null, allow);
 			if (!success) return;
 			level.allow_downloads = allow;
 		},
@@ -117,18 +106,11 @@ export default {
 </script>
 
 <template>
-	<GeneralPopup
-		:visible="visible"
-		@update:visible="$emit('update:visible', $event)"
-	>
+	<GeneralPopup :visible="visible" @update:visible="$emit('update:visible', $event)">
 		<div class="header">
 			<span>Default</span>
 			<button
-				:class="[
-					'allow-downloads',
-					'disabled',
-					{ enabled: allow_downloads },
-				]"
+				:class="['allow-downloads', 'disabled', { enabled: allow_downloads }]"
 				@click="toggle_allow_downloads()"
 			>
 				{{ allow_downloads ? 'Enabled' : 'Disabled' }}
@@ -148,15 +130,9 @@ export default {
 						{ enabled: level.allow_downloads === true },
 						{ disabled: level.allow_downloads === false },
 					]"
-					@click="
-						set_level_allow_downloads(level, !level.allow_downloads)
-					"
+					@click="set_level_allow_downloads(level, !level.allow_downloads)"
 				>
-					{{
-						{ true: 'Enabled', false: 'Disabled' }[
-							level.allow_downloads
-						] ?? 'Default'
-					}}
+					{{ { true: 'Enabled', false: 'Disabled' }[level.allow_downloads] ?? 'Default' }}
 				</button>
 			</div>
 		</div>

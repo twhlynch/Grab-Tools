@@ -76,19 +76,15 @@ export default {
 					this.json = data ?? createLevel();
 				}
 			} else {
-				this.json = this.default_level
-					? deepClone(this.default_level)
-					: createLevel();
+				this.json = this.default_level ? deepClone(this.default_level) : createLevel();
 			}
 
 			this.set_json(this.json);
 		},
 		set_json(json, skip = []) {
 			this.json = json;
-			if (!skip.includes('json_panel'))
-				this.$refs.json_panel.set_json(this.json);
-			if (!skip.includes('viewport_panel'))
-				this.$refs.viewport_panel.set_json(this.json);
+			if (!skip.includes('json_panel')) this.$refs.json_panel.set_json(this.json);
+			if (!skip.includes('viewport_panel')) this.$refs.viewport_panel.set_json(this.json);
 			if (!skip.includes('mcp')) mcp.send_level(json);
 		},
 		json_changed(json) {
@@ -205,18 +201,11 @@ export default {
 			@popup="set_popup"
 			@scope="scope"
 		/>
-		<ResizableRowPanel
-			:ref="'main_panel'"
-			class="main-panel"
-			@resize="resize_left"
-		>
+		<ResizableRowPanel :ref="'main_panel'" class="main-panel" @resize="resize_left">
 			<template #first>
 				<ResizableRowPanel ref="left_panel" class="left-panel">
 					<template #first>
-						<TemplatesPanel
-							@modifier="run_modifier"
-							@close="close_templates"
-						/>
+						<TemplatesPanel @modifier="run_modifier" @close="close_templates" />
 					</template>
 					<template #second>
 						<ViewportPanel
@@ -234,10 +223,7 @@ export default {
 			<template #second>
 				<ResizableColPanel :ref="'side_panel'" class="side-panel">
 					<template #first>
-						<JsonPanel
-							:ref="'json_panel'"
-							@changed="json_changed"
-						/>
+						<JsonPanel :ref="'json_panel'" @changed="json_changed" />
 					</template>
 					<template #second>
 						<TerminalPanel @command="run_modifier" />

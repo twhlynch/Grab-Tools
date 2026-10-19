@@ -46,18 +46,13 @@ export default {
 				<p>
 					Something has gone wrong. Try hard refreshing the page (
 					<KeyHint :bind="'CTRL'" /> + <KeyHint :bind="'SHIFT'" /> +
-					<KeyHint :bind="'R'" /> ), using another browser, or coming
-					back later. If this continues to happen, please report it to
-					the
+					<KeyHint :bind="'R'" /> ), using another browser, or coming back later. If this
+					continues to happen, please report it to the
 					<a :href="$config.REPO_URL">GitHub</a>
 					or
-					<a :href="$config.DISCORD_URL" target="_blank"
-						>Discord server</a
-					>.
+					<a :href="$config.DISCORD_URL" target="_blank">Discord server</a>.
 					<span class="details">
-						<button class="tech" @click="toggle_technicals">
-							Technical details:
-						</button>
+						<button class="tech" @click="toggle_technicals">Technical details:</button>
 						<code v-if="show_technicals">
 							{{ message }}
 						</code>

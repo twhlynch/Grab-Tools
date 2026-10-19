@@ -25,21 +25,12 @@ export default {
 			const shape = getByID(`${toolID}-shape`).value;
 			const greedy = getByID(`${toolID}-greedy`).checked;
 
-			const node = await generate_pixel_art(
-				file,
-				width,
-				height,
-				mode,
-				shape,
-				greedy,
-			);
+			const node = await generate_pixel_art(file, width, height, mode, shape, greedy);
 
-			const obj = createLevel(
-				[node],
-				'Image',
-				'Generated with GRAB Tools',
-				['.index', 'GRAB Tools'],
-			);
+			const obj = createLevel([node], 'Image', 'Generated with GRAB Tools', [
+				'.index',
+				'GRAB Tools',
+			]);
 
 			const encoded = await encodeLevel(obj);
 			if (encoded === null) return;
@@ -69,8 +60,6 @@ export default {
 			<input id="image-tool-greedy" type="checkbox" />
 		</label>
 		<input id="image-tool-file" type="file" accept="image/*" />
-		<button id="image-tool-btn" class="button" @click="run">
-			Generate
-		</button>
+		<button id="image-tool-btn" class="button" @click="run">Generate</button>
 	</ToolTemplate>
 </template>

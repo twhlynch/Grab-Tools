@@ -27,9 +27,7 @@ export default {
 				console.log(message.error);
 
 				const remove = () => {
-					this.messages = this.messages.filter(
-						(m) => m.id !== message.id,
-					);
+					this.messages = this.messages.filter((m) => m.id !== message.id);
 				};
 
 				if (persistent) {
@@ -67,8 +65,8 @@ export default {
 		>
 			<span>{{ message.value }}</span>
 			<span v-if="message.severity.startsWith('err')" class="extra">
-				Click to copy and report this error to the discord server if you
-				believe it is not your fault.
+				Click to copy and report this error to the discord server if you believe it is not
+				your fault.
 			</span>
 		</div>
 	</transition-group>

@@ -96,9 +96,7 @@ export default {
 			if (e.target === this.$refs.code_container) {
 				this.view.focus();
 				this.view.dispatch({
-					selection: EditorSelection.cursor(
-						this.view.state.doc.length,
-					),
+					selection: EditorSelection.cursor(this.view.state.doc.length),
 					scrollIntoView: true,
 				});
 			}

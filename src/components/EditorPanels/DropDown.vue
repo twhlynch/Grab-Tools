@@ -47,17 +47,9 @@ export default defineComponent({
 					{{ name }}
 				</a>
 
-				<button
-					v-else
-					class="menu-btn"
-					@click="!item.file && call(item.func)"
-				>
+				<button v-else class="menu-btn" @click="!item.file && call(item.func)">
 					{{ name }}
-					<input
-						v-if="item.file"
-						type="file"
-						@change="call(item.func, $event)"
-					/>
+					<input v-if="item.file" type="file" @change="call(item.func, $event)" />
 				</button>
 			</template>
 

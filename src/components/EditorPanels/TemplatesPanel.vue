@@ -237,15 +237,8 @@ export default {
 				"
 				>{{ name }}</span
 			>
-			<div
-				v-show="active_sections.includes(name)"
-				class="templates-group"
-			>
-				<div
-					v-for="(template, i) of templates_list"
-					:key="i"
-					class="template"
-				>
+			<div v-show="active_sections.includes(name)" class="templates-group">
+				<div v-for="(template, i) of templates_list" :key="i" class="template">
 					<span class="name">{{ template.name }}</span>
 					<button
 						class="open"

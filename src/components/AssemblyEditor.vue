@@ -67,11 +67,7 @@ export default {
 
 <template>
 	<section ref="editor">
-		<div
-			:ref="'code_container'"
-			class="code-container"
-			@click="click"
-		></div>
+		<div :ref="'code_container'" class="code-container" @click="click"></div>
 	</section>
 </template>
 

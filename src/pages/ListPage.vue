@@ -43,11 +43,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(useUserStore, [
-			'is_logged_in',
-			'grab_id',
-			'is_list_moderator',
-		]),
+		...mapState(useUserStore, ['is_logged_in', 'grab_id', 'is_list_moderator']),
 	},
 	created() {
 		document.title = 'GRAB Hardest Levels | GRAB Tools';
@@ -57,9 +53,7 @@ export default {
 	},
 	methods: {
 		selectTab(id) {
-			document
-				.querySelector('.sort-active')
-				.classList.remove('sort-active');
+			document.querySelector('.sort-active').classList.remove('sort-active');
 			const selected = document.getElementById(id + '-sort-btn');
 			selected.classList.add('sort-active');
 			this.tab = id;
@@ -111,9 +105,7 @@ export default {
 							username: username,
 							username_priority: priority,
 							// metrics
-							...Object.fromEntries(
-								Object.keys(this.weights).map((k) => [k, 0]),
-							),
+							...Object.fromEntries(Object.keys(this.weights).map((k) => [k, 0])),
 							hardest_created_placement: 0,
 						};
 					}
@@ -126,36 +118,25 @@ export default {
 				await Promise.all([
 					get_hardest_levels_request().then((data) => {
 						if (!data) {
-							window.toast(
-								'Failed to fetch hardest levels list',
-								'error',
-							);
+							window.toast('Failed to fetch hardest levels list', 'error');
 							return;
 						}
 
-						this.hardest_levels = data.sort(
-							(a, b) => a.position - b.position,
-						);
+						this.hardest_levels = data.sort((a, b) => a.position - b.position);
 
 						for (let i = 0; i < Math.min(100, data.length); i++) {
 							const { level_id, creators } = data[i];
 
 							const identifier = level_id.split(':')[0];
-							const priority =
-								parseInt(level_id.split(':')[1]) / 10;
+							const priority = parseInt(level_id.split(':')[1]) / 10;
 
 							checkMetric(identifier, creators, priority);
 
 							metrics[identifier].hardest_created += 1;
-							if (
-								metrics[identifier]
-									.hardest_created_placement === 0
-							) {
+							if (metrics[identifier].hardest_created_placement === 0) {
 								metrics[identifier].hardest_created_placement =
 									1 - (i + 1 - 1) * 0.01;
-								metrics[
-									identifier
-								].raw.hardest_created_placement = i + 1;
+								metrics[identifier].raw.hardest_created_placement = i + 1;
 							}
 						}
 					}),
@@ -165,8 +146,7 @@ export default {
 
 							checkMetric(identifier, username);
 
-							metrics[identifier].level_finishes +=
-								data[identifier][0];
+							metrics[identifier].level_finishes += data[identifier][0];
 						}
 					}),
 					this.fetchThen('sorted_leaderboard_records', (data) => {
@@ -199,8 +179,7 @@ export default {
 							if (level.unbeaten && !('sole' in level)) {
 								const id = level.identifier.split(':')[0];
 								const username = level?.creators?.[0];
-								const priority =
-									(level.creation_timestamp ?? 10) / 10;
+								const priority = (level.creation_timestamp ?? 10) / 10;
 
 								checkMetric(id, username, priority);
 
@@ -213,42 +192,30 @@ export default {
 							const leaderboard = level.leaderboard;
 							const id = level.identifier.split(':')[0];
 							const username = level?.creators?.[0];
-							const is_challenge =
-								level.list_key.includes('curated_challenge');
+							const is_challenge = level.list_key.includes('curated_challenge');
 
 							if (leaderboard.length > 0) {
 								const item = leaderboard[0];
 								const priority = item.timestamp;
 
-								checkMetric(
-									item.user_id,
-									item.user_name,
-									priority,
-								);
+								checkMetric(item.user_id, item.user_name, priority);
 
 								if (is_challenge) {
-									metrics[item.user_id].challenge_records +=
-										1;
+									metrics[item.user_id].challenge_records += 1;
 								}
 								metrics[item.user_id].featured_records += 1;
 							}
 
-							const priority =
-								parseInt(level.identifier.split(':')[1]) / 10;
+							const priority = parseInt(level.identifier.split(':')[1]) / 10;
 							checkMetric(id, username, priority);
 
 							if (is_challenge) {
 								metrics[id].challenge_created += 1;
 
 								for (const item of leaderboard) {
-									checkMetric(
-										item.user_id,
-										item.user_name,
-										item.timestamp,
-									);
+									checkMetric(item.user_id, item.user_name, item.timestamp);
 
-									metrics[item.user_id].challenge_finishes +=
-										1;
+									metrics[item.user_id].challenge_finishes += 1;
 								}
 							}
 						}
@@ -267,14 +234,10 @@ export default {
 						// mon / max
 						adjustments[key] = {
 							max: Math.max(
-								...Object.values(metrics).map(
-									(values) => values[key] || 0,
-								),
+								...Object.values(metrics).map((values) => values[key] || 0),
 							),
 							min: Math.min(
-								...Object.values(metrics).map(
-									(values) => values[key] || 0,
-								),
+								...Object.values(metrics).map((values) => values[key] || 0),
 							),
 						};
 						// adjust values
@@ -285,12 +248,10 @@ export default {
 							const weight = this.weights[key];
 							const t = (value - min) / (max - min);
 
-							const _inverse_power =
-								(1 - Math.pow(1 - t, 0.6)) * weight;
+							const _inverse_power = (1 - Math.pow(1 - t, 0.6)) * weight;
 							const _step = t * t * (3 - 2 * t) * weight;
 							const power = Math.pow(t, 0.6) * weight;
-							const _stepp =
-								t * t * t * (t * (t * 6 - 15) + 10) * weight;
+							const _stepp = t * t * t * (t * (t * 6 - 15) + 10) * weight;
 
 							values[key] = power;
 
@@ -312,8 +273,7 @@ export default {
 					Object.entries(metrics)
 						.sort((a, b) => b[1][key] - a[1][key])
 						.forEach(([id], i) => {
-							metrics[id].positions[key] =
-								metrics[id][key] == 0 ? -1 : i;
+							metrics[id].positions[key] = metrics[id][key] == 0 ? -1 : i;
 						});
 				}
 
@@ -342,13 +302,8 @@ export default {
 				}));
 				// top 100
 				let top_metrics = this.all_metrics.slice(0, 100);
-				if (
-					this.is_logged_in &&
-					!top_metrics.find((m) => m.user_id === this.grab_id)
-				) {
-					const own_metric = this.all_metrics.find(
-						(m) => m.user_id === this.grab_id,
-					);
+				if (this.is_logged_in && !top_metrics.find((m) => m.user_id === this.grab_id)) {
+					const own_metric = this.all_metrics.find((m) => m.user_id === this.grab_id);
 					if (own_metric) top_metrics.push(own_metric);
 				}
 				this.top_metrics = top_metrics;
@@ -446,10 +401,7 @@ export default {
 		</section>
 		<section id="list-section">
 			<div id="data" class="ghl-list-data">
-				<div
-					v-show="tab === 'maps' && is_list_moderator"
-					class="controls"
-				>
+				<div v-show="tab === 'maps' && is_list_moderator" class="controls">
 					<input
 						v-model="add_level_id"
 						type="text"
@@ -472,11 +424,7 @@ export default {
 					:list="hardest_levels"
 					@update="update_levels"
 				/>
-				<div
-					v-show="tab === 'players'"
-					ref="players"
-					class="LeaderboardOutput"
-				>
+				<div v-show="tab === 'players'" ref="players" class="LeaderboardOutput">
 					<ListRow
 						v-for="{
 							user_id,
@@ -516,12 +464,11 @@ export default {
 		<section id="list-credit">
 			<span>Organised by .index & Luhmao.</span>
 			<span>
-				Maintained by .index, Thezra, FitArtist, Caziggy, Mrs.Madlord,
-				and luhmao.
+				Maintained by .index, Thezra, FitArtist, Caziggy, Mrs.Madlord, and luhmao.
 			</span>
 			<span>
-				Assisted by Polaris, BurningAlpaca, Poggggg, littlebeastM8,
-				EBspark, BWLBuck, iamaverage8, 13OliviA, and TronisRobot.
+				Assisted by Polaris, BurningAlpaca, Poggggg, littlebeastM8, EBspark, BWLBuck,
+				iamaverage8, 13OliviA, and TronisRobot.
 			</span>
 		</section>
 	</main>

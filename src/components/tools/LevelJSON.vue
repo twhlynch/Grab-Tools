@@ -1,10 +1,5 @@
 <script>
-import {
-	decodeLevel,
-	downloadJSON,
-	downloadLevel,
-	encodeLevel,
-} from '@/common/levels';
+import { decodeLevel, downloadJSON, downloadLevel, encodeLevel } from '@/common/levels';
 import ToolTemplate from './ToolTemplate.vue';
 
 export default {
@@ -24,10 +19,7 @@ export default {
 				.forEach(async (file) => {
 					const json = JSON.parse(await file.text());
 					const level = await encodeLevel(json);
-					downloadLevel(
-						level,
-						file.name.replace(/\.(json|level)/, ''),
-					);
+					downloadLevel(level, file.name.replace(/\.(json|level)/, ''));
 				});
 			files
 				.filter((file) => file.name.endsWith('.level'))
@@ -44,15 +36,8 @@ export default {
 <template>
 	<ToolTemplate>
 		<template #title>Level to JSON</template>
-		<template #info>
-			Convert a levels to readable JSON data and back.
-		</template>
-		<input
-			id="level-json-tool-file"
-			type="file"
-			accept=".level,.json"
-			multiple
-		/>
+		<template #info> Convert a levels to readable JSON data and back. </template>
+		<input id="level-json-tool-file" type="file" accept=".level,.json" multiple />
 		<button class="button" @click="run">Convert</button>
 	</ToolTemplate>
 </template>

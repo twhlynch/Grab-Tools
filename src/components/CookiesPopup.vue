@@ -63,8 +63,8 @@ export default {
 	<div v-if="!decided && !allow_cookies" class="cookie-popup">
 		<div class="info">
 			<p>
-				I use cookies for analytics and error tracking. You can accept
-				or reject non-essential cookies.
+				I use cookies for analytics and error tracking. You can accept or reject
+				non-essential cookies.
 			</p>
 			<IdnexCookieIcon alt="Cookie idnex" title="Art by B34.TR1X" />
 		</div>

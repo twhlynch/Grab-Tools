@@ -27,19 +27,12 @@ export default {
 				(object) => object.userData.node.animations,
 			).length;
 			this.statistics.Connections = level.nodes.levelNodeTrigger.flatMap(
-				(object) =>
-					object.userData.node.levelNodeTrigger.triggerTargets,
+				(object) => object.userData.node.levelNodeTrigger.triggerTargets,
 			).length;
 			this.statistics.Frames = level.nodes.animated.flatMap((object) =>
-				object.userData.node.animations.flatMap(
-					(animation) => animation.frames,
-				),
+				object.userData.node.animations.flatMap((animation) => animation.frames),
 			).length;
-			this.statistics['JSON Lines'] = JSON.stringify(
-				level.level,
-				null,
-				1,
-			).split('\n').length;
+			this.statistics['JSON Lines'] = JSON.stringify(level.level, null, 1).split('\n').length;
 			this.statistics.Objects = level.nodes.all.length;
 
 			for (const key in level.nodes) {
@@ -51,20 +44,15 @@ export default {
 
 			for (const shape in level.nodes.shape) {
 				if (shape >= 1000) {
-					let name = Object.keys(shapes()).find(
-						(k) => shapes()[k] == shape,
-					);
+					let name = Object.keys(shapes()).find((k) => shapes()[k] == shape);
 					if (!name) continue;
 					name = name.charAt(0) + name.toLowerCase().slice(1);
-					this.extra_statistics[`${name} (${shape})`] =
-						level.nodes.shape[shape].length;
+					this.extra_statistics[`${name} (${shape})`] = level.nodes.shape[shape].length;
 				}
 			}
 
 			for (const material in level.nodes.material) {
-				let name = Object.keys(materials()).find(
-					(k) => materials()[k] == material,
-				);
+				let name = Object.keys(materials()).find((k) => materials()[k] == material);
 				if (!name || material == materials().TRIGGER) continue;
 				name = name.charAt(0) + name.toLowerCase().slice(1);
 				this.extra_statistics[`${name} (${material})`] =
@@ -83,20 +71,13 @@ export default {
 		<button @click="click">
 			<StatsIcon class="stats-icon" />
 		</button>
-		<div
-			v-for="[key, value] of Object.entries(statistics)"
-			:key="key"
-			class="statistic"
-		>
+		<div v-for="[key, value] of Object.entries(statistics)" :key="key" class="statistic">
 			<span>{{ key }}</span>
 			:
 			<span>{{ value }}</span>
 		</div>
 		<div v-show="show_extra" class="extra">
-			<div
-				v-for="[key, value] of Object.entries(extra_statistics)"
-				:key="key"
-			>
+			<div v-for="[key, value] of Object.entries(extra_statistics)" :key="key">
 				<span>{{ key }}</span>
 				:
 				<span>{{ value }}</span>

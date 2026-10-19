@@ -38,10 +38,7 @@ export default {
 </script>
 
 <template>
-	<GeneralPopup
-		:visible="visible"
-		@update:visible="$emit('update:visible', $event)"
-	>
+	<GeneralPopup :visible="visible" @update:visible="$emit('update:visible', $event)">
 		<div class="header">
 			<span>{{ user_name }}</span>
 			<span class="grab-id">{{ grab_id ?? 'unverified' }}</span>
@@ -50,11 +47,7 @@ export default {
 		<button v-if="!grab_id" class="verify" @click="show_verify_menu = true">
 			Verify Account
 		</button>
-		<button
-			v-if="grab_id"
-			class="downloads"
-			@click="show_downloads_menu = true"
-		>
+		<button v-if="grab_id" class="downloads" @click="show_downloads_menu = true">
 			Manage Downloads
 		</button>
 		<VerifyMenu v-model:visible="show_verify_menu" />

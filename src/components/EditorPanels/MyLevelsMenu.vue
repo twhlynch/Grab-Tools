@@ -89,10 +89,7 @@ export default {
 </script>
 
 <template>
-	<GeneralPopup
-		:visible="visible"
-		@update:visible="$emit('update:visible', $event)"
-	>
+	<GeneralPopup :visible="visible" @update:visible="$emit('update:visible', $event)">
 		<div class="header">
 			<span>My Levels</span>
 			<button
@@ -106,25 +103,13 @@ export default {
 					}
 				"
 			>
-				<RefreshedIcon
-					class="refresh-icon"
-					:class="{ busy: loading }"
-				/>
+				<RefreshedIcon class="refresh-icon" :class="{ busy: loading }" />
 			</button>
 		</div>
-		<div v-if="!is_logged_in" class="status">
-			Log in to view your levels
-		</div>
-		<div v-else-if="!grab_id" class="status">
-			Verify your account to view your levels
-		</div>
+		<div v-if="!is_logged_in" class="status">Log in to view your levels</div>
+		<div v-else-if="!grab_id" class="status">Verify your account to view your levels</div>
 		<template v-else>
-			<input
-				v-model="search"
-				class="search"
-				type="text"
-				placeholder="Search levels..."
-			/>
+			<input v-model="search" class="search" type="text" placeholder="Search levels..." />
 			<div v-if="state === 'loading'" class="status">Loading...</div>
 			<div v-else-if="state === 'error'" class="status">
 				<span>Failed to load levels</span>
@@ -143,14 +128,10 @@ export default {
 				{{ search ? 'No matching levels' : 'No levels found' }}
 			</div>
 			<div v-else class="levels">
-				<div
-					v-for="level of filtered_levels"
-					:key="level.identifier"
-					class="level"
-				>
-					<span class="title" :title="level.identifier">{{
-						level.title || level.identifier
-					}}</span>
+				<div v-for="level of filtered_levels" :key="level.identifier" class="level">
+					<span class="title" :title="level.identifier">
+						{{ level.title || level.identifier }}
+					</span>
 					<button
 						class="insert"
 						@click="

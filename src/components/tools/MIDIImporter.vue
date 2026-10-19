@@ -23,8 +23,7 @@ export default {
 			const loop = getByID(`${toolID}-loop`).checked;
 			const instrument = getByID(`${toolID}-instrument`).value;
 			const volume = parseInt(getByID(`${toolID}-volume`).value) || 40;
-			const speedIndex =
-				1 / (parseFloat(getByID(`${toolID}-speed`).value) || 1);
+			const speedIndex = 1 / (parseFloat(getByID(`${toolID}-speed`).value) || 1);
 
 			const nodes = await midi.midi(
 				file,
@@ -37,12 +36,10 @@ export default {
 			);
 			if (!nodes) return;
 
-			const obj = createLevel(
-				nodes,
-				'MIDI: ' + file.name,
-				'Generated with GRAB Tools',
-				['TheTrueFax', 'GRAB Tools'],
-			);
+			const obj = createLevel(nodes, 'MIDI: ' + file.name, 'Generated with GRAB Tools', [
+				'TheTrueFax',
+				'GRAB Tools',
+			]);
 
 			const encoded = await encodeLevel(obj);
 			if (encoded === null) return;
@@ -56,9 +53,7 @@ export default {
 <template>
 	<ToolTemplate>
 		<template #title>Import MIDI files</template>
-		<template #info>
-			Generate songs with triggers and sound blocks.
-		</template>
+		<template #info> Generate songs with triggers and sound blocks. </template>
 		<input id="midi-tool-file" type="file" accept=".mid,.midi" />
 		<select id="midi-tool-instrument">
 			<option value="Auto Instrument" selected>Auto Instrument</option>
@@ -70,9 +65,7 @@ export default {
 			Start active:
 			<input id="midi-tool-start-active" type="checkbox" checked="true" />
 		</label>
-		<label>
-			Loop: <input id="midi-tool-loop" type="checkbox" checked="true" />
-		</label>
+		<label> Loop: <input id="midi-tool-loop" type="checkbox" checked="true" /> </label>
 		<input
 			id="midi-tool-volume"
 			type="number"
@@ -88,9 +81,7 @@ export default {
 		/>
 		<span>
 			Don't have a MIDI file? Download some
-			<a href="https://onlinesequencer.net/sequences" target="_blank"
-				>here</a
-			>!
+			<a href="https://onlinesequencer.net/sequences" target="_blank">here</a>!
 		</span>
 		<button id="midi-tool-btn" class="button" @click="run">Generate</button>
 	</ToolTemplate>

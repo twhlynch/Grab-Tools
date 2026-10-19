@@ -26,23 +26,20 @@ export default {
 		<section id="info">
 			<h2>GRAB Tools</h2>
 			<p>
-				Welcome to GRAB Tools! A collection of tools, statistics and
-				more for the VR game
+				Welcome to GRAB Tools! A collection of tools, statistics and more for the VR game
 				<a :href="$config.GRAB_PAGE_URL">GRAB</a>. Brought to you by
 				<a href="https://twhlynch.me">.index</a>.
 			</p>
 			<p>
-				Here you will find many tools for editing, or generating levels,
-				including the <a href="/editor">JSON Editor</a>. <br />There a
-				large amount of <a href="/stats">stats and leaderboards</a> such
-				as the unbeaten levels list, and most played levels list, and a
-				managed list of the top levels and players.<br />
+				Here you will find many tools for editing, or generating levels, including the
+				<a href="/editor">JSON Editor</a>. <br />There a large amount of
+				<a href="/stats">stats and leaderboards</a> such as the unbeaten levels list, and
+				most played levels list, and a managed list of the top levels and players.<br />
 				We also have a community maintained
 				<a :href="`${$config.WIKI_URL}.index`">wiki page</a>
-				hosted with miraheze, and a chrome extension to add some extra
-				utility to the
-				<a :href="$config.GRAB_LEVELS_URL">level browser</a>. Also check
-				out <a href="https://grab-tutorials.live">GRAB Tutorials</a>!
+				hosted with miraheze, and a chrome extension to add some extra utility to the
+				<a :href="$config.GRAB_LEVELS_URL">level browser</a>. Also check out
+				<a href="https://grab-tutorials.live">GRAB Tutorials</a>!
 			</p>
 		</section>
 		<section class="tools">
@@ -62,14 +59,12 @@ export default {
 		<section class="bookmarklets">
 			<h2>Bookmarklets</h2>
 			<p>
-				Drag these tools onto your bookmarks bar and click to run them
-				while in the level browser.
+				Drag these tools onto your bookmarks bar and click to run them while in the level
+				browser.
 			</p>
 			<p>
 				Also check out the
-				<a href="https://github.com/twhlynch/grab-tools-extension"
-					>Chrome extension</a
-				>
+				<a href="https://github.com/twhlynch/grab-tools-extension">Chrome extension</a>
 				that adds a bunch of useful features like these right into the
 				<a :href="$config.GRAB_LEVELS_URL">level browser</a>.
 			</p>
@@ -80,34 +75,20 @@ export default {
 				:name="'Open in JSON Editor'"
 				:script="'open_json_editor.js'"
 			/>
-			<Bookmarklet
-				class="button"
-				:name="'Download glTF'"
-				:script="'download_gltf.js'"
-			/>
-			<Bookmarklet
-				class="button"
-				:name="'Download Level'"
-				:script="'download_level.js'"
-			/>
-			<Bookmarklet
-				class="button"
-				:name="'Custom Colors'"
-				:script="'custom_colors.js'"
-			/>
+			<Bookmarklet class="button" :name="'Download glTF'" :script="'download_gltf.js'" />
+			<Bookmarklet class="button" :name="'Download Level'" :script="'download_level.js'" />
+			<Bookmarklet class="button" :name="'Custom Colors'" :script="'custom_colors.js'" />
 		</section>
 		<section class="editor">
 			<div>
 				<h2>JSON Editor</h2>
 				<p>
-					The JSON Editor is a combined JSON and 3D level editor that
-					lets you build, import, modify, or explore levels however
-					you like. You can edit things directly in JSON, run scripts
-					on nodes, or just grab objects in the 3D view and move,
-					scale, animate, group, and more. It's built to make messing
-					with levels easy without having to open the game, with tools
-					for adding objects, images, videos, triggers, animations,
-					and more.
+					The JSON Editor is a combined JSON and 3D level editor that lets you build,
+					import, modify, or explore levels however you like. You can edit things directly
+					in JSON, run scripts on nodes, or just grab objects in the 3D view and move,
+					scale, animate, group, and more. It's built to make messing with levels easy
+					without having to open the game, with tools for adding objects, images, videos,
+					triggers, animations, and more.
 				</p>
 			</div>
 			<img
@@ -142,9 +123,9 @@ export default {
 			</div>
 			<p>
 				If you need help with anything, you should join the
-				<a :href="$config.DISCORD_URL" target="_blank">discord server</a
-				>, but feel free to contact me on any of my socials, or if you
-				prefer, you can email me at {{ $config.SUPPORT_EMAIL }}.
+				<a :href="$config.DISCORD_URL" target="_blank">discord server</a>, but feel free to
+				contact me on any of my socials, or if you prefer, you can email me at
+				{{ $config.SUPPORT_EMAIL }}.
 			</p>
 		</section>
 	</main>

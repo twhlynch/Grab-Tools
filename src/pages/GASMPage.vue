@@ -140,17 +140,12 @@ export default {
 						<menu class="tab-menu">
 							<button
 								class="selected"
-								:style="
-									(error ? 'color: #D8647E;' : '') +
-									'cursor: default;'
-								"
+								:style="(error ? 'color: #D8647E;' : '') + 'cursor: default;'"
 							>
 								Output
 							</button>
 						</menu>
-						<button class="copy-output-btn" @click="copyOutput">
-							Copy
-						</button>
+						<button class="copy-output-btn" @click="copyOutput">Copy</button>
 					</div>
 					<AssemblyEditor ref="outputEditor" :editor="OutputEditor" />
 				</template>

@@ -11,10 +11,8 @@ export default {
 		<section id="info">
 			<h2>GRAB Games</h2>
 			<p>
-				A collection of GRAB themed games available to play online or
-				download! Join the
-				<a :href="$config.DISCORD_URL" target="_blank">discord</a> to
-				request a game to add.
+				A collection of GRAB themed games available to play online or download! Join the
+				<a :href="$config.DISCORD_URL" target="_blank">discord</a> to request a game to add.
 			</p>
 		</section>
 		<section id="games">
@@ -31,11 +29,7 @@ export default {
 							>
 						</div>
 					</div>
-					<img
-						src="/images/games/grab.png"
-						alt="The GRAB logo"
-						title="GRAB"
-					/>
+					<img src="/images/games/grab.png" alt="The GRAB logo" title="GRAB" />
 				</div>
 			</div>
 			<div class="game">
@@ -44,9 +38,7 @@ export default {
 						<h3>GRAB2D - BlackCat508</h3>
 						<p>A 2D version of GRAB!</p>
 						<div class="game-links">
-							<a
-								href="https://blackcat508.itch.io/grab2d"
-								class="button-sml"
+							<a href="https://blackcat508.itch.io/grab2d" class="button-sml"
 								>Itch.io</a
 							>
 							<a
@@ -57,11 +49,7 @@ export default {
 							>
 						</div>
 					</div>
-					<img
-						src="/images/games/grab_2d.png"
-						alt="The GRAB 2D logo"
-						title="GRAB 2D"
-					/>
+					<img src="/images/games/grab_2d.png" alt="The GRAB 2D logo" title="GRAB 2D" />
 				</div>
 			</div>
 			<div class="game">
@@ -70,14 +58,8 @@ export default {
 						<h3>GrabGuessr - .index</h3>
 						<p>GeoGuesser with GRAB maps!</p>
 						<div class="game-links">
-							<a
-								href="https://grabguessr.grabvr.tools"
-								class="button-sml"
-								>Website</a
-							>
-							<a
-								href="https://github.com/twhlynch/GrabGuessr"
-								class="button-sml"
+							<a href="https://grabguessr.grabvr.tools" class="button-sml">Website</a>
+							<a href="https://github.com/twhlynch/GrabGuessr" class="button-sml"
 								>GitHub</a
 							>
 						</div>

@@ -20,8 +20,7 @@ export default {
 		<footer class="footer">
 			<span><a href="https://twhlynch.me">twhlynch</a></span
 			><span>•</span><span><a href="/privacy">privacy</a></span
-			><span>•</span
-			><span><a href="https://github.com/twhlynch">.index</a></span>
+			><span>•</span><span><a href="https://github.com/twhlynch">.index</a></span>
 		</footer>
 	</div>
 </template>

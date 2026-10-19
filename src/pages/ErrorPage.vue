@@ -9,11 +9,7 @@ export default {
 <template>
 	<main>
 		<section id="error">
-			<img
-				src="/images/404.png"
-				alt="Sad idnex"
-				title="Art by TheWhiteCrescent"
-			/>
+			<img src="/images/404.png" alt="Sad idnex" title="Art by TheWhiteCrescent" />
 			<h2>Something went wrong</h2>
 			<p>This page may have moved or the url might be malformed.</p>
 		</section>
