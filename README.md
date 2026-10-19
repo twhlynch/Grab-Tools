@@ -78,6 +78,7 @@ Development helper scripts in `scripts/`:
 | Script                                | Description                         |
 | ------------------------------------- | ----------------------------------- |
 | `bump-version.sh major\|minor\|patch` | Bump the project version and commit |
+| `generate.sh`                         | Run proto helpers codegen           |
 | `publish-meta.sh`                     | Upload APK to Meta                  |
 | `copy-lobbies.sh`                     | Copy lobbys from GRAB               |
 
@@ -97,6 +98,7 @@ Development helper scripts in `scripts/`:
 ├─ scripts/                    # scripts for development
 │  ├─ bump-version.sh          # bump version in packages and tauri
 │  ├─ copy-lobbies.sh          # copy lobbies from GRAB
+│  ├─ generate.sh              # run proto helpers codegen
 │  ├─ publish-meta.sh          # upload apk to meta
 │  ├─ generate-helpers.ts      # generator run by pnpm helpers
 │  └─ generate-node-helpers.ts # generator run by pnpm nodes
