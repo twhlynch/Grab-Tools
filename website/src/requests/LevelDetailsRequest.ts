@@ -1,4 +1,5 @@
 import { GRAB_SERVER_URL } from '@/config';
+import { LevelDetails } from '@grab-tools/lib/data/types';
 import { clean_level_id, safe_fetch_json } from './RequestUtils';
 
 export async function level_details_request(

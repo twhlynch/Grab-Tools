@@ -1,6 +1,7 @@
 import { SERVER_URL } from '@/config';
 import { user_info_request } from '@/requests/UserInfoRequest';
 import { useCookiesStore } from '@/stores/cookies';
+import { UserInfo } from '@grab-tools/lib/data/types';
 import { setUser } from '@sentry/vue';
 import { defineStore } from 'pinia';
 

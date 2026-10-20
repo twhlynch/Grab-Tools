@@ -1,4 +1,5 @@
 import { FORMAT_VERSION, GRAB_SERVER_URL } from '@/config';
+import { LevelDetails } from '@grab-tools/lib/data/types';
 
 export async function user_levels_request(user_id: string) {
 	const url = `${GRAB_SERVER_URL}list?user_id=${user_id}&max_format_version=${FORMAT_VERSION}`;
