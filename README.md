@@ -102,6 +102,12 @@ Development helper scripts in `scripts/`:
 │  ├─ publish-meta.sh          # upload apk to meta
 │  ├─ generate-helpers.ts      # generator run by pnpm helpers
 │  └─ generate-node-helpers.ts # generator run by pnpm nodes
+├─ lib/                        # shared library package
+│  ├─ src/                     # library sources
+│  │  ├─ common/               # common js & ts code
+│  │  └─ generated/            # generated helper functions and types
+│  ├─ package.json             # package config and dependencies
+│  └─ tsconfig.json            # typescript config
 ├─ website/                    # website package
 │  ├─ public/                  # public website assets
 │  │  ├─ fonts/                # fonts
@@ -115,13 +121,12 @@ Development helper scripts in `scripts/`:
 │  │  │  ├─ models/            # level models
 │  │  │  ├─ proto/             # level protobuf definition
 │  │  │  ├─ shaders/           # editor shaders
-│  │  │  ├─ textures/          # level textures
+│  │  │  └─ textures/          # level textures
 │  │  ├─ common/               # common js & ts code
 │  │  ├─ components/           # vue components
 │  │  │  ├─ EditorPanels/      # components for the json editor
 │  │  │  └─ tools/             # components for tools
 │  │  ├─ editor/               # editor code
-│  │  ├─ generated/            # generated helper functions and types
 │  │  ├─ icons/                # vue svg icon components
 │  │  ├─ layouts/              # vue layout components
 │  │  ├─ pages/                # vue page components
