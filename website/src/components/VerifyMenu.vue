@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 import GeneralPopup from '@/components/GeneralPopup.vue';
 import { verification_code_request } from '@/requests/VerificationCodeRequest';
 import { verify_account_request } from '@/requests/VerifyAccountRequest';
 import { useUserStore } from '@/stores/user';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		GeneralPopup,
 	},
@@ -21,7 +22,7 @@ export default {
 			tab: 'bookmark',
 			access_token: '',
 			level_url: '',
-			code: null,
+			code: null as string | null,
 			bookmarklet: 'javascript:(() => {})();',
 		};
 	},
@@ -57,7 +58,7 @@ export default {
 			const userStore = useUserStore();
 			userStore.logout();
 		},
-		select_tab(tab) {
+		select_tab(tab: string) {
 			this.tab = tab;
 		},
 		async submit_access_token() {
@@ -73,11 +74,11 @@ export default {
 		async generate_code() {
 			this.code = await verification_code_request();
 		},
-		noclick(e) {
+		noclick(e: Event) {
 			e.preventDefault();
 		},
 	},
-};
+});
 </script>
 
 <template>

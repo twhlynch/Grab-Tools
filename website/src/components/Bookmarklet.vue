@@ -1,5 +1,7 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	props: {
 		name: String,
 		script: String,
@@ -24,11 +26,11 @@ export default {
 	},
 
 	methods: {
-		click(e) {
+		click(e: Event) {
 			e.preventDefault();
 		},
 	},
-};
+});
 </script>
 
 <template>

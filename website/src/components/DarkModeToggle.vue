@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 import MoonIcon from '@/icons/MoonIcon.vue';
 import SunIcon from '@/icons/SunIcon.vue';
 import { useConfigStore } from '@/stores/config';
 import { mapActions, mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		MoonIcon,
 		SunIcon,
@@ -19,7 +20,7 @@ export default {
 			this.set_dark_mode(!this.dark_mode);
 		},
 	},
-};
+});
 </script>
 
 <template>

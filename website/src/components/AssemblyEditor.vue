@@ -1,9 +1,9 @@
 <script lang="ts">
 import { BaseEditor, EditorConstructor } from '@/editor/GASMEditor';
 import { ViewUpdate } from '@codemirror/view';
-import { PropType } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
-export default {
+export default defineComponent({
 	props: {
 		editor: {
 			type: Function as unknown as PropType<EditorConstructor>,
@@ -62,7 +62,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

@@ -1,5 +1,7 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	props: {
 		visible: {
 			type: Boolean,
@@ -16,8 +18,8 @@ export default {
 		this.sync(this.visible);
 	},
 	methods: {
-		sync(value) {
-			const dialog = this.$refs.popup;
+		sync(value: boolean) {
+			const dialog = this.$refs.popup as HTMLDialogElement;
 			if (!dialog) return;
 
 			if (value && !dialog.open) dialog.showModal();
@@ -27,7 +29,7 @@ export default {
 			this.$emit('update:visible', false);
 		},
 	},
-};
+});
 </script>
 
 <template>

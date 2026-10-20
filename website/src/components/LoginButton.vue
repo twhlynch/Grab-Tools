@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 import AccountMenu from '@/components/AccountMenu.vue';
 import UserIcon from '@/icons/UserIcon.vue';
 import { useUserStore } from '@/stores/user';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		UserIcon,
 		AccountMenu,
@@ -44,7 +45,7 @@ export default {
 			this.show_menu = true;
 		},
 	},
-};
+});
 </script>
 
 <template>
