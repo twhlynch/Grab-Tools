@@ -39,7 +39,7 @@ if (user.user_name && cookies.allow_cookies) {
 	setUser({ username: user.user_name });
 }
 
-setTimeout(user.check_expiry, 0); // wait for toast to exist
-setInterval(user.check_expiry, 60_000);
+setTimeout(user.check_expiry.bind(user), 0); // wait for toast to exist
+setInterval(user.check_expiry.bind(user), 60_000);
 
 app.mount('#app');

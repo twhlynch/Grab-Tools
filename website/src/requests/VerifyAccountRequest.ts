@@ -30,7 +30,7 @@ export async function verify_account_request(
 			return false;
 		}
 
-		const json: { grab_id: string } = await response.json();
+		const json = (await response.json()) as { grab_id: string };
 		userStore.grab_id = json.grab_id;
 
 		return true;

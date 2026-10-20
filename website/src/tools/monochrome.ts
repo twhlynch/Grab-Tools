@@ -1,11 +1,12 @@
 import { traverse_node } from '@/common/utils';
-import { Color, LevelNode } from '@/generated/proto';
+import { Color, LevelNode, LevelNodeMaterial } from '@/generated/proto';
 
 export function monochrome(nodes: LevelNode[]) {
 	nodes.forEach((n) => {
 		traverse_node(n, (node) => {
 			const static_node = node.levelNodeStatic;
-			if (static_node?.material !== 8) return;
+			if (static_node?.material !== LevelNodeMaterial.DEFAULT_COLORED)
+				return;
 			if (static_node.color1) {
 				monochrom_color(static_node.color1);
 			}

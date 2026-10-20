@@ -1,9 +1,12 @@
-import ViewportPanel from '@/components/EditorPanels/ViewportPanel.vue';
+// import ViewportPanel from '@/components/EditorPanels/ViewportPanel.vue';
+import { Level } from '@/generated/proto';
 import * as THREE from 'three';
 
 // TODO: correctly use raw properties to get inference
 // for now just update this as needed
-export type Viewport = InstanceType<typeof ViewportPanel> & {
+
+/*InstanceType<typeof ViewportPanel> & */
+export interface Viewport {
 	gizmo: {
 		empty(): boolean;
 		clear(): void;
@@ -16,8 +19,8 @@ export type Viewport = InstanceType<typeof ViewportPanel> & {
 		scene: THREE.Scene;
 	};
 	editing_parent: THREE.Object3D | null;
-	modifier(fn: (json: unknown) => unknown): void;
-};
+	modifier(fn: (json: Level) => Level): void;
+}
 
 export interface Tool {
 	readonly name: string;

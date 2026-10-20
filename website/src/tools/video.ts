@@ -22,11 +22,12 @@ async function video(
 		// noop
 	},
 ): Promise<LevelNode[] | null> {
-	if (!window.MediaStreamTrackProcessor) {
+	if (typeof MediaStreamTrackProcessor === 'undefined') {
 		window.toast(
 			'MediaStreamTrackProcessor is not available on this browser. Chrome is required for this tool.',
 			'warning',
 		);
+		return null;
 	}
 
 	const video_data = await read_video(file, callback);
@@ -80,8 +81,7 @@ async function read_video(file: File, callback: (percent: number) => void) {
 	const [track] = vid.captureStream().getVideoTracks();
 	vid.onended = () => track!.stop();
 
-	// @ts-expect-error not baseline
-	const processor = new MediaStreamTrackProcessor(track); // fuck firefox
+	const processor = new MediaStreamTrackProcessor({ track: track! });
 	const video_reader = processor.readable.getReader();
 
 	const canvas = document.createElement('canvas');
@@ -181,9 +181,7 @@ function build_video(
 		},
 	};
 
-	for (const i in frames) {
-		const frame = frames[i]!;
-
+	for (const [i, frame] of frames.entries()) {
 		callback(90 + 10 * (Number(i) / frames.length));
 
 		// these may be redundant
@@ -308,14 +306,15 @@ function build_code_video(
 	);
 
 	// a final frame to reset to black
-	const reset_asm: Instruction[] = [...Array(width)].flatMap((_, x) =>
-		[...Array(height)].flatMap((__, y) =>
-			['R', 'G', 'B'].map((c) => ({
-				line: `SET ${connection_key(x, y)}.Col.${c} 0`,
-				x,
-				y,
-			})),
-		),
+	const reset_asm: Instruction[] = [...Array<undefined>(width)].flatMap(
+		(_, x) =>
+			[...Array<undefined>(height)].flatMap((__, y) =>
+				['R', 'G', 'B'].map((c) => ({
+					line: `SET ${connection_key(x, y)}.Col.${c} 0`,
+					x,
+					y,
+				})),
+			),
 	);
 
 	// all the frames

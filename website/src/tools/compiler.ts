@@ -62,19 +62,21 @@ export function offset_ids(nodes: LevelNode[], offset: number) {
 						if (Array.isArray(value)) {
 							for (const v of value) {
 								// must convert v[k] from Long to Number so it doesnt become a string
-								v[k] = Number(v[k] ?? 0) + offset;
+								const record = v as Record<string, unknown>;
+								record[k] = Number(record[k] ?? 0) + offset;
 							}
 						}
 						// update value in an object
 						else if (typeof value === 'object' && value !== null) {
-							value[k] = Number(value[k] ?? 0) + offset;
+							const record = value as Record<string, unknown>;
+							record[k] = Number(record[k] ?? 0) + offset;
 						}
 					}
 				}
 
 				// traverse subobjects
 				if (typeof value == 'object' && value !== null) {
-					objects.push(value);
+					objects.push(value as Record<string, unknown>);
 				}
 			}
 		}

@@ -82,10 +82,13 @@ function collect_completions(enums: EnumData[]) {
 		Object.entries(values).forEach(([name, num]) => {
 			if (
 				type === 'LevelNodeShape' &&
-				num <= materials().__END_OF_SPECIAL_PARTS__!
+				num <= +materials().__END_OF_SPECIAL_PARTS__!
 			)
 				return;
-			if (type === 'LevelNodeMaterial' && num === materials().TRIGGER)
+			if (
+				type === 'LevelNodeMaterial' &&
+				num === +(materials().TRIGGER ?? -1)
+			)
 				return;
 			const cmps = (completions[field.name] ??= []);
 			if (
@@ -162,6 +165,7 @@ export function grabCompletion() {
 		if (!update.docChanged) return;
 
 		for (const transaction of update.transactions) {
+			// eslint-disable-next-line @typescript-eslint/no-base-to-string
 			const inserted = transaction.changes.toString();
 			if (!inserted) continue;
 

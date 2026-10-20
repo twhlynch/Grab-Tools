@@ -19,14 +19,18 @@ declare global {
 				severity: Severity;
 			}>;
 		};
-		MediaStreamTrackProcessor: unknown;
 	}
 
+	interface MediaStreamTrackProcessor {
+		readable: ReadableStream<VideoFrame>;
+	}
+
+	var MediaStreamTrackProcessor: {
+		new (init: { track: MediaStreamTrack }): MediaStreamTrackProcessor;
+		readonly prototype: MediaStreamTrackProcessor;
+	};
+
 	interface HTMLVideoElement {
-		captureStream: () => {
-			getVideoTracks: () => {
-				stop: () => void;
-			}[];
-		};
+		captureStream: () => MediaStream;
 	}
 }

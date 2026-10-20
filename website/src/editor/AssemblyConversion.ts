@@ -606,7 +606,7 @@ function instruction_asm_to_json(
 
 function operand_asm_to_json(
 	operand: string,
-	instruction: number,
+	instruction: InstructionDataType,
 	index: number,
 	node: SafeNode,
 ): OperandData | undefined {
@@ -756,5 +756,5 @@ function dirty_instruction(name: string): string {
 	return `In${name.charAt(0)}${name
 		.toLowerCase()
 		.slice(1)
-		.replace(/_(.)/g, (_, c) => c.toUpperCase())}`;
+		.replace(/_(.)/g, (_, c: string) => c.toUpperCase())}`;
 }

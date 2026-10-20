@@ -6,7 +6,7 @@
 		return error('Use in the level viewer (grabvr.quest)');
 	}
 
-	const get_user_info = (): {
+	interface UserInfo {
 		user?: {
 			access_token?: string;
 			info?: {
@@ -20,13 +20,14 @@
 				};
 			};
 		};
-	} => {
+	}
+
+	const get_user_info = (): UserInfo => {
 		const user = localStorage.getItem('user');
 		if (!user) return {};
 
 		try {
-			const json = JSON.parse(user);
-			return json ?? {};
+			return (JSON.parse(user) ?? {}) as UserInfo;
 		} catch {
 			return {};
 		}
@@ -70,6 +71,7 @@
 	popupContainer.appendChild(sendButton);
 	document.body.appendChild(popupContainer);
 
+	// eslint-disable-next-line @typescript-eslint/no-misused-promises
 	sendButton.addEventListener('click', async () => {
 		const min = 0.021;
 		const parse_color = (color: string, pos: number) =>

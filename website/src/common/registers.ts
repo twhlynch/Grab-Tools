@@ -2,7 +2,7 @@ import { LevelNodeGASMConnection, ProgramData } from '@/generated/proto';
 
 // key of ProgramData matching /^.*Registers$/
 export type RegisterType = {
-	[K in keyof ProgramData & string]: K extends `${string}Registers`
+	[K in Extract<keyof ProgramData, string>]: K extends `${string}Registers`
 		? K
 		: never;
 }[keyof ProgramData];

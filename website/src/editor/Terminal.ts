@@ -76,6 +76,7 @@ export class Terminal {
 
 	run_command(command: string, level: Level) {
 		try {
+			// eslint-disable-next-line @typescript-eslint/no-implied-eval, @typescript-eslint/no-unsafe-call
 			new Function('LEVEL', ...Object.keys(terminal_context), command)(
 				level,
 				...Object.values(terminal_context),

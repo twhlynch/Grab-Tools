@@ -47,6 +47,7 @@ export function bookmarklets({
 		configureServer(server: ViteDevServer) {
 			const dir = path.resolve(inputDir);
 
+			// eslint-disable-next-line @typescript-eslint/no-misused-promises
 			server.middlewares.use(async (req, res, next) => {
 				const match = req.url?.match(
 					new RegExp(`^/${outputDir}/(.+)\\.js$`),

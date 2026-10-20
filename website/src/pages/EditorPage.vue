@@ -255,9 +255,11 @@ html:has(#editor) {
 	background-color: #1e1e1e;
 	overscroll-behavior: none;
 }
+/*
 #editor * {
-	/* outline: 0.1px solid #0f05; */
+	outline: 0.1px solid #0f05;
 }
+*/
 </style>
 <style scoped>
 .protobuf-panel {

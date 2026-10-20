@@ -1,4 +1,5 @@
 import {
+	Animation,
 	InstructionDataType,
 	LevelNode,
 	LevelNodeMaterial,
@@ -8,7 +9,15 @@ import {
 	TriggerTarget,
 } from '@/generated/proto';
 import { Root as PBRoot, Type } from 'protobufjs';
-import { Mesh, Object3D, Quaternion, ShaderMaterial, Vector3 } from 'three';
+import {
+	IUniform,
+	Mesh,
+	Object3D,
+	Quaternion,
+	ShaderMaterial,
+	Vector3,
+} from 'three';
+import { isObject3D } from './utils';
 
 // helpers
 type PropsStartingWith<T, Prefix extends string> = T[Extract<
@@ -143,12 +152,20 @@ export type Root = PBRoot & {
 // - is<Node>
 export type LevelNodeObject = Partial<Omit<Mesh, 'material' | keyof Object3D>> &
 	Object3D & {
-		material?: ShaderMaterial;
+		material?: ShaderMaterial & {
+			uniforms: {
+				fogEnabled: IUniform<number>;
+				isSelected: IUniform<boolean>;
+			};
+		};
 		initialPosition: Vector3;
 		initialRotation: Quaternion;
 		userData: {
 			id: number;
 			node: LevelNode;
+			animation?: Animation;
+			currentFrameIndex?: number;
+			update?: (delta: number) => void;
 		} & {
 			[
 				K in LevelNodeKey as K extends `levelNode${infer S}`
@@ -159,8 +176,6 @@ export type LevelNodeObject = Partial<Omit<Mesh, 'material' | keyof Object3D>> &
 	};
 
 // type guards for LevelNodeObjects
-export function isLevelNodeObject(
-	object: Object3D | undefined,
-): object is LevelNodeObject {
-	return object?.userData.node;
+export function isLevelNodeObject(object: unknown): object is LevelNodeObject {
+	return isObject3D(object) && 'node' in object.userData;
 }

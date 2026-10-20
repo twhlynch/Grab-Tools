@@ -43,7 +43,7 @@ class FreeControls extends THREE.EventDispatcher {
 
 	dispose: () => void;
 
-	constructor( object: THREE.Object3D, domElement?: HTMLElement | undefined ) {
+	constructor( object: THREE.Object3D, domElement?: HTMLElement ) {
 
 		super();
 

@@ -230,9 +230,10 @@ class GizmoControls {
 		}
 	}
 	applyNodeConstraints(object: THREE.Object3D | undefined) {
-		const node = object?.userData.node;
+		if (!isLevelNodeObject(object)) return;
+		const node = object.userData.node;
 		const axis = this.controls.axis;
-		if (!node || !axis) return;
+		if (!axis) return;
 
 		const mode = this.controls.mode;
 		const override_axis = this.get_axis();
@@ -342,12 +343,10 @@ class GizmoControls {
 		return this.selection.length === 0;
 	}
 
-	update_visuals(object: THREE.Object3D, isSelected: boolean) {
+	update_visuals(object: LevelNodeObject, isSelected: boolean) {
 		object.traverse((obj) => {
-			if (obj instanceof THREE.Mesh) {
-				if (obj.material?.uniforms?.isSelected) {
-					obj.material.uniforms.isSelected.value = isSelected;
-				}
+			if (isLevelNodeObject(obj) && obj.material?.uniforms.isSelected) {
+				obj.material.uniforms.isSelected.value = isSelected;
 			}
 		});
 	}

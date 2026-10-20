@@ -40,6 +40,7 @@ import {
 import {
 	Level,
 	LevelNode,
+	LevelNodeGravityMode,
 	LevelNodeMaterial,
 	LevelNodeShape,
 } from '@/generated/proto';
@@ -538,15 +539,13 @@ class LevelLoader {
 
 		const LevelMessage = root.lookupType('COD.Level.Level');
 
-		let decoded;
 		if (data instanceof Uint8Array) {
 			const formattedBuffer = data;
-			decoded = LevelMessage.decode(formattedBuffer);
-			level.level = decoded as Level;
+			level.level = LevelMessage.decode(formattedBuffer) as Level;
 		} else {
 			level.level = data;
-			decoded = data;
 		}
+		const decoded = level.level;
 
 		await this.shapePromise;
 		await this.objectPromise;
@@ -750,7 +749,10 @@ class LevelLoader {
 						const particleGeometry = new THREE.BufferGeometry();
 
 						let particleColor = new THREE.Color(1.0, 1.0, 1.0);
-						if (node.levelNodeGravity.mode != 0) {
+						if (
+							node.levelNodeGravity.mode !=
+							LevelNodeGravityMode.DEFAULT
+						) {
 							particleColor = new THREE.Color(1.0, 0.6, 0.6);
 						}
 
@@ -1895,7 +1897,7 @@ function getMaterialForTexture(
 		uniforms: THREE.UniformsUtils.merge([
 			THREE.ShaderLib.standard.uniforms,
 			uniforms,
-		]),
+		]) as LevelNodeUniforms,
 	}) as LevelNodeShaderMaterial;
 }
 
@@ -1912,7 +1914,7 @@ async function getGeometryForModel(
 		throw new Error('Models first child is not a Mesh');
 	}
 
-	return object.geometry;
+	return object.geometry as THREE.BufferGeometry;
 }
 
 function updateObjectAnimation(object: LevelNodeObject, time: number) {
@@ -1922,11 +1924,11 @@ function updateObjectAnimation(object: LevelNodeObject, time: number) {
 	if (!animationFrames) return;
 	const relativeTime =
 		(time * (animation.speed ?? 0)) %
-		(animationFrames[animationFrames.length - 1].time ?? 0);
+		(animationFrames[animationFrames.length - 1]!.time ?? 0);
 
 	//Find frames to blend between
-	let oldFrame = animationFrames[object.userData.currentFrameIndex];
-	let newFrameIndex = object.userData.currentFrameIndex + 1;
+	let oldFrame = animationFrames[object.userData.currentFrameIndex ?? 0];
+	let newFrameIndex = (object.userData.currentFrameIndex ??= 0) + 1;
 	if (newFrameIndex >= animationFrames.length) newFrameIndex = 0;
 	let newFrame = animationFrames[newFrameIndex];
 
@@ -1938,8 +1940,8 @@ function updateObjectAnimation(object: LevelNodeObject, time: number) {
 		newFrame = animationFrames[newFrameIndex];
 
 		if (
-			(oldFrame.time ?? 0) <= relativeTime &&
-			(newFrame.time ?? 0) > relativeTime
+			(oldFrame?.time ?? 0) <= relativeTime &&
+			(newFrame?.time ?? 0) > relativeTime
 		)
 			break;
 		object.userData.currentFrameIndex += 1;
@@ -1950,36 +1952,36 @@ function updateObjectAnimation(object: LevelNodeObject, time: number) {
 	}
 
 	let factor = 0.0;
-	const timeDiff = (newFrame.time ?? 0) - (oldFrame.time ?? 0);
+	const timeDiff = (newFrame?.time ?? 0) - (oldFrame?.time ?? 0);
 	if (Math.abs(timeDiff) > 0.00000001) {
 		//Prevent dividing by 0 if time of both frames is equal
-		factor = (relativeTime - (oldFrame.time ?? 0)) / timeDiff;
+		factor = (relativeTime - (oldFrame?.time ?? 0)) / timeDiff;
 	}
 
 	const oldRotation = new THREE.Quaternion(
-		oldFrame.rotation?.x ?? 0,
-		oldFrame.rotation?.y ?? 0,
-		oldFrame.rotation?.z ?? 0,
-		oldFrame.rotation?.w ?? 0,
+		oldFrame?.rotation?.x ?? 0,
+		oldFrame?.rotation?.y ?? 0,
+		oldFrame?.rotation?.z ?? 0,
+		oldFrame?.rotation?.w ?? 0,
 	);
 	const newRotation = new THREE.Quaternion(
-		newFrame.rotation?.x ?? 0,
-		newFrame.rotation?.y ?? 0,
-		newFrame.rotation?.z ?? 0,
-		newFrame.rotation?.w ?? 0,
+		newFrame?.rotation?.x ?? 0,
+		newFrame?.rotation?.y ?? 0,
+		newFrame?.rotation?.z ?? 0,
+		newFrame?.rotation?.w ?? 0,
 	);
 	const finalRotation = new THREE.Quaternion();
 	finalRotation.slerpQuaternions(oldRotation, newRotation, factor);
 
 	const oldPosition = new THREE.Vector3(
-		oldFrame.position?.x ?? 0,
-		oldFrame.position?.y ?? 0,
-		oldFrame.position?.z ?? 0,
+		oldFrame?.position?.x ?? 0,
+		oldFrame?.position?.y ?? 0,
+		oldFrame?.position?.z ?? 0,
 	);
 	const newPosition = new THREE.Vector3(
-		newFrame.position?.x ?? 0,
-		newFrame.position?.y ?? 0,
-		newFrame.position?.z ?? 0,
+		newFrame?.position?.x ?? 0,
+		newFrame?.position?.y ?? 0,
+		newFrame?.position?.z ?? 0,
 	);
 	const finalPosition = new THREE.Vector3();
 	finalPosition.lerpVectors(oldPosition, newPosition, factor);
