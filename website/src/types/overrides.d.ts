@@ -5,6 +5,7 @@ type Severity = 'message' | 'info' | 'warn' | 'warning' | 'err' | 'error';
 
 declare global {
 	interface Window {
+		dataLayer?: IArguments[];
 		_root?: Root;
 		toast: (
 			message: string | Error,
