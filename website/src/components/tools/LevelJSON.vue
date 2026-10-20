@@ -1,43 +1,48 @@
-<script>
+<script lang="ts">
 import { decodeLevel, downloadJSON, downloadLevel, encodeLevel } from '@/common/levels';
+import { defineComponent } from 'vue';
 import ToolTemplate from './ToolTemplate.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		ToolTemplate,
 	},
 	methods: {
 		async run() {
-			const getByID = (id) => document.getElementById(id);
-			const toolID = 'level-json-tool';
+			const fileInput = this.$refs.file as HTMLInputElement;
 
-			const files = Array.from(getByID(`${toolID}-file`).files);
-			if (!files.length) return;
+			const files = Array.from(fileInput.files ?? []);
+			const file = files[0];
+			if (!file) {
+				window.toast('No file chosen', 'error');
+				return;
+			}
 
 			files
-				.filter((file) => file.name.endsWith('.json'))
-				.forEach(async (file) => {
-					const json = JSON.parse(await file.text());
-					const level = await encodeLevel(json);
-					downloadLevel(level, file.name.replace(/\.(json|level)/, ''));
+				.filter((f) => f.name.endsWith('.json'))
+				.forEach(async (f) => {
+					const json = JSON.parse(await f.text());
+					const level = encodeLevel(json);
+					if (level) downloadLevel(level, f.name.replace(/\.(json|level)/, ''));
 				});
 			files
-				.filter((file) => file.name.endsWith('.level'))
-				.forEach(async (file) => {
-					const json = await decodeLevel(file);
+				.filter((f) => f.name.endsWith('.level'))
+				.forEach(async (f) => {
+					const json = await decodeLevel(f);
 					if (!json) return;
-					downloadJSON(json, file.name.replace(/\.(json|level)/, ''));
+					downloadJSON(json, f.name.replace(/\.(json|level)/, ''));
 				});
 		},
 	},
-};
+});
 </script>
 
 <template>
-	<ToolTemplate>
-		<template #title>Level to JSON</template>
-		<template #info> Convert a levels to readable JSON data and back. </template>
-		<input id="level-json-tool-file" type="file" accept=".level,.json" multiple />
+	<ToolTemplate
+		:name="'Level to JSON'"
+		:details="'Convert a levels to readable JSON data and back.'"
+	>
+		<input ref="file" type="file" accept=".level,.json" multiple />
 		<button class="button" @click="run">Convert</button>
 	</ToolTemplate>
 </template>

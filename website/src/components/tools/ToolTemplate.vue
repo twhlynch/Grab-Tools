@@ -1,11 +1,24 @@
-<script>
-export default {};
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+	props: {
+		name: {
+			type: String,
+			required: true,
+		},
+		details: {
+			type: String,
+			required: true,
+		},
+	},
+});
 </script>
 
 <template>
 	<div>
-		<h2><slot name="title" /></h2>
-		<p><slot name="info" /></p>
+		<h2>{{ name }}</h2>
+		<p>{{ details }}</p>
 		<div class="tool-template-content">
 			<slot />
 		</div>

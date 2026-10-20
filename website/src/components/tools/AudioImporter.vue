@@ -1,25 +1,26 @@
-<script>
+<script lang="ts">
 import { createLevel, downloadLevel, encodeLevel } from '@/common/levels';
 import audio from '@/tools/audio';
+import { defineComponent } from 'vue';
 import ToolTemplate from './ToolTemplate.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		ToolTemplate,
 	},
 	methods: {
 		async run() {
-			const getByID = (id) => document.getElementById(id);
-			const toolID = 'audio-tool';
+			const fileInput = this.$refs.file as HTMLInputElement;
+			const samplesInput = this.$refs.samples as HTMLInputElement;
 
-			const files = Array.from(getByID(`${toolID}-file`).files);
-			if (!files.length) {
+			const files = Array.from(fileInput.files ?? []);
+			const file = files[0];
+			if (!file) {
 				window.toast('No file chosen', 'error');
 				return;
 			}
 
-			const file = files[0];
-			const samples = parseInt(getByID(`${toolID}-pitch-samples`).value) || 40;
+			const samples = parseInt(samplesInput.value) || 40;
 
 			const node = await audio.audio(file, samples);
 			if (!node) return;
@@ -29,21 +30,22 @@ export default {
 				'GRAB Tools',
 			]);
 
-			const encoded = await encodeLevel(obj);
-			if (encoded === null) return;
+			const encoded = encodeLevel(obj);
+			if (!encoded) return;
 
 			downloadLevel(encoded);
 		},
 	},
-};
+});
 </script>
 
 <template>
-	<ToolTemplate>
-		<template #title>Import audio</template>
-		<template #info> Generate audio with triggers and sound blocks. </template>
-		<input id="audio-tool-pitch-samples" type="number" placeholder="samples (40)" />
-		<input id="audio-tool-file" type="file" accept="audio/*" />
-		<button id="audio-tool-btn" class="button" @click="run">Generate</button>
+	<ToolTemplate
+		:name="'Import audio'"
+		:details="'Generate audio with triggers and sound blocks.'"
+	>
+		<input ref="samples" type="number" placeholder="samples (40)" />
+		<input ref="file" type="file" accept="audio/*" />
+		<button class="button" @click="run">Generate</button>
 	</ToolTemplate>
 </template>
