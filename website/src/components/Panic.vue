@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script>
 import KeyHint from '@/components/EditorPanels/KeyHint.vue';
 import { captureException } from '@sentry/vue';

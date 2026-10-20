@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script>
 import { captureException, captureMessage } from '@sentry/vue';
 import { reactive } from 'vue';

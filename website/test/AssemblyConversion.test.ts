@@ -6,8 +6,11 @@ import { resolve } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 
 vi.hoisted(() => {
-	// eslint-disable-next-line
-	(globalThis as any).window = {};
+	Object.defineProperty(globalThis, 'window', {
+		value: {},
+		writable: true,
+		configurable: true,
+	});
 });
 
 const tests: Record<string, ([PropertyType, string] | [PropertyType])[]> = {

@@ -379,8 +379,7 @@ function split_overlapping_notes(initial_track: NoteData[]) {
 
 	let splitted_index = 0;
 
-	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-	while (true) {
+	for (;;) {
 		const origin: NoteData[] = [];
 		const splitted: NoteData[] = [];
 		let i = 0;

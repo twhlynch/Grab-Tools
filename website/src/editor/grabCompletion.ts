@@ -165,14 +165,16 @@ export function grabCompletion() {
 		if (!update.docChanged) return;
 
 		for (const transaction of update.transactions) {
-			// eslint-disable-next-line @typescript-eslint/no-base-to-string
-			const inserted = transaction.changes.toString();
-			if (!inserted) continue;
-
-			if (inserted.includes(':')) {
-				startCompletion(update.view);
-				break;
-			}
+			transaction.changes.iterChanges(
+				(_fromA, _toA, _fromB, _toB, inserted) => {
+					for (let line = 1; line <= inserted.lines; line++) {
+						if (inserted.line(line).text.includes(':')) {
+							startCompletion(update.view);
+							return;
+						}
+					}
+				},
+			);
 		}
 	});
 
