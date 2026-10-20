@@ -16,15 +16,14 @@ export default [
 	...tseslint.configs.recommended,
 	...tseslint.configs.stylistic,
 
-	// TODO: add later
-	// ...tseslint.configs.recommendedTypeChecked.map((config) => ({
-	// 	...config,
-	// 	files: ['**/*.ts'],
-	// })),
-	// ...tseslint.configs.stylisticTypeChecked.map((config) => ({
-	// 	...config,
-	// 	files: ['**/*.ts'],
-	// })),
+	...tseslint.configs.recommendedTypeChecked.map((config) => ({
+		...config,
+		files: ['**/*.ts'],
+	})),
+	...tseslint.configs.stylisticTypeChecked.map((config) => ({
+		...config,
+		files: ['**/*.ts'],
+	})),
 
 	...vue.configs['flat/recommended'],
 
