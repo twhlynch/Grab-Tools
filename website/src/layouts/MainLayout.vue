@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import NavMenu from '@/components/NavMenu.vue';
 import { useConfigStore } from '@/stores/config';
 import { mapState } from 'pinia';
