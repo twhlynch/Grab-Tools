@@ -1,13 +1,13 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { color, vector } from '@/generated/helpers';
-import { levelNodeWithStatic } from '@/generated/nodes';
+import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { color, vector } from '@grab-tools/lib/generated/helpers';
+import { levelNodeWithStatic } from '@grab-tools/lib/generated/nodes';
 import {
 	Color,
 	LevelNode,
 	LevelNodeShape,
 	LevelNodeStatic,
 	Vector,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 // keys for maps
 function pos_key(p: Vector): string {

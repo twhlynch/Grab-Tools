@@ -1,5 +1,4 @@
 import build_editor from '@/editor/EditorSetup';
-import { Level } from '@/generated/proto';
 import {
 	acceptCompletion,
 	autocompletion,
@@ -9,11 +8,12 @@ import {
 import { completionPath, javascript } from '@codemirror/lang-javascript';
 import { EditorSelection } from '@codemirror/state';
 import { keymap, placeholder } from '@codemirror/view';
+import { Level } from '@grab-tools/lib/generated/proto';
 import { EditorView } from 'codemirror';
 
-import { levelNodeGroupFrom } from '@/common/group';
-import * as helpers from '@/generated/helpers';
-import * as nodes from '@/generated/nodes';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import * as helpers from '@grab-tools/lib/generated/helpers';
+import * as nodes from '@grab-tools/lib/generated/nodes';
 
 const terminal_context = {
 	...helpers,

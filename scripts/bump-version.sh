@@ -8,6 +8,9 @@ pnpm version "$1" --no-git-tag-version
 cd website
 pnpm version "$1" --no-git-tag-version
 cd -
+cd lib
+pnpm version "$1" --no-git-tag-version
+cd -
 
 # get new version from package.json
 new_version=$(node -p "require('./website/package.json').version")

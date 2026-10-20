@@ -1,15 +1,19 @@
-import { groupNodes } from '@/common/group';
-import { animation, animationFrame, quaternion } from '@/generated/helpers';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import {
+	animation,
+	animationFrame,
+	quaternion,
+} from '@grab-tools/lib/generated/helpers';
 import {
 	levelNodeWithParticleEmitter,
 	levelNodeWithStatic,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Color,
 	LevelNode,
 	LevelNodeMaterial,
 	LevelNodeShape,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import { greedy_mesh } from './greedy_mesh';
 
 type Mode = 'cubes' | 'particles';
@@ -43,7 +47,7 @@ export async function generate_pixel_art(
 	const pixels = compute_pixels(result, width, height, shape);
 	const level_nodes = build_nodes(pixels, mode, greedy);
 
-	return groupNodes(level_nodes);
+	return levelNodeGroupFrom({ childNodes: level_nodes });
 }
 
 function compute_pixels(

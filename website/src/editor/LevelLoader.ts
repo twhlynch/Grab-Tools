@@ -31,19 +31,20 @@ import textureSoundURL from '@/assets/textures/sound.png';
 import textureSublevelTriggerURL from '@/assets/textures/sublevel_trigger.png';
 import textureTriggerURL from '@/assets/textures/trigger.png';
 import textureWoodURL from '@/assets/textures/wood.png';
-import { LevelNodeKey, LevelNodeObject, Root } from '@/common/levelNodes';
+import { LevelNodeObject, Root } from '@/common/levelNodes';
 import { load } from '@/common/root';
 import {
 	materials as material_types,
 	shapes as shape_types,
 } from '@/common/utils';
+import { LevelNodeKey } from '@grab-tools/lib/common/levelNodes';
 import {
 	Level,
 	LevelNode,
 	LevelNodeGravityMode,
 	LevelNodeMaterial,
 	LevelNodeShape,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 let textureLoader: THREE.TextureLoader;
 let gltfLoader: GLTFLoader;

@@ -1,4 +1,4 @@
-import { SoundGeneratorParameters } from '@/generated/proto';
+import { SoundGeneratorParameters } from '@grab-tools/lib/generated/proto';
 import { sfxr } from 'jsfxr';
 
 // missing some keys:

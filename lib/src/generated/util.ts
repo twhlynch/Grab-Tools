@@ -5,7 +5,7 @@ import {
 	TriggerSourceWith,
 	TriggerTargetTypes,
 	TriggerTargetWith,
-} from '@/common/levelNodes';
+} from '../common/levelNodes';
 import { levelNode, triggerSource, triggerTarget } from './helpers';
 
 export function merge<T extends object>(target: T, source: Partial<T>): T {

@@ -1,4 +1,3 @@
-import { create_connection } from '@/common/connections';
 import { compile_gasm } from '@/editor/AssemblyConversion';
 import build_editor from '@/editor/EditorSetup';
 import {
@@ -7,13 +6,14 @@ import {
 } from '@/editor/GASMCompletion';
 import { gasmDiagnostics } from '@/editor/GASMDiagnostics';
 import { gasm } from '@/editor/GASMDSL';
-import { levelNodeWithGASM } from '@/generated/nodes';
 import { useConfigStore } from '@/stores/config';
 import { redo, undo } from '@codemirror/commands';
 import { foldGutter } from '@codemirror/language';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection, EditorState } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
+import { create_connection } from '@grab-tools/lib/common/connections';
+import { levelNodeWithGASM } from '@grab-tools/lib/generated/nodes';
 import { vim } from '@replit/codemirror-vim';
 import { basicSetup } from 'codemirror';
 

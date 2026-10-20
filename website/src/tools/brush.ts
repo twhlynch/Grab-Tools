@@ -1,6 +1,7 @@
-import { deepClone, node_data } from '@/common/utils';
+import { deepClone } from '@/common/utils';
 import type { Tool, Viewport } from '@/editor/Tool';
-import type { Level, LevelNode } from '@/generated/proto';
+import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
+import type { Level, LevelNode } from '@grab-tools/lib/generated/proto';
 
 import * as THREE from 'three';
 
@@ -85,7 +86,7 @@ export default class BrushTool implements Tool {
 		// clone brush at position
 		const clones = this.brush.map((item) => {
 			const cloned = deepClone(item.node);
-			const data = node_data(cloned);
+			const data = levelNodeData(cloned);
 			const pos = data.position;
 			if (pos) {
 				pos.x = hit_point.x + item.offset.x;

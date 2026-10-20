@@ -1,9 +1,9 @@
 // SFX2GL Tool by TheTrueFax (https://github.com/thetruefax/)
 
-import { groupNodes } from '@/common/group';
-import { LevelNodeWith } from '@/common/levelNodes';
 import { deepClone } from '@/common/utils';
-import { animation, animationFrame } from '@/generated/helpers';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
 	levelNodeWithGroup,
 	levelNodeWithSound,
@@ -11,12 +11,12 @@ import {
 	levelNodeWithTrigger,
 	triggerSourceWithBasic,
 	triggerTargetWithSound,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNodeGroup,
 	TriggerSourceBasicType,
 	TriggerTargetSoundMode,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import { ComplexArray } from 'jsfft';
 
 /**
@@ -33,7 +33,7 @@ async function audio(
 	const volume_samples = 2;
 	try {
 		const level_nodes = await generate(samples, volume_samples, file);
-		return groupNodes(level_nodes);
+		return levelNodeGroupFrom({ childNodes: level_nodes });
 	} catch (e) {
 		if (e instanceof Error) {
 			window.toast(e, 'error');

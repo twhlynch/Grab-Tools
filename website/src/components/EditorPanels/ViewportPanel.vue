@@ -1,7 +1,7 @@
 <script>
-import { create_connection } from '@/common/connections';
-import { groupNodes, ungroupNode } from '@/common/group';
-import { deepClone, materials, node_data, shapes } from '@/common/utils';
+import { ungroupNode } from '@/common/group';
+import { isLevelNodeObject } from '@/common/levelNodes';
+import { deepClone, materials, shapes } from '@/common/utils';
 import AnimationPanel from '@/components/EditorPanels/AnimationPanel.vue';
 import ContextMenu from '@/components/EditorPanels/ContextMenu.vue';
 import GASMPanel from '@/components/EditorPanels/GASMPanel.vue';
@@ -11,16 +11,6 @@ import ResizableColPanel from '@/components/EditorPanels/ResizableColPanel.vue';
 import { FreeControls } from '@/editor/FreeControls';
 import GizmoControls from '@/editor/GizmoControls';
 import { LevelLoader } from '@/editor/LevelLoader';
-import { animation } from '@/generated/helpers';
-import {
-	triggerSourceWithBasic,
-	triggerSourceWithBlockNames,
-	triggerTargetWithAmbience,
-	triggerTargetWithAnimation,
-	triggerTargetWithLight,
-	triggerTargetWithSound,
-	triggerTargetWithSubLevel,
-} from '@/generated/nodes';
 import CursorIcon from '@/icons/CursorIcon.vue';
 import KeyboardIcon from '@/icons/KeyboardIcon.vue';
 import OneSidedScaleIcon from '@/icons/OneSidedScaleIcon.vue';
@@ -30,6 +20,19 @@ import SpaceIcon from '@/icons/SpaceIcon.vue';
 import TranslateIcon from '@/icons/TranslateIcon.vue';
 import { useConfigStore } from '@/stores/config';
 import { play_sound } from '@/tools/sfxr';
+import { create_connection } from '@grab-tools/lib/common/connections';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
+import { animation } from '@grab-tools/lib/generated/helpers';
+import {
+	triggerSourceWithBasic,
+	triggerSourceWithBlockNames,
+	triggerTargetWithAmbience,
+	triggerTargetWithAnimation,
+	triggerTargetWithLight,
+	triggerTargetWithSound,
+	triggerTargetWithSubLevel,
+} from '@grab-tools/lib/generated/nodes';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls';
 import { defineComponent } from 'vue';
@@ -1022,7 +1025,9 @@ export default defineComponent({
 				...node_list.filter(
 					(n) => !this.gizmo.selection.find((o) => n === o.userData.node),
 				),
-				groupNodes(this.gizmo.selection.map((o) => o.userData.node)),
+				levelNodeGroupFrom({
+					childNodes: this.gizmo.selection.map((o) => o.userData.node),
+				}),
 			]);
 		},
 		ungroup_selection() {
@@ -1299,14 +1304,14 @@ export default defineComponent({
 		},
 		set_material(material) {
 			this.gizmo.selection.forEach((object) => {
-				const node = node_data(object);
+				const node = levelNodeData(isLevelNodeObject(object) ? object.userData.node : node);
 				node.material = material;
 			});
 			this.modifier((json) => json);
 		},
 		set_shape(shape) {
 			this.gizmo.selection.forEach((object) => {
-				const node = node_data(object);
+				const node = levelNodeData(isLevelNodeObject(object) ? object.userData.node : node);
 				node.shape = shape;
 			});
 			this.modifier((json) => json);
@@ -1712,7 +1717,7 @@ export default defineComponent({
 					.filter((obj) => node_list.includes(obj.userData.node))
 					.forEach((object) => {
 						const node = object.userData.node;
-						const data = node_data(node);
+						const data = levelNodeData(node);
 
 						const x = -(object.initialPosition?.x ?? 0);
 						object.position.x = x;
@@ -1744,7 +1749,7 @@ export default defineComponent({
 					.filter((obj) => node_list.includes(obj.userData.node))
 					.forEach((object) => {
 						const node = object.userData.node;
-						const data = node_data(node);
+						const data = levelNodeData(node);
 
 						const y = -(object.initialPosition?.y ?? 0);
 						object.position.y = y;
@@ -1776,7 +1781,7 @@ export default defineComponent({
 					.filter((obj) => node_list.includes(obj.userData.node))
 					.forEach((object) => {
 						const node = object.userData.node;
-						const data = node_data(node);
+						const data = levelNodeData(node);
 
 						const z = -(object.initialPosition?.z ?? 0);
 						object.position.z = z;

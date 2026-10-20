@@ -1,4 +1,4 @@
-import { LevelNodeGASMConnection, ProgramData } from '@/generated/proto';
+import { LevelNodeGASMConnection, ProgramData } from '../generated/proto';
 
 // key of ProgramData matching /^.*Registers$/
 export type RegisterType = {

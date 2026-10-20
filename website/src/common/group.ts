@@ -1,74 +1,17 @@
 import {
 	isLevelNode,
+	levelNodeData,
 	LevelNodeTypesExcepts,
 	LevelNodeWith,
-} from '@/common/levelNodes';
-import { node_data } from '@/common/utils';
-import { levelNodeWithGroup } from '@/generated/nodes';
+} from '@grab-tools/lib/common/levelNodes';
 import {
 	LevelNode,
 	LevelNodeFinish,
 	LevelNodeGroup,
 	LevelNodeLobbyTerminal,
 	LevelNodeStart,
-	Vector,
-} from '@/generated/proto';
-import { Box3 } from 'three/src/math/Box3.js';
-import { Quaternion } from 'three/src/math/Quaternion.js';
-import { Vector3 } from 'three/src/math/Vector3.js';
-
-export function levelNodeGroupFrom(
-	overrides: Partial<LevelNodeGroup> &
-		Required<Pick<LevelNodeGroup, 'childNodes'>>,
-) {
-	const center = get_nodes_center(overrides.childNodes);
-	place_nodes_around(overrides.childNodes, center);
-
-	return levelNodeWithGroup({
-		position: center,
-		...overrides,
-	});
-}
-
-// TODO: this can be replaced by levelNodeGroupFrom
-export function groupNodes(nodes: LevelNode[]): LevelNodeWith<LevelNodeGroup> {
-	const center = get_nodes_center(nodes);
-	place_nodes_around(nodes, center);
-
-	return levelNodeWithGroup({
-		position: center,
-		childNodes: nodes,
-	});
-}
-
-export function place_nodes_around(nodes: LevelNode[], center: Vector) {
-	nodes.forEach((node) => {
-		const data = node_data(node);
-
-		data.position ??= {};
-		data.position.x = (data.position.x ?? 0) - (center.x ?? 0);
-		data.position.y = (data.position.y ?? 0) - (center.y ?? 0);
-		data.position.z = (data.position.z ?? 0) - (center.z ?? 0);
-	});
-}
-
-export function get_nodes_center(nodes: LevelNode[]): Vector {
-	const positions = nodes.map((node) => {
-		const data = node_data(node);
-
-		return new Vector3(
-			data.position?.x ?? 0,
-			data.position?.y ?? 0,
-			data.position?.z ?? 0,
-		);
-	});
-
-	const box = new Box3().setFromPoints(positions);
-	const center = new Vector3();
-	box.getCenter(center);
-
-	return { x: center.x, y: center.y, z: center.z };
-}
+} from '@grab-tools/lib/generated/proto';
+import { Quaternion, Vector3 } from 'three';
 
 export function ungroupNode(group: LevelNodeWith<LevelNodeGroup>): LevelNode[] {
 	const group_position = new Vector3(
@@ -94,7 +37,7 @@ export function ungroupNode(group: LevelNodeWith<LevelNodeGroup>): LevelNode[] {
 		if (isLevelNode<LevelNodeStart>(node, 'levelNodeStart')) return;
 		if (isLevelNode<LevelNodeFinish>(node, 'levelNodeFinish')) return;
 
-		const data = node_data(node) as LevelNodeTypesExcepts<
+		const data = levelNodeData(node) as LevelNodeTypesExcepts<
 			[LevelNodeStart, LevelNodeFinish, LevelNodeLobbyTerminal]
 		>;
 

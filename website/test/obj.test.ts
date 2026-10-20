@@ -1,4 +1,4 @@
-import { color } from '@/generated/helpers';
+import { color } from '@grab-tools/lib/generated/helpers';
 import { obj } from '@/tools/obj';
 import { describe, expect, it } from 'vitest';
 

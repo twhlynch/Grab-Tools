@@ -1,10 +1,10 @@
-import { levelNodeWithStatic } from '@/generated/nodes';
+import { greedy_mesh } from '@/tools/greedy_mesh';
+import { levelNodeWithStatic } from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNode,
 	LevelNodeMaterial,
 	LevelNodeShape,
-} from '@/generated/proto';
-import { greedy_mesh } from '@/tools/greedy_mesh';
+} from '@grab-tools/lib/generated/proto';
 import { describe, expect, it } from 'vitest';
 
 function black(x: number, y: number, z: number) {

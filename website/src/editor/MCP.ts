@@ -1,7 +1,7 @@
 import { unmodded_definition } from '@/common/root';
 import { json_parse } from '@/common/utils';
 import { FORMAT_VERSION } from '@/config';
-import { Level } from '@/generated/proto';
+import { Level } from '@grab-tools/lib/generated/proto';
 
 /// 'level' -> update the level
 /// 'info'  -> return type info

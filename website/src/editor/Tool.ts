@@ -1,5 +1,5 @@
 // import ViewportPanel from '@/components/EditorPanels/ViewportPanel.vue';
-import { Level } from '@/generated/proto';
+import { Level } from '@grab-tools/lib/generated/proto';
 import * as THREE from 'three';
 
 // TODO: correctly use raw properties to get inference

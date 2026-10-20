@@ -1,6 +1,6 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { SPECIAL_REGISTERS } from '@/common/registers';
 import { load } from '@/common/root';
+import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { SPECIAL_REGISTERS } from '@grab-tools/lib/common/registers';
 import {
 	InstructionData,
 	InstructionDataType,
@@ -8,7 +8,7 @@ import {
 	LevelNodeGASMConnection,
 	OperandData,
 	ProgramData,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 const instruction_map = load().COD.Level.InstructionData.Type;
 const operand_map = load().COD.Level.OperandData.Type;

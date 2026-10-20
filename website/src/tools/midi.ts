@@ -1,5 +1,5 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { animation, animationFrame } from '@/generated/helpers';
+import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
 	levelNodeWithSound,
 	levelNodeWithStatic,
@@ -7,7 +7,7 @@ import {
 	triggerSourceWithBasic,
 	triggerTargetWithAnimation,
 	triggerTargetWithSound,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNode,
 	LevelNodeSound,
@@ -19,7 +19,7 @@ import {
 	TriggerTargetMode,
 	TriggerTargetSoundMode,
 	Vector,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import { Midi, Track } from '@tonejs/midi';
 import { Drum, get_instrument, Instrument } from './instrument_map';
 

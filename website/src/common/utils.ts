@@ -1,15 +1,10 @@
-import {
-	isLevelNodeObject,
-	LevelNodeObject,
-	LevelNodeTypes,
-} from '@/common/levelNodes';
 import { unmodded_root } from '@/common/root';
 import {
 	Level,
 	LevelNode,
 	LevelNodeMaterial,
 	LevelNodeShape,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import { Object3D } from 'three';
 
 export function isObject3D(object: unknown): object is Object3D {
@@ -22,19 +17,6 @@ export function materials(): Record<string, LevelNodeMaterial> {
 
 export function shapes(): Record<string, LevelNodeShape> {
 	return unmodded_root().COD.Level.LevelNodeShape;
-}
-
-export function node_data(object: LevelNode | LevelNodeObject): LevelNodeTypes {
-	const node: LevelNode = isLevelNodeObject(object)
-		? object.userData.node
-		: object;
-	const entries = Object.entries(node);
-
-	const data = entries.find((e) =>
-		e[0].includes('levelNode'),
-	)?.[1] as LevelNodeTypes;
-
-	return data;
 }
 
 export function deepClone<T>(node: T): T {

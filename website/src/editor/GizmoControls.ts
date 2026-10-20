@@ -1,5 +1,5 @@
 import { isLevelNodeObject, LevelNodeObject } from '@/common/levelNodes';
-import { node_data } from '@/common/utils';
+import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
 import * as THREE from 'three';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 
@@ -140,7 +140,9 @@ class GizmoControls {
 		this.selection.forEach((object) => {
 			object.updateMatrixWorld(true);
 
-			const node = node_data(object);
+			const node = levelNodeData(
+				isLevelNodeObject(object) ? object.userData.node : object,
+			);
 
 			if (node.position) {
 				node.position.x = object.position.x;

@@ -1,11 +1,11 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { levelNodeWithStatic } from '@/generated/nodes';
+import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { levelNodeWithStatic } from '@grab-tools/lib/generated/nodes';
 import {
 	Color,
 	LevelNodeMaterial,
 	LevelNodeShape,
 	LevelNodeStatic,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import * as THREE from 'three';
 
 async function svg(file: File, complexity: number) {

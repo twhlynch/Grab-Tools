@@ -1,15 +1,18 @@
-import { create_connection } from '@/common/connections';
-import { LevelNodeWith } from '@/common/levelNodes';
 import { materials } from '@/common/utils';
 import { asm_to_json } from '@/editor/AssemblyConversion';
-import { levelNodeWithGASM, levelNodeWithStatic } from '@/generated/nodes';
+import { create_connection } from '@grab-tools/lib/common/connections';
+import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import {
+	levelNodeWithGASM,
+	levelNodeWithStatic,
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Animation,
 	AnimationFrame,
 	LevelNode,
 	LevelNodeGASM,
 	LevelNodeStatic,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 const FRAME_INTERVAL = Math.round(1000 / 24);
 

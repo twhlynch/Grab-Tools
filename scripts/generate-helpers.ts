@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import ts from 'typescript';
 
-const input_file = path.resolve('website/src/generated/proto.ts');
-const output_file = path.resolve('website/src/generated/helpers.ts');
+const input_file = path.resolve('lib/src/generated/proto.ts');
+const output_file = path.resolve('lib/src/generated/helpers.ts');
 
 const source_text = fs.readFileSync(input_file, 'utf8');
 

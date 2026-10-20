@@ -1,7 +1,9 @@
-import { levelNodeGroupFrom } from '@/common/group';
-import { LevelNodeWith } from '@/common/levelNodes';
-import { node_data } from '@/common/utils';
-import { LevelNode, LevelNodeGroup } from '@/generated/proto';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import {
+	levelNodeData,
+	LevelNodeWith,
+} from '@grab-tools/lib/common/levelNodes';
+import { LevelNode, LevelNodeGroup } from '@grab-tools/lib/generated/proto';
 
 function traverseNode(
 	node: LevelNode,
@@ -118,7 +120,7 @@ export function compile(level_nodes: LevelNode[][], options: CompileOptions) {
 		// shift positions
 		if (options.spacing) {
 			for (const node of nodes) {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				(data.position ??= {}).x =
 					(data.position.x ?? 0) + options.spacing * i;
 			}

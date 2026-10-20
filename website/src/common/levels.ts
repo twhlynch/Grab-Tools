@@ -1,6 +1,6 @@
 import { load } from '@/common/root';
 import { DOMAIN, FORMAT_VERSION } from '@/config';
-import { Color, Level, LevelNode } from '@/generated/proto';
+import { Color, Level, LevelNode } from '@grab-tools/lib/generated/proto';
 
 export async function decodeLevel(buffer: Blob): Promise<Level | null> {
 	try {

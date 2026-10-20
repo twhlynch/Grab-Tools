@@ -1,5 +1,5 @@
 <script>
-import { groupNodes, recursiveUngroup } from '@/common/group';
+import { recursiveUngroup } from '@/common/group';
 import {
 	ambienceSettings,
 	createLevel,
@@ -13,13 +13,26 @@ import {
 	deepClone,
 	json_parse,
 	materials,
-	node_data,
 	random_material,
 	random_shape,
 	shapes,
 	traverse_node,
 } from '@/common/utils';
-import { animation, animationFrame } from '@/generated/helpers';
+import { useConfigStore } from '@/stores/config';
+import audio from '@/tools/audio';
+import BrushTool from '@/tools/brush';
+import car from '@/tools/car';
+import gun from '@/tools/gun';
+import { generate_pixel_art } from '@/tools/image';
+import midi from '@/tools/midi';
+import { monochrome } from '@/tools/monochrome';
+import { obj } from '@/tools/obj';
+import signs from '@/tools/signs';
+import svg from '@/tools/svg';
+import video from '@/tools/video';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
+import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
 	levelNodeWithCrumbling,
 	levelNodeWithFinish,
@@ -38,19 +51,7 @@ import {
 	triggerTargetWithLight,
 	triggerTargetWithSound,
 	triggerTargetWithSubLevel,
-} from '@/generated/nodes';
-import { useConfigStore } from '@/stores/config';
-import audio from '@/tools/audio';
-import BrushTool from '@/tools/brush';
-import car from '@/tools/car';
-import gun from '@/tools/gun';
-import { generate_pixel_art } from '@/tools/image';
-import midi from '@/tools/midi';
-import { monochrome } from '@/tools/monochrome';
-import { obj } from '@/tools/obj';
-import signs from '@/tools/signs';
-import svg from '@/tools/svg';
-import video from '@/tools/video';
+} from '@grab-tools/lib/generated/nodes';
 import { mapActions, mapState } from 'pinia';
 import * as THREE from 'three';
 import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
@@ -952,7 +953,7 @@ export default {
 			this.set_selectable_nodes((nodes) => {
 				if (!nodes?.length) return;
 
-				const node = groupNodes([...nodes]);
+				const node = levelNodeGroupFrom({ childNodes: [...nodes] });
 				nodes.length = 0;
 				nodes.push(node);
 
@@ -997,7 +998,7 @@ export default {
 					to = parseInt(to);
 
 					this.modify_selectable_nodes((node) => {
-						const data = node_data(node);
+						const data = levelNodeData(node);
 						if (node.levelNodeStatic && (data.material ?? 0) === from)
 							data.material = to;
 					});
@@ -1033,7 +1034,7 @@ export default {
 					to = parseInt(to);
 
 					this.modify_selectable_nodes((node) => {
-						const data = node_data(node);
+						const data = levelNodeData(node);
 						if (data.shape === from) data.shape = to;
 					});
 				},
@@ -1076,7 +1077,7 @@ export default {
 		},
 		group_level() {
 			this.set_selectable_nodes((nodes) => {
-				const node = groupNodes([...nodes]);
+				const node = levelNodeGroupFrom({ childNodes: [...nodes] });
 				nodes.length = 0;
 				nodes.push(node);
 			});
@@ -1105,7 +1106,7 @@ export default {
 		},
 		randomize_shapes() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				if (data.shape) {
 					data.shape = random_shape();
 				}
@@ -1113,7 +1114,7 @@ export default {
 		},
 		randomize_positions() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				data.position.x = Math.random() - 0.5 + (data.position?.x ?? 0);
 				data.position.y = Math.random() - 0.5 + (data.position?.y ?? 0);
 				data.position.z = Math.random() - 0.5 + (data.position?.z ?? 0);
@@ -1121,7 +1122,7 @@ export default {
 		},
 		randomize_rotations() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				if (data.rotation) {
 					const quat = new THREE.Quaternion(
 						Math.random(),
@@ -1139,7 +1140,7 @@ export default {
 		},
 		randomize_scales() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				if (data.scale && typeof data.scale === 'object') {
 					data.scale.x = Math.random() - 0.5 + (data.scale?.x ?? 0);
 					data.scale.y = Math.random() - 0.5 + (data.scale?.y ?? 0);
@@ -1155,7 +1156,7 @@ export default {
 		},
 		randomize_colors() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				if (data.color1) {
 					data.color1.r = Math.random();
 					data.color1.g = Math.random();

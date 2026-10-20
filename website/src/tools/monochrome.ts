@@ -1,5 +1,9 @@
 import { traverse_node } from '@/common/utils';
-import { Color, LevelNode, LevelNodeMaterial } from '@/generated/proto';
+import {
+	Color,
+	LevelNode,
+	LevelNodeMaterial,
+} from '@grab-tools/lib/generated/proto';
 
 export function monochrome(nodes: LevelNode[]) {
 	nodes.forEach((n) => {
