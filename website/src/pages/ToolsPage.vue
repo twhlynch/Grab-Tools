@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import Bookmarklet from '@/components/Bookmarklet.vue';
 import AudioImporter from '@/components/tools/AudioImporter.vue';
 import ImageGenerator from '@/components/tools/ImageGenerator.vue';
@@ -20,8 +20,9 @@ import PencilIcon from '@/icons/PencilIcon.vue';
 import PlayIcon from '@/icons/PlayIcon.vue';
 import ShrinkIcon from '@/icons/ShrinkIcon.vue';
 import XMLIcon from '@/icons/XMLIcon.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		Bookmarklet,
 		LevelCompiler,
@@ -56,12 +57,12 @@ export default {
 		}
 	},
 	methods: {
-		setTab(tab) {
+		setTab(tab: string) {
 			const urlParams = new URLSearchParams(window.location.search);
 			urlParams.set('tab', tab);
 			window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
 		},
-		selectTool(tool) {
+		selectTool(tool: string) {
 			this.setTab(tool);
 
 			document.querySelectorAll('.active-tool').forEach((e) => {
@@ -74,11 +75,11 @@ export default {
 			const toolComponent = document.getElementById(`${tool}-tool`);
 			const toolButton = document.getElementById(`${tool}-tool-button`);
 
-			toolComponent.classList.add('active-tool');
-			toolButton.classList.add('active-tool-button');
+			toolComponent?.classList.add('active-tool');
+			toolButton?.classList.add('active-tool-button');
 		},
 	},
-};
+});
 </script>
 
 <template>

@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 import { downloadLevel } from '@/common/levels';
 import { useUserStore } from '@/stores/user';
 import downloads from '@/tools/downloads';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	computed: {
 		...mapState(useUserStore, ['is_logged_in', 'user_name']),
 	},
@@ -22,7 +23,7 @@ export default {
 	created() {
 		document.title = 'Download | GRAB Tools';
 	},
-};
+});
 </script>
 
 <template>
