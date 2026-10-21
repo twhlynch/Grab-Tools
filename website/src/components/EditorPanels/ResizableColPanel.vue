@@ -1,5 +1,7 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	emits: ['resize'],
 	data() {
 		return {
@@ -17,37 +19,37 @@ export default {
 		window.removeEventListener('resize', this.resize);
 	},
 	methods: {
-		mousedown(_) {
+		mousedown(_: MouseEvent) {
 			this.down = true;
 			document.addEventListener('selectstart', this.prevent);
 		},
-		mouseup(_) {
+		mouseup(_: MouseEvent) {
 			this.down = false;
 			document.removeEventListener('selectstart', this.prevent);
 		},
-		mousemove(e) {
+		mousemove(e: MouseEvent) {
 			if (this.down) {
 				this.size(e.clientY);
 			}
 		},
-		size(position) {
-			const { container, first, second, thumb } = this.$refs;
-			if (position === undefined) position = thumb.getBoundingClientRect().top;
-			const bounds = container.getBoundingClientRect();
-			first.style.height = position - bounds.top + 'px';
-			second.style.height = bounds.height - (position - bounds.top) - 5 + 'px';
+		size(position: number) {
+			const { container, first, second, thumb } = this.$refs as Record<string, HTMLElement>;
+			if (position === undefined) position = thumb!.getBoundingClientRect().top;
+			const bounds = container!.getBoundingClientRect();
+			first!.style.height = position - bounds.top + 'px';
+			second!.style.height = bounds.height - (position - bounds.top) - 5 + 'px';
 			this.$emit('resize');
 		},
-		prevent(e) {
+		prevent(e: Event) {
 			e.preventDefault();
 		},
 		resize() {
-			const { thumb } = this.$refs;
+			const thumb = this.$refs.thumb as HTMLElement;
 			const position = thumb.getBoundingClientRect().top;
 			this.size(position);
 		},
 	},
-};
+});
 </script>
 
 <template>
