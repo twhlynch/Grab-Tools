@@ -62,6 +62,8 @@ export type LevelNodeKey = keyof NodeMapping;
 // since its reused
 export type NodeMapping = KeyMapping<LevelNode, 'levelNode'>;
 
+export type LevelNodeTypeFor<K extends LevelNodeKey> = NodeMapping[K];
+
 // > wow this sucks
 // exclude specified LevelNodeX type
 export type LevelNodeTypesExcept<T extends LevelNodeTypes> = NodeMapping[keyof {

@@ -1,4 +1,8 @@
-import { LevelNodeKey } from '@grab-tools/lib/common/levelNodes';
+import {
+	LevelNodeKey,
+	LevelNodeTypes,
+	LevelNodeWith,
+} from '@grab-tools/lib/common/levelNodes';
 import {
 	Animation,
 	InstructionDataType,
@@ -49,7 +53,9 @@ export type Root = PBRoot & {
 // - shader material
 // - other custom properties
 // - is<Node>
-export type LevelNodeObject = Partial<Omit<Mesh, 'material' | keyof Object3D>> &
+export type LevelNodeObject<T extends LevelNodeTypes = never> = Partial<
+	Omit<Mesh, 'material' | keyof Object3D>
+> &
 	Object3D & {
 		material?: ShaderMaterial & {
 			uniforms: {
@@ -61,7 +67,7 @@ export type LevelNodeObject = Partial<Omit<Mesh, 'material' | keyof Object3D>> &
 		initialRotation: Quaternion;
 		userData: {
 			id: number;
-			node: LevelNode;
+			node: [T] extends [never] ? LevelNode : LevelNodeWith<T>;
 			animation?: Animation;
 			currentFrameIndex?: number;
 			update?: (delta: number) => void;
