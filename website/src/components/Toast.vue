@@ -1,11 +1,17 @@
-<script>
+<script lang="ts">
+import { Severity } from '@/types/overrides';
 import { captureException, captureMessage } from '@sentry/vue';
-import { reactive } from 'vue';
+import { defineComponent, Reactive, reactive } from 'vue';
 
-export default {
+export default defineComponent({
 	data() {
 		return {
-			messages: [],
+			messages: [] as Reactive<{
+				value: string;
+				error: Error | null;
+				id: number;
+				severity: Severity;
+			}>[],
 		};
 	},
 
@@ -51,7 +57,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

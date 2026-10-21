@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
 import KeyHint from '@/components/EditorPanels/KeyHint.vue';
 import { captureException } from '@sentry/vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		KeyHint,
 	},
 	data() {
 		return {
-			message: undefined,
+			message: undefined as string | undefined,
 			show_technicals: false,
 		};
 	},
@@ -26,7 +27,7 @@ export default {
 
 	methods: {
 		async copy() {
-			await navigator.clipboard.writeText(this.message);
+			if (this.message) await navigator.clipboard.writeText(this.message);
 		},
 		close() {
 			this.message = undefined;
@@ -35,7 +36,7 @@ export default {
 			this.show_technicals = !this.show_technicals;
 		},
 	},
-};
+});
 </script>
 
 <template>

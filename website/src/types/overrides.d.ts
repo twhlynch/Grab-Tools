@@ -16,10 +16,11 @@ declare global {
 			message: Reactive<{
 				value: string;
 				error: Error | null;
-				id: string;
+				id: number;
 				severity: Severity;
 			}>;
 		};
+		panic: (error: Error) => void;
 	}
 
 	interface MediaStreamTrackProcessor {
