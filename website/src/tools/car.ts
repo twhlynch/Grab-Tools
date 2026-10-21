@@ -2,8 +2,8 @@ import { deepClone, traverse_node } from '@/common/utils';
 import { asm_to_json } from '@/editor/AssemblyConversion';
 import { create_connection } from '@grab-tools/lib/common/connections';
 import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
-import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
 import {
+	levelNodeData,
 	levelNodeWithGASM,
 	levelNodeWithTrigger,
 	triggerSourceWithBasic,

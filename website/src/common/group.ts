@@ -1,9 +1,9 @@
 import {
 	isLevelNode,
 	levelNodeData,
-	LevelNodeTypesExcepts,
+	LevelNodeTypesExcept,
 	LevelNodeWith,
-} from '@grab-tools/lib/common/levelNodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNode,
 	LevelNodeFinish,
@@ -37,7 +37,7 @@ export function ungroupNode(group: LevelNodeWith<LevelNodeGroup>): LevelNode[] {
 		if (isLevelNode<LevelNodeStart>(node, 'levelNodeStart')) return;
 		if (isLevelNode<LevelNodeFinish>(node, 'levelNodeFinish')) return;
 
-		const data = levelNodeData(node) as LevelNodeTypesExcepts<
+		const data = levelNodeData(node) as LevelNodeTypesExcept<
 			[LevelNodeStart, LevelNodeFinish, LevelNodeLobbyTerminal]
 		>;
 

@@ -1,8 +1,5 @@
 import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
-import {
-	levelNodeData,
-	LevelNodeWith,
-} from '@grab-tools/lib/common/levelNodes';
+import { levelNodeData, LevelNodeWith } from '@grab-tools/lib/generated/nodes';
 import { LevelNode, LevelNodeGroup } from '@grab-tools/lib/generated/proto';
 
 function traverseNode(

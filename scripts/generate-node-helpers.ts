@@ -67,14 +67,78 @@ function get_interfaces() {
 function camelCase(str: string) {
 	return str.charAt(0).toLowerCase() + str.slice(1);
 }
+function TitleCase(str: string) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 // generate output
 function generate(interfaces: Interface[]) {
 	let output = `
-import { ${interfaces.map((i) => i.camel).join(', \n')} } from './helpers';
-import { ${interfaces.map((i) => i.name).join(', \n')} } from './proto';
-import { levelNodeWith, triggerSourceWith, triggerTargetWith } from './util';
+import {
+	${interfaces.map((i) => i.camel).join(', \n')},
+	${wrapper_types.map(camelCase).join(', \n')},
+} from './helpers';
+import {
+	${interfaces.map((i) => i.name).join(', \n')},
+	${wrapper_types.join(', \n')},
+} from './proto';
+
+import { KeysOfType, PropsStartingWith, KeyMapping, TypesExcept } from './util';
 `;
+
+	wrapper_types.forEach((type) => {
+		const camel = camelCase(type);
+		output += `
+export type ${type}With<T> = ${type} &
+	Record<KeysOfType<${type}, T, '${camel}'>, T>;
+export type ${type}Types = NonNullable<
+	PropsStartingWith<${type}, '${camel}'>
+>;
+
+export type ${type}Key = keyof KeyMapping<${type}, '${camel}'>;
+export type ${type}TypeFor<K extends ${type}Key> = KeyMapping<${type}, '${camel}'>[K];
+
+export type ${type}TypesExcept<T extends ${type}Types[]> = TypesExcept<
+	${type}, '${camel}', ${type}Types, T
+>;
+
+export function ${camel}With<T extends ${type}Types>(
+	nodeData: Partial<${type}With<T>>,
+): ${type}With<T> {
+	return ${camel}(nodeData) as ${type}With<T>;
+}
+export type ${type}WithAny = {
+	[K in ${type}Key]: ${type}With<${type}TypeFor<K>>;
+}[${type}Key];
+
+export function ${camel}Data(node: ${type}WithAny): ${type}Types;
+export function ${camel}Data<T extends ${type}Types>(node: ${type}With<T>): T;
+export function ${camel}Data(node: ${type}): ${type}Types | undefined;
+export function ${camel}Data(node: ${type}): ${type}Types | undefined {
+	return Object.entries(node).find(
+		([key, val]) => key.startsWith('${camel}') && !!val,
+	)?.[1] as ${type}Types | undefined;
+}
+
+export function is${type}<T extends ${type}Types>(
+	node: ${type},
+	key: KeysOfType<${type}, T, '${camel}'>,
+): node is ${type}With<T>;
+export function is${type}(node: ${type}): node is ${type}WithAny;
+export function is${type}<T extends ${type}Types>(
+	node: ${type},
+	key?: KeysOfType<${type}, T, '${camel}'>,
+): boolean {
+	if (key !== undefined) {
+		return !!node[key];
+	}
+
+	return Object.entries(node).some(
+		([k, v]) => k.startsWith('${camel}') && !!v,
+	);
+}
+`;
+	});
 
 	interfaces.forEach(({ name, camel, wrapper, scope }) => {
 		output += `
@@ -82,7 +146,13 @@ export function ${wrapper}With${scope}(overrides?: Partial<${name}>) {
 	return ${wrapper}With({
 		${camel}: ${camel}(overrides),
 	});
-}`;
+}
+export function is${TitleCase(wrapper)}${scope}(
+	node: ${TitleCase(wrapper)},
+): node is ${TitleCase(wrapper)}With<${name}> {
+	return '${camel}' in node;
+}
+`;
 	});
 
 	return output;

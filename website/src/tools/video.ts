@@ -1,8 +1,8 @@
 import { materials } from '@/common/utils';
 import { asm_to_json } from '@/editor/AssemblyConversion';
 import { create_connection } from '@grab-tools/lib/common/connections';
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import {
+	LevelNodeWith,
 	levelNodeWithGASM,
 	levelNodeWithStatic,
 } from '@grab-tools/lib/generated/nodes';

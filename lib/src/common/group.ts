@@ -1,6 +1,5 @@
-import { levelNodeWithGroup } from '../generated/nodes';
+import { levelNodeData, levelNodeWithGroup } from '../generated/nodes';
 import { LevelNode, LevelNodeGroup, Vector } from '../generated/proto';
-import { levelNodeData } from './levelNodes';
 
 export function levelNodeGroupFrom(
 	overrides: Partial<LevelNodeGroup> &

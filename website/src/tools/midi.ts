@@ -1,6 +1,6 @@
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
+	LevelNodeWith,
 	levelNodeWithSound,
 	levelNodeWithStatic,
 	levelNodeWithTrigger,

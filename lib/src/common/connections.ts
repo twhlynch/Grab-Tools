@@ -1,4 +1,3 @@
-import { LevelNodeWith } from '../common/levelNodes';
 import { add_register, RegisterType } from '../common/registers';
 import {
 	levelNodeGASMConnection,
@@ -6,6 +5,7 @@ import {
 	programmablePropertyDataComponent,
 	registerData,
 } from '../generated/helpers';
+import { LevelNodeWith } from '../generated/nodes';
 import {
 	ConnectionType,
 	LevelNode,

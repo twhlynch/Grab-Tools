@@ -1,12 +1,15 @@
 import { deepClone } from '@/common/utils';
 import type { Tool, Viewport } from '@/editor/Tool';
-import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
-import type { Level, LevelNode } from '@grab-tools/lib/generated/proto';
+import {
+	levelNodeData,
+	LevelNodeWithAny,
+} from '@grab-tools/lib/generated/nodes';
+import type { Level } from '@grab-tools/lib/generated/proto';
 
 import * as THREE from 'three';
 
 interface BrushItem {
-	node: LevelNode;
+	node: LevelNodeWithAny;
 	offset: { x: number; y: number; z: number };
 }
 
@@ -42,8 +45,8 @@ export default class BrushTool implements Tool {
 		const center_x = (bbox.max.x + bbox.min.x) / 2;
 		const center_z = (bbox.max.z + bbox.min.z) / 2;
 
-		this.brush = viewport.gizmo.selection.map((obj: THREE.Object3D) => ({
-			node: deepClone(obj.userData.node as LevelNode),
+		this.brush = viewport.gizmo.selection.map((obj) => ({
+			node: deepClone(obj.userData.node),
 			offset: {
 				x: obj.position.x - center_x,
 				y: obj.position.y - bottom_y,

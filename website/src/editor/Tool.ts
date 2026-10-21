@@ -1,4 +1,5 @@
 // import ViewportPanel from '@/components/EditorPanels/ViewportPanel.vue';
+import { LevelNodeObject } from '@/common/levelNodes';
 import { Level } from '@grab-tools/lib/generated/proto';
 import * as THREE from 'three';
 
@@ -6,11 +7,11 @@ import * as THREE from 'three';
 // for now just update this as needed
 
 /*InstanceType<typeof ViewportPanel> & */
-export interface Viewport {
+export type Viewport = HTMLElement & {
 	gizmo: {
 		empty(): boolean;
 		clear(): void;
-		selection: THREE.Object3D[];
+		selection: LevelNodeObject[];
 	};
 	renderer: { domElement: HTMLElement };
 	camera: THREE.Camera;
@@ -22,7 +23,7 @@ export interface Viewport {
 	modifier(fn: (json: Level) => Level): void;
 	is_animating: boolean;
 	set_time(time: number): void;
-}
+};
 
 export interface Tool {
 	readonly name: string;

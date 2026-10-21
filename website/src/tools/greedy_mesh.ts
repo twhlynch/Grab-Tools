@@ -1,6 +1,8 @@
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import { color, vector } from '@grab-tools/lib/generated/helpers';
-import { levelNodeWithStatic } from '@grab-tools/lib/generated/nodes';
+import {
+	LevelNodeWith,
+	levelNodeWithStatic,
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Color,
 	LevelNode,

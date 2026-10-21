@@ -1,4 +1,4 @@
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
 import { LevelNodeSign } from '@grab-tools/lib/generated/proto';
 
 function signs(text: string, animated: boolean) {

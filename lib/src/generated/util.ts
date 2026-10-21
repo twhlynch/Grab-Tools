@@ -1,13 +1,3 @@
-import {
-	LevelNodeTypes,
-	LevelNodeWith,
-	TriggerSourceTypes,
-	TriggerSourceWith,
-	TriggerTargetTypes,
-	TriggerTargetWith,
-} from '../common/levelNodes';
-import { levelNode, triggerSource, triggerTarget } from './helpers';
-
 export function merge<T extends object>(target: T, source: Partial<T>): T {
 	for (const key in source) {
 		const src = source[key];
@@ -32,20 +22,57 @@ export function merge<T extends object>(target: T, source: Partial<T>): T {
 	return target;
 }
 
-export function levelNodeWith<T extends LevelNodeTypes>(
-	nodeData: Partial<LevelNodeWith<T>>,
-): LevelNodeWith<T> {
-	return levelNode(nodeData) as LevelNodeWith<T>;
-}
+type StartingWith<Type, Prefix extends string> = {
+	[Key in Extract<keyof Type, `${Prefix}${string}`>]: Type[Key];
+};
 
-export function triggerTargetWith<T extends TriggerTargetTypes>(
-	target: Partial<TriggerTargetWith<T>>,
-): TriggerTargetWith<T> {
-	return triggerTarget(target) as TriggerTargetWith<T>;
-}
+export type KeyMapping<Type, Key extends string> = StartingWith<
+	Required<Type>,
+	Key
+>;
 
-export function triggerSourceWith<T extends TriggerSourceTypes>(
-	source: Partial<TriggerSourceWith<T>>,
-): TriggerSourceWith<T> {
-	return triggerSource(source) as TriggerSourceWith<T>;
-}
+type Exact<T, U> = [T] extends [U] ? ([U] extends [T] ? true : false) : false;
+
+type MatchesAnyType<Types, K, T extends Types[]> = T extends [
+	infer Head,
+	...infer Tail,
+]
+	? Exact<Required<Head>, Required<K>> extends true
+		? true
+		: Tail extends Types[]
+			? MatchesAnyType<Types, K, Tail>
+			: false
+	: false;
+
+export type PropsStartingWith<T, Prefix extends string> = T[Extract<
+	keyof T,
+	`${Prefix}${string}`
+>];
+
+export type KeysOfType<Type, SubType, Key extends string> = {
+	[K in keyof KeyMapping<Type, Key>]: Exact<
+		Required<SubType>,
+		Required<KeyMapping<Type, Key>[K]>
+	> extends true
+		? K
+		: never;
+}[keyof KeyMapping<Type, Key>];
+
+export type TypesExcept<
+	Type,
+	Key extends string,
+	SubTypes,
+	Exclude extends SubTypes[],
+> = KeyMapping<Type, Key>[keyof {
+	[
+		L in {
+			[K in keyof KeyMapping<Type, Key>]: MatchesAnyType<
+				SubTypes,
+				KeyMapping<Type, Key>[K],
+				Exclude
+			> extends true
+				? never
+				: K;
+		}[keyof KeyMapping<Type, Key>]
+	]: NonNullable<PropsStartingWith<Type, L>>;
+}];

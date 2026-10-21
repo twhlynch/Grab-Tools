@@ -1,6 +1,6 @@
 import { load } from '@/common/root';
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import { SPECIAL_REGISTERS } from '@grab-tools/lib/common/registers';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
 import {
 	InstructionData,
 	InstructionDataType,

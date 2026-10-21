@@ -3,7 +3,7 @@ import { LevelNodeObject } from '@/common/levelNodes';
 import { materials, shapes } from '@/common/utils';
 import { LevelData } from '@/editor/LevelLoader';
 import StatsIcon from '@/icons/StatsIcon.vue';
-import { LevelNodeKey } from '@grab-tools/lib/common/levelNodes';
+import { LevelNodeKey } from '@grab-tools/lib/generated/nodes';
 import { LevelNodeMaterial, LevelNodeShape } from '@grab-tools/lib/generated/proto';
 import { defineComponent } from 'vue';
 

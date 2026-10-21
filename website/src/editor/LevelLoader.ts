@@ -38,9 +38,10 @@ import {
 	shapes as shape_types,
 } from '@/common/utils';
 import {
+	isLevelNode,
 	LevelNodeKey,
 	LevelNodeTypeFor,
-} from '@grab-tools/lib/common/levelNodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Level,
 	LevelNode,
@@ -714,7 +715,7 @@ class LevelLoader {
 			parentNode: LevelNodeObject | THREE.Scene,
 		) => {
 			for (const node of nodes) {
-				if (!node) continue;
+				if (!node || !isLevelNode(node)) continue;
 				let obj: LevelNodeObject | undefined = undefined;
 				if (node.levelNodeGroup) {
 					const object =

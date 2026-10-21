@@ -8,8 +8,8 @@ import {
 	CompletionResult,
 } from '@codemirror/autocomplete';
 import { keymap } from '@codemirror/view';
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import { SPECIAL_REGISTERS } from '@grab-tools/lib/common/registers';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
 import { LevelNodeGASM } from '@grab-tools/lib/generated/proto';
 import { EditorView } from 'codemirror';
 

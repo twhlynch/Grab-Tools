@@ -1,5 +1,5 @@
 import { isLevelNodeObject, LevelNodeObject } from '@/common/levelNodes';
-import { levelNodeData } from '@grab-tools/lib/common/levelNodes';
+import { levelNodeData } from '@grab-tools/lib/generated/nodes';
 import * as THREE from 'three';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 
@@ -143,6 +143,7 @@ class GizmoControls {
 			const node = levelNodeData(
 				isLevelNodeObject(object) ? object.userData.node : object,
 			);
+			if (!node) return;
 
 			if (node.position) {
 				node.position.x = object.position.x;

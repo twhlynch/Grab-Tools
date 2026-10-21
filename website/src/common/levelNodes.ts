@@ -2,11 +2,11 @@ import {
 	LevelNodeKey,
 	LevelNodeTypes,
 	LevelNodeWith,
-} from '@grab-tools/lib/common/levelNodes';
+	LevelNodeWithAny,
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Animation,
 	InstructionDataType,
-	LevelNode,
 	LevelNodeMaterial,
 	LevelNodeShape,
 	OperandDataType,
@@ -67,7 +67,7 @@ export type LevelNodeObject<T extends LevelNodeTypes = never> = Partial<
 		initialRotation: Quaternion;
 		userData: {
 			id: number;
-			node: [T] extends [never] ? LevelNode : LevelNodeWith<T>;
+			node: [T] extends [never] ? LevelNodeWithAny : LevelNodeWith<T>;
 			animation?: Animation;
 			currentFrameIndex?: number;
 			update?: (delta: number) => void;

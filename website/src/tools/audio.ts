@@ -2,9 +2,9 @@
 
 import { deepClone } from '@/common/utils';
 import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
+	LevelNodeWith,
 	levelNodeWithGroup,
 	levelNodeWithSound,
 	levelNodeWithStatic,

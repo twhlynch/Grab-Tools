@@ -11,7 +11,7 @@ import { useConfigStore } from '@/stores/config';
 import { foldGutter } from '@codemirror/language';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection } from '@codemirror/state';
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
 import { LevelNodeGASM } from '@grab-tools/lib/generated/proto';
 import { vim } from '@replit/codemirror-vim';
 import { basicSetup, EditorView } from 'codemirror';

@@ -1,10 +1,10 @@
-import { LevelNodeWith } from '@grab-tools/lib/common/levelNodes';
 import {
 	animation,
 	animationFrame,
 	color,
 } from '@grab-tools/lib/generated/helpers';
 import {
+	LevelNodeWith,
 	levelNodeWithParticleEmitter,
 	levelNodeWithStatic,
 } from '@grab-tools/lib/generated/nodes';
