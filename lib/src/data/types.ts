@@ -22,3 +22,16 @@ export interface UserInfo {
 	is_verifier: boolean;
 	is_creator: boolean;
 }
+
+export interface LeaderboardEntry {
+	user_id: string;
+	user_name: string;
+	timestamp: number;
+}
+
+export type CustomLevelDetails = LevelDetails & {
+	leaderboard: LeaderboardEntry[];
+	list_key: string;
+	unbeaten: boolean;
+	image_iteration: number;
+};

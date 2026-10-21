@@ -7,7 +7,7 @@ import PeopleIcon from '@/icons/PeopleIcon.vue';
 import { add_hardest_level_request } from '@/requests/AddHardestLevelRequest';
 import { get_hardest_levels_request, ListRowData } from '@/requests/GetHardestLevelsRequest';
 import { useUserStore } from '@/stores/user';
-import { LevelDetails } from '@grab-tools/lib/data/types';
+import { CustomLevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
 import { defineComponent } from 'vue';
 
@@ -43,18 +43,6 @@ interface FeaturedCreator {
 	list_key: string;
 	title: string;
 }
-
-interface LeaderboardEntry {
-	user_id: string;
-	user_name: string;
-	timestamp: number;
-}
-
-type CustomLevelDetails = LevelDetails & {
-	leaderboard: LeaderboardEntry[];
-	list_key: string;
-	unbeaten: boolean;
-};
 
 interface MetricSummary {
 	user_id: string;
