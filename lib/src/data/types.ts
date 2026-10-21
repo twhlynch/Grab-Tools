@@ -9,6 +9,8 @@ export interface LevelDetails {
 	tags?: string[];
 	verification_time?: number;
 	curated_listings?: string[];
+	creation_timestamp?: number;
+	update_timestamp?: number;
 }
 
 export interface UserInfo {
