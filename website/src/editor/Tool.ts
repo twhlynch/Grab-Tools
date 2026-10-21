@@ -20,6 +20,8 @@ export interface Viewport {
 	};
 	editing_parent: THREE.Object3D | null;
 	modifier(fn: (json: Level) => Level): void;
+	is_animating: boolean;
+	set_time(time: number): void;
 }
 
 export interface Tool {
