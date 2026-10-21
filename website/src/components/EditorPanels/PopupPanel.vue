@@ -1,8 +1,55 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from 'vue';
+
+interface BaseInput {
+	label?: string;
+	text?: string;
+}
+
+type OptionInput = BaseInput & {
+	type: 'option';
+	options: string[];
+};
+type TextareaInput = BaseInput & {
+	type: 'textarea';
+};
+type RangeInput = BaseInput & {
+	type: 'range';
+	min: number;
+	max: number;
+	value: number;
+	step?: number;
+};
+type CheckboxInput = BaseInput & {
+	type: 'checkbox';
+	default?: boolean;
+};
+type FileInput = BaseInput & {
+	type: 'file';
+	accept?: string;
+	multiple?: boolean;
+};
+
+type SpecificInput = OptionInput | TextareaInput | RangeInput | CheckboxInput | FileInput;
+type UnspecifiedInput = BaseInput & {
+	type: Exclude<string, Pick<SpecificInput, 'type'>>;
+	text?: string;
+	accept?: string;
+	multiple?: boolean;
+};
+
+type Input = SpecificInput | UnspecifiedInput;
+
+export default defineComponent({
 	props: {
-		inputs: Array,
-		func: Function,
+		inputs: {
+			type: Array as PropType<Input[]>,
+			required: true,
+		},
+		func: {
+			type: Function as PropType<(...data: unknown[]) => void>,
+			required: true,
+		},
 	},
 	data() {
 		return {
@@ -32,34 +79,36 @@ export default {
 		run() {
 			const data = this.inputs.map((input, index) => {
 				if (input.type === 'file') {
-					return Array.from(this.$refs[`input-${index}`][0].files);
+					return Array.from(
+						(this.$refs[`input-${index}`] as HTMLInputElement[])[0]!.files!,
+					);
 				}
 				if (input.type === 'checkbox') {
-					return this.$refs[`input-${index}`][0].checked;
+					return (this.$refs[`input-${index}`] as HTMLInputElement[])[0]!.checked;
 				}
-				return this.$refs[`input-${index}`][0].value;
+				return (this.$refs[`input-${index}`] as HTMLInputElement[])[0]!.value;
 			});
 			this.visible = false;
 			console.log(...data);
 			this.func(...data);
 		},
-		click(e) {
+		click(e: MouseEvent | TouchEvent) {
 			if (
 				this.visible &&
 				this.$refs.container &&
 				e.target !== this.$refs.container &&
-				!this.$refs.container.contains(e.target)
+				!(this.$refs.container as HTMLElement).contains(e.target as Node)
 			) {
 				this.visible = false;
 			}
 		},
-		keydown(e) {
+		keydown(e: KeyboardEvent) {
 			if (this.visible && e.code === 'Escape') {
 				this.visible = false;
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>
@@ -68,7 +117,7 @@ export default {
 			<label v-if="input.label">{{ input.label }}</label>
 			<select v-if="input.type === 'option'" :ref="`input-${i}`">
 				<option
-					v-for="(option, j) in input.options"
+					v-for="(option, j) in (input as OptionInput).options"
 					:key="j"
 					:value="option"
 					:selected="j === 0"
@@ -87,27 +136,31 @@ export default {
 				v-else-if="input.type === 'range'"
 				:ref="`input-${i}`"
 				:type="input.type"
-				:min="input.min"
-				:value="input.value"
-				:max="input.max"
-				:step="input.step ?? 1"
+				:min="(input as RangeInput).min"
+				:value="(input as RangeInput).value"
+				:max="(input as RangeInput).max"
+				:step="(input as RangeInput).step ?? 1"
 				@input="
 					(e) => {
-						input.value = e.target.value;
+						(input as RangeInput).value = Number((e.target as HTMLInputElement).value);
 					}
 				"
 			/>
 			<label v-else-if="input.type === 'checkbox'">
 				{{ input.text }}
-				<input :ref="`input-${i}`" type="checkbox" :checked="input.default" />
+				<input
+					:ref="`input-${i}`"
+					type="checkbox"
+					:checked="(input as CheckboxInput).default"
+				/>
 			</label>
 			<input
 				v-else
 				:ref="`input-${i}`"
 				:type="input.type"
 				:placeholder="input.text"
-				:accept="input.accept"
-				:multiple="input.multiple"
+				:accept="(input as UnspecifiedInput).accept"
+				:multiple="(input as UnspecifiedInput).multiple"
 			/>
 		</div>
 		<button @click="run">Run</button>
