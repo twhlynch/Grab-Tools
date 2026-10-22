@@ -318,7 +318,7 @@ export function serialize(
 					elementType,
 					index,
 				);
-				if (Object.keys(blankTypes).length > 1) {
+				if (blankTypes && Object.keys(blankTypes).length > 1) {
 					child.selectedBlankType = getBlankType(item, blankTypes);
 				}
 				child.elementType = elementType;

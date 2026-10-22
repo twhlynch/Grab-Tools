@@ -78,7 +78,13 @@ export default defineComponent({
 					this.$props.node.arrayIndex,
 					0,
 					serialize(
-						this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]],
+						this.$props.node.blankTypes
+							? this.$props.node.blankTypes[
+									Object.keys(this.$props.node.blankTypes)[0]
+								]
+							: this.$props.node.elementType == 'string'
+								? ''
+								: 0,
 						this.$props.node.arrayIndex.toString(),
 						this.$props.node.elementType || this.$props.node.key,
 						this.$props.node.arrayIndex,
@@ -94,7 +100,13 @@ export default defineComponent({
 					this.$props.node.arrayIndex + 1,
 					0,
 					serialize(
-						this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]],
+						this.$props.node.blankTypes
+							? this.$props.node.blankTypes[
+									Object.keys(this.$props.node.blankTypes)[0]
+								]
+							: this.$props.node.elementType == 'string'
+								? ''
+								: 0,
 						this.$props.node.arrayIndex.toString(),
 						this.$props.node.elementType || this.$props.node.key,
 						this.$props.node.arrayIndex,
@@ -107,7 +119,11 @@ export default defineComponent({
 			if (this.$props.node.type != 'array') return;
 			this.$props.node.children = [
 				serialize(
-					this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]],
+					this.$props.node.blankTypes
+						? this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]]
+						: this.$props.node.elementType == 'string'
+							? ''
+							: 0,
 					'0',
 					this.$props.node.elementType || this.$props.node.key,
 					0,
