@@ -1,9 +1,6 @@
 <script>
 import MenuItem from '@/components/EditorPanels/PropertyPanel/MenuItem.vue';
-import {
-	deserialize,
-	serialize,
-} from '@/components/EditorPanels/PropertyPanel/menuSerializer';
+import { deserialize, serialize } from '@/components/EditorPanels/PropertyPanel/menuSerializer';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
@@ -38,12 +35,7 @@ export default defineComponent({
 
 <template>
 	<div class="property-editor">
-		<MenuItem
-			ref="rootMenuItem"
-			:node="menu_tree"
-			:re-open="reOpen"
-			@refresh="refresh_tree"
-		/>
+		<MenuItem ref="rootMenuItem" :node="menu_tree" :re-open="reOpen" @refresh="refresh_tree" />
 	</div>
 </template>
 

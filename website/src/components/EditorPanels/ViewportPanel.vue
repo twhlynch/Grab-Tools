@@ -1127,8 +1127,7 @@ export default defineComponent({
 						return;
 					}
 					if (this.show_mini_editor) this.close_mini_editor();
-					else if (this.show_property_editor)
-						this.close_property_editor();
+					else if (this.show_property_editor) this.close_property_editor();
 					else if (this.show_gasm_editor) this.close_gasm_editor();
 					else if (this.contextmenu) this.contextmenu = undefined;
 					else if (!this.gizmo.empty()) this.gizmo.clear(this.editing_parent);

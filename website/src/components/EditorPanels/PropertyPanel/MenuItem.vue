@@ -1,8 +1,5 @@
 <script>
-import {
-	deserialize,
-	serialize,
-} from '@/components/EditorPanels/PropertyPanel/menuSerializer';
+import { deserialize, serialize } from '@/components/EditorPanels/PropertyPanel/menuSerializer';
 import { defineComponent, ref } from 'vue';
 
 function camelToTitleCase(str) {
@@ -28,17 +25,9 @@ export default defineComponent({
 	watch: {
 		'$props.node.value': {
 			handler(after, before) {
-				if (
-					!(
-						this.$props.node.type == 'enum' ||
-						this.$props.node.type == 'boolean'
-					)
-				)
+				if (!(this.$props.node.type == 'enum' || this.$props.node.type == 'boolean'))
 					return; // temporary, to prevent lag spikes
-				if (
-					!this.objectEquals(before, after) &&
-					this.lastNodeKey == this.$props.node.key
-				) {
+				if (!this.objectEquals(before, after) && this.lastNodeKey == this.$props.node.key) {
 					this.$emit('refresh');
 				}
 				this.lastNodeKey = this.$props.node.key;
@@ -89,9 +78,7 @@ export default defineComponent({
 					this.$props.node.arrayIndex,
 					0,
 					serialize(
-						this.$props.node.blankTypes[
-							Object.keys(this.$props.node.blankTypes)[0]
-						],
+						this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]],
 						this.$props.node.arrayIndex.toString(),
 						this.$props.node.elementType || this.$props.node.key,
 						this.$props.node.arrayIndex,
@@ -107,9 +94,7 @@ export default defineComponent({
 					this.$props.node.arrayIndex + 1,
 					0,
 					serialize(
-						this.$props.node.blankTypes[
-							Object.keys(this.$props.node.blankTypes)[0]
-						],
+						this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]],
 						this.$props.node.arrayIndex.toString(),
 						this.$props.node.elementType || this.$props.node.key,
 						this.$props.node.arrayIndex,
@@ -122,9 +107,7 @@ export default defineComponent({
 			if (this.$props.node.type != 'array') return;
 			this.$props.node.children = [
 				serialize(
-					this.$props.node.blankTypes[
-						Object.keys(this.$props.node.blankTypes)[0]
-					],
+					this.$props.node.blankTypes[Object.keys(this.$props.node.blankTypes)[0]],
 					'0',
 					this.$props.node.elementType || this.$props.node.key,
 					0,
@@ -135,9 +118,7 @@ export default defineComponent({
 			this.$emit('refresh');
 		},
 		isInlineType() {
-			return ['Vector', 'Vector2', 'Quaternion', 'Color'].includes(
-				this.$props.node.type,
-			);
+			return ['Vector', 'Vector2', 'Quaternion', 'Color'].includes(this.$props.node.type);
 		},
 		getChildValue(key) {
 			return this.$props.node.children?.find((c) => c.key === key)?.value;
@@ -153,12 +134,7 @@ export default defineComponent({
 			const ri = Math.floor(r * 255);
 			const gi = Math.floor(g * 255);
 			const bi = Math.floor(b * 255);
-			return (
-				'#' +
-				[ri, gi, bi]
-					.map((x) => x.toString(16).padStart(2, '0'))
-					.join('')
-			);
+			return '#' + [ri, gi, bi].map((x) => x.toString(16).padStart(2, '0')).join('');
 		},
 		onColorInput(e) {
 			const hex = e.target.value;
@@ -186,11 +162,7 @@ export default defineComponent({
 			const ds = deserialize(this.$props.node);
 			// quick and dirty clone but it gets the job done
 			const blankTypeCloned = JSON.parse(
-				JSON.stringify(
-					this.$props.node.blankTypes[
-						this.$props.node.selectedBlankType
-					],
-				),
+				JSON.stringify(this.$props.node.blankTypes[this.$props.node.selectedBlankType]),
 			);
 			const blankTypeItem = Object.keys(blankTypeCloned)[0];
 			// try map some values to new object (like position, rotation, scale, etc)
@@ -198,16 +170,13 @@ export default defineComponent({
 				for (let x of Object.keys(ds[i])) {
 					if (
 						blankTypeCloned[blankTypeItem][x] != null &&
-						typeof blankTypeCloned[blankTypeItem][x] ==
-							typeof ds[i][x]
+						typeof blankTypeCloned[blankTypeItem][x] == typeof ds[i][x]
 					) {
 						blankTypeCloned[blankTypeItem][x] = ds[i][x];
 					}
 				}
 				if (
-					!Object.keys(this.$props.node.blankTypes).includes(
-						camelToTitleCase(i),
-					) &&
+					!Object.keys(this.$props.node.blankTypes).includes(camelToTitleCase(i)) &&
 					ds[i] != null
 				) {
 					blankTypeCloned[i] = ds[i];
@@ -235,20 +204,14 @@ export default defineComponent({
 			@mouseenter="isHovered = true"
 			@mouseleave="isHovered = false"
 		>
-			<span
-				v-if="$props.node.isExpandable && !isInlineType()"
-				class="arrow"
-			>
+			<span v-if="$props.node.isExpandable && !isInlineType()" class="arrow">
 				{{ isExpanded ? '⌄' : '›' }}
 			</span>
 
 			<span class="node-key">{{ $props.node.title }}:</span>
 			<div class="node-editor" @click.stop>
 				<!-- Vector2 -->
-				<div
-					v-if="$props.node.type === 'Vector2'"
-					class="vector-inputs"
-				>
+				<div v-if="$props.node.type === 'Vector2'" class="vector-inputs">
 					<span class="x-label">X:</span>
 					<input
 						type="number"
@@ -266,10 +229,7 @@ export default defineComponent({
 				</div>
 
 				<!-- Vector -->
-				<div
-					v-else-if="$props.node.type === 'Vector'"
-					class="vector-inputs"
-				>
+				<div v-else-if="$props.node.type === 'Vector'" class="vector-inputs">
 					<span class="x-label">X:</span>
 					<input
 						type="number"
@@ -294,10 +254,7 @@ export default defineComponent({
 				</div>
 
 				<!-- Quaternion -->
-				<div
-					v-else-if="$props.node.type === 'Quaternion'"
-					class="vector-inputs"
-				>
+				<div v-else-if="$props.node.type === 'Quaternion'" class="vector-inputs">
 					<span class="x-label">X:</span>
 					<input
 						type="number"
@@ -372,9 +329,7 @@ export default defineComponent({
 				</select>
 
 				<!-- Structural Labels -->
-				<span
-					v-else-if="$props.node.type === 'array' && isExpanded"
-					class="type-badge"
+				<span v-else-if="$props.node.type === 'array' && isExpanded" class="type-badge"
 					>[</span
 				>
 				<span
@@ -409,14 +364,8 @@ export default defineComponent({
 					>{ ... }</span
 				>
 
-				<span
-					v-else-if="$props.node.type === 'array'"
-					class="type-badge"
-					>[ ]</span
-				>
-				<span
-					v-else-if="$props.node.children && !isInlineType()"
-					class="type-badge"
+				<span v-else-if="$props.node.type === 'array'" class="type-badge">[ ]</span>
+				<span v-else-if="$props.node.children && !isInlineType()" class="type-badge"
 					>{ }</span
 				>
 			</div>
@@ -453,16 +402,10 @@ export default defineComponent({
 				<span class="spacer"></span>
 				<button class="modify-button" @click="addItemAbove">▲</button>
 				<button class="modify-button" @click="addItemBelow">▼</button>
-				<button class="modify-button red-button" @click="removeItem">
-					X
-				</button>
+				<button class="modify-button red-button" @click="removeItem">X</button>
 			</div>
 			<div
-				v-if="
-					isHovered &&
-					$props.node.type === 'array' &&
-					$props.node.children.length == 0
-				"
+				v-if="isHovered && $props.node.type === 'array' && $props.node.children.length == 0"
 			>
 				<span class="spacer"></span>
 				<button class="modify-button" @click="addArrayItem">+</button>
@@ -482,11 +425,7 @@ export default defineComponent({
 				@refresh="refreshEmit"
 			/>
 		</div>
-		<span
-			v-if="$props.node.type === 'array' && isExpanded"
-			class="type-badge"
-			>]</span
-		>
+		<span v-if="$props.node.type === 'array' && isExpanded" class="type-badge">]</span>
 		<span
 			v-else-if="
 				$props.node.children &&
