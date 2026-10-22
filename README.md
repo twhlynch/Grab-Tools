@@ -6,10 +6,10 @@ Built with Vue 3, Vite, Tauri, Three.js, and CodeMirror.
 
 ## Setup
 
-Requires `Node.js` 24 and `npm`.
+Requires `Node.js` 24 and `pnpm`.
 
 ```sh
-npm install
+pnpm install
 ```
 
 ## Development
@@ -17,22 +17,22 @@ npm install
 Run the Vite website at `https://127.0.0.1:5173`:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 ## Testing
 
 ```sh
-npm test
+pnpm test
 ```
 
-Tests are in `test/` and use [Vitest](https://vitest.dev).
+Tests are in `website/test/` and use [Vitest](https://vitest.dev).
 
 ## Linting & Formatting
 
 ```sh
-npm run lint
-npm run format
+pnpm lint
+pnpm format
 ```
 
 Editor integration:
@@ -44,19 +44,31 @@ Editor integration:
 
 ## Build
 
-Build the website to `dist/`:
+Build the website to `website/dist/`:
 
 ```sh
-npm run build
-npm run preview
+pnpm build
+pnpm --filter @grab-tools/website preview
+```
+
+Build the desktop app:
+
+```sh
+pnpm tauri build
+```
+
+Build the Android APK:
+
+```sh
+pnpm tauri android build
 ```
 
 ## Code Generation
 
 ```sh
-npm run proto    # TypeScript types for protobuf
-npm run helpers  # json object builders
-npm run nodes    # node builders
+pnpm proto    # TypeScript types for protobuf
+pnpm helpers  # json object builders
+pnpm nodes    # node builders
 ```
 
 ## Shell Scripts
@@ -66,8 +78,7 @@ Development helper scripts in `scripts/`:
 | Script                                | Description                         |
 | ------------------------------------- | ----------------------------------- |
 | `bump-version.sh major\|minor\|patch` | Bump the project version and commit |
-| `build-tauri.sh`                      | Build the desktop app               |
-| `build-android.sh`                    | Build the Android APK               |
+| `generate.sh`                         | Run proto helpers codegen           |
 | `publish-meta.sh`                     | Upload APK to Meta                  |
 | `copy-lobbies.sh`                     | Copy lobbys from GRAB               |
 
@@ -82,56 +93,69 @@ Development helper scripts in `scripts/`:
 
 ```sh
 .
-├─ .github/          # github actions
-├─ scripts/          # scripts for development
-├─ public/           # public website assets
-│  ├─ fonts/           # fonts
-│  ├─ gasm/            # grab assembly samples
-│  ├─ images/          # images
-│  ├─ levels/          # levels for editor templates
-│  └─ favicon.png      # website icon
-├─ src/              # website sources
-│  ├─ assets/          # built in assets
-│  │  ├─ bookmarklets/   # javascript bookmarklet sources
-│  │  ├─ models/         # level models
-│  │  ├─ proto/          # level protobuf definition
-│  │  ├─ shaders/        # editor shaders
-│  │  ├─ textures/       # level textures
-│  ├─ common/          # common js & ts code
-│  ├─ components/      # vue components
-│  │  ├─ EditorPanels/   # components for the json editor
-│  │  └─ tools/          # components for tools
-│  ├─ editor/          # editor code
-│  ├─ generated/       # generated helper functions and types
-│  ├─ icons/           # vue svg icon components
-│  ├─ layouts/         # vue layout components
-│  ├─ pages/           # vue page components
-│  ├─ requests/        # fetch requests
-│  ├─ stores/          # vue session stores
-│  ├─ styles/          # css source
-│  ├─ tools/           # tool sources
-│  ├─ types/           # global types
-│  ├─ App.vue          # vue app structure
-│  ├─ config.ts        # general config / globals
-│  ├─ main.ts          # website entrypoint
-│  └─ router.ts        # vue router config
-├─ src-tauri/        # tauri rust application sources
-├─ test/             # unit tests
-├─ vite/             # vite plugins
-├─ .env.example      # example env config
-├─ .gitattributes    # git attributes
-├─ .gitignore        # gitignore
-├─ .nvim.lua         # optional nvim config
-├─ .nvmrc            # pinned node version
-├─ .prettierignore   # prettier ignore config
-├─ .prettierrc.json  # prettier formatting config
-├─ CONTRIBUTING.md   # contribution guide
-├─ README.md         # this file
-├─ eslint.config.ts  # eslint config
-├─ index.html        # mountable app html
-├─ package-lock.json # npm packages lock file
-├─ package.json      # npm config and packages
-├─ tsconfig.json     # typescript config
-├─ vite.config.ts    # vite config
-└─ vitest.config.ts  # vitest config
+├─ .github/                    # github actions
+├─ .vscode/                    # vscode settings
+├─ scripts/                    # scripts for development
+│  ├─ bump-version.sh          # bump version in packages and tauri
+│  ├─ copy-lobbies.sh          # copy lobbies from GRAB
+│  ├─ generate.sh              # run proto helpers codegen
+│  ├─ publish-meta.sh          # upload apk to meta
+│  ├─ generate-helpers.ts      # generator run by pnpm helpers
+│  └─ generate-node-helpers.ts # generator run by pnpm nodes
+├─ website/                    # website package
+│  ├─ public/                  # public website assets
+│  │  ├─ fonts/                # fonts
+│  │  ├─ gasm/                 # grab assembly samples
+│  │  ├─ images/               # images
+│  │  ├─ levels/               # levels for editor templates
+│  │  └─ favicon.png           # website icon
+│  ├─ src/                     # website sources
+│  │  ├─ assets/               # built in assets
+│  │  │  ├─ bookmarklets/      # javascript bookmarklet sources
+│  │  │  ├─ models/            # level models
+│  │  │  ├─ proto/             # level protobuf definition
+│  │  │  ├─ shaders/           # editor shaders
+│  │  │  ├─ textures/          # level textures
+│  │  ├─ common/               # common js & ts code
+│  │  ├─ components/           # vue components
+│  │  │  ├─ EditorPanels/      # components for the json editor
+│  │  │  └─ tools/             # components for tools
+│  │  ├─ editor/               # editor code
+│  │  ├─ generated/            # generated helper functions and types
+│  │  ├─ icons/                # vue svg icon components
+│  │  ├─ layouts/              # vue layout components
+│  │  ├─ pages/                # vue page components
+│  │  ├─ requests/             # fetch requests
+│  │  ├─ stores/               # vue session stores
+│  │  ├─ styles/               # css source
+│  │  ├─ tools/                # tool sources
+│  │  ├─ types/                # global types
+│  │  ├─ App.vue               # vue app structure
+│  │  ├─ config.ts             # general config / globals
+│  │  ├─ main.ts               # website entrypoint
+│  │  └─ router.ts             # vue router config
+│  ├─ src-tauri/               # tauri rust application sources
+│  ├─ test/                    # unit tests
+│  ├─ vite/                    # vite plugins
+│  ├─ index.html               # mountable app html
+│  ├─ package.json             # website package config and dependencies
+│  ├─ tsconfig.json            # website typescript config
+│  ├─ vite.config.ts           # vite config
+│  └─ vitest.config.ts         # vitest config
+├─ .editorconfig               # editor whitespace config
+├─ .env.example                # example env config
+├─ .gitattributes              # git attributes
+├─ .gitignore                  # gitignore
+├─ .nvmrc                      # pinned node version
+├─ .prettierignore             # prettier ignore config
+├─ .prettierrc.json            # prettier formatting config
+├─ CONTRIBUTING.md             # contribution guide
+├─ LICENSE                     # license
+├─ README.md                   # this file
+├─ eslint.config.ts            # eslint config
+├─ package.json                # workspace root, shared tooling and scripts
+├─ pnpm-lock.yaml              # pnpm packages lock file
+├─ pnpm-workspace.yaml         # pnpm workspace config
+├─ tsconfig.base.json          # shared typescript config
+└─ tsconfig.json               # typescript config for root scripts
 ```

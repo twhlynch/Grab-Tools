@@ -10,25 +10,30 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.25.0
+
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: "npm"
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Type check
-        run: npm run typecheck
+        run: pnpm typecheck
 
       - name: Lint
-        run: npm run lint:ci
+        run: pnpm lint
 
       - name: Formatting
-        run: npm run format:ci
+        run: pnpm format:check
 
       - name: Test
-        run: npm test
+        run: pnpm test
 
       - name: Build
-        run: npm run build
+        run: pnpm build

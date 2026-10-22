@@ -1,0 +1,303 @@
+<script>
+import { createLevel, decodeLevel } from '@/common/levels';
+import { get_protobuf, set_protobuf } from '@/common/root';
+import { add_nodes, deepClone, json_parse } from '@/common/utils';
+import JsonPanel from '@/components/EditorPanels/JsonPanel.vue';
+import MenuPanel from '@/components/EditorPanels/MenuPanel.vue';
+import MyLevelsMenu from '@/components/EditorPanels/MyLevelsMenu.vue';
+import PopupPanel from '@/components/EditorPanels/PopupPanel.vue';
+import ProtobufPanel from '@/components/EditorPanels/ProtobufPanel.vue';
+import ResizableColPanel from '@/components/EditorPanels/ResizableColPanel.vue';
+import ResizableRowPanel from '@/components/EditorPanels/ResizableRowPanel.vue';
+import StatisticsPanel from '@/components/EditorPanels/StatisticsPanel.vue';
+import TemplatesPanel from '@/components/EditorPanels/TemplatesPanel.vue';
+import TerminalPanel from '@/components/EditorPanels/TerminalPanel.vue';
+import ViewportPanel from '@/components/EditorPanels/ViewportPanel.vue';
+import * as mcp from '@/editor/MCP';
+import { useConfigStore } from '@/stores/config';
+import { useUserStore } from '@/stores/user';
+import { compile } from '@/tools/compiler';
+import downloads from '@/tools/downloads';
+import { mapState } from 'pinia';
+
+export default {
+	components: {
+		MenuPanel,
+		MyLevelsMenu,
+		ViewportPanel,
+		ResizableRowPanel,
+		ResizableColPanel,
+		JsonPanel,
+		TerminalPanel,
+		PopupPanel,
+		StatisticsPanel,
+		TemplatesPanel,
+		ProtobufPanel,
+	},
+	data() {
+		return {
+			popup_props: {
+				inputs: undefined,
+				func: undefined,
+			},
+			show_protobuf_panel: false,
+			show_my_levels_menu: false,
+		};
+	},
+	computed: {
+		...mapState(useUserStore, ['is_logged_in', 'user_name']),
+		...mapState(useConfigStore, ['default_level']),
+	},
+	mounted() {
+		this.$refs.side_panel.size((window.innerHeight / 4) * 3);
+		this.$refs.main_panel.size((window.innerWidth / 3) * 2);
+		this.close_templates();
+		this.open_starting_level();
+		mcp.init((level) => this.set_json(level, 'mcp'));
+	},
+	created() {
+		document.title = 'JSON Editor | GRAB Tools';
+	},
+	methods: {
+		close_templates() {
+			this.$refs.left_panel.size(0);
+		},
+		async open_starting_level() {
+			const params = new URLSearchParams(window.location.search);
+			const level_id = params.get('level');
+
+			if (level_id) {
+				const level = await downloads.try_download_level(level_id);
+				if (level) {
+					const blob = new Blob([level], {
+						type: 'application/octet-stream',
+					});
+					const data = await decodeLevel(blob);
+					this.json = data ?? createLevel();
+				}
+			} else {
+				this.json = this.default_level ? deepClone(this.default_level) : createLevel();
+			}
+
+			this.set_json(this.json);
+		},
+		set_json(json, skip = []) {
+			this.json = json;
+			if (!skip.includes('json_panel')) this.$refs.json_panel.set_json(this.json);
+			if (!skip.includes('viewport_panel')) this.$refs.viewport_panel.set_json(this.json);
+			if (!skip.includes('mcp')) mcp.send_level(json);
+		},
+		json_changed(json) {
+			this.set_json(json, ['json_panel']);
+		},
+		viewport_changed() {
+			this.set_json(this.json, ['viewport_panel']);
+		},
+		async run_modifier(func) {
+			this.set_json(await func(this.json));
+		},
+		run_function(func) {
+			func(this.json);
+		},
+		run_viewport(func) {
+			func(this.$refs.viewport_panel);
+		},
+		set_popup(inputs, func) {
+			this.popup_props.inputs = inputs;
+			this.popup_props.func = func;
+		},
+		scope(func) {
+			if (this) func(this);
+		},
+		resize_left() {
+			this.$refs.left_panel.size();
+		},
+		set_protobuf(protobuf) {
+			window.toast('protobuf');
+			console.log(protobuf);
+			set_protobuf(protobuf);
+		},
+		open_protobuf() {
+			this.$refs.protobuf_panel.set(get_protobuf());
+			this.show_protobuf_panel = true;
+		},
+		close_protobuf() {
+			this.show_protobuf_panel = false;
+		},
+		open_my_levels() {
+			this.show_my_levels_menu = true;
+		},
+		close_my_levels() {
+			this.show_my_levels_menu = false;
+		},
+		insert_level(json) {
+			this.run_modifier((level) => {
+				add_nodes(level, json.levelNodes);
+				return level;
+			});
+		},
+		undo() {
+			this.$refs.json_panel.undo();
+		},
+		redo() {
+			this.$refs.json_panel.redo();
+		},
+		async drop(e) {
+			e.stopPropagation();
+			const text = e.dataTransfer.getData('text/plain');
+			const files = e.dataTransfer.files;
+
+			if (files.length) {
+				e.preventDefault();
+
+				if (files.length === 1) {
+					const file = files[0];
+					let data = null;
+					if (file.name.endsWith('.level')) {
+						data = await decodeLevel(file);
+					} else if (file.name.endsWith('.json')) {
+						data = json_parse(await file.text());
+					}
+					if (data) this.set_json(data);
+				} else {
+					const nodes = [this.json.levelNodes];
+					for (const file of files) {
+						let data = null;
+						if (file.name.endsWith('.level')) {
+							data = await decodeLevel(file);
+						} else if (file.name.endsWith('.json')) {
+							data = json_parse(await file.text());
+						}
+						nodes.push(data?.levelNodes ?? []);
+					}
+					const result = compile(nodes, {});
+					this.set_json({ ...this.json, levelNodes: result });
+				}
+			}
+
+			if (text?.includes('level=')) {
+				e.preventDefault();
+				const params = new URLSearchParams(text.split('?')[1]);
+				const level_id = params.get('level');
+				const level = await downloads.try_download_level(level_id);
+				if (level === null) return;
+				const blob = new Blob([level], {
+					type: 'application/octet-stream',
+				});
+				const json = await decodeLevel(blob);
+				if (json) this.set_json(json);
+			}
+		},
+	},
+};
+</script>
+
+<template>
+	<main id="editor" @drop="drop">
+		<MenuPanel
+			@modifier="run_modifier"
+			@function="run_function"
+			@viewport="run_viewport"
+			@popup="set_popup"
+			@scope="scope"
+		/>
+		<ResizableRowPanel :ref="'main_panel'" class="main-panel" @resize="resize_left">
+			<template #first>
+				<ResizableRowPanel ref="left_panel" class="left-panel">
+					<template #first>
+						<TemplatesPanel @modifier="run_modifier" @close="close_templates" />
+					</template>
+					<template #second>
+						<ViewportPanel
+							:ref="'viewport_panel'"
+							class="view-panel"
+							@changed="viewport_changed"
+							@modifier="run_modifier"
+							@scope="scope"
+							@undo="undo"
+							@redo="redo"
+						/>
+					</template>
+				</ResizableRowPanel>
+			</template>
+			<template #second>
+				<ResizableColPanel :ref="'side_panel'" class="side-panel">
+					<template #first>
+						<JsonPanel :ref="'json_panel'" @changed="json_changed" />
+					</template>
+					<template #second>
+						<TerminalPanel @command="run_modifier" />
+					</template>
+				</ResizableColPanel>
+			</template>
+		</ResizableRowPanel>
+		<footer>
+			<StatisticsPanel ref="statistics" />
+		</footer>
+		<PopupPanel :inputs="popup_props.inputs" :func="popup_props.func" />
+		<MyLevelsMenu
+			v-model:visible="show_my_levels_menu"
+			@open="set_json"
+			@insert="insert_level"
+		/>
+		<ProtobufPanel
+			v-show="show_protobuf_panel"
+			ref="protobuf_panel"
+			class="protobuf-panel"
+			@set="set_protobuf"
+			@close="close_protobuf"
+		/>
+	</main>
+</template>
+
+<style>
+html:has(#editor) {
+	background-color: #1e1e1e;
+	overscroll-behavior: none;
+}
+#editor * {
+	/* outline: 0.1px solid #0f05; */
+}
+</style>
+<style scoped>
+.protobuf-panel {
+	width: 80%;
+	height: 80%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#editor {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+}
+footer {
+	height: 1.2rem;
+	font-size: 0.8rem;
+	background-color: #1e1e1e;
+}
+.main-panel {
+	height: calc(100% - 3rem - 1rem);
+}
+.side-panel {
+	height: 100%;
+}
+.view-panel {
+	height: 100%;
+}
+.left-panel {
+	height: 100%;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+</style>

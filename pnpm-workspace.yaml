@@ -1,0 +1,6 @@
+packages:
+  - website
+
+allowBuilds:
+  esbuild: true
+  protobufjs: true

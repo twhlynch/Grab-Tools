@@ -9,8 +9,8 @@ interface Interface {
 	scope: string;
 }
 
-const input_file = path.resolve('src/generated/proto.ts');
-const output_file = path.resolve('src/generated/nodes.ts');
+const input_file = path.resolve('website/src/generated/proto.ts');
+const output_file = path.resolve('website/src/generated/nodes.ts');
 
 const source_text = fs.readFileSync(input_file, 'utf8');
 

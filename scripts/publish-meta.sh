@@ -5,7 +5,7 @@ if [ -f .env ]; then
 	export $(grep -v '^#' .env | xargs)
 fi
 
-file="src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk"
+file="website/src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk"
 
 ovr-platform-util upload-quest-build \
 	--app-id "$OVR_APP_ID" \

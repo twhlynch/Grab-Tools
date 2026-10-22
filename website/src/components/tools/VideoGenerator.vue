@@ -1,0 +1,80 @@
+<script>
+import { createLevel, downloadLevel, encodeLevel } from '@/common/levels';
+import ProgressBar from '@/components/ProgressBar.vue';
+import video from '@/tools/video';
+import ToolTemplate from './ToolTemplate.vue';
+
+export default {
+	components: {
+		ProgressBar,
+		ToolTemplate,
+	},
+	data() {
+		return {
+			progress: 0,
+		};
+	},
+	methods: {
+		async generate() {
+			const getByID = (id) => document.getElementById(id);
+			const toolID = 'video-generator-tool';
+
+			const files = Array.from(getByID(`${toolID}-file`).files);
+			if (!files.length) {
+				window.toast('No video file chosen', 'error');
+				return;
+			}
+
+			const width = parseInt(getByID(`${toolID}-width`).value) || 40;
+			const height = parseInt(getByID(`${toolID}-height`).value) || 30;
+			const mode = getByID(`${toolID}-mode`).value;
+
+			const file = files[0];
+
+			const progress_callback = (progress) => {
+				this.progress = progress;
+			};
+			const video_nodes = await video.video(file, width, height, mode, progress_callback);
+			this.progress = 100;
+			if (!video_nodes) {
+				this.progress = 0;
+				return;
+			}
+
+			const obj = createLevel(video_nodes, 'Video', 'Generated with GRAB Tools', [
+				'.index',
+				'GRAB Tools',
+			]);
+
+			const encoded = await encodeLevel(obj);
+			if (encoded === null) return;
+
+			downloadLevel(encoded);
+			this.progress = 0;
+		},
+	},
+};
+</script>
+
+<template>
+	<ToolTemplate>
+		<template #title>Video Generator</template>
+		<template #info>
+			Convert an MP4 video to grab. Note: if on firefox you will be given the old version with
+			15 second max length.
+		</template>
+		<input id="video-generator-tool-width" type="number" placeholder="width (40)" />
+		<input id="video-generator-tool-height" type="number" placeholder="height (30)" />
+		<select id="video-generator-tool-mode">
+			<option value="animations" selected>animations</option>
+			<option value="code">code</option>
+		</select>
+		<input id="video-generator-tool-file" type="file" />
+		<ProgressBar :progress="progress" />
+		<button id="video-generator-tool-btn" class="button" @click="generate">
+			Process Video
+		</button>
+	</ToolTemplate>
+</template>
+
+<style scoped></style>

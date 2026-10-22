@@ -1,4 +1,13 @@
 *.vert
 *.frag
 *.gltf
-**/triangle_partition.ts
+
+pnpm-lock.yaml
+
+website/src/tools/triangle_partition.ts
+website/public/fonts/Roboto_Regular.json
+
+website/src-tauri
+
+**/dist
+**/node_modules

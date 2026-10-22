@@ -2,17 +2,17 @@
 .DS_Store
 
 # dependencies
-/node_modules
+node_modules
 
 # editor config
 /.vscode/*
 !/.vscode/extensions.json
 
 # build output
-/dist
+dist
 
 # env
-/.env
+.env
 
 # swap
 *.sw[a-p]
