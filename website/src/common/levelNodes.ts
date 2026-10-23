@@ -1,5 +1,7 @@
 import {
+	isLevelNode,
 	LevelNodeKey,
+	LevelNodeTypeFor,
 	LevelNodeTypes,
 	LevelNodeWith,
 	LevelNodeWithAny,
@@ -7,6 +9,7 @@ import {
 import {
 	Animation,
 	InstructionDataType,
+	LevelNode,
 	LevelNodeMaterial,
 	LevelNodeShape,
 	OperandDataType,
@@ -81,6 +84,20 @@ export type LevelNodeObject<T extends LevelNodeTypes = never> = Partial<
 	};
 
 // type guards for LevelNodeObjects
-export function isLevelNodeObject(object: unknown): object is LevelNodeObject {
-	return isObject3D(object) && 'node' in object.userData;
+export function isLevelNodeObject<K extends LevelNodeKey>(
+	object: unknown,
+	key: K,
+): object is LevelNodeObject<LevelNodeTypeFor<K>>;
+export function isLevelNodeObject(object: unknown): object is LevelNodeObject;
+export function isLevelNodeObject(
+	object: unknown,
+	key?: LevelNodeKey,
+): boolean {
+	return (
+		isObject3D(object) &&
+		'node' in object.userData &&
+		(key
+			? isLevelNode(object.userData.node as LevelNode, key)
+			: isLevelNode(object.userData.node as LevelNode))
+	);
 }
