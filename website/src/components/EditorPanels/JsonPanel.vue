@@ -6,7 +6,6 @@ import { json } from '@codemirror/lang-json';
 import { foldGutter } from '@codemirror/language';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection } from '@codemirror/state';
-import { Level } from '@grab-tools/lib/generated/proto';
 import { EditorView } from 'codemirror';
 import { defineComponent, markRaw } from 'vue';
 
@@ -18,7 +17,7 @@ export default defineComponent({
 	data() {
 		return {
 			view: null! as EditorView,
-			json: {} as Level,
+			json: {} as object,
 			ignore_change: false,
 			error: null as null | string,
 		};
@@ -57,7 +56,7 @@ export default defineComponent({
 		);
 	},
 	methods: {
-		set_json(data: Level) {
+		set_json(data: object) {
 			this.json = data;
 			this.ignore_change = true;
 			this.view.dispatch({

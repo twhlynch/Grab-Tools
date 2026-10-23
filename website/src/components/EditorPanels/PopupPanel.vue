@@ -38,7 +38,7 @@ type UnspecifiedInput = BaseInput & {
 	multiple?: boolean;
 };
 
-type Input = SpecificInput | UnspecifiedInput;
+export type Input = SpecificInput | UnspecifiedInput;
 
 export default defineComponent({
 	props: {

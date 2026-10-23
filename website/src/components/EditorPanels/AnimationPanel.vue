@@ -1,9 +1,9 @@
 <script lang="ts">
 import { LevelData } from '@/editor/LevelLoader';
-import { Viewport } from '@/editor/Tool';
 import PauseIcon from '@/icons/PauseIcon.vue';
 import PlayIcon from '@/icons/PlayIcon.vue';
 import { defineComponent } from 'vue';
+import ViewportPanel from './ViewportPanel.vue';
 
 export default defineComponent({
 	components: {
@@ -21,7 +21,7 @@ export default defineComponent({
 		};
 	},
 	methods: {
-		scope(func: (scope: Viewport) => void) {
+		scope(func: (scope: InstanceType<typeof ViewportPanel>) => void) {
 			this.$emit('scope', func);
 		},
 		set_level(level: LevelData) {
