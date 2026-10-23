@@ -67,8 +67,9 @@ export default defineComponent({
 				`${LevelNodeShape}`,
 				LevelNodeObject[],
 			][]) {
-				const name = Object.keys(shapes()).find((k) => shapes()[k] === Number(shape)) as
-					keyof typeof LevelNodeShape | undefined;
+				const name = Object.keys(shapes()).find(
+					(k) => shapes()[k as keyof typeof LevelNodeShape] === Number(shape),
+				) as keyof typeof LevelNodeShape | undefined;
 
 				if (!name || Number(shape) < LevelNodeShape.CUBE) continue;
 
@@ -86,7 +87,7 @@ export default defineComponent({
 				LevelNodeObject[],
 			][]) {
 				const name = Object.keys(materials()).find(
-					(k) => materials()[k] === Number(material),
+					(k) => materials()[k as keyof typeof LevelNodeMaterial] === Number(material),
 				) as keyof typeof LevelNodeMaterial | undefined;
 
 				if (!name || Number(material) === LevelNodeMaterial.TRIGGER) continue;

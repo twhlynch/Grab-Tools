@@ -1,21 +1,16 @@
 import { unmodded_root } from '@/common/root';
-import {
-	Level,
-	LevelNode,
-	LevelNodeMaterial,
-	LevelNodeShape,
-} from '@grab-tools/lib/generated/proto';
+import { Level, LevelNode } from '@grab-tools/lib/generated/proto';
 import { Object3D } from 'three';
 
 export function isObject3D(object: unknown): object is Object3D {
 	return object instanceof Object3D;
 }
 
-export function materials(): Record<string, LevelNodeMaterial> {
+export function materials() {
 	return unmodded_root().COD.Level.LevelNodeMaterial;
 }
 
-export function shapes(): Record<string, LevelNodeShape> {
+export function shapes() {
 	return unmodded_root().COD.Level.LevelNodeShape;
 }
 
@@ -40,9 +35,7 @@ export function random_material() {
 }
 export function random_shape() {
 	const length =
-		Object.entries(shapes()).length -
-		(shapes().__END_OF_SPECIAL_PARTS__ ?? 0) -
-		1;
+		Object.entries(shapes()).length - shapes().__END_OF_SPECIAL_PARTS__ - 1;
 	return 1000 + Math.floor(Math.random() * length);
 }
 

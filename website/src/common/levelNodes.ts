@@ -38,8 +38,8 @@ export type Root = PBRoot & {
 			LevelNode: Type & {
 				oneofs: { content: { fieldsArray: { name: LevelNodeKey }[] } };
 			};
-			LevelNodeMaterial: Record<string, LevelNodeMaterial>;
-			LevelNodeShape: Record<string, LevelNodeShape>;
+			LevelNodeMaterial: typeof LevelNodeMaterial;
+			LevelNodeShape: typeof LevelNodeShape;
 			InstructionData: {
 				Type: EnumMap<typeof InstructionDataType>;
 			};
