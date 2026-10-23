@@ -1,11 +1,10 @@
 import { deepClone } from '@/common/utils';
-import type { Tool, Viewport } from '@/editor/Tool';
+import type { Tool, ViewportInterface } from '@/editor/Tool';
 import {
 	levelNodeData,
 	LevelNodeWithAny,
 } from '@grab-tools/lib/generated/nodes';
 import type { Level } from '@grab-tools/lib/generated/proto';
-
 import * as THREE from 'three';
 
 interface BrushItem {
@@ -16,10 +15,10 @@ interface BrushItem {
 export default class BrushTool implements Tool {
 	readonly name = 'Brush';
 
-	private viewport: Viewport | null = null;
+	private viewport: ViewportInterface | null = null;
 	private brush: BrushItem[] = [];
 
-	activate(viewport: Viewport) {
+	activate(viewport: ViewportInterface) {
 		if (viewport.gizmo.empty()) {
 			window.toast('Select objects first to use as a brush', 'warn');
 			return false;
