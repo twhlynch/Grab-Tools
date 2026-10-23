@@ -113,8 +113,8 @@ export type ${type}WithAny = {
 	[K in ${type}Key]: ${type}With<${type}TypeFor<K>>;
 }[${type}Key];
 
-export function ${camel}Data(node: ${type}WithAny): ${type}Types;
 export function ${camel}Data<T extends ${type}Types>(node: ${type}With<T>): T;
+export function ${camel}Data(node: ${type}WithAny): ${type}Types;
 export function ${camel}Data(node: ${type}): ${type}Types | undefined;
 export function ${camel}Data(node: ${type}): ${type}Types | undefined {
 	return Object.entries(node).find(

@@ -81,10 +81,10 @@ export type LevelNodeWithAny = {
 	[K in LevelNodeKey]: LevelNodeWith<LevelNodeTypeFor<K>>;
 }[LevelNodeKey];
 
-export function levelNodeData(node: LevelNodeWithAny): LevelNodeTypes;
 export function levelNodeData<T extends LevelNodeTypes>(
 	node: LevelNodeWith<T>,
 ): T;
+export function levelNodeData(node: LevelNodeWithAny): LevelNodeTypes;
 export function levelNodeData(node: LevelNode): LevelNodeTypes | undefined;
 export function levelNodeData(node: LevelNode): LevelNodeTypes | undefined {
 	return Object.entries(node).find(
@@ -130,12 +130,12 @@ export type TriggerSourceWithAny = {
 	[K in TriggerSourceKey]: TriggerSourceWith<TriggerSourceTypeFor<K>>;
 }[TriggerSourceKey];
 
-export function triggerSourceData(
-	node: TriggerSourceWithAny,
-): TriggerSourceTypes;
 export function triggerSourceData<T extends TriggerSourceTypes>(
 	node: TriggerSourceWith<T>,
 ): T;
+export function triggerSourceData(
+	node: TriggerSourceWithAny,
+): TriggerSourceTypes;
 export function triggerSourceData(
 	node: TriggerSource,
 ): TriggerSourceTypes | undefined;
@@ -190,12 +190,12 @@ export type TriggerTargetWithAny = {
 	[K in TriggerTargetKey]: TriggerTargetWith<TriggerTargetTypeFor<K>>;
 }[TriggerTargetKey];
 
-export function triggerTargetData(
-	node: TriggerTargetWithAny,
-): TriggerTargetTypes;
 export function triggerTargetData<T extends TriggerTargetTypes>(
 	node: TriggerTargetWith<T>,
 ): T;
+export function triggerTargetData(
+	node: TriggerTargetWithAny,
+): TriggerTargetTypes;
 export function triggerTargetData(
 	node: TriggerTarget,
 ): TriggerTargetTypes | undefined;
