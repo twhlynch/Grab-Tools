@@ -71,6 +71,8 @@ function TitleCase(str: string) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// TODO: levelNodeHasKey(node: LevelNode, key: keyof<LevelNodeTypes>): key in levelNodeData(node) -> node is LevelNodeWith<LevelNodesWithKey<key>>
+
 // generate output
 function generate(interfaces: Interface[]) {
 	let output = `
