@@ -126,6 +126,49 @@ type LevelNodeShaderMaterial = THREE.ShaderMaterial & {
 	uniforms: LevelNodeUniforms;
 };
 
+export function levelData(): LevelData {
+	const root = load();
+
+	const level: LevelData = {
+		level: {},
+		root: root,
+		nodes: {
+			all: [],
+			animated: [],
+			material: Object.fromEntries(
+				Object.values(material_types()).map((value) => [value, []]),
+			),
+			shape: Object.fromEntries(
+				Object.values(shape_types()).map((value) => [value, []]),
+			),
+			defaultSpawn: undefined,
+			namedSpawns: {},
+			...(Object.fromEntries(
+				root.COD.Level.LevelNode.oneofs.content.fieldsArray.map(
+					(field) => [field.name, [] as LevelNodeObject[]],
+				),
+			) as {
+				[K in LevelNodeKey]: LevelNodeObject<LevelNodeTypeFor<K>>[];
+			}),
+		},
+		sun: undefined,
+		complexity: 0,
+		scene: new THREE.Scene(),
+		update: () => {
+			// noop
+		},
+		meta: {
+			time: 0.0,
+		},
+	};
+
+	level.update = (delta: number) => {
+		level.meta.time += delta;
+	};
+
+	return level;
+}
+
 class LevelLoader {
 	root: Root;
 	font: Font | undefined;
@@ -503,38 +546,7 @@ class LevelLoader {
 	async load(data: Uint8Array | Level): Promise<LevelData> {
 		const { root, shapes, objects, materials, objectMaterials } = this;
 
-		const level: LevelData = {
-			level: {},
-			root: this.root,
-			nodes: {
-				all: [],
-				animated: [],
-				material: Object.fromEntries(
-					Object.values(material_types()).map((value) => [value, []]),
-				),
-				shape: Object.fromEntries(
-					Object.values(shape_types()).map((value) => [value, []]),
-				),
-				defaultSpawn: undefined,
-				namedSpawns: {},
-				...(Object.fromEntries(
-					root.COD.Level.LevelNode.oneofs.content.fieldsArray.map(
-						(field) => [field.name, [] as LevelNodeObject[]],
-					),
-				) as {
-					[K in LevelNodeKey]: LevelNodeObject<LevelNodeTypeFor<K>>[];
-				}),
-			},
-			sun: undefined,
-			complexity: 0,
-			scene: new THREE.Scene(),
-			update: () => {
-				// noop
-			},
-			meta: {
-				time: 0.0,
-			},
-		};
+		const level = levelData();
 
 		if (this.options.lights) {
 			const ambientLight = new THREE.AmbientLight(0x404040);
