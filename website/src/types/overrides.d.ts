@@ -1,3 +1,4 @@
+import { LevelLoader } from '@/editor/LevelLoader';
 import { Reactive } from 'vue';
 import { Root } from './levelNodes';
 
@@ -7,6 +8,7 @@ declare global {
 	interface Window {
 		dataLayer?: IArguments[];
 		_root?: Root;
+		_levelLoader?: LevelLoader;
 		toast: (
 			message: string | Error,
 			severity?: Severity,
