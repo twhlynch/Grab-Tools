@@ -16,7 +16,10 @@ import {
 } from '@grab-tools/lib/generated/proto';
 import { Root as PBRoot, Type } from 'protobufjs';
 import {
+	Group,
 	IUniform,
+	Line,
+	LineSegments,
 	Mesh,
 	Object3D,
 	Quaternion,
@@ -74,6 +77,13 @@ export type LevelNodeObject<T extends LevelNodeTypes = never> = Partial<
 			animation?: Animation;
 			currentFrameIndex?: number;
 			update?: (delta: number) => void;
+
+			animation_paths?: Group[];
+			relevant_animation_paths?: Group[];
+			relevant_connections?: Line[];
+			trigger_connections?: Line[];
+			gasm_connections?: Line[];
+			group_bounds?: LineSegments;
 		} & {
 			[
 				K in LevelNodeKey as K extends `levelNode${infer S}`
