@@ -3,15 +3,17 @@ import { Severity } from '@/types/overrides';
 import { captureException, captureMessage } from '@sentry/vue';
 import { defineComponent, Reactive, reactive } from 'vue';
 
+export interface Message {
+	value: string;
+	error: Error | null;
+	id: number;
+	severity: Severity;
+}
+
 export default defineComponent({
 	data() {
 		return {
-			messages: [] as Reactive<{
-				value: string;
-				error: Error | null;
-				id: number;
-				severity: Severity;
-			}>[],
+			messages: [] as Reactive<Message>[],
 		};
 	},
 
@@ -45,14 +47,14 @@ export default defineComponent({
 	},
 
 	methods: {
-		async copyMessage(message) {
+		async copyMessage(message: Message) {
 			await navigator.clipboard.writeText(message.value);
 
 			if (message.severity.startsWith('err')) {
 				if (message.error) {
 					captureException(message.error);
 				} else {
-					captureMessage(new Error(message.value));
+					captureMessage(message.value);
 				}
 			}
 		},
