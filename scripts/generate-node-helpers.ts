@@ -120,19 +120,15 @@ export function ${camel}Data(node: ${type}): ${type}Types | undefined {
 	)?.[1] as ${type}Types | undefined;
 }
 
-export function is${type}<T extends ${type}Types>(
+export function is${type}<K extends ${type}Key>(
 	node: ${type},
-	key: KeysOfType<${type}, T, '${camel}'>,
-): node is ${type}With<T>;
+	key: K,
+): node is ${type}With<${type}TypeFor<K>>;
 export function is${type}(node: ${type}): node is ${type}WithAny;
-export function is${type}<T extends ${type}Types>(
-	node: ${type},
-	key?: KeysOfType<${type}, T, '${camel}'>,
-): boolean {
+export function is${type}(node: ${type}, key?: ${type}Key): boolean {
 	if (key !== undefined) {
 		return !!node[key];
 	}
-
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('${camel}') && !!v,
 	);

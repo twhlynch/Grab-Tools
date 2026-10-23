@@ -92,19 +92,15 @@ export function levelNodeData(node: LevelNode): LevelNodeTypes | undefined {
 	)?.[1] as LevelNodeTypes | undefined;
 }
 
-export function isLevelNode<T extends LevelNodeTypes>(
+export function isLevelNode<K extends LevelNodeKey>(
 	node: LevelNode,
-	key: KeysOfType<LevelNode, T, 'levelNode'>,
-): node is LevelNodeWith<T>;
+	key: K,
+): node is LevelNodeWith<LevelNodeTypeFor<K>>;
 export function isLevelNode(node: LevelNode): node is LevelNodeWithAny;
-export function isLevelNode<T extends LevelNodeTypes>(
-	node: LevelNode,
-	key?: KeysOfType<LevelNode, T, 'levelNode'>,
-): boolean {
+export function isLevelNode(node: LevelNode, key?: LevelNodeKey): boolean {
 	if (key !== undefined) {
 		return !!node[key];
 	}
-
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('levelNode') && !!v,
 	);
@@ -151,21 +147,20 @@ export function triggerSourceData(
 	)?.[1] as TriggerSourceTypes | undefined;
 }
 
-export function isTriggerSource<T extends TriggerSourceTypes>(
+export function isTriggerSource<K extends TriggerSourceKey>(
 	node: TriggerSource,
-	key: KeysOfType<TriggerSource, T, 'triggerSource'>,
-): node is TriggerSourceWith<T>;
+	key: K,
+): node is TriggerSourceWith<TriggerSourceTypeFor<K>>;
 export function isTriggerSource(
 	node: TriggerSource,
 ): node is TriggerSourceWithAny;
-export function isTriggerSource<T extends TriggerSourceTypes>(
+export function isTriggerSource(
 	node: TriggerSource,
-	key?: KeysOfType<TriggerSource, T, 'triggerSource'>,
+	key?: TriggerSourceKey,
 ): boolean {
 	if (key !== undefined) {
 		return !!node[key];
 	}
-
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('triggerSource') && !!v,
 	);
@@ -212,21 +207,20 @@ export function triggerTargetData(
 	)?.[1] as TriggerTargetTypes | undefined;
 }
 
-export function isTriggerTarget<T extends TriggerTargetTypes>(
+export function isTriggerTarget<K extends TriggerTargetKey>(
 	node: TriggerTarget,
-	key: KeysOfType<TriggerTarget, T, 'triggerTarget'>,
-): node is TriggerTargetWith<T>;
+	key: K,
+): node is TriggerTargetWith<TriggerTargetTypeFor<K>>;
 export function isTriggerTarget(
 	node: TriggerTarget,
 ): node is TriggerTargetWithAny;
-export function isTriggerTarget<T extends TriggerTargetTypes>(
+export function isTriggerTarget(
 	node: TriggerTarget,
-	key?: KeysOfType<TriggerTarget, T, 'triggerTarget'>,
+	key?: TriggerTargetKey,
 ): boolean {
 	if (key !== undefined) {
 		return !!node[key];
 	}
-
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('triggerTarget') && !!v,
 	);
