@@ -135,12 +135,12 @@ export function createLevel(
 }
 
 export function ambienceSettings(
-	horizon: Color | undefined,
-	zenith: Color | undefined,
-	sunAltitude: number | undefined,
-	sunAzimuth: number | undefined,
-	sunSize: number | undefined,
-	fogDensity: number | undefined,
+	horizon?: Color,
+	zenith?: Color,
+	sunAltitude?: number,
+	sunAzimuth?: number,
+	sunSize?: number,
+	fogDensity?: number,
 ) {
 	if (!(
 		horizon ||
