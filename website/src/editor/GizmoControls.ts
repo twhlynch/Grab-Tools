@@ -18,10 +18,13 @@ interface DragData {
 	scale_dir: number;
 }
 
-type TransformControlsEvent<T extends string> = THREE.Event<
+export type TransformControlsEvent<T extends string> = THREE.Event<
 	T,
 	TransformControls
 > & { value?: unknown };
+
+export type TransformMode = 'scale' | 'rotate' | 'translate';
+export type TransformSpace = 'local' | 'world';
 
 class GizmoControls {
 	camera: THREE.Camera;
@@ -143,7 +146,6 @@ class GizmoControls {
 			const node = levelNodeData(
 				isLevelNodeObject(object) ? object.userData.node : object,
 			);
-			if (!node) return;
 
 			if (node.position) {
 				node.position.x = object.position.x;
@@ -354,7 +356,7 @@ class GizmoControls {
 		});
 	}
 
-	set_mode(mode: 'scale' | 'rotate' | 'translate') {
+	set_mode(mode: TransformMode) {
 		this.controls.setMode(mode);
 		this.recenter();
 	}
@@ -363,7 +365,7 @@ class GizmoControls {
 		return this.controls.mode;
 	}
 
-	set_space(space: 'local' | 'world') {
+	set_space(space: TransformSpace) {
 		this.controls.setSpace(space);
 		this.recenter();
 	}
