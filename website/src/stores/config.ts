@@ -1,9 +1,10 @@
+import { Level } from '@grab-tools/lib/generated/proto';
 import { defineStore } from 'pinia';
 
 export const useConfigStore = defineStore('config', {
 	state: (): {
 		editor_config: object | undefined;
-		default_level: string | undefined;
+		default_level: Level | undefined;
 		dark_mode: boolean;
 		vim_enabled: boolean;
 		default_gasm: string;
