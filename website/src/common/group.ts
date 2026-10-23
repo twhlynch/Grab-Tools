@@ -34,12 +34,16 @@ export function ungroupNode(group: LevelNodeWith<LevelNodeGroup>): LevelNode[] {
 	const child_nodes = group.levelNodeGroup.childNodes ?? [];
 
 	child_nodes.forEach((node) => {
-		if (isLevelNode<LevelNodeStart>(node, 'levelNodeStart')) return;
-		if (isLevelNode<LevelNodeFinish>(node, 'levelNodeFinish')) return;
+		if (!isLevelNode(node)) return;
+		if (isLevelNode(node, 'levelNodeStart')) return;
+		if (isLevelNode(node, 'levelNodeFinish')) return;
 
-		const data = levelNodeData(node) as LevelNodeTypesExcept<
-			[LevelNodeStart, LevelNodeFinish, LevelNodeLobbyTerminal]
-		>;
+		const data =
+			levelNodeData<
+				LevelNodeTypesExcept<
+					[LevelNodeStart, LevelNodeFinish, LevelNodeLobbyTerminal]
+				>
+			>(node);
 
 		const position = new Vector3(
 			data.position?.x ?? 0,
@@ -107,18 +111,16 @@ export function ungroupNode(group: LevelNodeWith<LevelNodeGroup>): LevelNode[] {
 export function recursiveUngroup(nodes?: LevelNode[]): LevelNode[] {
 	if (!nodes || nodes.length === 0) return [];
 
-	let index = nodes.findIndex((node) =>
-		isLevelNode<LevelNodeGroup>(node, 'levelNodeGroup'),
-	);
+	let index = nodes.findIndex((node) => isLevelNode(node, 'levelNodeGroup'));
 	while (index !== -1) {
 		const [node] = nodes.splice(index, 1);
 
-		if (node && isLevelNode<LevelNodeGroup>(node, 'levelNodeGroup')) {
+		if (node && isLevelNode(node, 'levelNodeGroup')) {
 			nodes.push(...ungroupNode(node));
 		}
 
 		index = nodes.findIndex((levelnode) =>
-			isLevelNode<LevelNodeGroup>(levelnode, 'levelNodeGroup'),
+			isLevelNode(levelnode, 'levelNodeGroup'),
 		);
 	}
 
