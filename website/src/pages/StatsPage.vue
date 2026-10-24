@@ -34,7 +34,7 @@ import WrenchIcon from '@/icons/WrenchIcon.vue';
 import { useUserStore } from '@/stores/user';
 import { CustomLevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
-import { Component, defineComponent } from 'vue';
+import { Component, defineComponent, markRaw } from 'vue';
 
 interface List {
 	icon?: Component;
@@ -85,7 +85,7 @@ export default defineComponent({
 	data() {
 		return {
 			// prettier-ignore
-			sections: [
+			sections: markRaw([
 				{
 					icon: PersonIcon, name: 'Personalised',
 					lists: [
@@ -195,7 +195,7 @@ export default defineComponent({
 						{ icon: PeopleIcon, name: 'Creators', generator: StatsLoader.get_most_tipped_creators },
 					],
 				},
-			] as Section[],
+			] as Section[]),
 			current_section: null as Section | null,
 			current_list: null as List | null,
 			current_tab: null as string | null,
