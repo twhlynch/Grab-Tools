@@ -51,7 +51,13 @@ import {
 	TriggerTargetSubLevel,
 } from './proto';
 
-import { KeyMapping, KeysOfType, PropsStartingWith, TypesExcept } from './util';
+import {
+	AllKeys,
+	KeyMapping,
+	KeysOfType,
+	PropsStartingWith,
+	TypesExcept,
+} from './util';
 
 export type LevelNodeWith<T> = LevelNode &
 	Record<KeysOfType<LevelNode, T, 'levelNode'>, T>;
@@ -81,6 +87,17 @@ export type LevelNodeWithAny = {
 	[K in LevelNodeKey]: LevelNodeWith<LevelNodeTypeFor<K>>;
 }[LevelNodeKey];
 
+export type LevelNodeDataSlot<N> = {
+	[P in LevelNodeKey]: N extends Record<P, LevelNodeTypeFor<P>> ? P : never;
+}[LevelNodeKey];
+
+export type LevelNodeDataOf<N extends LevelNode> = [
+	LevelNodeDataSlot<N>,
+] extends [never]
+	? LevelNodeTypes
+	: LevelNodeTypeFor<LevelNodeDataSlot<N>>;
+
+export function levelNodeData<N extends LevelNode>(node: N): LevelNodeDataOf<N>;
 export function levelNodeData<T extends LevelNodeTypes>(
 	node: LevelNodeWith<T>,
 ): T;
@@ -104,6 +121,125 @@ export function isLevelNode(node: LevelNode, key?: LevelNodeKey): boolean {
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('levelNode') && !!v,
 	);
+}
+
+export type LevelNodeDataKey = AllKeys<LevelNodeTypes>;
+
+export type LevelNodesWithKey<K extends LevelNodeDataKey> = {
+	[P in LevelNodeKey]: K extends keyof LevelNodeTypeFor<P> ? P : never;
+}[LevelNodeKey];
+
+export type LevelNodeWithKey<K extends LevelNodeDataKey> = {
+	[P in LevelNodesWithKey<K>]: LevelNodeWith<LevelNodeTypeFor<P>> &
+		Partial<Record<Exclude<LevelNodeKey, P>, undefined>>;
+}[LevelNodesWithKey<K>];
+
+const levelNode_slots: Record<LevelNodeDataKey, readonly LevelNodeKey[]> = {
+	position: [
+		'levelNodeGroup',
+		'levelNodeStart',
+		'levelNodeFinish',
+		'levelNodeStatic',
+		'levelNodeCrumbling',
+		'levelNodeSign',
+		'levelNodeGravity',
+		'levelNodeLobbyTerminal',
+		'levelNodeParticleEmitter',
+		'levelNodeTrigger',
+		'levelNodeSound',
+		'levelNodeGASM',
+		'levelNodeLight',
+	],
+	scale: [
+		'levelNodeGroup',
+		'levelNodeStatic',
+		'levelNodeCrumbling',
+		'levelNodeSign',
+		'levelNodeGravity',
+		'levelNodeParticleEmitter',
+		'levelNodeTrigger',
+		'levelNodeGASM',
+	],
+	rotation: [
+		'levelNodeGroup',
+		'levelNodeStart',
+		'levelNodeStatic',
+		'levelNodeCrumbling',
+		'levelNodeSign',
+		'levelNodeGravity',
+		'levelNodeLobbyTerminal',
+		'levelNodeParticleEmitter',
+		'levelNodeTrigger',
+		'levelNodeSound',
+		'levelNodeGASM',
+		'levelNodeLight',
+	],
+	childNodes: ['levelNodeGroup'],
+	name: ['levelNodeGroup', 'levelNodeStart', 'levelNodeSound'],
+	physicsObject: ['levelNodeGroup'],
+	localPhysicsObject: ['levelNodeGroup'],
+	mass: ['levelNodeGroup'],
+	radius: ['levelNodeStart', 'levelNodeFinish'],
+	isHidden: ['levelNodeStart'],
+	shape: ['levelNodeStatic', 'levelNodeCrumbling', 'levelNodeTrigger'],
+	material: ['levelNodeStatic', 'levelNodeCrumbling'],
+	color1: ['levelNodeStatic'],
+	isNeon: ['levelNodeStatic', 'levelNodeSign'],
+	isTransparent: ['levelNodeStatic'],
+	color2: ['levelNodeStatic'],
+	isGrabbable: ['levelNodeStatic'],
+	isGrapplable: ['levelNodeStatic'],
+	isPassable: ['levelNodeStatic'],
+	isGradient: ['levelNodeStatic'],
+	gradientDirection: ['levelNodeStatic'],
+	specularBrightness: ['levelNodeStatic'],
+	isAdditive: ['levelNodeStatic'],
+	stableTime: ['levelNodeCrumbling'],
+	respawnTime: ['levelNodeCrumbling'],
+	isLocal: ['levelNodeCrumbling'],
+	text: ['levelNodeSign'],
+	color: ['levelNodeSign', 'levelNodeLight'],
+	hideModel: ['levelNodeSign'],
+	weight: ['levelNodeSign'],
+	mode: ['levelNodeGravity'],
+	direction: ['levelNodeGravity'],
+	hideParticles: ['levelNodeGravity'],
+	particlesPerSecond: ['levelNodeParticleEmitter'],
+	lifeSpan: ['levelNodeParticleEmitter'],
+	startColor: ['levelNodeParticleEmitter'],
+	endColor: ['levelNodeParticleEmitter'],
+	startSize: ['levelNodeParticleEmitter'],
+	endSize: ['levelNodeParticleEmitter'],
+	velocity: ['levelNodeParticleEmitter'],
+	velocityMin: ['levelNodeParticleEmitter'],
+	velocityMax: ['levelNodeParticleEmitter'],
+	accelerationMin: ['levelNodeParticleEmitter'],
+	accelerationMax: ['levelNodeParticleEmitter'],
+	isShared: ['levelNodeTrigger', 'levelNodeGASM'],
+	triggerSources: ['levelNodeTrigger'],
+	triggerTargets: ['levelNodeTrigger'],
+	parameters: ['levelNodeSound'],
+	repeat: ['levelNodeSound'],
+	volume: ['levelNodeSound'],
+	startActive: ['levelNodeSound', 'levelNodeGASM'],
+	maxRangeFactor: ['levelNodeSound'],
+	program: ['levelNodeGASM'],
+	connections: ['levelNodeGASM'],
+	lateUpdate: ['levelNodeGASM'],
+	type: ['levelNodeLight'],
+	intensity: ['levelNodeLight'],
+	range: ['levelNodeLight'],
+	angle: ['levelNodeLight'],
+	distanceFalloffShape: ['levelNodeLight'],
+	coneFalloffShape: ['levelNodeLight'],
+	creationOrder: ['levelNodeLight'],
+};
+
+export function levelNodeHasKey<K extends LevelNodeDataKey>(
+	node: LevelNode,
+	key: K,
+): node is LevelNodeWithKey<K> {
+	return levelNode_slots[key].some((slot) => !!node[slot]);
 }
 
 export type TriggerSourceWith<T> = TriggerSource &
@@ -130,6 +266,21 @@ export type TriggerSourceWithAny = {
 	[K in TriggerSourceKey]: TriggerSourceWith<TriggerSourceTypeFor<K>>;
 }[TriggerSourceKey];
 
+export type TriggerSourceDataSlot<N> = {
+	[P in TriggerSourceKey]: N extends Record<P, TriggerSourceTypeFor<P>>
+		? P
+		: never;
+}[TriggerSourceKey];
+
+export type TriggerSourceDataOf<N extends TriggerSource> = [
+	TriggerSourceDataSlot<N>,
+] extends [never]
+	? TriggerSourceTypes
+	: TriggerSourceTypeFor<TriggerSourceDataSlot<N>>;
+
+export function triggerSourceData<N extends TriggerSource>(
+	node: N,
+): TriggerSourceDataOf<N>;
 export function triggerSourceData<T extends TriggerSourceTypes>(
 	node: TriggerSourceWith<T>,
 ): T;
@@ -166,6 +317,36 @@ export function isTriggerSource(
 	);
 }
 
+export type TriggerSourceDataKey = AllKeys<TriggerSourceTypes>;
+
+export type TriggerSourcesWithKey<K extends TriggerSourceDataKey> = {
+	[P in TriggerSourceKey]: K extends keyof TriggerSourceTypeFor<P>
+		? P
+		: never;
+}[TriggerSourceKey];
+
+export type TriggerSourceWithKey<K extends TriggerSourceDataKey> = {
+	[P in TriggerSourcesWithKey<K>]: TriggerSourceWith<
+		TriggerSourceTypeFor<P>
+	> &
+		Partial<Record<Exclude<TriggerSourceKey, P>, undefined>>;
+}[TriggerSourcesWithKey<K>];
+
+const triggerSource_slots: Record<
+	TriggerSourceDataKey,
+	readonly TriggerSourceKey[]
+> = {
+	type: ['triggerSourceBasic'],
+	names: ['triggerSourceBlockNames'],
+};
+
+export function triggerSourceHasKey<K extends TriggerSourceDataKey>(
+	node: TriggerSource,
+	key: K,
+): node is TriggerSourceWithKey<K> {
+	return triggerSource_slots[key].some((slot) => !!node[slot]);
+}
+
 export type TriggerTargetWith<T> = TriggerTarget &
 	Record<KeysOfType<TriggerTarget, T, 'triggerTarget'>, T>;
 export type TriggerTargetTypes = NonNullable<
@@ -190,6 +371,21 @@ export type TriggerTargetWithAny = {
 	[K in TriggerTargetKey]: TriggerTargetWith<TriggerTargetTypeFor<K>>;
 }[TriggerTargetKey];
 
+export type TriggerTargetDataSlot<N> = {
+	[P in TriggerTargetKey]: N extends Record<P, TriggerTargetTypeFor<P>>
+		? P
+		: never;
+}[TriggerTargetKey];
+
+export type TriggerTargetDataOf<N extends TriggerTarget> = [
+	TriggerTargetDataSlot<N>,
+] extends [never]
+	? TriggerTargetTypes
+	: TriggerTargetTypeFor<TriggerTargetDataSlot<N>>;
+
+export function triggerTargetData<N extends TriggerTarget>(
+	node: N,
+): TriggerTargetDataOf<N>;
 export function triggerTargetData<T extends TriggerTargetTypes>(
 	node: TriggerTargetWith<T>,
 ): T;
@@ -224,6 +420,69 @@ export function isTriggerTarget(
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('triggerTarget') && !!v,
 	);
+}
+
+export type TriggerTargetDataKey = AllKeys<TriggerTargetTypes>;
+
+export type TriggerTargetsWithKey<K extends TriggerTargetDataKey> = {
+	[P in TriggerTargetKey]: K extends keyof TriggerTargetTypeFor<P>
+		? P
+		: never;
+}[TriggerTargetKey];
+
+export type TriggerTargetWithKey<K extends TriggerTargetDataKey> = {
+	[P in TriggerTargetsWithKey<K>]: TriggerTargetWith<
+		TriggerTargetTypeFor<P>
+	> &
+		Partial<Record<Exclude<TriggerTargetKey, P>, undefined>>;
+}[TriggerTargetsWithKey<K>];
+
+const triggerTarget_slots: Record<
+	TriggerTargetDataKey,
+	readonly TriggerTargetKey[]
+> = {
+	objectID: [
+		'triggerTargetAnimation',
+		'triggerTargetSound',
+		'triggerTargetGASM',
+		'triggerTargetLight',
+	],
+	animationName: ['triggerTargetAnimation'],
+	loop: ['triggerTargetAnimation'],
+	reverse: ['triggerTargetAnimation'],
+	mode: ['triggerTargetAnimation', 'triggerTargetSound', 'triggerTargetGASM'],
+	repeat: ['triggerTargetSound'],
+	color: ['triggerTargetLight'],
+	range: ['triggerTargetLight'],
+	brightness: ['triggerTargetLight'],
+	fadeDuration: ['triggerTargetLight'],
+	levelIdentifier: ['triggerTargetSubLevel'],
+	spawnPoint: ['triggerTargetSubLevel'],
+	skyColor0: ['triggerTargetAmbience'],
+	skyColor1: ['triggerTargetAmbience'],
+	sunAltitude: ['triggerTargetAmbience'],
+	sunAzimuth: ['triggerTargetAmbience'],
+	sunSize: ['triggerTargetAmbience'],
+	fogDensity: ['triggerTargetAmbience'],
+	changeDuration: ['triggerTargetAmbience'],
+	interpolationType: ['triggerTargetAmbience'],
+	useAdvancedSunSettings: ['triggerTargetAmbience'],
+	sunColor: ['triggerTargetAmbience'],
+	sunBrightness: ['triggerTargetAmbience'],
+	ambientColor: ['triggerTargetAmbience'],
+	ambientBrightness: ['triggerTargetAmbience'],
+	starDensity: ['triggerTargetAmbience'],
+	starClustering: ['triggerTargetAmbience'],
+	starRotationEuler: ['triggerTargetAmbience'],
+	starSize: ['triggerTargetAmbience'],
+	starVisibility: ['triggerTargetAmbience'],
+};
+
+export function triggerTargetHasKey<K extends TriggerTargetDataKey>(
+	node: TriggerTarget,
+	key: K,
+): node is TriggerTargetWithKey<K> {
+	return triggerTarget_slots[key].some((slot) => !!node[slot]);
 }
 
 export function levelNodeWithGroup(overrides?: Partial<LevelNodeGroup>) {

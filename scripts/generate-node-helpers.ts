@@ -7,6 +7,7 @@ interface Interface {
 	camel: string;
 	wrapper: string;
 	scope: string;
+	props: string[];
 }
 
 const input_file = path.resolve('lib/src/generated/proto.ts');
@@ -50,11 +51,16 @@ function get_interfaces() {
 							member.name.text === camel,
 					)
 				) {
+					const props = node.members
+						.filter(ts.isPropertySignature)
+						.map((member) => member.name.getText(source_file));
+
 					interfaces.push({
 						name,
 						camel,
 						wrapper: camelCase(wrapper.name.text),
 						scope: name.slice(wrapper.name.text.length),
+						props,
 					});
 				}
 			}
@@ -71,8 +77,6 @@ function TitleCase(str: string) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// TODO: levelNodeHasKey(node: LevelNode, key: keyof<LevelNodeTypes>): key in levelNodeData(node) -> node is LevelNodeWith<LevelNodesWithKey<key>>
-
 // generate output
 function generate(interfaces: Interface[]) {
 	let output = `
@@ -85,7 +89,7 @@ import {
 	${wrapper_types.join(', \n')},
 } from './proto';
 
-import { KeysOfType, PropsStartingWith, KeyMapping, TypesExcept } from './util';
+import { KeysOfType, PropsStartingWith, KeyMapping, TypesExcept, AllKeys } from './util';
 `;
 
 	wrapper_types.forEach((type) => {
@@ -113,6 +117,17 @@ export type ${type}WithAny = {
 	[K in ${type}Key]: ${type}With<${type}TypeFor<K>>;
 }[${type}Key];
 
+export type ${type}DataSlot<N> = {
+	[P in ${type}Key]: N extends Record<P, ${type}TypeFor<P>> ? P : never;
+}[${type}Key];
+
+export type ${type}DataOf<N extends ${type}> = [
+	${type}DataSlot<N>
+] extends [never]
+	? ${type}Types
+	: ${type}TypeFor<${type}DataSlot<N>>;
+
+export function ${camel}Data<N extends ${type}>(node: N): ${type}DataOf<N>;
 export function ${camel}Data<T extends ${type}Types>(node: ${type}With<T>): T;
 export function ${camel}Data(node: ${type}WithAny): ${type}Types;
 export function ${camel}Data(node: ${type}): ${type}Types | undefined;
@@ -134,6 +149,39 @@ export function is${type}(node: ${type}, key?: ${type}Key): boolean {
 	return Object.entries(node).some(
 		([k, v]) => k.startsWith('${camel}') && !!v,
 	);
+}
+
+export type ${type}DataKey = AllKeys<${type}Types>;
+
+export type ${type}sWithKey<K extends ${type}DataKey> = {
+	[P in ${type}Key]: K extends keyof ${type}TypeFor<P> ? P : never;
+}[${type}Key];
+
+export type ${type}WithKey<K extends ${type}DataKey> = {
+	[P in ${type}sWithKey<K>]: ${type}With<${type}TypeFor<P>> &
+		Partial<Record<Exclude<${type}Key, P>, undefined>>;
+}[${type}sWithKey<K>];
+`;
+
+		const wrapper_props = interfaces.filter((i) => i.wrapper === camel);
+		output += `
+const ${camel}_slots: Record<${type}DataKey, readonly ${type}Key[]> = {
+	${[...new Set(wrapper_props.flatMap((i) => i.props))]
+		.map(
+			(prop) =>
+				`'${prop}': [${wrapper_props
+					.filter((i) => i.props.includes(prop))
+					.map((i) => `'${i.camel}'`)
+					.join(', ')}]`,
+		)
+		.join(',\n\t')}
+};
+
+export function ${camel}HasKey<K extends ${type}DataKey>(
+	node: ${type},
+	key: K,
+): node is ${type}WithKey<K> {
+	return ${camel}_slots[key].some((slot) => !!node[slot]);
 }
 `;
 	});

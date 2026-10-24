@@ -49,6 +49,8 @@ export type PropsStartingWith<T, Prefix extends string> = T[Extract<
 	`${Prefix}${string}`
 >];
 
+export type AllKeys<Types> = Types extends unknown ? keyof Types : never;
+
 export type KeysOfType<Type, SubType, Key extends string> = {
 	[K in keyof KeyMapping<Type, Key>]: Exact<
 		Required<SubType>,
