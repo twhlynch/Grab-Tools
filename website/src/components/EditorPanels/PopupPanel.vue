@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { CheckboxInput, Input, OptionInput, RangeInput, UnspecifiedInput } from './inputs';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { CheckboxInput, Input, OptionInput, RangeInput, UnspecifiedInput } from './inputs';
 
 export default defineComponent({
 	props: {
@@ -28,14 +29,14 @@ export default defineComponent({
 		},
 	},
 	mounted() {
-		document.addEventListener('mousedown', this.click);
-		document.addEventListener('touchstart', this.click);
-		document.addEventListener('keydown', this.keydown);
+		document.addEventListener('mousedown', this.click.bind(this));
+		document.addEventListener('touchstart', this.click.bind(this));
+		document.addEventListener('keydown', this.keydown.bind(this));
 	},
 	unmounted() {
-		document.removeEventListener('mousedown', this.click);
-		document.removeEventListener('touchstart', this.click);
-		document.removeEventListener('keydown', this.keydown);
+		document.removeEventListener('mousedown', this.click.bind(this));
+		document.removeEventListener('touchstart', this.click.bind(this));
+		document.removeEventListener('keydown', this.keydown.bind(this));
 	},
 	methods: {
 		run() {

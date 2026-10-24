@@ -17,7 +17,7 @@ export default defineComponent({
 	data() {
 		return {
 			view: null! as EditorView,
-			json: {} as object,
+			json: {},
 			ignore_change: false,
 			error: null as null | string,
 		};
@@ -33,10 +33,10 @@ export default defineComponent({
 				(update) => {
 					if (update.docChanged && !this.ignore_change) {
 						const new_json = this.view.state.doc.toString();
-						let new_object = undefined;
+						let new_object: object | undefined = undefined;
 						this.error = null;
 						try {
-							new_object = JSON.parse(new_json);
+							new_object = JSON.parse(new_json) as object;
 						} catch (e) {
 							if (e instanceof Error) {
 								this.error = e.message;

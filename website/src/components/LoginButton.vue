@@ -26,8 +26,8 @@ export default defineComponent({
 			try {
 				const hash = this.$route.hash.substring(1);
 				const data = atob(hash);
-				const auth_info = JSON.parse(data);
-				this.$router.replace({ path: this.$route.path });
+				const auth_info = JSON.parse(data) as { org_scoped_id: string; code: string };
+				void this.$router.replace({ path: this.$route.path });
 				const userStore = useUserStore();
 				await userStore.login(auth_info);
 			} catch {

@@ -14,10 +14,14 @@ export default defineComponent({
 		const level_ids = url_params.get('level');
 		if (!level_ids) return;
 
-		level_ids.split(' ').forEach(async (level_id) => {
+		async function download_level(level_id: string): Promise<void> {
 			const level = await downloads.try_download_level(level_id);
 			if (level === null) return;
 			downloadLevel(level, level_id);
+		}
+
+		level_ids.split(' ').forEach((level_id) => {
+			void download_level(level_id);
 		});
 	},
 	created() {

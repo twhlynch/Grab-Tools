@@ -10,7 +10,7 @@ export default defineComponent({
 	},
 	emits: ['update:visible'],
 	watch: {
-		visible(value) {
+		visible(value: boolean) {
 			this.sync(value);
 		},
 	},
@@ -19,7 +19,7 @@ export default defineComponent({
 	},
 	methods: {
 		sync(value: boolean) {
-			const dialog = this.$refs.popup as HTMLDialogElement;
+			const dialog = this.$refs.popup as HTMLDialogElement | undefined;
 			if (!dialog) return;
 
 			if (value && !dialog.open) dialog.showModal();

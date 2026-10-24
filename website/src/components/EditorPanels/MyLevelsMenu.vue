@@ -42,8 +42,8 @@ export default defineComponent({
 		},
 	},
 	watch: {
-		visible(value) {
-			if (value) this.load(true);
+		visible(value: boolean) {
+			if (value) void this.load(true);
 		},
 	},
 	methods: {

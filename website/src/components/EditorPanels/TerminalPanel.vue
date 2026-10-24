@@ -8,7 +8,7 @@ export default defineComponent({
 	emits: ['command'],
 	data() {
 		return {
-			terminal: null! as Terminal,
+			terminal: null as unknown as Terminal,
 		};
 	},
 	computed: {

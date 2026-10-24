@@ -12,8 +12,10 @@ export default defineComponent({
 	},
 	emits: ['changed'],
 	data() {
+		const instance: BaseEditor = null!;
+
 		return {
-			instance: null! as BaseEditor,
+			instance,
 		};
 	},
 	mounted() {

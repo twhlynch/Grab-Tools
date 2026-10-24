@@ -41,7 +41,7 @@ export default defineComponent({
 		document.title = 'GASM Editor | GRAB Tools';
 
 		this.active_tab = useConfigStore().active_gasm_tab;
-		this.$nextTick(function () {
+		void this.$nextTick(function () {
 			this.changed();
 		});
 	},
@@ -50,7 +50,7 @@ export default defineComponent({
 		OutputEditor,
 
 		editor() {
-			return (this.$refs.editors as (typeof AssemblyEditor)[])[this.active_tab]!;
+			return (this.$refs.editors as InstanceType<typeof AssemblyEditor>[])[this.active_tab]!;
 		},
 
 		copy() {
@@ -72,7 +72,7 @@ export default defineComponent({
 			this.editor().set('');
 		},
 		copyOutput() {
-			(this.$refs.outputEditor as typeof AssemblyEditor).copy();
+			(this.$refs.outputEditor as InstanceType<typeof AssemblyEditor>).copy();
 		},
 		async sample(name: string) {
 			try {
@@ -92,7 +92,7 @@ export default defineComponent({
 			this.changed();
 		},
 		set_output(text: string) {
-			(this.$refs.outputEditor as typeof AssemblyEditor).set(text);
+			(this.$refs.outputEditor as InstanceType<typeof AssemblyEditor>).set(text);
 		},
 		changed() {
 			this.error = true;

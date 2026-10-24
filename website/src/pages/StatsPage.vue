@@ -209,11 +209,11 @@ export default defineComponent({
 	created() {
 		document.title = 'Stats | GRAB Tools';
 	},
-	mounted() {
+	async mounted() {
 		const params = new URLSearchParams(window.location.search);
 		const tab = params.get('tab');
 		const filter = params.get('filter');
-		this.set_tab(tab, filter);
+		await this.set_tab(tab, filter);
 	},
 	methods: {
 		async set_tab(tab: string | null, filter: string | null) {
@@ -235,10 +235,8 @@ export default defineComponent({
 			}
 
 			this.current_data = [];
-			if (this.current_list?.generator) {
-				this.current_data = (await this.current_list.generator()) ?? [];
-				console.log(this.current_data);
-			}
+			this.current_data = (await this.current_list.generator()) ?? [];
+			console.log(this.current_data);
 		},
 	},
 });

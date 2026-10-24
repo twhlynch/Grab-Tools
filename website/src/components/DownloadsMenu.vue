@@ -38,9 +38,9 @@ export default defineComponent({
 		...mapState(useUserStore, ['is_logged_in', 'grab_id']),
 	},
 	watch: {
-		visible(val) {
+		visible(val: boolean) {
 			if (val && !this.loaded) {
-				this.load();
+				void this.load();
 			}
 		},
 	},
@@ -89,7 +89,7 @@ export default defineComponent({
 				}
 
 				level.can_reset = !(
-					challenge.find((l) => l.identifier === level.identifier) ||
+					challenge.find((l) => l.identifier === level.identifier) ??
 					one_of_a_kind.find((l) => l.identifier === level.identifier)
 				);
 

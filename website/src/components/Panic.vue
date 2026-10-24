@@ -16,13 +16,11 @@ export default defineComponent({
 
 	created() {
 		console.log('Freaking out...');
-		if (window.panic === undefined) {
-			window.panic = (error) => {
-				error.message = 'PANIC: ' + error.message;
-				captureException(error);
-				this.message = error.message;
-			};
-		}
+		(window.panic as typeof window.panic | undefined) ??= (error) => {
+			error.message = 'PANIC: ' + error.message;
+			captureException(error);
+			this.message = error.message;
+		};
 	},
 
 	methods: {

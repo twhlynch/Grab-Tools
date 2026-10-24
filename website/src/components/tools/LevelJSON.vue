@@ -1,5 +1,6 @@
 <script lang="ts">
 import { decodeLevel, downloadJSON, downloadLevel, encodeLevel } from '@/common/levels';
+import { Level } from '@grab-tools/lib/generated/proto';
 import { defineComponent } from 'vue';
 import ToolTemplate from './ToolTemplate.vue';
 
@@ -8,7 +9,7 @@ export default defineComponent({
 		ToolTemplate,
 	},
 	methods: {
-		async run() {
+		run() {
 			const fileInput = this.$refs.file as HTMLInputElement;
 
 			const files = Array.from(fileInput.files ?? []);
@@ -18,19 +19,29 @@ export default defineComponent({
 				return;
 			}
 
+			async function json_to_level(f: File): Promise<void> {
+				const json = JSON.parse(await f.text()) as Level;
+				const level = encodeLevel(json);
+				if (level) {
+					downloadLevel(level, f.name.replace(/\.(json|level)/, ''));
+				}
+			}
+			async function level_to_json(f: File): Promise<void> {
+				const json = await decodeLevel(f);
+				if (json) {
+					downloadJSON(json, f.name.replace(/\.(json|level)/, ''));
+				}
+			}
+
 			files
 				.filter((f) => f.name.endsWith('.json'))
-				.forEach(async (f) => {
-					const json = JSON.parse(await f.text());
-					const level = encodeLevel(json);
-					if (level) downloadLevel(level, f.name.replace(/\.(json|level)/, ''));
+				.forEach((f) => {
+					void json_to_level(f);
 				});
 			files
 				.filter((f) => f.name.endsWith('.level'))
-				.forEach(async (f) => {
-					const json = await decodeLevel(f);
-					if (!json) return;
-					downloadJSON(json, f.name.replace(/\.(json|level)/, ''));
+				.forEach((f) => {
+					void level_to_json(f);
 				});
 		},
 	},

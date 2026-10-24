@@ -32,8 +32,9 @@ export default defineComponent({
 			document.head.appendChild(script);
 
 			script.onload = () => {
-				window.dataLayer = window.dataLayer || [];
+				window.dataLayer = window.dataLayer ?? [];
 				function gtag(..._: unknown[]) {
+					// eslint-disable-next-line prefer-rest-params
 					(window.dataLayer ??= []).push(arguments);
 				}
 				gtag('js', new Date());

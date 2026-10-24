@@ -14,7 +14,7 @@ import GizmoControls, {
 	TransformMode,
 	TransformSpace,
 } from '@/editor/GizmoControls';
-import { levelData, LevelData, LevelLoader } from '@/editor/LevelLoader';
+import { levelData, LevelLoader } from '@/editor/LevelLoader';
 import { Tool } from '@/editor/Tool';
 import CursorIcon from '@/icons/CursorIcon.vue';
 import KeyboardIcon from '@/icons/KeyboardIcon.vue';
@@ -100,8 +100,8 @@ export default defineComponent({
 			show_gasm_connections: true,
 			show_fog: true,
 			show_sky: true,
-			transform_mode: 'translate' as 'one_sided' | TransformMode,
-			transform_space: 'local' as TransformSpace,
+			transform_mode: 'translate' as string as 'one_sided' | TransformMode,
+			transform_space: 'local' as string as TransformSpace,
 			contextmenu: undefined as Menu | undefined,
 			contextmenu_position: { x: 0, y: 0 },
 			is_animating: true,
@@ -122,22 +122,22 @@ export default defineComponent({
 			is_touch_interaction: false,
 			mouseup_fired: false,
 			right_click_dragged: false,
-			level: levelData() as Raw<LevelData>,
+			level: markRaw(levelData()),
 			editing_json: undefined as Raw<LevelNodeObject> | undefined,
 			editing_gasm: undefined as Raw<LevelNodeObject<LevelNodeGASM>> | undefined,
 			editing_parent: undefined! as Raw<LevelNodeObject<LevelNodeGroup> | THREE.Scene>,
-			renderer: undefined! as Raw<THREE.WebGLRenderer>,
-			clock: undefined! as Raw<THREE.Clock>,
-			scene: undefined! as Raw<THREE.Scene>,
-			camera: undefined! as Raw<THREE.PerspectiveCamera>,
-			controls: undefined! as Raw<OrbitControls | FreeControls>,
-			gizmo: undefined! as Raw<GizmoControls>,
+			renderer: undefined as unknown as Raw<THREE.WebGLRenderer>,
+			clock: undefined as unknown as Raw<THREE.Clock>,
+			scene: undefined as unknown as Raw<THREE.Scene>,
+			camera: undefined as unknown as Raw<THREE.PerspectiveCamera>,
+			controls: undefined as unknown as Raw<OrbitControls | FreeControls>,
+			gizmo: undefined as unknown as Raw<GizmoControls>,
 			trigger_connection_material: undefined as THREE.LineBasicMaterial | undefined,
 			gasm_connection_material: undefined as THREE.LineBasicMaterial | undefined,
 		};
 	},
-	async mounted() {
-		if (!window._levelLoader) window._levelLoader = new LevelLoader();
+	mounted() {
+		window._levelLoader ??= new LevelLoader();
 
 		const configStore = useConfigStore();
 		const config = configStore.editor_config;
@@ -147,8 +147,7 @@ export default defineComponent({
 			});
 		}
 
-		this.setup_renderer();
-		if (!this.renderer) return;
+		if (!this.setup_renderer()) return;
 
 		this.renderer.domElement.addEventListener('webglcontextlost', (e) => {
 			e.preventDefault();
@@ -168,18 +167,18 @@ export default defineComponent({
 			}
 		});
 		observer.observe(this.refs().viewport);
-		window.addEventListener('keydown', this.keydown);
-		window.addEventListener('keyup', this.keyup);
+		window.addEventListener('keydown', this.keydown.bind(this));
+		window.addEventListener('keyup', this.keyup.bind(this));
 		// await this.set_json(this.json); // ???
 
 		const resize = this.refs().resize;
-		resize.size(resize.$el.getBoundingClientRect().bottom - 30 - 5);
+		resize.size((resize.$el as HTMLElement).getBoundingClientRect().bottom - 30 - 5);
 
 		this.load_camera_state();
 	},
 	unmounted() {
-		window.removeEventListener('keydown', this.keydown);
-		window.removeEventListener('keyup', this.keyup);
+		window.removeEventListener('keydown', this.keydown.bind(this));
+		window.removeEventListener('keyup', this.keyup.bind(this));
 	},
 	methods: {
 		refs() {
@@ -195,7 +194,7 @@ export default defineComponent({
 		update_node_shader(object: THREE.Object3D | undefined, position = true, light = true) {
 			if (!object || !isLevelNodeObject(object)) return;
 
-			if (position && object?.material?.uniforms?.worldMatrix) {
+			if (position && object.material?.uniforms.worldMatrix) {
 				object.material.uniforms.worldMatrix = {
 					value: new THREE.Matrix4().copy(object.matrixWorld),
 				};
@@ -207,7 +206,7 @@ export default defineComponent({
 				};
 			}
 
-			if (light && object?.material?.uniforms?.worldNormalMatrix) {
+			if (light && object.material?.uniforms.worldNormalMatrix) {
 				const normalMatrix = new THREE.Matrix3();
 				normalMatrix.getNormalMatrix(object.matrixWorld);
 
@@ -216,7 +215,7 @@ export default defineComponent({
 				};
 			}
 
-			if (object.children?.length) {
+			if (object.children.length) {
 				object.children.forEach((child) => this.update_node_shader(child, position, light));
 			}
 		},
@@ -234,7 +233,7 @@ export default defineComponent({
 					e.message = 'Browser failed to create WebGL context: ' + e.message;
 					window.panic(e);
 				}
-				return;
+				return false;
 			}
 
 			THREE.ColorManagement.enabled = true;
@@ -250,7 +249,7 @@ export default defineComponent({
 				new THREE.Color(3 / 255.0, 3 / 255.0, 3 / 255.0),
 				1.0,
 			);
-			this.renderer.setAnimationLoop(this.animation);
+			this.renderer.setAnimationLoop(this.animation.bind(this));
 			this.refs().viewport.appendChild(this.renderer.domElement);
 			this.renderer.domElement.tabIndex = 0;
 			// scene
@@ -276,20 +275,20 @@ export default defineComponent({
 					this.camera,
 					this.renderer.domElement,
 					this.scene,
-					this.moving_event,
-					this.edit_event,
+					this.moving_event.bind(this),
+					this.edit_event.bind(this),
 				),
 			);
 			this.set_transform_mode(this.transform_mode);
 			this.gizmo.set_space(this.transform_space);
-			this.renderer.domElement.addEventListener('click', this.select_event);
+			this.renderer.domElement.addEventListener('click', this.select_event.bind(this));
 			this.renderer.domElement.addEventListener('dragover', (e) => {
 				e.preventDefault();
 			});
+
+			return true;
 		},
 		reset_node_positions() {
-			if (!this.level) return;
-
 			this.level.meta.time = 0;
 			this.level.nodes.animated.forEach((node) => {
 				node.userData.currentFrameIndex = 0;
@@ -321,7 +320,6 @@ export default defineComponent({
 			this.changed();
 		},
 		cast_for_node(x: number, y: number): LevelNodeObject | undefined {
-			if (!this.level) return;
 			const canvasSize = this.renderer.domElement.getBoundingClientRect();
 			const mouse = new THREE.Vector2(
 				((x - canvasSize.left) / canvasSize.width) * 2 - 1,
@@ -329,14 +327,14 @@ export default defineComponent({
 			);
 			const raycaster = new THREE.Raycaster();
 			raycaster.setFromCamera(mouse, this.camera);
-			let individualObjects = this.level.nodes.all.filter(
+			const individualObjects = this.level.nodes.all.filter(
 				(node) => !node.userData.isGroup && node.visible,
 			);
-			let intersects = raycaster.intersectObjects<LevelNodeObject>(individualObjects, true);
+			const intersects = raycaster.intersectObjects<LevelNodeObject>(individualObjects, true);
 			let intersect: LevelNodeObject | undefined = undefined;
 			if (intersects.length) {
 				intersect = intersects[0]!.object;
-				while (intersect && intersect.parent !== this.editing_parent) {
+				while (intersect.parent !== this.editing_parent) {
 					intersect = intersect.parent as LevelNodeObject;
 				}
 			}
@@ -383,26 +381,22 @@ export default defineComponent({
 		async set_json(json: Level | undefined) {
 			if (!json) return;
 
-			const selected_nodes = (this.gizmo?.selection ?? [])
-				.map((o) => o.userData.node)
-				.filter(Boolean);
+			const selected_nodes = this.gizmo.selection.map((o) => o.userData.node).filter(Boolean);
 
-			this.gizmo?.clear();
-			if (this.level) {
-				this.scene.remove(this.level.scene);
-				this.level.scene.traverse((obj) => {
-					if (obj instanceof THREE.Mesh) {
-						if (obj.geometry) obj.geometry.dispose();
-						if (obj.material) {
-							if (Array.isArray(obj.material)) {
-								obj.material.forEach((m) => m.dispose());
-							} else obj.material.dispose();
-						}
+			this.gizmo.clear();
+			this.scene.remove(this.level.scene);
+			this.level.scene.traverse((obj) => {
+				if (obj instanceof THREE.Mesh) {
+					if (obj.geometry) (obj.geometry as THREE.BufferGeometry).dispose();
+					if (obj.material) {
+						if (Array.isArray(obj.material)) {
+							obj.material.forEach((m) => (m as THREE.Material).dispose());
+						} else (obj.material as THREE.Material).dispose();
 					}
-					// if (obj.texture) obj.texture.dispose();
-					if (obj.children) obj.children.length = 0;
-				});
-			}
+				}
+				// if (obj.texture) obj.texture.dispose();
+				obj.children.length = 0;
+			});
 			window._levelLoader!.config({
 				sky: this.show_sky,
 				lights: true,
@@ -436,8 +430,8 @@ export default defineComponent({
 			console.log(json);
 		},
 		configure_shadow_camera() {
-			const sun = this.level?.sun;
-			if (!this.level || !sun) return;
+			const sun = this.level.sun;
+			if (!sun) return;
 
 			sun.castShadow = this.show_shadows;
 
@@ -520,8 +514,6 @@ export default defineComponent({
 			this.renderer.render(this.scene, this.camera);
 		},
 		set_time(time: number) {
-			if (!this.level) return;
-
 			this.level.meta.time = 0;
 			this.level.nodes.animated.forEach((node) => {
 				node.userData.currentFrameIndex = 0;
@@ -530,8 +522,6 @@ export default defineComponent({
 		},
 		animation() {
 			const delta = this.clock.getDelta();
-			if (!this.level) return;
-
 			if (this.is_animating) {
 				this.level.update(delta);
 				this.update_connection_positions(this.level.nodes.animated);
@@ -539,8 +529,7 @@ export default defineComponent({
 					this.update_node_shader(object, false, true);
 				});
 			}
-			if (this.refs().animation_panel)
-				this.refs().animation_panel.set_time(this.level.meta.time);
+			this.refs().animation_panel.set_time(this.level.meta.time);
 			this.controls.update(delta);
 			this.renderer.render(this.scene, this.camera);
 		},
@@ -587,7 +576,7 @@ export default defineComponent({
 
 			if (
 				e.target !== this.refs().contextmenu.$el &&
-				!this.refs().contextmenu?.$el?.contains(e.target)
+				!this.refs().contextmenu.$el?.contains(e.target)
 			) {
 				this.contextmenu = undefined;
 			}
@@ -605,7 +594,7 @@ export default defineComponent({
 					// macos: rightmousedown fired before mouseup
 					const dx = e.clientX - this.deferred_context_menu.x;
 					const dy = e.clientY - this.deferred_context_menu.y;
-					if (dx * dx + dy * dy <= 9 && this.deferred_context_menu.menu) {
+					if (dx * dx + dy * dy <= 9) {
 						this.contextmenu = this.deferred_context_menu.menu;
 						this.contextmenu_position.x = this.deferred_context_menu.x;
 						this.contextmenu_position.y = this.deferred_context_menu.y;
@@ -673,7 +662,6 @@ export default defineComponent({
 				const node = object.userData.node.levelNodeStatic;
 				if (!node) return false;
 				const color = node.color1 ?? { r: 1, g: 1, b: 1 };
-				if (!color) return false;
 
 				return (
 					node.material === target_node.material &&
@@ -694,10 +682,10 @@ export default defineComponent({
 			camera_state += `${this.camera.rotation.x},${this.camera.rotation.y},${this.camera.rotation.z}`;
 			if (this.controls instanceof OrbitControls) {
 				camera_state += `&control_target=`;
-				camera_state += `${this.controls.target?.x ?? 0},${this.controls.target?.y ?? 0},${this.controls.target?.z ?? 0}`;
+				camera_state += `${this.controls.target.x},${this.controls.target.y},${this.controls.target.z}`;
 			}
 
-			navigator.clipboard.writeText(camera_state);
+			void navigator.clipboard.writeText(camera_state);
 		},
 		load_camera_state() {
 			const params = new URLSearchParams(window.location.search);
@@ -764,7 +752,7 @@ export default defineComponent({
 			});
 		},
 		add_group_bounds() {
-			if (this.level.nodes?.levelNodeGroup?.length) {
+			if (this.level.nodes.levelNodeGroup.length) {
 				this.level.nodes.levelNodeGroup.forEach((object) => {
 					this.add_group_bound(object);
 				});
@@ -814,7 +802,7 @@ export default defineComponent({
 					parent.remove(bounds);
 					this.add_group_bound(parent);
 				}
-				parent = parent.parent as THREE.Object3D;
+				parent = parent.parent!;
 			}
 		},
 		toggle_animations() {
@@ -843,7 +831,7 @@ export default defineComponent({
 			});
 		},
 		add_trigger_connections() {
-			if (this.level.nodes.levelNodeTrigger?.length) {
+			if (this.level.nodes.levelNodeTrigger.length) {
 				this.level.nodes.levelNodeTrigger.forEach((object) => {
 					const node = object.userData.node.levelNodeTrigger;
 					const targets = node.triggerTargets;
@@ -867,7 +855,7 @@ export default defineComponent({
 			}
 		},
 		add_gasm_connections() {
-			if (this.level.nodes.levelNodeGASM?.length) {
+			if (this.level.nodes.levelNodeGASM.length) {
 				this.level.nodes.levelNodeGASM.forEach((object) => {
 					const node = object.userData.node.levelNodeGASM;
 					const connections = node.connections;
@@ -889,7 +877,7 @@ export default defineComponent({
 			}
 		},
 		add_animation_paths() {
-			if (this.level.nodes?.animated?.length) {
+			if (this.level.nodes.animated.length) {
 				this.level.nodes.animated.forEach((object) => {
 					this.add_animation_path(object);
 				});
@@ -964,7 +952,7 @@ export default defineComponent({
 			return false;
 		},
 		update_animation_path_position(object: LevelNodeObject) {
-			const paths = object?.userData?.relevant_animation_paths;
+			const paths = object.userData.relevant_animation_paths;
 			if (!paths) return;
 			paths.forEach((path) => {
 				path.position.copy(path.userData.object.position);
@@ -972,21 +960,17 @@ export default defineComponent({
 			});
 		},
 		update_connection_positions(related_objects: LevelNodeObject[] | undefined = undefined) {
-			if (related_objects === undefined) {
-				related_objects = [
-					...(this.show_trigger_connections
-						? (this.level.nodes?.levelNodeTrigger ?? [])
-						: []),
-					...(this.show_gasm_connections ? (this.level.nodes?.levelNodeGASM ?? []) : []),
-				];
-			}
+			related_objects ??= [
+				...(this.show_trigger_connections ? this.level.nodes.levelNodeTrigger : []),
+				...(this.show_gasm_connections ? this.level.nodes.levelNodeGASM : []),
+			];
 
 			if (!related_objects.length) return;
 
 			const lines: THREE.Line[] = [];
 			related_objects.forEach((obj) => {
-				if (obj.userData?.relevant_connections?.length) {
-					obj.userData?.relevant_connections.forEach((line) => {
+				if (obj.userData.relevant_connections?.length) {
+					obj.userData.relevant_connections.forEach((line) => {
 						lines.push(line);
 					});
 				}
@@ -1008,10 +992,10 @@ export default defineComponent({
 			});
 		},
 		add_relevant_connection(object: LevelNodeObject, connection: THREE.Line) {
-			let current = object;
-			while (current?.userData?.node) {
+			let current: THREE.Object3D | null = object;
+			while (current?.userData.node) {
 				(current.userData.relevant_connections ??= []).push(connection);
-				current = current.parent as LevelNodeObject;
+				current = current.parent;
 			}
 		},
 		make_connection(
@@ -1072,7 +1056,7 @@ export default defineComponent({
 			if (this.gizmo.empty()) return;
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				const new_list = func(node_list);
@@ -1231,7 +1215,6 @@ export default defineComponent({
 			}
 		},
 		play(object: LevelNodeObject<LevelNodeSound>) {
-			if (!object?.userData?.node?.levelNodeSound) return;
 			const params = object.userData.node.levelNodeSound.parameters ?? {};
 			play_sound(params);
 		},
@@ -1249,7 +1232,7 @@ export default defineComponent({
 		},
 		enter_specific_group(object: LevelNodeObject<LevelNodeGroup> | THREE.Scene) {
 			this.gizmo.clear();
-			if (this.editing_parent?.userData.isGroup) {
+			if (this.editing_parent.userData.isGroup) {
 				this.editing_parent.userData.group_bounds.material.color = new THREE.Color(
 					0x009900,
 				);
@@ -1272,7 +1255,7 @@ export default defineComponent({
 			this.show_gasm_editor = false;
 		},
 		save_gasm_code(new_json: LevelNodeWith<LevelNodeGASM>) {
-			const id = this.editing_gasm?.userData?.id;
+			const id = this.editing_gasm?.userData.id;
 			if (!id) {
 				window.toast('Failed to write node', 'error');
 				return;
@@ -1308,7 +1291,7 @@ export default defineComponent({
 		) {
 			const object_node = object.userData.node;
 			const target_node = target.userData.node;
-			const id = target?.userData?.id ?? 0;
+			const id = target.userData.id;
 			const is_new = create_connection(object_node, target_node, id, type);
 			if (is_new) this.add_gasm_path(object, target);
 
@@ -1317,9 +1300,9 @@ export default defineComponent({
 		add_animation_target(object: LevelNodeObject, target_object?: LevelNodeObject) {
 			if (!isLevelNodeObject(object) || !isLevelNodeTrigger(object.userData.node)) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerTargets) trigger.triggerTargets = [];
+			trigger.triggerTargets ??= [];
 			const target = triggerTargetWithAnimation();
-			const id = target_object?.userData?.id ?? 0;
+			const id = target_object?.userData.id ?? 0;
 			target.triggerTargetAnimation.objectID = id;
 			trigger.triggerTargets.push(target);
 			if (target_object) {
@@ -1328,69 +1311,64 @@ export default defineComponent({
 			this.changed();
 		},
 		add_sublevel_target(object: LevelNodeObject) {
-			if (!object?.userData?.node?.levelNodeTrigger) return;
+			if (!object.userData.node.levelNodeTrigger) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerTargets) trigger.triggerTargets = [];
+			trigger.triggerTargets ??= [];
 			trigger.triggerTargets.push(triggerTargetWithSubLevel());
 			this.changed();
 		},
 		add_ambience_target(object: LevelNodeObject) {
-			if (!object?.userData?.node?.levelNodeTrigger) return;
+			if (!object.userData.node.levelNodeTrigger) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerTargets) trigger.triggerTargets = [];
+			trigger.triggerTargets ??= [];
 			trigger.triggerTargets.push(triggerTargetWithAmbience());
 			this.changed();
 		},
 		add_sound_target(object: LevelNodeObject) {
-			if (!object?.userData?.node?.levelNodeTrigger) return;
+			if (!object.userData.node.levelNodeTrigger) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerTargets) trigger.triggerTargets = [];
+			trigger.triggerTargets ??= [];
 			trigger.triggerTargets.push(triggerTargetWithSound());
 			this.changed();
 		},
 		add_light_target(object: LevelNodeObject) {
-			if (!object?.userData?.node?.levelNodeTrigger) return;
+			if (!object.userData.node.levelNodeTrigger) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerTargets) trigger.triggerTargets = [];
+			trigger.triggerTargets ??= [];
 			trigger.triggerTargets.push(triggerTargetWithLight());
 			this.changed();
 		},
 		add_trigger_source(object: LevelNodeObject) {
-			if (!object?.userData?.node?.levelNodeTrigger) return;
+			if (!object.userData.node.levelNodeTrigger) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerSources) trigger.triggerSources = [];
+			trigger.triggerSources ??= [];
 			trigger.triggerSources.push(triggerSourceWithBasic());
 			this.changed();
 		},
 		add_trigger_blocks_source(object: LevelNodeObject) {
-			if (!object?.userData?.node?.levelNodeTrigger) return;
+			if (!object.userData.node.levelNodeTrigger) return;
 			const trigger = object.userData.node.levelNodeTrigger;
-			if (!trigger.triggerSources) trigger.triggerSources = [];
+			trigger.triggerSources ??= [];
 			trigger.triggerSources.push(triggerSourceWithBlockNames());
 			this.changed();
 		},
 		add_animation(object: LevelNodeObject) {
-			if (!object?.userData?.node) return;
 			const node = object.userData.node;
 			(node.animations ??= []).push(animation());
 			this.changed();
 		},
 		edit_object_json(object: LevelNodeObject) {
-			if (!object) return;
-
 			this.show_mini_editor = true;
 			this.editing_json = object;
 			this.refs().mini_editor.set_json(object.userData.node);
 		},
 		edit_gasm_code(object: LevelNodeObject<LevelNodeGASM>) {
-			if (!object) return;
-
 			this.show_gasm_editor = true;
 			this.editing_gasm = object;
 			this.refs().gasm_editor.set_json(object.userData.node);
 		},
 		mini_editor_changed(new_node: LevelNode) {
-			const id = this.editing_json?.userData?.id;
+			const id = this.editing_json?.userData.id;
 			if (!id) {
 				window.toast('Failed to write node', 'error');
 				return;
@@ -1439,7 +1417,6 @@ export default defineComponent({
 			if (!clicked_object) return;
 
 			const clicked_node = clicked_object.userData.node;
-			if (!clicked_node) return;
 
 			const selection = this.gizmo.selection;
 			if (!selection.length || !selection[0]) return;
@@ -1503,22 +1480,22 @@ export default defineComponent({
 						},
 					}),
 					Delete: {
-						func: this.delete_selection,
+						func: this.delete_selection.bind(this),
 					},
 					...(can_clone && {
 						Clone: {
-							func: this.clone_selection,
+							func: this.clone_selection.bind(this),
 						},
 					}),
 					...(can_group && {
 						Group: {
-							func: this.group_selection,
+							func: this.group_selection.bind(this),
 						},
 					}),
 					...(single_selection &&
 						selected_is_group && {
 							Ungroup: {
-								func: this.ungroup_selection,
+								func: this.ungroup_selection.bind(this),
 							},
 						}),
 					...(clicked_has_shape && {
@@ -1750,7 +1727,7 @@ export default defineComponent({
 						},
 					}),
 				...(clicked_is_selected && {
-					[`Copy ID (${clicked_object?.userData?.id ?? 0})`]: {
+					[`Copy ID (${clicked_object.userData.id})`]: {
 						func: () => {
 							this.copy_object_id(clicked_object);
 						},
@@ -1762,7 +1739,7 @@ export default defineComponent({
 			return menu;
 		},
 		open_context_menu(x: number, y: number, e: MouseEvent) {
-			if (e?.target !== this.renderer.domElement) return;
+			if (e.target !== this.renderer.domElement) return;
 			this.contextmenu_position.x = x;
 			this.contextmenu_position.y = y;
 			this.contextmenu = undefined;
@@ -1770,31 +1747,30 @@ export default defineComponent({
 			if (menu) this.contextmenu = menu;
 		},
 		copy_object_id(object: LevelNodeObject) {
-			const id = object?.userData?.id;
-			if (id === undefined) window.toast('failed to get id', 'error');
-			else navigator.clipboard.writeText(String(id));
+			const id = object.userData.id;
+			void navigator.clipboard.writeText(String(id));
 		},
 		close_context_menu() {
 			this.contextmenu = undefined;
 		},
 		teleport_start() {
-			if (this?.level?.nodes?.defaultSpawn) {
+			if (this.level.nodes.defaultSpawn) {
 				const position = new THREE.Vector3();
 				this.level.nodes.defaultSpawn.getWorldPosition(position);
 				this.camera.position.set(position.x, position.y + 1, position.z + 1);
 				if (this.controls instanceof OrbitControls) {
-					this.controls.target?.set(position.x, position.y, position.z);
+					this.controls.target.set(position.x, position.y, position.z);
 				}
 				this.camera.lookAt(position.x, position.y, position.z);
 			}
 		},
 		teleport_finish() {
-			if (this?.level?.nodes?.levelNodeFinish?.length) {
+			if (this.level.nodes.levelNodeFinish.length) {
 				const position = new THREE.Vector3();
 				this.level.nodes.levelNodeFinish[0]!.getWorldPosition(position);
 				this.camera.position.set(position.x, position.y + 1, position.z + 1);
 				if (this.controls instanceof OrbitControls) {
-					this.controls.target?.set(position.x, position.y, position.z);
+					this.controls.target.set(position.x, position.y, position.z);
 				}
 				this.camera.lookAt(position.x, position.y, position.z);
 			}
@@ -1802,7 +1778,7 @@ export default defineComponent({
 		teleport_origin() {
 			this.camera.position.set(0, 1, 1);
 			if (this.controls instanceof OrbitControls) {
-				this.controls.target?.set(0, 0, 0);
+				this.controls.target.set(0, 0, 0);
 			}
 			this.camera.lookAt(0, 0, 0);
 		},
@@ -1836,14 +1812,14 @@ export default defineComponent({
 
 			this.camera.position.copy(view_position);
 			if (this.controls instanceof OrbitControls) {
-				this.controls.target?.copy(center);
+				this.controls.target.copy(center);
 			}
 			this.camera.lookAt(center);
 		},
 		mirror_x() {
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				this.level.nodes.all
@@ -1852,10 +1828,10 @@ export default defineComponent({
 						const node = object.userData.node;
 						const data = levelNodeData(node);
 
-						const x = -(object.initialPosition?.x ?? 0);
+						const x = -object.initialPosition.x;
 						object.position.x = x;
 						object.initialPosition.x = x;
-						(data.position ?? {}).x = x;
+						(data.position ??= {}).x = x;
 						if (node.animations) {
 							node.animations.forEach((anim) => {
 								if (anim.frames?.length) {
@@ -1875,7 +1851,7 @@ export default defineComponent({
 		mirror_y() {
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				this.level.nodes.all
@@ -1884,7 +1860,7 @@ export default defineComponent({
 						const node = object.userData.node;
 						const data = levelNodeData(node);
 
-						const y = -(object.initialPosition?.y ?? 0);
+						const y = -object.initialPosition.y;
 						object.position.y = y;
 						object.initialPosition.y = y;
 						(data.position ??= {}).y = y;
@@ -1907,7 +1883,7 @@ export default defineComponent({
 		mirror_z() {
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				this.level.nodes.all
@@ -1916,7 +1892,7 @@ export default defineComponent({
 						const node = object.userData.node;
 						const data = levelNodeData(node);
 
-						const z = -(object.initialPosition?.z ?? 0);
+						const z = -object.initialPosition.z;
 						object.position.z = z;
 						object.initialPosition.z = z;
 						(data.position ??= {}).z = z;

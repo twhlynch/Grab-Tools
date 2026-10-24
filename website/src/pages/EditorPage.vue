@@ -38,6 +38,8 @@ export default defineComponent({
 		ProtobufPanel,
 	},
 	data() {
+		const json: Raw<Level> = {};
+
 		return {
 			popup_props: {
 				inputs: [] as Input[],
@@ -48,18 +50,18 @@ export default defineComponent({
 			show_protobuf_panel: false,
 			show_my_levels_menu: false,
 
-			json: {} as Raw<Level>,
+			json,
 		};
 	},
 	computed: {
 		...mapState(useUserStore, ['is_logged_in', 'user_name']),
 		...mapState(useConfigStore, ['default_level']),
 	},
-	mounted() {
+	async mounted() {
 		this.refs().side_panel.size((window.innerHeight / 4) * 3);
 		this.refs().main_panel.size((window.innerWidth / 3) * 2);
 		this.close_templates();
-		this.open_starting_level();
+		await this.open_starting_level();
 		mcp.init((level) => this.set_json(level, ['mcp']));
 	},
 	created() {
@@ -117,15 +119,15 @@ export default defineComponent({
 		run_function(func: (level: Level) => void) {
 			func(this.json);
 		},
-		run_viewport(func: (scope: InstanceType<typeof ViewportPanel>) => void) {
-			func(this.refs().viewport_panel);
+		run_viewport(func: (scope: InstanceType<typeof ViewportPanel>) => void | Promise<void>) {
+			void func(this.refs().viewport_panel);
 		},
 		set_popup(inputs: Input[], func: (...data: unknown[]) => void) {
 			this.popup_props.inputs = inputs;
 			this.popup_props.func = func;
 		},
 		scope(func: (scope: unknown) => void) {
-			if (this) func(this!);
+			func(this);
 		},
 		resize_left() {
 			this.refs().left_panel.size();
@@ -148,8 +150,8 @@ export default defineComponent({
 		close_my_levels() {
 			this.show_my_levels_menu = false;
 		},
-		insert_level(json: Level) {
-			this.run_modifier((level: Level) => {
+		async insert_level(json: Level) {
+			await this.run_modifier((level: Level) => {
 				add_nodes(level, json.levelNodes);
 				return level;
 			});

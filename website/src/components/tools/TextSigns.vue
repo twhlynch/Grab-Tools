@@ -9,7 +9,7 @@ export default defineComponent({
 		ToolTemplate,
 	},
 	methods: {
-		async run() {
+		run() {
 			const textInput = this.$refs.text as HTMLInputElement;
 			const modeInput = this.$refs.mode as HTMLInputElement;
 

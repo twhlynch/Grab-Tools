@@ -34,7 +34,7 @@ export default defineComponent({
 				Connections: 0,
 				Frames: 0,
 			},
-			extra_statistics: {}! as Record<
+			extra_statistics: {} as Record<
 				LevelNodeSuffix | LevelNodeShapeLabel | LevelNodeMaterialLabel,
 				number
 			>,

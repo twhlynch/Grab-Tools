@@ -197,7 +197,7 @@ export default defineComponent({
 			}
 		},
 		async load(template: Template) {
-			let level = await this.download(template);
+			const level = await this.download(template);
 			if (!level) return null;
 
 			const blob = new Blob([level], {

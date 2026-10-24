@@ -26,7 +26,7 @@ export default defineComponent({
 		},
 		set_level(level: LevelData) {
 			const animation_times = level.nodes.animated.map((object) => {
-				const animation = object?.userData?.node?.animations?.[0];
+				const animation = object.userData.node.animations?.[0];
 				const frames = animation?.frames;
 				if (animation && frames?.length) {
 					const last_time = frames[frames.length - 1]!.time ?? 0;
@@ -47,7 +47,8 @@ export default defineComponent({
 		toggle() {
 			this.playing = !this.playing;
 			this.scope((scope) => {
-				if (scope.is_animating && this.playing && scope.gizmo) {
+				// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+				if (scope.is_animating && this.playing) {
 					scope.gizmo.clear();
 				}
 				scope.is_animating = this.playing;

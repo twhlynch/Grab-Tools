@@ -12,7 +12,7 @@ export default defineComponent({
 		};
 	},
 	methods: {
-		async change() {
+		change() {
 			const urlsInput = this.$refs.urls as HTMLInputElement;
 
 			const links = urlsInput.value

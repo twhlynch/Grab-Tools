@@ -335,13 +335,13 @@ export default defineComponent({
 		scope(func: (scope: InstanceType<typeof EditorPage>) => void) {
 			this.$emit('scope', func);
 		},
-		viewport(func: (scope: InstanceType<typeof ViewportPanel>) => void) {
+		viewport(func: (scope: InstanceType<typeof ViewportPanel>) => void | Promise<void>) {
 			this.$emit('viewport', func);
 		},
 		modifier(func: (level: Level) => Level | Promise<Level>) {
 			this.$emit('modifier', func);
 		},
-		function(func: (level: Level) => void) {
+		function(func: (level: Level) => void | Promise<void>) {
 			this.$emit('function', func);
 		},
 		popup<F extends (...data: never[]) => void | Promise<void>>(inputs: Input[], func: F) {
@@ -424,7 +424,7 @@ export default defineComponent({
 			});
 		},
 		save_level() {
-			this.function(async (json) => {
+			this.function((json) => {
 				const level = encodeLevel(json);
 				if (!level) {
 					window.toast('Invalid level data', 'error');
@@ -491,12 +491,12 @@ export default defineComponent({
 
 				const nodes = [];
 
-				for (let i in modded_shapes) {
-					for (let j in modded_materials) {
+				for (const [i, shape] of modded_shapes.entries()) {
+					for (const [j, material] of modded_materials.entries()) {
 						const node = levelNodeWithStatic();
 						const data = node.levelNodeStatic;
-						data.shape = modded_shapes[i] as LevelNodeShape;
-						data.material = modded_materials[j] as LevelNodeMaterial;
+						data.shape = shape as LevelNodeShape;
+						data.material = material as LevelNodeMaterial;
 						data.position = { x: Number(i), z: Number(j) };
 						data.color1 = { r: 1, g: 1, b: 1 };
 						data.color2 = { r: 1, g: 1, b: 1 };
@@ -521,10 +521,10 @@ export default defineComponent({
 				exporter.parse(
 					scope.scene,
 					(gltf) => {
-						let blob = new Blob([JSON.stringify(gltf)], {
+						const blob = new Blob([JSON.stringify(gltf)], {
 							type: 'text/json',
 						});
-						let link = document.createElement('a');
+						const link = document.createElement('a');
 						link.href = window.URL.createObjectURL(blob);
 						link.download = Date.now().toString().slice(0, -3) + '.gltf';
 						link.click();
@@ -577,11 +577,10 @@ export default defineComponent({
 			if (!files.length) return;
 
 			const file = files[0]!;
-			const json = json_parse(await file.text()) as Level;
+			const json = json_parse<Level>(await file.text());
 			this.insert_selection_nodes(json?.levelNodes ?? []);
 		},
 		insert_selection_nodes(nodes: LevelNode[]) {
-			if (!nodes) return;
 			this.viewport((scope) => {
 				this.modifier((json) => {
 					const node_list = !(scope.editing_parent instanceof THREE.Scene)
@@ -602,7 +601,7 @@ export default defineComponent({
 			if (!files.length) return;
 
 			const file = files[0]!;
-			const json = json_parse(await file.text()) as Level | LevelNode[];
+			const json = json_parse<Level | LevelNode[]>(await file.text());
 			this.insert_selection_nodes(Array.isArray(json) ? json : (json?.levelNodes ?? []));
 		},
 		insert_midi() {
@@ -640,7 +639,7 @@ export default defineComponent({
 						text: 'Speed multiplier (default 1)',
 					},
 				],
-				async (
+				(
 					files: File[],
 					instrument: string,
 					start_active: boolean,
@@ -865,7 +864,7 @@ export default defineComponent({
 						options: ['simple', 'animated'],
 					},
 				],
-				async (text, mode) => {
+				(text, mode) => {
 					const nodes = signs.signs(text, mode === 'animated');
 					this.insert_selection_nodes(nodes);
 				},
@@ -1027,7 +1026,7 @@ export default defineComponent({
 		},
 		pixelate_effect() {
 			this.set_selectable_nodes((nodes) => {
-				if (!nodes?.length) return;
+				if (!nodes.length) return;
 
 				const node = levelNodeGroupFrom({ childNodes: [...nodes] });
 				nodes.length = 0;
@@ -1063,7 +1062,7 @@ export default defineComponent({
 						options: ['to', ...convertable_materials],
 					},
 				],
-				async (from: string, to: string) => {
+				(from: string, to: string) => {
 					if (from === 'from' || to === 'to') {
 						window.toast('Nothing selected', 'error');
 						return;
@@ -1102,7 +1101,7 @@ export default defineComponent({
 						],
 					},
 				],
-				async (from: string, to: string) => {
+				(from: string, to: string) => {
 					if (from === 'from' || to === 'to') {
 						window.toast('Nothing selected', 'error');
 						return;
@@ -1137,7 +1136,7 @@ export default defineComponent({
 							max: 100,
 						},
 					],
-					async (value) => {
+					(value) => {
 						controls.movementSpeed = value;
 					},
 				);
@@ -1194,9 +1193,9 @@ export default defineComponent({
 			this.modify_selectable_nodes((node) => {
 				const data = levelNodeData(node);
 				data.position ??= {};
-				data.position.x = Math.random() - 0.5 + (data.position?.x ?? 0);
-				data.position.y = Math.random() - 0.5 + (data.position?.y ?? 0);
-				data.position.z = Math.random() - 0.5 + (data.position?.z ?? 0);
+				data.position.x = Math.random() - 0.5 + (data.position.x ?? 0);
+				data.position.y = Math.random() - 0.5 + (data.position.y ?? 0);
+				data.position.z = Math.random() - 0.5 + (data.position.z ?? 0);
 			});
 		},
 		randomize_rotations() {
@@ -1223,9 +1222,9 @@ export default defineComponent({
 				if (levelNodeHasKey(node, 'scale')) {
 					const data = levelNodeData(node);
 					if (typeof data.scale === 'object') {
-						data.scale.x = Math.random() - 0.5 + (data.scale?.x ?? 0);
-						data.scale.y = Math.random() - 0.5 + (data.scale?.y ?? 0);
-						data.scale.z = Math.random() - 0.5 + (data.scale?.z ?? 0);
+						data.scale.x = Math.random() - 0.5 + (data.scale.x ?? 0);
+						data.scale.y = Math.random() - 0.5 + (data.scale.y ?? 0);
+						data.scale.z = Math.random() - 0.5 + (data.scale.z ?? 0);
 					}
 					if (typeof data.scale === 'number') {
 						data.scale = Math.random() - 0.5 + data.scale;
@@ -1395,7 +1394,7 @@ export default defineComponent({
 		toggle_huge_far() {
 			this.viewport((scope) => {
 				scope.huge_far = !scope.huge_far;
-				scope.camera.far = scope.huge_far ? 4000000 : 10000;
+				scope.camera.far = (scope.huge_far as boolean) ? 4000000 : 10000;
 				scope.camera.updateProjectionMatrix();
 			});
 		},

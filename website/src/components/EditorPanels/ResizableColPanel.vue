@@ -9,32 +9,32 @@ export default defineComponent({
 		};
 	},
 	mounted() {
-		document.addEventListener('mouseup', this.mouseup);
-		document.addEventListener('mousemove', this.mousemove);
-		window.addEventListener('resize', this.resize);
+		document.addEventListener('mouseup', this.mouseup.bind(this));
+		document.addEventListener('mousemove', this.mousemove.bind(this));
+		window.addEventListener('resize', this.resize.bind(this));
 	},
 	unmounted() {
-		document.removeEventListener('mouseup', this.mouseup);
-		document.removeEventListener('mousemove', this.mousemove);
-		window.removeEventListener('resize', this.resize);
+		document.removeEventListener('mouseup', this.mouseup.bind(this));
+		document.removeEventListener('mousemove', this.mousemove.bind(this));
+		window.removeEventListener('resize', this.resize.bind(this));
 	},
 	methods: {
 		mousedown(_: MouseEvent) {
 			this.down = true;
-			document.addEventListener('selectstart', this.prevent);
+			document.addEventListener('selectstart', this.prevent.bind(this));
 		},
 		mouseup(_: MouseEvent) {
 			this.down = false;
-			document.removeEventListener('selectstart', this.prevent);
+			document.removeEventListener('selectstart', this.prevent.bind(this));
 		},
 		mousemove(e: MouseEvent) {
 			if (this.down) {
 				this.size(e.clientY);
 			}
 		},
-		size(position: number) {
+		size(position?: number) {
 			const { container, first, second, thumb } = this.$refs as Record<string, HTMLElement>;
-			if (position === undefined) position = thumb!.getBoundingClientRect().top;
+			position ??= thumb!.getBoundingClientRect().top;
 			const bounds = container!.getBoundingClientRect();
 			first!.style.height = position - bounds.top + 'px';
 			second!.style.height = bounds.height - (position - bounds.top) - 5 + 'px';

@@ -9,23 +9,23 @@ export default defineComponent({
 		};
 	},
 	mounted() {
-		document.addEventListener('mouseup', this.mouseup);
-		document.addEventListener('mousemove', this.mousemove);
-		window.addEventListener('resize', this.resize);
+		document.addEventListener('mouseup', this.mouseup.bind(this));
+		document.addEventListener('mousemove', this.mousemove.bind(this));
+		window.addEventListener('resize', this.resize.bind(this));
 	},
 	unmounted() {
-		document.removeEventListener('mouseup', this.mouseup);
-		document.removeEventListener('mousemove', this.mousemove);
-		window.removeEventListener('resize', this.resize);
+		document.removeEventListener('mouseup', this.mouseup.bind(this));
+		document.removeEventListener('mousemove', this.mousemove.bind(this));
+		window.removeEventListener('resize', this.resize.bind(this));
 	},
 	methods: {
 		mousedown(_: MouseEvent) {
 			this.down = true;
-			document.addEventListener('selectstart', this.prevent);
+			document.addEventListener('selectstart', this.prevent.bind(this));
 		},
 		mouseup(_: MouseEvent) {
 			this.down = false;
-			document.removeEventListener('selectstart', this.prevent);
+			document.removeEventListener('selectstart', this.prevent.bind(this));
 		},
 		mousemove(e: MouseEvent) {
 			if (this.down) {
@@ -34,7 +34,7 @@ export default defineComponent({
 		},
 		size(position?: number) {
 			const { container, first, second, thumb } = this.$refs as Record<string, HTMLElement>;
-			if (position === undefined) position = thumb!.getBoundingClientRect().left;
+			position ??= thumb!.getBoundingClientRect().left;
 			const bounds = container!.getBoundingClientRect();
 			first!.style.width = position - bounds.left + 'px';
 			second!.style.width = bounds.width - (position - bounds.left) - 5 + 'px';
@@ -45,7 +45,7 @@ export default defineComponent({
 		},
 		resize() {
 			const thumb = this.$refs.thumb as HTMLElement;
-			const position = thumb!.getBoundingClientRect().left;
+			const position = thumb.getBoundingClientRect().left;
 			this.size(position);
 		},
 	},
