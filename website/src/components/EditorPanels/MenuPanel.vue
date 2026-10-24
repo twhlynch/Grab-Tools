@@ -584,7 +584,7 @@ export default defineComponent({
 			this.viewport((scope) => {
 				this.modifier((json) => {
 					const node_list = !(scope.editing_parent instanceof THREE.Scene)
-						? (scope.editing_parent.userData.node.levelNodeGroup.childNodes ??= [])
+						? (scope.editing_parent?.userData.node.levelNodeGroup.childNodes ?? [])
 						: (json.levelNodes ??= []);
 					node_list.push(...nodes);
 					return json;
@@ -1257,7 +1257,7 @@ export default defineComponent({
 			this.viewport((scope) => {
 				this.modifier((json) => {
 					const node_list = !(scope.editing_parent instanceof THREE.Scene)
-						? (scope.editing_parent.userData.node.levelNodeGroup.childNodes ??= [])
+						? (scope.editing_parent?.userData.node.levelNodeGroup.childNodes ?? [])
 						: (json.levelNodes ??= []);
 					node_list.forEach((node) => {
 						traverse_node(node, func);
@@ -1270,7 +1270,7 @@ export default defineComponent({
 			this.viewport((scope) => {
 				this.modifier(async (json) => {
 					const node_list = !(scope.editing_parent instanceof THREE.Scene)
-						? (scope.editing_parent.userData.node.levelNodeGroup.childNodes ??= [])
+						? (scope.editing_parent?.userData.node.levelNodeGroup.childNodes ?? [])
 						: (json.levelNodes ??= []);
 					await func(node_list);
 					console.log(json);

@@ -96,13 +96,15 @@ export default defineComponent({
 					this.json = markRaw(data ?? createLevel());
 				}
 			} else {
-				this.json = this.default_level ? deepClone(this.default_level) : createLevel();
+				this.json = markRaw(
+					this.default_level ? deepClone(this.default_level) : createLevel(),
+				);
 			}
 
 			this.set_json(this.json);
 		},
 		set_json(json: Level, skip: string[] = []) {
-			this.json = json;
+			this.json = markRaw(json);
 			if (!skip.includes('json_panel')) this.refs().json_panel.set_json(this.json);
 			if (!skip.includes('viewport_panel')) this.refs().viewport_panel.set_json(this.json);
 			if (!skip.includes('mcp')) mcp.send_level(json);

@@ -1,6 +1,6 @@
 <script lang="ts">
-import { Menu, MenuItem, MenuLeaf } from './menu';
 import { defineComponent, PropType } from 'vue';
+import { Menu, MenuItem, MenuLeaf } from './menu';
 
 export default defineComponent({
 	props: {

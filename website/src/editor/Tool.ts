@@ -6,7 +6,7 @@ import type { LevelData } from './LevelLoader';
 
 export interface ViewportInterface {
 	gizmo: GizmoControls;
-	editing_parent: LevelNodeObject<LevelNodeGroup> | THREE.Scene;
+	editing_parent: LevelNodeObject<LevelNodeGroup> | THREE.Scene | undefined;
 	level: LevelData;
 	renderer: WebGLRenderer;
 	camera: Camera;

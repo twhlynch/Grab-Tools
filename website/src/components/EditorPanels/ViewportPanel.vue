@@ -125,7 +125,8 @@ export default defineComponent({
 			level: markRaw(levelData()),
 			editing_json: undefined as Raw<LevelNodeObject> | undefined,
 			editing_gasm: undefined as Raw<LevelNodeObject<LevelNodeGASM>> | undefined,
-			editing_parent: undefined! as Raw<LevelNodeObject<LevelNodeGroup> | THREE.Scene>,
+			editing_parent: undefined as
+				Raw<LevelNodeObject<LevelNodeGroup> | THREE.Scene> | undefined,
 			renderer: undefined as unknown as Raw<THREE.WebGLRenderer>,
 			clock: undefined as unknown as Raw<THREE.Clock>,
 			scene: undefined as unknown as Raw<THREE.Scene>,
@@ -185,7 +186,7 @@ export default defineComponent({
 			return this.$refs as {
 				resize: InstanceType<typeof ResizableColPanel>;
 				viewport: HTMLElement;
-				contextmenu: InstanceType<typeof ContextMenu>;
+				contextmenu: InstanceType<typeof ContextMenu> | undefined;
 				gasm_editor: InstanceType<typeof GASMPanel>;
 				mini_editor: InstanceType<typeof JsonPanel>;
 				animation_panel: InstanceType<typeof AnimationPanel>;
@@ -255,7 +256,6 @@ export default defineComponent({
 			// scene
 			this.clock = markRaw(new THREE.Clock());
 			this.scene = markRaw(new THREE.Scene());
-			this.editing_parent = this.scene;
 			this.camera = markRaw(
 				new THREE.PerspectiveCamera(
 					70,
@@ -415,6 +415,7 @@ export default defineComponent({
 			this.add_gasm_connections();
 			this.add_animation_paths();
 			this.add_group_bounds();
+
 			if (this.show_shadows) this.update_shadows();
 			this.scene.add(this.level.scene);
 			this.enter_specific_group(this.level.scene);
@@ -575,8 +576,8 @@ export default defineComponent({
 			if (this.active_tool?.on_mouse_down?.(e)) return;
 
 			if (
-				e.target !== this.refs().contextmenu.$el &&
-				!this.refs().contextmenu.$el?.contains(e.target)
+				e.target !== this.refs().contextmenu?.$el &&
+				!this.refs().contextmenu?.$el?.contains(e.target)
 			) {
 				this.contextmenu = undefined;
 			}
@@ -1056,7 +1057,7 @@ export default defineComponent({
 			if (this.gizmo.empty()) return;
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent?.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				const new_list = func(node_list);
@@ -1077,7 +1078,7 @@ export default defineComponent({
 		},
 		activate_tool(tool: Tool) {
 			if (this.active_tool) this.deactivate_tool();
-			if (tool.activate(this)) this.active_tool = tool;
+			if (tool.activate(this)) this.active_tool = markRaw(tool);
 		},
 		deactivate_tool() {
 			if (this.active_tool) {
@@ -1225,19 +1226,19 @@ export default defineComponent({
 			this.enter_specific_group(group);
 		},
 		exit_group() {
-			if (this.editing_parent === this.level.scene || !this.editing_parent.parent) return;
+			if (this.editing_parent === this.level.scene || !this.editing_parent?.parent) return;
 			this.enter_specific_group(
 				this.editing_parent.parent as LevelNodeObject<LevelNodeGroup>,
 			);
 		},
 		enter_specific_group(object: LevelNodeObject<LevelNodeGroup> | THREE.Scene) {
 			this.gizmo.clear();
-			if (this.editing_parent.userData.isGroup) {
+			if (this.editing_parent?.userData.isGroup) {
 				this.editing_parent.userData.group_bounds.material.color = new THREE.Color(
 					0x009900,
 				);
 			}
-			this.editing_parent = object;
+			this.editing_parent = markRaw(object);
 			if (this.editing_parent.userData.isGroup) {
 				this.editing_parent.userData.group_bounds.material.color = new THREE.Color(
 					0x99ff00,
@@ -1247,7 +1248,7 @@ export default defineComponent({
 			let parent = this.editing_parent;
 			while (parent !== this.level.scene) {
 				this.group_depth++;
-				parent = parent.parent as LevelNodeObject<LevelNodeGroup>;
+				parent = parent.parent as LevelNodeObject<LevelNodeGroup> | THREE.Scene;
 			}
 		},
 		close_gasm_editor() {
@@ -1359,12 +1360,12 @@ export default defineComponent({
 		},
 		edit_object_json(object: LevelNodeObject) {
 			this.show_mini_editor = true;
-			this.editing_json = object;
+			this.editing_json = markRaw(object);
 			this.refs().mini_editor.set_json(object.userData.node);
 		},
 		edit_gasm_code(object: LevelNodeObject<LevelNodeGASM>) {
 			this.show_gasm_editor = true;
-			this.editing_gasm = object;
+			this.editing_gasm = markRaw(object);
 			this.refs().gasm_editor.set_json(object.userData.node);
 		},
 		mini_editor_changed(new_node: LevelNode) {
@@ -1386,8 +1387,11 @@ export default defineComponent({
 		},
 		set_material(material: LevelNodeMaterial) {
 			this.gizmo.selection.forEach((object) => {
-				const node = levelNodeData(object);
-				if (isLevelNodeStatic(object) || isLevelNodeCrumbling(object)) {
+				const node = levelNodeData(object.userData.node);
+				if (
+					isLevelNodeStatic(object.userData.node) ||
+					isLevelNodeCrumbling(object.userData.node)
+				) {
 					(node as LevelNodeStatic | LevelNodeCrumbling).material = material;
 				}
 			});
@@ -1395,11 +1399,11 @@ export default defineComponent({
 		},
 		set_shape(shape: LevelNodeShape) {
 			this.gizmo.selection.forEach((object) => {
-				const node = levelNodeData(object);
+				const node = levelNodeData(object.userData.node);
 				if (
-					isLevelNodeStatic(object) ||
-					isLevelNodeCrumbling(object) ||
-					isLevelNodeTrigger(object)
+					isLevelNodeStatic(object.userData.node) ||
+					isLevelNodeCrumbling(object.userData.node) ||
+					isLevelNodeTrigger(object.userData.node)
 				) {
 					(node as LevelNodeStatic | LevelNodeCrumbling | LevelNodeTrigger).shape = shape;
 				}
@@ -1819,7 +1823,7 @@ export default defineComponent({
 		mirror_x() {
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent?.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				this.level.nodes.all
@@ -1851,7 +1855,7 @@ export default defineComponent({
 		mirror_y() {
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent?.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				this.level.nodes.all
@@ -1883,7 +1887,7 @@ export default defineComponent({
 		mirror_z() {
 			this.modifier((json) => {
 				const node_list =
-					this.editing_parent.userData.node?.levelNodeGroup?.childNodes ??
+					this.editing_parent?.userData.node?.levelNodeGroup?.childNodes ??
 					json.levelNodes;
 
 				this.level.nodes.all

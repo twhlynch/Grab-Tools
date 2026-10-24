@@ -16,7 +16,7 @@ import { LevelNodeGASM } from '@grab-tools/lib/generated/proto';
 import { vim } from '@replit/codemirror-vim';
 import { basicSetup, EditorView } from 'codemirror';
 import { mapState } from 'pinia';
-import { defineComponent } from 'vue';
+import { defineComponent, markRaw } from 'vue';
 
 export default defineComponent({
 	emits: ['set'],
@@ -57,22 +57,24 @@ export default defineComponent({
 	},
 	methods: {
 		create_editor() {
-			this.view = build_editor(
-				this.$refs.code_container as HTMLElement,
-				' ',
-				gasm,
-				[
-					foldGutter(),
-					highlightSelectionMatches(),
-					...(this.vim_enabled ? [vim()] : []),
-					basicSetup,
-					...gasmCompletion(),
-				],
-				[...searchKeymap],
+			this.view = markRaw(
+				build_editor(
+					this.$refs.code_container as HTMLElement,
+					' ',
+					gasm,
+					[
+						foldGutter(),
+						highlightSelectionMatches(),
+						...(this.vim_enabled ? [vim()] : []),
+						basicSetup,
+						...gasmCompletion(),
+					],
+					[...searchKeymap],
+				),
 			);
 		},
 		set_json(json: LevelNodeWith<LevelNodeGASM>) {
-			this.json = json;
+			this.json = markRaw(json);
 			const asm = json_to_asm(json);
 			this.view.dispatch({
 				changes: {

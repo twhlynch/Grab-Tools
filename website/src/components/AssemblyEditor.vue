@@ -1,7 +1,7 @@
 <script lang="ts">
 import { BaseEditor, EditorConstructor } from '@/editor/GASMEditor';
 import { ViewUpdate } from '@codemirror/view';
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, markRaw, PropType } from 'vue';
 
 export default defineComponent({
 	props: {
@@ -23,13 +23,12 @@ export default defineComponent({
 	},
 	methods: {
 		create_editor() {
-			this.instance = new this.editor(
-				this.$refs.code_container as HTMLElement,
-				(update: ViewUpdate) => {
+			this.instance = markRaw(
+				new this.editor(this.$refs.code_container as HTMLElement, (update: ViewUpdate) => {
 					if (update.docChanged) {
 						this.$emit('changed');
 					}
-				},
+				}),
 			);
 		},
 

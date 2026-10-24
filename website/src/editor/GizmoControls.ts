@@ -143,9 +143,7 @@ class GizmoControls {
 		this.selection.forEach((object) => {
 			object.updateMatrixWorld(true);
 
-			const node = levelNodeData(
-				isLevelNodeObject(object) ? object.userData.node : object,
-			);
+			const node = levelNodeData(object.userData.node);
 
 			if (node.position) {
 				node.position.x = object.position.x;

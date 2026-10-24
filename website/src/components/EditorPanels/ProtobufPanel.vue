@@ -5,7 +5,7 @@ import { protobuf } from '@codemirror/legacy-modes/mode/protobuf';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection } from '@codemirror/state';
 import { EditorView } from 'codemirror';
-import { defineComponent } from 'vue';
+import { defineComponent, markRaw } from 'vue';
 
 export default defineComponent({
 	emits: ['set', 'close'],
@@ -15,12 +15,14 @@ export default defineComponent({
 		};
 	},
 	mounted() {
-		this.view = build_editor(
-			this.$refs.code_container as HTMLElement,
-			'',
-			StreamLanguage.define(protobuf),
-			[foldGutter(), highlightSelectionMatches()],
-			[...searchKeymap],
+		this.view = markRaw(
+			build_editor(
+				this.$refs.code_container as HTMLElement,
+				'',
+				StreamLanguage.define(protobuf),
+				[foldGutter(), highlightSelectionMatches()],
+				[...searchKeymap],
+			),
 		);
 	},
 	methods: {

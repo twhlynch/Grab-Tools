@@ -48,7 +48,7 @@ export default defineComponent({
 							JSON.stringify(this.json) !== JSON.stringify(new_object)
 						) {
 							this.$emit('changed', new_object);
-							this.json = new_object;
+							this.json = markRaw(new_object);
 						}
 					}
 				},
@@ -57,7 +57,7 @@ export default defineComponent({
 	},
 	methods: {
 		set_json(data: object) {
-			this.json = data;
+			this.json = markRaw(data);
 			this.ignore_change = true;
 			this.view.dispatch({
 				changes: {
