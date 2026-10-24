@@ -6,6 +6,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 
+const sourceFiles = ['**/*.ts', '**/*.vue'];
+
 export default [
 	{
 		ignores: ['**/dist/**', '**/node_modules/**', '**/src-tauri/**'],
@@ -18,11 +20,11 @@ export default [
 
 	...tseslint.configs.recommendedTypeChecked.map((config) => ({
 		...config,
-		files: ['**/*.ts'],
+		files: sourceFiles,
 	})),
 	...tseslint.configs.stylisticTypeChecked.map((config) => ({
 		...config,
-		files: ['**/*.ts'],
+		files: sourceFiles,
 	})),
 
 	...vue.configs['flat/recommended'],
@@ -30,7 +32,7 @@ export default [
 	prettierConfig,
 
 	{
-		files: ['**/*.{js,ts,vue,mjs}'],
+		files: sourceFiles,
 
 		languageOptions: {
 			parser: vueParser,
@@ -74,18 +76,12 @@ export default [
 			'no-constant-binary-expression': 'error',
 			'@typescript-eslint/prefer-for-of': 'error',
 
+			'@typescript-eslint/no-unnecessary-condition': 'error',
+			'@typescript-eslint/no-unnecessary-type-assertion': 'error',
+
 			'vue/multi-word-component-names': 'off',
 			'vue/require-default-prop': 'off',
 			'vue/prop-name-casing': 'off',
-		},
-	},
-
-	{
-		files: ['**/*.ts'],
-
-		rules: {
-			'@typescript-eslint/no-unnecessary-condition': 'error',
-			'@typescript-eslint/no-unnecessary-type-assertion': 'error',
 		},
 	},
 ];
