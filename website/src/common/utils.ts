@@ -1,5 +1,10 @@
 import { unmodded_root } from '@/common/root';
-import { Level, LevelNode } from '@grab-tools/lib/generated/proto';
+import {
+	Level,
+	LevelNode,
+	LevelNodeMaterial,
+	LevelNodeShape,
+} from '@grab-tools/lib/generated/proto';
 import { Object3D } from 'three';
 
 export function isObject3D(object: unknown): object is Object3D {
@@ -27,13 +32,13 @@ export function traverse_node(node: LevelNode, func: (n: LevelNode) => void) {
 	func(node);
 }
 
-export function random_material() {
+export function random_material(): LevelNodeMaterial {
 	const options = Object.values(materials());
 	options.filter((option) => option !== materials().TRIGGER);
 	const length = options.length;
-	return options[Math.floor(Math.random() * length)];
+	return options[Math.floor(Math.random() * length)] as LevelNodeMaterial;
 }
-export function random_shape() {
+export function random_shape(): LevelNodeShape {
 	const length =
 		Object.entries(shapes()).length - shapes().__END_OF_SPECIAL_PARTS__ - 1;
 	return 1000 + Math.floor(Math.random() * length);
