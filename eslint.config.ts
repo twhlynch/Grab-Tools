@@ -43,6 +43,7 @@ export default [
 				sourceType: 'module',
 				extraFileExtensions: ['.vue'],
 				projectService: true,
+				tsconfigRootDir: import.meta.dirname,
 			},
 
 			globals: {
@@ -82,6 +83,17 @@ export default [
 			'vue/multi-word-component-names': 'off',
 			'vue/require-default-prop': 'off',
 			'vue/prop-name-casing': 'off',
+		},
+	},
+	{
+		files: ['**/*.vue'],
+		rules: {
+			'@typescript-eslint/no-unsafe-assignment': 'off',
+			'@typescript-eslint/no-unsafe-call': 'off',
+			'@typescript-eslint/no-unsafe-member-access': 'off',
+			'@typescript-eslint/no-unsafe-argument': 'off',
+			'@typescript-eslint/no-unsafe-return': 'off',
+			'@typescript-eslint/no-unsafe-enum-comparison': 'off',
 		},
 	},
 ];
