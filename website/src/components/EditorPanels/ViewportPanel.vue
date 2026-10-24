@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ungroupNode } from '@/common/group';
 import { isLevelNodeObject, LevelNodeObject } from '@/common/levelNodes';
-import { deepClone, materials, shapes } from '@/common/utils';
+import { copy_object_id, deepClone, format_type, materials, shapes } from '@/common/utils';
 import AnimationPanel from '@/components/EditorPanels/AnimationPanel.vue';
 import ContextMenu from '@/components/EditorPanels/ContextMenu.vue';
 import GASMPanel from '@/components/EditorPanels/GASMPanel.vue';
@@ -944,14 +944,6 @@ export default defineComponent({
 
 			this.update_animation_path_position(object);
 		},
-		object_contains(object: THREE.Object3D, child: THREE.Object3D) {
-			let current = child.parent;
-			while (current) {
-				if (current === object) return true;
-				current = current.parent;
-			}
-			return false;
-		},
 		update_animation_path_position(object: LevelNodeObject) {
 			const paths = object.userData.relevant_animation_paths;
 			if (!paths) return;
@@ -1410,12 +1402,6 @@ export default defineComponent({
 			});
 			this.modifier((json) => json);
 		},
-		format_type(type: string) {
-			return type
-				.split('_')
-				.map((word) => word.charAt(0).toUpperCase() + word.toLowerCase().slice(1))
-				.join(' ');
-		},
 		build_context_menu(x: number, y: number) {
 			const clicked_object = this.cast_for_node(x, y);
 			if (!clicked_object) return;
@@ -1514,7 +1500,7 @@ export default defineComponent({
 									},
 									(_, i) => {
 										return [
-											this.format_type(shapes()[1000 + i]!),
+											format_type(shapes()[1000 + i]!),
 											{
 												func: () => {
 													this.set_shape(1000 + i);
@@ -1535,7 +1521,7 @@ export default defineComponent({
 									},
 									(_, i) => {
 										return [
-											this.format_type(materials()[i]!),
+											format_type(materials()[i]!),
 											{
 												func: () => {
 													this.set_material(i);
@@ -1733,7 +1719,7 @@ export default defineComponent({
 				...(clicked_is_selected && {
 					[`Copy ID (${clicked_object.userData.id})`]: {
 						func: () => {
-							this.copy_object_id(clicked_object);
+							copy_object_id(clicked_object);
 						},
 					},
 				}),
@@ -1749,10 +1735,6 @@ export default defineComponent({
 			this.contextmenu = undefined;
 			const menu = this.build_context_menu(x, y);
 			if (menu) this.contextmenu = menu;
-		},
-		copy_object_id(object: LevelNodeObject) {
-			const id = object.userData.id;
-			void navigator.clipboard.writeText(String(id));
 		},
 		close_context_menu() {
 			this.contextmenu = undefined;

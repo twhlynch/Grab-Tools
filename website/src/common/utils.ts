@@ -6,6 +6,7 @@ import {
 	LevelNodeShape,
 } from '@grab-tools/lib/generated/proto';
 import { Object3D } from 'three';
+import { LevelNodeObject } from './levelNodes';
 
 export function isObject3D(object: unknown): object is Object3D {
 	return object instanceof Object3D;
@@ -58,4 +59,28 @@ export function json_parse<T>(text: string): T | null {
 		}
 		return null;
 	}
+}
+
+export function format_type(type: string) {
+	return type
+		.split('_')
+		.map(
+			(word) =>
+				word.charAt(0).toUpperCase() + word.toLowerCase().slice(1),
+		)
+		.join(' ');
+}
+
+export function object_contains(object: THREE.Object3D, child: THREE.Object3D) {
+	let current = child.parent;
+	while (current) {
+		if (current === object) return true;
+		current = current.parent;
+	}
+	return false;
+}
+
+export function copy_object_id(object: LevelNodeObject) {
+	const id = object.userData.id;
+	void navigator.clipboard.writeText(String(id));
 }

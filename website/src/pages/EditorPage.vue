@@ -134,11 +134,7 @@ export default defineComponent({
 		resize_left() {
 			this.refs().left_panel.size();
 		},
-		set_protobuf(protobuf: string) {
-			window.toast('protobuf');
-			console.log(protobuf);
-			set_protobuf(protobuf);
-		},
+		set_protobuf,
 		open_protobuf() {
 			this.refs().protobuf_panel.set(get_protobuf());
 			this.show_protobuf_panel = true;

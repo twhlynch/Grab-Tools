@@ -11,6 +11,7 @@ import {
 import { load } from '@/common/root';
 import {
 	deepClone,
+	format_type,
 	json_parse,
 	materials,
 	random_material,
@@ -202,7 +203,7 @@ export default defineComponent({
 								},
 								(_, i) => {
 									return [
-										this.format_type?.(shapes()[1000 + i]),
+										format_type(shapes()[1000 + i]!),
 										{
 											func: () => {
 												this.select_by_shape?.(1000 + i);
@@ -221,14 +222,14 @@ export default defineComponent({
 								},
 								(_, i) => {
 									return [
-										this.format_type?.(materials()[i]),
+										format_type(materials()[i]!),
 										{
 											func: () => {
 												this.select_by_material?.(i);
 											},
 											num: i,
 										},
-									];
+									] as [string, { func: () => void; num: number }];
 								},
 							).filter((item) => item[1].num !== materials().TRIGGER),
 						),
@@ -386,13 +387,6 @@ export default defineComponent({
 			this.viewport((scope) => {
 				scope.select_all();
 			});
-		},
-		format_type(type: string) {
-			// FIXME: duplicate
-			return type
-				.split('_')
-				.map((word) => word.charAt(0).toUpperCase() + word.toLowerCase().slice(1))
-				.join(' ');
 		},
 		load_new_level() {
 			this.modifier((_) => {

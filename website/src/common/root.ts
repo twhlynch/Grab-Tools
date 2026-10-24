@@ -13,6 +13,7 @@ export function load(): Root {
 }
 
 export function set_protobuf(new_definition: string) {
+	console.log(new_definition);
 	protobuf_definition = new_definition;
 	window._root = protobuf.parse(protobuf_definition).root as Root;
 }
