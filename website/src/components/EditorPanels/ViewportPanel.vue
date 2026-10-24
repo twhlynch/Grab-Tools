@@ -1,7 +1,14 @@
 <script lang="ts">
 import { ungroupNode } from '@/common/group';
 import { isLevelNodeObject, LevelNodeObject } from '@/common/levelNodes';
-import { copy_object_id, deepClone, format_type, materials, shapes } from '@/common/utils';
+import {
+	copy_object_id,
+	deepClone,
+	format_type,
+	materials,
+	object_contains,
+	shapes,
+} from '@/common/utils';
 import AnimationPanel from '@/components/EditorPanels/AnimationPanel.vue';
 import ContextMenu from '@/components/EditorPanels/ContextMenu.vue';
 import GASMPanel from '@/components/EditorPanels/GASMPanel.vue';
@@ -331,10 +338,11 @@ export default defineComponent({
 				(node) => !node.userData.isGroup && node.visible,
 			);
 			const intersects = raycaster.intersectObjects<LevelNodeObject>(individualObjects, true);
+			const parent = this.editing_parent ?? this.level.scene;
 			let intersect: LevelNodeObject | undefined = undefined;
-			if (intersects.length) {
-				intersect = intersects[0]!.object;
-				while (intersect.parent !== this.editing_parent) {
+			if (intersects[0] && object_contains(parent, intersects[0].object)) {
+				intersect = intersects[0].object;
+				while (intersect.parent !== parent) {
 					intersect = intersect.parent as LevelNodeObject;
 				}
 			}
