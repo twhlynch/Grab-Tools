@@ -44,7 +44,7 @@ export async function decodeLevel(buffer: Blob): Promise<Level | null> {
 	}
 }
 
-export function encodeLevel(level: Level): Uint8Array | null {
+export function encodeLevel(level: Level) {
 	const root = load();
 	const message = root.lookupType('COD.Level.Level');
 
@@ -58,10 +58,10 @@ export function encodeLevel(level: Level): Uint8Array | null {
 }
 
 export function downloadLevel(
-	level: ArrayBuffer,
+	level: Uint8Array<ArrayBufferLike> | ArrayBuffer,
 	name: string = Date.now().toString().slice(0, -3),
 ) {
-	const blob = new Blob([level], {
+	const blob = new Blob([level as BlobPart], {
 		type: 'application/octet-stream',
 	});
 

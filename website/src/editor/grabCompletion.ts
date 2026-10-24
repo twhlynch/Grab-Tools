@@ -1,5 +1,5 @@
 import { unmodded_root } from '@/common/root';
-import { materials } from '@/common/utils';
+import { materials, shapes } from '@/common/utils';
 import { autocompletion, startCompletion } from '@codemirror/autocomplete';
 import { Text } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
@@ -82,13 +82,10 @@ function collect_completions(enums: EnumData[]) {
 		Object.entries(values).forEach(([name, num]) => {
 			if (
 				type === 'LevelNodeShape' &&
-				num <= +materials().__END_OF_SPECIAL_PARTS__!
+				num <= +shapes().__END_OF_SPECIAL_PARTS__
 			)
 				return;
-			if (
-				type === 'LevelNodeMaterial' &&
-				num === +(materials().TRIGGER ?? -1)
-			)
+			if (type === 'LevelNodeMaterial' && num === +materials().TRIGGER)
 				return;
 			const cmps = (completions[field.name] ??= []);
 			if (
