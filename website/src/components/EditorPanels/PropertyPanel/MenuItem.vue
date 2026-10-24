@@ -37,7 +37,7 @@ export default defineComponent({
 		'$props.reOpen': {
 			handler() {
 				this.isExpanded = false;
-				if (this.$props.node.key == null) this.isExpanded = true; // expand root node by default
+				if (this.$props.node.key == '') this.isExpanded = true; // expand root node by default
 			},
 			deep: true,
 		},
@@ -72,7 +72,7 @@ export default defineComponent({
 			}
 		},
 		addItemAbove() {
-			if (this.$props.node.arrayIndex == null) return;
+			if (this.$props.node.arrayIndex == -1) return;
 			this.$emit('set', (e) => {
 				e.$props.node.children.splice(
 					this.$props.node.arrayIndex,
@@ -94,7 +94,7 @@ export default defineComponent({
 			this.$emit('refresh');
 		},
 		addItemBelow() {
-			if (this.$props.node.arrayIndex == null) return;
+			if (this.$props.node.arrayIndex == -1) return;
 			this.$emit('set', (e) => {
 				e.$props.node.children.splice(
 					this.$props.node.arrayIndex + 1,
@@ -159,7 +159,7 @@ export default defineComponent({
 			this.setChildValue('b', parseInt(hex.substring(5, 7), 16) / 255);
 		},
 		removeItem() {
-			if (this.$props.node.arrayIndex == null) return;
+			if (this.$props.node.arrayIndex == -1) return;
 			this.$emit('set', (e) => {
 				e.$props.node.children.splice(this.$props.node.arrayIndex, 1);
 				if (e.$props.node.children.length == 0) {
@@ -414,7 +414,7 @@ export default defineComponent({
 			</div>
 
 			<!-- Array modification buttons -->
-			<div v-if="isHovered && $props.node.arrayIndex != null">
+			<div v-if="isHovered && $props.node.arrayIndex != -1">
 				<span class="spacer"></span>
 				<button class="modify-button" @click="addItemAbove">▲</button>
 				<button class="modify-button" @click="addItemBelow">▼</button>
