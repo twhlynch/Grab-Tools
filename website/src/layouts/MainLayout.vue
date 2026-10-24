@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
 import NavMenu from '@/components/NavMenu.vue';
 import { useConfigStore } from '@/stores/config';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		NavMenu,
 	},
 	computed: {
 		...mapState(useConfigStore, ['dark_mode']),
 	},
-};
+});
 </script>
 
 <template>

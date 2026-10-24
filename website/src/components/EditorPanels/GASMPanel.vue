@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { asm_to_json, json_to_asm } from '@/editor/AssemblyConversion';
 import build_editor from '@/editor/EditorSetup';
 import {
@@ -11,15 +11,19 @@ import { useConfigStore } from '@/stores/config';
 import { foldGutter } from '@codemirror/language';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection } from '@codemirror/state';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
+import { LevelNodeGASM } from '@grab-tools/lib/generated/proto';
 import { vim } from '@replit/codemirror-vim';
-import { basicSetup } from 'codemirror';
+import { basicSetup, EditorView } from 'codemirror';
 import { mapState } from 'pinia';
+import { defineComponent, markRaw } from 'vue';
 
-export default {
+export default defineComponent({
 	emits: ['set'],
 	data() {
 		return {
-			json: undefined,
+			json: undefined as LevelNodeWith<LevelNodeGASM> | undefined,
+			view: null! as EditorView,
 		};
 	},
 	computed: {
@@ -29,7 +33,7 @@ export default {
 		vim_enabled() {
 			const asm = this.view.state.doc.toString();
 
-			this.view.dom.parentNode.removeChild(this.view.dom);
+			this.view.dom.parentNode!.removeChild(this.view.dom);
 			this.view.destroy();
 
 			this.create_editor();
@@ -53,22 +57,24 @@ export default {
 	},
 	methods: {
 		create_editor() {
-			this.view = build_editor(
-				this.$refs.code_container,
-				' ',
-				gasm,
-				[
-					foldGutter(),
-					highlightSelectionMatches(),
-					...(this.vim_enabled ? [vim()] : []),
-					basicSetup,
-					...gasmCompletion(),
-				],
-				[...searchKeymap],
+			this.view = markRaw(
+				build_editor(
+					this.$refs.code_container as HTMLElement,
+					' ',
+					gasm,
+					[
+						foldGutter(),
+						highlightSelectionMatches(),
+						...(this.vim_enabled ? [vim()] : []),
+						basicSetup,
+						...gasmCompletion(),
+					],
+					[...searchKeymap],
+				),
 			);
 		},
-		set_json(json) {
-			this.json = json;
+		set_json(json: LevelNodeWith<LevelNodeGASM>) {
+			this.json = markRaw(json);
 			const asm = json_to_asm(json);
 			this.view.dispatch({
 				changes: {
@@ -84,16 +90,18 @@ export default {
 		save() {
 			let data;
 			try {
-				data = asm_to_json(this.view.state.doc.toString(), this.json);
+				data = asm_to_json(this.view.state.doc.toString(), this.json!);
 			} catch (e) {
-				window.toast(e.message, 'error');
+				if (e instanceof Error) {
+					window.toast(e.message, 'error');
+				}
 				return;
 			}
 
 			this.$emit('set', data);
 		},
-		click(e) {
-			if (e.target === this.$refs.code_container) {
+		click(e: Event) {
+			if (e.target === (this.$refs.code_container as HTMLElement)) {
 				this.view.focus();
 				this.view.dispatch({
 					selection: EditorSelection.cursor(this.view.state.doc.length),
@@ -102,7 +110,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

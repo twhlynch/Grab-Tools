@@ -1,7 +1,6 @@
-import { levelNodeGroupFrom } from '@/common/group';
-import { LevelNodeWith } from '@/common/levelNodes';
-import { node_data } from '@/common/utils';
-import { LevelNode, LevelNodeGroup } from '@/generated/proto';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import { levelNodeData, LevelNodeWith } from '@grab-tools/lib/generated/nodes';
+import { LevelNode, LevelNodeGroup } from '@grab-tools/lib/generated/proto';
 
 function traverseNode(
 	node: LevelNode,
@@ -62,19 +61,21 @@ export function offset_ids(nodes: LevelNode[], offset: number) {
 						if (Array.isArray(value)) {
 							for (const v of value) {
 								// must convert v[k] from Long to Number so it doesnt become a string
-								v[k] = Number(v[k] ?? 0) + offset;
+								const record = v as Record<string, unknown>;
+								record[k] = Number(record[k] ?? 0) + offset;
 							}
 						}
 						// update value in an object
 						else if (typeof value === 'object' && value !== null) {
-							value[k] = Number(value[k] ?? 0) + offset;
+							const record = value as Record<string, unknown>;
+							record[k] = Number(record[k] ?? 0) + offset;
 						}
 					}
 				}
 
 				// traverse subobjects
 				if (typeof value == 'object' && value !== null) {
-					objects.push(value);
+					objects.push(value as Record<string, unknown>);
 				}
 			}
 		}
@@ -116,7 +117,7 @@ export function compile(level_nodes: LevelNode[][], options: CompileOptions) {
 		// shift positions
 		if (options.spacing) {
 			for (const node of nodes) {
-				const data = node_data(node);
+				const data = levelNodeData(node);
 				(data.position ??= {}).x =
 					(data.position.x ?? 0) + options.spacing * i;
 			}

@@ -1,5 +1,6 @@
 packages:
   - website
+  - lib
 
 allowBuilds:
   esbuild: true

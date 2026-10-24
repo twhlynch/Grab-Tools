@@ -1,15 +1,33 @@
-<script>
+<script lang="ts">
 import HardestLevelsList from '@/components/HardestLevelsList.vue';
 import ListRow from '@/components/ListRow.vue';
 import GHLLogoIcon from '@/icons/GHLLogoIcon.vue';
 import MapIcon from '@/icons/MapIcon.vue';
 import PeopleIcon from '@/icons/PeopleIcon.vue';
 import { add_hardest_level_request } from '@/requests/AddHardestLevelRequest';
-import { get_hardest_levels_request } from '@/requests/GetHardestLevelsRequest';
+import { get_hardest_levels_request, ListRowData } from '@/requests/GetHardestLevelsRequest';
 import { useUserStore } from '@/stores/user';
+import { CustomLevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
+import { Metric, metricDict, MetricKey, metricKeys } from './metrics';
 
-export default {
+interface FeaturedCreator {
+	list_key: string;
+	title: string;
+}
+
+interface MetricSummary {
+	user_id: string;
+	user_name: string;
+	positions: Record<MetricKey, number>;
+	metrics: Metric;
+	score: number;
+	raw: Record<MetricKey, number>;
+	position: number;
+}
+
+export default defineComponent({
 	components: {
 		GHLLogoIcon,
 		MapIcon,
@@ -20,10 +38,10 @@ export default {
 	data() {
 		return {
 			tab: 'maps',
-			hardest_levels: [],
-			featured_creators: [],
-			all_metrics: [],
-			top_metrics: [],
+			hardest_levels: [] as ListRowData[],
+			featured_creators: [] as FeaturedCreator[],
+			all_metrics: [] as MetricSummary[],
+			top_metrics: [] as MetricSummary[],
 			query: '',
 			add_level_id: '',
 			add_level_position: '',
@@ -39,7 +57,7 @@ export default {
 				unbeaten_created:   1.5, // 1.50 2.20 1.50 1.73 1.50
 				hardest_created:    2.0, // 1.00 1.00 2.50 1.50 1.75
 				hardest_created_placement: 1.0,
-			},
+			} as object as Record<MetricKey, number>,
 		};
 	},
 	computed: {
@@ -49,269 +67,265 @@ export default {
 		document.title = 'GRAB Hardest Levels | GRAB Tools';
 	},
 	mounted() {
-		this.init();
+		void this.init();
 	},
 	methods: {
-		selectTab(id) {
-			document.querySelector('.sort-active').classList.remove('sort-active');
-			const selected = document.getElementById(id + '-sort-btn');
-			selected.classList.add('sort-active');
+		selectTab(id: string) {
+			document.querySelector('.sort-active')?.classList.remove('sort-active');
+			document.getElementById(id + '-sort-btn')?.classList.add('sort-active');
 			this.tab = id;
 		},
-		async fetchThen(filename, func) {
-			let response = await fetch(`${this.$config.STATS_URL}${filename}`);
+		async fetchThen<T = unknown>(filename: string, func: (json: T) => void) {
+			const response = await fetch(`${this.$config.STATS_URL}${filename}`);
 			if (!response.ok) {
 				const error = await response.text();
 				window.toast('Failed to load stat: ' + error, 'error');
 				return;
 			}
-			const json = await response.json();
+			const json = (await response.json()) as T;
 			func(json);
 		},
-		init() {
-			(async () => {
-				let featured_creators = [];
-				let metrics = {};
+		async init() {
+			let featured_creators: FeaturedCreator[] = [];
+			const metrics: Record<string, Metric> = {};
 
-				const checkMetric = (id, username, priority = 1) => {
-					for (let featured_creator of featured_creators) {
-						if (featured_creator.list_key.split(':')[1] == id) {
-							username = featured_creator.title;
-						}
+			const checkMetric = (id: string, username: string | undefined, priority = 1) => {
+				for (const featured_creator of featured_creators) {
+					if (featured_creator.list_key.split(':')[1] == id) {
+						username = featured_creator.title;
+					}
+				}
+
+				if (!username) {
+					priority = 0;
+					username = 'Unknown';
+				}
+
+				username = username.split(/[,\s]/)[0]!;
+
+				const metric = metrics[id];
+
+				if (metric) {
+					if (metric.username_priority < priority) {
+						metric.username_priority = priority;
+						metric.username = username;
+					}
+				} else {
+					metrics[id] = {
+						score: 0,
+						maps: 0,
+						positions: metricDict(0),
+						raw: metricDict(0),
+						username: username,
+						username_priority: priority,
+						// metrics
+						...metricDict(0),
+					};
+				}
+			};
+
+			await this.fetchThen('featured_creators', (data) => {
+				featured_creators = data as FeaturedCreator[];
+			});
+
+			await Promise.all([
+				get_hardest_levels_request().then((data) => {
+					if (!data) {
+						window.toast('Failed to fetch hardest levels list', 'error');
+						return;
 					}
 
-					if (!username) {
-						priority = 0;
-						username = 'Unknown';
+					this.hardest_levels = data.sort((a, b) => a.position - b.position);
+
+					for (let i = 0; i < Math.min(100, data.length); i++) {
+						const { level_id, creators } = data[i]!;
+
+						const identifier = level_id.split(':')[0]!;
+						const priority = parseInt(level_id.split(':')[1]!) / 10;
+
+						checkMetric(identifier, creators, priority);
+
+						const metric = metrics[identifier]!;
+						metric.hardest_created += 1;
+						if (metric.hardest_created_placement === 0) {
+							metric.hardest_created_placement = 1 - (i + 1 - 1) * 0.01;
+							metric.raw.hardest_created_placement = i + 1;
+						}
 					}
+				}),
+				this.fetchThen<Record<string, [number, string]>>('user_finishes', (data) => {
+					for (const identifier in data) {
+						const username = data[identifier]![1];
 
-					username = username.split(/[,\s]/)[0];
+						checkMetric(identifier, username);
 
-					const metric = metrics[id];
-
-					if (metric) {
-						if (metric.username_priority < priority) {
-							metric.username_priority = priority;
-							metric.username = username;
-						}
-					} else {
-						metrics[id] = {
-							score: 0,
-							maps: 0,
-							positions: {},
-							raw: {
-								hardest_created_placement: 0,
-							},
-							username: username,
-							username_priority: priority,
-							// metrics
-							...Object.fromEntries(Object.keys(this.weights).map((k) => [k, 0])),
-							hardest_created_placement: 0,
-						};
+						metrics[identifier]!.level_finishes += data[identifier]![0];
 					}
-				};
-
-				await this.fetchThen('featured_creators', (data) => {
-					featured_creators = data;
-				});
-
-				await Promise.all([
-					get_hardest_levels_request().then((data) => {
-						if (!data) {
-							window.toast('Failed to fetch hardest levels list', 'error');
-							return;
-						}
-
-						this.hardest_levels = data.sort((a, b) => a.position - b.position);
-
-						for (let i = 0; i < Math.min(100, data.length); i++) {
-							const { level_id, creators } = data[i];
-
-							const identifier = level_id.split(':')[0];
-							const priority = parseInt(level_id.split(':')[1]) / 10;
-
-							checkMetric(identifier, creators, priority);
-
-							metrics[identifier].hardest_created += 1;
-							if (metrics[identifier].hardest_created_placement === 0) {
-								metrics[identifier].hardest_created_placement =
-									1 - (i + 1 - 1) * 0.01;
-								metrics[identifier].raw.hardest_created_placement = i + 1;
-							}
-						}
-					}),
-					this.fetchThen('user_finishes', (data) => {
-						for (let identifier in data) {
-							const username = data[identifier][1];
+				}),
+				this.fetchThen<Record<string, [number, unknown, string]>>(
+					'sorted_leaderboard_records',
+					(data) => {
+						for (const key in data) {
+							const identifier = key.split(':')[0]!;
+							const username = data[key]![2];
 
 							checkMetric(identifier, username);
 
-							metrics[identifier].level_finishes += data[identifier][0];
+							metrics[identifier]!.level_records += data[key]![0];
 						}
-					}),
-					this.fetchThen('sorted_leaderboard_records', (data) => {
-						for (let key in data) {
-							const identifier = key.split(':')[0];
-							const username = data[key][2];
+					},
+				),
+				this.fetchThen<CustomLevelDetails[]>('sole_victors', (data) => {
+					for (const level of data) {
+						if (level.leaderboard.length == 1) {
+							const item = level.leaderboard[0]!;
 
-							checkMetric(identifier, username);
+							const identifier = item.user_id;
+							const username = item.user_name;
+							const priority = item.timestamp;
 
-							metrics[identifier].level_records += data[key][0];
+							checkMetric(identifier, username, priority);
+
+							metrics[identifier]!.sole_finishes += 1;
 						}
-					}),
-					this.fetchThen('sole_victors', (data) => {
-						for (let level of data) {
-							if (level?.leaderboard?.length == 1) {
-								const item = level.leaderboard[0];
+					}
+				}),
+				this.fetchThen<CustomLevelDetails[]>('all_verified', (data) => {
+					for (const level of data) {
+						if (level.unbeaten && !('sole' in level)) {
+							const id = level.identifier.split(':')[0]!;
+							const username = level.creators?.[0];
+							const priority = (level.creation_timestamp ?? 10) / 10;
 
-								const identifier = item.user_id;
-								const username = item.user_name;
-								const priority = item.timestamp;
-
-								checkMetric(identifier, username, priority);
-
-								metrics[identifier].sole_finishes += 1;
-							}
-						}
-					}),
-					this.fetchThen('all_verified', (data) => {
-						for (let level of data) {
-							if (level.unbeaten && !('sole' in level)) {
-								const id = level.identifier.split(':')[0];
-								const username = level?.creators?.[0];
-								const priority = (level.creation_timestamp ?? 10) / 10;
-
-								checkMetric(id, username, priority);
-
-								metrics[id].unbeaten_created += 1;
-							}
-						}
-					}),
-					this.fetchThen('best_of_grab', (data) => {
-						for (let level of data) {
-							const leaderboard = level.leaderboard;
-							const id = level.identifier.split(':')[0];
-							const username = level?.creators?.[0];
-							const is_challenge = level.list_key.includes('curated_challenge');
-
-							if (leaderboard.length > 0) {
-								const item = leaderboard[0];
-								const priority = item.timestamp;
-
-								checkMetric(item.user_id, item.user_name, priority);
-
-								if (is_challenge) {
-									metrics[item.user_id].challenge_records += 1;
-								}
-								metrics[item.user_id].featured_records += 1;
-							}
-
-							const priority = parseInt(level.identifier.split(':')[1]) / 10;
 							checkMetric(id, username, priority);
 
+							metrics[id]!.unbeaten_created += 1;
+						}
+					}
+				}),
+				this.fetchThen<CustomLevelDetails[]>('best_of_grab', (data) => {
+					for (const level of data) {
+						const leaderboard = level.leaderboard;
+						const id = level.identifier.split(':')[0]!;
+						const username = level.creators?.[0];
+						const is_challenge = level.list_key.includes('curated_challenge');
+
+						if (leaderboard.length > 0) {
+							const item = leaderboard[0]!;
+							const priority = item.timestamp;
+
+							checkMetric(item.user_id, item.user_name, priority);
+
 							if (is_challenge) {
-								metrics[id].challenge_created += 1;
+								metrics[item.user_id]!.challenge_records += 1;
+							}
+							metrics[item.user_id]!.featured_records += 1;
+						}
 
-								for (const item of leaderboard) {
-									checkMetric(item.user_id, item.user_name, item.timestamp);
+						const priority = parseInt(level.identifier.split(':')[1]!) / 10;
+						checkMetric(id, username, priority);
 
-									metrics[item.user_id].challenge_finishes += 1;
-								}
+						if (is_challenge) {
+							metrics[id]!.challenge_created += 1;
+
+							for (const item of leaderboard) {
+								checkMetric(item.user_id, item.user_name, item.timestamp);
+
+								metrics[item.user_id]!.challenge_finishes += 1;
 							}
 						}
-					}),
-				]);
-
-				// adjust metrics
-				const adjustments = {};
-
-				for (const key in this.weights) {
-					if (key !== 'hardest_created_placement') {
-						// save raw value
-						Object.values(metrics).forEach((values) => {
-							values.raw[key] = values[key];
-						});
-						// mon / max
-						adjustments[key] = {
-							max: Math.max(
-								...Object.values(metrics).map((values) => values[key] || 0),
-							),
-							min: Math.min(
-								...Object.values(metrics).map((values) => values[key] || 0),
-							),
-						};
-						// adjust values
-						Object.values(metrics).forEach((values) => {
-							const { max, min } = adjustments[key];
-							const value = values[key];
-							const _alpha = 0.7;
-							const weight = this.weights[key];
-							const t = (value - min) / (max - min);
-
-							const _inverse_power = (1 - Math.pow(1 - t, 0.6)) * weight;
-							const _step = t * t * (3 - 2 * t) * weight;
-							const power = Math.pow(t, 0.6) * weight;
-							const _stepp = t * t * t * (t * (t * 6 - 15) + 10) * weight;
-
-							values[key] = power;
-
-							// values[key] = Math.pow(t, alpha) * weight;
-							// values[key] = t * weight;
-							// values[key] = Math.pow(t, alpha) * weight;
-							// values[key] = Math.sqrt(t) * weight;
-							// values[key] = t * t * (3 - 2 * t) * weight;
-							// values[key] = t * t * t * (t * (t * 6 - 15) + 10) * weight;
-							// values[key] = (Math.log1p(t) / Math.log(2)) * weight;
-							// values[key] = (1 - Math.exp(-alpha * t)) * weight;
-							// values[key] = (1 - Math.pow(1 - t, alpha)) * weight;
-							// values[key] = (t * 0.4 + Math.pow(t, alpha) * 0.6) * weight;
-							// values[key] = (0.2 + 0.8 * Math.pow(t, alpha)) * weight;
-						});
 					}
-					// sort by metric and add positions
-					// -1 for positions for values of 0
-					Object.entries(metrics)
-						.sort((a, b) => b[1][key] - a[1][key])
-						.forEach(([id], i) => {
-							metrics[id].positions[key] = metrics[id][key] == 0 ? -1 : i;
-						});
-				}
+				}),
+			]);
 
-				// accumulate scores
-				Object.values(metrics).forEach((values) => {
-					Object.keys(adjustments).forEach((key) => {
-						values.score += values[key];
+			// adjust metrics
+			const adjustments: Record<MetricKey, { max: number; min: number }> = metricDict({
+				max: 0,
+				min: 0,
+			});
+
+			for (const key of metricKeys) {
+				if (key !== 'hardest_created_placement') {
+					// save raw value
+					Object.values(metrics).forEach((values) => {
+						values.raw[key] = values[key];
 					});
-					if (values.hardest_created_placement !== 0) {
-						values.score += values.hardest_created_placement;
-					}
-				});
+					// mon / max
+					adjustments[key] = {
+						max: Math.max(...Object.values(metrics).map((values) => values[key] || 0)),
+						min: Math.min(...Object.values(metrics).map((values) => values[key] || 0)),
+					};
+					// adjust values
+					Object.values(metrics).forEach((values) => {
+						const { max, min } = adjustments[key];
+						const value = values[key];
+						// const alpha = 0.7;
+						const weight = this.weights[key];
+						const t = (value - min) / (max - min);
 
-				// sort by score
-				const sorted = Object.entries(metrics).sort((a, b) => {
-					return b[1].score - a[1].score;
-				});
-				this.all_metrics = sorted.map((metric, i) => ({
-					user_id: metric[0],
-					user_name: metric[1].username,
-					positions: metric[1].positions,
-					metrics: metric[1],
-					score: metric[1].score,
-					raw: metric[1].raw,
-					position: i + 1,
-				}));
-				// top 100
-				let top_metrics = this.all_metrics.slice(0, 100);
-				if (this.is_logged_in && !top_metrics.find((m) => m.user_id === this.grab_id)) {
-					const own_metric = this.all_metrics.find((m) => m.user_id === this.grab_id);
-					if (own_metric) top_metrics.push(own_metric);
+						// const inverse_power = (1 - Math.pow(1 - t, 0.6)) * weight;
+						// const step = t * t * (3 - 2 * t) * weight;
+						const power = Math.pow(t, 0.6) * weight;
+						// const stepp = t * t * t * (t * (t * 6 - 15) + 10) * weight;
+
+						values[key] = power;
+
+						// values[key] = Math.pow(t, alpha) * weight;
+						// values[key] = t * weight;
+						// values[key] = Math.pow(t, alpha) * weight;
+						// values[key] = Math.sqrt(t) * weight;
+						// values[key] = t * t * (3 - 2 * t) * weight;
+						// values[key] = t * t * t * (t * (t * 6 - 15) + 10) * weight;
+						// values[key] = (Math.log1p(t) / Math.log(2)) * weight;
+						// values[key] = (1 - Math.exp(-alpha * t)) * weight;
+						// values[key] = (1 - Math.pow(1 - t, alpha)) * weight;
+						// values[key] = (t * 0.4 + Math.pow(t, alpha) * 0.6) * weight;
+						// values[key] = (0.2 + 0.8 * Math.pow(t, alpha)) * weight;
+					});
 				}
-				this.top_metrics = top_metrics;
-				this.featured_creators = featured_creators;
-			})();
+				// sort by metric and add positions
+				// -1 for positions for values of 0
+				Object.entries(metrics)
+					.sort((a, b) => b[1][key] - a[1][key])
+					.forEach(([id], i) => {
+						metrics[id]!.positions[key] = metrics[id]![key] == 0 ? -1 : i;
+					});
+			}
+
+			// accumulate scores
+			Object.values(metrics).forEach((values) => {
+				metricKeys.forEach((key) => {
+					values.score += values[key];
+				});
+				if (values.hardest_created_placement !== 0) {
+					values.score += values.hardest_created_placement;
+				}
+			});
+
+			// sort by score
+			const sorted = Object.entries(metrics).sort((a, b) => {
+				return b[1].score - a[1].score;
+			});
+			this.all_metrics = sorted.map((metric, i) => ({
+				user_id: metric[0],
+				user_name: metric[1].username,
+				positions: metric[1].positions,
+				metrics: metric[1],
+				score: metric[1].score,
+				raw: metric[1].raw,
+				position: i + 1,
+			}));
+			// top 100
+			const top_metrics = this.all_metrics.slice(0, 100);
+			if (this.is_logged_in && !top_metrics.find((m) => m.user_id === this.grab_id)) {
+				const own_metric = this.all_metrics.find((m) => m.user_id === this.grab_id);
+				if (own_metric) top_metrics.push(own_metric);
+			}
+			this.top_metrics = top_metrics;
+			this.featured_creators = featured_creators;
 		},
 		query_user() {
-			if (!this.query?.length) return;
+			if (!this.query.length) return;
 
 			if (
 				!this.top_metrics.find(
@@ -330,20 +344,21 @@ export default {
 				else window.toast('Failed to find user');
 			}
 			requestAnimationFrame(() => {
-				this.$refs.players.scrollTo({
-					top: this.$refs.players.scrollHeight,
+				const playersList = this.$refs.players as HTMLElement;
+				playersList.scrollTo({
+					top: playersList.scrollHeight,
 					behavior: 'smooth',
 				});
 			});
 			this.query = '';
 		},
 		async add_level() {
-			if (!this.add_level_id?.length || !this.add_level_position) return;
+			if (!this.add_level_id.length || !this.add_level_position) return;
 
 			let level_id = this.add_level_id;
-			let position = this.add_level_position;
+			const position = parseInt(this.add_level_position) || 0;
 			if (level_id.includes('https')) {
-				level_id = level_id.split('level=')[1];
+				level_id = level_id.split('level=')[1]!;
 			}
 
 			this.add_level_id = '';
@@ -365,12 +380,12 @@ export default {
 			this.hardest_levels = list.sort((a, b) => a.position - b.position);
 		},
 		on_expand() {
-			this.$refs.row.forEach((row) => {
+			(this.$refs.row as (HTMLElement & { expanded: boolean })[]).forEach((row) => {
 				row.expanded = false;
 			});
 		},
 	},
-};
+});
 </script>
 
 <template>

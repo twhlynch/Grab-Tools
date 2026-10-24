@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 import DownloadsMenu from '@/components/DownloadsMenu.vue';
 import GeneralPopup from '@/components/GeneralPopup.vue';
 import VerifyMenu from '@/components/VerifyMenu.vue';
 import { useUserStore } from '@/stores/user';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		GeneralPopup,
 		VerifyMenu,
@@ -34,7 +35,7 @@ export default {
 			this.$emit('update:visible', false);
 		},
 	},
-};
+});
 </script>
 
 <template>

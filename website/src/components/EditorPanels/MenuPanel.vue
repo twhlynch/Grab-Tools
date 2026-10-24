@@ -1,5 +1,5 @@
-<script>
-import { groupNodes, recursiveUngroup } from '@/common/group';
+<script lang="ts">
+import { recursiveUngroup } from '@/common/group';
 import {
 	ambienceSettings,
 	createLevel,
@@ -11,16 +11,35 @@ import {
 import { load } from '@/common/root';
 import {
 	deepClone,
+	format_type,
 	json_parse,
 	materials,
-	node_data,
 	random_material,
 	random_shape,
 	shapes,
 	traverse_node,
 } from '@/common/utils';
-import { animation, animationFrame } from '@/generated/helpers';
+import { FreeControls } from '@/editor/FreeControls';
+import EditorPage from '@/pages/EditorPage.vue';
+import { useConfigStore } from '@/stores/config';
+import audio from '@/tools/audio';
+import BrushTool from '@/tools/brush';
+import car from '@/tools/car';
+import gun from '@/tools/gun';
+import { generate_pixel_art } from '@/tools/image';
+import midi from '@/tools/midi';
+import { monochrome } from '@/tools/monochrome';
+import { obj } from '@/tools/obj';
+import signs from '@/tools/signs';
+import svg from '@/tools/svg';
+import video from '@/tools/video';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
+import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
+	isLevelNodeStatic,
+	levelNodeData,
+	levelNodeHasKey,
+	LevelNodeKey,
 	levelNodeWithCrumbling,
 	levelNodeWithFinish,
 	levelNodeWithGASM,
@@ -38,28 +57,27 @@ import {
 	triggerTargetWithLight,
 	triggerTargetWithSound,
 	triggerTargetWithSubLevel,
-} from '@/generated/nodes';
-import { useConfigStore } from '@/stores/config';
-import audio from '@/tools/audio';
-import BrushTool from '@/tools/brush';
-import car from '@/tools/car';
-import gun from '@/tools/gun';
-import { generate_pixel_art } from '@/tools/image';
-import midi from '@/tools/midi';
-import { monochrome } from '@/tools/monochrome';
-import { obj } from '@/tools/obj';
-import signs from '@/tools/signs';
-import svg from '@/tools/svg';
-import video from '@/tools/video';
+} from '@grab-tools/lib/generated/nodes';
+import {
+	Level,
+	LevelNode,
+	LevelNodeMaterial,
+	LevelNodeShape,
+} from '@grab-tools/lib/generated/proto';
 import { mapActions, mapState } from 'pinia';
 import * as THREE from 'three';
-import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { defineComponent } from 'vue';
 import DropDown from './DropDown.vue';
+import { Input } from './inputs';
+import { Menu } from './menu';
+import ViewportPanel from './ViewportPanel.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		DropDown,
 	},
+	// TODO: apparently can be a typed dict?
 	emits: ['modifier', 'function', 'viewport', 'popup', 'scope'],
 	data() {
 		return {
@@ -86,7 +104,7 @@ export default {
 						glTF: { func: this.save_gltf },
 						'Set Default': { func: this.set_default_level },
 					},
-				},
+				} as unknown as Menu,
 				Insert: {
 					Level: {
 						Level: { func: this.insert_level, file: true },
@@ -126,7 +144,7 @@ export default {
 						MIDI: { func: this.insert_midi },
 						// 'Audio (SFX2GL)': { func: this.insert_audio },
 					},
-				},
+				} as unknown as Menu,
 				Edit: {
 					Tools: {
 						Brush: { func: this.activate_brush },
@@ -150,7 +168,7 @@ export default {
 					Ambience: {
 						Sliders: { func: this.ambience_sliders },
 						'Modded Sliders': {
-							func: () => this.ambience_sliders(true),
+							func: () => this.ambience_sliders?.(true),
 						},
 						Min: { func: this.ambience_min },
 						Max: { func: this.ambience_max },
@@ -171,7 +189,7 @@ export default {
 					// 	'Make Gun (unfinished)': { func: this.make_gun },
 					// 	'Make Car (unfinished)': { func: this.make_car },
 					// },
-				},
+				} as unknown as Menu,
 				Select: {
 					All: { func: this.select_all },
 					Shape: {
@@ -185,10 +203,10 @@ export default {
 								},
 								(_, i) => {
 									return [
-										this.format_type(shapes()[1000 + i]),
+										format_type(shapes()[1000 + i]!),
 										{
 											func: () => {
-												this.select_by_shape(1000 + i);
+												this.select_by_shape?.(1000 + i);
 											},
 										},
 									];
@@ -204,14 +222,14 @@ export default {
 								},
 								(_, i) => {
 									return [
-										this.format_type(materials()[i]),
+										format_type(materials()[i]!),
 										{
 											func: () => {
-												this.select_by_material(i);
+												this.select_by_material?.(i);
 											},
 											num: i,
 										},
-									];
+									] as [string, { func: () => void; num: number }];
 								},
 							).filter((item) => item[1].num !== materials().TRIGGER),
 						),
@@ -227,7 +245,7 @@ export default {
 										load().COD.Level.LevelNode.oneofs.content.oneof[i],
 										{
 											func: () => {
-												this.select_by_type(
+												this.select_by_type?.(
 													load().COD.Level.LevelNode.oneofs.content.oneof[
 														i
 													],
@@ -240,7 +258,7 @@ export default {
 						),
 					},
 					Color: { func: this.select_by_color },
-				},
+				} as unknown as Menu,
 				View: {
 					Teleport: {
 						Start: { func: this.teleport_start },
@@ -266,7 +284,7 @@ export default {
 						'Key Hints': { func: this.toggle_key_hints },
 					},
 					'Copy Camera': { func: this.copy_camera_state },
-				},
+				} as unknown as Menu,
 				Settings: {
 					Login: {
 						href: `https://auth.oculus.com/sso/?organization_id=264907536624075&redirect_uri=${this.$config.PAGE_URL}editor`,
@@ -280,7 +298,7 @@ export default {
 					Experimental: {
 						'Toggle Shadows': { func: this.toggle_shadows },
 					},
-				},
+				} as unknown as Menu,
 				Help: {
 					Tutorial: { href: 'https://youtube.com/@dotindex' },
 					Discord: { href: this.$config.DISCORD_URL },
@@ -296,17 +314,17 @@ export default {
 					[`v${this.$config.VERSION}`]: {
 						href: this.$config.REPO_URL,
 					},
-				},
-			},
+				} as unknown as Menu,
+			} satisfies Record<string, Menu>,
 		};
 	},
 	computed: {
 		...mapState(useConfigStore, ['vim_enabled']),
 	},
 	mounted() {
-		const buttons = document.querySelectorAll('.menu-btn');
+		const buttons = document.querySelectorAll<HTMLButtonElement>('.menu-btn');
 		buttons.forEach((button) => {
-			const file_input = button.querySelector('input[type="file"]');
+			const file_input = button.querySelector<HTMLInputElement>('input[type="file"]');
 			if (file_input) {
 				button.onclick = () => {
 					file_input.click();
@@ -315,85 +333,93 @@ export default {
 		});
 	},
 	methods: {
-		select_by_material(material) {
-			this.$emit('viewport', (scope) => {
+		scope(func: (scope: InstanceType<typeof EditorPage>) => void) {
+			this.$emit('scope', func);
+		},
+		viewport(func: (scope: InstanceType<typeof ViewportPanel>) => void | Promise<void>) {
+			this.$emit('viewport', func);
+		},
+		modifier(func: (level: Level) => Level | Promise<Level>) {
+			this.$emit('modifier', func);
+		},
+		function(func: (level: Level) => void | Promise<void>) {
+			this.$emit('function', func);
+		},
+		popup<F extends (...data: never[]) => void | Promise<void>>(inputs: Input[], func: F) {
+			this.$emit('popup', inputs, func);
+		},
+		select_by_material(material: LevelNodeMaterial) {
+			this.viewport((scope) => {
 				scope.select_by_material(material);
 			});
 		},
-		select_by_shape(shape) {
-			this.$emit('viewport', (scope) => {
+		select_by_shape(shape: LevelNodeShape) {
+			this.viewport((scope) => {
 				scope.select_by_shape(shape);
 			});
 		},
-		select_by_type(type) {
-			this.$emit('viewport', (scope) => {
+		select_by_type(type: LevelNodeKey) {
+			this.viewport((scope) => {
 				scope.select_by_type(type);
 			});
 		},
 		select_by_color() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.select_by_color();
 			});
 		},
 		mirror_x() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.mirror_x();
 			});
 		},
 		mirror_y() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.mirror_y();
 			});
 		},
 		mirror_z() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.mirror_z();
 			});
 		},
 		select_all() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.select_all();
 			});
 		},
-		format_type(type) {
-			// FIXME: duplicate
-			return type
-				.split('_')
-				.map((word) => word.charAt(0).toUpperCase() + word.toLowerCase().slice(1))
-				.join(' ');
-		},
 		load_new_level() {
-			this.$emit('modifier', (_) => {
+			this.modifier((_) => {
 				return createLevel();
 			});
 		},
-		async open_level_file(e) {
-			const files = Array.from(e.target.files);
+		async open_level_file(e: Event) {
+			const files = Array.from((e.target as HTMLInputElement).files ?? []);
 			if (!files.length) return;
 
-			const file = files[0];
+			const file = files[0]!;
 			const json = await decodeLevel(file);
 			if (!json) return;
 
-			this.$emit('modifier', (_) => {
+			this.modifier((_) => {
 				return json;
 			});
 		},
-		async open_json_file(e) {
-			const files = Array.from(e.target.files);
+		async open_json_file(e: Event) {
+			const files = Array.from((e.target as HTMLInputElement).files ?? []);
 			if (!files.length) return;
 
-			const file = files[0];
+			const file = files[0]!;
 			const json = json_parse(await file.text());
 			if (!json) return;
 
-			this.$emit('modifier', (_) => {
+			this.modifier((_) => {
 				return json;
 			});
 		},
 		save_level() {
-			this.$emit('function', async (json) => {
-				const level = await encodeLevel(json);
+			this.function((json) => {
+				const level = encodeLevel(json);
 				if (!level) {
 					window.toast('Invalid level data', 'error');
 					return;
@@ -402,18 +428,18 @@ export default {
 			});
 		},
 		save_json() {
-			this.$emit('function', (json) => {
+			this.function((json) => {
 				downloadJSON(json);
 			});
 		},
 		set_default_level() {
-			this.$emit('function', (json) => {
+			this.function((json) => {
 				const configStore = useConfigStore();
 				configStore.default_level = deepClone(json);
 			});
 		},
 		load_default_level() {
-			this.$emit('modifier', (_) => {
+			this.modifier((_) => {
 				const configStore = useConfigStore();
 				return configStore.default_level
 					? deepClone(configStore.default_level)
@@ -421,19 +447,24 @@ export default {
 			});
 		},
 		open_templates() {
-			this.$emit('scope', (scope) => {
-				scope.$refs.left_panel.size(
-					Math.min(350, scope.$refs.left_panel.$el.getBoundingClientRect().width / 2),
-				);
+			this.scope((scope) => {
+				scope
+					.refs()
+					.left_panel.size(
+						Math.min(
+							350,
+							scope.refs().left_panel.$el.getBoundingClientRect().width / 2,
+						),
+					);
 			});
 		},
 		open_my_levels() {
-			this.$emit('scope', (scope) => {
+			this.scope((scope) => {
 				scope.open_my_levels();
 			});
 		},
 		open_cheat_sheet() {
-			this.$emit('modifier', (_) => {
+			this.modifier((_) => {
 				const modded_shapes = [
 					null,
 					...Object.values(shapes()),
@@ -454,12 +485,12 @@ export default {
 
 				const nodes = [];
 
-				for (let i in modded_shapes) {
-					for (let j in modded_materials) {
+				for (const [i, shape] of modded_shapes.entries()) {
+					for (const [j, material] of modded_materials.entries()) {
 						const node = levelNodeWithStatic();
 						const data = node.levelNodeStatic;
-						data.shape = modded_shapes[i];
-						data.material = modded_materials[j];
+						data.shape = shape as LevelNodeShape;
+						data.material = material as LevelNodeMaterial;
 						data.position = { x: Number(i), z: Number(j) };
 						data.color1 = { r: 1, g: 1, b: 1 };
 						data.color2 = { r: 1, g: 1, b: 1 };
@@ -479,46 +510,48 @@ export default {
 			});
 		},
 		save_gltf() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				const exporter = new GLTFExporter();
 				exporter.parse(
 					scope.scene,
 					(gltf) => {
-						let blob = new Blob([JSON.stringify(gltf)], {
+						const blob = new Blob([JSON.stringify(gltf)], {
 							type: 'text/json',
 						});
-						let link = document.createElement('a');
+						const link = document.createElement('a');
 						link.href = window.URL.createObjectURL(blob);
 						link.download = Date.now().toString().slice(0, -3) + '.gltf';
 						link.click();
 					},
 					(err) => {
-						err.message = 'Failed glTF export: ' + err.message;
-						window.toast(err, 'error');
+						const error = new Error('Failed glTF export: ' + err.message, {
+							cause: err,
+						});
+						window.toast(error, 'error');
 					},
 					{},
 				);
 			});
 		},
-		async insert_level(e) {
-			const files = Array.from(e.target.files);
+		async insert_level(e: Event) {
+			const files = Array.from((e.target as HTMLInputElement).files ?? []);
 			if (!files.length) return;
 
-			const file = files[0];
+			const file = files[0]!;
 			const json = await decodeLevel(file);
-			this.insert_selection_nodes(json?.levelNodes);
+			this.insert_selection_nodes(json?.levelNodes ?? []);
 		},
-		async diff_level(e) {
-			const files = Array.from(e.target.files);
+		async diff_level(e: Event) {
+			const files = Array.from((e.target as HTMLInputElement).files ?? []);
 			if (!files.length) return;
 
-			const file = files[0];
+			const file = files[0]!;
 			const json = await decodeLevel(file);
 			if (!json) return;
 
-			this.$emit('modifier', (level) => {
-				const a_nodes = level.levelNodes;
-				const b_nodes = json.levelNodes;
+			this.modifier((level) => {
+				const a_nodes = (level.levelNodes ??= []);
+				const b_nodes = (json.levelNodes ??= []);
 
 				const changes = [];
 
@@ -533,42 +566,40 @@ export default {
 				return level;
 			});
 		},
-		async insert_json(e) {
-			const files = Array.from(e.target.files);
+		async insert_json(e: Event) {
+			const files = Array.from((e.target as HTMLInputElement).files ?? []);
 			if (!files.length) return;
 
-			const file = files[0];
-			const json = json_parse(await file.text());
-			this.insert_selection_nodes(json?.levelNodes);
+			const file = files[0]!;
+			const json = json_parse<Level>(await file.text());
+			this.insert_selection_nodes(json?.levelNodes ?? []);
 		},
-		insert_selection_nodes(nodes) {
-			if (!nodes) return;
-			this.$emit('viewport', (scope) => {
-				this.$emit('modifier', (json) => {
-					const node_list =
-						scope.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
-						(json.levelNodes ??= []);
+		insert_selection_nodes(nodes: LevelNode[]) {
+			this.viewport((scope) => {
+				this.modifier((json) => {
+					const node_list = !(scope.editing_parent instanceof THREE.Scene)
+						? (scope.editing_parent?.userData.node.levelNodeGroup.childNodes ?? [])
+						: (json.levelNodes ??= []);
 					node_list.push(...nodes);
 					return json;
 				});
 			});
 		},
 		activate_brush() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.activate_tool(new BrushTool());
 			});
 		},
-		async insert_nodes(e) {
-			const files = Array.from(e.target.files);
+		async insert_nodes(e: Event) {
+			const files = Array.from((e.target as HTMLInputElement).files ?? []);
 			if (!files.length) return;
 
-			const file = files[0];
-			const json = json_parse(await file.text());
-			this.insert_selection_nodes(json?.levelNodes ?? json);
+			const file = files[0]!;
+			const json = json_parse<Level | LevelNode[]>(await file.text());
+			this.insert_selection_nodes(Array.isArray(json) ? json : (json?.levelNodes ?? []));
 		},
 		insert_midi() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'file',
@@ -602,18 +633,25 @@ export default {
 						text: 'Speed multiplier (default 1)',
 					},
 				],
-				async (files, instrument, start_active, loop, volume, speedIndex) => {
+				(
+					files: File[],
+					instrument: string,
+					start_active: boolean,
+					loop: boolean,
+					volume: string,
+					speedIndex: string,
+				) => {
 					if (!files.length) {
 						window.toast('No midi file chosen', 'error');
 						return;
 					}
 
-					volume = (parseInt(volume) || 30) / 100;
-					speedIndex = 1 / (parseFloat(speedIndex) || 1);
+					const parsedVolume = (parseInt(volume) || 30) / 100;
+					const parsedSpeedIndex = 1 / (parseFloat(speedIndex) || 1);
 
-					const file = files[0];
+					const file = files[0]!;
 
-					this.$emit('viewport', async (scope) => {
+					this.viewport(async (scope) => {
 						const max_id = scope.level.nodes.all.length;
 
 						const nodes = await midi.midi(
@@ -622,8 +660,8 @@ export default {
 							instrument,
 							start_active,
 							loop,
-							volume,
-							speedIndex,
+							parsedVolume,
+							parsedSpeedIndex,
 						);
 						if (!nodes) return;
 
@@ -633,8 +671,7 @@ export default {
 			);
 		},
 		insert_audio() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'number',
@@ -645,17 +682,17 @@ export default {
 						accept: 'audio/*',
 					},
 				],
-				async (samples, files) => {
+				async (samples: string, files: File[]) => {
 					if (!files.length) {
 						window.toast('No audio file chosen', 'error');
 						return;
 					}
 
-					samples = parseInt(samples) || 40;
+					const parsedSamples = parseInt(samples) || 40;
 
-					const file = files[0];
+					const file = files[0]!;
 
-					const node = await audio.audio(file, samples);
+					const node = await audio.audio(file, parsedSamples);
 					if (!node) return;
 
 					this.insert_selection_nodes([node]);
@@ -663,8 +700,7 @@ export default {
 			);
 		},
 		insert_image() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'number',
@@ -692,25 +728,39 @@ export default {
 						accept: 'image/*',
 					},
 				],
-				async (width, height, mode, shape, greedy, files) => {
+				async (
+					width: string,
+					height: string,
+					mode: 'cubes' | 'particles',
+					shape: 'plane' | 'sphere',
+					greedy: boolean,
+					files: File[],
+				) => {
 					if (!files.length) {
 						window.toast('No image file chosen', 'error');
 						return;
 					}
 
-					const file = files[0];
-					width = parseInt(width) || 50;
-					height = parseInt(height.value) || 50;
+					const file = files[0]!;
+					const parsedWidth = parseInt(width) || 50;
+					const parsedHeight = parseInt(height) || 50;
 
-					const node = await generate_pixel_art(file, width, height, mode, shape, greedy);
+					const node = await generate_pixel_art(
+						file,
+						parsedWidth,
+						parsedHeight,
+						mode,
+						shape,
+						greedy,
+					);
 
 					this.insert_selection_nodes([node]);
 				},
 			);
 		},
 		insert_video() {
-			this.$emit(
-				'popup',
+			this.popup(
+				// TODO: types should be inferred from options
 				[
 					{
 						type: 'number',
@@ -729,29 +779,43 @@ export default {
 						accept: '.mp4',
 					},
 				],
-				async (width, height, mode, files) => {
+				async (
+					width: string,
+					height: string,
+					mode: 'animations' | 'code',
+					files: File[],
+				) => {
 					if (!files.length) {
 						window.toast('No video file chosen', 'error');
 						return;
 					}
 
-					const file = files[0];
-					width = parseInt(width) || 40;
-					height = parseInt(height) || 30;
+					const file = files[0]!;
+					const parsedWidth = parseInt(width) || 40;
+					const parsedHeight = parseInt(height) || 30;
 
-					const { remove, message } = window.toast('Video progress: 0%', 'message', true);
-					const nodes = await video.video(file, width, height, mode, (progress) => {
-						message.value = `Video progress: ${Math.ceil(progress)}%`;
-					});
+					const { remove, message } = window.toast(
+						'Video progress: 0%',
+						'message',
+						true,
+					)!;
+					const nodes = await video.video(
+						file,
+						parsedWidth,
+						parsedHeight,
+						mode,
+						(progress) => {
+							message.value = `Video progress: ${Math.ceil(progress)}%`;
+						},
+					);
 					remove();
 
-					this.insert_selection_nodes(nodes);
+					if (nodes) this.insert_selection_nodes(nodes);
 				},
 			);
 		},
 		insert_model() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'option',
@@ -763,7 +827,7 @@ export default {
 						multiple: true,
 					},
 				],
-				async (mode, files) => {
+				async (mode: 'triangles' | 'particles' | 'spheres', files: File[]) => {
 					if (!files.length) {
 						window.toast('No file chosen', 'error');
 						return;
@@ -783,8 +847,7 @@ export default {
 			);
 		},
 		insert_text() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'textarea',
@@ -795,15 +858,14 @@ export default {
 						options: ['simple', 'animated'],
 					},
 				],
-				async (text, mode) => {
+				(text, mode) => {
 					const nodes = signs.signs(text, mode === 'animated');
 					this.insert_selection_nodes(nodes);
 				},
 			);
 		},
 		insert_svg() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'number',
@@ -814,17 +876,17 @@ export default {
 						accept: '.svg',
 					},
 				],
-				async (detail, files) => {
+				async (detail: string, files: File[]) => {
 					if (!files.length) {
 						window.toast('No file chosen', 'error');
 						return;
 					}
 
-					const file = files[0];
-					detail = parseInt(detail) || 600;
+					const file = files[0]!;
+					const parsedDetail = parseInt(detail) || 600;
 
-					const nodes = await svg.svg(file, detail);
-					this.insert_selection_nodes(nodes);
+					const nodes = await svg.svg(file, parsedDetail);
+					if (nodes) this.insert_selection_nodes(nodes);
 				},
 			);
 		},
@@ -840,13 +902,10 @@ export default {
 		},
 		insert_animated() {
 			const node = levelNodeWithStatic();
-			const anim = animation();
-			anim.frames.push(animationFrame());
-			const frm = animationFrame();
-			frm.time = 1;
-			frm.position.y = 1;
-			anim.frames.push(frm);
-			node.animations.push(anim);
+			const anim = animation({
+				frames: [animationFrame(), animationFrame({ time: 1, position: { y: 1 } })],
+			});
+			(node.animations ??= []).push(anim);
 			this.insert_selection_nodes([node]);
 		},
 		insert_colored() {
@@ -882,59 +941,70 @@ export default {
 			this.insert_selection_nodes([levelNodeWithGASM()]);
 		},
 		insert_colored_lava() {
-			const node = levelNodeWithStatic();
-			node.levelNodeStatic.material = 3;
-			node.levelNodeStatic.color1.r = 1;
-			node.levelNodeStatic.color2.b = 1;
+			const node = levelNodeWithStatic({
+				material: 3,
+				color1: { r: 1 },
+				color2: { b: 1 },
+			});
 			this.insert_selection_nodes([node]);
 		},
 		insert_ambience_trigger() {
-			const node = levelNodeWithTrigger();
-			node.levelNodeTrigger.triggerSources.push(triggerSourceWithBasic());
-			node.levelNodeTrigger.triggerTargets.push(triggerTargetWithAmbience());
-			this.insert_selection_nodes([node]);
+			this.insert_selection_nodes([
+				levelNodeWithTrigger({
+					triggerSources: [triggerSourceWithBasic()],
+					triggerTargets: [triggerTargetWithAmbience()],
+				}),
+			]);
 		},
 		insert_animation_trigger() {
-			const node = levelNodeWithTrigger();
-			node.levelNodeTrigger.triggerSources.push(triggerSourceWithBasic());
-			node.levelNodeTrigger.triggerTargets.push(triggerTargetWithAnimation());
-			this.insert_selection_nodes([node]);
+			this.insert_selection_nodes([
+				levelNodeWithTrigger({
+					triggerSources: [triggerSourceWithBasic()],
+					triggerTargets: [triggerTargetWithAnimation()],
+				}),
+			]);
 		},
 		insert_sound_trigger() {
-			const node = levelNodeWithTrigger();
-			node.levelNodeTrigger.triggerSources.push(triggerSourceWithBasic());
-			node.levelNodeTrigger.triggerTargets.push(triggerTargetWithSound());
-			this.insert_selection_nodes([node]);
+			this.insert_selection_nodes([
+				levelNodeWithTrigger({
+					triggerSources: [triggerSourceWithBasic()],
+					triggerTargets: [triggerTargetWithSound()],
+				}),
+			]);
 		},
 		insert_light_trigger() {
-			const node = levelNodeWithTrigger();
-			node.levelNodeTrigger.triggerSources.push(triggerSourceWithBasic());
-			node.levelNodeTrigger.triggerTargets.push(triggerTargetWithLight());
-			this.insert_selection_nodes([node]);
+			this.insert_selection_nodes([
+				levelNodeWithTrigger({
+					triggerSources: [triggerSourceWithBasic()],
+					triggerTargets: [triggerTargetWithLight()],
+				}),
+			]);
 		},
 		insert_sublevel_trigger() {
-			const node = levelNodeWithTrigger();
-			node.levelNodeTrigger.triggerSources.push(triggerSourceWithBasic());
-			node.levelNodeTrigger.triggerTargets.push(triggerTargetWithSubLevel());
-			this.insert_selection_nodes([node]);
+			this.insert_selection_nodes([
+				levelNodeWithTrigger({
+					triggerSources: [triggerSourceWithBasic()],
+					triggerTargets: [triggerTargetWithSubLevel()],
+				}),
+			]);
 		},
 		teleport_start() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.teleport_start();
 			});
 		},
 		teleport_finish() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.teleport_finish();
 			});
 		},
 		teleport_origin() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.teleport_origin();
 			});
 		},
 		teleport_full() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.teleport_full();
 			});
 		},
@@ -950,9 +1020,9 @@ export default {
 		},
 		pixelate_effect() {
 			this.set_selectable_nodes((nodes) => {
-				if (!nodes?.length) return;
+				if (!nodes.length) return;
 
-				const node = groupNodes([...nodes]);
+				const node = levelNodeGroupFrom({ childNodes: [...nodes] });
 				nodes.length = 0;
 				nodes.push(node);
 
@@ -961,22 +1031,21 @@ export default {
 					y: 900000,
 					z: 900000,
 				};
-				const anim = animation();
-				anim.frames.push(animationFrame());
-				anim.frames[0].position = {
-					x: -900000,
-					y: -900000,
-					z: -900000,
-				};
-				node.animations.push(anim);
+				const anim = animation({
+					frames: [
+						animationFrame({
+							position: { x: -900000, y: -900000, z: -900000 },
+						}),
+					],
+				});
+				(node.animations ??= []).push(anim);
 			});
 		},
 		open_material_convert_menu() {
-			const convertable_materials = Object.values(materials()).filter(
-				(m) => m !== materials().TRIGGER,
-			);
-			this.$emit(
-				'popup',
+			const convertable_materials = Object.values(materials())
+				.filter((m) => m !== materials().TRIGGER)
+				.map(String);
+			this.popup(
 				[
 					{
 						type: 'option',
@@ -987,54 +1056,57 @@ export default {
 						options: ['to', ...convertable_materials],
 					},
 				],
-				async (from, to) => {
+				(from: string, to: string) => {
 					if (from === 'from' || to === 'to') {
 						window.toast('Nothing selected', 'error');
 						return;
 					}
 
-					from = parseInt(from);
-					to = parseInt(to);
+					const parsedFrom = parseInt(from);
+					const parsedTo = parseInt(to);
 
 					this.modify_selectable_nodes((node) => {
-						const data = node_data(node);
-						if (node.levelNodeStatic && (data.material ?? 0) === from)
-							data.material = to;
+						if (!isLevelNodeStatic(node)) return;
+						const data = levelNodeData(node);
+						if ((data.material ?? 0) === parsedFrom) data.material = parsedTo;
 					});
 				},
 			);
 		},
 		open_shape_convert_menu() {
-			this.$emit(
-				'popup',
+			this.popup(
 				[
 					{
 						type: 'option',
 						options: [
 							'from',
-							...Object.values(shapes()).slice(shapes().__END_OF_SPECIAL_PARTS__ + 1),
+							...Object.values(shapes())
+								.slice(shapes().__END_OF_SPECIAL_PARTS__ + 1)
+								.map(String),
 						],
 					},
 					{
 						type: 'option',
 						options: [
 							'to',
-							...Object.values(shapes()).slice(shapes().__END_OF_SPECIAL_PARTS__ + 1),
+							...Object.values(shapes())
+								.slice(shapes().__END_OF_SPECIAL_PARTS__ + 1)
+								.map(String),
 						],
 					},
 				],
-				async (from, to) => {
+				(from: string, to: string) => {
 					if (from === 'from' || to === 'to') {
 						window.toast('Nothing selected', 'error');
 						return;
 					}
 
-					from = parseInt(from);
-					to = parseInt(to);
+					const parsedFrom = parseInt(from);
+					const parsedTo = parseInt(to);
 
 					this.modify_selectable_nodes((node) => {
-						const data = node_data(node);
-						if (data.shape === from) data.shape = to;
+						const data = levelNodeData(node);
+						if ('shape' in data && data.shape === parsedFrom) data.shape = parsedTo;
 					});
 				},
 			);
@@ -1043,23 +1115,23 @@ export default {
 			this.set_vim(!this.vim_enabled);
 		},
 		set_fly_speed() {
-			this.$emit('viewport', (scope) => {
-				if (!scope.controls.movementSpeed) {
+			this.viewport((scope) => {
+				const controls = scope.controls;
+				if (!(controls instanceof FreeControls)) {
 					window.toast('Must be using free move controls', 'warning');
 					return;
 				}
-				this.$emit(
-					'popup',
+				this.popup(
 					[
 						{
 							type: 'range',
 							min: 1,
-							value: scope.controls.movementSpeed,
+							value: controls.movementSpeed,
 							max: 100,
 						},
 					],
-					async (value) => {
-						scope.controls.movementSpeed = value;
+					(value) => {
+						controls.movementSpeed = value;
 					},
 				);
 			});
@@ -1076,7 +1148,7 @@ export default {
 		},
 		group_level() {
 			this.set_selectable_nodes((nodes) => {
-				const node = groupNodes([...nodes]);
+				const node = levelNodeGroupFrom({ childNodes: [...nodes] });
 				nodes.length = 0;
 				nodes.push(node);
 			});
@@ -1105,24 +1177,25 @@ export default {
 		},
 		randomize_shapes() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
-				if (data.shape) {
+				if (levelNodeHasKey(node, 'shape')) {
+					const data = levelNodeData(node);
 					data.shape = random_shape();
 				}
 			});
 		},
 		randomize_positions() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
-				data.position.x = Math.random() - 0.5 + (data.position?.x ?? 0);
-				data.position.y = Math.random() - 0.5 + (data.position?.y ?? 0);
-				data.position.z = Math.random() - 0.5 + (data.position?.z ?? 0);
+				const data = levelNodeData(node);
+				data.position ??= {};
+				data.position.x = Math.random() - 0.5 + (data.position.x ?? 0);
+				data.position.y = Math.random() - 0.5 + (data.position.y ?? 0);
+				data.position.z = Math.random() - 0.5 + (data.position.z ?? 0);
 			});
 		},
 		randomize_rotations() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
-				if (data.rotation) {
+				if (levelNodeHasKey(node, 'rotation')) {
+					const data = levelNodeData(node);
 					const quat = new THREE.Quaternion(
 						Math.random(),
 						Math.random(),
@@ -1130,6 +1203,7 @@ export default {
 						Math.random(),
 					);
 					quat.normalize();
+					data.rotation ??= {};
 					data.rotation.x = quat.x;
 					data.rotation.y = quat.y;
 					data.rotation.z = quat.z;
@@ -1139,23 +1213,28 @@ export default {
 		},
 		randomize_scales() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
-				if (data.scale && typeof data.scale === 'object') {
-					data.scale.x = Math.random() - 0.5 + (data.scale?.x ?? 0);
-					data.scale.y = Math.random() - 0.5 + (data.scale?.y ?? 0);
-					data.scale.z = Math.random() - 0.5 + (data.scale?.z ?? 0);
+				if (levelNodeHasKey(node, 'scale')) {
+					const data = levelNodeData(node);
+					if (typeof data.scale === 'object') {
+						data.scale.x = Math.random() - 0.5 + (data.scale.x ?? 0);
+						data.scale.y = Math.random() - 0.5 + (data.scale.y ?? 0);
+						data.scale.z = Math.random() - 0.5 + (data.scale.z ?? 0);
+					}
+					if (typeof data.scale === 'number') {
+						data.scale = Math.random() - 0.5 + data.scale;
+					}
 				}
-				if (data.scale && typeof data.scale === 'number') {
-					data.scale = Math.random() - 0.5 + data.scale;
-				}
-				if (data.radius) {
-					data.radius = Math.random() - 0.5 + data.radius;
+
+				if (levelNodeHasKey(node, 'radius')) {
+					const data = levelNodeData(node);
+					data.radius = Math.random() - 0.5 + (data.radius ?? 0);
 				}
 			});
 		},
 		randomize_colors() {
 			this.modify_selectable_nodes((node) => {
-				const data = node_data(node);
+				if (!isLevelNodeStatic(node)) return;
+				const data = levelNodeData(node);
 				if (data.color1) {
 					data.color1.r = Math.random();
 					data.color1.g = Math.random();
@@ -1168,12 +1247,12 @@ export default {
 				}
 			});
 		},
-		modify_selectable_nodes(func) {
-			this.$emit('viewport', (scope) => {
-				this.$emit('modifier', (json) => {
-					const node_list =
-						scope.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
-						(json.levelNodes ??= []);
+		modify_selectable_nodes(func: (node: LevelNode) => void) {
+			this.viewport((scope) => {
+				this.modifier((json) => {
+					const node_list = !(scope.editing_parent instanceof THREE.Scene)
+						? (scope.editing_parent?.userData.node.levelNodeGroup.childNodes ?? [])
+						: (json.levelNodes ??= []);
 					node_list.forEach((node) => {
 						traverse_node(node, func);
 					});
@@ -1181,12 +1260,12 @@ export default {
 				});
 			});
 		},
-		set_selectable_nodes(func) {
-			this.$emit('viewport', (scope) => {
-				this.$emit('modifier', async (json) => {
-					const node_list =
-						scope.editing_parent.userData?.node?.levelNodeGroup?.childNodes ??
-						(json.levelNodes ??= []);
+		set_selectable_nodes(func: (nodes: LevelNode[]) => void | Promise<void>) {
+			this.viewport((scope) => {
+				this.modifier(async (json) => {
+					const node_list = !(scope.editing_parent instanceof THREE.Scene)
+						? (scope.editing_parent?.userData.node.levelNodeGroup.childNodes ?? [])
+						: (json.levelNodes ??= []);
 					await func(node_list);
 					console.log(json);
 					return json;
@@ -1194,13 +1273,13 @@ export default {
 			});
 		},
 		ambience_min() {
-			this.$emit('modifier', (json) => {
+			this.modifier((json) => {
 				json.ambienceSettings = ambienceSettings({});
 				return json;
 			});
 		},
 		ambience_max() {
-			this.$emit('modifier', (json) => {
+			this.modifier((json) => {
 				json.ambienceSettings = ambienceSettings(
 					{ r: 1, g: 1, b: 1 },
 					{ r: 1, g: 1, b: 1 },
@@ -1216,7 +1295,7 @@ export default {
 			const random_float = () => {
 				return 2000 * Math.random() - 1000;
 			};
-			this.$emit('modifier', (json) => {
+			this.modifier((json) => {
 				json.ambienceSettings = ambienceSettings(
 					{
 						r: random_float(),
@@ -1237,14 +1316,14 @@ export default {
 			});
 		},
 		ambience_default() {
-			this.$emit('modifier', (json) => {
+			this.modifier((json) => {
 				json.ambienceSettings = ambienceSettings();
 				return json;
 			});
 		},
 		ambience_sliders(modded = false) {
-			this.$emit('modifier', async (json) => {
-				const m_range = (name, min, max, value) => ({
+			this.modifier(async (json) => {
+				const m_range = (name: string, min: number, max: number, value: number) => ({
 					label: name,
 					type: 'range',
 					min: modded ? -1e10 : min,
@@ -1253,24 +1332,23 @@ export default {
 					step: 0.001,
 				});
 
-				const amb = json.ambienceSettings;
-				const hor = amb.skyHorizonColor;
-				const zen = amb.skyZenithColor;
+				const amb = json.ambienceSettings ?? {};
+				const hor = amb.skyHorizonColor ?? {};
+				const zen = amb.skyZenithColor ?? {};
 
 				return await new Promise((resolve) => {
-					this.$emit(
-						'popup',
+					this.popup(
 						[
-							m_range('Fog Density', 0, 1, amb.fogDensity),
-							m_range('Sun Size', 0, 1, amb.sunSize),
-							m_range('Sun Altitude', -90, 90, amb.sunAltitude),
-							m_range('Sun Azimuth', 0, 360, amb.sunAzimuth),
-							m_range('Sky Horizon R', 0, 1, hor.r),
-							m_range('Sky Horizon G', 0, 1, hor.g),
-							m_range('Sky Horizon B', 0, 1, hor.b),
-							m_range('Sky Zenith R', 0, 1, zen.r),
-							m_range('Sky Zenith G', 0, 1, zen.g),
-							m_range('Sky Zenith B', 0, 1, zen.b),
+							m_range('Fog Density', 0, 1, amb.fogDensity ?? 0),
+							m_range('Sun Size', 0, 1, amb.sunSize ?? 0),
+							m_range('Sun Altitude', -90, 90, amb.sunAltitude ?? 0),
+							m_range('Sun Azimuth', 0, 360, amb.sunAzimuth ?? 0),
+							m_range('Sky Horizon R', 0, 1, hor.r ?? 0),
+							m_range('Sky Horizon G', 0, 1, hor.g ?? 0),
+							m_range('Sky Horizon B', 0, 1, hor.b ?? 0),
+							m_range('Sky Zenith R', 0, 1, zen.r ?? 0),
+							m_range('Sky Zenith G', 0, 1, zen.g ?? 0),
+							m_range('Sky Zenith B', 0, 1, zen.b ?? 0),
 						],
 						(
 							fogDensity,
@@ -1308,14 +1386,14 @@ export default {
 			});
 		},
 		toggle_huge_far() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.huge_far = !scope.huge_far;
-				scope.camera.far = scope.huge_far ? 4000000 : 10000;
+				scope.camera.far = (scope.huge_far as boolean) ? 4000000 : 10000;
 				scope.camera.updateProjectionMatrix();
 			});
 		},
 		toggle_triggers() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.show_triggers = !scope.show_triggers;
 				scope.level.nodes.levelNodeTrigger.forEach((node) => {
 					node.visible = scope.show_triggers;
@@ -1323,7 +1401,7 @@ export default {
 			});
 		},
 		toggle_sound() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.show_sound = !scope.show_sound;
 				scope.level.nodes.levelNodeSound.forEach((node) => {
 					node.visible = scope.show_sound;
@@ -1331,7 +1409,7 @@ export default {
 			});
 		},
 		toggle_light() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.show_light = !scope.show_light;
 				scope.level.nodes.levelNodeLight.forEach((node) => {
 					node.visible = scope.show_light;
@@ -1339,52 +1417,52 @@ export default {
 			});
 		},
 		toggle_fog() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.show_fog = !scope.show_fog;
 				scope.level.nodes.all.forEach((node) => {
 					if (node.material?.uniforms?.fogEnabled) {
-						node.material.uniforms.fogEnabled.value = scope.show_fog;
+						node.material.uniforms.fogEnabled.value = Number(scope.show_fog);
 					}
 				});
 			});
 		},
 		toggle_sky() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.toggle_sky();
 			});
 		},
 		toggle_trigger_connections() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.toggle_trigger_connections();
 			});
 		},
 		toggle_gasm_connections() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.toggle_gasm_connections();
 			});
 		},
 		toggle_groups() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.toggle_groups();
 			});
 		},
 		toggle_animations() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.toggle_animations();
 			});
 		},
 		toggle_shadows() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.toggle_shadows();
 			});
 		},
 		save_config() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.save_config();
 			});
 		},
 		copy_camera_state() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.copy_camera_state();
 			});
 		},
@@ -1393,23 +1471,23 @@ export default {
 			configStore.$reset();
 		},
 		show_keybinds() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.show_keybinds = true;
 			});
 		},
 		toggle_key_hints() {
-			this.$emit('viewport', (scope) => {
+			this.viewport((scope) => {
 				scope.show_key_hints = !scope.show_key_hints;
 			});
 		},
 		edit_protobuf() {
-			this.$emit('scope', (scope) => {
+			this.scope((scope) => {
 				scope.open_protobuf();
 			});
 		},
 		...mapActions(useConfigStore, ['set_vim']),
 	},
-};
+});
 </script>
 
 <template>

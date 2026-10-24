@@ -1,13 +1,13 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { animation, animationFrame } from '@/generated/helpers';
+import { animation, animationFrame } from '@grab-tools/lib/generated/helpers';
 import {
+	LevelNodeWith,
 	levelNodeWithSound,
 	levelNodeWithStatic,
 	levelNodeWithTrigger,
 	triggerSourceWithBasic,
 	triggerTargetWithAnimation,
 	triggerTargetWithSound,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNode,
 	LevelNodeSound,
@@ -19,7 +19,7 @@ import {
 	TriggerTargetMode,
 	TriggerTargetSoundMode,
 	Vector,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import { Midi, Track } from '@tonejs/midi';
 import { Drum, get_instrument, Instrument } from './instrument_map';
 
@@ -379,8 +379,7 @@ function split_overlapping_notes(initial_track: NoteData[]) {
 
 	let splitted_index = 0;
 
-	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-	while (true) {
+	for (;;) {
 		const origin: NoteData[] = [];
 		const splitted: NoteData[] = [];
 		let i = 0;

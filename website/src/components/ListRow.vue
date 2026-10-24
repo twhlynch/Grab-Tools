@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
 import { useUserStore } from '@/stores/user';
 import { mapState } from 'pinia';
+import { defineComponent, PropType } from 'vue';
+import { Metric, MetricKey } from '../pages/metrics';
 
-export default {
+export default defineComponent({
 	props: {
-		position: Number,
-		user_id: String,
-		user_name: String,
-		positions: Object,
-		metrics: Object,
-		score: Number,
-		raw: Object,
-		weights: Object,
+		position: { type: Number, required: true },
+		user_id: { type: String, required: true },
+		user_name: { type: String, required: true },
+		positions: { type: Object as PropType<Record<MetricKey, number>>, required: true },
+		metrics: { type: Object as PropType<Metric>, required: true },
+		score: { type: Number, required: true },
+		raw: { type: Object as PropType<Record<MetricKey, number>>, required: true },
+		weights: { type: Object as PropType<Record<MetricKey, number>>, required: true },
 	},
 	emits: ['expand'],
 	data() {
@@ -38,27 +40,27 @@ export default {
 		},
 	},
 	methods: {
-		getSuffix(number) {
+		getSuffix(number: number) {
 			const suffixes = ['th', 'st', 'nd', 'rd'];
 			if (number >= 11 && number <= 19) return 'th';
 			const lastDigit = Math.abs(number) % 10;
 			return suffixes[lastDigit < 4 ? lastDigit : 0];
 		},
-		user_url(user_id) {
+		user_url(user_id: string) {
 			return this.$config.GRAB_USER_URL + user_id;
 		},
-		metric_bar_class(position) {
+		metric_bar_class(position: number) {
 			const classes = [];
 			classes.push('metric-bar-fill');
 			if (position === 0) classes.push('metric-bar-first');
 			return classes.join(' ');
 		},
-		format_score(score) {
+		format_score(score: number) {
 			return String(Math.round(score * 100) / 100)
 				.padEnd(2, '.')
 				.padEnd(4, '0');
 		},
-		format_position(position) {
+		format_position(position: number) {
 			return position == -1 ? 'N/a' : `${position + 1}${this.getSuffix(position + 1)}`;
 		},
 		expand() {
@@ -66,7 +68,7 @@ export default {
 			this.expanded = true;
 		},
 	},
-};
+});
 </script>
 <template>
 	<div :class="['leaderboard-item', 'list-item', user_class]" @click="expand">

@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 import AssemblyEditor from '@/components/AssemblyEditor.vue';
 import DropDown from '@/components/EditorPanels/DropDown.vue';
 import ResizableColPanel from '@/components/EditorPanels/ResizableColPanel.vue';
 import { GASMEditor, OutputEditor } from '@/editor/GASMEditor';
 import { useConfigStore } from '@/stores/config';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		DropDown,
 		AssemblyEditor,
@@ -18,19 +19,19 @@ export default {
 			editors: [GASMEditor],
 			menu: {
 				Edit: {
-					Copy: { func: () => this.copy() },
-					Paste: { func: () => this.paste() },
+					Copy: { func: () => this.copy!() },
+					Paste: { func: () => this.paste!() },
 					// FIXME: i dont know why these broke
 					// Undo: { func: () => this.undo() },
 					// Redo: { func: () => this.redo() },
-					Clear: { func: () => this.clear() },
+					Clear: { func: () => this.clear!() },
 				},
 				Samples: {
 					'Get Player By Name': {
-						func: () => this.sample('get_player_by_name'),
+						func: () => this.sample!('get_player_by_name'),
 					},
 					'Write Text On Sign': {
-						func: () => this.sample('write_text_on_sign'),
+						func: () => this.sample!('write_text_on_sign'),
 					},
 				},
 			},
@@ -40,7 +41,7 @@ export default {
 		document.title = 'GASM Editor | GRAB Tools';
 
 		this.active_tab = useConfigStore().active_gasm_tab;
-		this.$nextTick(function () {
+		void this.$nextTick(function () {
 			this.changed();
 		});
 	},
@@ -49,7 +50,7 @@ export default {
 		OutputEditor,
 
 		editor() {
-			return this.$refs.editors[this.active_tab];
+			return (this.$refs.editors as InstanceType<typeof AssemblyEditor>[])[this.active_tab]!;
 		},
 
 		copy() {
@@ -71,25 +72,27 @@ export default {
 			this.editor().set('');
 		},
 		copyOutput() {
-			this.$refs.outputEditor.copy();
+			(this.$refs.outputEditor as InstanceType<typeof AssemblyEditor>).copy();
 		},
-		async sample(name) {
+		async sample(name: string) {
 			try {
 				const res = await fetch(`/gasm/${name}.asm`);
 				const asm = await res.text();
 				this.editor().set(asm);
 			} catch (e) {
-				e.message = 'Failed to load asm: ' + e.message;
-				window.toast(e, 'error');
+				if (e instanceof Error) {
+					e.message = 'Failed to load asm: ' + e.message;
+					window.toast(e, 'error');
+				}
 			}
 		},
-		switch_page(number) {
+		switch_page(number: number) {
 			if (number === this.active_tab) return;
 			this.active_tab = number;
 			this.changed();
 		},
-		set_output(text) {
-			this.$refs.outputEditor.set(text);
+		set_output(text: string) {
+			(this.$refs.outputEditor as InstanceType<typeof AssemblyEditor>).set(text);
 		},
 		changed() {
 			this.error = true;
@@ -101,7 +104,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

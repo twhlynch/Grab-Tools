@@ -1,58 +1,67 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<script>
+<script lang="ts">
+import { Severity } from '@/types/overrides';
 import { captureException, captureMessage } from '@sentry/vue';
-import { reactive } from 'vue';
+import { defineComponent, Reactive, reactive } from 'vue';
 
-export default {
+export interface Message {
+	value: string;
+	error: Error | null;
+	id: number;
+	severity: Severity;
+}
+
+export default defineComponent({
 	data() {
 		return {
-			messages: [],
+			messages: [] as Reactive<Message>[],
 		};
 	},
 
 	created() {
 		console.log('Cooking toast...');
-		if (window.toast === undefined) {
-			window.toast = (msg, severity = 'message', persistent = false) => {
-				const is_error = msg instanceof Error;
-				const message = reactive({
-					value: is_error ? msg.message : msg,
-					error: is_error ? msg : null,
-					id: Date.now() + Math.random(),
-					severity: severity,
-				});
+		(window.toast as typeof window.toast | undefined) ??= (
+			msg,
+			severity = 'message',
+			persistent = false,
+		) => {
+			const is_error = msg instanceof Error;
+			const message = reactive({
+				value: is_error ? msg.message : msg,
+				error: is_error ? msg : null,
+				id: Date.now() + Math.random(),
+				severity: severity,
+			});
 
-				this.messages.push(message);
-				console.log(message.value);
-				console.log(message.error);
+			this.messages.push(message);
+			console.log(message.value);
+			console.log(message.error);
 
-				const remove = () => {
-					this.messages = this.messages.filter((m) => m.id !== message.id);
-				};
-
-				if (persistent) {
-					return { remove, message };
-				} else {
-					setTimeout(remove, 5000);
-				}
+			const remove = () => {
+				this.messages = this.messages.filter((m) => m.id !== message.id);
 			};
-		}
+
+			if (persistent) {
+				return { remove, message };
+			} else {
+				setTimeout(remove, 5000);
+			}
+		};
 	},
 
 	methods: {
-		async copyMessage(message) {
+		async copyMessage(message: Message) {
 			await navigator.clipboard.writeText(message.value);
 
 			if (message.severity.startsWith('err')) {
 				if (message.error) {
 					captureException(message.error);
 				} else {
-					captureMessage(new Error(message.value));
+					captureMessage(message.value);
 				}
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

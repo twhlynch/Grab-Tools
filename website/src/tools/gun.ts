@@ -1,19 +1,20 @@
-import { create_connection } from '@/common/connections';
-import { groupNodes } from '@/common/group';
-import { deepClone, node_data, traverse_node } from '@/common/utils';
+import { deepClone, traverse_node } from '@/common/utils';
 import { asm_to_json } from '@/editor/AssemblyConversion';
+import { create_connection } from '@grab-tools/lib/common/connections';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
 import {
+	levelNodeData,
 	levelNodeWithGASM,
 	levelNodeWithTrigger,
 	triggerSourceWithBasic,
 	triggerTargetWithGASM,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNode,
 	LevelNodeShape,
 	TriggerSourceBasicType,
 	TriggerTargetGASMMode,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 async function makeGun(nodes: LevelNode[]) {
 	if (nodes.length !== 2) {
@@ -57,7 +58,7 @@ async function makeGun(nodes: LevelNode[]) {
 	const code_id = start_id + 4;
 
 	// group gun with trigger
-	const gun_position = deepClone(node_data(gun_node).position);
+	const gun_position = deepClone(levelNodeData(gun_node).position);
 	const trigger_node = levelNodeWithTrigger({
 		shape: LevelNodeShape.SPHERE,
 		scale: { x: 2, y: 2, z: 2 },
@@ -75,12 +76,14 @@ async function makeGun(nodes: LevelNode[]) {
 		],
 	});
 
-	const group_node = groupNodes([gun_node, trigger_node]);
+	const group_node = levelNodeGroupFrom({
+		childNodes: [gun_node, trigger_node],
+	});
 	group_node.levelNodeGroup.physicsObject = true;
 	group_node.levelNodeGroup.position = gun_position;
 
-	node_data(gun_node).position = { x: 0, y: 0, z: 0 };
-	node_data(bullet_node).position = { x: 0, y: 0, z: 0 };
+	levelNodeData(gun_node).position = { x: 0, y: 0, z: 0 };
+	levelNodeData(bullet_node).position = { x: 0, y: 0, z: 0 };
 
 	// create code block
 	const code_node = levelNodeWithGASM();

@@ -26,7 +26,7 @@ async function stats_data_request<T>(key: string): Promise<T | null> {
 			return null;
 		}
 
-		cache[key] = await response.json();
+		cache[key] = (await response.json()) as Promise<unknown>;
 		return cache[key] as T;
 	} catch {
 		window.toast(`Error: Failed to load ${key} stats`, 'error');

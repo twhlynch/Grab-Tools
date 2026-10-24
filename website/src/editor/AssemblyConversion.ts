@@ -1,6 +1,6 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { SPECIAL_REGISTERS } from '@/common/registers';
 import { load } from '@/common/root';
+import { SPECIAL_REGISTERS } from '@grab-tools/lib/common/registers';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
 import {
 	InstructionData,
 	InstructionDataType,
@@ -8,7 +8,7 @@ import {
 	LevelNodeGASMConnection,
 	OperandData,
 	ProgramData,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 const instruction_map = load().COD.Level.InstructionData.Type;
 const operand_map = load().COD.Level.OperandData.Type;
@@ -606,7 +606,7 @@ function instruction_asm_to_json(
 
 function operand_asm_to_json(
 	operand: string,
-	instruction: number,
+	instruction: InstructionDataType,
 	index: number,
 	node: SafeNode,
 ): OperandData | undefined {
@@ -756,5 +756,5 @@ function dirty_instruction(name: string): string {
 	return `In${name.charAt(0)}${name
 		.toLowerCase()
 		.slice(1)
-		.replace(/_(.)/g, (_, c) => c.toUpperCase())}`;
+		.replace(/_(.)/g, (_, c: string) => c.toUpperCase())}`;
 }

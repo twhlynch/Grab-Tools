@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 import Bookmarklet from '@/components/Bookmarklet.vue';
 import DiscordAltIcon from '@/icons/DiscordAltIcon.vue';
 import GHLLogoIcon from '@/icons/GHLLogoIcon.vue';
 import GithubIcon from '@/icons/GithubIcon.vue';
 import MailIcon from '@/icons/MailIcon.vue';
 import YoutubeIcon from '@/icons/YoutubeIcon.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		Bookmarklet,
 		GHLLogoIcon,
@@ -18,7 +19,7 @@ export default {
 	created() {
 		document.title = 'GRAB Tools';
 	},
-};
+});
 </script>
 
 <template>

@@ -1,8 +1,9 @@
 <script lang="ts">
-import { PropType } from 'vue';
-import DropDown, { Menu } from './DropDown.vue';
+import { defineComponent, PropType } from 'vue';
+import DropDown from './DropDown.vue';
+import { Menu } from './menu';
 
-export default {
+export default defineComponent({
 	components: {
 		DropDown,
 	},
@@ -18,7 +19,7 @@ export default {
 			this.$emit('close');
 		},
 	},
-};
+});
 </script>
 
 <template>

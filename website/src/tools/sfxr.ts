@@ -1,4 +1,4 @@
-import { SoundGeneratorParameters } from '@/generated/proto';
+import { SoundGeneratorParameters } from '@grab-tools/lib/generated/proto';
 import { sfxr } from 'jsfxr';
 
 // missing some keys:
@@ -85,7 +85,7 @@ export function play_sound(params: SoundGeneratorParameters) {
 		sample_size: 8,
 	};
 
-	for (const [key, value] of Object.entries(params)) {
+	for (const [key, value] of Object.entries(params) as [string, number][]) {
 		const sfxr_key = PARAM_MAP[key];
 		if (sfxr_key)
 			sfxr_params[sfxr_key] = CONVERSION_MAP[sfxr_key]?.(value) ?? value;

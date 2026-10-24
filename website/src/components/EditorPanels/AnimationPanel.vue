@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
+import { LevelData } from '@/editor/LevelLoader';
 import PauseIcon from '@/icons/PauseIcon.vue';
 import PlayIcon from '@/icons/PlayIcon.vue';
+import { defineComponent } from 'vue';
+import ViewportPanel from './ViewportPanel.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		PlayIcon,
 		PauseIcon,
@@ -18,15 +21,15 @@ export default {
 		};
 	},
 	methods: {
-		scope(func) {
+		scope(func: (scope: InstanceType<typeof ViewportPanel>) => void) {
 			this.$emit('scope', func);
 		},
-		set_level(level) {
+		set_level(level: LevelData) {
 			const animation_times = level.nodes.animated.map((object) => {
-				const animation = object?.userData?.node?.animations?.[0];
+				const animation = object.userData.node.animations?.[0];
 				const frames = animation?.frames;
-				if (frames?.length) {
-					const last_time = frames[frames.length - 1].time ?? 0;
+				if (animation && frames?.length) {
+					const last_time = frames[frames.length - 1]!.time ?? 0;
 					const speed = animation.speed ?? 0;
 					return last_time * speed;
 				}
@@ -36,7 +39,7 @@ export default {
 
 			this.max = Math.max(0, ...animation_times);
 		},
-		set_time(time) {
+		set_time(time: number) {
 			if (!this.dragging) {
 				this.time = time % this.max;
 			}
@@ -44,14 +47,15 @@ export default {
 		toggle() {
 			this.playing = !this.playing;
 			this.scope((scope) => {
-				if (!this.is_animating && this.playing && scope.gizmo) {
-					scope.gizmo.clear(scope.editing_parent);
+				// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+				if (scope.is_animating && this.playing) {
+					scope.gizmo.clear();
 				}
 				scope.is_animating = this.playing;
 			});
 		},
-		change(e) {
-			this.time = parseFloat(e.target.value);
+		change(e: InputEvent) {
+			this.time = parseFloat((e.target as HTMLInputElement).value);
 			this.scope((scope) => {
 				scope.set_time(this.time);
 			});
@@ -70,7 +74,7 @@ export default {
 			});
 		},
 	},
-};
+});
 </script>
 
 <template>

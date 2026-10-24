@@ -1,9 +1,11 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	created() {
 		document.title = 'Something went wrong';
 	},
-};
+});
 </script>
 
 <template>

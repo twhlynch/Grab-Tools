@@ -1,19 +1,28 @@
-<script>
+<script lang="ts">
 import build_editor from '@/editor/EditorSetup';
 import { foldGutter, StreamLanguage } from '@codemirror/language';
 import { protobuf } from '@codemirror/legacy-modes/mode/protobuf';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection } from '@codemirror/state';
+import { EditorView } from 'codemirror';
+import { defineComponent, markRaw } from 'vue';
 
-export default {
+export default defineComponent({
 	emits: ['set', 'close'],
+	data() {
+		return {
+			view: null! as EditorView,
+		};
+	},
 	mounted() {
-		this.view = build_editor(
-			this.$refs.code_container,
-			'',
-			StreamLanguage.define(protobuf),
-			[foldGutter(), highlightSelectionMatches()],
-			[...searchKeymap],
+		this.view = markRaw(
+			build_editor(
+				this.$refs.code_container as HTMLElement,
+				'',
+				StreamLanguage.define(protobuf),
+				[foldGutter(), highlightSelectionMatches()],
+				[...searchKeymap],
+			),
 		);
 	},
 	methods: {
@@ -23,7 +32,7 @@ export default {
 		close() {
 			this.$emit('close');
 		},
-		set(proto) {
+		set(proto: string) {
 			this.view.dispatch({
 				changes: {
 					from: 0,
@@ -32,7 +41,7 @@ export default {
 				},
 			});
 		},
-		click(e) {
+		click(e: Event) {
 			if (e.target === this.$refs.code_container) {
 				this.view.focus();
 				this.view.dispatch({
@@ -42,7 +51,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

@@ -1,33 +1,31 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<script>
+<script lang="ts">
 import KeyHint from '@/components/EditorPanels/KeyHint.vue';
 import { captureException } from '@sentry/vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		KeyHint,
 	},
 	data() {
 		return {
-			message: undefined,
+			message: undefined as string | undefined,
 			show_technicals: false,
 		};
 	},
 
 	created() {
 		console.log('Freaking out...');
-		if (window.panic === undefined) {
-			window.panic = (error) => {
-				error.message = 'PANIC: ' + error.message;
-				captureException(error);
-				this.message = error.message;
-			};
-		}
+		(window.panic as typeof window.panic | undefined) ??= (error) => {
+			error.message = 'PANIC: ' + error.message;
+			captureException(error);
+			this.message = error.message;
+		};
 	},
 
 	methods: {
 		async copy() {
-			await navigator.clipboard.writeText(this.message);
+			if (this.message) await navigator.clipboard.writeText(this.message);
 		},
 		close() {
 			this.message = undefined;
@@ -36,7 +34,7 @@ export default {
 			this.show_technicals = !this.show_technicals;
 		},
 	},
-};
+});
 </script>
 
 <template>

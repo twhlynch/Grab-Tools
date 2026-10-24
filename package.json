@@ -1,6 +1,6 @@
 {
 	"name": "@grab-tools",
-	"version": "0.26.0",
+	"version": "0.27.0",
 	"private": true,
 	"type": "module",
 	"packageManager": "pnpm@11.25.0",
@@ -15,9 +15,9 @@
 		"format:check": "prettier --check .",
 		"check": "pnpm typecheck && pnpm lint && pnpm format",
 		"tauri": "pnpm --filter @grab-tools/website tauri",
-		"proto": "pnpm exec pbts -i website/src/assets/proto/proto.proto -o website/src/generated/proto.ts && echo 'You will have to manually clean up the file as it may have errors'",
-		"helpers": "jiti scripts/generate-helpers.ts && pnpm exec prettier --write website/src/generated/helpers.ts",
-		"nodes": "jiti scripts/generate-node-helpers.ts && pnpm exec prettier --write website/src/generated/nodes.ts"
+		"proto": "pnpm exec pbts -i website/src/assets/proto/proto.proto -o lib/src/generated/proto.ts && echo 'You will have to manually clean up the file as it may have errors'",
+		"helpers": "jiti scripts/generate-helpers.ts && pnpm exec prettier --write lib/src/generated/helpers.ts",
+		"nodes": "jiti scripts/generate-node-helpers.ts && pnpm exec prettier --write lib/src/generated/nodes.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

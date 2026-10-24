@@ -1,7 +1,7 @@
 import {
 	SoundGeneratorParameters,
 	SoundGeneratorParametersWaveType,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 export interface Instrument {
 	name: string;

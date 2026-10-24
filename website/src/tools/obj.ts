@@ -1,9 +1,13 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { animation, animationFrame, color } from '@/generated/helpers';
 import {
+	animation,
+	animationFrame,
+	color,
+} from '@grab-tools/lib/generated/helpers';
+import {
+	LevelNodeWith,
 	levelNodeWithParticleEmitter,
 	levelNodeWithStatic,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Color,
 	LevelNode,
@@ -11,7 +15,7 @@ import {
 	LevelNodeParticleEmitter,
 	LevelNodeShape,
 	LevelNodeStatic,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import * as THREE from 'three';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import {

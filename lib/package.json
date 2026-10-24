@@ -1,0 +1,12 @@
+{
+	"name": "@grab-tools/lib",
+	"version": "0.27.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		"./*": "./src/*"
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit"
+	}
+}

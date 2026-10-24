@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import LeaderboardCard from '@/components/LeaderboardCard.vue';
 import ProgressBar from '@/components/ProgressBar.vue';
 import StatsLoader from '@/editor/StatsLoader';
@@ -32,9 +32,23 @@ import UserIcon from '@/icons/UserIcon.vue';
 import WarningIcon from '@/icons/WarningIcon.vue';
 import WrenchIcon from '@/icons/WrenchIcon.vue';
 import { useUserStore } from '@/stores/user';
+import { CustomLevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
+import { Component, defineComponent, markRaw } from 'vue';
 
-export default {
+interface List {
+	icon?: Component;
+	name: string;
+	generator: () => Promise<(CustomLevelDetails & { value: string; extra: string })[] | void>;
+}
+
+interface Section {
+	icon: Component;
+	name: string;
+	lists: List[];
+}
+
+export default defineComponent({
 	components: {
 		UserIcon,
 		FireIcon,
@@ -71,7 +85,7 @@ export default {
 	data() {
 		return {
 			// prettier-ignore
-			sections: [
+			sections: markRaw([
 				{
 					icon: PersonIcon, name: 'Personalised',
 					lists: [
@@ -181,12 +195,12 @@ export default {
 						{ icon: PeopleIcon, name: 'Creators', generator: StatsLoader.get_most_tipped_creators },
 					],
 				},
-			],
-			current_section: undefined,
-			current_list: undefined,
-			current_tab: undefined,
+			] as Section[]),
+			current_section: null as Section | null,
+			current_list: null as List | null,
+			current_tab: null as string | null,
 			progress: 0,
-			current_data: [],
+			current_data: [] as (CustomLevelDetails & { value: string; extra: string })[],
 		};
 	},
 	computed: {
@@ -195,14 +209,14 @@ export default {
 	created() {
 		document.title = 'Stats | GRAB Tools';
 	},
-	mounted() {
+	async mounted() {
 		const params = new URLSearchParams(window.location.search);
 		const tab = params.get('tab');
 		const filter = params.get('filter');
-		this.set_tab(tab, filter);
+		await this.set_tab(tab, filter);
 	},
 	methods: {
-		async set_tab(tab, filter = null) {
+		async set_tab(tab: string | null, filter: string | null) {
 			if (!tab || (tab === this.current_tab && !filter)) return;
 
 			const params = new URLSearchParams(window.location.search);
@@ -211,21 +225,21 @@ export default {
 			if (filter) params.set('filter', filter);
 			window.history.replaceState({}, '', `${location.pathname}?${params}`);
 			this.current_tab = tab;
-			this.current_section = this.sections.find((section) => section.name === tab);
+			this.current_section = this.sections.find((section) => section.name === tab)!;
 			if (filter) {
-				this.current_list = this.current_section.lists.find((list) => list.name === filter);
+				this.current_list = this.current_section.lists.find(
+					(list) => list.name === filter,
+				)!;
 			} else {
-				this.current_list = this.current_section.lists[0];
+				this.current_list = this.current_section.lists[0]!;
 			}
 
 			this.current_data = [];
-			if (this.current_list?.generator) {
-				this.current_data = (await this.current_list.generator()) ?? [];
-				console.log(this.current_data);
-			}
+			this.current_data = (await this.current_list.generator()) ?? [];
+			console.log(this.current_data);
 		},
 	},
-};
+});
 </script>
 
 <template>
@@ -249,7 +263,7 @@ export default {
 				"
 				@click="
 					() => {
-						set_tab(section.name);
+						set_tab(section.name, null);
 					}
 				"
 			>

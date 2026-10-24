@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 import { downloadLevel } from '@/common/levels';
 import { useUserStore } from '@/stores/user';
 import downloads from '@/tools/downloads';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	computed: {
 		...mapState(useUserStore, ['is_logged_in', 'user_name']),
 	},
@@ -13,16 +14,20 @@ export default {
 		const level_ids = url_params.get('level');
 		if (!level_ids) return;
 
-		level_ids.split(' ').forEach(async (level_id) => {
+		async function download_level(level_id: string): Promise<void> {
 			const level = await downloads.try_download_level(level_id);
 			if (level === null) return;
 			downloadLevel(level, level_id);
+		}
+
+		level_ids.split(' ').forEach((level_id) => {
+			void download_level(level_id);
 		});
 	},
 	created() {
 		document.title = 'Download | GRAB Tools';
 	},
-};
+});
 </script>
 
 <template>

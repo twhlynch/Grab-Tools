@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
 import IdnexCookieIcon from '@/icons/IdnexCookieIcon.vue';
 import { useCookiesStore } from '@/stores/cookies';
 import { mapActions, mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		IdnexCookieIcon,
 	},
@@ -31,12 +32,12 @@ export default {
 			document.head.appendChild(script);
 
 			script.onload = () => {
-				window.dataLayer = window.dataLayer || [];
-				function gtag() {
-					window.dataLayer.push(arguments);
+				window.dataLayer = window.dataLayer ?? [];
+				function gtag(..._: unknown[]) {
+					// eslint-disable-next-line prefer-rest-params
+					(window.dataLayer ??= []).push(arguments);
 				}
 				gtag('js', new Date());
-
 				gtag('config', this.$config.GOOGLE_TAG_ID);
 			};
 		},
@@ -56,7 +57,7 @@ export default {
 
 		...mapActions(useCookiesStore, ['set_allow_cookies']),
 	},
-};
+});
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import build_editor from '@/editor/EditorSetup';
 import { grabCompletion } from '@/editor/grabCompletion';
 import { redo, undo } from '@codemirror/commands';
@@ -6,51 +6,58 @@ import { json } from '@codemirror/lang-json';
 import { foldGutter } from '@codemirror/language';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { EditorSelection } from '@codemirror/state';
+import { EditorView } from 'codemirror';
+import { defineComponent, markRaw } from 'vue';
 
-export default {
+export default defineComponent({
 	props: {
 		mini: Boolean,
 	},
 	emits: ['changed'],
 	data() {
 		return {
+			view: null! as EditorView,
 			json: {},
 			ignore_change: false,
-			error: null,
+			error: null as null | string,
 		};
 	},
 	mounted() {
-		this.view = build_editor(
-			this.$refs.json_container,
-			JSON.stringify(this.json, null, 4),
-			json(),
-			[foldGutter(), highlightSelectionMatches(), ...grabCompletion()],
-			[...searchKeymap],
-			(update) => {
-				if (update.docChanged && !this.ignore_change) {
-					const new_json = this.view.state.doc.toString();
-					let new_object = undefined;
-					this.error = null;
-					try {
-						new_object = JSON.parse(new_json);
-					} catch (e) {
-						this.error = e.message;
+		this.view = markRaw(
+			build_editor(
+				this.$refs.json_container as HTMLElement,
+				JSON.stringify(this.json, null, 4),
+				json(),
+				[foldGutter(), highlightSelectionMatches(), ...grabCompletion()],
+				[...searchKeymap],
+				(update) => {
+					if (update.docChanged && !this.ignore_change) {
+						const new_json = this.view.state.doc.toString();
+						let new_object: object | undefined = undefined;
+						this.error = null;
+						try {
+							new_object = JSON.parse(new_json) as object;
+						} catch (e) {
+							if (e instanceof Error) {
+								this.error = e.message;
+							}
+						}
+						if (
+							new_object !== undefined &&
+							this.error === null &&
+							JSON.stringify(this.json) !== JSON.stringify(new_object)
+						) {
+							this.$emit('changed', new_object);
+							this.json = markRaw(new_object);
+						}
 					}
-					if (
-						new_object !== undefined &&
-						this.error === null &&
-						JSON.stringify(this.json) !== JSON.stringify(new_object)
-					) {
-						this.$emit('changed', new_object);
-						this.json = new_object;
-					}
-				}
-			},
+				},
+			),
 		);
 	},
 	methods: {
-		set_json(data) {
-			this.json = data;
+		set_json(data: object) {
+			this.json = markRaw(data);
 			this.ignore_change = true;
 			this.view.dispatch({
 				changes: {
@@ -61,7 +68,7 @@ export default {
 			});
 			this.ignore_change = false;
 		},
-		click(e) {
+		click(e: MouseEvent) {
 			if (e.target === this.$refs.json_container) {
 				this.view.focus();
 				this.view.dispatch({
@@ -71,13 +78,13 @@ export default {
 			}
 		},
 		undo() {
-			undo(this.view);
+			undo(this.view as EditorView);
 		},
 		redo() {
-			redo(this.view);
+			redo(this.view as EditorView);
 		},
 	},
-};
+});
 </script>
 
 <template>

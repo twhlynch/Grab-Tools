@@ -1,17 +1,18 @@
-import { create_connection } from '@/common/connections';
-import { groupNodes } from '@/common/group';
-import { deepClone, node_data, traverse_node } from '@/common/utils';
+import { deepClone, traverse_node } from '@/common/utils';
 import { asm_to_json } from '@/editor/AssemblyConversion';
+import { create_connection } from '@grab-tools/lib/common/connections';
+import { levelNodeGroupFrom } from '@grab-tools/lib/common/group';
 import {
+	levelNodeData,
 	levelNodeWithGASM,
 	levelNodeWithTrigger,
 	triggerSourceWithBasic,
-} from '@/generated/nodes';
+} from '@grab-tools/lib/generated/nodes';
 import {
 	LevelNode,
 	LevelNodeShape,
 	TriggerSourceBasicType,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 
 async function makeCar(nodes: LevelNode[]) {
 	if (nodes.length !== 2) {
@@ -41,7 +42,7 @@ async function makeCar(nodes: LevelNode[]) {
 	});
 
 	// group wheel with trigger
-	const wheel_position = deepClone(node_data(wheel_node).position);
+	const wheel_position = deepClone(levelNodeData(wheel_node).position);
 	const trigger_node = levelNodeWithTrigger({
 		shape: LevelNodeShape.SPHERE,
 		scale: { x: 0.5, y: 0.5, z: 0.5 },
@@ -53,12 +54,14 @@ async function makeCar(nodes: LevelNode[]) {
 		],
 	});
 
-	const group_node = groupNodes([wheel_node, trigger_node]);
+	const group_node = levelNodeGroupFrom({
+		childNodes: [wheel_node, trigger_node],
+	});
 	group_node.levelNodeGroup.physicsObject = true;
 	group_node.levelNodeGroup.position = wheel_position;
 
-	node_data(car_node).position = { x: 0, y: 0, z: 0 };
-	node_data(wheel_node).position = { x: 0, y: 0, z: 0 };
+	levelNodeData(car_node).position = { x: 0, y: 0, z: 0 };
+	levelNodeData(wheel_node).position = { x: 0, y: 0, z: 0 };
 
 	// ids: [group[wheel, trigger], car, code]
 	const start_id = 1;

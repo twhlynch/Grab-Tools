@@ -1,6 +1,7 @@
 import { SERVER_URL } from '@/config';
 import { user_info_request } from '@/requests/UserInfoRequest';
 import { useCookiesStore } from '@/stores/cookies';
+import { UserInfo } from '@grab-tools/lib/data/types';
 import { setUser } from '@sentry/vue';
 import { defineStore } from 'pinia';
 
@@ -33,20 +34,20 @@ export const useUserStore = defineStore('user', {
 			return state.user?.is_admin;
 		},
 		is_supermoderator: (state) => {
-			return state.user?.is_admin || state.user?.is_supermoderator;
+			return state.user?.is_admin ?? state.user?.is_supermoderator;
 		},
 		is_moderator: (state) => {
 			return (
-				state.user?.is_admin ||
-				state.user?.is_supermoderator ||
+				state.user?.is_admin ??
+				state.user?.is_supermoderator ??
 				state.user?.is_moderator
 			);
 		},
 		is_verifier: (state) => {
 			return (
-				state.user?.is_admin ||
-				state.user?.is_supermoderator ||
-				state.user?.is_moderator ||
+				state.user?.is_admin ??
+				state.user?.is_supermoderator ??
+				state.user?.is_moderator ??
 				state.user?.is_verifier
 			);
 		},
@@ -66,7 +67,14 @@ export const useUserStore = defineStore('user', {
 				window.toast(await response.text(), 'error');
 			}
 
-			const data = await response.json();
+			const data = (await response.json()) as {
+				user_name: string;
+				grab_id: string;
+				access_token: string;
+				expiry: number;
+				is_admin: boolean;
+				is_list_moderator: boolean;
+			};
 			this.user_name = data.user_name;
 			this.grab_id = data.grab_id;
 			this.access_token = data.access_token;
@@ -84,7 +92,7 @@ export const useUserStore = defineStore('user', {
 				setUser({ username: this.user_name });
 			}
 		},
-		async logout() {
+		logout() {
 			this.$reset();
 			setUser({ username: undefined });
 		},

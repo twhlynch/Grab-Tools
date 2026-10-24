@@ -1,13 +1,15 @@
-<script>
+<script lang="ts">
 import { decodeLevel } from '@/common/levels';
 import GeneralPopup from '@/components/GeneralPopup.vue';
 import RefreshedIcon from '@/icons/RefreshedIcon.vue';
 import { user_levels_request } from '@/requests/UserLevelsRequest';
 import { useUserStore } from '@/stores/user';
 import downloads from '@/tools/downloads';
+import { LevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		GeneralPopup,
 		RefreshedIcon,
@@ -21,7 +23,7 @@ export default {
 	emits: ['update:visible', 'open', 'insert'],
 	data() {
 		return {
-			levels: [],
+			levels: [] as LevelDetails[],
 			state: 'idle',
 			loading: false,
 			search: '',
@@ -40,8 +42,8 @@ export default {
 		},
 	},
 	watch: {
-		visible(value) {
-			if (value) this.load(true);
+		visible(value: boolean) {
+			if (value) void this.load(true);
 		},
 	},
 	methods: {
@@ -64,7 +66,7 @@ export default {
 			this.levels = levels;
 			this.state = 'loaded';
 		},
-		async load_level(level) {
+		async load_level(level: LevelDetails) {
 			const data = await downloads.try_download_level(level.identifier);
 			if (!data) return null;
 
@@ -73,19 +75,19 @@ export default {
 			});
 			return await decodeLevel(blob);
 		},
-		async open(level) {
+		async open(level: LevelDetails) {
 			const json = await this.load_level(level);
 			if (!json) return;
 			this.$emit('open', json);
 			this.$emit('update:visible', false);
 		},
-		async insert(level) {
+		async insert(level: LevelDetails) {
 			const json = await this.load_level(level);
 			if (!json) return;
 			this.$emit('insert', json);
 		},
 	},
-};
+});
 </script>
 
 <template>

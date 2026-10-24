@@ -1,5 +1,5 @@
 import { isLevelNodeObject, LevelNodeObject } from '@/common/levelNodes';
-import { node_data } from '@/common/utils';
+import { levelNodeData } from '@grab-tools/lib/generated/nodes';
 import * as THREE from 'three';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 
@@ -18,10 +18,13 @@ interface DragData {
 	scale_dir: number;
 }
 
-type TransformControlsEvent<T extends string> = THREE.Event<
+export type TransformControlsEvent<T extends string> = THREE.Event<
 	T,
 	TransformControls
 > & { value?: unknown };
+
+export type TransformMode = 'scale' | 'rotate' | 'translate';
+export type TransformSpace = 'local' | 'world';
 
 class GizmoControls {
 	camera: THREE.Camera;
@@ -140,7 +143,7 @@ class GizmoControls {
 		this.selection.forEach((object) => {
 			object.updateMatrixWorld(true);
 
-			const node = node_data(object);
+			const node = levelNodeData(object.userData.node);
 
 			if (node.position) {
 				node.position.x = object.position.x;
@@ -230,9 +233,10 @@ class GizmoControls {
 		}
 	}
 	applyNodeConstraints(object: THREE.Object3D | undefined) {
-		const node = object?.userData.node;
+		if (!isLevelNodeObject(object)) return;
+		const node = object.userData.node;
 		const axis = this.controls.axis;
-		if (!node || !axis) return;
+		if (!axis) return;
 
 		const mode = this.controls.mode;
 		const override_axis = this.get_axis();
@@ -342,17 +346,15 @@ class GizmoControls {
 		return this.selection.length === 0;
 	}
 
-	update_visuals(object: THREE.Object3D, isSelected: boolean) {
+	update_visuals(object: LevelNodeObject, isSelected: boolean) {
 		object.traverse((obj) => {
-			if (obj instanceof THREE.Mesh) {
-				if (obj.material?.uniforms?.isSelected) {
-					obj.material.uniforms.isSelected.value = isSelected;
-				}
+			if (isLevelNodeObject(obj) && obj.material?.uniforms.isSelected) {
+				obj.material.uniforms.isSelected.value = isSelected;
 			}
 		});
 	}
 
-	set_mode(mode: 'scale' | 'rotate' | 'translate') {
+	set_mode(mode: TransformMode) {
 		this.controls.setMode(mode);
 		this.recenter();
 	}
@@ -361,7 +363,7 @@ class GizmoControls {
 		return this.controls.mode;
 	}
 
-	set_space(space: 'local' | 'world') {
+	set_space(space: TransformSpace) {
 		this.controls.setSpace(space);
 		this.recenter();
 	}

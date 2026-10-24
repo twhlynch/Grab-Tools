@@ -1,11 +1,11 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { add_register, RegisterType } from '@/common/registers';
+import { add_register, RegisterType } from '../common/registers';
 import {
 	levelNodeGASMConnection,
 	programmablePropertyData,
 	programmablePropertyDataComponent,
 	registerData,
-} from '@/generated/helpers';
+} from '../generated/helpers';
+import { LevelNodeWith } from '../generated/nodes';
 import {
 	ConnectionType,
 	LevelNode,
@@ -14,7 +14,7 @@ import {
 	ProgramData,
 	ProgrammablePropertyData,
 	ProgrammablePropertyDataComponent,
-} from '@/generated/proto';
+} from '../generated/proto';
 
 // props on ProgrammablePropertyData that are {}
 export type PropertyType = {

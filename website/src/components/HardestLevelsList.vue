@@ -1,16 +1,18 @@
-<script>
+<script lang="ts">
 import { downloadLevel } from '@/common/levels';
 import CheckmarkIcon from '@/icons/CheckmarkIcon.vue';
 import CrossIcon from '@/icons/CrossIcon.vue';
 import DownloadIcon from '@/icons/DownloadIcon.vue';
 import EditIcon from '@/icons/EditIcon.vue';
 import { add_hardest_level_request } from '@/requests/AddHardestLevelRequest';
+import { ListRowData } from '@/requests/GetHardestLevelsRequest';
 import { remove_hardest_level_request } from '@/requests/RemoveHardestLevelRequest';
 import { useUserStore } from '@/stores/user';
 import downloads from '@/tools/downloads';
 import { mapState } from 'pinia';
+import { defineComponent, PropType } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		DownloadIcon,
 		EditIcon,
@@ -18,35 +20,37 @@ export default {
 		CheckmarkIcon,
 	},
 	props: {
-		list: Array,
+		list: Array as PropType<ListRowData[]>,
 	},
 	emits: ['update'],
 	data() {
 		return {
-			edit_level_id: null,
-			remove_level_id: null,
-			edit_level_position: null,
+			edit_level_id: null as string | null,
+			remove_level_id: null as string | null,
+			edit_level_position: null as number | null,
 		};
 	},
 	computed: {
 		...mapState(useUserStore, ['is_logged_in', 'grab_id', 'is_list_moderator']),
 	},
 	methods: {
-		async edit_level(level_id) {
+		async edit_level(level_id: string) {
 			if (this.edit_level_id !== level_id) {
 				this.edit_level_id = level_id;
 				return;
 			}
 
-			const success = await add_hardest_level_request(level_id, this.edit_level_position);
-			if (success) {
-				window.toast(`Updated level`);
-				this.$emit('update');
+			if (this.edit_level_position) {
+				const success = await add_hardest_level_request(level_id, this.edit_level_position);
+				if (success) {
+					window.toast(`Updated level`);
+					this.$emit('update');
+				}
 			}
 
 			this.edit_level_id = null;
 		},
-		async remove_level(level_id) {
+		async remove_level(level_id: string) {
 			if (this.remove_level_id !== level_id) {
 				this.remove_level_id = level_id;
 				return;
@@ -59,13 +63,13 @@ export default {
 			}
 			this.remove_level_id = null;
 		},
-		level_url(level_id) {
+		level_url(level_id: string) {
 			return this.$config.GRAB_VIEWER_URL + level_id;
 		},
-		user_class(level_id) {
+		user_class(level_id: string) {
 			return this.is_logged_in && this.grab_id === level_id.split(':')[0] && 'personal';
 		},
-		async download(level_id) {
+		async download(level_id: string) {
 			const level = await downloads.download_level(level_id);
 			if (!level) {
 				window.toast('Download failed');
@@ -74,7 +78,7 @@ export default {
 			downloadLevel(level, level_id);
 		},
 	},
-};
+});
 </script>
 
 <template>

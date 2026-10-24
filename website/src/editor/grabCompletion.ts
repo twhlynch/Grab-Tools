@@ -1,5 +1,5 @@
 import { unmodded_root } from '@/common/root';
-import { materials } from '@/common/utils';
+import { materials, shapes } from '@/common/utils';
 import { autocompletion, startCompletion } from '@codemirror/autocomplete';
 import { Text } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
@@ -82,10 +82,10 @@ function collect_completions(enums: EnumData[]) {
 		Object.entries(values).forEach(([name, num]) => {
 			if (
 				type === 'LevelNodeShape' &&
-				num <= materials().__END_OF_SPECIAL_PARTS__!
+				num <= +shapes().__END_OF_SPECIAL_PARTS__
 			)
 				return;
-			if (type === 'LevelNodeMaterial' && num === materials().TRIGGER)
+			if (type === 'LevelNodeMaterial' && num === +materials().TRIGGER)
 				return;
 			const cmps = (completions[field.name] ??= []);
 			if (
@@ -162,13 +162,16 @@ export function grabCompletion() {
 		if (!update.docChanged) return;
 
 		for (const transaction of update.transactions) {
-			const inserted = transaction.changes.toString();
-			if (!inserted) continue;
-
-			if (inserted.includes(':')) {
-				startCompletion(update.view);
-				break;
-			}
+			transaction.changes.iterChanges(
+				(_fromA, _toA, _fromB, _toB, inserted) => {
+					for (let line = 1; line <= inserted.lines; line++) {
+						if (inserted.line(line).text.includes(':')) {
+							startCompletion(update.view);
+							return;
+						}
+					}
+				},
+			);
 		}
 	});
 

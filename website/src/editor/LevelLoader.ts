@@ -31,24 +31,42 @@ import textureSoundURL from '@/assets/textures/sound.png';
 import textureSublevelTriggerURL from '@/assets/textures/sublevel_trigger.png';
 import textureTriggerURL from '@/assets/textures/trigger.png';
 import textureWoodURL from '@/assets/textures/wood.png';
-import { LevelNodeKey, LevelNodeObject, Root } from '@/common/levelNodes';
+import { LevelNodeObject, Root } from '@/common/levelNodes';
 import { load } from '@/common/root';
 import {
 	materials as material_types,
 	shapes as shape_types,
 } from '@/common/utils';
 import {
+	isLevelNode,
+	LevelNodeKey,
+	LevelNodeTypeFor,
+} from '@grab-tools/lib/generated/nodes';
+import {
 	Level,
 	LevelNode,
+	LevelNodeCrumbling,
+	LevelNodeFinish,
+	LevelNodeGASM,
+	LevelNodeGravity,
+	LevelNodeGravityMode,
+	LevelNodeGroup,
+	LevelNodeLight,
 	LevelNodeMaterial,
+	LevelNodeParticleEmitter,
 	LevelNodeShape,
-} from '@/generated/proto';
+	LevelNodeSign,
+	LevelNodeSound,
+	LevelNodeStart,
+	LevelNodeStatic,
+	LevelNodeTrigger,
+} from '@grab-tools/lib/generated/proto';
 
 let textureLoader: THREE.TextureLoader;
 let gltfLoader: GLTFLoader;
 let fontLoader: FontLoader;
 
-interface LevelData {
+export interface LevelData {
 	level: Level;
 	root: Root;
 	nodes: {
@@ -56,9 +74,11 @@ interface LevelData {
 		animated: LevelNodeObject[];
 		material: Partial<Record<LevelNodeMaterial, LevelNodeObject[]>>;
 		shape: Partial<Record<LevelNodeShape, LevelNodeObject[]>>;
-		defaultSpawn: LevelNodeObject | undefined;
+		defaultSpawn: LevelNodeObject<LevelNodeStart> | undefined;
 		namedSpawns: Record<string, LevelNodeObject>;
-	} & Record<LevelNodeKey, LevelNodeObject[]>;
+	} & {
+		[K in LevelNodeKey]: LevelNodeObject<LevelNodeTypeFor<K>>[];
+	};
 	sun: THREE.DirectionalLight | undefined;
 	complexity: number;
 	scene: THREE.Scene;
@@ -105,6 +125,49 @@ type LevelNodeUniforms = {
 type LevelNodeShaderMaterial = THREE.ShaderMaterial & {
 	uniforms: LevelNodeUniforms;
 };
+
+export function levelData(): LevelData {
+	const root = load();
+
+	const level: LevelData = {
+		level: {},
+		root: root,
+		nodes: {
+			all: [],
+			animated: [],
+			material: Object.fromEntries(
+				Object.values(material_types()).map((value) => [value, []]),
+			),
+			shape: Object.fromEntries(
+				Object.values(shape_types()).map((value) => [value, []]),
+			),
+			defaultSpawn: undefined,
+			namedSpawns: {},
+			...(Object.fromEntries(
+				root.COD.Level.LevelNode.oneofs.content.fieldsArray.map(
+					(field) => [field.name, [] as LevelNodeObject[]],
+				),
+			) as {
+				[K in LevelNodeKey]: LevelNodeObject<LevelNodeTypeFor<K>>[];
+			}),
+		},
+		sun: undefined,
+		complexity: 0,
+		scene: new THREE.Scene(),
+		update: () => {
+			// noop
+		},
+		meta: {
+			time: 0.0,
+		},
+	};
+
+	level.update = (delta: number) => {
+		level.meta.time += delta;
+	};
+
+	return level;
+}
 
 class LevelLoader {
 	root: Root;
@@ -483,36 +546,7 @@ class LevelLoader {
 	async load(data: Uint8Array | Level): Promise<LevelData> {
 		const { root, shapes, objects, materials, objectMaterials } = this;
 
-		const level: LevelData = {
-			level: {},
-			root: this.root,
-			nodes: {
-				all: [],
-				animated: [],
-				material: Object.fromEntries(
-					Object.values(material_types()).map((value) => [value, []]),
-				),
-				shape: Object.fromEntries(
-					Object.values(shape_types()).map((value) => [value, []]),
-				),
-				defaultSpawn: undefined,
-				namedSpawns: {},
-				...(Object.fromEntries(
-					root.COD.Level.LevelNode.oneofs.content.fieldsArray.map(
-						(field) => [field.name, [] as LevelNodeObject[]],
-					),
-				) as Record<LevelNodeKey, LevelNodeObject[]>),
-			},
-			sun: undefined,
-			complexity: 0,
-			scene: new THREE.Scene(),
-			update: () => {
-				// noop
-			},
-			meta: {
-				time: 0.0,
-			},
-		};
+		const level = levelData();
 
 		if (this.options.lights) {
 			const ambientLight = new THREE.AmbientLight(0x404040);
@@ -538,15 +572,13 @@ class LevelLoader {
 
 		const LevelMessage = root.lookupType('COD.Level.Level');
 
-		let decoded;
 		if (data instanceof Uint8Array) {
 			const formattedBuffer = data;
-			decoded = LevelMessage.decode(formattedBuffer);
-			level.level = decoded as Level;
+			level.level = LevelMessage.decode(formattedBuffer) as Level;
 		} else {
 			level.level = data;
-			decoded = data;
 		}
+		const decoded = level.level;
 
 		await this.shapePromise;
 		await this.objectPromise;
@@ -695,10 +727,13 @@ class LevelLoader {
 			parentNode: LevelNodeObject | THREE.Scene,
 		) => {
 			for (const node of nodes) {
-				if (!node) continue;
-				let object: LevelNodeObject | undefined = undefined;
+				if (!node || !isLevelNode(node)) continue;
+				let obj: LevelNodeObject | undefined = undefined;
 				if (node.levelNodeGroup) {
-					object = new THREE.Object3D() as LevelNodeObject;
+					const object =
+						new THREE.Object3D() as LevelNodeObject<LevelNodeGroup>;
+					obj = object;
+
 					parentNode.add(object);
 					object.position.x = node.levelNodeGroup.position?.x ?? 0;
 					object.position.y = node.levelNodeGroup.position?.y ?? 0;
@@ -725,7 +760,10 @@ class LevelLoader {
 
 					level.nodes.levelNodeGroup.push(object);
 				} else if (node.levelNodeGravity) {
-					object = new THREE.Object3D() as LevelNodeObject;
+					const object =
+						new THREE.Object3D() as LevelNodeObject<LevelNodeGravity>;
+					obj = object;
+
 					object.position.x = node.levelNodeGravity.position?.x ?? 0;
 					object.position.y = node.levelNodeGravity.position?.y ?? 0;
 					object.position.z = node.levelNodeGravity.position?.z ?? 0;
@@ -750,7 +788,10 @@ class LevelLoader {
 						const particleGeometry = new THREE.BufferGeometry();
 
 						let particleColor = new THREE.Color(1.0, 1.0, 1.0);
-						if (node.levelNodeGravity.mode != 0) {
+						if (
+							node.levelNodeGravity.mode !=
+							LevelNodeGravityMode.DEFAULT
+						) {
 							particleColor = new THREE.Color(1.0, 0.6, 0.6);
 						}
 
@@ -831,7 +872,7 @@ class LevelLoader {
 						scene.add(particlePoints);
 
 						object.userData.update = (delta: number) => {
-							if (!object || !node.levelNodeGravity) return;
+							if (!node.levelNodeGravity) return;
 
 							const positions =
 								particleGeometry.attributes.position?.array ??
@@ -888,7 +929,10 @@ class LevelLoader {
 					level.nodes.levelNodeGravity.push(object);
 					level.complexity += 10;
 				} else if (node.levelNodeParticleEmitter) {
-					object = new THREE.Object3D() as LevelNodeObject;
+					const object =
+						new THREE.Object3D() as LevelNodeObject<LevelNodeParticleEmitter>;
+					obj = object;
+
 					object.position.x =
 						node.levelNodeParticleEmitter.position?.x ?? 0;
 					object.position.y =
@@ -1017,8 +1061,6 @@ class LevelLoader {
 					scene.add(particlePoints);
 					parentNode.add(object);
 					object.userData.update = (delta: number) => {
-						if (!object) return;
-
 						const positions =
 							particleGeometry.getAttribute('position').array;
 						const colors =
@@ -1280,7 +1322,7 @@ class LevelLoader {
 						newMaterial.uniforms.isAdditive.value = 1.0;
 					}
 
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						shapes[
 							Math.min(
 								Math.max(
@@ -1291,7 +1333,8 @@ class LevelLoader {
 							)
 						],
 						newMaterial,
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeStatic>;
+					obj = object;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeStatic.position?.x ?? 0;
@@ -1339,7 +1382,7 @@ class LevelLoader {
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						shapes[
 							Math.min(
 								Math.max(
@@ -1351,7 +1394,8 @@ class LevelLoader {
 							)
 						],
 						newMaterial,
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeCrumbling>;
+					obj = object;
 
 					parentNode.add(object);
 					object.position.x =
@@ -1425,7 +1469,7 @@ class LevelLoader {
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						shapes[
 							Math.min(
 								Math.max(
@@ -1437,7 +1481,8 @@ class LevelLoader {
 							)
 						],
 						newMaterial,
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeTrigger>;
+					obj = object;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeTrigger.position?.x ?? 0;
@@ -1491,10 +1536,11 @@ class LevelLoader {
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						shapes[0],
 						newMaterial,
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeGASM>;
+					obj = object;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeGASM.position?.x ?? 0;
@@ -1541,10 +1587,11 @@ class LevelLoader {
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						shapes[1],
 						newMaterial,
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeSound>;
+					obj = object;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeSound.position?.x ?? 0;
@@ -1586,10 +1633,11 @@ class LevelLoader {
 
 					newMaterial.transparent = true;
 					newMaterial.uniforms.transparentEnabled.value = 1.0;
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						shapes[1],
 						newMaterial,
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeLight>;
+					obj = object;
 
 					parentNode.add(object);
 					object.position.x = node.levelNodeLight.position?.x ?? 0;
@@ -1628,11 +1676,13 @@ class LevelLoader {
 							level.nodes.levelNodeStart.length == 0) ||
 						(decoded.defaultSpawnPointID ?? 0) - 1 ==
 							level.nodes.all.length;
+
+					let object: LevelNodeObject<LevelNodeStart>;
 					if (isDefaultSpawn) {
 						object = new THREE.Mesh(
 							objects[0],
 							objectMaterials[0],
-						) as unknown as LevelNodeObject;
+						) as unknown as LevelNodeObject<LevelNodeStart>;
 						object.add(
 							new THREE.Mesh(objects[2], objectMaterials[10]),
 						);
@@ -1640,11 +1690,13 @@ class LevelLoader {
 						object = new THREE.Mesh(
 							objects[0],
 							objectMaterials[6],
-						) as unknown as LevelNodeObject;
+						) as unknown as LevelNodeObject<LevelNodeStart>;
 						object.add(
 							new THREE.Mesh(objects[2], objectMaterials[11]),
 						);
 					}
+					obj = object;
+
 					parentNode.add(object);
 					object.position.x = node.levelNodeStart.position?.x ?? 0;
 					object.position.y = node.levelNodeStart.position?.y ?? 0;
@@ -1679,10 +1731,12 @@ class LevelLoader {
 
 					level.nodes.levelNodeStart.push(object);
 				} else if (node.levelNodeFinish) {
-					object = new THREE.Mesh(
+					const object = new THREE.Mesh(
 						objects[0],
 						objectMaterials[1],
-					) as unknown as LevelNodeObject;
+					) as unknown as LevelNodeObject<LevelNodeFinish>;
+					obj = object;
+
 					parentNode.add(object);
 					object.position.x = node.levelNodeFinish.position?.x ?? 0;
 					object.position.y = node.levelNodeFinish.position?.y ?? 0;
@@ -1701,12 +1755,17 @@ class LevelLoader {
 					newMaterial.uniforms.colorTexture =
 						material.uniforms.colorTexture;
 
-					object = node.levelNodeSign.hideModel
-						? (new THREE.Mesh() as unknown as LevelNodeObject)
+					const object = node.levelNodeSign.hideModel
+						? (new THREE.Mesh(
+								undefined,
+								newMaterial,
+							) as unknown as LevelNodeObject<LevelNodeSign>)
 						: (new THREE.Mesh(
 								objects[1],
 								newMaterial,
-							) as unknown as LevelNodeObject);
+							) as unknown as LevelNodeObject<LevelNodeSign>);
+					obj = object;
+
 					parentNode.add(object);
 					object.position.x = node.levelNodeSign.position?.x ?? 0;
 					object.position.y = node.levelNodeSign.position?.y ?? 0;
@@ -1810,25 +1869,25 @@ class LevelLoader {
 					level.complexity += 10;
 				}
 
-				if (object !== undefined) {
-					// set object.userData.is<NodeType>
+				if (obj !== undefined) {
+					// set obj.userData.is<NodeType>
 					const nodeTypeEntry = Object.entries(node).find((entry) =>
 						entry[0].startsWith('levelNode'),
 					);
 					if (nodeTypeEntry) {
-						object.userData[
+						obj.userData[
 							nodeTypeEntry[0].replace('levelNode', 'is')
 						] = true;
 					}
 
-					if (!object.userData.isGroup) {
-						level.nodes.all.push(object);
-						object.userData.id = level.nodes.all.length;
+					if (!obj.userData.isGroup) {
+						level.nodes.all.push(obj);
+						obj.userData.id = level.nodes.all.length;
 					}
-					object.userData.node = node;
-					if (object.material?.uniforms)
-						object.material.uniforms.worldMatrix = {
-							value: new THREE.Matrix4().copy(object.matrixWorld),
+					obj.userData.node = node;
+					if (obj.material?.uniforms)
+						obj.material.uniforms.worldMatrix = {
+							value: new THREE.Matrix4().copy(obj.matrixWorld),
 						};
 
 					const active_animation = node.activeAnimation ?? 0;
@@ -1836,13 +1895,13 @@ class LevelLoader {
 						node.activeAnimation !== -1 &&
 						node.animations?.[active_animation]?.frames?.length
 					) {
-						object.userData.animation =
+						obj.userData.animation =
 							node.animations[active_animation];
-						object.userData.currentFrameIndex = 0;
+						obj.userData.currentFrameIndex = 0;
 					}
 
 					if (node.animations?.[0]?.frames?.length) {
-						level.nodes.animated.push(object);
+						level.nodes.animated.push(obj);
 					}
 				}
 			}
@@ -1895,7 +1954,7 @@ function getMaterialForTexture(
 		uniforms: THREE.UniformsUtils.merge([
 			THREE.ShaderLib.standard.uniforms,
 			uniforms,
-		]),
+		]) as LevelNodeUniforms,
 	}) as LevelNodeShaderMaterial;
 }
 
@@ -1912,7 +1971,7 @@ async function getGeometryForModel(
 		throw new Error('Models first child is not a Mesh');
 	}
 
-	return object.geometry;
+	return object.geometry as THREE.BufferGeometry;
 }
 
 function updateObjectAnimation(object: LevelNodeObject, time: number) {
@@ -1922,11 +1981,11 @@ function updateObjectAnimation(object: LevelNodeObject, time: number) {
 	if (!animationFrames) return;
 	const relativeTime =
 		(time * (animation.speed ?? 0)) %
-		(animationFrames[animationFrames.length - 1].time ?? 0);
+		(animationFrames[animationFrames.length - 1]!.time ?? 0);
 
 	//Find frames to blend between
-	let oldFrame = animationFrames[object.userData.currentFrameIndex];
-	let newFrameIndex = object.userData.currentFrameIndex + 1;
+	let oldFrame = animationFrames[object.userData.currentFrameIndex ?? 0];
+	let newFrameIndex = (object.userData.currentFrameIndex ??= 0) + 1;
 	if (newFrameIndex >= animationFrames.length) newFrameIndex = 0;
 	let newFrame = animationFrames[newFrameIndex];
 
@@ -1938,8 +1997,8 @@ function updateObjectAnimation(object: LevelNodeObject, time: number) {
 		newFrame = animationFrames[newFrameIndex];
 
 		if (
-			(oldFrame.time ?? 0) <= relativeTime &&
-			(newFrame.time ?? 0) > relativeTime
+			(oldFrame?.time ?? 0) <= relativeTime &&
+			(newFrame?.time ?? 0) > relativeTime
 		)
 			break;
 		object.userData.currentFrameIndex += 1;
@@ -1950,36 +2009,36 @@ function updateObjectAnimation(object: LevelNodeObject, time: number) {
 	}
 
 	let factor = 0.0;
-	const timeDiff = (newFrame.time ?? 0) - (oldFrame.time ?? 0);
+	const timeDiff = (newFrame?.time ?? 0) - (oldFrame?.time ?? 0);
 	if (Math.abs(timeDiff) > 0.00000001) {
 		//Prevent dividing by 0 if time of both frames is equal
-		factor = (relativeTime - (oldFrame.time ?? 0)) / timeDiff;
+		factor = (relativeTime - (oldFrame?.time ?? 0)) / timeDiff;
 	}
 
 	const oldRotation = new THREE.Quaternion(
-		oldFrame.rotation?.x ?? 0,
-		oldFrame.rotation?.y ?? 0,
-		oldFrame.rotation?.z ?? 0,
-		oldFrame.rotation?.w ?? 0,
+		oldFrame?.rotation?.x ?? 0,
+		oldFrame?.rotation?.y ?? 0,
+		oldFrame?.rotation?.z ?? 0,
+		oldFrame?.rotation?.w ?? 0,
 	);
 	const newRotation = new THREE.Quaternion(
-		newFrame.rotation?.x ?? 0,
-		newFrame.rotation?.y ?? 0,
-		newFrame.rotation?.z ?? 0,
-		newFrame.rotation?.w ?? 0,
+		newFrame?.rotation?.x ?? 0,
+		newFrame?.rotation?.y ?? 0,
+		newFrame?.rotation?.z ?? 0,
+		newFrame?.rotation?.w ?? 0,
 	);
 	const finalRotation = new THREE.Quaternion();
 	finalRotation.slerpQuaternions(oldRotation, newRotation, factor);
 
 	const oldPosition = new THREE.Vector3(
-		oldFrame.position?.x ?? 0,
-		oldFrame.position?.y ?? 0,
-		oldFrame.position?.z ?? 0,
+		oldFrame?.position?.x ?? 0,
+		oldFrame?.position?.y ?? 0,
+		oldFrame?.position?.z ?? 0,
 	);
 	const newPosition = new THREE.Vector3(
-		newFrame.position?.x ?? 0,
-		newFrame.position?.y ?? 0,
-		newFrame.position?.z ?? 0,
+		newFrame?.position?.x ?? 0,
+		newFrame?.position?.y ?? 0,
+		newFrame?.position?.z ?? 0,
 	);
 	const finalPosition = new THREE.Vector3();
 	finalPosition.lerpVectors(oldPosition, newPosition, factor);

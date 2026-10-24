@@ -16,7 +16,7 @@ export async function verification_code_request() {
 			return null;
 		}
 
-		const json: { code: string } = await response.json();
+		const json = (await response.json()) as { code: string };
 		return json.code;
 	} catch {
 		window.toast(`Error: Failed to get code`, 'error');

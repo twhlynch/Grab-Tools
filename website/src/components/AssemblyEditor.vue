@@ -1,9 +1,9 @@
 <script lang="ts">
 import { BaseEditor, EditorConstructor } from '@/editor/GASMEditor';
 import { ViewUpdate } from '@codemirror/view';
-import { PropType } from 'vue';
+import { defineComponent, markRaw, PropType } from 'vue';
 
-export default {
+export default defineComponent({
 	props: {
 		editor: {
 			type: Function as unknown as PropType<EditorConstructor>,
@@ -12,8 +12,10 @@ export default {
 	},
 	emits: ['changed'],
 	data() {
+		const instance: BaseEditor = null!;
+
 		return {
-			instance: null! as BaseEditor,
+			instance,
 		};
 	},
 	mounted() {
@@ -21,13 +23,12 @@ export default {
 	},
 	methods: {
 		create_editor() {
-			this.instance = new this.editor(
-				this.$refs.code_container as HTMLElement,
-				(update: ViewUpdate) => {
+			this.instance = markRaw(
+				new this.editor(this.$refs.code_container as HTMLElement, (update: ViewUpdate) => {
 					if (update.docChanged) {
 						this.$emit('changed');
 					}
-				},
+				}),
 			);
 		},
 
@@ -62,7 +63,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

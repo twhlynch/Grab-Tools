@@ -1,4 +1,5 @@
 import { GRAB_SERVER_URL } from '@/config';
+import { UserInfo } from '@grab-tools/lib/data/types';
 import { safe_fetch_json } from './RequestUtils';
 
 export async function user_info_request(user_id: string) {

@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import ToolTemplate from './ToolTemplate.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		ToolTemplate,
 	},
@@ -11,12 +12,10 @@ export default {
 		};
 	},
 	methods: {
-		async change() {
-			const getByID = (id) => document.getElementById(id);
-			const toolID = 'download-tool';
+		change() {
+			const urlsInput = this.$refs.urls as HTMLInputElement;
 
-			const input = getByID(`${toolID}-urls`).value;
-			const links = input
+			const links = urlsInput.value
 				.split(',')
 				.map((link) => link.trim().split('=')[1])
 				.join('+');
@@ -24,22 +23,21 @@ export default {
 			this.download_link = `/download?level=${links}`;
 		},
 	},
-};
+});
 </script>
 
 <template>
-	<ToolTemplate>
-		<template #title>Level Downloader</template>
-		<template #info>
-			Paste a list of level browser links to your levels to download them.
-		</template>
+	<ToolTemplate
+		:name="'Level Downloader'"
+		:details="'Paste a list of level browser links to your levels to download them.'"
+	>
 		<textarea
-			id="download-tool-urls"
+			id="urls"
 			cols="30"
 			rows="5"
 			placeholder="link, link, link, link"
 			@change="change"
 		></textarea>
-		<a id="download-tool-btn" class="button" :href="download_link"> Download </a>
+		<a class="button" :href="download_link">Download</a>
 	</ToolTemplate>
 </template>

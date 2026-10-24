@@ -1,5 +1,5 @@
-import { color } from '@/generated/helpers';
 import { obj } from '@/tools/obj';
+import { color } from '@grab-tools/lib/generated/helpers';
 import { describe, expect, it } from 'vitest';
 
 function file(string: string) {

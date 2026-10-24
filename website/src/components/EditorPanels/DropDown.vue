@@ -1,19 +1,6 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-
-type MenuLeaf =
-	| {
-			func: (e?: Event) => void;
-			file?: boolean;
-	  }
-	| {
-			href: string;
-	  };
-
-type MenuItem = MenuLeaf | Menu;
-export interface Menu {
-	[key: string]: MenuItem;
-}
+import { Menu, MenuItem, MenuLeaf } from './menu';
 
 export default defineComponent({
 	props: {

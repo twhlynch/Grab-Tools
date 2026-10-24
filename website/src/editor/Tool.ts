@@ -1,29 +1,23 @@
-import ViewportPanel from '@/components/EditorPanels/ViewportPanel.vue';
-import * as THREE from 'three';
+import type { LevelNodeObject } from '@/common/levelNodes';
+import type { Level, LevelNodeGroup } from '@grab-tools/lib/generated/proto';
+import type { Camera, WebGLRenderer } from 'three';
+import type GizmoControls from './GizmoControls';
+import type { LevelData } from './LevelLoader';
 
-// TODO: correctly use raw properties to get inference
-// for now just update this as needed
-export type Viewport = InstanceType<typeof ViewportPanel> & {
-	gizmo: {
-		empty(): boolean;
-		clear(): void;
-		selection: THREE.Object3D[];
-	};
-	renderer: { domElement: HTMLElement };
-	camera: THREE.Camera;
-	level: {
-		nodes: { all: THREE.Object3D[] };
-		scene: THREE.Scene;
-	};
-	editing_parent: THREE.Object3D | null;
-	modifier(fn: (json: unknown) => unknown): void;
-};
+export interface ViewportInterface {
+	gizmo: GizmoControls;
+	editing_parent: LevelNodeObject<LevelNodeGroup> | THREE.Scene | undefined;
+	level: LevelData;
+	renderer: WebGLRenderer;
+	camera: Camera;
+	modifier: (func: (level: Level) => Level) => void;
+}
 
 export interface Tool {
 	readonly name: string;
 
 	// return 'success'
-	activate(viewport: Viewport): boolean;
+	activate(viewport: ViewportInterface): boolean;
 	deactivate?(): void;
 
 	// return 'handled' to prevent default handling

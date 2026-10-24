@@ -1,6 +1,7 @@
 import { unmodded_definition } from '@/common/root';
+import { json_parse } from '@/common/utils';
 import { FORMAT_VERSION } from '@/config';
-import { Level } from '@/generated/proto';
+import { Level } from '@grab-tools/lib/generated/proto';
 
 /// 'level' -> update the level
 /// 'info'  -> return type info
@@ -32,10 +33,10 @@ function connect() {
 	ws.onopen = () => {
 		console.log('MCP connected');
 	};
-	ws.onmessage = (event) => {
+	ws.onmessage = (event: MessageEvent<string>) => {
 		try {
-			const msg = JSON.parse(event.data);
-			receive(msg);
+			const msg = json_parse<{ type: string; data: unknown }>(event.data);
+			if (msg) receive(msg);
 		} catch {
 			// dont care
 		}

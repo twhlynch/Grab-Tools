@@ -1,11 +1,13 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { levelNodeWithStatic } from '@/generated/nodes';
+import {
+	LevelNodeWith,
+	levelNodeWithStatic,
+} from '@grab-tools/lib/generated/nodes';
 import {
 	Color,
 	LevelNodeMaterial,
 	LevelNodeShape,
 	LevelNodeStatic,
-} from '@/generated/proto';
+} from '@grab-tools/lib/generated/proto';
 import * as THREE from 'three';
 
 async function svg(file: File, complexity: number) {
@@ -19,8 +21,8 @@ async function svg(file: File, complexity: number) {
 	const nodes: LevelNodeWith<LevelNodeStatic>[] = [];
 
 	for (const element of paths) {
-		const width = parseFloat(element.getAttribute('stroke-width') || '1.0');
-		const color = parse_color(element.getAttribute('stroke') || 'black');
+		const width = parseFloat(element.getAttribute('stroke-width') ?? '1.0');
+		const color = parse_color(element.getAttribute('stroke') ?? 'black');
 		const d = element.getAttribute('d');
 		if (!d) return null;
 

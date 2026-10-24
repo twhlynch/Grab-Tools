@@ -1,13 +1,19 @@
-<script>
+<script lang="ts">
 import { decodeLevel } from '@/common/levels';
 import { add_nodes } from '@/common/utils';
 import downloads from '@/tools/downloads';
+import { Level } from '@grab-tools/lib/generated/proto';
+import { defineComponent } from 'vue';
 
-export default {
+type Template = { name: string } & (
+	{ identifier: string; path?: never } | { path: string; identifier?: never }
+);
+
+export default defineComponent({
 	emits: ['modifier', 'close'],
 	data() {
 		return {
-			active_sections: [],
+			active_sections: [] as string[],
 			// prettier-ignore
 			templates: {
 				Lobbies: [
@@ -155,28 +161,28 @@ export default {
 		};
 	},
 	methods: {
-		set(json) {
-			this.$emit('modifier', (_) => {
+		set(json: Level) {
+			this.$emit('modifier', (_: Level) => {
 				return json;
 			});
 		},
-		insert(json) {
-			this.$emit('modifier', (level) => {
+		insert(json: Level) {
+			this.$emit('modifier', (level: Level) => {
 				add_nodes(level, json.levelNodes);
 				return level;
 			});
 		},
-		async open(template) {
+		async open(template: Template) {
 			const level = await this.load(template);
 			if (!level) return;
 			this.set(level);
 		},
-		async add(template) {
+		async add(template: Template) {
 			const level = await this.load(template);
 			if (!level) return;
 			this.insert(level);
 		},
-		async download(template) {
+		async download(template: Template) {
 			if (template.identifier) {
 				return await downloads.download_level(template.identifier);
 			} else if (template.path) {
@@ -190,8 +196,8 @@ export default {
 				return await response.arrayBuffer();
 			}
 		},
-		async load(template) {
-			let level = await this.download(template);
+		async load(template: Template) {
+			const level = await this.download(template);
 			if (!level) return null;
 
 			const blob = new Blob([level], {
@@ -200,7 +206,7 @@ export default {
 			const json = await decodeLevel(blob);
 			return json;
 		},
-		toggle(name) {
+		toggle(name: string) {
 			const index = this.active_sections.indexOf(name);
 			if (index !== -1) {
 				this.active_sections.splice(index, 1);
@@ -209,7 +215,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>

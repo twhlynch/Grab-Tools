@@ -1,12 +1,17 @@
-<script>
+<script lang="ts">
 import PreviewImagePlaceholderIcon from '@/icons/PreviewImagePlaceholderIcon.vue';
+import { CustomLevelDetails } from '@grab-tools/lib/data/types';
+import { defineComponent, PropType } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		PreviewImagePlaceholderIcon,
 	},
 	props: {
-		data: Object,
+		data: {
+			type: Object as PropType<CustomLevelDetails & { value: string; extra: string }>,
+			required: true,
+		},
 	},
 	data() {
 		return {
@@ -38,7 +43,7 @@ export default {
 			this.image_error = true;
 		},
 	},
-};
+});
 </script>
 
 <template>

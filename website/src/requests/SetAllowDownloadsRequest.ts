@@ -3,14 +3,14 @@ import { handle_auth_error } from '@/requests/RequestUtils';
 import { useUserStore } from '@/stores/user';
 
 export async function set_allow_downloads_request(
-	level_id: string,
-	user_id: string,
-	allow: boolean,
+	level_id: string | null | undefined,
+	user_id: string | null | undefined,
+	allow: boolean | null,
 ) {
 	const user = useUserStore();
 
-	if (!level_id) level_id = '';
-	if (!user_id) user_id = ''; // '' is falsy
+	level_id ??= '';
+	user_id ??= ''; // '' is falsy
 	const url = `${SERVER_URL}set_allow_downloads?level_id=${level_id}&user_id=${user_id}&allow=${allow}&access_token=${user.access_token}`;
 
 	try {

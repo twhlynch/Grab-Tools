@@ -1,6 +1,6 @@
-import { SPECIAL_REGISTERS } from '@/common/registers';
 import { load } from '@/common/root';
 import { StreamLanguage } from '@codemirror/language';
+import { SPECIAL_REGISTERS } from '@grab-tools/lib/common/registers';
 import { get_instruction_name } from './AssemblyConversion';
 
 const instruction_map = load().COD.Level.InstructionData.Type;

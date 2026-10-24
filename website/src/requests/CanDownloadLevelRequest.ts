@@ -10,11 +10,11 @@ export async function can_download_level_request(level_id: string) {
 			return null;
 		}
 
-		const result: {
+		const result = (await response.json()) as {
 			allow: boolean | null;
-		} = await response.json();
+		};
 
-		return result.allow as boolean;
+		return result.allow;
 	} catch {
 		return null;
 	}

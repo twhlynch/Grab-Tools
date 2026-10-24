@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import DarkModeToggle from '@/components/DarkModeToggle.vue';
 import LoginButton from '@/components/LoginButton.vue';
 import DiscordIcon from '@/icons/DiscordIcon.vue';
@@ -7,8 +7,9 @@ import HouseIcon from '@/icons/HouseIcon.vue';
 import RocketIcon from '@/icons/RocketIcon.vue';
 import StatsIcon from '@/icons/StatsIcon.vue';
 import ToolsIcon from '@/icons/ToolsIcon.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		HouseIcon,
 		StatsIcon,
@@ -28,7 +29,7 @@ export default {
 			currentTab.classList.add('nav-button-current');
 		}
 	},
-};
+});
 </script>
 
 <template>

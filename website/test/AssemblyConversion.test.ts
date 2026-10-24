@@ -1,13 +1,19 @@
-import { create_connection, PropertyType } from '@/common/connections';
 import { asm_to_json, json_to_asm } from '@/editor/AssemblyConversion';
-import { levelNodeWithGASM } from '@/generated/nodes';
+import {
+	create_connection,
+	PropertyType,
+} from '@grab-tools/lib/common/connections';
+import { levelNodeWithGASM } from '@grab-tools/lib/generated/nodes';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 
 vi.hoisted(() => {
-	// eslint-disable-next-line
-	(globalThis as any).window = {};
+	Object.defineProperty(globalThis, 'window', {
+		value: {},
+		writable: true,
+		configurable: true,
+	});
 });
 
 const tests: Record<string, ([PropertyType, string] | [PropertyType])[]> = {

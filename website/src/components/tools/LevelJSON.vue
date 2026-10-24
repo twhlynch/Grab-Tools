@@ -1,43 +1,59 @@
-<script>
+<script lang="ts">
 import { decodeLevel, downloadJSON, downloadLevel, encodeLevel } from '@/common/levels';
+import { Level } from '@grab-tools/lib/generated/proto';
+import { defineComponent } from 'vue';
 import ToolTemplate from './ToolTemplate.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		ToolTemplate,
 	},
 	methods: {
-		async run() {
-			const getByID = (id) => document.getElementById(id);
-			const toolID = 'level-json-tool';
+		run() {
+			const fileInput = this.$refs.file as HTMLInputElement;
 
-			const files = Array.from(getByID(`${toolID}-file`).files);
-			if (!files.length) return;
+			const files = Array.from(fileInput.files ?? []);
+			const file = files[0];
+			if (!file) {
+				window.toast('No file chosen', 'error');
+				return;
+			}
+
+			async function json_to_level(f: File): Promise<void> {
+				const json = JSON.parse(await f.text()) as Level;
+				const level = encodeLevel(json);
+				if (level) {
+					downloadLevel(level, f.name.replace(/\.(json|level)/, ''));
+				}
+			}
+			async function level_to_json(f: File): Promise<void> {
+				const json = await decodeLevel(f);
+				if (json) {
+					downloadJSON(json, f.name.replace(/\.(json|level)/, ''));
+				}
+			}
 
 			files
-				.filter((file) => file.name.endsWith('.json'))
-				.forEach(async (file) => {
-					const json = JSON.parse(await file.text());
-					const level = await encodeLevel(json);
-					downloadLevel(level, file.name.replace(/\.(json|level)/, ''));
+				.filter((f) => f.name.endsWith('.json'))
+				.forEach((f) => {
+					void json_to_level(f);
 				});
 			files
-				.filter((file) => file.name.endsWith('.level'))
-				.forEach(async (file) => {
-					const json = await decodeLevel(file);
-					if (!json) return;
-					downloadJSON(json, file.name.replace(/\.(json|level)/, ''));
+				.filter((f) => f.name.endsWith('.level'))
+				.forEach((f) => {
+					void level_to_json(f);
 				});
 		},
 	},
-};
+});
 </script>
 
 <template>
-	<ToolTemplate>
-		<template #title>Level to JSON</template>
-		<template #info> Convert a levels to readable JSON data and back. </template>
-		<input id="level-json-tool-file" type="file" accept=".level,.json" multiple />
+	<ToolTemplate
+		:name="'Level to JSON'"
+		:details="'Convert a levels to readable JSON data and back.'"
+	>
+		<input ref="file" type="file" accept=".level,.json" multiple />
 		<button class="button" @click="run">Convert</button>
 	</ToolTemplate>
 </template>

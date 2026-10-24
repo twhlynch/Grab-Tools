@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 import { createLevel, decodeLevel } from '@/common/levels';
 import { get_protobuf, set_protobuf } from '@/common/root';
 import { add_nodes, deepClone, json_parse } from '@/common/utils';
+import { Input } from '@/components/EditorPanels/inputs';
 import JsonPanel from '@/components/EditorPanels/JsonPanel.vue';
 import MenuPanel from '@/components/EditorPanels/MenuPanel.vue';
 import MyLevelsMenu from '@/components/EditorPanels/MyLevelsMenu.vue';
@@ -18,9 +19,11 @@ import { useConfigStore } from '@/stores/config';
 import { useUserStore } from '@/stores/user';
 import { compile } from '@/tools/compiler';
 import downloads from '@/tools/downloads';
+import { Level } from '@grab-tools/lib/generated/proto';
 import { mapState } from 'pinia';
+import { defineComponent, markRaw, Raw } from 'vue';
 
-export default {
+export default defineComponent({
 	components: {
 		MenuPanel,
 		MyLevelsMenu,
@@ -35,32 +38,49 @@ export default {
 		ProtobufPanel,
 	},
 	data() {
+		const json: Raw<Level> = {};
+
 		return {
 			popup_props: {
-				inputs: undefined,
-				func: undefined,
+				inputs: [] as Input[],
+				func: () => {
+					// noop
+				},
 			},
 			show_protobuf_panel: false,
 			show_my_levels_menu: false,
+
+			json,
 		};
 	},
 	computed: {
 		...mapState(useUserStore, ['is_logged_in', 'user_name']),
 		...mapState(useConfigStore, ['default_level']),
 	},
-	mounted() {
-		this.$refs.side_panel.size((window.innerHeight / 4) * 3);
-		this.$refs.main_panel.size((window.innerWidth / 3) * 2);
+	async mounted() {
+		this.refs().side_panel.size((window.innerHeight / 4) * 3);
+		this.refs().main_panel.size((window.innerWidth / 3) * 2);
 		this.close_templates();
-		this.open_starting_level();
-		mcp.init((level) => this.set_json(level, 'mcp'));
+		await this.open_starting_level();
+		mcp.init((level) => this.set_json(level, ['mcp']));
 	},
 	created() {
 		document.title = 'JSON Editor | GRAB Tools';
 	},
 	methods: {
+		refs() {
+			return this.$refs as {
+				json_panel: InstanceType<typeof JsonPanel>;
+				viewport_panel: InstanceType<typeof ViewportPanel>;
+				protobuf_panel: InstanceType<typeof ProtobufPanel>;
+				statistics: InstanceType<typeof StatisticsPanel>;
+				main_panel: InstanceType<typeof ResizableRowPanel>;
+				left_panel: InstanceType<typeof ResizableRowPanel>;
+				side_panel: InstanceType<typeof ResizableColPanel>;
+			};
+		},
 		close_templates() {
-			this.$refs.left_panel.size(0);
+			this.refs().left_panel.size(0);
 		},
 		async open_starting_level() {
 			const params = new URLSearchParams(window.location.search);
@@ -73,52 +93,50 @@ export default {
 						type: 'application/octet-stream',
 					});
 					const data = await decodeLevel(blob);
-					this.json = data ?? createLevel();
+					this.json = markRaw(data ?? createLevel());
 				}
 			} else {
-				this.json = this.default_level ? deepClone(this.default_level) : createLevel();
+				this.json = markRaw(
+					this.default_level ? deepClone(this.default_level) : createLevel(),
+				);
 			}
 
 			this.set_json(this.json);
 		},
-		set_json(json, skip = []) {
-			this.json = json;
-			if (!skip.includes('json_panel')) this.$refs.json_panel.set_json(this.json);
-			if (!skip.includes('viewport_panel')) this.$refs.viewport_panel.set_json(this.json);
+		set_json(json: Level, skip: string[] = []) {
+			this.json = markRaw(json);
+			if (!skip.includes('json_panel')) this.refs().json_panel.set_json(this.json);
+			if (!skip.includes('viewport_panel')) this.refs().viewport_panel.set_json(this.json);
 			if (!skip.includes('mcp')) mcp.send_level(json);
 		},
-		json_changed(json) {
+		json_changed(json: Level) {
 			this.set_json(json, ['json_panel']);
 		},
 		viewport_changed() {
 			this.set_json(this.json, ['viewport_panel']);
 		},
-		async run_modifier(func) {
+		async run_modifier(func: (level: Level) => Level | Promise<Level>) {
 			this.set_json(await func(this.json));
 		},
-		run_function(func) {
+		run_function(func: (level: Level) => void) {
 			func(this.json);
 		},
-		run_viewport(func) {
-			func(this.$refs.viewport_panel);
+		run_viewport(func: (scope: InstanceType<typeof ViewportPanel>) => void | Promise<void>) {
+			void func(this.refs().viewport_panel);
 		},
-		set_popup(inputs, func) {
+		set_popup(inputs: Input[], func: (...data: unknown[]) => void) {
 			this.popup_props.inputs = inputs;
 			this.popup_props.func = func;
 		},
-		scope(func) {
-			if (this) func(this);
+		scope(func: (scope: unknown) => void) {
+			func(this);
 		},
 		resize_left() {
-			this.$refs.left_panel.size();
+			this.refs().left_panel.size();
 		},
-		set_protobuf(protobuf) {
-			window.toast('protobuf');
-			console.log(protobuf);
-			set_protobuf(protobuf);
-		},
+		set_protobuf,
 		open_protobuf() {
-			this.$refs.protobuf_panel.set(get_protobuf());
+			this.refs().protobuf_panel.set(get_protobuf());
 			this.show_protobuf_panel = true;
 		},
 		close_protobuf() {
@@ -130,28 +148,28 @@ export default {
 		close_my_levels() {
 			this.show_my_levels_menu = false;
 		},
-		insert_level(json) {
-			this.run_modifier((level) => {
+		async insert_level(json: Level) {
+			await this.run_modifier((level: Level) => {
 				add_nodes(level, json.levelNodes);
 				return level;
 			});
 		},
 		undo() {
-			this.$refs.json_panel.undo();
+			this.refs().json_panel.undo();
 		},
 		redo() {
-			this.$refs.json_panel.redo();
+			this.refs().json_panel.redo();
 		},
-		async drop(e) {
+		async drop(e: DragEvent) {
 			e.stopPropagation();
-			const text = e.dataTransfer.getData('text/plain');
-			const files = e.dataTransfer.files;
+			const text = e.dataTransfer?.getData('text/plain');
+			const files = e.dataTransfer?.files;
 
-			if (files.length) {
+			if (files?.length) {
 				e.preventDefault();
 
 				if (files.length === 1) {
-					const file = files[0];
+					const file = files[0]!;
 					let data = null;
 					if (file.name.endsWith('.level')) {
 						data = await decodeLevel(file);
@@ -160,9 +178,9 @@ export default {
 					}
 					if (data) this.set_json(data);
 				} else {
-					const nodes = [this.json.levelNodes];
+					const nodes = [this.json.levelNodes ?? []];
 					for (const file of files) {
-						let data = null;
+						let data: Level | null = null;
 						if (file.name.endsWith('.level')) {
 							data = await decodeLevel(file);
 						} else if (file.name.endsWith('.json')) {
@@ -178,7 +196,7 @@ export default {
 			if (text?.includes('level=')) {
 				e.preventDefault();
 				const params = new URLSearchParams(text.split('?')[1]);
-				const level_id = params.get('level');
+				const level_id = params.get('level')!;
 				const level = await downloads.try_download_level(level_id);
 				if (level === null) return;
 				const blob = new Blob([level], {
@@ -189,7 +207,7 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>
 
 <template>
@@ -255,9 +273,11 @@ html:has(#editor) {
 	background-color: #1e1e1e;
 	overscroll-behavior: none;
 }
+/*
 #editor * {
-	/* outline: 0.1px solid #0f05; */
+	outline: 0.1px solid #0f05;
 }
+*/
 </style>
 <style scoped>
 .protobuf-panel {

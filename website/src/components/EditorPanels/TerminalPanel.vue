@@ -1,6 +1,6 @@
 <script lang="ts">
 import { Terminal } from '@/editor/Terminal';
-import { Level } from '@/generated/proto';
+import { Level } from '@grab-tools/lib/generated/proto';
 import { defineComponent, markRaw } from 'vue';
 
 export default defineComponent({
@@ -8,7 +8,7 @@ export default defineComponent({
 	emits: ['command'],
 	data() {
 		return {
-			terminal: null! as Terminal,
+			terminal: null as unknown as Terminal,
 		};
 	},
 	computed: {

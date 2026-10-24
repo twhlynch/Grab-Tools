@@ -1,41 +1,49 @@
-<script>
+<script lang="ts">
 import { createLevel, decodeLevel, downloadLevel, encodeLevel } from '@/common/levels';
 import { compile } from '@/tools/compiler';
+import { defineComponent } from 'vue';
 import ToolTemplate from './ToolTemplate.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		ToolTemplate,
 	},
 	methods: {
-		showQuestMultiSelect() {
-			const getByID = (id) => document.getElementById(id);
-			const toolID = 'level-compiler-tool';
-			getByID(`${toolID}-quest-multi-select`).style.display = 'flex';
+		showMultiSelect() {
+			const multiSelectElement = this.$refs.multiselect as HTMLInputElement;
+			multiSelectElement.style.display = 'flex';
 		},
 		async compile() {
-			const getByID = (id) => document.getElementById(id);
-			const toolID = 'level-compiler-tool';
+			const titleInput = this.$refs.title as HTMLInputElement;
+			const descriptionInput = this.$refs.description as HTMLInputElement;
+			const creatorsInput = this.$refs.creators as HTMLInputElement;
+			const checkpointsInput = this.$refs.checkpoints as HTMLInputElement;
+			const groupInput = this.$refs.group as HTMLInputElement;
+			const spacingInput = this.$refs.spacing as HTMLInputElement;
+			const fileInput = this.$refs.file as HTMLInputElement;
 
-			const files = Array.from(getByID(`${toolID}-file`).files);
+			const files = Array.from(fileInput.files ?? []);
 			for (let i = 0; i < 10; i++) {
-				const elem = getByID(`${toolID}-file${i}`);
-				if (elem.files.length) files.push(elem.files[0]);
+				const fileInputI = this.$refs[`file${i}`] as HTMLInputElement;
+				if (fileInputI.files?.[0]) files.push(fileInputI.files[0]);
 			}
 
-			if (!files.length) return;
+			if (!files.length) {
+				window.toast('No files chosen', 'error');
+				return;
+			}
 
-			const creators = getByID(`${toolID}-creators`).value || '';
-			const description = getByID(`${toolID}-description`).value || '';
-			const title = getByID(`${toolID}-title`).value || '';
-			const checkpoints = parseInt(getByID(`${toolID}-checkpoints`).value || '0');
-			const group = getByID(`${toolID}-group`).checked;
-			const spacing = parseInt(getByID(`${toolID}-spacing`).value || '0');
+			const creators = creatorsInput.value || '';
+			const description = descriptionInput.value || '';
+			const title = titleInput.value || '';
+			const checkpoints = parseInt(checkpointsInput.value) || 0;
+			const group = groupInput.checked;
+			const spacing = parseInt(spacingInput.value) || 0;
 
 			const nodes = await Promise.all(
 				files.map(async (file) => {
 					const level = await decodeLevel(file);
-					return level.levelNodes ?? [];
+					return level?.levelNodes ?? [];
 				}),
 			);
 
@@ -43,56 +51,42 @@ export default {
 
 			const level = createLevel(result, title, description, creators, checkpoints);
 
-			const encoded = await encodeLevel(level);
+			const encoded = encodeLevel(level);
+			if (!encoded) return;
+
 			downloadLevel(encoded);
 		},
 	},
-};
+});
 </script>
 
 <template>
-	<ToolTemplate>
-		<template #title>Level Compiler</template>
-		<template #info>
-			Select multiple level files and combine them into one file. Each level will be grouped.
-		</template>
-		<button class="button-sml" @click="showQuestMultiSelect">
-			Click me if you are on quest and can't select multiple files
+	<ToolTemplate
+		:name="'Level Compiler'"
+		:details="'Select multiple level files and combine them into one file. Each level will be grouped.'"
+	>
+		<button class="button-sml" @click="showMultiSelect">
+			Click me if you can't select multiple files
 		</button>
-		<input id="level-compiler-tool-title" type="text" placeholder="Title" />
-		<textarea
-			id="level-compiler-tool-description"
-			maxlength="300"
-			placeholder="Description"
-		></textarea>
-		<input
-			id="level-compiler-tool-creators"
-			type="text"
-			placeholder="Creators"
-			maxlength="80"
-		/>
-		<input id="level-compiler-tool-checkpoints" type="number" placeholder="Checkpoints" />
+		<input ref="title" type="text" placeholder="Title" />
+		<textarea ref="description" maxlength="300" placeholder="Description"></textarea>
+		<input ref="creators" type="text" placeholder="Creators" maxlength="80" />
+		<input ref="checkpoints" type="number" placeholder="Checkpoints" />
 		<label>
 			Group:
-			<input id="level-compiler-tool-group" type="checkbox" checked="true" />
+			<input ref="group" type="checkbox" checked="true" />
 		</label>
-		<input id="level-compiler-tool-spacing" type="number" placeholder="Spacing" />
-		<input id="level-compiler-tool-file" type="file" accept=".level" multiple />
-		<div id="level-compiler-tool-quest-multi-select">
-			<input
-				v-for="i in 10"
-				:id="'level-compiler-tool-file' + (i - 1)"
-				:key="i"
-				type="file"
-				accept=".level"
-			/>
+		<input ref="spacing" type="number" placeholder="Spacing" />
+		<input ref="file" type="file" accept=".level" multiple />
+		<div id="quest-multiselect" ref="multiselect">
+			<input v-for="i in 10" :ref="'file' + (i - 1)" :key="i" type="file" accept=".level" />
 		</div>
-		<button id="level-compiler-tool-btn" class="button" @click="compile">Compile</button>
+		<button class="button" @click="compile">Compile</button>
 	</ToolTemplate>
 </template>
 
 <style scoped>
-#level-compiler-tool-quest-multi-select {
+#quest-multiselect {
 	display: none;
 	flex-direction: column;
 	width: 100%;

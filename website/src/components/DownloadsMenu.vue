@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import GeneralPopup from '@/components/GeneralPopup.vue';
 import RefreshedIcon from '@/icons/RefreshedIcon.vue';
 import { get_allow_downloads_request } from '@/requests/GetAllowDownloadsRequest';
@@ -6,9 +6,16 @@ import { list_request } from '@/requests/ListRequest';
 import { set_allow_downloads_request } from '@/requests/SetAllowDownloadsRequest';
 import { user_levels_request } from '@/requests/UserLevelsRequest';
 import { useUserStore } from '@/stores/user';
+import { LevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
+import { defineComponent } from 'vue';
 
-export default {
+type LevelDownloadDetails = LevelDetails & {
+	allow_downloads?: boolean | null;
+	can_reset?: boolean;
+};
+
+export default defineComponent({
 	components: {
 		GeneralPopup,
 		RefreshedIcon,
@@ -23,7 +30,7 @@ export default {
 	data() {
 		return {
 			allow_downloads: false,
-			levels: [],
+			levels: [] as LevelDownloadDetails[],
 			loaded: false,
 		};
 	},
@@ -31,15 +38,17 @@ export default {
 		...mapState(useUserStore, ['is_logged_in', 'grab_id']),
 	},
 	watch: {
-		visible(val) {
+		visible(val: boolean) {
 			if (val && !this.loaded) {
-				this.load();
+				void this.load();
 			}
 		},
 	},
 	methods: {
 		async load() {
 			this.loaded = true;
+
+			if (!this.grab_id) return;
 
 			const [levels, challenge, one_of_a_kind, allow_settings] = await Promise.all([
 				user_levels_request(this.grab_id),
@@ -70,7 +79,7 @@ export default {
 				.map((level) => level.identifier)
 				.filter((id) => !disabled_levels.find((dl) => dl.identifier === id));
 
-			this.levels = levels.map((level) => {
+			this.levels = levels.map((level: LevelDownloadDetails) => {
 				if (allowed.find((id) => id === level.identifier)) {
 					level.allow_downloads = true;
 				} else if (disabled_levels.find((dl) => dl.identifier === level.identifier)) {
@@ -80,7 +89,7 @@ export default {
 				}
 
 				level.can_reset = !(
-					challenge.find((l) => l.identifier === level.identifier) ||
+					challenge.find((l) => l.identifier === level.identifier) ??
 					one_of_a_kind.find((l) => l.identifier === level.identifier)
 				);
 
@@ -96,13 +105,13 @@ export default {
 			if (!success) return;
 			this.allow_downloads = !this.allow_downloads;
 		},
-		async set_level_allow_downloads(level, allow) {
+		async set_level_allow_downloads(level: LevelDownloadDetails, allow: boolean | null) {
 			const success = await set_allow_downloads_request(level.identifier, null, allow);
 			if (!success) return;
 			level.allow_downloads = allow;
 		},
 	},
-};
+});
 </script>
 
 <template>
@@ -132,7 +141,10 @@ export default {
 					]"
 					@click="set_level_allow_downloads(level, !level.allow_downloads)"
 				>
-					{{ { true: 'Enabled', false: 'Disabled' }[level.allow_downloads] ?? 'Default' }}
+					{{
+						{ true: 'Enabled', false: 'Disabled' }[String(level.allow_downloads)] ??
+						'Default'
+					}}
 				</button>
 			</div>
 		</div>

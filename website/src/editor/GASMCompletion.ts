@@ -1,8 +1,5 @@
-import { LevelNodeWith } from '@/common/levelNodes';
-import { SPECIAL_REGISTERS } from '@/common/registers';
 import { load } from '@/common/root';
 import { DIRECTIVES, get_instruction_name } from '@/editor/AssemblyConversion';
-import { LevelNodeGASM } from '@/generated/proto';
 import {
 	acceptCompletion,
 	autocompletion,
@@ -11,6 +8,9 @@ import {
 	CompletionResult,
 } from '@codemirror/autocomplete';
 import { keymap } from '@codemirror/view';
+import { SPECIAL_REGISTERS } from '@grab-tools/lib/common/registers';
+import { LevelNodeWith } from '@grab-tools/lib/generated/nodes';
+import { LevelNodeGASM } from '@grab-tools/lib/generated/proto';
 import { EditorView } from 'codemirror';
 
 const instruction_map = load().COD.Level.InstructionData.Type;

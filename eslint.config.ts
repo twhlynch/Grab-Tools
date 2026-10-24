@@ -6,6 +6,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 
+const sourceFiles = ['**/*.ts', '**/*.vue'];
+
 export default [
 	{
 		ignores: ['**/dist/**', '**/node_modules/**', '**/src-tauri/**'],
@@ -16,22 +18,21 @@ export default [
 	...tseslint.configs.recommended,
 	...tseslint.configs.stylistic,
 
-	// TODO: add later
-	// ...tseslint.configs.recommendedTypeChecked.map((config) => ({
-	// 	...config,
-	// 	files: ['**/*.ts'],
-	// })),
-	// ...tseslint.configs.stylisticTypeChecked.map((config) => ({
-	// 	...config,
-	// 	files: ['**/*.ts'],
-	// })),
+	...tseslint.configs.recommendedTypeChecked.map((config) => ({
+		...config,
+		files: sourceFiles,
+	})),
+	...tseslint.configs.stylisticTypeChecked.map((config) => ({
+		...config,
+		files: sourceFiles,
+	})),
 
 	...vue.configs['flat/recommended'],
 
 	prettierConfig,
 
 	{
-		files: ['**/*.{js,ts,vue,mjs}'],
+		files: sourceFiles,
 
 		languageOptions: {
 			parser: vueParser,
@@ -42,6 +43,7 @@ export default [
 				sourceType: 'module',
 				extraFileExtensions: ['.vue'],
 				projectService: true,
+				tsconfigRootDir: import.meta.dirname,
 			},
 
 			globals: {
@@ -75,18 +77,23 @@ export default [
 			'no-constant-binary-expression': 'error',
 			'@typescript-eslint/prefer-for-of': 'error',
 
+			'@typescript-eslint/no-unnecessary-condition': 'error',
+			'@typescript-eslint/no-unnecessary-type-assertion': 'error',
+
 			'vue/multi-word-component-names': 'off',
 			'vue/require-default-prop': 'off',
 			'vue/prop-name-casing': 'off',
 		},
 	},
-
 	{
-		files: ['**/*.ts'],
-
+		files: ['**/*.vue'],
 		rules: {
-			'@typescript-eslint/no-unnecessary-condition': 'error',
-			'@typescript-eslint/no-unnecessary-type-assertion': 'error',
+			'@typescript-eslint/no-unsafe-assignment': 'off',
+			'@typescript-eslint/no-unsafe-call': 'off',
+			'@typescript-eslint/no-unsafe-member-access': 'off',
+			'@typescript-eslint/no-unsafe-argument': 'off',
+			'@typescript-eslint/no-unsafe-return': 'off',
+			'@typescript-eslint/no-unsafe-enum-comparison': 'off',
 		},
 	},
 ];

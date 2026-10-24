@@ -1,6 +1,6 @@
 import { load } from '@/common/root';
 import { DOMAIN, FORMAT_VERSION } from '@/config';
-import { Color, Level, LevelNode } from '@/generated/proto';
+import { Color, Level, LevelNode } from '@grab-tools/lib/generated/proto';
 
 export async function decodeLevel(buffer: Blob): Promise<Level | null> {
 	try {
@@ -44,7 +44,7 @@ export async function decodeLevel(buffer: Blob): Promise<Level | null> {
 	}
 }
 
-export function encodeLevel(level: Level): Uint8Array | null {
+export function encodeLevel(level: Level) {
 	const root = load();
 	const message = root.lookupType('COD.Level.Level');
 
@@ -58,10 +58,10 @@ export function encodeLevel(level: Level): Uint8Array | null {
 }
 
 export function downloadLevel(
-	level: ArrayBuffer,
+	level: Uint8Array<ArrayBufferLike> | ArrayBuffer,
 	name: string = Date.now().toString().slice(0, -3),
 ) {
-	const blob = new Blob([level], {
+	const blob = new Blob([level as BlobPart], {
 		type: 'application/octet-stream',
 	});
 
@@ -135,12 +135,12 @@ export function createLevel(
 }
 
 export function ambienceSettings(
-	horizon: Color | undefined,
-	zenith: Color | undefined,
-	sunAltitude: number | undefined,
-	sunAzimuth: number | undefined,
-	sunSize: number | undefined,
-	fogDensity: number | undefined,
+	horizon?: Color,
+	zenith?: Color,
+	sunAltitude?: number,
+	sunAzimuth?: number,
+	sunSize?: number,
+	fogDensity?: number,
 ) {
 	if (!(
 		horizon ||
