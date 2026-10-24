@@ -2,10 +2,11 @@
 import { createLevel, decodeLevel } from '@/common/levels';
 import { get_protobuf, set_protobuf } from '@/common/root';
 import { add_nodes, deepClone, json_parse } from '@/common/utils';
+import { Input } from '@/components/EditorPanels/inputs';
 import JsonPanel from '@/components/EditorPanels/JsonPanel.vue';
 import MenuPanel from '@/components/EditorPanels/MenuPanel.vue';
 import MyLevelsMenu from '@/components/EditorPanels/MyLevelsMenu.vue';
-import PopupPanel, { Input } from '@/components/EditorPanels/PopupPanel.vue';
+import PopupPanel from '@/components/EditorPanels/PopupPanel.vue';
 import ProtobufPanel from '@/components/EditorPanels/ProtobufPanel.vue';
 import ResizableColPanel from '@/components/EditorPanels/ResizableColPanel.vue';
 import ResizableRowPanel from '@/components/EditorPanels/ResizableRowPanel.vue';

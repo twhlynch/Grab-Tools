@@ -1,6 +1,7 @@
 <script lang="ts">
+import { Menu } from './menu';
 import { defineComponent, PropType } from 'vue';
-import DropDown, { Menu } from './DropDown.vue';
+import DropDown from './DropDown.vue';
 
 export default defineComponent({
 	components: {

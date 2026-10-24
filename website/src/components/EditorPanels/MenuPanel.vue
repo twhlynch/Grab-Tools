@@ -18,7 +18,6 @@ import {
 	shapes,
 	traverse_node,
 } from '@/common/utils';
-import { Input } from '@/components/EditorPanels/PopupPanel.vue';
 import { FreeControls } from '@/editor/FreeControls';
 import EditorPage from '@/pages/EditorPage.vue';
 import { useConfigStore } from '@/stores/config';
@@ -68,7 +67,9 @@ import { mapActions, mapState } from 'pinia';
 import * as THREE from 'three';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { defineComponent } from 'vue';
-import DropDown, { Menu } from './DropDown.vue';
+import DropDown from './DropDown.vue';
+import { Input } from './inputs';
+import { Menu } from './menu';
 import ViewportPanel from './ViewportPanel.vue';
 
 export default defineComponent({

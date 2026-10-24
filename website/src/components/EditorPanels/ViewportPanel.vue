@@ -66,7 +66,7 @@ import {
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { defineComponent, markRaw, Raw } from 'vue';
-import { Menu } from './DropDown.vue';
+import type { Menu } from './menu';
 
 export default defineComponent({
 	components: {

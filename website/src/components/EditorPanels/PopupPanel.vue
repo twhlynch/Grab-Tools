@@ -1,44 +1,6 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-
-interface BaseInput {
-	label?: string;
-	text?: string;
-}
-
-type OptionInput = BaseInput & {
-	type: 'option';
-	options: string[];
-};
-type TextareaInput = BaseInput & {
-	type: 'textarea';
-};
-type RangeInput = BaseInput & {
-	type: 'range';
-	min: number;
-	max: number;
-	value: number;
-	step?: number;
-};
-type CheckboxInput = BaseInput & {
-	type: 'checkbox';
-	default?: boolean;
-};
-type FileInput = BaseInput & {
-	type: 'file';
-	accept?: string;
-	multiple?: boolean;
-};
-
-type SpecificInput = OptionInput | TextareaInput | RangeInput | CheckboxInput | FileInput;
-type UnspecifiedInput = BaseInput & {
-	type: Exclude<string, Pick<SpecificInput, 'type'>>;
-	text?: string;
-	accept?: string;
-	multiple?: boolean;
-};
-
-export type Input = SpecificInput | UnspecifiedInput;
+import { CheckboxInput, Input, OptionInput, RangeInput, UnspecifiedInput } from './inputs';
 
 export default defineComponent({
 	props: {

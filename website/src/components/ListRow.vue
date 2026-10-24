@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Metric, MetricKey } from '@/pages/ListPage.vue';
 import { useUserStore } from '@/stores/user';
 import { mapState } from 'pinia';
 import { defineComponent, PropType } from 'vue';
+import { Metric, MetricKey } from '../pages/metrics';
 
 export default defineComponent({
 	props: {

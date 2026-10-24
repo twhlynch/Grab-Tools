@@ -10,34 +10,7 @@ import { useUserStore } from '@/stores/user';
 import { CustomLevelDetails } from '@grab-tools/lib/data/types';
 import { mapState } from 'pinia';
 import { defineComponent } from 'vue';
-
-export const metricKeys = [
-	'level_records',
-	'level_finishes',
-	'challenge_finishes',
-	'challenge_records',
-	'featured_records',
-	'sole_finishes',
-	'challenge_created',
-	'unbeaten_created',
-	'hardest_created',
-	'hardest_created_placement',
-] as const;
-
-export type MetricKey = (typeof metricKeys)[number];
-
-export type Metric = {
-	score: number;
-	maps: number;
-	username: string;
-	username_priority: number;
-	positions: Record<MetricKey, number>;
-	raw: Record<MetricKey, number>;
-} & Record<MetricKey, number>;
-
-function metricDict<T>(value: T): Record<MetricKey, T> {
-	return Object.fromEntries(metricKeys.map((key) => [key, value])) as Record<MetricKey, T>;
-}
+import { Metric, metricDict, MetricKey, metricKeys } from './metrics';
 
 interface FeaturedCreator {
 	list_key: string;
