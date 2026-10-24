@@ -39,7 +39,12 @@ export type Root = PBRoot & {
 	COD: {
 		Level: {
 			LevelNode: Type & {
-				oneofs: { content: { fieldsArray: { name: LevelNodeKey }[] } };
+				oneofs: {
+					content: {
+						fieldsArray: { name: LevelNodeKey }[];
+						oneof: LevelNodeKey[];
+					};
+				};
 			};
 			LevelNodeMaterial: typeof LevelNodeMaterial;
 			LevelNodeShape: typeof LevelNodeShape;
