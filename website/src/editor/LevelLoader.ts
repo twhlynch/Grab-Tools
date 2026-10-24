@@ -1756,7 +1756,10 @@ class LevelLoader {
 						material.uniforms.colorTexture;
 
 					const object = node.levelNodeSign.hideModel
-						? (new THREE.Mesh() as unknown as LevelNodeObject<LevelNodeSign>)
+						? (new THREE.Mesh(
+								undefined,
+								newMaterial,
+							) as unknown as LevelNodeObject<LevelNodeSign>)
 						: (new THREE.Mesh(
 								objects[1],
 								newMaterial,
