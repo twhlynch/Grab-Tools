@@ -38,5 +38,5 @@ cargo check
 cd -
 
 # add modified files and commit
-git add package.json pnpm-lock.yaml pnpm-workspace.yaml website/package.json website/src-tauri/Cargo.toml website/src-tauri/Cargo.lock website/src-tauri/gen/android/app/tauri.properties
+git add package.json pnpm-lock.yaml pnpm-workspace.yaml website/package.json lib/package.json website/src-tauri/Cargo.toml website/src-tauri/Cargo.lock website/src-tauri/gen/android/app/tauri.properties
 git commit -m "chore: bump version to ${new_version}"
